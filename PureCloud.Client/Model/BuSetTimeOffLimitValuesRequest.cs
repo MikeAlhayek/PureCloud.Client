@@ -1,13 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -15,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuSetTimeOffLimitValuesRequest
     /// </summary>
     [DataContract]
-    public partial class BuSetTimeOffLimitValuesRequest : IEquatable<BuSetTimeOffLimitValuesRequest>
+    public partial class BuSetTimeOffLimitValuesRequest :  IEquatable<BuSetTimeOffLimitValuesRequest>
     {
 
         /// <summary>
@@ -32,15 +25,15 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Values = Values;
             this.Metadata = Metadata;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name = "values", EmitDefaultValue = false)]
+        [DataMember(Name="values", EmitDefaultValue=false)]
         public List<BuTimeOffLimitRange> Values { get; set; }
 
 
@@ -49,7 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the time-off limit
         /// </summary>
         /// <value>Version metadata for the time-off limit</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -67,6 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

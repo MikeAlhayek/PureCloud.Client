@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DnsRecordEntry
     /// </summary>
     [DataContract]
-    public partial class DnsRecordEntry :  IEquatable<DnsRecordEntry>
+    public partial class DnsRecordEntry : IEquatable<DnsRecordEntry>
     {
         /// <summary>
         /// the current status of the related verification process
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Pending for "Pending"
             /// </summary>
             [EnumMember(Value = "Pending")]
             Pending,
-            
+
             /// <summary>
             /// Enum Verified for "Verified"
             /// </summary>
             [EnumMember(Value = "Verified")]
             Verified,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// the current status of the related verification process
         /// </summary>
         /// <value>the current status of the related verification process</value>
-        [DataMember(Name="verificationStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "verificationStatus", EmitDefaultValue = false)]
         public VerificationStatusEnum? VerificationStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DnsRecordEntry" /> class.
@@ -74,16 +66,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Host = Host;
             this.RecordContents = RecordContents;
             this.VerificationStatus = VerificationStatus;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// the hostname of the DNS entry
         /// </summary>
         /// <value>the hostname of the DNS entry</value>
-        [DataMember(Name="host", EmitDefaultValue=false)]
+        [DataMember(Name = "host", EmitDefaultValue = false)]
         public string Host { get; set; }
 
 
@@ -92,7 +84,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// the payload of the DNS entry
         /// </summary>
         /// <value>the payload of the DNS entry</value>
-        [DataMember(Name="recordContents", EmitDefaultValue=false)]
+        [DataMember(Name = "recordContents", EmitDefaultValue = false)]
         public string RecordContents { get; set; }
 
 
@@ -113,19 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

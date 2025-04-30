@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ShiftStartVariance
     /// </summary>
     [DataContract]
-    public partial class ShiftStartVariance :  IEquatable<ShiftStartVariance>
+    public partial class ShiftStartVariance : IEquatable<ShiftStartVariance>
     {
         /// <summary>
         /// Gets or Sets ApplicableDays
@@ -31,43 +23,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sunday for "Sunday"
             /// </summary>
             [EnumMember(Value = "Sunday")]
             Sunday,
-            
+
             /// <summary>
             /// Enum Monday for "Monday"
             /// </summary>
             [EnumMember(Value = "Monday")]
             Monday,
-            
+
             /// <summary>
             /// Enum Tuesday for "Tuesday"
             /// </summary>
             [EnumMember(Value = "Tuesday")]
             Tuesday,
-            
+
             /// <summary>
             /// Enum Wednesday for "Wednesday"
             /// </summary>
             [EnumMember(Value = "Wednesday")]
             Wednesday,
-            
+
             /// <summary>
             /// Enum Thursday for "Thursday"
             /// </summary>
             [EnumMember(Value = "Thursday")]
             Thursday,
-            
+
             /// <summary>
             /// Enum Friday for "Friday"
             /// </summary>
             [EnumMember(Value = "Friday")]
             Friday,
-            
+
             /// <summary>
             /// Enum Saturday for "Saturday"
             /// </summary>
@@ -89,16 +81,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.ApplicableDays = ApplicableDays;
             this.MaxShiftStartVarianceMinutes = MaxShiftStartVarianceMinutes;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Days for which shift start variance is configured
         /// </summary>
         /// <value>Days for which shift start variance is configured</value>
-        [DataMember(Name="applicableDays", EmitDefaultValue=false)]
+        [DataMember(Name = "applicableDays", EmitDefaultValue = false)]
         public List<ApplicableDaysEnum> ApplicableDays { get; set; }
 
 
@@ -107,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum variance in minutes across shift starts
         /// </summary>
         /// <value>Maximum variance in minutes across shift starts</value>
-        [DataMember(Name="maxShiftStartVarianceMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "maxShiftStartVarianceMinutes", EmitDefaultValue = false)]
         public int? MaxShiftStartVarianceMinutes { get; set; }
 
 
@@ -125,19 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

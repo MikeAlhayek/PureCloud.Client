@@ -1,13 +1,5 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Model
 {

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Represents an unassigned or assigned DID in a DID Pool.
     /// </summary>
     [DataContract]
-    public partial class DIDNumber :  IEquatable<DIDNumber>
+    public partial class DIDNumber : IEquatable<DIDNumber>
     {
         /// <summary>
         /// The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "USER"
             /// </summary>
             [EnumMember(Value = "USER")]
             User,
-            
+
             /// <summary>
             /// Enum Phone for "PHONE"
             /// </summary>
             [EnumMember(Value = "PHONE")]
             Phone,
-            
+
             /// <summary>
             /// Enum IvrConfig for "IVR_CONFIG"
             /// </summary>
             [EnumMember(Value = "IVR_CONFIG")]
             IvrConfig,
-            
+
             /// <summary>
             /// Enum Group for "GROUP"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.
         /// </summary>
         /// <value>The type of the entity that owns this DID.  If the DID is unassigned, this will be NULL.</value>
-        [DataMember(Name="ownerType", EmitDefaultValue=false)]
+        [DataMember(Name = "ownerType", EmitDefaultValue = false)]
         public OwnerTypeEnum? OwnerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DIDNumber" /> class.
@@ -80,16 +72,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DidPool = DidPool;
             this.Owner = Owner;
             this.OwnerType = OwnerType;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -97,7 +89,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -106,7 +98,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of the DID formatted as E164.
         /// </summary>
         /// <value>The number of the DID formatted as E164.</value>
-        [DataMember(Name="number", EmitDefaultValue=false)]
+        [DataMember(Name = "number", EmitDefaultValue = false)]
         public string Number { get; set; }
 
 
@@ -115,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if this DID is assigned to an entity.  False otherwise.
         /// </summary>
         /// <value>True if this DID is assigned to an entity.  False otherwise.</value>
-        [DataMember(Name="assigned", EmitDefaultValue=false)]
+        [DataMember(Name = "assigned", EmitDefaultValue = false)]
         public bool? Assigned { get; set; }
 
 
@@ -124,7 +116,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A Uri reference to the DID Pool this DID is a part of.
         /// </summary>
         /// <value>A Uri reference to the DID Pool this DID is a part of.</value>
-        [DataMember(Name="didPool", EmitDefaultValue=false)]
+        [DataMember(Name = "didPool", EmitDefaultValue = false)]
         public AddressableEntityRef DidPool { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A Uri reference to the owner of this DID.  The owner&#39;s type can be found in ownerType.  If the DID is unassigned, this will be NULL.
         /// </summary>
         /// <value>A Uri reference to the owner of this DID.  The owner&#39;s type can be found in ownerType.  If the DID is unassigned, this will be NULL.</value>
-        [DataMember(Name="owner", EmitDefaultValue=false)]
+        [DataMember(Name = "owner", EmitDefaultValue = false)]
         public DomainEntityRef Owner { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -168,19 +160,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

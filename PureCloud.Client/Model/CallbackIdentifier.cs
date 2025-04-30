@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallbackIdentifier
     /// </summary>
     [DataContract]
-    public partial class CallbackIdentifier :  IEquatable<CallbackIdentifier>
+    public partial class CallbackIdentifier : IEquatable<CallbackIdentifier>
     {
         /// <summary>
         /// The type of the associated callback participant
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Acd for "ACD"
             /// </summary>
             [EnumMember(Value = "ACD")]
             Acd,
-            
+
             /// <summary>
             /// Enum External for "EXTERNAL"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the associated callback participant
         /// </summary>
         /// <value>The type of the associated callback participant</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
 
         /// <summary>
@@ -66,9 +58,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Type = Type;
             this.Id = Id;
-            
+
         }
-        
+
 
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The identifier of the callback
         /// </summary>
         /// <value>The identifier of the callback</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -94,19 +86,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

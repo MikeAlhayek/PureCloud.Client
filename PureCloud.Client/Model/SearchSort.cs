@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SearchSort
     /// </summary>
     [DataContract]
-    public partial class SearchSort :  IEquatable<SearchSort>
+    public partial class SearchSort : IEquatable<SearchSort>
     {
         /// <summary>
         /// The sort order for results
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Asc for "ASC"
             /// </summary>
             [EnumMember(Value = "ASC")]
             Asc,
-            
+
             /// <summary>
             /// Enum Desc for "DESC"
             /// </summary>
             [EnumMember(Value = "DESC")]
             Desc,
-            
+
             /// <summary>
             /// Enum Score for "SCORE"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The sort order for results
         /// </summary>
         /// <value>The sort order for results</value>
-        [DataMember(Name="sortOrder", EmitDefaultValue=false)]
+        [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
         public SortOrderEnum? SortOrder { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchSort" /> class.
@@ -66,9 +58,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.SortOrder = SortOrder;
             this.SortBy = SortBy;
-            
+
         }
-        
+
 
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The field in the resource that you want to sort the results by
         /// </summary>
         /// <value>The field in the resource that you want to sort the results by</value>
-        [DataMember(Name="sortBy", EmitDefaultValue=false)]
+        [DataMember(Name = "sortBy", EmitDefaultValue = false)]
         public string SortBy { get; set; }
 
 
@@ -95,19 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

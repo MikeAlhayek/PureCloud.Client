@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallableTimeSet
     /// </summary>
     [DataContract]
-    public partial class CallableTimeSet :  IEquatable<CallableTimeSet>
+    public partial class CallableTimeSet : IEquatable<CallableTimeSet>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Name = Name;
             this.Version = Version;
             this.CallableTimes = CallableTimes;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the CallableTimeSet.
         /// </summary>
         /// <value>The name of the CallableTimeSet.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -71,7 +63,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -80,7 +72,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required for updates, must match the version number of the most recent update
         /// </summary>
         /// <value>Required for updates, must match the version number of the most recent update</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -89,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of CallableTimes for which it is acceptable to place outbound calls.
         /// </summary>
         /// <value>The list of CallableTimes for which it is acceptable to place outbound calls.</value>
-        [DataMember(Name="callableTimes", EmitDefaultValue=false)]
+        [DataMember(Name = "callableTimes", EmitDefaultValue = false)]
         public List<CallableTime> CallableTimes { get; set; }
 
 
@@ -98,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -120,19 +112,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

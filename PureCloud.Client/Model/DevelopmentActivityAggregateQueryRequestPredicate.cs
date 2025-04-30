@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DevelopmentActivityAggregateQueryRequestPredicate
     /// </summary>
     [DataContract]
-    public partial class DevelopmentActivityAggregateQueryRequestPredicate :  IEquatable<DevelopmentActivityAggregateQueryRequestPredicate>
+    public partial class DevelopmentActivityAggregateQueryRequestPredicate : IEquatable<DevelopmentActivityAggregateQueryRequestPredicate>
     {
         /// <summary>
         /// Each predicates specifies a dimension.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Attendeeid for "attendeeId"
             /// </summary>
             [EnumMember(Value = "attendeeId")]
             Attendeeid,
-            
+
             /// <summary>
             /// Enum Type for "type"
             /// </summary>
             [EnumMember(Value = "type")]
             Type,
-            
+
             /// <summary>
             /// Enum Moduleid for "moduleId"
             /// </summary>
             [EnumMember(Value = "moduleId")]
             Moduleid,
-            
+
             /// <summary>
             /// Enum Ispassed for "isPassed"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Each predicates specifies a dimension.
         /// </summary>
         /// <value>Each predicates specifies a dimension.</value>
-        [DataMember(Name="dimension", EmitDefaultValue=false)]
+        [DataMember(Name = "dimension", EmitDefaultValue = false)]
         public DimensionEnum? Dimension { get; set; }
 
         /// <summary>
@@ -78,9 +70,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Dimension = Dimension;
             this.Value = Value;
-            
+
         }
-        
+
 
 
 
@@ -89,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), Coaching, External, Native
         /// </summary>
         /// <value>Corresponding value for dimensions in predicates. If the dimension is type, Valid Values: Informational (deprecated), AssessedContent (deprecated), Assessment (deprecated), Coaching, External, Native</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -107,19 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

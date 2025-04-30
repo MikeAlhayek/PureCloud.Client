@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignProgress
     /// </summary>
     [DataContract]
-    public partial class CampaignProgress :  IEquatable<CampaignProgress>
+    public partial class CampaignProgress : IEquatable<CampaignProgress>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Campaign = Campaign;
             this.ContactList = ContactList;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Identifier of the campaign
         /// </summary>
         /// <value>Identifier of the campaign</value>
-        [DataMember(Name="campaign", EmitDefaultValue=false)]
+        [DataMember(Name = "campaign", EmitDefaultValue = false)]
         public DomainEntityRef Campaign { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Identifier of the contact list
         /// </summary>
         /// <value>Identifier of the contact list</value>
-        [DataMember(Name="contactList", EmitDefaultValue=false)]
+        [DataMember(Name = "contactList", EmitDefaultValue = false)]
         public DomainEntityRef ContactList { get; set; }
 
 
@@ -60,7 +52,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of contacts called during the campaign
         /// </summary>
         /// <value>Number of contacts called during the campaign</value>
-        [DataMember(Name="numberOfContactsCalled", EmitDefaultValue=false)]
+        [DataMember(Name = "numberOfContactsCalled", EmitDefaultValue = false)]
         public long? NumberOfContactsCalled { get; private set; }
 
 
@@ -69,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of contacts messaged during the campaign
         /// </summary>
         /// <value>Number of contacts messaged during the campaign</value>
-        [DataMember(Name="numberOfContactsMessaged", EmitDefaultValue=false)]
+        [DataMember(Name = "numberOfContactsMessaged", EmitDefaultValue = false)]
         public long? NumberOfContactsMessaged { get; private set; }
 
 
@@ -78,7 +70,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Total number of contacts in the campaign
         /// </summary>
         /// <value>Total number of contacts in the campaign</value>
-        [DataMember(Name="totalNumberOfContacts", EmitDefaultValue=false)]
+        [DataMember(Name = "totalNumberOfContacts", EmitDefaultValue = false)]
         public long? TotalNumberOfContacts { get; private set; }
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Percentage of contacts processed during the campaign
         /// </summary>
         /// <value>Percentage of contacts processed during the campaign</value>
-        [DataMember(Name="percentage", EmitDefaultValue=false)]
+        [DataMember(Name = "percentage", EmitDefaultValue = false)]
         public long? Percentage { get; private set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of contacts skipped during the campaign
         /// </summary>
         /// <value>Number of contacts skipped during the campaign</value>
-        [DataMember(Name="numberOfContactsSkipped", EmitDefaultValue=false)]
+        [DataMember(Name = "numberOfContactsSkipped", EmitDefaultValue = false)]
         public Dictionary<string, int?> NumberOfContactsSkipped { get; private set; }
 
 
@@ -118,19 +110,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  NumberOfContactsSkipped: ").Append(NumberOfContactsSkipped).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

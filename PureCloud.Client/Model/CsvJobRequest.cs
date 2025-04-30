@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CsvJobRequest
     /// </summary>
     [DataContract]
-    public partial class CsvJobRequest :  IEquatable<CsvJobRequest>
+    public partial class CsvJobRequest : IEquatable<CsvJobRequest>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.UploadId = UploadId;
             this.SettingsId = SettingsId;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Upload for the csv job
         /// </summary>
         /// <value>Upload for the csv job</value>
-        [DataMember(Name="uploadId", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadId", EmitDefaultValue = false)]
         public string UploadId { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Settings for the csv job
         /// </summary>
         /// <value>Settings for the csv job</value>
-        [DataMember(Name="settingsId", EmitDefaultValue=false)]
+        [DataMember(Name = "settingsId", EmitDefaultValue = false)]
         public string SettingsId { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

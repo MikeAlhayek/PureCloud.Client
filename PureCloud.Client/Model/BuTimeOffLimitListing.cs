@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffLimitListing
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffLimitListing : IEquatable<BuTimeOffLimitListing>
+    public partial class BuTimeOffLimitListing :  IEquatable<BuTimeOffLimitListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuTimeOffLimitListing" /> class.
@@ -25,15 +17,15 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuTimeOffLimitListing(List<BuTimeOffLimitResponse> Entities = null)
         {
             this.Entities = Entities;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name = "entities", EmitDefaultValue = false)]
+        [DataMember(Name="entities", EmitDefaultValue=false)]
         public List<BuTimeOffLimitResponse> Entities { get; set; }
 
 
@@ -50,6 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

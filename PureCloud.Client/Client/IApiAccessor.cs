@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using RestSharp;
-
 namespace PureCloudPlatform.Client.V2.Client
 {
     /// <summary>

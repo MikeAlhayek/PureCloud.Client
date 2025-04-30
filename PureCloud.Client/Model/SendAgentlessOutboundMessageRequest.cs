@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SendAgentlessOutboundMessageRequest
     /// </summary>
     [DataContract]
-    public partial class SendAgentlessOutboundMessageRequest :  IEquatable<SendAgentlessOutboundMessageRequest>
+    public partial class SendAgentlessOutboundMessageRequest : IEquatable<SendAgentlessOutboundMessageRequest>
     {
         /// <summary>
         /// The recipient messaging address messenger type.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sms for "sms"
             /// </summary>
             [EnumMember(Value = "sms")]
             Sms,
-            
+
             /// <summary>
             /// Enum Whatsapp for "whatsapp"
             /// </summary>
             [EnumMember(Value = "whatsapp")]
             Whatsapp,
-            
+
             /// <summary>
             /// Enum Open for "open"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The recipient messaging address messenger type.
         /// </summary>
         /// <value>The recipient messaging address messenger type.</value>
-        [DataMember(Name="toAddressMessengerType", EmitDefaultValue=false)]
+        [DataMember(Name = "toAddressMessengerType", EmitDefaultValue = false)]
         public ToAddressMessengerTypeEnum? ToAddressMessengerType { get; set; }
 
         /// <summary>
@@ -80,16 +72,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TextBody = TextBody;
             this.MessagingTemplate = MessagingTemplate;
             this.UseExistingActiveConversation = UseExistingActiveConversation;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID
         /// </summary>
         /// <value>The messaging address of the sender of the message. For an SMS messenger type, this must be a currently provisioned SMS phone number. For a WhatsApp messenger type use the provisioned WhatsApp integration’s ID</value>
-        [DataMember(Name="fromAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
         public string FromAddress { get; set; }
 
 
@@ -98,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number &#x60;+13175555555&#x60;, a WhatsApp ID would be 13175555555
         /// </summary>
         /// <value>The messaging address of the recipient of the message. For an SMS messenger type, the phone number address must be in E.164 format. E.g. +13175555555 or +34234234234. For WhatsApp messenger type, use a WhatsApp ID of a phone number. E.g for a E.164 formatted phone number &#x60;+13175555555&#x60;, a WhatsApp ID would be 13175555555</value>
-        [DataMember(Name="toAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "toAddress", EmitDefaultValue = false)]
         public string ToAddress { get; set; }
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.
         /// </summary>
         /// <value>The text of the message to send. This field is required in the case of SMS messenger type. Maximum character counts are: SMS - 765 characters, other channels - 2000 characters.</value>
-        [DataMember(Name="textBody", EmitDefaultValue=false)]
+        [DataMember(Name = "textBody", EmitDefaultValue = false)]
         public string TextBody { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type
         /// </summary>
         /// <value>The messaging template to use in the case of WhatsApp messenger type. This field is required when using WhatsApp messenger type</value>
-        [DataMember(Name="messagingTemplate", EmitDefaultValue=false)]
+        [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
         public SendMessagingTemplateRequest MessagingTemplate { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false
         /// </summary>
         /// <value>Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false</value>
-        [DataMember(Name="useExistingActiveConversation", EmitDefaultValue=false)]
+        [DataMember(Name = "useExistingActiveConversation", EmitDefaultValue = false)]
         public bool? UseExistingActiveConversation { get; set; }
 
 
@@ -149,19 +141,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

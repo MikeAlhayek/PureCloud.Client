@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuUpdateAgentScheduleUploadSchema
     /// </summary>
     [DataContract]
-    public partial class BuUpdateAgentScheduleUploadSchema : IEquatable<BuUpdateAgentScheduleUploadSchema>
+    public partial class BuUpdateAgentScheduleUploadSchema :  IEquatable<BuUpdateAgentScheduleUploadSchema>
     {
 
         /// <summary>
@@ -43,16 +35,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.FullDayTimeOffMarkers = FullDayTimeOffMarkers;
             this.Metadata = Metadata;
             this.Delete = Delete;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The ID of the user to whom this agent schedule applies
         /// </summary>
         /// <value>The ID of the user to whom this agent schedule applies</value>
-        [DataMember(Name = "userId", EmitDefaultValue = false)]
+        [DataMember(Name="userId", EmitDefaultValue=false)]
         public string UserId { get; set; }
 
 
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek
         /// </summary>
         /// <value>The ID of the work plan for this user.  Mutually exclusive with workPlanIdsPerWeek</value>
-        [DataMember(Name = "workPlanId", EmitDefaultValue = false)]
+        [DataMember(Name="workPlanId", EmitDefaultValue=false)]
         public ValueWrapperString WorkPlanId { get; set; }
 
 
@@ -70,7 +62,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId
         /// </summary>
         /// <value>The IDs of the work plans per week for this user.  Mutually exclusive with workPlanId</value>
-        [DataMember(Name = "workPlanIdsPerWeek", EmitDefaultValue = false)]
+        [DataMember(Name="workPlanIdsPerWeek", EmitDefaultValue=false)]
         public ListWrapperString WorkPlanIdsPerWeek { get; set; }
 
 
@@ -79,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The shift definitions for this agent schedule
         /// </summary>
         /// <value>The shift definitions for this agent schedule</value>
-        [DataMember(Name = "shifts", EmitDefaultValue = false)]
+        [DataMember(Name="shifts", EmitDefaultValue=false)]
         public List<BuUpdateAgentScheduleShift> Shifts { get; set; }
 
 
@@ -88,7 +80,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Any full day time off markers that apply to this agent schedule
         /// </summary>
         /// <value>Any full day time off markers that apply to this agent schedule</value>
-        [DataMember(Name = "fullDayTimeOffMarkers", EmitDefaultValue = false)]
+        [DataMember(Name="fullDayTimeOffMarkers", EmitDefaultValue=false)]
         public List<BuFullDayTimeOffMarker> FullDayTimeOffMarkers { get; set; }
 
 
@@ -97,7 +89,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for this agent schedule. Required if updating or deleting an existing agent schedule, otherwise should be omitted
         /// </summary>
         /// <value>Version metadata for this agent schedule. Required if updating or deleting an existing agent schedule, otherwise should be omitted</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -106,7 +98,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether to delete this agent&#39;s schedule. Defaults to false if not set
         /// </summary>
         /// <value>Whether to delete this agent&#39;s schedule. Defaults to false if not set</value>
-        [DataMember(Name = "delete", EmitDefaultValue = false)]
+        [DataMember(Name="delete", EmitDefaultValue=false)]
         public bool? Delete { get; set; }
 
 
@@ -129,6 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

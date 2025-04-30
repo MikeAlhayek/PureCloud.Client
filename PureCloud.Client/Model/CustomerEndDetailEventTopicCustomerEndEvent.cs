@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CustomerEndDetailEventTopicCustomerEndEvent
     /// </summary>
     [DataContract]
-    public partial class CustomerEndDetailEventTopicCustomerEndEvent :  IEquatable<CustomerEndDetailEventTopicCustomerEndEvent>
+    public partial class CustomerEndDetailEventTopicCustomerEndEvent : IEquatable<CustomerEndDetailEventTopicCustomerEndEvent>
     {
         /// <summary>
         /// Gets or Sets DisconnectType
@@ -31,115 +23,115 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "UNKNOWN"
             /// </summary>
             [EnumMember(Value = "UNKNOWN")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Endpoint for "ENDPOINT"
             /// </summary>
             [EnumMember(Value = "ENDPOINT")]
             Endpoint,
-            
+
             /// <summary>
             /// Enum Client for "CLIENT"
             /// </summary>
             [EnumMember(Value = "CLIENT")]
             Client,
-            
+
             /// <summary>
             /// Enum System for "SYSTEM"
             /// </summary>
             [EnumMember(Value = "SYSTEM")]
             System,
-            
+
             /// <summary>
             /// Enum Transfer for "TRANSFER"
             /// </summary>
             [EnumMember(Value = "TRANSFER")]
             Transfer,
-            
+
             /// <summary>
             /// Enum Error for "ERROR"
             /// </summary>
             [EnumMember(Value = "ERROR")]
             Error,
-            
+
             /// <summary>
             /// Enum Peer for "PEER"
             /// </summary>
             [EnumMember(Value = "PEER")]
             Peer,
-            
+
             /// <summary>
             /// Enum Other for "OTHER"
             /// </summary>
             [EnumMember(Value = "OTHER")]
             Other,
-            
+
             /// <summary>
             /// Enum Spam for "SPAM"
             /// </summary>
             [EnumMember(Value = "SPAM")]
             Spam,
-            
+
             /// <summary>
             /// Enum Timeout for "TIMEOUT"
             /// </summary>
             [EnumMember(Value = "TIMEOUT")]
             Timeout,
-            
+
             /// <summary>
             /// Enum TransportFailure for "TRANSPORT_FAILURE"
             /// </summary>
             [EnumMember(Value = "TRANSPORT_FAILURE")]
             TransportFailure,
-            
+
             /// <summary>
             /// Enum ConferenceTransfer for "CONFERENCE_TRANSFER"
             /// </summary>
             [EnumMember(Value = "CONFERENCE_TRANSFER")]
             ConferenceTransfer,
-            
+
             /// <summary>
             /// Enum ConsultTransfer for "CONSULT_TRANSFER"
             /// </summary>
             [EnumMember(Value = "CONSULT_TRANSFER")]
             ConsultTransfer,
-            
+
             /// <summary>
             /// Enum ForwardTransfer for "FORWARD_TRANSFER"
             /// </summary>
             [EnumMember(Value = "FORWARD_TRANSFER")]
             ForwardTransfer,
-            
+
             /// <summary>
             /// Enum NoAnswerTransfer for "NO_ANSWER_TRANSFER"
             /// </summary>
             [EnumMember(Value = "NO_ANSWER_TRANSFER")]
             NoAnswerTransfer,
-            
+
             /// <summary>
             /// Enum NotAvailableTransfer for "NOT_AVAILABLE_TRANSFER"
             /// </summary>
             [EnumMember(Value = "NOT_AVAILABLE_TRANSFER")]
             NotAvailableTransfer,
-            
+
             /// <summary>
             /// Enum Uncallable for "UNCALLABLE"
             /// </summary>
             [EnumMember(Value = "UNCALLABLE")]
             Uncallable,
-            
+
             /// <summary>
             /// Enum DndEndpoint for "DND_ENDPOINT"
             /// </summary>
             [EnumMember(Value = "DND_ENDPOINT")]
             DndEndpoint,
-            
+
             /// <summary>
             /// Enum DndTransfer for "DND_TRANSFER"
             /// </summary>
@@ -159,61 +151,61 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "UNKNOWN"
             /// </summary>
             [EnumMember(Value = "UNKNOWN")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Voice for "VOICE"
             /// </summary>
             [EnumMember(Value = "VOICE")]
             Voice,
-            
+
             /// <summary>
             /// Enum Chat for "CHAT"
             /// </summary>
             [EnumMember(Value = "CHAT")]
             Chat,
-            
+
             /// <summary>
             /// Enum Email for "EMAIL"
             /// </summary>
             [EnumMember(Value = "EMAIL")]
             Email,
-            
+
             /// <summary>
             /// Enum Callback for "CALLBACK"
             /// </summary>
             [EnumMember(Value = "CALLBACK")]
             Callback,
-            
+
             /// <summary>
             /// Enum Cobrowse for "COBROWSE"
             /// </summary>
             [EnumMember(Value = "COBROWSE")]
             Cobrowse,
-            
+
             /// <summary>
             /// Enum Video for "VIDEO"
             /// </summary>
             [EnumMember(Value = "VIDEO")]
             Video,
-            
+
             /// <summary>
             /// Enum Screenshare for "SCREENSHARE"
             /// </summary>
             [EnumMember(Value = "SCREENSHARE")]
             Screenshare,
-            
+
             /// <summary>
             /// Enum Message for "MESSAGE"
             /// </summary>
             [EnumMember(Value = "MESSAGE")]
             Message,
-            
+
             /// <summary>
             /// Enum Internalmessage for "INTERNALMESSAGE"
             /// </summary>
@@ -233,19 +225,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "UNKNOWN"
             /// </summary>
             [EnumMember(Value = "UNKNOWN")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Inbound for "INBOUND"
             /// </summary>
             [EnumMember(Value = "INBOUND")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Outbound for "OUTBOUND"
             /// </summary>
@@ -265,61 +257,61 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "UNKNOWN"
             /// </summary>
             [EnumMember(Value = "UNKNOWN")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Sms for "SMS"
             /// </summary>
             [EnumMember(Value = "SMS")]
             Sms,
-            
+
             /// <summary>
             /// Enum Twitter for "TWITTER"
             /// </summary>
             [EnumMember(Value = "TWITTER")]
             Twitter,
-            
+
             /// <summary>
             /// Enum Facebook for "FACEBOOK"
             /// </summary>
             [EnumMember(Value = "FACEBOOK")]
             Facebook,
-            
+
             /// <summary>
             /// Enum Line for "LINE"
             /// </summary>
             [EnumMember(Value = "LINE")]
             Line,
-            
+
             /// <summary>
             /// Enum Whatsapp for "WHATSAPP"
             /// </summary>
             [EnumMember(Value = "WHATSAPP")]
             Whatsapp,
-            
+
             /// <summary>
             /// Enum Webmessaging for "WEBMESSAGING"
             /// </summary>
             [EnumMember(Value = "WEBMESSAGING")]
             Webmessaging,
-            
+
             /// <summary>
             /// Enum Open for "OPEN"
             /// </summary>
             [EnumMember(Value = "OPEN")]
             Open,
-            
+
             /// <summary>
             /// Enum Instagram for "INSTAGRAM"
             /// </summary>
             [EnumMember(Value = "INSTAGRAM")]
             Instagram,
-            
+
             /// <summary>
             /// Enum Apple for "APPLE"
             /// </summary>
@@ -329,22 +321,22 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets DisconnectType
         /// </summary>
-        [DataMember(Name="disconnectType", EmitDefaultValue=false)]
+        [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
         public DisconnectTypeEnum? DisconnectType { get; set; }
         /// <summary>
         /// Gets or Sets MediaType
         /// </summary>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
+        [DataMember(Name = "mediaType", EmitDefaultValue = false)]
         public MediaTypeEnum? MediaType { get; set; }
         /// <summary>
         /// Gets or Sets Direction
         /// </summary>
-        [DataMember(Name="direction", EmitDefaultValue=false)]
+        [DataMember(Name = "direction", EmitDefaultValue = false)]
         public DirectionEnum? Direction { get; set; }
         /// <summary>
         /// Gets or Sets MessageType
         /// </summary>
-        [DataMember(Name="messageType", EmitDefaultValue=false)]
+        [DataMember(Name = "messageType", EmitDefaultValue = false)]
         public MessageTypeEnum? MessageType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomerEndDetailEventTopicCustomerEndEvent" /> class.
@@ -397,15 +389,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ConversationExternalContactIds = ConversationExternalContactIds;
             this.ConversationExternalOrganizationIds = ConversationExternalOrganizationIds;
             this.DivisionId = DivisionId;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets EventTime
         /// </summary>
-        [DataMember(Name="eventTime", EmitDefaultValue=false)]
+        [DataMember(Name = "eventTime", EmitDefaultValue = false)]
         public long? EventTime { get; set; }
 
 
@@ -413,7 +405,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ConversationId
         /// </summary>
-        [DataMember(Name="conversationId", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationId", EmitDefaultValue = false)]
         public string ConversationId { get; set; }
 
 
@@ -421,7 +413,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ParticipantId
         /// </summary>
-        [DataMember(Name="participantId", EmitDefaultValue=false)]
+        [DataMember(Name = "participantId", EmitDefaultValue = false)]
         public string ParticipantId { get; set; }
 
 
@@ -429,7 +421,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SessionId
         /// </summary>
-        [DataMember(Name="sessionId", EmitDefaultValue=false)]
+        [DataMember(Name = "sessionId", EmitDefaultValue = false)]
         public string SessionId { get; set; }
 
 
@@ -441,7 +433,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ExternalOrganizationId
         /// </summary>
-        [DataMember(Name="externalOrganizationId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
         public string ExternalOrganizationId { get; set; }
 
 
@@ -449,7 +441,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ExternalContactId
         /// </summary>
-        [DataMember(Name="externalContactId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
         public string ExternalContactId { get; set; }
 
 
@@ -457,7 +449,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Provider
         /// </summary>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
         public string Provider { get; set; }
 
 
@@ -467,7 +459,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Ani
         /// </summary>
-        [DataMember(Name="ani", EmitDefaultValue=false)]
+        [DataMember(Name = "ani", EmitDefaultValue = false)]
         public string Ani { get; set; }
 
 
@@ -475,7 +467,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Dnis
         /// </summary>
-        [DataMember(Name="dnis", EmitDefaultValue=false)]
+        [DataMember(Name = "dnis", EmitDefaultValue = false)]
         public string Dnis { get; set; }
 
 
@@ -483,7 +475,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AddressTo
         /// </summary>
-        [DataMember(Name="addressTo", EmitDefaultValue=false)]
+        [DataMember(Name = "addressTo", EmitDefaultValue = false)]
         public string AddressTo { get; set; }
 
 
@@ -491,7 +483,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AddressFrom
         /// </summary>
-        [DataMember(Name="addressFrom", EmitDefaultValue=false)]
+        [DataMember(Name = "addressFrom", EmitDefaultValue = false)]
         public string AddressFrom { get; set; }
 
 
@@ -499,7 +491,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CallbackUserName
         /// </summary>
-        [DataMember(Name="callbackUserName", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
         public string CallbackUserName { get; set; }
 
 
@@ -507,7 +499,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CallbackNumbers
         /// </summary>
-        [DataMember(Name="callbackNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
         public List<string> CallbackNumbers { get; set; }
 
 
@@ -515,7 +507,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CallbackScheduledTime
         /// </summary>
-        [DataMember(Name="callbackScheduledTime", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
         public long? CallbackScheduledTime { get; set; }
 
 
@@ -523,7 +515,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Subject
         /// </summary>
-        [DataMember(Name="subject", EmitDefaultValue=false)]
+        [DataMember(Name = "subject", EmitDefaultValue = false)]
         public string Subject { get; set; }
 
 
@@ -533,7 +525,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets InteractingDurationMs
         /// </summary>
-        [DataMember(Name="interactingDurationMs", EmitDefaultValue=false)]
+        [DataMember(Name = "interactingDurationMs", EmitDefaultValue = false)]
         public long? InteractingDurationMs { get; set; }
 
 
@@ -541,7 +533,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ConversationExternalContactIds
         /// </summary>
-        [DataMember(Name="conversationExternalContactIds", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationExternalContactIds", EmitDefaultValue = false)]
         public List<string> ConversationExternalContactIds { get; set; }
 
 
@@ -549,7 +541,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ConversationExternalOrganizationIds
         /// </summary>
-        [DataMember(Name="conversationExternalOrganizationIds", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationExternalOrganizationIds", EmitDefaultValue = false)]
         public List<string> ConversationExternalOrganizationIds { get; set; }
 
 
@@ -557,7 +549,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets DivisionId
         /// </summary>
-        [DataMember(Name="divisionId", EmitDefaultValue=false)]
+        [DataMember(Name = "divisionId", EmitDefaultValue = false)]
         public string DivisionId { get; set; }
 
 
@@ -596,19 +588,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

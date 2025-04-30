@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Credential
     /// </summary>
     [DataContract]
-    public partial class Credential :  IEquatable<Credential>
+    public partial class Credential : IEquatable<Credential>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Name = Name;
             this.Type = Type;
             this.CredentialFields = CredentialFields;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -52,7 +44,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of credential.
         /// </summary>
         /// <value>The type of credential.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public CredentialType Type { get; set; }
 
 
@@ -69,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CredentialFields
         /// </summary>
-        [DataMember(Name="credentialFields", EmitDefaultValue=false)]
+        [DataMember(Name = "credentialFields", EmitDefaultValue = false)]
         public Dictionary<string, string> CredentialFields { get; set; }
 
 
@@ -78,7 +70,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -99,19 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

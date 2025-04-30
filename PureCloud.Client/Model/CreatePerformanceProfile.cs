@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreatePerformanceProfile
     /// </summary>
     [DataContract]
-    public partial class CreatePerformanceProfile :  IEquatable<CreatePerformanceProfile>
+    public partial class CreatePerformanceProfile : IEquatable<CreatePerformanceProfile>
     {
 
         /// <summary>
@@ -41,16 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ReportingIntervals = ReportingIntervals;
             this.Active = Active;
             this.MaxLeaderboardRankSize = MaxLeaderboardRankSize;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -59,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A name for this performance profile
         /// </summary>
         /// <value>A name for this performance profile</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -68,7 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The associated division for this Performance Profile
         /// </summary>
         /// <value>The associated division for this Performance Profile</value>
-        [DataMember(Name="division", EmitDefaultValue=false)]
+        [DataMember(Name = "division", EmitDefaultValue = false)]
         public WritableDivision Division { get; set; }
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A description about this performance profile
         /// </summary>
         /// <value>A description about this performance profile</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -86,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Order of the associated metrics. The list should contain valid ids for metrics
         /// </summary>
         /// <value>Order of the associated metrics. The list should contain valid ids for metrics</value>
-        [DataMember(Name="metricOrders", EmitDefaultValue=false)]
+        [DataMember(Name = "metricOrders", EmitDefaultValue = false)]
         public List<string> MetricOrders { get; private set; }
 
 
@@ -95,7 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation date for this performance profile. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -104,7 +96,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The reporting interval periods for this performance profile
         /// </summary>
         /// <value>The reporting interval periods for this performance profile</value>
-        [DataMember(Name="reportingIntervals", EmitDefaultValue=false)]
+        [DataMember(Name = "reportingIntervals", EmitDefaultValue = false)]
         public List<ReportingInterval> ReportingIntervals { get; set; }
 
 
@@ -113,7 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The flag for active profiles
         /// </summary>
         /// <value>The flag for active profiles</value>
-        [DataMember(Name="active", EmitDefaultValue=false)]
+        [DataMember(Name = "active", EmitDefaultValue = false)]
         public bool? Active { get; set; }
 
 
@@ -122,7 +114,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of members in this performance profile
         /// </summary>
         /// <value>The number of members in this performance profile</value>
-        [DataMember(Name="memberCount", EmitDefaultValue=false)]
+        [DataMember(Name = "memberCount", EmitDefaultValue = false)]
         public int? MemberCount { get; private set; }
 
 
@@ -131,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries
         /// </summary>
         /// <value>The maximum rank size for the leaderboard. This counts the number of ranks can be retrieved in a leaderboard queries</value>
-        [DataMember(Name="maxLeaderboardRankSize", EmitDefaultValue=false)]
+        [DataMember(Name = "maxLeaderboardRankSize", EmitDefaultValue = false)]
         public int? MaxLeaderboardRankSize { get; set; }
 
 
@@ -140,7 +132,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -167,19 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

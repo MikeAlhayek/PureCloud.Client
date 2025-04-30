@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Lines distribution information or Campaign&#39;s Edge Group or Site
     /// </summary>
     [DataContract]
-    public partial class CampaignOutboundLinesDistribution :  IEquatable<CampaignOutboundLinesDistribution>
+    public partial class CampaignOutboundLinesDistribution : IEquatable<CampaignOutboundLinesDistribution>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignOutboundLinesDistribution" /> class.
@@ -37,16 +29,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ReservedLines = ReservedLines;
             this.CampaignsWithReservedLines = CampaignsWithReservedLines;
             this.CampaignsWithDynamicallyAllocatedLines = CampaignsWithDynamicallyAllocatedLines;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The Campaign for which dialing group distribution information was requested
         /// </summary>
         /// <value>The Campaign for which dialing group distribution information was requested</value>
-        [DataMember(Name="campaign", EmitDefaultValue=false)]
+        [DataMember(Name = "campaign", EmitDefaultValue = false)]
         public AddressableEntityRef Campaign { get; set; }
 
 
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum outbound calls that can be placed for Campaign&#39;s Edge Group or Site
         /// </summary>
         /// <value>Maximum outbound calls that can be placed for Campaign&#39;s Edge Group or Site</value>
-        [DataMember(Name="maxOutboundLineCount", EmitDefaultValue=false)]
+        [DataMember(Name = "maxOutboundLineCount", EmitDefaultValue = false)]
         public int? MaxOutboundLineCount { get; set; }
 
 
@@ -64,7 +56,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum ratio of dialer calls to Campaign&#39;s Edge Group or Site capacity
         /// </summary>
         /// <value>Maximum ratio of dialer calls to Campaign&#39;s Edge Group or Site capacity</value>
-        [DataMember(Name="maxLineUtilization", EmitDefaultValue=false)]
+        [DataMember(Name = "maxLineUtilization", EmitDefaultValue = false)]
         public double? MaxLineUtilization { get; set; }
 
 
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of available outbound lines in Campaign&#39;s Edge Group or Site
         /// </summary>
         /// <value>Number of available outbound lines in Campaign&#39;s Edge Group or Site</value>
-        [DataMember(Name="availableOutboundLines", EmitDefaultValue=false)]
+        [DataMember(Name = "availableOutboundLines", EmitDefaultValue = false)]
         public int? AvailableOutboundLines { get; set; }
 
 
@@ -82,7 +74,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of reserved outbound lines in Campaign&#39;s Edge Group or Site
         /// </summary>
         /// <value>Number of reserved outbound lines in Campaign&#39;s Edge Group or Site</value>
-        [DataMember(Name="reservedLines", EmitDefaultValue=false)]
+        [DataMember(Name = "reservedLines", EmitDefaultValue = false)]
         public int? ReservedLines { get; set; }
 
 
@@ -91,7 +83,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information about campaigns with reserving lines in Campaign&#39;s Edge Group or Site
         /// </summary>
         /// <value>Information about campaigns with reserving lines in Campaign&#39;s Edge Group or Site</value>
-        [DataMember(Name="campaignsWithReservedLines", EmitDefaultValue=false)]
+        [DataMember(Name = "campaignsWithReservedLines", EmitDefaultValue = false)]
         public List<CampaignOutboundLinesReservation> CampaignsWithReservedLines { get; set; }
 
 
@@ -100,7 +92,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information about campaigns using dynamic lines allocation in Campaign&#39;s Edge Group or Site
         /// </summary>
         /// <value>Information about campaigns using dynamic lines allocation in Campaign&#39;s Edge Group or Site</value>
-        [DataMember(Name="campaignsWithDynamicallyAllocatedLines", EmitDefaultValue=false)]
+        [DataMember(Name = "campaignsWithDynamicallyAllocatedLines", EmitDefaultValue = false)]
         public List<CampaignOutboundLinesAllocation> CampaignsWithDynamicallyAllocatedLines { get; set; }
 
 
@@ -122,19 +114,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  CampaignsWithDynamicallyAllocatedLines: ").Append(CampaignsWithDynamicallyAllocatedLines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateWorkPlanShift
     /// </summary>
     [DataContract]
-    public partial class CreateWorkPlanShift :  IEquatable<CreateWorkPlanShift>
+    public partial class CreateWorkPlanShift : IEquatable<CreateWorkPlanShift>
     {
         /// <summary>
         /// The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Nextdayoff for "NextDayOff"
             /// </summary>
             [EnumMember(Value = "NextDayOff")]
             Nextdayoff,
-            
+
             /// <summary>
             /// Enum Previousdayoff for "PreviousDayOff"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true
         /// </summary>
         /// <value>The day off rule for agents to have next day off or previous day off. used if constrainDayOff = true</value>
-        [DataMember(Name="dayOffRule", EmitDefaultValue=false)]
+        [DataMember(Name = "dayOffRule", EmitDefaultValue = false)]
         public DayOffRuleEnum? DayOffRule { get; set; }
 
         /// <summary>
@@ -106,16 +98,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ConstrainDayOff = ConstrainDayOff;
             this.DayOffRule = DayOffRule;
             this.Activities = Activities;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Name of the shift
         /// </summary>
         /// <value>Name of the shift</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -124,7 +116,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Days of the week applicable for this shift
         /// </summary>
         /// <value>Days of the week applicable for this shift</value>
-        [DataMember(Name="days", EmitDefaultValue=false)]
+        [DataMember(Name = "days", EmitDefaultValue = false)]
         public SetWrapperDayOfWeek Days { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the start time of the shift is flexible
         /// </summary>
         /// <value>Whether the start time of the shift is flexible</value>
-        [DataMember(Name="flexibleStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "flexibleStartTime", EmitDefaultValue = false)]
         public bool? FlexibleStartTime { get; set; }
 
 
@@ -142,7 +134,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false
         /// </summary>
         /// <value>Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false</value>
-        [DataMember(Name="exactStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "exactStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? ExactStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -151,7 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="earliestStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? EarliestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -160,7 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="latestStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "latestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? LatestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -169,7 +161,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead
         /// </summary>
         /// <value>Whether the latest stop time constraint for the shift is enabled.  Deprecated, use constrainLatestStopTime instead</value>
-        [DataMember(Name="constrainStopTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainStopTime", EmitDefaultValue = false)]
         public bool? ConstrainStopTime { get; set; }
 
 
@@ -178,7 +170,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the latest stop time constraint for the shift is enabled
         /// </summary>
         /// <value>Whether the latest stop time constraint for the shift is enabled</value>
-        [DataMember(Name="constrainLatestStopTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainLatestStopTime", EmitDefaultValue = false)]
         public bool? ConstrainLatestStopTime { get; set; }
 
 
@@ -187,7 +179,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="latestStopTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "latestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? LatestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -196,7 +188,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the earliest stop time constraint for the shift is enabled
         /// </summary>
         /// <value>Whether the earliest stop time constraint for the shift is enabled</value>
-        [DataMember(Name="constrainEarliestStopTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainEarliestStopTime", EmitDefaultValue = false)]
         public bool? ConstrainEarliestStopTime { get; set; }
 
 
@@ -205,7 +197,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// This is the earliest time a shift can end
         /// </summary>
         /// <value>This is the earliest time a shift can end</value>
-        [DataMember(Name="earliestStopTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? EarliestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -214,7 +206,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Increment in offset minutes that would contribute to different possible start times for the shift. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="startIncrementMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "startIncrementMinutes", EmitDefaultValue = false)]
         public int? StartIncrementMinutes { get; set; }
 
 
@@ -223,7 +215,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the paid time setting for the shift is flexible
         /// </summary>
         /// <value>Whether the paid time setting for the shift is flexible</value>
-        [DataMember(Name="flexiblePaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "flexiblePaidTime", EmitDefaultValue = false)]
         public bool? FlexiblePaidTime { get; set; }
 
 
@@ -232,7 +224,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false
         /// </summary>
         /// <value>Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false</value>
-        [DataMember(Name="exactPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "exactPaidTimeMinutes", EmitDefaultValue = false)]
         public int? ExactPaidTimeMinutes { get; set; }
 
 
@@ -241,7 +233,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="minimumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MinimumPaidTimeMinutes { get; set; }
 
 
@@ -250,7 +242,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="maximumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MaximumPaidTimeMinutes { get; set; }
 
 
@@ -259,7 +251,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the contiguous time constraint for the shift is enabled
         /// </summary>
         /// <value>Whether the contiguous time constraint for the shift is enabled</value>
-        [DataMember(Name="constrainContiguousWorkTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainContiguousWorkTime", EmitDefaultValue = false)]
         public bool? ConstrainContiguousWorkTime { get; set; }
 
 
@@ -268,7 +260,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Minimum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="minimumContiguousWorkTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumContiguousWorkTimeMinutes", EmitDefaultValue = false)]
         public int? MinimumContiguousWorkTimeMinutes { get; set; }
 
 
@@ -277,7 +269,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Maximum contiguous time in minutes configured for the shift. Used if constrainContiguousWorkTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="maximumContiguousWorkTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumContiguousWorkTimeMinutes", EmitDefaultValue = false)]
         public int? MaximumContiguousWorkTimeMinutes { get; set; }
 
 
@@ -286,7 +278,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether day off rule is enabled
         /// </summary>
         /// <value>Whether day off rule is enabled</value>
-        [DataMember(Name="constrainDayOff", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainDayOff", EmitDefaultValue = false)]
         public bool? ConstrainDayOff { get; set; }
 
 
@@ -297,7 +289,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Activities configured for this shift
         /// </summary>
         /// <value>Activities configured for this shift</value>
-        [DataMember(Name="activities", EmitDefaultValue=false)]
+        [DataMember(Name = "activities", EmitDefaultValue = false)]
         public List<CreateWorkPlanActivity> Activities { get; set; }
 
 
@@ -335,19 +327,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

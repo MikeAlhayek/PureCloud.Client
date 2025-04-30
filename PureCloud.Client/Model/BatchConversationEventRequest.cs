@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// A maximum of 100 events are allowed per request
     /// </summary>
     [DataContract]
-    public partial class BatchConversationEventRequest : IEquatable<BatchConversationEventRequest>
+    public partial class BatchConversationEventRequest :  IEquatable<BatchConversationEventRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BatchConversationEventRequest" /> class.
@@ -87,16 +79,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.EmailProgressTransferEvents = EmailProgressTransferEvents;
             this.EmailRoutingTransferEvents = EmailRoutingTransferEvents;
             this.EmailUserTransferEvents = EmailUserTransferEvents;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Voice - EndTransfer events for this batch
         /// </summary>
         /// <value>Voice - EndTransfer events for this batch</value>
-        [DataMember(Name = "endTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="endTransferEvents", EmitDefaultValue=false)]
         public List<EndTransferEvent> EndTransferEvents { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - PhoneTransfer events for this batch
         /// </summary>
         /// <value>Voice - PhoneTransfer events for this batch</value>
-        [DataMember(Name = "phoneTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="phoneTransferEvents", EmitDefaultValue=false)]
         public List<PhoneTransferEvent> PhoneTransferEvents { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - ProgressTransfer events for this batch
         /// </summary>
         /// <value>Voice - ProgressTransfer events for this batch</value>
-        [DataMember(Name = "progressTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="progressTransferEvents", EmitDefaultValue=false)]
         public List<ProgressTransferEvent> ProgressTransferEvents { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - RoutingTransfer events for this batch
         /// </summary>
         /// <value>Voice - RoutingTransfer events for this batch</value>
-        [DataMember(Name = "routingTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="routingTransferEvents", EmitDefaultValue=false)]
         public List<RoutingTransferEvent> RoutingTransferEvents { get; set; }
 
 
@@ -132,7 +124,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - UserTransfer events for this batch
         /// </summary>
         /// <value>Voice - UserTransfer events for this batch</value>
-        [DataMember(Name = "userTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="userTransferEvents", EmitDefaultValue=false)]
         public List<UserTransferEvent> UserTransferEvents { get; set; }
 
 
@@ -141,7 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - CommunicationAnswered events for this batch
         /// </summary>
         /// <value>Voice - CommunicationAnswered events for this batch</value>
-        [DataMember(Name = "communicationAnsweredEvents", EmitDefaultValue = false)]
+        [DataMember(Name="communicationAnsweredEvents", EmitDefaultValue=false)]
         public List<CommunicationAnsweredEvent> CommunicationAnsweredEvents { get; set; }
 
 
@@ -150,7 +142,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - CommunicationDispositionApplied events for this batch
         /// </summary>
         /// <value>Voice - CommunicationDispositionApplied events for this batch</value>
-        [DataMember(Name = "communicationDispositionAppliedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="communicationDispositionAppliedEvents", EmitDefaultValue=false)]
         public List<CommunicationDispositionAppliedEvent> CommunicationDispositionAppliedEvents { get; set; }
 
 
@@ -159,7 +151,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - HoldUpdated events for this batch
         /// </summary>
         /// <value>Voice - HoldUpdated events for this batch</value>
-        [DataMember(Name = "holdUpdatedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="holdUpdatedEvents", EmitDefaultValue=false)]
         public List<HoldUpdatedEvent> HoldUpdatedEvents { get; set; }
 
 
@@ -168,7 +160,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - ExternalEstablished events for this batch
         /// </summary>
         /// <value>Voice - ExternalEstablished events for this batch</value>
-        [DataMember(Name = "externalEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="externalEstablishedEvents", EmitDefaultValue=false)]
         public List<ExternalEstablishedEvent> ExternalEstablishedEvents { get; set; }
 
 
@@ -177,7 +169,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - IvrEstablished events for this batch
         /// </summary>
         /// <value>Voice - IvrEstablished events for this batch</value>
-        [DataMember(Name = "ivrEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="ivrEstablishedEvents", EmitDefaultValue=false)]
         public List<IvrEstablishedEvent> IvrEstablishedEvents { get; set; }
 
 
@@ -186,7 +178,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - PhoneEstablished events for this batch
         /// </summary>
         /// <value>Voice - PhoneEstablished events for this batch</value>
-        [DataMember(Name = "phoneEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="phoneEstablishedEvents", EmitDefaultValue=false)]
         public List<PhoneEstablishedEvent> PhoneEstablishedEvents { get; set; }
 
 
@@ -195,7 +187,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - RoutingEstablished events for this batch
         /// </summary>
         /// <value>Voice - RoutingEstablished events for this batch</value>
-        [DataMember(Name = "routingEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="routingEstablishedEvents", EmitDefaultValue=false)]
         public List<RoutingEstablishedEvent> RoutingEstablishedEvents { get; set; }
 
 
@@ -204,7 +196,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - UserEstablished events for this batch
         /// </summary>
         /// <value>Voice - UserEstablished events for this batch</value>
-        [DataMember(Name = "userEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="userEstablishedEvents", EmitDefaultValue=false)]
         public List<UserEstablishedEvent> UserEstablishedEvents { get; set; }
 
 
@@ -213,7 +205,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - AudioUpdated events for this batch
         /// </summary>
         /// <value>Voice - AudioUpdated events for this batch</value>
-        [DataMember(Name = "audioUpdatedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="audioUpdatedEvents", EmitDefaultValue=false)]
         public List<AudioUpdatedEvent> AudioUpdatedEvents { get; set; }
 
 
@@ -222,7 +214,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - CommunicationEnded events for this batch
         /// </summary>
         /// <value>Voice - CommunicationEnded events for this batch</value>
-        [DataMember(Name = "communicationEndedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="communicationEndedEvents", EmitDefaultValue=false)]
         public List<CommunicationEndedEvent> CommunicationEndedEvents { get; set; }
 
 
@@ -231,7 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - ConsultTransfer events for this batch
         /// </summary>
         /// <value>Voice - ConsultTransfer events for this batch</value>
-        [DataMember(Name = "consultTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="consultTransferEvents", EmitDefaultValue=false)]
         public List<ConsultTransferEvent> ConsultTransferEvents { get; set; }
 
 
@@ -240,7 +232,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - ProgressConsultTransfer events for this batch
         /// </summary>
         /// <value>Voice - ProgressConsultTransfer events for this batch</value>
-        [DataMember(Name = "progressConsultTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="progressConsultTransferEvents", EmitDefaultValue=false)]
         public List<ProgressConsultTransferEvent> ProgressConsultTransferEvents { get; set; }
 
 
@@ -249,7 +241,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Voice - EndConsultTransfer events for this batch
         /// </summary>
         /// <value>Voice - EndConsultTransfer events for this batch</value>
-        [DataMember(Name = "endConsultTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="endConsultTransferEvents", EmitDefaultValue=false)]
         public List<EndConsultTransferEvent> EndConsultTransferEvents { get; set; }
 
 
@@ -258,7 +250,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailBeginTransmittingEvent events for this batch
         /// </summary>
         /// <value>Email - EmailBeginTransmittingEvent events for this batch</value>
-        [DataMember(Name = "emailBeginTransmittingEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailBeginTransmittingEvents", EmitDefaultValue=false)]
         public List<EmailBeginTransmittingEvent> EmailBeginTransmittingEvents { get; set; }
 
 
@@ -267,7 +259,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailCommunicationEndedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailCommunicationEndedEvent events for this batch</value>
-        [DataMember(Name = "emailCommunicationEndedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailCommunicationEndedEvents", EmitDefaultValue=false)]
         public List<EmailCommunicationEndedEvent> EmailCommunicationEndedEvents { get; set; }
 
 
@@ -276,7 +268,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailExternalEstablishedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailExternalEstablishedEvent events for this batch</value>
-        [DataMember(Name = "emailExternalEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailExternalEstablishedEvents", EmitDefaultValue=false)]
         public List<EmailExternalEstablishedEvent> EmailExternalEstablishedEvents { get; set; }
 
 
@@ -285,7 +277,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailFlowEstablishedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailFlowEstablishedEvent events for this batch</value>
-        [DataMember(Name = "emailFlowEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailFlowEstablishedEvents", EmitDefaultValue=false)]
         public List<EmailFlowEstablishedEvent> EmailFlowEstablishedEvents { get; set; }
 
 
@@ -294,7 +286,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailRoutingEstablishedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailRoutingEstablishedEvent events for this batch</value>
-        [DataMember(Name = "emailRoutingEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailRoutingEstablishedEvents", EmitDefaultValue=false)]
         public List<EmailRoutingEstablishedEvent> EmailRoutingEstablishedEvents { get; set; }
 
 
@@ -303,7 +295,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailUserEstablishedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailUserEstablishedEvent events for this batch</value>
-        [DataMember(Name = "emailUserEstablishedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailUserEstablishedEvents", EmitDefaultValue=false)]
         public List<EmailUserEstablishedEvent> EmailUserEstablishedEvents { get; set; }
 
 
@@ -312,7 +304,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailCommunicationAnsweredEvent events for this batch
         /// </summary>
         /// <value>Email - EmailCommunicationAnsweredEvent events for this batch</value>
-        [DataMember(Name = "emailCommunicationAnsweredEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailCommunicationAnsweredEvents", EmitDefaultValue=false)]
         public List<EmailCommunicationAnsweredEvent> EmailCommunicationAnsweredEvents { get; set; }
 
 
@@ -321,7 +313,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailCommunicationDispositionAppliedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailCommunicationDispositionAppliedEvent events for this batch</value>
-        [DataMember(Name = "emailCommunicationDispositionAppliedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailCommunicationDispositionAppliedEvents", EmitDefaultValue=false)]
         public List<EmailCommunicationDispositionAppliedEvent> EmailCommunicationDispositionAppliedEvents { get; set; }
 
 
@@ -330,7 +322,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailCommunicationSentMessageEvent events for this batch
         /// </summary>
         /// <value>Email - EmailCommunicationSentMessageEvent events for this batch</value>
-        [DataMember(Name = "emailCommunicationSentMessageEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailCommunicationSentMessageEvents", EmitDefaultValue=false)]
         public List<EmailCommunicationSentMessageEvent> EmailCommunicationSentMessageEvents { get; set; }
 
 
@@ -339,7 +331,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailHoldUpdatedEvent events for this batch
         /// </summary>
         /// <value>Email - EmailHoldUpdatedEvent events for this batch</value>
-        [DataMember(Name = "emailHoldUpdatedEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailHoldUpdatedEvents", EmitDefaultValue=false)]
         public List<EmailHoldUpdatedEvent> EmailHoldUpdatedEvents { get; set; }
 
 
@@ -348,7 +340,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailEndTransferEvent events for this batch
         /// </summary>
         /// <value>Email - EmailEndTransferEvent events for this batch</value>
-        [DataMember(Name = "emailEndTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailEndTransferEvents", EmitDefaultValue=false)]
         public List<EmailEndTransferEvent> EmailEndTransferEvents { get; set; }
 
 
@@ -357,7 +349,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailProgressTransferEvent events for this batch
         /// </summary>
         /// <value>Email - EmailProgressTransferEvent events for this batch</value>
-        [DataMember(Name = "emailProgressTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailProgressTransferEvents", EmitDefaultValue=false)]
         public List<EmailProgressTransferEvent> EmailProgressTransferEvents { get; set; }
 
 
@@ -366,7 +358,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailRoutingTransferEvent events for this batch
         /// </summary>
         /// <value>Email - EmailRoutingTransferEvent events for this batch</value>
-        [DataMember(Name = "emailRoutingTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailRoutingTransferEvents", EmitDefaultValue=false)]
         public List<EmailRoutingTransferEvent> EmailRoutingTransferEvents { get; set; }
 
 
@@ -375,7 +367,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email - EmailUserTransferEvent events for this batch
         /// </summary>
         /// <value>Email - EmailUserTransferEvent events for this batch</value>
-        [DataMember(Name = "emailUserTransferEvents", EmitDefaultValue = false)]
+        [DataMember(Name="emailUserTransferEvents", EmitDefaultValue=false)]
         public List<EmailUserTransferEvent> EmailUserTransferEvents { get; set; }
 
 
@@ -423,6 +415,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

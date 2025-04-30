@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleParameters
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleParameters :  IEquatable<CampaignRuleParameters>
+    public partial class CampaignRuleParameters : IEquatable<CampaignRuleParameters>
     {
         /// <summary>
         /// The operator for comparison. Required for a CampaignRuleCondition.
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Equals for "equals"
             /// </summary>
             [EnumMember(Value = "equals")]
             Equals,
-            
+
             /// <summary>
             /// Enum Greaterthan for "greaterThan"
             /// </summary>
             [EnumMember(Value = "greaterThan")]
             Greaterthan,
-            
+
             /// <summary>
             /// Enum Greaterthanequalto for "greaterThanEqualTo"
             /// </summary>
             [EnumMember(Value = "greaterThanEqualTo")]
             Greaterthanequalto,
-            
+
             /// <summary>
             /// Enum Lessthan for "lessThan"
             /// </summary>
             [EnumMember(Value = "lessThan")]
             Lessthan,
-            
+
             /// <summary>
             /// Enum Lessthanequalto for "lessThanEqualTo"
             /// </summary>
@@ -77,31 +69,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum _1 for "1"
             /// </summary>
             [EnumMember(Value = "1")]
             _1,
-            
+
             /// <summary>
             /// Enum _2 for "2"
             /// </summary>
             [EnumMember(Value = "2")]
             _2,
-            
+
             /// <summary>
             /// Enum _3 for "3"
             /// </summary>
             [EnumMember(Value = "3")]
             _3,
-            
+
             /// <summary>
             /// Enum _4 for "4"
             /// </summary>
             [EnumMember(Value = "4")]
             _4,
-            
+
             /// <summary>
             /// Enum _5 for "5"
             /// </summary>
@@ -122,37 +114,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Agentless for "agentless"
             /// </summary>
             [EnumMember(Value = "agentless")]
             Agentless,
-            
+
             /// <summary>
             /// Enum Preview for "preview"
             /// </summary>
             [EnumMember(Value = "preview")]
             Preview,
-            
+
             /// <summary>
             /// Enum Power for "power"
             /// </summary>
             [EnumMember(Value = "power")]
             Power,
-            
+
             /// <summary>
             /// Enum Predictive for "predictive"
             /// </summary>
             [EnumMember(Value = "predictive")]
             Predictive,
-            
+
             /// <summary>
             /// Enum Progressive for "progressive"
             /// </summary>
             [EnumMember(Value = "progressive")]
             Progressive,
-            
+
             /// <summary>
             /// Enum External for "external"
             /// </summary>
@@ -163,19 +155,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The operator for comparison. Required for a CampaignRuleCondition.
         /// </summary>
         /// <value>The operator for comparison. Required for a CampaignRuleCondition.</value>
-        [DataMember(Name="operator", EmitDefaultValue=false)]
+        [DataMember(Name = "operator", EmitDefaultValue = false)]
         public OperatorEnum? Operator { get; set; }
         /// <summary>
         /// The priority to set a campaign to. Required for the 'setCampaignPriority' action.
         /// </summary>
         /// <value>The priority to set a campaign to. Required for the 'setCampaignPriority' action.</value>
-        [DataMember(Name="priority", EmitDefaultValue=false)]
+        [DataMember(Name = "priority", EmitDefaultValue = false)]
         public PriorityEnum? Priority { get; set; }
         /// <summary>
         /// The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.
         /// </summary>
         /// <value>The dialing mode to set a campaign to. Required for the 'setCampaignDialingMode' action.</value>
-        [DataMember(Name="dialingMode", EmitDefaultValue=false)]
+        [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
         public DialingModeEnum? DialingMode { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignRuleParameters" /> class.
@@ -210,9 +202,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.EmailMessagesPerMinute = EmailMessagesPerMinute;
             this.SmsContentTemplate = SmsContentTemplate;
             this.EmailContentTemplate = EmailContentTemplate;
-            
+
         }
-        
+
 
 
 
@@ -221,7 +213,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The value for comparison. Required for a CampaignRuleCondition.
         /// </summary>
         /// <value>The value for comparison. Required for a CampaignRuleCondition.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -234,7 +226,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The abandon rate to set a campaign to. Required for the &#39;setCampaignAbandonRate&#39; action.
         /// </summary>
         /// <value>The abandon rate to set a campaign to. Required for the &#39;setCampaignAbandonRate&#39; action.</value>
-        [DataMember(Name="abandonRate", EmitDefaultValue=false)]
+        [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
         public double? AbandonRate { get; set; }
 
 
@@ -243,7 +235,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The  number of outbound lines to set a campaign to. Required for the &#39;setCampaignNumberOfLines&#39; action.
         /// </summary>
         /// <value>The  number of outbound lines to set a campaign to. Required for the &#39;setCampaignNumberOfLines&#39; action.</value>
-        [DataMember(Name="outboundLineCount", EmitDefaultValue=false)]
+        [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
         public int? OutboundLineCount { get; set; }
 
 
@@ -252,7 +244,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The relative weight to set a campaign to. Required for the &#39;setCampaignWeight&#39; action.
         /// </summary>
         /// <value>The relative weight to set a campaign to. Required for the &#39;setCampaignWeight&#39; action.</value>
-        [DataMember(Name="relativeWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "relativeWeight", EmitDefaultValue = false)]
         public int? RelativeWeight { get; set; }
 
 
@@ -261,7 +253,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of calls per agent to set a campaign to. Required for the &#39;setCampaignMaxCallsPerAgent&#39; action.
         /// </summary>
         /// <value>The maximum number of calls per agent to set a campaign to. Required for the &#39;setCampaignMaxCallsPerAgent&#39; action.</value>
-        [DataMember(Name="maxCallsPerAgent", EmitDefaultValue=false)]
+        [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
         public double? MaxCallsPerAgent { get; set; }
 
 
@@ -270,7 +262,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The queue a campaign to. Required for the &#39;changeCampaignQueue&#39; action.
         /// </summary>
         /// <value>The queue a campaign to. Required for the &#39;changeCampaignQueue&#39; action.</value>
-        [DataMember(Name="queue", EmitDefaultValue=false)]
+        [DataMember(Name = "queue", EmitDefaultValue = false)]
         public DomainEntityRef Queue { get; set; }
 
 
@@ -279,7 +271,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of messages per minute to set a messaging campaign to.
         /// </summary>
         /// <value>The number of messages per minute to set a messaging campaign to.</value>
-        [DataMember(Name="messagesPerMinute", EmitDefaultValue=false)]
+        [DataMember(Name = "messagesPerMinute", EmitDefaultValue = false)]
         public int? MessagesPerMinute { get; set; }
 
 
@@ -288,7 +280,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of messages per minute to set a SMS messaging campaign to.
         /// </summary>
         /// <value>The number of messages per minute to set a SMS messaging campaign to.</value>
-        [DataMember(Name="smsMessagesPerMinute", EmitDefaultValue=false)]
+        [DataMember(Name = "smsMessagesPerMinute", EmitDefaultValue = false)]
         public int? SmsMessagesPerMinute { get; set; }
 
 
@@ -297,7 +289,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of messages per minute to set a Email messaging campaign to.
         /// </summary>
         /// <value>The number of messages per minute to set a Email messaging campaign to.</value>
-        [DataMember(Name="emailMessagesPerMinute", EmitDefaultValue=false)]
+        [DataMember(Name = "emailMessagesPerMinute", EmitDefaultValue = false)]
         public int? EmailMessagesPerMinute { get; set; }
 
 
@@ -306,7 +298,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The content template to set a SMS campaign to.
         /// </summary>
         /// <value>The content template to set a SMS campaign to.</value>
-        [DataMember(Name="smsContentTemplate", EmitDefaultValue=false)]
+        [DataMember(Name = "smsContentTemplate", EmitDefaultValue = false)]
         public DomainEntityRef SmsContentTemplate { get; set; }
 
 
@@ -315,7 +307,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The content template to set a Email campaign to.
         /// </summary>
         /// <value>The content template to set a Email campaign to.</value>
-        [DataMember(Name="emailContentTemplate", EmitDefaultValue=false)]
+        [DataMember(Name = "emailContentTemplate", EmitDefaultValue = false)]
         public DomainEntityRef EmailContentTemplate { get; set; }
 
 
@@ -344,19 +336,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  EmailContentTemplate: ").Append(EmailContentTemplate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

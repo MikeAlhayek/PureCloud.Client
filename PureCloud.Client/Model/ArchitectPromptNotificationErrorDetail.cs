@@ -1,13 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -15,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ArchitectPromptNotificationErrorDetail
     /// </summary>
     [DataContract]
-    public partial class ArchitectPromptNotificationErrorDetail : IEquatable<ArchitectPromptNotificationErrorDetail>
+    public partial class ArchitectPromptNotificationErrorDetail :  IEquatable<ArchitectPromptNotificationErrorDetail>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectPromptNotificationErrorDetail" /> class.
@@ -30,15 +23,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.EntityId = EntityId;
             this.EntityName = EntityName;
             this.FieldName = FieldName;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets ErrorCode
         /// </summary>
-        [DataMember(Name = "errorCode", EmitDefaultValue = false)]
+        [DataMember(Name="errorCode", EmitDefaultValue=false)]
         public string ErrorCode { get; set; }
 
 
@@ -46,7 +39,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets EntityId
         /// </summary>
-        [DataMember(Name = "entityId", EmitDefaultValue = false)]
+        [DataMember(Name="entityId", EmitDefaultValue=false)]
         public string EntityId { get; set; }
 
 
@@ -54,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets EntityName
         /// </summary>
-        [DataMember(Name = "entityName", EmitDefaultValue = false)]
+        [DataMember(Name="entityName", EmitDefaultValue=false)]
         public string EntityName { get; set; }
 
 
@@ -62,7 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets FieldName
         /// </summary>
-        [DataMember(Name = "fieldName", EmitDefaultValue = false)]
+        [DataMember(Name="fieldName", EmitDefaultValue=false)]
         public string FieldName { get; set; }
 
 
@@ -82,6 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

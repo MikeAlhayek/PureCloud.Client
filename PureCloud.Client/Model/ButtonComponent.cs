@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Structured template button object.
     /// </summary>
     [DataContract]
-    public partial class ButtonComponent : IEquatable<ButtonComponent>
+    public partial class ButtonComponent :  IEquatable<ButtonComponent>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ButtonComponent" /> class.
@@ -27,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Title = Title;
             this.Actions = Actions;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Text to show inside the button.
         /// </summary>
         /// <value>Text to show inside the button.</value>
-        [DataMember(Name = "title", EmitDefaultValue = false)]
+        [DataMember(Name="title", EmitDefaultValue=false)]
         public string Title { get; set; }
 
 
@@ -45,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The button actions (Deprecated).
         /// </summary>
         /// <value>The button actions (Deprecated).</value>
-        [DataMember(Name = "actions", EmitDefaultValue = false)]
+        [DataMember(Name="actions", EmitDefaultValue=false)]
         public ContentActions Actions { get; set; }
 
 
@@ -63,6 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

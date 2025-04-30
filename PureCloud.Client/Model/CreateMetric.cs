@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateMetric
     /// </summary>
     [DataContract]
-    public partial class CreateMetric :  IEquatable<CreateMetric>
+    public partial class CreateMetric : IEquatable<CreateMetric>
     {
         /// <summary>
         /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum None for "None"
             /// </summary>
             [EnumMember(Value = "None")]
             None,
-            
+
             /// <summary>
             /// Enum Seconds for "Seconds"
             /// </summary>
             [EnumMember(Value = "Seconds")]
             Seconds,
-            
+
             /// <summary>
             /// Enum Minutes for "Minutes"
             /// </summary>
             [EnumMember(Value = "Minutes")]
             Minutes,
-            
+
             /// <summary>
             /// Enum Hours for "Hours"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values
         /// </summary>
         /// <value>The time unit in which the metric should be displayed - - this parameter is ignored when displaying non-time values</value>
-        [DataMember(Name="timeDisplayUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "timeDisplayUnit", EmitDefaultValue = false)]
         public TimeDisplayUnitEnum? TimeDisplayUnit { get; set; }
 
         /// <summary>
@@ -88,16 +80,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Name = Name;
             this.Precision = Precision;
             this.TimeDisplayUnit = TimeDisplayUnit;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The id of associated metric definition
         /// </summary>
         /// <value>The id of associated metric definition</value>
-        [DataMember(Name="metricDefinitionId", EmitDefaultValue=false)]
+        [DataMember(Name = "metricDefinitionId", EmitDefaultValue = false)]
         public string MetricDefinitionId { get; set; }
 
 
@@ -106,7 +98,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of associated external metric definition
         /// </summary>
         /// <value>The id of associated external metric definition</value>
-        [DataMember(Name="externalMetricDefinitionId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalMetricDefinitionId", EmitDefaultValue = false)]
         public string ExternalMetricDefinitionId { get; set; }
 
 
@@ -115,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Associated objective for this metric
         /// </summary>
         /// <value>Associated objective for this metric</value>
-        [DataMember(Name="objective", EmitDefaultValue=false)]
+        [DataMember(Name = "objective", EmitDefaultValue = false)]
         public CreateObjective Objective { get; set; }
 
 
@@ -124,7 +116,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Performance profile id of this metric
         /// </summary>
         /// <value>Performance profile id of this metric</value>
-        [DataMember(Name="performanceProfileId", EmitDefaultValue=false)]
+        [DataMember(Name = "performanceProfileId", EmitDefaultValue = false)]
         public string PerformanceProfileId { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of this metric
         /// </summary>
         /// <value>The name of this metric</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -142,7 +134,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The precision of the metric, must be between 0 and 5
         /// </summary>
         /// <value>The precision of the metric, must be between 0 and 5</value>
-        [DataMember(Name="precision", EmitDefaultValue=false)]
+        [DataMember(Name = "precision", EmitDefaultValue = false)]
         public int? Precision { get; set; }
 
 
@@ -167,19 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

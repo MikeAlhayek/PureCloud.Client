@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallHistoryParticipant
     /// </summary>
     [DataContract]
-    public partial class CallHistoryParticipant :  IEquatable<CallHistoryParticipant>
+    public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     {
         /// <summary>
         /// The participant's direction.  Values can be: 'inbound' or 'outbound'
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Inbound for "inbound"
             /// </summary>
             [EnumMember(Value = "inbound")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Outbound for "outbound"
             /// </summary>
@@ -59,97 +51,97 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Endpoint for "endpoint"
             /// </summary>
             [EnumMember(Value = "endpoint")]
             Endpoint,
-            
+
             /// <summary>
             /// Enum Endpointdonotdisturb for "endpoint.donotdisturb"
             /// </summary>
             [EnumMember(Value = "endpoint.donotdisturb")]
             Endpointdonotdisturb,
-            
+
             /// <summary>
             /// Enum Client for "client"
             /// </summary>
             [EnumMember(Value = "client")]
             Client,
-            
+
             /// <summary>
             /// Enum System for "system"
             /// </summary>
             [EnumMember(Value = "system")]
             System,
-            
+
             /// <summary>
             /// Enum Transfer for "transfer"
             /// </summary>
             [EnumMember(Value = "transfer")]
             Transfer,
-            
+
             /// <summary>
             /// Enum Transferconference for "transfer.conference"
             /// </summary>
             [EnumMember(Value = "transfer.conference")]
             Transferconference,
-            
+
             /// <summary>
             /// Enum Transferconsult for "transfer.consult"
             /// </summary>
             [EnumMember(Value = "transfer.consult")]
             Transferconsult,
-            
+
             /// <summary>
             /// Enum Transferdonotdisturb for "transfer.donotdisturb"
             /// </summary>
             [EnumMember(Value = "transfer.donotdisturb")]
             Transferdonotdisturb,
-            
+
             /// <summary>
             /// Enum Transferforward for "transfer.forward"
             /// </summary>
             [EnumMember(Value = "transfer.forward")]
             Transferforward,
-            
+
             /// <summary>
             /// Enum Transfernoanswer for "transfer.noanswer"
             /// </summary>
             [EnumMember(Value = "transfer.noanswer")]
             Transfernoanswer,
-            
+
             /// <summary>
             /// Enum Transfernotavailable for "transfer.notavailable"
             /// </summary>
             [EnumMember(Value = "transfer.notavailable")]
             Transfernotavailable,
-            
+
             /// <summary>
             /// Enum Transportfailure for "transport.failure"
             /// </summary>
             [EnumMember(Value = "transport.failure")]
             Transportfailure,
-            
+
             /// <summary>
             /// Enum Error for "error"
             /// </summary>
             [EnumMember(Value = "error")]
             Error,
-            
+
             /// <summary>
             /// Enum Peer for "peer"
             /// </summary>
             [EnumMember(Value = "peer")]
             Peer,
-            
+
             /// <summary>
             /// Enum Other for "other"
             /// </summary>
             [EnumMember(Value = "other")]
             Other,
-            
+
             /// <summary>
             /// Enum Spam for "spam"
             /// </summary>
@@ -170,7 +162,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum General for "general"
             /// </summary>
@@ -181,19 +173,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The participant's direction.  Values can be: 'inbound' or 'outbound'
         /// </summary>
         /// <value>The participant's direction.  Values can be: 'inbound' or 'outbound'</value>
-        [DataMember(Name="direction", EmitDefaultValue=false)]
+        [DataMember(Name = "direction", EmitDefaultValue = false)]
         public DirectionEnum? Direction { get; set; }
         /// <summary>
         /// The reason the participant was disconnected from the conversation.
         /// </summary>
         /// <value>The reason the participant was disconnected from the conversation.</value>
-        [DataMember(Name="disconnectType", EmitDefaultValue=false)]
+        [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
         public DisconnectTypeEnum? DisconnectType { get; set; }
         /// <summary>
         /// The reason specifying why participant flagged the conversation.
         /// </summary>
         /// <value>The reason specifying why participant flagged the conversation.</value>
-        [DataMember(Name="flaggedReason", EmitDefaultValue=false)]
+        [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
         public FlaggedReasonEnum? FlaggedReason { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CallHistoryParticipant" /> class.
@@ -238,16 +230,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.SipResponseCodes = SipResponseCodes;
             this.FlaggedReason = FlaggedReason;
             this.OutboundCampaign = OutboundCampaign;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The unique participant ID.
         /// </summary>
         /// <value>The unique participant ID.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -256,7 +248,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The display friendly name of the participant.
         /// </summary>
         /// <value>The display friendly name of the participant.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -265,7 +257,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The participant address.
         /// </summary>
         /// <value>The participant address.</value>
-        [DataMember(Name="address", EmitDefaultValue=false)]
+        [DataMember(Name = "address", EmitDefaultValue = false)]
         public string Address { get; set; }
 
 
@@ -274,7 +266,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The time when this participant first joined the conversation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="startTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startTime", EmitDefaultValue = false)]
         public DateTime? StartTime { get; set; }
 
 
@@ -283,7 +275,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The time when this participant went disconnected for this media (eg: video disconnected time). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="endTime", EmitDefaultValue=false)]
+        [DataMember(Name = "endTime", EmitDefaultValue = false)]
         public DateTime? EndTime { get; set; }
 
 
@@ -292,7 +284,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr
         /// </summary>
         /// <value>The participant&#39;s purpose.  Values can be: &#39;agent&#39;, &#39;user&#39;, &#39;customer&#39;, &#39;external&#39;, &#39;acd&#39;, &#39;ivr</value>
-        [DataMember(Name="purpose", EmitDefaultValue=false)]
+        [DataMember(Name = "purpose", EmitDefaultValue = false)]
         public string Purpose { get; set; }
 
 
@@ -303,7 +295,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The call ANI.
         /// </summary>
         /// <value>The call ANI.</value>
-        [DataMember(Name="ani", EmitDefaultValue=false)]
+        [DataMember(Name = "ani", EmitDefaultValue = false)]
         public string Ani { get; set; }
 
 
@@ -312,7 +304,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The call DNIS.
         /// </summary>
         /// <value>The call DNIS.</value>
-        [DataMember(Name="dnis", EmitDefaultValue=false)]
+        [DataMember(Name = "dnis", EmitDefaultValue = false)]
         public string Dnis { get; set; }
 
 
@@ -321,7 +313,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud user for this participant.
         /// </summary>
         /// <value>The PureCloud user for this participant.</value>
-        [DataMember(Name="user", EmitDefaultValue=false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public User User { get; set; }
 
 
@@ -330,7 +322,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud queue for this participant.
         /// </summary>
         /// <value>The PureCloud queue for this participant.</value>
-        [DataMember(Name="queue", EmitDefaultValue=false)]
+        [DataMember(Name = "queue", EmitDefaultValue = false)]
         public Queue Queue { get; set; }
 
 
@@ -339,7 +331,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The group involved in the group ring call.
         /// </summary>
         /// <value>The group involved in the group ring call.</value>
-        [DataMember(Name="group", EmitDefaultValue=false)]
+        [DataMember(Name = "group", EmitDefaultValue = false)]
         public Group Group { get; set; }
 
 
@@ -350,7 +342,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud external contact
         /// </summary>
         /// <value>The PureCloud external contact</value>
-        [DataMember(Name="externalContact", EmitDefaultValue=false)]
+        [DataMember(Name = "externalContact", EmitDefaultValue = false)]
         public ExternalContact ExternalContact { get; set; }
 
 
@@ -359,7 +351,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud external organization
         /// </summary>
         /// <value>The PureCloud external organization</value>
-        [DataMember(Name="externalOrganization", EmitDefaultValue=false)]
+        [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
         public ExternalOrganization ExternalOrganization { get; set; }
 
 
@@ -368,7 +360,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates whether the contact ever connected
         /// </summary>
         /// <value>Indicates whether the contact ever connected</value>
-        [DataMember(Name="didInteract", EmitDefaultValue=false)]
+        [DataMember(Name = "didInteract", EmitDefaultValue = false)]
         public bool? DidInteract { get; set; }
 
 
@@ -377,7 +369,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates SIP Response codes associated with the participant
         /// </summary>
         /// <value>Indicates SIP Response codes associated with the participant</value>
-        [DataMember(Name="sipResponseCodes", EmitDefaultValue=false)]
+        [DataMember(Name = "sipResponseCodes", EmitDefaultValue = false)]
         public List<long?> SipResponseCodes { get; set; }
 
 
@@ -388,7 +380,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The outbound campaign associated with the participant
         /// </summary>
         /// <value>The outbound campaign associated with the participant</value>
-        [DataMember(Name="outboundCampaign", EmitDefaultValue=false)]
+        [DataMember(Name = "outboundCampaign", EmitDefaultValue = false)]
         public Campaign OutboundCampaign { get; set; }
 
 
@@ -422,19 +414,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  OutboundCampaign: ").Append(OutboundCampaign).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

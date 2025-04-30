@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Copilot
     /// </summary>
     [DataContract]
-    public partial class Copilot :  IEquatable<Copilot>
+    public partial class Copilot : IEquatable<Copilot>
     {
         /// <summary>
         /// Language understanding engine type.
@@ -32,7 +24,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Nluv3 for "NluV3"
             /// </summary>
@@ -43,7 +35,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Language understanding engine type.
         /// </summary>
         /// <value>Language understanding engine type.</value>
-        [DataMember(Name="nluEngineType", EmitDefaultValue=false)]
+        [DataMember(Name = "nluEngineType", EmitDefaultValue = false)]
         public NluEngineTypeEnum? NluEngineType { get; set; }
 
         /// <summary>
@@ -74,16 +66,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.NluEngineType = NluEngineType;
             this.NluConfig = NluConfig;
             this.RuleEngineConfig = RuleEngineConfig;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Copilot is enabled.
         /// </summary>
         /// <value>Copilot is enabled.</value>
-        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        [DataMember(Name = "enabled", EmitDefaultValue = false)]
         public bool? Enabled { get; private set; }
 
 
@@ -92,7 +84,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Copilot is live on selected queue.
         /// </summary>
         /// <value>Copilot is live on selected queue.</value>
-        [DataMember(Name="liveOnQueue", EmitDefaultValue=false)]
+        [DataMember(Name = "liveOnQueue", EmitDefaultValue = false)]
         public bool? LiveOnQueue { get; set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Copilot default language, e.g. [en-US, es-US, es-ES]. Once set, it can not be modified.
         /// </summary>
         /// <value>Copilot default language, e.g. [en-US, es-US, es-ES]. Once set, it can not be modified.</value>
-        [DataMember(Name="defaultLanguage", EmitDefaultValue=false)]
+        [DataMember(Name = "defaultLanguage", EmitDefaultValue = false)]
         public string DefaultLanguage { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Knowledge answer configuration.
         /// </summary>
         /// <value>Knowledge answer configuration.</value>
-        [DataMember(Name="knowledgeAnswerConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "knowledgeAnswerConfig", EmitDefaultValue = false)]
         public KnowledgeAnswerConfig KnowledgeAnswerConfig { get; set; }
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Copilot generated summary configuration.
         /// </summary>
         /// <value>Copilot generated summary configuration.</value>
-        [DataMember(Name="summaryGenerationConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "summaryGenerationConfig", EmitDefaultValue = false)]
         public SummaryGenerationConfig SummaryGenerationConfig { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Copilot generated wrapup code prediction configuration.
         /// </summary>
         /// <value>Copilot generated wrapup code prediction configuration.</value>
-        [DataMember(Name="wrapupCodePredictionConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "wrapupCodePredictionConfig", EmitDefaultValue = false)]
         public WrapupCodePredictionConfig WrapupCodePredictionConfig { get; set; }
 
 
@@ -137,7 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Answer generation configuration.
         /// </summary>
         /// <value>Answer generation configuration.</value>
-        [DataMember(Name="answerGenerationConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "answerGenerationConfig", EmitDefaultValue = false)]
         public AnswerGenerationConfig AnswerGenerationConfig { get; set; }
 
 
@@ -148,7 +140,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// NLU configuration.
         /// </summary>
         /// <value>NLU configuration.</value>
-        [DataMember(Name="nluConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "nluConfig", EmitDefaultValue = false)]
         public NluConfig NluConfig { get; set; }
 
 
@@ -157,7 +149,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Rule engine configuration.
         /// </summary>
         /// <value>Rule engine configuration.</value>
-        [DataMember(Name="ruleEngineConfig", EmitDefaultValue=false)]
+        [DataMember(Name = "ruleEngineConfig", EmitDefaultValue = false)]
         public RuleEngineConfig RuleEngineConfig { get; set; }
 
 
@@ -166,7 +158,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -193,19 +185,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

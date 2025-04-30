@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DailyPossibleShift
     /// </summary>
     [DataContract]
-    public partial class DailyPossibleShift :  IEquatable<DailyPossibleShift>
+    public partial class DailyPossibleShift : IEquatable<DailyPossibleShift>
     {
         /// <summary>
         /// Day of the shift
@@ -32,43 +24,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sunday for "Sunday"
             /// </summary>
             [EnumMember(Value = "Sunday")]
             Sunday,
-            
+
             /// <summary>
             /// Enum Monday for "Monday"
             /// </summary>
             [EnumMember(Value = "Monday")]
             Monday,
-            
+
             /// <summary>
             /// Enum Tuesday for "Tuesday"
             /// </summary>
             [EnumMember(Value = "Tuesday")]
             Tuesday,
-            
+
             /// <summary>
             /// Enum Wednesday for "Wednesday"
             /// </summary>
             [EnumMember(Value = "Wednesday")]
             Wednesday,
-            
+
             /// <summary>
             /// Enum Thursday for "Thursday"
             /// </summary>
             [EnumMember(Value = "Thursday")]
             Thursday,
-            
+
             /// <summary>
             /// Enum Friday for "Friday"
             /// </summary>
             [EnumMember(Value = "Friday")]
             Friday,
-            
+
             /// <summary>
             /// Enum Saturday for "Saturday"
             /// </summary>
@@ -79,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Day of the shift
         /// </summary>
         /// <value>Day of the shift</value>
-        [DataMember(Name="dayOfWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "dayOfWeek", EmitDefaultValue = false)]
         public DayOfWeekEnum? DayOfWeek { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DailyPossibleShift" /> class.
@@ -98,9 +90,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.MinimumPaidTimeMinutes = MinimumPaidTimeMinutes;
             this.MaximumPaidTimeMinutes = MaximumPaidTimeMinutes;
             this.IntervalScheduleProbabilities = IntervalScheduleProbabilities;
-            
+
         }
-        
+
 
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minutes of the earliest shift start from midnight. Note that midnight is 12:00 am in the time zone specified in the timeZone field (in the top level of the response)
         /// </summary>
         /// <value>Minutes of the earliest shift start from midnight. Note that midnight is 12:00 am in the time zone specified in the timeZone field (in the top level of the response)</value>
-        [DataMember(Name="earliestShiftStartMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestShiftStartMinutesFromMidnight", EmitDefaultValue = false)]
         public int? EarliestShiftStartMinutesFromMidnight { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this is a required shift
         /// </summary>
         /// <value>Whether this is a required shift</value>
-        [DataMember(Name="required", EmitDefaultValue=false)]
+        [DataMember(Name = "required", EmitDefaultValue = false)]
         public bool? Required { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum paid time in minutes of this daily shift
         /// </summary>
         /// <value>Minimum paid time in minutes of this daily shift</value>
-        [DataMember(Name="minimumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MinimumPaidTimeMinutes { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum paid time in minutes of this daily shift
         /// </summary>
         /// <value>Maximum paid time in minutes of this daily shift</value>
-        [DataMember(Name="maximumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MaximumPaidTimeMinutes { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The percentage of being scheduled in each interval between the earliest shift start and latest shift end. Range of the values: [0, 100].
         /// </summary>
         /// <value>The percentage of being scheduled in each interval between the earliest shift start and latest shift end. Range of the values: [0, 100].</value>
-        [DataMember(Name="intervalScheduleProbabilities", EmitDefaultValue=false)]
+        [DataMember(Name = "intervalScheduleProbabilities", EmitDefaultValue = false)]
         public List<int?> IntervalScheduleProbabilities { get; set; }
 
 
@@ -167,19 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

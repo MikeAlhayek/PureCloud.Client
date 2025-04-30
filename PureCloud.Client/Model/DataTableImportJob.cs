@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// State information for an import job of rows to a datatable
     /// </summary>
     [DataContract]
-    public partial class DataTableImportJob :  IEquatable<DataTableImportJob>
+    public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     {
         /// <summary>
         /// The status of the import job
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Waitingforupload for "WaitingForUpload"
             /// </summary>
             [EnumMember(Value = "WaitingForUpload")]
             Waitingforupload,
-            
+
             /// <summary>
             /// Enum Processing for "Processing"
             /// </summary>
             [EnumMember(Value = "Processing")]
             Processing,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Succeeded for "Succeeded"
             /// </summary>
@@ -71,13 +63,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Replaceall for "ReplaceAll"
             /// </summary>
             [EnumMember(Value = "ReplaceAll")]
             Replaceall,
-            
+
             /// <summary>
             /// Enum Append for "Append"
             /// </summary>
@@ -88,13 +80,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the import job
         /// </summary>
         /// <value>The status of the import job</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// The indication of whether the processing should remove rows that don't appear in the import file
         /// </summary>
         /// <value>The indication of whether the processing should remove rows that don't appear in the import file</value>
-        [DataMember(Name="importMode", EmitDefaultValue=false)]
+        [DataMember(Name = "importMode", EmitDefaultValue = false)]
         public ImportModeEnum? ImportMode { get; set; }
 
         /// <summary>
@@ -129,16 +121,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CountRecordsUpdated = CountRecordsUpdated;
             this.CountRecordsDeleted = CountRecordsDeleted;
             this.CountRecordsFailed = CountRecordsFailed;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -146,7 +138,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud user who started the import job
         /// </summary>
         /// <value>The PureCloud user who started the import job</value>
-        [DataMember(Name="owner", EmitDefaultValue=false)]
+        [DataMember(Name = "owner", EmitDefaultValue = false)]
         public AddressableEntityRef Owner { get; set; }
 
 
@@ -166,7 +158,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -175,7 +167,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCompleted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
         public DateTime? DateCompleted { get; set; }
 
 
@@ -184,7 +176,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL of the location at which the caller can upload the file to be imported
         /// </summary>
         /// <value>The URL of the location at which the caller can upload the file to be imported</value>
-        [DataMember(Name="uploadURI", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadURI", EmitDefaultValue = false)]
         public string UploadURI { get; set; }
 
 
@@ -195,7 +187,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Any error information, or null of the processing is not in an error state
         /// </summary>
         /// <value>Any error information, or null of the processing is not in an error state</value>
-        [DataMember(Name="errorInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
         public ErrorBody ErrorInformation { get; set; }
 
 
@@ -204,7 +196,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current count of the number of records processed
         /// </summary>
         /// <value>The current count of the number of records processed</value>
-        [DataMember(Name="countRecordsUpdated", EmitDefaultValue=false)]
+        [DataMember(Name = "countRecordsUpdated", EmitDefaultValue = false)]
         public int? CountRecordsUpdated { get; set; }
 
 
@@ -213,7 +205,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current count of the number of records deleted
         /// </summary>
         /// <value>The current count of the number of records deleted</value>
-        [DataMember(Name="countRecordsDeleted", EmitDefaultValue=false)]
+        [DataMember(Name = "countRecordsDeleted", EmitDefaultValue = false)]
         public int? CountRecordsDeleted { get; set; }
 
 
@@ -222,7 +214,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current count of the number of records that failed to import
         /// </summary>
         /// <value>The current count of the number of records that failed to import</value>
-        [DataMember(Name="countRecordsFailed", EmitDefaultValue=false)]
+        [DataMember(Name = "countRecordsFailed", EmitDefaultValue = false)]
         public int? CountRecordsFailed { get; set; }
 
 
@@ -231,7 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field
         /// </summary>
         /// <value>Required headers when uploading a file through PUT request to the URL in the &#39;uploadURI&#39; field</value>
-        [DataMember(Name="uploadHeaders", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadHeaders", EmitDefaultValue = false)]
         public Dictionary<string, string> UploadHeaders { get; private set; }
 
 
@@ -240,7 +232,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -270,19 +262,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

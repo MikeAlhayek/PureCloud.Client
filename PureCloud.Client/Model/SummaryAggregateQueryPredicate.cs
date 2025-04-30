@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SummaryAggregateQueryPredicate
     /// </summary>
     [DataContract]
-    public partial class SummaryAggregateQueryPredicate :  IEquatable<SummaryAggregateQueryPredicate>
+    public partial class SummaryAggregateQueryPredicate : IEquatable<SummaryAggregateQueryPredicate>
     {
         /// <summary>
         /// Optional type, can usually be inferred
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Dimension for "dimension"
             /// </summary>
             [EnumMember(Value = "dimension")]
             Dimension,
-            
+
             /// <summary>
             /// Enum Property for "property"
             /// </summary>
             [EnumMember(Value = "property")]
             Property,
-            
+
             /// <summary>
             /// Enum Metric for "metric"
             /// </summary>
@@ -65,115 +57,115 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Conversationid for "conversationId"
             /// </summary>
             [EnumMember(Value = "conversationId")]
             Conversationid,
-            
+
             /// <summary>
             /// Enum Copied for "copied"
             /// </summary>
             [EnumMember(Value = "copied")]
             Copied,
-            
+
             /// <summary>
             /// Enum Editedfield for "editedField"
             /// </summary>
             [EnumMember(Value = "editedField")]
             Editedfield,
-            
+
             /// <summary>
             /// Enum Errortype for "errorType"
             /// </summary>
             [EnumMember(Value = "errorType")]
             Errortype,
-            
+
             /// <summary>
             /// Enum Language for "language"
             /// </summary>
             [EnumMember(Value = "language")]
             Language,
-            
+
             /// <summary>
             /// Enum Mediatype for "mediaType"
             /// </summary>
             [EnumMember(Value = "mediaType")]
             Mediatype,
-            
+
             /// <summary>
             /// Enum Messagetype for "messageType"
             /// </summary>
             [EnumMember(Value = "messageType")]
             Messagetype,
-            
+
             /// <summary>
             /// Enum Presented for "presented"
             /// </summary>
             [EnumMember(Value = "presented")]
             Presented,
-            
+
             /// <summary>
             /// Enum Queueid for "queueId"
             /// </summary>
             [EnumMember(Value = "queueId")]
             Queueid,
-            
+
             /// <summary>
             /// Enum Summarygenerated for "summaryGenerated"
             /// </summary>
             [EnumMember(Value = "summaryGenerated")]
             Summarygenerated,
-            
+
             /// <summary>
             /// Enum Summaryid for "summaryId"
             /// </summary>
             [EnumMember(Value = "summaryId")]
             Summaryid,
-            
+
             /// <summary>
             /// Enum Summaryrating for "summaryRating"
             /// </summary>
             [EnumMember(Value = "summaryRating")]
             Summaryrating,
-            
+
             /// <summary>
             /// Enum Triggersourceid for "triggerSourceId"
             /// </summary>
             [EnumMember(Value = "triggerSourceId")]
             Triggersourceid,
-            
+
             /// <summary>
             /// Enum Triggersourceoutcome for "triggerSourceOutcome"
             /// </summary>
             [EnumMember(Value = "triggerSourceOutcome")]
             Triggersourceoutcome,
-            
+
             /// <summary>
             /// Enum Triggersourcetype for "triggerSourceType"
             /// </summary>
             [EnumMember(Value = "triggerSourceType")]
             Triggersourcetype,
-            
+
             /// <summary>
             /// Enum Userid for "userId"
             /// </summary>
             [EnumMember(Value = "userId")]
             Userid,
-            
+
             /// <summary>
             /// Enum Wrapupcoderating for "wrapUpCodeRating"
             /// </summary>
             [EnumMember(Value = "wrapUpCodeRating")]
             Wrapupcoderating,
-            
+
             /// <summary>
             /// Enum Wrapupcodesuggestionselected for "wrapUpCodeSuggestionSelected"
             /// </summary>
             [EnumMember(Value = "wrapUpCodeSuggestionSelected")]
             Wrapupcodesuggestionselected,
-            
+
             /// <summary>
             /// Enum Wrapupcodesgenerated for "wrapupCodesGenerated"
             /// </summary>
@@ -194,19 +186,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Matches for "matches"
             /// </summary>
             [EnumMember(Value = "matches")]
             Matches,
-            
+
             /// <summary>
             /// Enum Exists for "exists"
             /// </summary>
             [EnumMember(Value = "exists")]
             Exists,
-            
+
             /// <summary>
             /// Enum Notexists for "notExists"
             /// </summary>
@@ -217,19 +209,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Optional type, can usually be inferred
         /// </summary>
         /// <value>Optional type, can usually be inferred</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Left hand side for dimension predicates
         /// </summary>
         /// <value>Left hand side for dimension predicates</value>
-        [DataMember(Name="dimension", EmitDefaultValue=false)]
+        [DataMember(Name = "dimension", EmitDefaultValue = false)]
         public DimensionEnum? Dimension { get; set; }
         /// <summary>
         /// Optional operator, default is matches
         /// </summary>
         /// <value>Optional operator, default is matches</value>
-        [DataMember(Name="operator", EmitDefaultValue=false)]
+        [DataMember(Name = "operator", EmitDefaultValue = false)]
         public OperatorEnum? Operator { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SummaryAggregateQueryPredicate" /> class.
@@ -246,9 +238,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Operator = Operator;
             this.Value = Value;
             this.Range = Range;
-            
+
         }
-        
+
 
 
 
@@ -261,7 +253,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Right hand side for dimension predicates
         /// </summary>
         /// <value>Right hand side for dimension predicates</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -270,7 +262,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Right hand side for dimension predicates
         /// </summary>
         /// <value>Right hand side for dimension predicates</value>
-        [DataMember(Name="range", EmitDefaultValue=false)]
+        [DataMember(Name = "range", EmitDefaultValue = false)]
         public NumericRange Range { get; set; }
 
 
@@ -291,19 +283,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

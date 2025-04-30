@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallMediaPolicy
     /// </summary>
     [DataContract]
-    public partial class CallMediaPolicy :  IEquatable<CallMediaPolicy>
+    public partial class CallMediaPolicy : IEquatable<CallMediaPolicy>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallMediaPolicy" /> class.
@@ -27,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Actions = Actions;
             this.Conditions = Conditions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Actions applied when specified conditions are met
         /// </summary>
         /// <value>Actions applied when specified conditions are met</value>
-        [DataMember(Name="actions", EmitDefaultValue=false)]
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
         public PolicyActions Actions { get; set; }
 
 
@@ -45,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Conditions for when actions should be applied
         /// </summary>
         /// <value>Conditions for when actions should be applied</value>
-        [DataMember(Name="conditions", EmitDefaultValue=false)]
+        [DataMember(Name = "conditions", EmitDefaultValue = false)]
         public CallMediaPolicyConditions Conditions { get; set; }
 
 
@@ -62,19 +54,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,13 +8,13 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentBodyTableRowBlockWithHighlight
     /// </summary>
     [DataContract]
-    public partial class DocumentBodyTableRowBlockWithHighlight :  IEquatable<DocumentBodyTableRowBlockWithHighlight>
+    public partial class DocumentBodyTableRowBlockWithHighlight : IEquatable<DocumentBodyTableRowBlockWithHighlight>
     {
 
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentBodyTableRowBlockWithHighlight" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
+        [JsonConstructor]
         protected DocumentBodyTableRowBlockWithHighlight() { }
         /// <summary>
         /// Initializes a new instance of the <see cref="DocumentBodyTableRowBlockWithHighlight" /> class.
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Properties = Properties;
             this.Cells = Cells;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The properties for the table rows.
         /// </summary>
         /// <value>The properties for the table rows.</value>
-        [DataMember(Name="properties", EmitDefaultValue=false)]
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
         public DocumentBodyTableRowBlockProperties Properties { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of cells for the table.
         /// </summary>
         /// <value>The list of cells for the table.</value>
-        [DataMember(Name="cells", EmitDefaultValue=false)]
+        [DataMember(Name = "cells", EmitDefaultValue = false)]
         public List<DocumentBodyTableCellBlockWithHighlight> Cells { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

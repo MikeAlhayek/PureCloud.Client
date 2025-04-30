@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuQueryAdherenceExplanationsResponse
     /// </summary>
     [DataContract]
-    public partial class BuQueryAdherenceExplanationsResponse : IEquatable<BuQueryAdherenceExplanationsResponse>
+    public partial class BuQueryAdherenceExplanationsResponse :  IEquatable<BuQueryAdherenceExplanationsResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuQueryAdherenceExplanationsResponse" /> class.
@@ -29,16 +21,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Job = Job;
             this.Result = Result;
             this.DownloadUrl = DownloadUrl;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The asynchronous job handling the query
         /// </summary>
         /// <value>The asynchronous job handling the query</value>
-        [DataMember(Name = "job", EmitDefaultValue = false)]
+        [DataMember(Name="job", EmitDefaultValue=false)]
         public AdherenceExplanationJobReference Job { get; set; }
 
 
@@ -47,7 +39,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The result of the query. May come via notification
         /// </summary>
         /// <value>The result of the query. May come via notification</value>
-        [DataMember(Name = "result", EmitDefaultValue = false)]
+        [DataMember(Name="result", EmitDefaultValue=false)]
         public AdherenceExplanationListingBuQueryResponse Result { get; set; }
 
 
@@ -56,7 +48,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL from which to download the result. May come via notification
         /// </summary>
         /// <value>The URL from which to download the result. May come via notification</value>
-        [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+        [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
         public string DownloadUrl { get; set; }
 
 
@@ -75,6 +67,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentQueryPredicate
     /// </summary>
     [DataContract]
-    public partial class DocumentQueryPredicate :  IEquatable<DocumentQueryPredicate>
+    public partial class DocumentQueryPredicate : IEquatable<DocumentQueryPredicate>
     {
         /// <summary>
         /// Gets or Sets Fields
@@ -31,85 +23,85 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Alternatives for "alternatives"
             /// </summary>
             [EnumMember(Value = "alternatives")]
             Alternatives,
-            
+
             /// <summary>
             /// Enum Categoryid for "categoryId"
             /// </summary>
             [EnumMember(Value = "categoryId")]
             Categoryid,
-            
+
             /// <summary>
             /// Enum Categoryname for "categoryName"
             /// </summary>
             [EnumMember(Value = "categoryName")]
             Categoryname,
-            
+
             /// <summary>
             /// Enum Contextid for "contextId"
             /// </summary>
             [EnumMember(Value = "contextId")]
             Contextid,
-            
+
             /// <summary>
             /// Enum Contextname for "contextName"
             /// </summary>
             [EnumMember(Value = "contextName")]
             Contextname,
-            
+
             /// <summary>
             /// Enum Contextvalueid for "contextValueId"
             /// </summary>
             [EnumMember(Value = "contextValueId")]
             Contextvalueid,
-            
+
             /// <summary>
             /// Enum Contextvaluename for "contextValueName"
             /// </summary>
             [EnumMember(Value = "contextValueName")]
             Contextvaluename,
-            
+
             /// <summary>
             /// Enum Documentid for "documentId"
             /// </summary>
             [EnumMember(Value = "documentId")]
             Documentid,
-            
+
             /// <summary>
             /// Enum Labelid for "labelId"
             /// </summary>
             [EnumMember(Value = "labelId")]
             Labelid,
-            
+
             /// <summary>
             /// Enum Labelname for "labelName"
             /// </summary>
             [EnumMember(Value = "labelName")]
             Labelname,
-            
+
             /// <summary>
             /// Enum Title for "title"
             /// </summary>
             [EnumMember(Value = "title")]
             Title,
-            
+
             /// <summary>
             /// Enum Variationid for "variationId"
             /// </summary>
             [EnumMember(Value = "variationId")]
             Variationid,
-            
+
             /// <summary>
             /// Enum Visible for "visible"
             /// </summary>
             [EnumMember(Value = "visible")]
             Visible,
-            
+
             /// <summary>
             /// Enum State for "state"
             /// </summary>
@@ -130,31 +122,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Equals for "Equals"
             /// </summary>
             [EnumMember(Value = "Equals")]
             Equals,
-            
+
             /// <summary>
             /// Enum Notequals for "NotEquals"
             /// </summary>
             [EnumMember(Value = "NotEquals")]
             Notequals,
-            
+
             /// <summary>
             /// Enum Contains for "Contains"
             /// </summary>
             [EnumMember(Value = "Contains")]
             Contains,
-            
+
             /// <summary>
             /// Enum Matchall for "MatchAll"
             /// </summary>
             [EnumMember(Value = "MatchAll")]
             Matchall,
-            
+
             /// <summary>
             /// Enum Matchany for "MatchAny"
             /// </summary>
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Specifies the matching criteria between the fields and values.
         /// </summary>
         /// <value>Specifies the matching criteria between the fields and values.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
 
         /// <summary>
@@ -184,16 +176,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Fields = Fields;
             this.Values = Values;
             this.Type = Type;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Specifies the document fields to be matched against.
         /// </summary>
         /// <value>Specifies the document fields to be matched against.</value>
-        [DataMember(Name="fields", EmitDefaultValue=false)]
+        [DataMember(Name = "fields", EmitDefaultValue = false)]
         public List<FieldsEnum> Fields { get; set; }
 
 
@@ -202,7 +194,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Specifies the values of the fields to be matched against.
         /// </summary>
         /// <value>Specifies the values of the fields to be matched against.</value>
-        [DataMember(Name="values", EmitDefaultValue=false)]
+        [DataMember(Name = "values", EmitDefaultValue = false)]
         public List<string> Values { get; set; }
 
 
@@ -223,19 +215,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuUpdateTimeOffPlanRequest
     /// </summary>
     [DataContract]
-    public partial class BuUpdateTimeOffPlanRequest : IEquatable<BuUpdateTimeOffPlanRequest>
+    public partial class BuUpdateTimeOffPlanRequest :  IEquatable<BuUpdateTimeOffPlanRequest>
     {
         /// <summary>
         /// Auto approval rule for this time-off plan
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Never for "Never"
             /// </summary>
             [EnumMember(Value = "Never")]
             Never,
-
+            
             /// <summary>
             /// Enum Always for "Always"
             /// </summary>
             [EnumMember(Value = "Always")]
             Always,
-
+            
             /// <summary>
             /// Enum Checklimits for "CheckLimits"
             /// </summary>
             [EnumMember(Value = "CheckLimits")]
             Checklimits,
-
+            
             /// <summary>
             /// Enum Checkactivitycodes for "CheckActivityCodes"
             /// </summary>
             [EnumMember(Value = "CheckActivityCodes")]
             Checkactivitycodes,
-
+            
             /// <summary>
             /// Enum Checklimitsandactivitycodes for "CheckLimitsAndActivityCodes"
             /// </summary>
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Auto approval rule for this time-off plan
         /// </summary>
         /// <value>Auto approval rule for this time-off plan</value>
-        [DataMember(Name = "autoApprovalRule", EmitDefaultValue = false)]
+        [DataMember(Name="autoApprovalRule", EmitDefaultValue=false)]
         public AutoApprovalRuleEnum? AutoApprovalRule { get; set; }
 
         /// <summary>
@@ -100,16 +92,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.BusinessUnitAssociation = BusinessUnitAssociation;
             this.ManagementUnitAssociation = ManagementUnitAssociation;
             this.Metadata = Metadata;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The name of this time-off plan
         /// </summary>
         /// <value>The name of this time-off plan</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The IDs of activity codes to associate with this time-off plan
         /// </summary>
         /// <value>The IDs of activity codes to associate with this time-off plan</value>
-        [DataMember(Name = "activityCodeIds", EmitDefaultValue = false)]
+        [DataMember(Name="activityCodeIds", EmitDefaultValue=false)]
         public SetWrapperString ActivityCodeIds { get; set; }
 
 
@@ -129,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of days before the time-off request start date for when the request will be expired from the waitlist
         /// </summary>
         /// <value>The number of days before the time-off request start date for when the request will be expired from the waitlist</value>
-        [DataMember(Name = "daysBeforeStartToExpireFromWaitlist", EmitDefaultValue = false)]
+        [DataMember(Name="daysBeforeStartToExpireFromWaitlist", EmitDefaultValue=false)]
         public int? DaysBeforeStartToExpireFromWaitlist { get; set; }
 
 
@@ -138,7 +130,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Time-off type, if this time-off plan is associated with the integration
         /// </summary>
         /// <value>Time-off type, if this time-off plan is associated with the integration</value>
-        [DataMember(Name = "hrisTimeOffType", EmitDefaultValue = false)]
+        [DataMember(Name="hrisTimeOffType", EmitDefaultValue=false)]
         public ValueWrapperHrisTimeOffType HrisTimeOffType { get; set; }
 
 
@@ -147,7 +139,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this time-off plan should be used by agents
         /// </summary>
         /// <value>Whether this time-off plan should be used by agents</value>
-        [DataMember(Name = "enabled", EmitDefaultValue = false)]
+        [DataMember(Name="enabled", EmitDefaultValue=false)]
         public bool? Enabled { get; set; }
 
 
@@ -156,7 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this time-off plan should count against time-off limits
         /// </summary>
         /// <value>Whether this time-off plan should count against time-off limits</value>
-        [DataMember(Name = "countAgainstTimeOffLimits", EmitDefaultValue = false)]
+        [DataMember(Name="countAgainstTimeOffLimits", EmitDefaultValue=false)]
         public bool? CountAgainstTimeOffLimits { get; set; }
 
 
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated
         /// </summary>
         /// <value>Business unit association, if the time-off plan belongs to a business unit. managementUnitAssociation must not be set if this is populated</value>
-        [DataMember(Name = "businessUnitAssociation", EmitDefaultValue = false)]
+        [DataMember(Name="businessUnitAssociation", EmitDefaultValue=false)]
         public UpdateTimeOffPlanBusinessUnitAssociation BusinessUnitAssociation { get; set; }
 
 
@@ -174,7 +166,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Management unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated
         /// </summary>
         /// <value>Management unit association, if the time-off plan belongs to a management unit. businessUnitAssociation must not be set if this is populated</value>
-        [DataMember(Name = "managementUnitAssociation", EmitDefaultValue = false)]
+        [DataMember(Name="managementUnitAssociation", EmitDefaultValue=false)]
         public UpdateTimeOffPlanManagementUnitAssociation ManagementUnitAssociation { get; set; }
 
 
@@ -183,7 +175,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for this time-off plan
         /// </summary>
         /// <value>Version metadata for this time-off plan</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -209,6 +201,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

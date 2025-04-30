@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ButtonResponse
     /// </summary>
     [DataContract]
-    public partial class ButtonResponse : IEquatable<ButtonResponse>
+    public partial class ButtonResponse :  IEquatable<ButtonResponse>
     {
         /// <summary>
         /// Button response type that captures Button and QuickReply type responses
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Button for "Button"
             /// </summary>
             [EnumMember(Value = "Button")]
             Button,
-
+            
             /// <summary>
             /// Enum Quickreply for "QuickReply"
             /// </summary>
             [EnumMember(Value = "QuickReply")]
             Quickreply,
-
+            
             /// <summary>
             /// Enum Datepicker for "DatePicker"
             /// </summary>
@@ -65,19 +57,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Quickreply for "QuickReply"
             /// </summary>
             [EnumMember(Value = "QuickReply")]
             Quickreply,
-
+            
             /// <summary>
             /// Enum Card for "Card"
             /// </summary>
             [EnumMember(Value = "Card")]
             Card,
-
+            
             /// <summary>
             /// Enum Carousel for "Carousel"
             /// </summary>
@@ -88,13 +80,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Button response type that captures Button and QuickReply type responses
         /// </summary>
         /// <value>Button response type that captures Button and QuickReply type responses</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
+        [DataMember(Name="type", EmitDefaultValue=false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection
         /// </summary>
         /// <value>Button response message type that captures QuickReply , Cards and Carousel .This is used  as label for Card selection</value>
-        [DataMember(Name = "messageType", EmitDefaultValue = false)]
+        [DataMember(Name="messageType", EmitDefaultValue=false)]
         public MessageTypeEnum? MessageType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ButtonResponse" /> class.
@@ -109,9 +101,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Text = Text;
             this.Payload = Payload;
             this.MessageType = MessageType;
-
+            
         }
-
+        
 
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Text to show inside the Button reply. This is also used as the response text after clicking on the Button.
         /// </summary>
         /// <value>Text to show inside the Button reply. This is also used as the response text after clicking on the Button.</value>
-        [DataMember(Name = "text", EmitDefaultValue = false)]
+        [DataMember(Name="text", EmitDefaultValue=false)]
         public string Text { get; set; }
 
 
@@ -129,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Content of the textback payload after clicking a button
         /// </summary>
         /// <value>Content of the textback payload after clicking a button</value>
-        [DataMember(Name = "payload", EmitDefaultValue = false)]
+        [DataMember(Name="payload", EmitDefaultValue=false)]
         public string Payload { get; set; }
 
 
@@ -151,6 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

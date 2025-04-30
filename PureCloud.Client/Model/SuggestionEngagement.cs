@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SuggestionEngagement
     /// </summary>
     [DataContract]
-    public partial class SuggestionEngagement :  IEquatable<SuggestionEngagement>
+    public partial class SuggestionEngagement : IEquatable<SuggestionEngagement>
     {
         /// <summary>
         /// The type of engagement with the suggestion.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Dismissed for "Dismissed"
             /// </summary>
             [EnumMember(Value = "Dismissed")]
             Dismissed,
-            
+
             /// <summary>
             /// Enum Copied for "Copied"
             /// </summary>
             [EnumMember(Value = "Copied")]
             Copied,
-            
+
             /// <summary>
             /// Enum Opened for "Opened"
             /// </summary>
             [EnumMember(Value = "Opened")]
             Opened,
-            
+
             /// <summary>
             /// Enum Feedback for "Feedback"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of engagement with the suggestion.
         /// </summary>
         /// <value>The type of engagement with the suggestion.</value>
-        [DataMember(Name="engagementType", EmitDefaultValue=false)]
+        [DataMember(Name = "engagementType", EmitDefaultValue = false)]
         public EngagementTypeEnum? EngagementType { get; set; }
 
         /// <summary>
@@ -78,9 +70,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.EngagementType = EngagementType;
             this.Feedback = Feedback;
-            
+
         }
-        
+
 
 
 
@@ -89,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The given feedback on the suggestion, if any.
         /// </summary>
         /// <value>The given feedback on the suggestion, if any.</value>
-        [DataMember(Name="feedback", EmitDefaultValue=false)]
+        [DataMember(Name = "feedback", EmitDefaultValue = false)]
         public SuggestionFeedback Feedback { get; set; }
 
 
@@ -107,19 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

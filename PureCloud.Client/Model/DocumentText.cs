@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentText
     /// </summary>
     [DataContract]
-    public partial class DocumentText :  IEquatable<DocumentText>
+    public partial class DocumentText : IEquatable<DocumentText>
     {
         /// <summary>
         /// Gets or Sets Marks
@@ -31,37 +23,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Bold for "Bold"
             /// </summary>
             [EnumMember(Value = "Bold")]
             Bold,
-            
+
             /// <summary>
             /// Enum Italic for "Italic"
             /// </summary>
             [EnumMember(Value = "Italic")]
             Italic,
-            
+
             /// <summary>
             /// Enum Underline for "Underline"
             /// </summary>
             [EnumMember(Value = "Underline")]
             Underline,
-            
+
             /// <summary>
             /// Enum Strikethrough for "Strikethrough"
             /// </summary>
             [EnumMember(Value = "Strikethrough")]
             Strikethrough,
-            
+
             /// <summary>
             /// Enum Subscript for "Subscript"
             /// </summary>
             [EnumMember(Value = "Subscript")]
             Subscript,
-            
+
             /// <summary>
             /// Enum Superscript for "Superscript"
             /// </summary>
@@ -87,16 +79,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Marks = Marks;
             this.Hyperlink = Hyperlink;
             this.Properties = Properties;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Text.
         /// </summary>
         /// <value>Text.</value>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The unique list of marks (whether it is bold and/or underlined etc.) for the text.
         /// </summary>
         /// <value>The unique list of marks (whether it is bold and/or underlined etc.) for the text.</value>
-        [DataMember(Name="marks", EmitDefaultValue=false)]
+        [DataMember(Name = "marks", EmitDefaultValue = false)]
         public List<MarksEnum> Marks { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;
         /// </summary>
         /// <value>The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;</value>
-        [DataMember(Name="hyperlink", EmitDefaultValue=false)]
+        [DataMember(Name = "hyperlink", EmitDefaultValue = false)]
         public string Hyperlink { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The properties for the text.
         /// </summary>
         /// <value>The properties for the text.</value>
-        [DataMember(Name="properties", EmitDefaultValue=false)]
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
         public DocumentTextProperties Properties { get; set; }
 
 
@@ -143,19 +135,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateWorkPlan
     /// </summary>
     [DataContract]
-    public partial class CreateWorkPlan :  IEquatable<CreateWorkPlan>
+    public partial class CreateWorkPlan : IEquatable<CreateWorkPlan>
     {
         /// <summary>
         /// This constraint ensures that an agent starts each workday within a user-defined time threshold
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Shiftstart for "ShiftStart"
             /// </summary>
             [EnumMember(Value = "ShiftStart")]
             Shiftstart,
-            
+
             /// <summary>
             /// Enum Shiftstartandpaidduration for "ShiftStartAndPaidDuration"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// This constraint ensures that an agent starts each workday within a user-defined time threshold
         /// </summary>
         /// <value>This constraint ensures that an agent starts each workday within a user-defined time threshold</value>
-        [DataMember(Name="shiftStartVarianceType", EmitDefaultValue=false)]
+        [DataMember(Name = "shiftStartVarianceType", EmitDefaultValue = false)]
         public ShiftStartVarianceTypeEnum? ShiftStartVarianceType { get; set; }
 
         /// <summary>
@@ -118,16 +110,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ShiftStartVariances = ShiftStartVariances;
             this.Shifts = Shifts;
             this.Agents = Agents;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Name of this work plan
         /// </summary>
         /// <value>Name of this work plan</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the work plan is enabled for scheduling
         /// </summary>
         /// <value>Whether the work plan is enabled for scheduling</value>
-        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        [DataMember(Name = "enabled", EmitDefaultValue = false)]
         public bool? Enabled { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the weekly paid time constraint is enabled for this work plan
         /// </summary>
         /// <value>Whether the weekly paid time constraint is enabled for this work plan</value>
-        [DataMember(Name="constrainWeeklyPaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainWeeklyPaidTime", EmitDefaultValue = false)]
         public bool? ConstrainWeeklyPaidTime { get; set; }
 
 
@@ -154,7 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the weekly paid time constraint is flexible for this work plan
         /// </summary>
         /// <value>Whether the weekly paid time constraint is flexible for this work plan</value>
-        [DataMember(Name="flexibleWeeklyPaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "flexibleWeeklyPaidTime", EmitDefaultValue = false)]
         public bool? FlexibleWeeklyPaidTime { get; set; }
 
 
@@ -163,7 +155,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false
         /// </summary>
         /// <value>Exact weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; false</value>
-        [DataMember(Name="weeklyExactPaidMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "weeklyExactPaidMinutes", EmitDefaultValue = false)]
         public int? WeeklyExactPaidMinutes { get; set; }
 
 
@@ -172,7 +164,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Minimum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="weeklyMinimumPaidMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "weeklyMinimumPaidMinutes", EmitDefaultValue = false)]
         public int? WeeklyMinimumPaidMinutes { get; set; }
 
 
@@ -181,7 +173,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Maximum weekly paid time in minutes for this work plan. Used if flexibleWeeklyPaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="weeklyMaximumPaidMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "weeklyMaximumPaidMinutes", EmitDefaultValue = false)]
         public int? WeeklyMaximumPaidMinutes { get; set; }
 
 
@@ -190,7 +182,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether paid time granularity should be constrained for this workplan
         /// </summary>
         /// <value>Whether paid time granularity should be constrained for this workplan</value>
-        [DataMember(Name="constrainPaidTimeGranularity", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainPaidTimeGranularity", EmitDefaultValue = false)]
         public bool? ConstrainPaidTimeGranularity { get; set; }
 
 
@@ -199,7 +191,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity &#x3D;&#x3D; true
         /// </summary>
         /// <value>Granularity in minutes allowed for shift paid time in this work plan. Used if constrainPaidTimeGranularity &#x3D;&#x3D; true</value>
-        [DataMember(Name="paidTimeGranularityMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "paidTimeGranularityMinutes", EmitDefaultValue = false)]
         public int? PaidTimeGranularityMinutes { get; set; }
 
 
@@ -208,7 +200,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the minimum time between shifts constraint is enabled for this work plan
         /// </summary>
         /// <value>Whether the minimum time between shifts constraint is enabled for this work plan</value>
-        [DataMember(Name="constrainMinimumTimeBetweenShifts", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainMinimumTimeBetweenShifts", EmitDefaultValue = false)]
         public bool? ConstrainMinimumTimeBetweenShifts { get; set; }
 
 
@@ -217,7 +209,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts &#x3D;&#x3D; true
         /// </summary>
         /// <value>Minimum time between shifts in minutes defined in this work plan. Used if constrainMinimumTimeBetweenShifts &#x3D;&#x3D; true</value>
-        [DataMember(Name="minimumTimeBetweenShiftsMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumTimeBetweenShiftsMinutes", EmitDefaultValue = false)]
         public int? MinimumTimeBetweenShiftsMinutes { get; set; }
 
 
@@ -226,7 +218,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum number days in a week allowed to be scheduled for this work plan
         /// </summary>
         /// <value>Maximum number days in a week allowed to be scheduled for this work plan</value>
-        [DataMember(Name="maximumDays", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumDays", EmitDefaultValue = false)]
         public int? MaximumDays { get; set; }
 
 
@@ -235,7 +227,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off
         /// </summary>
         /// <value>Minimum amount of consecutive non working minutes per week that agents who are assigned this work plan are allowed to have off</value>
-        [DataMember(Name="minimumConsecutiveNonWorkingMinutesPerWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumConsecutiveNonWorkingMinutesPerWeek", EmitDefaultValue = false)]
         public int? MinimumConsecutiveNonWorkingMinutesPerWeek { get; set; }
 
 
@@ -244,7 +236,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether to constrain the maximum consecutive working weekends
         /// </summary>
         /// <value>Whether to constrain the maximum consecutive working weekends</value>
-        [DataMember(Name="constrainMaximumConsecutiveWorkingWeekends", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainMaximumConsecutiveWorkingWeekends", EmitDefaultValue = false)]
         public bool? ConstrainMaximumConsecutiveWorkingWeekends { get; set; }
 
 
@@ -253,7 +245,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work
         /// </summary>
         /// <value>The maximum number of consecutive weekends that agents who are assigned to this work plan are allowed to work</value>
-        [DataMember(Name="maximumConsecutiveWorkingWeekends", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumConsecutiveWorkingWeekends", EmitDefaultValue = false)]
         public int? MaximumConsecutiveWorkingWeekends { get; set; }
 
 
@@ -262,7 +254,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The minimum number of days that agents assigned to a work plan must work per week
         /// </summary>
         /// <value>The minimum number of days that agents assigned to a work plan must work per week</value>
-        [DataMember(Name="minimumWorkingDaysPerWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumWorkingDaysPerWeek", EmitDefaultValue = false)]
         public int? MinimumWorkingDaysPerWeek { get; set; }
 
 
@@ -271,7 +263,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether to constrain the maximum consecutive working days
         /// </summary>
         /// <value>Whether to constrain the maximum consecutive working days</value>
-        [DataMember(Name="constrainMaximumConsecutiveWorkingDays", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainMaximumConsecutiveWorkingDays", EmitDefaultValue = false)]
         public bool? ConstrainMaximumConsecutiveWorkingDays { get; set; }
 
 
@@ -280,7 +272,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays &#x3D;&#x3D; true
         /// </summary>
         /// <value>The maximum number of consecutive days that agents assigned to this work plan are allowed to work. Used if constrainMaximumConsecutiveWorkingDays &#x3D;&#x3D; true</value>
-        [DataMember(Name="maximumConsecutiveWorkingDays", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumConsecutiveWorkingDays", EmitDefaultValue = false)]
         public int? MaximumConsecutiveWorkingDays { get; set; }
 
 
@@ -289,7 +281,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time period in minutes for the duration between the start times of two consecutive working days
         /// </summary>
         /// <value>The time period in minutes for the duration between the start times of two consecutive working days</value>
-        [DataMember(Name="minimumShiftStartDistanceMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumShiftStartDistanceMinutes", EmitDefaultValue = false)]
         public int? MinimumShiftStartDistanceMinutes { get; set; }
 
 
@@ -298,7 +290,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum days off in the planning period
         /// </summary>
         /// <value>Minimum days off in the planning period</value>
-        [DataMember(Name="minimumDaysOffPerPlanningPeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumDaysOffPerPlanningPeriod", EmitDefaultValue = false)]
         public int? MinimumDaysOffPerPlanningPeriod { get; set; }
 
 
@@ -307,7 +299,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum days off in the planning period
         /// </summary>
         /// <value>Maximum days off in the planning period</value>
-        [DataMember(Name="maximumDaysOffPerPlanningPeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumDaysOffPerPlanningPeriod", EmitDefaultValue = false)]
         public int? MaximumDaysOffPerPlanningPeriod { get; set; }
 
 
@@ -316,7 +308,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum paid minutes in the planning period
         /// </summary>
         /// <value>Minimum paid minutes in the planning period</value>
-        [DataMember(Name="minimumPaidMinutesPerPlanningPeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumPaidMinutesPerPlanningPeriod", EmitDefaultValue = false)]
         public int? MinimumPaidMinutesPerPlanningPeriod { get; set; }
 
 
@@ -325,7 +317,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum paid minutes in the planning period
         /// </summary>
         /// <value>Maximum paid minutes in the planning period</value>
-        [DataMember(Name="maximumPaidMinutesPerPlanningPeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumPaidMinutesPerPlanningPeriod", EmitDefaultValue = false)]
         public int? MaximumPaidMinutesPerPlanningPeriod { get; set; }
 
 
@@ -334,7 +326,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Optional days to schedule for this work plan
         /// </summary>
         /// <value>Optional days to schedule for this work plan</value>
-        [DataMember(Name="optionalDays", EmitDefaultValue=false)]
+        [DataMember(Name = "optionalDays", EmitDefaultValue = false)]
         public SetWrapperDayOfWeek OptionalDays { get; set; }
 
 
@@ -345,7 +337,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Variance in minutes among start times of shifts in this work plan
         /// </summary>
         /// <value>Variance in minutes among start times of shifts in this work plan</value>
-        [DataMember(Name="shiftStartVariances", EmitDefaultValue=false)]
+        [DataMember(Name = "shiftStartVariances", EmitDefaultValue = false)]
         public ListWrapperShiftStartVariance ShiftStartVariances { get; set; }
 
 
@@ -354,7 +346,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Shifts in this work plan
         /// </summary>
         /// <value>Shifts in this work plan</value>
-        [DataMember(Name="shifts", EmitDefaultValue=false)]
+        [DataMember(Name = "shifts", EmitDefaultValue = false)]
         public List<CreateWorkPlanShift> Shifts { get; set; }
 
 
@@ -363,7 +355,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Agents in this work plan
         /// </summary>
         /// <value>Agents in this work plan</value>
-        [DataMember(Name="agents", EmitDefaultValue=false)]
+        [DataMember(Name = "agents", EmitDefaultValue = false)]
         public List<UserReference> Agents { get; set; }
 
 
@@ -407,19 +399,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

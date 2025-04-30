@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentBodyTableCaptionItem
     /// </summary>
     [DataContract]
-    public partial class DocumentBodyTableCaptionItem :  IEquatable<DocumentBodyTableCaptionItem>
+    public partial class DocumentBodyTableCaptionItem : IEquatable<DocumentBodyTableCaptionItem>
     {
         /// <summary>
         /// The type of the caption item.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Text for "Text"
             /// </summary>
             [EnumMember(Value = "Text")]
             Text,
-            
+
             /// <summary>
             /// Enum Paragraph for "Paragraph"
             /// </summary>
             [EnumMember(Value = "Paragraph")]
             Paragraph,
-            
+
             /// <summary>
             /// Enum Image for "Image"
             /// </summary>
             [EnumMember(Value = "Image")]
             Image,
-            
+
             /// <summary>
             /// Enum Video for "Video"
             /// </summary>
             [EnumMember(Value = "Video")]
             Video,
-            
+
             /// <summary>
             /// Enum Orderedlist for "OrderedList"
             /// </summary>
             [EnumMember(Value = "OrderedList")]
             Orderedlist,
-            
+
             /// <summary>
             /// Enum Unorderedlist for "UnorderedList"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the caption item.
         /// </summary>
         /// <value>The type of the caption item.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
 
         /// <summary>
@@ -98,9 +90,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Image = Image;
             this.Video = Video;
             this.List = List;
-            
+
         }
-        
+
 
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Text. It must contain a value if the type of the block is Text.
         /// </summary>
         /// <value>Text. It must contain a value if the type of the block is Text.</value>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public DocumentText Text { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Paragraph. It must contain a value if the type of the block is Paragraph.
         /// </summary>
         /// <value>Paragraph. It must contain a value if the type of the block is Paragraph.</value>
-        [DataMember(Name="paragraph", EmitDefaultValue=false)]
+        [DataMember(Name = "paragraph", EmitDefaultValue = false)]
         public DocumentBodyParagraph Paragraph { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Image. It must contain a value if the type of the block is Image.
         /// </summary>
         /// <value>Image. It must contain a value if the type of the block is Image.</value>
-        [DataMember(Name="image", EmitDefaultValue=false)]
+        [DataMember(Name = "image", EmitDefaultValue = false)]
         public DocumentBodyImage Image { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Video. It must contain a value if the type of the block is Video.
         /// </summary>
         /// <value>Video. It must contain a value if the type of the block is Video.</value>
-        [DataMember(Name="video", EmitDefaultValue=false)]
+        [DataMember(Name = "video", EmitDefaultValue = false)]
         public DocumentBodyVideo Video { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List. It must contain a value if the type of the block is UnorderedList or OrderedList.
         /// </summary>
         /// <value>List. It must contain a value if the type of the block is UnorderedList or OrderedList.</value>
-        [DataMember(Name="list", EmitDefaultValue=false)]
+        [DataMember(Name = "list", EmitDefaultValue = false)]
         public DocumentBodyList List { get; set; }
 
 
@@ -167,19 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

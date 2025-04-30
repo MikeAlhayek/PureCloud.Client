@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignSequence
     /// </summary>
     [DataContract]
-    public partial class CampaignSequence :  IEquatable<CampaignSequence>
+    public partial class CampaignSequence : IEquatable<CampaignSequence>
     {
         /// <summary>
         /// The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum On for "on"
             /// </summary>
             [EnumMember(Value = "on")]
             On,
-            
+
             /// <summary>
             /// Enum Off for "off"
             /// </summary>
             [EnumMember(Value = "off")]
             Off,
-            
+
             /// <summary>
             /// Enum Complete for "complete"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.
         /// </summary>
         /// <value>The current status of the CampaignSequence. A CampaignSequence can be turned 'on' or 'off'.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
 
         /// <summary>
@@ -78,16 +70,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Campaigns = Campaigns;
             this.Status = Status;
             this.Repeat = Repeat;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -95,7 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -104,7 +96,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -113,7 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -122,7 +114,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required for updates, must match the version number of the most recent update
         /// </summary>
         /// <value>Required for updates, must match the version number of the most recent update</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -131,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ordered list of Campaigns that this CampaignSequence will run.
         /// </summary>
         /// <value>The ordered list of Campaigns that this CampaignSequence will run.</value>
-        [DataMember(Name="campaigns", EmitDefaultValue=false)]
+        [DataMember(Name = "campaigns", EmitDefaultValue = false)]
         public List<DomainEntityRef> Campaigns { get; set; }
 
 
@@ -140,7 +132,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A zero-based index indicating which Campaign this CampaignSequence is currently on.
         /// </summary>
         /// <value>A zero-based index indicating which Campaign this CampaignSequence is currently on.</value>
-        [DataMember(Name="currentCampaign", EmitDefaultValue=false)]
+        [DataMember(Name = "currentCampaign", EmitDefaultValue = false)]
         public int? CurrentCampaign { get; private set; }
 
 
@@ -151,7 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A message indicating if and why a CampaignSequence has stopped unexpectedly.
         /// </summary>
         /// <value>A message indicating if and why a CampaignSequence has stopped unexpectedly.</value>
-        [DataMember(Name="stopMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "stopMessage", EmitDefaultValue = false)]
         public string StopMessage { get; private set; }
 
 
@@ -160,7 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.
         /// </summary>
         /// <value>Indicates if a sequence should repeat from the beginning after the last campaign completes. Default is false.</value>
-        [DataMember(Name="repeat", EmitDefaultValue=false)]
+        [DataMember(Name = "repeat", EmitDefaultValue = false)]
         public bool? Repeat { get; set; }
 
 
@@ -169,7 +161,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -195,19 +187,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

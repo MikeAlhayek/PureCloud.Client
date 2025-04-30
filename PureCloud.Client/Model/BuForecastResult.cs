@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuForecastResult
     /// </summary>
     [DataContract]
-    public partial class BuForecastResult : IEquatable<BuForecastResult>
+    public partial class BuForecastResult :  IEquatable<BuForecastResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuForecastResult" /> class.
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.PlanningGroups = PlanningGroups;
             this.WeekNumber = WeekNumber;
             this.WeekCount = WeekCount;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
+        [DataMember(Name="referenceStartDate", EmitDefaultValue=false)]
         public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The forecast data broken up by planning group
         /// </summary>
         /// <value>The forecast data broken up by planning group</value>
-        [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
+        [DataMember(Name="planningGroups", EmitDefaultValue=false)]
         public List<ForecastPlanningGroupData> PlanningGroups { get; set; }
 
 
@@ -58,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The week number represented by this response
         /// </summary>
         /// <value>The week number represented by this response</value>
-        [DataMember(Name = "weekNumber", EmitDefaultValue = false)]
+        [DataMember(Name="weekNumber", EmitDefaultValue=false)]
         public int? WeekNumber { get; set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of weeks in this forecast
         /// </summary>
         /// <value>The number of weeks in this forecast</value>
-        [DataMember(Name = "weekCount", EmitDefaultValue = false)]
+        [DataMember(Name="weekCount", EmitDefaultValue=false)]
         public int? WeekCount { get; set; }
 
 
@@ -87,6 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SearchShiftTradesRequest
     /// </summary>
     [DataContract]
-    public partial class SearchShiftTradesRequest :  IEquatable<SearchShiftTradesRequest>
+    public partial class SearchShiftTradesRequest : IEquatable<SearchShiftTradesRequest>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.ReceivingScheduleId = ReceivingScheduleId;
             this.ReceivingShiftIds = ReceivingShiftIds;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the schedule for which to search for available shift trades
         /// </summary>
         /// <value>The ID of the schedule for which to search for available shift trades</value>
-        [DataMember(Name="receivingScheduleId", EmitDefaultValue=false)]
+        [DataMember(Name = "receivingScheduleId", EmitDefaultValue = false)]
         public string ReceivingScheduleId { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The IDs of shifts that the receiving user would potentially be willing to trade. If empty, only returns one sided trades (pick up a shift)
         /// </summary>
         /// <value>The IDs of shifts that the receiving user would potentially be willing to trade. If empty, only returns one sided trades (pick up a shift)</value>
-        [DataMember(Name="receivingShiftIds", EmitDefaultValue=false)]
+        [DataMember(Name = "receivingShiftIds", EmitDefaultValue = false)]
         public List<string> ReceivingShiftIds { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

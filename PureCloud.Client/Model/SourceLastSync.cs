@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SourceLastSync
     /// </summary>
     [DataContract]
-    public partial class SourceLastSync :  IEquatable<SourceLastSync>
+    public partial class SourceLastSync : IEquatable<SourceLastSync>
     {
         /// <summary>
         /// State of the last synchronization.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Success for "Success"
             /// </summary>
             [EnumMember(Value = "Success")]
             Success,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Inprogress for "InProgress"
             /// </summary>
             [EnumMember(Value = "InProgress")]
             Inprogress,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// State of the last synchronization.
         /// </summary>
         /// <value>State of the last synchronization.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SourceLastSync" /> class.
@@ -76,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DateStarted = DateStarted;
             this.DateEnded = DateEnded;
             this.Error = Error;
-            
+
         }
-        
+
 
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last synchronization start-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last synchronization start-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateStarted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
         public DateTime? DateStarted { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last synchronization end-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last synchronization end-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateEnded", EmitDefaultValue=false)]
+        [DataMember(Name = "dateEnded", EmitDefaultValue = false)]
         public DateTime? DateEnded { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Optional error message of the last synchronization.
         /// </summary>
         /// <value>Optional error message of the last synchronization.</value>
-        [DataMember(Name="error", EmitDefaultValue=false)]
+        [DataMember(Name = "error", EmitDefaultValue = false)]
         public ErrorBody Error { get; set; }
 
 
@@ -125,19 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

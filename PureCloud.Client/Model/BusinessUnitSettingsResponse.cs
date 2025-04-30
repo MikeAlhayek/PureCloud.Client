@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BusinessUnitSettingsResponse
     /// </summary>
     [DataContract]
-    public partial class BusinessUnitSettingsResponse : IEquatable<BusinessUnitSettingsResponse>
+    public partial class BusinessUnitSettingsResponse :  IEquatable<BusinessUnitSettingsResponse>
     {
         /// <summary>
         /// The start day of week for this business unit
@@ -32,43 +24,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Sunday for "Sunday"
             /// </summary>
             [EnumMember(Value = "Sunday")]
             Sunday,
-
+            
             /// <summary>
             /// Enum Monday for "Monday"
             /// </summary>
             [EnumMember(Value = "Monday")]
             Monday,
-
+            
             /// <summary>
             /// Enum Tuesday for "Tuesday"
             /// </summary>
             [EnumMember(Value = "Tuesday")]
             Tuesday,
-
+            
             /// <summary>
             /// Enum Wednesday for "Wednesday"
             /// </summary>
             [EnumMember(Value = "Wednesday")]
             Wednesday,
-
+            
             /// <summary>
             /// Enum Thursday for "Thursday"
             /// </summary>
             [EnumMember(Value = "Thursday")]
             Thursday,
-
+            
             /// <summary>
             /// Enum Friday for "Friday"
             /// </summary>
             [EnumMember(Value = "Friday")]
             Friday,
-
+            
             /// <summary>
             /// Enum Saturday for "Saturday"
             /// </summary>
@@ -79,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start day of week for this business unit
         /// </summary>
         /// <value>The start day of week for this business unit</value>
-        [DataMember(Name = "startDayOfWeek", EmitDefaultValue = false)]
+        [DataMember(Name="startDayOfWeek", EmitDefaultValue=false)]
         public StartDayOfWeekEnum? StartDayOfWeek { get; set; }
 
         /// <summary>
@@ -104,9 +96,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Scheduling = Scheduling;
             this.Notifications = Notifications;
             this.Metadata = Metadata;
-
+            
         }
-
+        
 
 
 
@@ -115,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time zone for this business unit, using the Olsen tz database format
         /// </summary>
         /// <value>The time zone for this business unit, using the Olsen tz database format</value>
-        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+        [DataMember(Name="timeZone", EmitDefaultValue=false)]
         public string TimeZone { get; set; }
 
 
@@ -124,7 +116,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Short term forecasting settings
         /// </summary>
         /// <value>Short term forecasting settings</value>
-        [DataMember(Name = "shortTermForecasting", EmitDefaultValue = false)]
+        [DataMember(Name="shortTermForecasting", EmitDefaultValue=false)]
         public BuShortTermForecastingSettings ShortTermForecasting { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Scheduling settings
         /// </summary>
         /// <value>Scheduling settings</value>
-        [DataMember(Name = "scheduling", EmitDefaultValue = false)]
+        [DataMember(Name="scheduling", EmitDefaultValue=false)]
         public BuSchedulingSettingsResponse Scheduling { get; set; }
 
 
@@ -142,7 +134,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Notification settings
         /// </summary>
         /// <value>Notification settings</value>
-        [DataMember(Name = "notifications", EmitDefaultValue = false)]
+        [DataMember(Name="notifications", EmitDefaultValue=false)]
         public BuNotificationSettingsResponse Notifications { get; set; }
 
 
@@ -151,7 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for this business unit
         /// </summary>
         /// <value>Version metadata for this business unit</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -173,6 +165,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DependencyStatus
     /// </summary>
     [DataContract]
-    public partial class DependencyStatus :  IEquatable<DependencyStatus>
+    public partial class DependencyStatus : IEquatable<DependencyStatus>
     {
         /// <summary>
         /// Gets or Sets Status
@@ -31,37 +23,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Buildincomplete for "BUILDINCOMPLETE"
             /// </summary>
             [EnumMember(Value = "BUILDINCOMPLETE")]
             Buildincomplete,
-            
+
             /// <summary>
             /// Enum Buildinitializing for "BUILDINITIALIZING"
             /// </summary>
             [EnumMember(Value = "BUILDINITIALIZING")]
             Buildinitializing,
-            
+
             /// <summary>
             /// Enum Buildinprogress for "BUILDINPROGRESS"
             /// </summary>
             [EnumMember(Value = "BUILDINPROGRESS")]
             Buildinprogress,
-            
+
             /// <summary>
             /// Enum Notbuilt for "NOTBUILT"
             /// </summary>
             [EnumMember(Value = "NOTBUILT")]
             Notbuilt,
-            
+
             /// <summary>
             /// Enum Operational for "OPERATIONAL"
             /// </summary>
             [EnumMember(Value = "OPERATIONAL")]
             Operational,
-            
+
             /// <summary>
             /// Enum Operationalneedsrebuild for "OPERATIONALNEEDSREBUILD"
             /// </summary>
@@ -71,7 +63,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DependencyStatus" /> class.
@@ -94,16 +86,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DateCompleted = DateCompleted;
             this.Status = Status;
             this.FailedObjects = FailedObjects;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -111,7 +103,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User that initiated the build.
         /// </summary>
         /// <value>User that initiated the build.</value>
-        [DataMember(Name="user", EmitDefaultValue=false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public User User { get; set; }
 
 
@@ -129,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// OAuth client that initiated the build.
         /// </summary>
         /// <value>OAuth client that initiated the build.</value>
-        [DataMember(Name="client", EmitDefaultValue=false)]
+        [DataMember(Name = "client", EmitDefaultValue = false)]
         public DomainEntityRef Client { get; set; }
 
 
@@ -137,7 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets BuildId
         /// </summary>
-        [DataMember(Name="buildId", EmitDefaultValue=false)]
+        [DataMember(Name = "buildId", EmitDefaultValue = false)]
         public string BuildId { get; set; }
 
 
@@ -146,7 +138,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateStarted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateStarted", EmitDefaultValue = false)]
         public DateTime? DateStarted { get; set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCompleted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
         public DateTime? DateCompleted { get; set; }
 
 
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets FailedObjects
         /// </summary>
-        [DataMember(Name="failedObjects", EmitDefaultValue=false)]
+        [DataMember(Name = "failedObjects", EmitDefaultValue = false)]
         public List<FailedObject> FailedObjects { get; set; }
 
 
@@ -174,7 +166,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -200,19 +192,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

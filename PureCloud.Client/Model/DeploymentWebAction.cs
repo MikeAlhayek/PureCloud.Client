@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DeploymentWebAction
     /// </summary>
     [DataContract]
-    public partial class DeploymentWebAction :  IEquatable<DeploymentWebAction>
+    public partial class DeploymentWebAction : IEquatable<DeploymentWebAction>
     {
         /// <summary>
         /// Action media type used to deliver the action.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Webchat for "webchat"
             /// </summary>
             [EnumMember(Value = "webchat")]
             Webchat,
-            
+
             /// <summary>
             /// Enum Webmessagingoffer for "webMessagingOffer"
             /// </summary>
             [EnumMember(Value = "webMessagingOffer")]
             Webmessagingoffer,
-            
+
             /// <summary>
             /// Enum Contentoffer for "contentOffer"
             /// </summary>
             [EnumMember(Value = "contentOffer")]
             Contentoffer,
-            
+
             /// <summary>
             /// Enum Integrationaction for "integrationAction"
             /// </summary>
             [EnumMember(Value = "integrationAction")]
             Integrationaction,
-            
+
             /// <summary>
             /// Enum Architectflow for "architectFlow"
             /// </summary>
             [EnumMember(Value = "architectFlow")]
             Architectflow,
-            
+
             /// <summary>
             /// Enum Openaction for "openAction"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Action media type used to deliver the action.
         /// </summary>
         /// <value>Action media type used to deliver the action.</value>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
+        [DataMember(Name = "mediaType", EmitDefaultValue = false)]
         public MediaTypeEnum? MediaType { get; set; }
 
         /// <summary>
@@ -106,16 +98,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.WebMessagingOfferProperties = WebMessagingOfferProperties;
             this.ContentOfferProperties = ContentOfferProperties;
             this.OpenActionProperties = OpenActionProperties;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// System-generated UUID for the action.
         /// </summary>
         /// <value>System-generated UUID for the action.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -126,7 +118,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// ID string of the customer that the action was triggered for.
         /// </summary>
         /// <value>ID string of the customer that the action was triggered for.</value>
-        [DataMember(Name="customerId", EmitDefaultValue=false)]
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
 
@@ -135,7 +127,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of the customer ID that the action was triggered for.
         /// </summary>
         /// <value>Type of the customer ID that the action was triggered for.</value>
-        [DataMember(Name="customerIdType", EmitDefaultValue=false)]
+        [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
         public string CustomerIdType { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// ID of the action map that triggered the action.
         /// </summary>
         /// <value>ID of the action map that triggered the action.</value>
-        [DataMember(Name="actionMapId", EmitDefaultValue=false)]
+        [DataMember(Name = "actionMapId", EmitDefaultValue = false)]
         public string ActionMapId { get; set; }
 
 
@@ -153,7 +145,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version of the action map that triggered the action.
         /// </summary>
         /// <value>Version of the action map that triggered the action.</value>
-        [DataMember(Name="actionMapVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "actionMapVersion", EmitDefaultValue = false)]
         public int? ActionMapVersion { get; set; }
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// ID of the session that the action was triggered for.
         /// </summary>
         /// <value>ID of the session that the action was triggered for.</value>
-        [DataMember(Name="sessionId", EmitDefaultValue=false)]
+        [DataMember(Name = "sessionId", EmitDefaultValue = false)]
         public string SessionId { get; set; }
 
 
@@ -171,7 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Web messaging offer specific properties.
         /// </summary>
         /// <value>Web messaging offer specific properties.</value>
-        [DataMember(Name="webMessagingOfferProperties", EmitDefaultValue=false)]
+        [DataMember(Name = "webMessagingOfferProperties", EmitDefaultValue = false)]
         public WebMessagingOfferProperties WebMessagingOfferProperties { get; set; }
 
 
@@ -180,7 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Content offer specific properties.
         /// </summary>
         /// <value>Content offer specific properties.</value>
-        [DataMember(Name="contentOfferProperties", EmitDefaultValue=false)]
+        [DataMember(Name = "contentOfferProperties", EmitDefaultValue = false)]
         public ContentOffer ContentOfferProperties { get; set; }
 
 
@@ -189,7 +181,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Open action specific properties.
         /// </summary>
         /// <value>Open action specific properties.</value>
-        [DataMember(Name="openActionProperties", EmitDefaultValue=false)]
+        [DataMember(Name = "openActionProperties", EmitDefaultValue = false)]
         public OpenActionProperties OpenActionProperties { get; set; }
 
 
@@ -215,19 +207,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

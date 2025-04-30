@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SiteSearchRequest
     /// </summary>
     [DataContract]
-    public partial class SiteSearchRequest :  IEquatable<SiteSearchRequest>
+    public partial class SiteSearchRequest : IEquatable<SiteSearchRequest>
     {
         /// <summary>
         /// The sort order for results
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Asc for "ASC"
             /// </summary>
             [EnumMember(Value = "ASC")]
             Asc,
-            
+
             /// <summary>
             /// Enum Desc for "DESC"
             /// </summary>
             [EnumMember(Value = "DESC")]
             Desc,
-            
+
             /// <summary>
             /// Enum Score for "SCORE"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The sort order for results
         /// </summary>
         /// <value>The sort order for results</value>
-        [DataMember(Name="sortOrder", EmitDefaultValue=false)]
+        [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
         public SortOrderEnum? SortOrder { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SiteSearchRequest" /> class.
@@ -76,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Sort = Sort;
             this.Expand = Expand;
             this.Query = Query;
-            
+
         }
-        
+
 
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The field in the resource that you want to sort the results by
         /// </summary>
         /// <value>The field in the resource that you want to sort the results by</value>
-        [DataMember(Name="sortBy", EmitDefaultValue=false)]
+        [DataMember(Name = "sortBy", EmitDefaultValue = false)]
         public string SortBy { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of results per page
         /// </summary>
         /// <value>The number of results per page</value>
-        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
         public int? PageSize { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The page of resources you want to retrieve
         /// </summary>
         /// <value>The page of resources you want to retrieve</value>
-        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
         public int? PageNumber { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Multi-value sort order, list of multiple sort values
         /// </summary>
         /// <value>Multi-value sort order, list of multiple sort values</value>
-        [DataMember(Name="sort", EmitDefaultValue=false)]
+        [DataMember(Name = "sort", EmitDefaultValue = false)]
         public List<SearchSort> Sort { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Provides more details about a specified resource
         /// </summary>
         /// <value>Provides more details about a specified resource</value>
-        [DataMember(Name="expand", EmitDefaultValue=false)]
+        [DataMember(Name = "expand", EmitDefaultValue = false)]
         public List<string> Expand { get; set; }
 
 
@@ -131,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Query
         /// </summary>
-        [DataMember(Name="query", EmitDefaultValue=false)]
+        [DataMember(Name = "query", EmitDefaultValue = false)]
         public List<SiteSearchCriteria> Query { get; set; }
 
 
@@ -154,19 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

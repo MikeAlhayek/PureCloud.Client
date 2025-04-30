@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,23 +8,23 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignStats
     /// </summary>
     [DataContract]
-    public partial class CampaignStats :  IEquatable<CampaignStats>
+    public partial class CampaignStats : IEquatable<CampaignStats>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignStats" /> class.
         /// </summary>
         public CampaignStats()
         {
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Information regarding the campaign&#39;s connect rate
         /// </summary>
         /// <value>Information regarding the campaign&#39;s connect rate</value>
-        [DataMember(Name="contactRate", EmitDefaultValue=false)]
+        [DataMember(Name = "contactRate", EmitDefaultValue = false)]
         public ConnectRate ContactRate { get; private set; }
 
 
@@ -41,7 +33,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of available agents not currently being utilized
         /// </summary>
         /// <value>Number of available agents not currently being utilized</value>
-        [DataMember(Name="idleAgents", EmitDefaultValue=false)]
+        [DataMember(Name = "idleAgents", EmitDefaultValue = false)]
         public int? IdleAgents { get; private set; }
 
 
@@ -50,7 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of effective available agents not currently being utilized
         /// </summary>
         /// <value>Number of effective available agents not currently being utilized</value>
-        [DataMember(Name="effectiveIdleAgents", EmitDefaultValue=false)]
+        [DataMember(Name = "effectiveIdleAgents", EmitDefaultValue = false)]
         public double? EffectiveIdleAgents { get; private set; }
 
 
@@ -59,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Calls per agent adjusted by pace
         /// </summary>
         /// <value>Calls per agent adjusted by pace</value>
-        [DataMember(Name="adjustedCallsPerAgent", EmitDefaultValue=false)]
+        [DataMember(Name = "adjustedCallsPerAgent", EmitDefaultValue = false)]
         public double? AdjustedCallsPerAgent { get; private set; }
 
 
@@ -68,7 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of campaign calls currently ongoing
         /// </summary>
         /// <value>Number of campaign calls currently ongoing</value>
-        [DataMember(Name="outstandingCalls", EmitDefaultValue=false)]
+        [DataMember(Name = "outstandingCalls", EmitDefaultValue = false)]
         public int? OutstandingCalls { get; private set; }
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of campaign calls currently scheduled
         /// </summary>
         /// <value>Number of campaign calls currently scheduled</value>
-        [DataMember(Name="scheduledCalls", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduledCalls", EmitDefaultValue = false)]
         public int? ScheduledCalls { get; private set; }
 
 
@@ -86,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of campaign calls currently timezone rescheduled
         /// </summary>
         /// <value>Number of campaign calls currently timezone rescheduled</value>
-        [DataMember(Name="timeZoneRescheduledCalls", EmitDefaultValue=false)]
+        [DataMember(Name = "timeZoneRescheduledCalls", EmitDefaultValue = false)]
         public int? TimeZoneRescheduledCalls { get; private set; }
 
 
@@ -95,7 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.
         /// </summary>
         /// <value>Number of contacts that don&#39;t match filter. This is currently supported only for Campaigns with dynamic filter on.</value>
-        [DataMember(Name="filteredOutContactsCount", EmitDefaultValue=false)]
+        [DataMember(Name = "filteredOutContactsCount", EmitDefaultValue = false)]
         public int? FilteredOutContactsCount { get; private set; }
 
 
@@ -104,7 +96,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information on the campaign&#39;s number of Right Party Contacts
         /// </summary>
         /// <value>Information on the campaign&#39;s number of Right Party Contacts</value>
-        [DataMember(Name="rightPartyContactsCount", EmitDefaultValue=false)]
+        [DataMember(Name = "rightPartyContactsCount", EmitDefaultValue = false)]
         public int? RightPartyContactsCount { get; private set; }
 
 
@@ -113,7 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information on the campaign&#39;s valid attempts
         /// </summary>
         /// <value>Information on the campaign&#39;s valid attempts</value>
-        [DataMember(Name="validAttempts", EmitDefaultValue=false)]
+        [DataMember(Name = "validAttempts", EmitDefaultValue = false)]
         public int? ValidAttempts { get; private set; }
 
 
@@ -122,7 +114,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information on the campaign&#39;s lines utilization
         /// </summary>
         /// <value>Information on the campaign&#39;s lines utilization</value>
-        [DataMember(Name="linesUtilization", EmitDefaultValue=false)]
+        [DataMember(Name = "linesUtilization", EmitDefaultValue = false)]
         public CampaignLinesUtilization LinesUtilization { get; private set; }
 
 
@@ -131,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information on the campaign&#39;s business category metrics
         /// </summary>
         /// <value>Information on the campaign&#39;s business category metrics</value>
-        [DataMember(Name="businessCategoryMetrics", EmitDefaultValue=false)]
+        [DataMember(Name = "businessCategoryMetrics", EmitDefaultValue = false)]
         public CampaignBusinessCategoryMetrics BusinessCategoryMetrics { get; private set; }
 
 
@@ -159,19 +151,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

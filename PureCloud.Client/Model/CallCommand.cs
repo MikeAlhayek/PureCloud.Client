@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallCommand
     /// </summary>
     [DataContract]
-    public partial class CallCommand :  IEquatable<CallCommand>
+    public partial class CallCommand : IEquatable<CallCommand>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.CallNumber = CallNumber;
             this.PhoneColumn = PhoneColumn;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The phone number to dial for this call.
         /// </summary>
         /// <value>The phone number to dial for this call.</value>
-        [DataMember(Name="callNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "callNumber", EmitDefaultValue = false)]
         public string CallNumber { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// For a dialer preview or scheduled callback, the phone column associated with the phone number
         /// </summary>
         /// <value>For a dialer preview or scheduled callback, the phone column associated with the phone number</value>
-        [DataMember(Name="phoneColumn", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneColumn", EmitDefaultValue = false)]
         public string PhoneColumn { get; set; }
 
 
@@ -68,19 +60,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  PhoneColumn: ").Append(PhoneColumn).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

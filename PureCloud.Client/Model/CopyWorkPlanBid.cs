@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CopyWorkPlanBid
     /// </summary>
     [DataContract]
-    public partial class CopyWorkPlanBid :  IEquatable<CopyWorkPlanBid>
+    public partial class CopyWorkPlanBid : IEquatable<CopyWorkPlanBid>
     {
 
         /// <summary>
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public CopyWorkPlanBid(string Name = null)
         {
             this.Name = Name;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The name of the new work plan bid
         /// </summary>
         /// <value>The name of the new work plan bid</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -57,19 +49,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

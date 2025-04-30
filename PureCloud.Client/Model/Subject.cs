@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Subject
     /// </summary>
     [DataContract]
-    public partial class Subject :  IEquatable<Subject>
+    public partial class Subject : IEquatable<Subject>
     {
         /// <summary>
         /// Gets or Sets Type
@@ -31,31 +23,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "USER"
             /// </summary>
             [EnumMember(Value = "USER")]
             User,
-            
+
             /// <summary>
             /// Enum Client for "CLIENT"
             /// </summary>
             [EnumMember(Value = "CLIENT")]
             Client,
-            
+
             /// <summary>
             /// Enum Group for "GROUP"
             /// </summary>
             [EnumMember(Value = "GROUP")]
             Group,
-            
+
             /// <summary>
             /// Enum Team for "TEAM"
             /// </summary>
             [EnumMember(Value = "TEAM")]
             Team,
-            
+
             /// <summary>
             /// Enum All for "ALL"
             /// </summary>
@@ -65,7 +57,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Subject" /> class.
@@ -76,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Type = Type;
             this.Id = Id;
-            
+
         }
-        
+
 
 
 
@@ -86,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -104,19 +96,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

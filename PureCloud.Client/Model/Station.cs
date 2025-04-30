@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Station
     /// </summary>
     [DataContract]
-    public partial class Station :  IEquatable<Station>
+    public partial class Station : IEquatable<Station>
     {
         /// <summary>
         /// Gets or Sets Status
@@ -31,13 +23,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Available for "AVAILABLE"
             /// </summary>
             [EnumMember(Value = "AVAILABLE")]
             Available,
-            
+
             /// <summary>
             /// Enum Associated for "ASSOCIATED"
             /// </summary>
@@ -47,7 +39,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Status
         /// </summary>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Station" /> class.
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.SecondaryEdge = SecondaryEdge;
             this.Type = Type;
             this.LineAppearanceId = LineAppearanceId;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -89,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -97,7 +89,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Id of the user currently logged in and associated with the station.
         /// </summary>
         /// <value>The Id of the user currently logged in and associated with the station.</value>
-        [DataMember(Name="userId", EmitDefaultValue=false)]
+        [DataMember(Name = "userId", EmitDefaultValue = false)]
         public string UserId { get; set; }
 
 
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.
         /// </summary>
         /// <value>The Id of the user configured for the station if it is of type inin_webrtc_softphone. Empty if station type is not inin_webrtc_softphone.</value>
-        [DataMember(Name="webRtcUserId", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcUserId", EmitDefaultValue = false)]
         public string WebRtcUserId { get; set; }
 
 
@@ -125,7 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PrimaryEdge
         /// </summary>
-        [DataMember(Name="primaryEdge", EmitDefaultValue=false)]
+        [DataMember(Name = "primaryEdge", EmitDefaultValue = false)]
         public DomainEntityRef PrimaryEdge { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SecondaryEdge
         /// </summary>
-        [DataMember(Name="secondaryEdge", EmitDefaultValue=false)]
+        [DataMember(Name = "secondaryEdge", EmitDefaultValue = false)]
         public DomainEntityRef SecondaryEdge { get; set; }
 
 
@@ -141,7 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
 
@@ -149,7 +141,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets LineAppearanceId
         /// </summary>
-        [DataMember(Name="lineAppearanceId", EmitDefaultValue=false)]
+        [DataMember(Name = "lineAppearanceId", EmitDefaultValue = false)]
         public string LineAppearanceId { get; set; }
 
 
@@ -158,7 +150,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.
         /// </summary>
         /// <value>The default or configured value of media dscp for the station. Empty if station type is not inin_webrtc_softphone.</value>
-        [DataMember(Name="webRtcMediaDscp", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcMediaDscp", EmitDefaultValue = false)]
         public int? WebRtcMediaDscp { get; private set; }
 
 
@@ -167,7 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.
         /// </summary>
         /// <value>The default or configured value of persistent connection setting for the station. Empty if station type is not inin_webrtc_softphone.</value>
-        [DataMember(Name="webRtcPersistentEnabled", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcPersistentEnabled", EmitDefaultValue = false)]
         public bool? WebRtcPersistentEnabled { get; private set; }
 
 
@@ -176,7 +168,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.
         /// </summary>
         /// <value>Whether the station is configured to require TURN for routing WebRTC calls. Empty if station type is not inin_webrtc_softphone.</value>
-        [DataMember(Name="webRtcForceTurn", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcForceTurn", EmitDefaultValue = false)]
         public bool? WebRtcForceTurn { get; private set; }
 
 
@@ -185,7 +177,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of call appearances on the station.
         /// </summary>
         /// <value>The number of call appearances on the station.</value>
-        [DataMember(Name="webRtcCallAppearances", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcCallAppearances", EmitDefaultValue = false)]
         public int? WebRtcCallAppearances { get; private set; }
 
 
@@ -194,7 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True when the media helper required.
         /// </summary>
         /// <value>True when the media helper required.</value>
-        [DataMember(Name="webRtcRequireMediaHelper", EmitDefaultValue=false)]
+        [DataMember(Name = "webRtcRequireMediaHelper", EmitDefaultValue = false)]
         public bool? WebRtcRequireMediaHelper { get; private set; }
 
 
@@ -203,7 +195,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -235,19 +227,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

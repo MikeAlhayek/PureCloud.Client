@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DataIngestionRuleResponse
     /// </summary>
     [DataContract]
-    public partial class DataIngestionRuleResponse :  IEquatable<DataIngestionRuleResponse>
+    public partial class DataIngestionRuleResponse : IEquatable<DataIngestionRuleResponse>
     {
         /// <summary>
         /// The status of the data ingestion rule.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "Active"
             /// </summary>
             [EnumMember(Value = "Active")]
             Active,
-            
+
             /// <summary>
             /// Enum Deleted for "Deleted"
             /// </summary>
             [EnumMember(Value = "Deleted")]
             Deleted,
-            
+
             /// <summary>
             /// Enum Error for "Error"
             /// </summary>
             [EnumMember(Value = "Error")]
             Error,
-            
+
             /// <summary>
             /// Enum Paused for "Paused"
             /// </summary>
             [EnumMember(Value = "Paused")]
             Paused,
-            
+
             /// <summary>
             /// Enum Pending for "Pending"
             /// </summary>
             [EnumMember(Value = "Pending")]
             Pending,
-            
+
             /// <summary>
             /// Enum Systempaused for "SystemPaused"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the data ingestion rule.
         /// </summary>
         /// <value>The status of the data ingestion rule.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DataIngestionRuleResponse" /> class.
@@ -90,16 +82,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Description = Description;
             this.Status = Status;
             this.Version = Version;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// ID of the data ingestion rule.
         /// </summary>
         /// <value>ID of the data ingestion rule.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the data ingestion rule.
         /// </summary>
         /// <value>The name of the data ingestion rule.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A description of the data ingestion rule.
         /// </summary>
         /// <value>A description of the data ingestion rule.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The version number of the data ingestion rule.
         /// </summary>
         /// <value>The version number of the data ingestion rule.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -137,7 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the data ingestion rule was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -146,7 +138,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the data ingestion rule was last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The platform of the data ingestion rule.
         /// </summary>
         /// <value>The platform of the data ingestion rule.</value>
-        [DataMember(Name="platform", EmitDefaultValue=false)]
+        [DataMember(Name = "platform", EmitDefaultValue = false)]
         public string Platform { get; private set; }
 
 
@@ -164,7 +156,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -189,19 +181,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

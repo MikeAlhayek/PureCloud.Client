@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Create work plan bid model
     /// </summary>
     [DataContract]
-    public partial class CreateWorkPlanBid :  IEquatable<CreateWorkPlanBid>
+    public partial class CreateWorkPlanBid : IEquatable<CreateWorkPlanBid>
     {
         /// <summary>
         /// The type of agent ranking selected for this bid
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Hiredate for "HireDate"
             /// </summary>
             [EnumMember(Value = "HireDate")]
             Hiredate,
-            
+
             /// <summary>
             /// Enum Performance for "Performance"
             /// </summary>
@@ -59,25 +51,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Hiredate for "HireDate"
             /// </summary>
             [EnumMember(Value = "HireDate")]
             Hiredate,
-            
+
             /// <summary>
             /// Enum Performance for "Performance"
             /// </summary>
             [EnumMember(Value = "Performance")]
             Performance,
-            
+
             /// <summary>
             /// Enum Custom for "Custom"
             /// </summary>
             [EnumMember(Value = "Custom")]
             Custom,
-            
+
             /// <summary>
             /// Enum Randomlyassign for "RandomlyAssign"
             /// </summary>
@@ -97,13 +89,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Name for "Name"
             /// </summary>
             [EnumMember(Value = "Name")]
             Name,
-            
+
             /// <summary>
             /// Enum Paidhours for "PaidHours"
             /// </summary>
@@ -114,13 +106,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of agent ranking selected for this bid
         /// </summary>
         /// <value>The type of agent ranking selected for this bid</value>
-        [DataMember(Name="agentRankingType", EmitDefaultValue=false)]
+        [DataMember(Name = "agentRankingType", EmitDefaultValue = false)]
         public AgentRankingTypeEnum? AgentRankingType { get; set; }
         /// <summary>
         /// Ranking tiebreaker to be used
         /// </summary>
         /// <value>Ranking tiebreaker to be used</value>
-        [DataMember(Name="rankingTiebreakerType", EmitDefaultValue=false)]
+        [DataMember(Name = "rankingTiebreakerType", EmitDefaultValue = false)]
         public RankingTiebreakerTypeEnum? RankingTiebreakerType { get; set; }
 
         /// <summary>
@@ -149,16 +141,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.AgentRankingType = AgentRankingType;
             this.RankingTiebreakerType = RankingTiebreakerType;
             this.WorkPlanFieldsVisibleToAgents = WorkPlanFieldsVisibleToAgents;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The name of the work plan bid
         /// </summary>
         /// <value>The name of the work plan bid</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -167,7 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The selected forecast in this work plan bid
         /// </summary>
         /// <value>The selected forecast in this work plan bid</value>
-        [DataMember(Name="forecast", EmitDefaultValue=false)]
+        [DataMember(Name = "forecast", EmitDefaultValue = false)]
         public BuShortTermForecastWeekReference Forecast { get; set; }
 
 
@@ -176,7 +168,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The bid start date where agents start participate in work plan bidding in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="bidWindowStartDate", EmitDefaultValue=false)]
+        [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
         public String BidWindowStartDate { get; set; }
 
 
@@ -185,7 +177,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The bid end date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="bidWindowEndDate", EmitDefaultValue=false)]
+        [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
         public String BidWindowEndDate { get; set; }
 
 
@@ -194,7 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The date when agents will be assigned to the new work plan in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="effectiveDate", EmitDefaultValue=false)]
+        [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
         public String EffectiveDate { get; set; }
 
 
@@ -207,7 +199,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The work plan fields visible to agents whenever work plan preferences are made
         /// </summary>
         /// <value>The work plan fields visible to agents whenever work plan preferences are made</value>
-        [DataMember(Name="workPlanFieldsVisibleToAgents", EmitDefaultValue=false)]
+        [DataMember(Name = "workPlanFieldsVisibleToAgents", EmitDefaultValue = false)]
         public List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents { get; set; }
 
 
@@ -231,19 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

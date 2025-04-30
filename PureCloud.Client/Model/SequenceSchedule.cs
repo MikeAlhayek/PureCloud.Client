@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SequenceSchedule
     /// </summary>
     [DataContract]
-    public partial class SequenceSchedule :  IEquatable<SequenceSchedule>
+    public partial class SequenceSchedule : IEquatable<SequenceSchedule>
     {
 
         /// <summary>
@@ -41,16 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Recurrences = Recurrences;
             this.TimeZone = TimeZone;
             this.Sequence = Sequence;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -58,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -76,7 +68,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -85,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required for updates, must match the version number of the most recent update
         /// </summary>
         /// <value>Required for updates, must match the version number of the most recent update</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -94,7 +86,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of intervals during which to run the associated CampaignSequence.
         /// </summary>
         /// <value>A list of intervals during which to run the associated CampaignSequence.</value>
-        [DataMember(Name="intervals", EmitDefaultValue=false)]
+        [DataMember(Name = "intervals", EmitDefaultValue = false)]
         public List<ScheduleInterval> Intervals { get; set; }
 
 
@@ -103,7 +95,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Recurring schedules of the campaign
         /// </summary>
         /// <value>Recurring schedules of the campaign</value>
-        [DataMember(Name="recurrences", EmitDefaultValue=false)]
+        [DataMember(Name = "recurrences", EmitDefaultValue = false)]
         public List<Reoccurrence> Recurrences { get; set; }
 
 
@@ -112,7 +104,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones
         /// </summary>
         /// <value>The time zone for this SequenceSchedule. Defaults to UTC if empty or not provided. See here for a list of valid time zones https://www.iana.org/time-zones</value>
-        [DataMember(Name="timeZone", EmitDefaultValue=false)]
+        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
         public string TimeZone { get; set; }
 
 
@@ -121,7 +113,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The CampaignSequence that this SequenceSchedule is for.
         /// </summary>
         /// <value>The CampaignSequence that this SequenceSchedule is for.</value>
-        [DataMember(Name="sequence", EmitDefaultValue=false)]
+        [DataMember(Name = "sequence", EmitDefaultValue = false)]
         public DomainEntityRef Sequence { get; set; }
 
 
@@ -130,7 +122,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -156,19 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

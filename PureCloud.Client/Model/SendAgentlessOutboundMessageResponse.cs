@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SendAgentlessOutboundMessageResponse
     /// </summary>
     [DataContract]
-    public partial class SendAgentlessOutboundMessageResponse :  IEquatable<SendAgentlessOutboundMessageResponse>
+    public partial class SendAgentlessOutboundMessageResponse : IEquatable<SendAgentlessOutboundMessageResponse>
     {
         /// <summary>
         /// Type of messenger.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sms for "sms"
             /// </summary>
             [EnumMember(Value = "sms")]
             Sms,
-            
+
             /// <summary>
             /// Enum Whatsapp for "whatsapp"
             /// </summary>
             [EnumMember(Value = "whatsapp")]
             Whatsapp,
-            
+
             /// <summary>
             /// Enum Open for "open"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of messenger.
         /// </summary>
         /// <value>Type of messenger.</value>
-        [DataMember(Name="messengerType", EmitDefaultValue=false)]
+        [DataMember(Name = "messengerType", EmitDefaultValue = false)]
         public MessengerTypeEnum? MessengerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SendAgentlessOutboundMessageResponse" /> class.
@@ -80,16 +72,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.UseExistingActiveConversation = UseExistingActiveConversation;
             this.Message = Message;
             this.Timestamp = Timestamp;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -98,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The identifier of the conversation.
         /// </summary>
         /// <value>The identifier of the conversation.</value>
-        [DataMember(Name="conversationId", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationId", EmitDefaultValue = false)]
         public string ConversationId { get; set; }
 
 
@@ -107,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The sender of the message.
         /// </summary>
         /// <value>The sender of the message.</value>
-        [DataMember(Name="fromAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
         public string FromAddress { get; set; }
 
 
@@ -116,7 +108,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The recipient of the message.
         /// </summary>
         /// <value>The recipient of the message.</value>
-        [DataMember(Name="toAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "toAddress", EmitDefaultValue = false)]
         public string ToAddress { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)
         /// </summary>
         /// <value>The body of the text message. (Deprecated - Instead use message.normalizedMessage.text)</value>
-        [DataMember(Name="textBody", EmitDefaultValue=false)]
+        [DataMember(Name = "textBody", EmitDefaultValue = false)]
         public string TextBody { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)
         /// </summary>
         /// <value>The messaging template sent. (Deprecated - Instead use message.normalizedMessage.content[#].template)</value>
-        [DataMember(Name="messagingTemplate", EmitDefaultValue=false)]
+        [DataMember(Name = "messagingTemplate", EmitDefaultValue = false)]
         public SendMessagingTemplateRequest MessagingTemplate { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false
         /// </summary>
         /// <value>Use an existing active conversation to send the agentless outbound message. Set this parameter to &#39;true&#39; to use active conversation. Default value: false</value>
-        [DataMember(Name="useExistingActiveConversation", EmitDefaultValue=false)]
+        [DataMember(Name = "useExistingActiveConversation", EmitDefaultValue = false)]
         public bool? UseExistingActiveConversation { get; set; }
 
 
@@ -154,7 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Sent agentless outbound message in normalized format
         /// </summary>
         /// <value>Sent agentless outbound message in normalized format</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public MessageData Message { get; set; }
 
 
@@ -163,7 +155,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        [DataMember(Name = "timestamp", EmitDefaultValue = false)]
         public DateTime? Timestamp { get; set; }
 
 
@@ -172,7 +164,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -181,7 +173,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Details of the user created the job
         /// </summary>
         /// <value>Details of the user created the job</value>
-        [DataMember(Name="user", EmitDefaultValue=false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public AddressableEntityRef User { get; private set; }
 
 
@@ -209,19 +201,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

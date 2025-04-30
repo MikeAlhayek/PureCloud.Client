@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SearchAggregation
     /// </summary>
     [DataContract]
-    public partial class SearchAggregation :  IEquatable<SearchAggregation>
+    public partial class SearchAggregation : IEquatable<SearchAggregation>
     {
         /// <summary>
         /// The type of aggregation to perform
@@ -32,43 +24,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Count for "COUNT"
             /// </summary>
             [EnumMember(Value = "COUNT")]
             Count,
-            
+
             /// <summary>
             /// Enum Sum for "SUM"
             /// </summary>
             [EnumMember(Value = "SUM")]
             Sum,
-            
+
             /// <summary>
             /// Enum Average for "AVERAGE"
             /// </summary>
             [EnumMember(Value = "AVERAGE")]
             Average,
-            
+
             /// <summary>
             /// Enum Term for "TERM"
             /// </summary>
             [EnumMember(Value = "TERM")]
             Term,
-            
+
             /// <summary>
             /// Enum Contains for "CONTAINS"
             /// </summary>
             [EnumMember(Value = "CONTAINS")]
             Contains,
-            
+
             /// <summary>
             /// Enum StartsWith for "STARTS_WITH"
             /// </summary>
             [EnumMember(Value = "STARTS_WITH")]
             StartsWith,
-            
+
             /// <summary>
             /// Enum EndsWith for "ENDS_WITH"
             /// </summary>
@@ -88,25 +80,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum ValueDesc for "VALUE_DESC"
             /// </summary>
             [EnumMember(Value = "VALUE_DESC")]
             ValueDesc,
-            
+
             /// <summary>
             /// Enum ValueAsc for "VALUE_ASC"
             /// </summary>
             [EnumMember(Value = "VALUE_ASC")]
             ValueAsc,
-            
+
             /// <summary>
             /// Enum CountDesc for "COUNT_DESC"
             /// </summary>
             [EnumMember(Value = "COUNT_DESC")]
             CountDesc,
-            
+
             /// <summary>
             /// Enum CountAsc for "COUNT_ASC"
             /// </summary>
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of aggregation to perform
         /// </summary>
         /// <value>The type of aggregation to perform</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SearchAggregation" /> class.
@@ -136,16 +128,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Value = Value;
             this.Size = Size;
             this.Order = Order;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The field used for aggregation
         /// </summary>
         /// <value>The field used for aggregation</value>
-        [DataMember(Name="field", EmitDefaultValue=false)]
+        [DataMember(Name = "field", EmitDefaultValue = false)]
         public string Field { get; set; }
 
 
@@ -154,7 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the aggregation. The response aggregation uses this name.
         /// </summary>
         /// <value>The name of the aggregation. The response aggregation uses this name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A value to use for aggregation
         /// </summary>
         /// <value>A value to use for aggregation</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -174,7 +166,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number aggregations results to return out of the entire result set
         /// </summary>
         /// <value>The number aggregations results to return out of the entire result set</value>
-        [DataMember(Name="size", EmitDefaultValue=false)]
+        [DataMember(Name = "size", EmitDefaultValue = false)]
         public int? Size { get; set; }
 
 
@@ -183,7 +175,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The order in which aggregation results are sorted
         /// </summary>
         /// <value>The order in which aggregation results are sorted</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public List<OrderEnum> Order { get; set; }
 
 
@@ -205,19 +197,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

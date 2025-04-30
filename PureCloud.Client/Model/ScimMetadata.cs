@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Defines the SCIM metadata.
     /// </summary>
     [DataContract]
-    public partial class ScimMetadata :  IEquatable<ScimMetadata>
+    public partial class ScimMetadata : IEquatable<ScimMetadata>
     {
         /// <summary>
         /// The type of SCIM resource.
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "User"
             /// </summary>
             [EnumMember(Value = "User")]
             User,
-            
+
             /// <summary>
             /// Enum Group for "Group"
             /// </summary>
             [EnumMember(Value = "Group")]
             Group,
-            
+
             /// <summary>
             /// Enum Serviceproviderconfig for "ServiceProviderConfig"
             /// </summary>
             [EnumMember(Value = "ServiceProviderConfig")]
             Serviceproviderconfig,
-            
+
             /// <summary>
             /// Enum Resourcetype for "ResourceType"
             /// </summary>
             [EnumMember(Value = "ResourceType")]
             Resourcetype,
-            
+
             /// <summary>
             /// Enum Schema for "Schema"
             /// </summary>
@@ -67,16 +59,16 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of SCIM resource.
         /// </summary>
         /// <value>The type of SCIM resource.</value>
-        [DataMember(Name="resourceType", EmitDefaultValue=false)]
+        [DataMember(Name = "resourceType", EmitDefaultValue = false)]
         public ResourceTypeEnum? ResourceType { get; private set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScimMetadata" /> class.
         /// </summary>
         public ScimMetadata()
         {
-            
+
         }
-        
+
 
 
 
@@ -85,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last time that the resource was modified. Date time is represented as an \&quot;ISO-8601 string\&quot;, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.
         /// </summary>
         /// <value>The last time that the resource was modified. Date time is represented as an \&quot;ISO-8601 string\&quot;, for example, yyyy-MM-ddTHH:mm:ss.SSSZ. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
-        [DataMember(Name="lastModified", EmitDefaultValue=false)]
+        [DataMember(Name = "lastModified", EmitDefaultValue = false)]
         public DateTime? LastModified { get; private set; }
 
 
@@ -94,7 +86,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI of the resource.
         /// </summary>
         /// <value>The URI of the resource.</value>
-        [DataMember(Name="location", EmitDefaultValue=false)]
+        [DataMember(Name = "location", EmitDefaultValue = false)]
         public string Location { get; private set; }
 
 
@@ -103,7 +95,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The version of the resource. Matches the ETag HTTP response header. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.
         /// </summary>
         /// <value>The version of the resource. Matches the ETag HTTP response header. Not included with \&quot;Schema\&quot; and \&quot;ResourceType\&quot; resources.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public string Version { get; private set; }
 
 
@@ -123,19 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Defines a SCIM PATCH operation. The path and value follow very specific rules based on operation types. See section 3.5.2 \&quot;Modifying with PATCH\&quot; in RFC 7644 for details.
     /// </summary>
     [DataContract]
-    public partial class ScimV2PatchOperation :  IEquatable<ScimV2PatchOperation>
+    public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
     {
         /// <summary>
         /// The PATCH operation to perform.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Add for "add"
             /// </summary>
             [EnumMember(Value = "add")]
             Add,
-            
+
             /// <summary>
             /// Enum Replace for "replace"
             /// </summary>
             [EnumMember(Value = "replace")]
             Replace,
-            
+
             /// <summary>
             /// Enum Remove for "remove"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PATCH operation to perform.
         /// </summary>
         /// <value>The PATCH operation to perform.</value>
-        [DataMember(Name="op", EmitDefaultValue=false)]
+        [DataMember(Name = "op", EmitDefaultValue = false)]
         public OpEnum? Op { get; set; }
 
         /// <summary>
@@ -74,9 +66,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Op = Op;
             this.Path = Path;
             this.Value = Value;
-            
+
         }
-        
+
 
 
 
@@ -85,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The attribute path that describes the target of the operation. Required for a \&quot;remove\&quot; operation.
         /// </summary>
         /// <value>The attribute path that describes the target of the operation. Required for a \&quot;remove\&quot; operation.</value>
-        [DataMember(Name="path", EmitDefaultValue=false)]
+        [DataMember(Name = "path", EmitDefaultValue = false)]
         public string Path { get; set; }
 
 
@@ -94,7 +86,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The value to set in the path.
         /// </summary>
         /// <value>The value to set in the path.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public Object Value { get; set; }
 
 
@@ -113,19 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

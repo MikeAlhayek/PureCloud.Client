@@ -1,5 +1,3 @@
-using System;
-using System.Collections.Generic;
 using PureCloudPlatform.Client.V2.Model;
 
 namespace PureCloudPlatform.Client.V2.Client

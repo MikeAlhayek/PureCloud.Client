@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentVariationAnswer
     /// </summary>
     [DataContract]
-    public partial class DocumentVariationAnswer :  IEquatable<DocumentVariationAnswer>
+    public partial class DocumentVariationAnswer : IEquatable<DocumentVariationAnswer>
     {
 
         /// <summary>
@@ -39,16 +31,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Priority = Priority;
             this.Name = Name;
             this.Body = Body;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the variation.
         /// </summary>
         /// <value>The globally unique identifier for the variation.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -57,7 +49,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The creation date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The creation date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -66,7 +58,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last modification date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The last modification date-time for the document variation. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -75,7 +67,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The version of the document.
         /// </summary>
         /// <value>The version of the document.</value>
-        [DataMember(Name="documentVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "documentVersion", EmitDefaultValue = false)]
         public AddressableEntityRef DocumentVersion { get; set; }
 
 
@@ -84,7 +76,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The context values associated with the variation.
         /// </summary>
         /// <value>The context values associated with the variation.</value>
-        [DataMember(Name="contexts", EmitDefaultValue=false)]
+        [DataMember(Name = "contexts", EmitDefaultValue = false)]
         public List<DocumentVariationContext> Contexts { get; set; }
 
 
@@ -93,7 +85,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The reference to document to which the variation is associated.
         /// </summary>
         /// <value>The reference to document to which the variation is associated.</value>
-        [DataMember(Name="document", EmitDefaultValue=false)]
+        [DataMember(Name = "document", EmitDefaultValue = false)]
         public KnowledgeDocumentReference Document { get; private set; }
 
 
@@ -102,7 +94,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The priority of the variation.
         /// </summary>
         /// <value>The priority of the variation.</value>
-        [DataMember(Name="priority", EmitDefaultValue=false)]
+        [DataMember(Name = "priority", EmitDefaultValue = false)]
         public int? Priority { get; set; }
 
 
@@ -111,7 +103,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the variation.
         /// </summary>
         /// <value>The name of the variation.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The content for the variation.
         /// </summary>
         /// <value>The content for the variation.</value>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name = "body", EmitDefaultValue = false)]
         public DocumentBodyWithHighlight Body { get; set; }
 
 
@@ -129,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -155,19 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffPlanListing
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffPlanListing : IEquatable<BuTimeOffPlanListing>
+    public partial class BuTimeOffPlanListing :  IEquatable<BuTimeOffPlanListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuTimeOffPlanListing" /> class.
@@ -27,15 +19,15 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Entities = Entities;
             this.DownloadUrl = DownloadUrl;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name = "entities", EmitDefaultValue = false)]
+        [DataMember(Name="entities", EmitDefaultValue=false)]
         public List<BuTimeOffPlanResponse> Entities { get; set; }
 
 
@@ -44,7 +36,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl
         /// </summary>
         /// <value>URL from which to fetch results for requests with a large result set. If populated, the downloaded data will conform to the same schema as would normally be returned, excepting downloaded data will never itself contain a downloadUrl</value>
-        [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
+        [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
         public string DownloadUrl { get; set; }
 
 
@@ -62,6 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

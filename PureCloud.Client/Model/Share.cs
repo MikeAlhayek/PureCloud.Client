@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Share
     /// </summary>
     [DataContract]
-    public partial class Share :  IEquatable<Share>
+    public partial class Share : IEquatable<Share>
     {
         /// <summary>
         /// Gets or Sets SharedEntityType
@@ -31,7 +23,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Document for "DOCUMENT"
             /// </summary>
@@ -51,19 +43,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "USER"
             /// </summary>
             [EnumMember(Value = "USER")]
             User,
-            
+
             /// <summary>
             /// Enum Group for "GROUP"
             /// </summary>
             [EnumMember(Value = "GROUP")]
             Group,
-            
+
             /// <summary>
             /// Enum Public for "PUBLIC"
             /// </summary>
@@ -73,12 +65,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SharedEntityType
         /// </summary>
-        [DataMember(Name="sharedEntityType", EmitDefaultValue=false)]
+        [DataMember(Name = "sharedEntityType", EmitDefaultValue = false)]
         public SharedEntityTypeEnum? SharedEntityType { get; set; }
         /// <summary>
         /// Gets or Sets MemberType
         /// </summary>
-        [DataMember(Name="memberType", EmitDefaultValue=false)]
+        [DataMember(Name = "memberType", EmitDefaultValue = false)]
         public MemberTypeEnum? MemberType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Share" /> class.
@@ -103,16 +95,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Workspace = Workspace;
             this.User = User;
             this.Group = Group;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -130,7 +122,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SharedEntity
         /// </summary>
-        [DataMember(Name="sharedEntity", EmitDefaultValue=false)]
+        [DataMember(Name = "sharedEntity", EmitDefaultValue = false)]
         public DomainEntityRef SharedEntity { get; set; }
 
 
@@ -140,7 +132,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Member
         /// </summary>
-        [DataMember(Name="member", EmitDefaultValue=false)]
+        [DataMember(Name = "member", EmitDefaultValue = false)]
         public DomainEntityRef Member { get; set; }
 
 
@@ -148,7 +140,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SharedBy
         /// </summary>
-        [DataMember(Name="sharedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "sharedBy", EmitDefaultValue = false)]
         public DomainEntityRef SharedBy { get; set; }
 
 
@@ -156,7 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Workspace
         /// </summary>
-        [DataMember(Name="workspace", EmitDefaultValue=false)]
+        [DataMember(Name = "workspace", EmitDefaultValue = false)]
         public DomainEntityRef Workspace { get; set; }
 
 
@@ -164,7 +156,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets User
         /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public User User { get; set; }
 
 
@@ -172,7 +164,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Group
         /// </summary>
-        [DataMember(Name="group", EmitDefaultValue=false)]
+        [DataMember(Name = "group", EmitDefaultValue = false)]
         public Group Group { get; set; }
 
 
@@ -181,7 +173,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -208,19 +200,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

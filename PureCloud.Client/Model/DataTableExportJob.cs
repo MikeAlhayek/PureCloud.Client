@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// State information for an export job of rows from a datatable
     /// </summary>
     [DataContract]
-    public partial class DataTableExportJob :  IEquatable<DataTableExportJob>
+    public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     {
         /// <summary>
         /// The status of the export job
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Processing for "Processing"
             /// </summary>
             [EnumMember(Value = "Processing")]
             Processing,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Succeeded for "Succeeded"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the export job
         /// </summary>
         /// <value>The status of the export job</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
 
         /// <summary>
@@ -84,16 +76,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DownloadURI = DownloadURI;
             this.ErrorInformation = ErrorInformation;
             this.CountRecordsProcessed = CountRecordsProcessed;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The PureCloud user who started the export job
         /// </summary>
         /// <value>The PureCloud user who started the export job</value>
-        [DataMember(Name="owner", EmitDefaultValue=false)]
+        [DataMember(Name = "owner", EmitDefaultValue = false)]
         public AddressableEntityRef Owner { get; set; }
 
 
@@ -121,7 +113,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -130,7 +122,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCompleted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
         public DateTime? DateCompleted { get; set; }
 
 
@@ -139,7 +131,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL of the location at which the caller can download the export file, when available
         /// </summary>
         /// <value>The URL of the location at which the caller can download the export file, when available</value>
-        [DataMember(Name="downloadURI", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadURI", EmitDefaultValue = false)]
         public string DownloadURI { get; set; }
 
 
@@ -148,7 +140,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Any error information, or null of the processing is not in an error state
         /// </summary>
         /// <value>Any error information, or null of the processing is not in an error state</value>
-        [DataMember(Name="errorInformation", EmitDefaultValue=false)]
+        [DataMember(Name = "errorInformation", EmitDefaultValue = false)]
         public ErrorBody ErrorInformation { get; set; }
 
 
@@ -157,7 +149,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current count of the number of records processed
         /// </summary>
         /// <value>The current count of the number of records processed</value>
-        [DataMember(Name="countRecordsProcessed", EmitDefaultValue=false)]
+        [DataMember(Name = "countRecordsProcessed", EmitDefaultValue = false)]
         public int? CountRecordsProcessed { get; set; }
 
 
@@ -166,7 +158,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -192,19 +184,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

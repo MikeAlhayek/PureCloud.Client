@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DefaultGreetingList
     /// </summary>
     [DataContract]
-    public partial class DefaultGreetingList :  IEquatable<DefaultGreetingList>
+    public partial class DefaultGreetingList : IEquatable<DefaultGreetingList>
     {
         /// <summary>
         /// Gets or Sets OwnerType
@@ -31,19 +23,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "USER"
             /// </summary>
             [EnumMember(Value = "USER")]
             User,
-            
+
             /// <summary>
             /// Enum Organization for "ORGANIZATION"
             /// </summary>
             [EnumMember(Value = "ORGANIZATION")]
             Organization,
-            
+
             /// <summary>
             /// Enum Group for "GROUP"
             /// </summary>
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets OwnerType
         /// </summary>
-        [DataMember(Name="ownerType", EmitDefaultValue=false)]
+        [DataMember(Name = "ownerType", EmitDefaultValue = false)]
         public OwnerTypeEnum? OwnerType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultGreetingList" /> class.
@@ -76,16 +68,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CreatedBy = CreatedBy;
             this.ModifiedDate = ModifiedDate;
             this.ModifiedBy = ModifiedBy;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -93,7 +85,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Owner
         /// </summary>
-        [DataMember(Name="owner", EmitDefaultValue=false)]
+        [DataMember(Name = "owner", EmitDefaultValue = false)]
         public GreetingOwner Owner { get; set; }
 
 
@@ -111,7 +103,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Greetings
         /// </summary>
-        [DataMember(Name="greetings", EmitDefaultValue=false)]
+        [DataMember(Name = "greetings", EmitDefaultValue = false)]
         public Dictionary<string, Greeting> Greetings { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="createdDate", EmitDefaultValue=false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime? CreatedDate { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public string CreatedBy { get; set; }
 
 
@@ -137,7 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="modifiedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedDate", EmitDefaultValue = false)]
         public DateTime? ModifiedDate { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ModifiedBy
         /// </summary>
-        [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
         public string ModifiedBy { get; set; }
 
 
@@ -154,7 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -180,19 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BulkUpdateShiftTradeStateRequestItem
     /// </summary>
     [DataContract]
-    public partial class BulkUpdateShiftTradeStateRequestItem : IEquatable<BulkUpdateShiftTradeStateRequestItem>
+    public partial class BulkUpdateShiftTradeStateRequestItem :  IEquatable<BulkUpdateShiftTradeStateRequestItem>
     {
         /// <summary>
         /// The new state to set on the shift trade
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Unmatched for "Unmatched"
             /// </summary>
             [EnumMember(Value = "Unmatched")]
             Unmatched,
-
+            
             /// <summary>
             /// Enum Matched for "Matched"
             /// </summary>
             [EnumMember(Value = "Matched")]
             Matched,
-
+            
             /// <summary>
             /// Enum Approved for "Approved"
             /// </summary>
             [EnumMember(Value = "Approved")]
             Approved,
-
+            
             /// <summary>
             /// Enum Denied for "Denied"
             /// </summary>
             [EnumMember(Value = "Denied")]
             Denied,
-
+            
             /// <summary>
             /// Enum Expired for "Expired"
             /// </summary>
             [EnumMember(Value = "Expired")]
             Expired,
-
+            
             /// <summary>
             /// Enum Canceled for "Canceled"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The new state to set on the shift trade
         /// </summary>
         /// <value>The new state to set on the shift trade</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
 
         /// <summary>
@@ -92,16 +84,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Id = Id;
             this.State = State;
             this.Metadata = Metadata;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
 
 
@@ -112,7 +104,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the shift trade
         /// </summary>
         /// <value>Version metadata for the shift trade</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -131,6 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CopilotFallbackAction
     /// </summary>
     [DataContract]
-    public partial class CopilotFallbackAction :  IEquatable<CopilotFallbackAction>
+    public partial class CopilotFallbackAction : IEquatable<CopilotFallbackAction>
     {
         /// <summary>
         /// Type of action.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Knowledgearticle for "KnowledgeArticle"
             /// </summary>
             [EnumMember(Value = "KnowledgeArticle")]
             Knowledgearticle,
-            
+
             /// <summary>
             /// Enum Cannedresponse for "CannedResponse"
             /// </summary>
             [EnumMember(Value = "CannedResponse")]
             Cannedresponse,
-            
+
             /// <summary>
             /// Enum Script for "Script"
             /// </summary>
             [EnumMember(Value = "Script")]
             Script,
-            
+
             /// <summary>
             /// Enum Knowledgesearch for "KnowledgeSearch"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of action.
         /// </summary>
         /// <value>Type of action.</value>
-        [DataMember(Name="actionType", EmitDefaultValue=false)]
+        [DataMember(Name = "actionType", EmitDefaultValue = false)]
         public ActionTypeEnum? ActionType { get; set; }
 
         /// <summary>
@@ -78,9 +70,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.ActionType = ActionType;
             this.Attributes = Attributes;
-            
+
         }
-        
+
 
 
 
@@ -89,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Action specific attributes, if any. Maximum 100 of string key-value pair allowed.
         /// </summary>
         /// <value>Action specific attributes, if any. Maximum 100 of string key-value pair allowed.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -107,19 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

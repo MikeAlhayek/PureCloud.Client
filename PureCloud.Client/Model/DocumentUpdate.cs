@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentUpdate
     /// </summary>
     [DataContract]
-    public partial class DocumentUpdate :  IEquatable<DocumentUpdate>
+    public partial class DocumentUpdate : IEquatable<DocumentUpdate>
     {
 
         /// <summary>
@@ -47,15 +39,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.RemoveTagIds = RemoveTagIds;
             this.UpdateAttributes = UpdateAttributes;
             this.RemoveAttributes = RemoveAttributes;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets ChangeNumber
         /// </summary>
-        [DataMember(Name="changeNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
         public int? ChangeNumber { get; set; }
 
 
@@ -64,7 +56,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the document
         /// </summary>
         /// <value>The name of the document</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -72,7 +64,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Read
         /// </summary>
-        [DataMember(Name="read", EmitDefaultValue=false)]
+        [DataMember(Name = "read", EmitDefaultValue = false)]
         public bool? Read { get; set; }
 
 
@@ -80,7 +72,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AddTags
         /// </summary>
-        [DataMember(Name="addTags", EmitDefaultValue=false)]
+        [DataMember(Name = "addTags", EmitDefaultValue = false)]
         public List<string> AddTags { get; set; }
 
 
@@ -88,7 +80,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets RemoveTags
         /// </summary>
-        [DataMember(Name="removeTags", EmitDefaultValue=false)]
+        [DataMember(Name = "removeTags", EmitDefaultValue = false)]
         public List<string> RemoveTags { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AddTagIds
         /// </summary>
-        [DataMember(Name="addTagIds", EmitDefaultValue=false)]
+        [DataMember(Name = "addTagIds", EmitDefaultValue = false)]
         public List<string> AddTagIds { get; set; }
 
 
@@ -104,7 +96,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets RemoveTagIds
         /// </summary>
-        [DataMember(Name="removeTagIds", EmitDefaultValue=false)]
+        [DataMember(Name = "removeTagIds", EmitDefaultValue = false)]
         public List<string> RemoveTagIds { get; set; }
 
 
@@ -112,7 +104,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets UpdateAttributes
         /// </summary>
-        [DataMember(Name="updateAttributes", EmitDefaultValue=false)]
+        [DataMember(Name = "updateAttributes", EmitDefaultValue = false)]
         public List<DocumentAttribute> UpdateAttributes { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets RemoveAttributes
         /// </summary>
-        [DataMember(Name="removeAttributes", EmitDefaultValue=false)]
+        [DataMember(Name = "removeAttributes", EmitDefaultValue = false)]
         public List<string> RemoveAttributes { get; set; }
 
 
@@ -145,19 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

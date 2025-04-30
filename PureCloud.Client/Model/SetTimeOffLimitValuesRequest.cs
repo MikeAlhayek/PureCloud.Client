@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SetTimeOffLimitValuesRequest
     /// </summary>
     [DataContract]
-    public partial class SetTimeOffLimitValuesRequest :  IEquatable<SetTimeOffLimitValuesRequest>
+    public partial class SetTimeOffLimitValuesRequest : IEquatable<SetTimeOffLimitValuesRequest>
     {
 
         /// <summary>
@@ -33,15 +25,15 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Values = Values;
             this.Metadata = Metadata;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name="values", EmitDefaultValue=false)]
+        [DataMember(Name = "values", EmitDefaultValue = false)]
         public List<TimeOffLimitRange> Values { get; set; }
 
 
@@ -50,7 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the time off limit
         /// </summary>
         /// <value>Version metadata for the time off limit</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -68,19 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ShiftTradeActivityRule
     /// </summary>
     [DataContract]
-    public partial class ShiftTradeActivityRule :  IEquatable<ShiftTradeActivityRule>
+    public partial class ShiftTradeActivityRule : IEquatable<ShiftTradeActivityRule>
     {
         /// <summary>
         /// The activity category to which to apply this rule
@@ -32,55 +24,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Onqueuework for "OnQueueWork"
             /// </summary>
             [EnumMember(Value = "OnQueueWork")]
             Onqueuework,
-            
+
             /// <summary>
             /// Enum Break for "Break"
             /// </summary>
             [EnumMember(Value = "Break")]
             Break,
-            
+
             /// <summary>
             /// Enum Meal for "Meal"
             /// </summary>
             [EnumMember(Value = "Meal")]
             Meal,
-            
+
             /// <summary>
             /// Enum Meeting for "Meeting"
             /// </summary>
             [EnumMember(Value = "Meeting")]
             Meeting,
-            
+
             /// <summary>
             /// Enum Offqueuework for "OffQueueWork"
             /// </summary>
             [EnumMember(Value = "OffQueueWork")]
             Offqueuework,
-            
+
             /// <summary>
             /// Enum Timeoff for "TimeOff"
             /// </summary>
             [EnumMember(Value = "TimeOff")]
             Timeoff,
-            
+
             /// <summary>
             /// Enum Training for "Training"
             /// </summary>
             [EnumMember(Value = "Training")]
             Training,
-            
+
             /// <summary>
             /// Enum Unavailable for "Unavailable"
             /// </summary>
             [EnumMember(Value = "Unavailable")]
             Unavailable,
-            
+
             /// <summary>
             /// Enum Unscheduled for "Unscheduled"
             /// </summary>
@@ -101,19 +93,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Replace for "Replace"
             /// </summary>
             [EnumMember(Value = "Replace")]
             Replace,
-            
+
             /// <summary>
             /// Enum Donotallowtrade for "DoNotAllowTrade"
             /// </summary>
             [EnumMember(Value = "DoNotAllowTrade")]
             Donotallowtrade,
-            
+
             /// <summary>
             /// Enum Keepwithschedule for "KeepWithSchedule"
             /// </summary>
@@ -124,13 +116,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The activity category to which to apply this rule
         /// </summary>
         /// <value>The activity category to which to apply this rule</value>
-        [DataMember(Name="activityCategory", EmitDefaultValue=false)]
+        [DataMember(Name = "activityCategory", EmitDefaultValue = false)]
         public ActivityCategoryEnum? ActivityCategory { get; set; }
         /// <summary>
         /// The action this rule invokes
         /// </summary>
         /// <value>The action this rule invokes</value>
-        [DataMember(Name="action", EmitDefaultValue=false)]
+        [DataMember(Name = "action", EmitDefaultValue = false)]
         public ActionEnum? Action { get; set; }
 
         /// <summary>
@@ -149,9 +141,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ActivityCategory = ActivityCategory;
             this.Action = Action;
             this.ActivityCodeIdReplacement = ActivityCodeIdReplacement;
-            
+
         }
-        
+
 
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The activity code ID with which to replace activities belonging to the original category if applicable (required if action &#x3D;&#x3D; Replace, must be a default activity code ID)
         /// </summary>
         /// <value>The activity code ID with which to replace activities belonging to the original category if applicable (required if action &#x3D;&#x3D; Replace, must be a default activity code ID)</value>
-        [DataMember(Name="activityCodeIdReplacement", EmitDefaultValue=false)]
+        [DataMember(Name = "activityCodeIdReplacement", EmitDefaultValue = false)]
         public string ActivityCodeIdReplacement { get; set; }
 
 
@@ -181,19 +173,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

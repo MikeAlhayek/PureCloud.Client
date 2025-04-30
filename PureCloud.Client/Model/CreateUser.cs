@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateUser
     /// </summary>
     [DataContract]
-    public partial class CreateUser :  IEquatable<CreateUser>
+    public partial class CreateUser : IEquatable<CreateUser>
     {
         /// <summary>
         /// Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "active"
             /// </summary>
             [EnumMember(Value = "active")]
             Active,
-            
+
             /// <summary>
             /// Enum Inactive for "inactive"
             /// </summary>
             [EnumMember(Value = "inactive")]
             Inactive,
-            
+
             /// <summary>
             /// Enum Deleted for "deleted"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.
         /// </summary>
         /// <value>Optional initialized state of the user. If not specified, state will be Active if invites are sent, otherwise Inactive.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
 
         /// <summary>
@@ -84,16 +76,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Password = Password;
             this.DivisionId = DivisionId;
             this.State = State;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// User&#39;s full name
         /// </summary>
         /// <value>User&#39;s full name</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Department
         /// </summary>
-        [DataMember(Name="department", EmitDefaultValue=false)]
+        [DataMember(Name = "department", EmitDefaultValue = false)]
         public string Department { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User&#39;s email and username
         /// </summary>
         /// <value>User&#39;s email and username</value>
-        [DataMember(Name="email", EmitDefaultValue=false)]
+        [DataMember(Name = "email", EmitDefaultValue = false)]
         public string Email { get; set; }
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Email addresses and phone numbers for this user
         /// </summary>
         /// <value>Email addresses and phone numbers for this user</value>
-        [DataMember(Name="addresses", EmitDefaultValue=false)]
+        [DataMember(Name = "addresses", EmitDefaultValue = false)]
         public List<Contact> Addresses { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Title
         /// </summary>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User&#39;s password
         /// </summary>
         /// <value>User&#39;s password</value>
-        [DataMember(Name="password", EmitDefaultValue=false)]
+        [DataMember(Name = "password", EmitDefaultValue = false)]
         public string Password { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division to which this user will belong
         /// </summary>
         /// <value>The division to which this user will belong</value>
-        [DataMember(Name="divisionId", EmitDefaultValue=false)]
+        [DataMember(Name = "divisionId", EmitDefaultValue = false)]
         public string DivisionId { get; set; }
 
 
@@ -171,19 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

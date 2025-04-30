@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CopyAttachmentsRequest
     /// </summary>
     [DataContract]
-    public partial class CopyAttachmentsRequest :  IEquatable<CopyAttachmentsRequest>
+    public partial class CopyAttachmentsRequest : IEquatable<CopyAttachmentsRequest>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.SourceMessage = SourceMessage;
             this.Attachments = Attachments;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// A reference to the email message within the current conversation that owns the attachments to be copied
         /// </summary>
         /// <value>A reference to the email message within the current conversation that owns the attachments to be copied</value>
-        [DataMember(Name="sourceMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "sourceMessage", EmitDefaultValue = false)]
         public DomainEntityRef SourceMessage { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of attachments that will be copied from the source message to the current draft
         /// </summary>
         /// <value>A list of attachments that will be copied from the source message to the current draft</value>
-        [DataMember(Name="attachments", EmitDefaultValue=false)]
+        [DataMember(Name = "attachments", EmitDefaultValue = false)]
         public List<Attachment> Attachments { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

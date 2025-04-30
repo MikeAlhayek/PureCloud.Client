@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CopilotRule
     /// </summary>
     [DataContract]
-    public partial class CopilotRule :  IEquatable<CopilotRule>
+    public partial class CopilotRule : IEquatable<CopilotRule>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Conditions = Conditions;
             this.Actions = Actions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// List of conditions to execute actions, must have at least 1 element and maximum 100 elements. Operator in case of multiple conditions: &#39;OR&#39;.
         /// </summary>
         /// <value>List of conditions to execute actions, must have at least 1 element and maximum 100 elements. Operator in case of multiple conditions: &#39;OR&#39;.</value>
-        [DataMember(Name="conditions", EmitDefaultValue=false)]
+        [DataMember(Name = "conditions", EmitDefaultValue = false)]
         public List<CopilotCondition> Conditions { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of actions to execute, must have at least 1 element and maximum 100 elements.
         /// </summary>
         /// <value>List of actions to execute, must have at least 1 element and maximum 100 elements.</value>
-        [DataMember(Name="actions", EmitDefaultValue=false)]
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
         public List<CopilotAction> Actions { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

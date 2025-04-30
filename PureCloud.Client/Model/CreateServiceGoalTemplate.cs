@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateServiceGoalTemplate
     /// </summary>
     [DataContract]
-    public partial class CreateServiceGoalTemplate :  IEquatable<CreateServiceGoalTemplate>
+    public partial class CreateServiceGoalTemplate : IEquatable<CreateServiceGoalTemplate>
     {
 
         /// <summary>
@@ -27,28 +19,25 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateServiceGoalTemplate" /> class.
         /// </summary>
-        /// <param name="Name">The name of the service goal template. (required).</param>
+        /// <param name="name">The name of the service goal template. (required).</param>
         /// <param name="ServiceLevel">Service level targets for this service goal template.</param>
         /// <param name="AverageSpeedOfAnswer">Average speed of answer targets for this service goal template.</param>
         /// <param name="AbandonRate">Abandon rate targets for this service goal template.</param>
         /// <param name="ImpactOverride">Settings controlling max percent increase and decrease of service goals for this service goal template.</param>
-        public CreateServiceGoalTemplate(string Name = null, BuServiceLevel ServiceLevel = null, BuAverageSpeedOfAnswer AverageSpeedOfAnswer = null, BuAbandonRate AbandonRate = null, ServiceGoalTemplateImpactOverride ImpactOverride = null)
+        public CreateServiceGoalTemplate(string name = null, BuServiceLevel ServiceLevel = null, BuAverageSpeedOfAnswer AverageSpeedOfAnswer = null, BuAbandonRate AbandonRate = null, ServiceGoalTemplateImpactOverride ImpactOverride = null)
         {
-            this.Name = Name;
+            this.Name = name;
             this.ServiceLevel = ServiceLevel;
             this.AverageSpeedOfAnswer = AverageSpeedOfAnswer;
             this.AbandonRate = AbandonRate;
             this.ImpactOverride = ImpactOverride;
-            
         }
-        
-
 
         /// <summary>
         /// The name of the service goal template.
         /// </summary>
         /// <value>The name of the service goal template.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -57,7 +46,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Service level targets for this service goal template
         /// </summary>
         /// <value>Service level targets for this service goal template</value>
-        [DataMember(Name="serviceLevel", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceLevel", EmitDefaultValue = false)]
         public BuServiceLevel ServiceLevel { get; set; }
 
 
@@ -66,7 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Average speed of answer targets for this service goal template
         /// </summary>
         /// <value>Average speed of answer targets for this service goal template</value>
-        [DataMember(Name="averageSpeedOfAnswer", EmitDefaultValue=false)]
+        [DataMember(Name = "averageSpeedOfAnswer", EmitDefaultValue = false)]
         public BuAverageSpeedOfAnswer AverageSpeedOfAnswer { get; set; }
 
 
@@ -75,7 +64,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Abandon rate targets for this service goal template
         /// </summary>
         /// <value>Abandon rate targets for this service goal template</value>
-        [DataMember(Name="abandonRate", EmitDefaultValue=false)]
+        [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
         public BuAbandonRate AbandonRate { get; set; }
 
 
@@ -84,7 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Settings controlling max percent increase and decrease of service goals for this service goal template
         /// </summary>
         /// <value>Settings controlling max percent increase and decrease of service goals for this service goal template</value>
-        [DataMember(Name="impactOverride", EmitDefaultValue=false)]
+        [DataMember(Name = "impactOverride", EmitDefaultValue = false)]
         public ServiceGoalTemplateImpactOverride ImpactOverride { get; set; }
 
 
@@ -105,19 +94,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

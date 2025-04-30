@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SettingDirection
     /// </summary>
     [DataContract]
-    public partial class SettingDirection :  IEquatable<SettingDirection>
+    public partial class SettingDirection : IEquatable<SettingDirection>
     {
         /// <summary>
         /// Status for the Inbound Direction
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Enabled for "Enabled"
             /// </summary>
             [EnumMember(Value = "Enabled")]
             Enabled,
-            
+
             /// <summary>
             /// Enum Disabled for "Disabled"
             /// </summary>
@@ -59,13 +51,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Enabled for "Enabled"
             /// </summary>
             [EnumMember(Value = "Enabled")]
             Enabled,
-            
+
             /// <summary>
             /// Enum Disabled for "Disabled"
             /// </summary>
@@ -76,13 +68,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Status for the Inbound Direction
         /// </summary>
         /// <value>Status for the Inbound Direction</value>
-        [DataMember(Name="inbound", EmitDefaultValue=false)]
+        [DataMember(Name = "inbound", EmitDefaultValue = false)]
         public InboundEnum? Inbound { get; set; }
         /// <summary>
         /// Status for the Outbound Direction
         /// </summary>
         /// <value>Status for the Outbound Direction</value>
-        [DataMember(Name="outbound", EmitDefaultValue=false)]
+        [DataMember(Name = "outbound", EmitDefaultValue = false)]
         public OutboundEnum? Outbound { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SettingDirection" /> class.
@@ -93,9 +85,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Inbound = Inbound;
             this.Outbound = Outbound;
-            
+
         }
-        
+
 
 
 
@@ -115,19 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

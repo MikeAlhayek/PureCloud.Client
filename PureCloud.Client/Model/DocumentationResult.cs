@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentationResult
     /// </summary>
     [DataContract]
-    public partial class DocumentationResult :  IEquatable<DocumentationResult>
+    public partial class DocumentationResult : IEquatable<DocumentationResult>
     {
 
         /// <summary>
@@ -60,7 +52,7 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Service = Service;
             this.Slug = Slug;
             this.Title = Title;
-            this.GetType = GetType;
+            this.GetTheType = GetType;
             this.FacetFeature = FacetFeature;
             this.FacetRole = FacetRole;
             this.FacetService = FacetService;
@@ -69,16 +61,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ReleasenoteTag = ReleasenoteTag;
             this.ServiceArea = ServiceArea;
             this.VideoCategories = VideoCategories;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public int? Id { get; set; }
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The category of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The category of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="categories", EmitDefaultValue=false)]
+        [DataMember(Name = "categories", EmitDefaultValue = false)]
         public List<int?> Categories { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The description of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The description of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The text or html content for the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The text or html content for the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The excerpt of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The excerpt of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="excerpt", EmitDefaultValue=false)]
+        [DataMember(Name = "excerpt", EmitDefaultValue = false)]
         public string Excerpt { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// URL link for the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>URL link for the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
+        [DataMember(Name = "link", EmitDefaultValue = false)]
         public string Link { get; set; }
 
 
@@ -132,7 +124,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The modified date for the documentation entity. Will be returned in responses for certain entities. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="modified", EmitDefaultValue=false)]
+        [DataMember(Name = "modified", EmitDefaultValue = false)]
         public DateTime? Modified { get; set; }
 
 
@@ -141,7 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The name of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -150,7 +142,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The service of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The service of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="service", EmitDefaultValue=false)]
+        [DataMember(Name = "service", EmitDefaultValue = false)]
         public List<int?> Service { get; set; }
 
 
@@ -159,7 +151,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The slug of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The slug of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="slug", EmitDefaultValue=false)]
+        [DataMember(Name = "slug", EmitDefaultValue = false)]
         public string Slug { get; set; }
 
 
@@ -168,7 +160,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The title of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The title of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
 
@@ -177,8 +169,8 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The search type. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The search type. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="get_type", EmitDefaultValue=false)]
-        public string GetType { get; set; }
+        [DataMember(Name = "get_type", EmitDefaultValue = false)]
+        public string GetTheType { get; set; }
 
 
 
@@ -186,7 +178,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The facet feature of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The facet feature of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="facet_feature", EmitDefaultValue=false)]
+        [DataMember(Name = "facet_feature", EmitDefaultValue = false)]
         public List<int?> FacetFeature { get; set; }
 
 
@@ -195,7 +187,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The facet role of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The facet role of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="facet_role", EmitDefaultValue=false)]
+        [DataMember(Name = "facet_role", EmitDefaultValue = false)]
         public List<int?> FacetRole { get; set; }
 
 
@@ -204,7 +196,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The facet service of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The facet service of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="facet_service", EmitDefaultValue=false)]
+        [DataMember(Name = "facet_service", EmitDefaultValue = false)]
         public List<int?> FacetService { get; set; }
 
 
@@ -213,7 +205,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The faq categories of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The faq categories of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="faq_categories", EmitDefaultValue=false)]
+        [DataMember(Name = "faq_categories", EmitDefaultValue = false)]
         public List<int?> FaqCategories { get; set; }
 
 
@@ -222,7 +214,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The releasenote category of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The releasenote category of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="releasenote_category", EmitDefaultValue=false)]
+        [DataMember(Name = "releasenote_category", EmitDefaultValue = false)]
         public List<int?> ReleasenoteCategory { get; set; }
 
 
@@ -231,7 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The releasenote tag of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The releasenote tag of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="releasenote_tag", EmitDefaultValue=false)]
+        [DataMember(Name = "releasenote_tag", EmitDefaultValue = false)]
         public List<int?> ReleasenoteTag { get; set; }
 
 
@@ -240,7 +232,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The service area of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The service area of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="service-area", EmitDefaultValue=false)]
+        [DataMember(Name = "service-area", EmitDefaultValue = false)]
         public List<int?> ServiceArea { get; set; }
 
 
@@ -249,7 +241,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The video categories of the documentation entity. Will be returned in responses for certain entities.
         /// </summary>
         /// <value>The video categories of the documentation entity. Will be returned in responses for certain entities.</value>
-        [DataMember(Name="video_categories", EmitDefaultValue=false)]
+        [DataMember(Name = "video_categories", EmitDefaultValue = false)]
         public List<int?> VideoCategories { get; set; }
 
 
@@ -273,7 +265,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Service: ").Append(Service).Append("\n");
             sb.Append("  Slug: ").Append(Slug).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
-            sb.Append("  GetType: ").Append(GetType).Append("\n");
+            sb.Append("  GetType: ").Append(GetTheType).Append("\n");
             sb.Append("  FacetFeature: ").Append(FacetFeature).Append("\n");
             sb.Append("  FacetRole: ").Append(FacetRole).Append("\n");
             sb.Append("  FacetService: ").Append(FacetService).Append("\n");
@@ -285,19 +277,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal
@@ -378,9 +358,9 @@ namespace PureCloudPlatform.Client.V2.Model
                     this.Title.Equals(other.Title)
                 ) &&
                 (
-                    this.GetType == other.GetType ||
-                    this.GetType != null &&
-                    this.GetType.Equals(other.GetType)
+                    this.GetTheType == other.GetTheType ||
+                    this.GetTheType != null &&
+                    this.GetTheType.Equals(other.GetTheType)
                 ) &&
                 (
                     this.FacetFeature == other.FacetFeature ||
@@ -468,8 +448,8 @@ namespace PureCloudPlatform.Client.V2.Model
                 if (this.Title != null)
                     hash = hash * 59 + this.Title.GetHashCode();
 
-                if (this.GetType != null)
-                    hash = hash * 59 + this.GetType.GetHashCode();
+                if (this.GetTheType != null)
+                    hash = hash * 59 + this.GetTheType.GetHashCode();
 
                 if (this.FacetFeature != null)
                     hash = hash * 59 + this.FacetFeature.GetHashCode();

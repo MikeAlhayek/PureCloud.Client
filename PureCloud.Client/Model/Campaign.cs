@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Campaign
     /// </summary>
     [DataContract]
-    public partial class Campaign :  IEquatable<Campaign>
+    public partial class Campaign : IEquatable<Campaign>
     {
         /// <summary>
         /// The strategy this Campaign will use for dialing.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Agentless for "agentless"
             /// </summary>
             [EnumMember(Value = "agentless")]
             Agentless,
-            
+
             /// <summary>
             /// Enum Preview for "preview"
             /// </summary>
             [EnumMember(Value = "preview")]
             Preview,
-            
+
             /// <summary>
             /// Enum Power for "power"
             /// </summary>
             [EnumMember(Value = "power")]
             Power,
-            
+
             /// <summary>
             /// Enum Predictive for "predictive"
             /// </summary>
             [EnumMember(Value = "predictive")]
             Predictive,
-            
+
             /// <summary>
             /// Enum Progressive for "progressive"
             /// </summary>
             [EnumMember(Value = "progressive")]
             Progressive,
-            
+
             /// <summary>
             /// Enum External for "external"
             /// </summary>
@@ -83,43 +75,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum On for "on"
             /// </summary>
             [EnumMember(Value = "on")]
             On,
-            
+
             /// <summary>
             /// Enum Stopping for "stopping"
             /// </summary>
             [EnumMember(Value = "stopping")]
             Stopping,
-            
+
             /// <summary>
             /// Enum Off for "off"
             /// </summary>
             [EnumMember(Value = "off")]
             Off,
-            
+
             /// <summary>
             /// Enum Complete for "complete"
             /// </summary>
             [EnumMember(Value = "complete")]
             Complete,
-            
+
             /// <summary>
             /// Enum Invalid for "invalid"
             /// </summary>
             [EnumMember(Value = "invalid")]
             Invalid,
-            
+
             /// <summary>
             /// Enum ForcedOff for "forced_off"
             /// </summary>
             [EnumMember(Value = "forced_off")]
             ForcedOff,
-            
+
             /// <summary>
             /// Enum ForcedStopping for "forced_stopping"
             /// </summary>
@@ -130,13 +122,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The strategy this Campaign will use for dialing.
         /// </summary>
         /// <value>The strategy this Campaign will use for dialing.</value>
-        [DataMember(Name="dialingMode", EmitDefaultValue=false)]
+        [DataMember(Name = "dialingMode", EmitDefaultValue = false)]
         public DialingModeEnum? DialingMode { get; set; }
         /// <summary>
         /// The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.
         /// </summary>
         /// <value>The current status of the Campaign. A Campaign may be turned 'on' or 'off'. Required for updates.</value>
-        [DataMember(Name="campaignStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "campaignStatus", EmitDefaultValue = false)]
         public CampaignStatusEnum? CampaignStatus { get; set; }
 
         /// <summary>
@@ -219,16 +211,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.MaxCallsPerAgentDecimal = MaxCallsPerAgentDecimal;
             this.CallbackAutoAnswer = CallbackAutoAnswer;
             this.DynamicLineBalancingSettings = DynamicLineBalancingSettings;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -237,7 +229,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the Campaign.
         /// </summary>
         /// <value>The name of the Campaign.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -246,7 +238,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -255,7 +247,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -264,7 +256,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required for updates, must match the version number of the most recent update
         /// </summary>
         /// <value>Required for updates, must match the version number of the most recent update</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -273,7 +265,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ContactList for this Campaign to dial.
         /// </summary>
         /// <value>The ContactList for this Campaign to dial.</value>
-        [DataMember(Name="contactList", EmitDefaultValue=false)]
+        [DataMember(Name = "contactList", EmitDefaultValue = false)]
         public DomainEntityRef ContactList { get; set; }
 
 
@@ -282,7 +274,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.
         /// </summary>
         /// <value>The Queue for this Campaign to route calls to. Required for all dialing modes except agentless.</value>
-        [DataMember(Name="queue", EmitDefaultValue=false)]
+        [DataMember(Name = "queue", EmitDefaultValue = false)]
         public DomainEntityRef Queue { get; set; }
 
 
@@ -293,7 +285,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.
         /// </summary>
         /// <value>The Script to be displayed to agents that are handling outbound calls. Required for all dialing modes except agentless.</value>
-        [DataMember(Name="script", EmitDefaultValue=false)]
+        [DataMember(Name = "script", EmitDefaultValue = false)]
         public DomainEntityRef Script { get; set; }
 
 
@@ -302,7 +294,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The EdgeGroup that will place the calls. Required for all dialing modes except preview.
         /// </summary>
         /// <value>The EdgeGroup that will place the calls. Required for all dialing modes except preview.</value>
-        [DataMember(Name="edgeGroup", EmitDefaultValue=false)]
+        [DataMember(Name = "edgeGroup", EmitDefaultValue = false)]
         public DomainEntityRef EdgeGroup { get; set; }
 
 
@@ -311,7 +303,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The identifier of the site to be used for dialing; can be set in place of an edge group.
         /// </summary>
         /// <value>The identifier of the site to be used for dialing; can be set in place of an edge group.</value>
-        [DataMember(Name="site", EmitDefaultValue=false)]
+        [DataMember(Name = "site", EmitDefaultValue = false)]
         public DomainEntityRef Site { get; set; }
 
 
@@ -322,7 +314,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.
         /// </summary>
         /// <value>The ContactPhoneNumberColumns on the ContactList that this Campaign should dial.</value>
-        [DataMember(Name="phoneColumns", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneColumns", EmitDefaultValue = false)]
         public List<PhoneColumn> PhoneColumns { get; set; }
 
 
@@ -331,7 +323,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The targeted compliance abandon rate percentage. Required for power and predictive campaigns.
         /// </summary>
         /// <value>The targeted compliance abandon rate percentage. Required for power and predictive campaigns.</value>
-        [DataMember(Name="abandonRate", EmitDefaultValue=false)]
+        [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
         public double? AbandonRate { get; set; }
 
 
@@ -340,7 +332,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// DncLists for this Campaign to check before placing a call.
         /// </summary>
         /// <value>DncLists for this Campaign to check before placing a call.</value>
-        [DataMember(Name="dncLists", EmitDefaultValue=false)]
+        [DataMember(Name = "dncLists", EmitDefaultValue = false)]
         public List<DomainEntityRef> DncLists { get; set; }
 
 
@@ -349,7 +341,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The callable time set for this campaign to check before placing a call.
         /// </summary>
         /// <value>The callable time set for this campaign to check before placing a call.</value>
-        [DataMember(Name="callableTimeSet", EmitDefaultValue=false)]
+        [DataMember(Name = "callableTimeSet", EmitDefaultValue = false)]
         public DomainEntityRef CallableTimeSet { get; set; }
 
 
@@ -358,7 +350,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.
         /// </summary>
         /// <value>The call analysis response set to handle call analysis results from the edge. Required for all dialing modes except preview.</value>
-        [DataMember(Name="callAnalysisResponseSet", EmitDefaultValue=false)]
+        [DataMember(Name = "callAnalysisResponseSet", EmitDefaultValue = false)]
         public DomainEntityRef CallAnalysisResponseSet { get; set; }
 
 
@@ -367,7 +359,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of current error conditions associated with the campaign.
         /// </summary>
         /// <value>A list of current error conditions associated with the campaign.</value>
-        [DataMember(Name="errors", EmitDefaultValue=false)]
+        [DataMember(Name = "errors", EmitDefaultValue = false)]
         public List<RestErrorDetail> Errors { get; private set; }
 
 
@@ -376,7 +368,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The caller id name to be displayed on the outbound call.
         /// </summary>
         /// <value>The caller id name to be displayed on the outbound call.</value>
-        [DataMember(Name="callerName", EmitDefaultValue=false)]
+        [DataMember(Name = "callerName", EmitDefaultValue = false)]
         public string CallerName { get; set; }
 
 
@@ -385,7 +377,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The caller id phone number to be displayed on the outbound call.
         /// </summary>
         /// <value>The caller id phone number to be displayed on the outbound call.</value>
-        [DataMember(Name="callerAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
         public string CallerAddress { get; set; }
 
 
@@ -394,7 +386,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.
         /// </summary>
         /// <value>The number of outbound lines to be concurrently dialed. Only applicable to non-preview campaigns; only required for agentless.</value>
-        [DataMember(Name="outboundLineCount", EmitDefaultValue=false)]
+        [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
         public int? OutboundLineCount { get; set; }
 
 
@@ -403,7 +395,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Rule sets to be applied while this campaign is dialing.
         /// </summary>
         /// <value>Rule sets to be applied while this campaign is dialing.</value>
-        [DataMember(Name="ruleSets", EmitDefaultValue=false)]
+        [DataMember(Name = "ruleSets", EmitDefaultValue = false)]
         public List<DomainEntityRef> RuleSets { get; set; }
 
 
@@ -412,7 +404,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.
         /// </summary>
         /// <value>Whether or not agents can skip previews without placing a call. Only applicable for preview campaigns.</value>
-        [DataMember(Name="skipPreviewDisabled", EmitDefaultValue=false)]
+        [DataMember(Name = "skipPreviewDisabled", EmitDefaultValue = false)]
         public bool? SkipPreviewDisabled { get; set; }
 
 
@@ -421,7 +413,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.
         /// </summary>
         /// <value>The number of seconds before a call will be automatically placed on a preview. A value of 0 indicates no automatic placement of calls. Only applicable to preview campaigns.</value>
-        [DataMember(Name="previewTimeOutSeconds", EmitDefaultValue=false)]
+        [DataMember(Name = "previewTimeOutSeconds", EmitDefaultValue = false)]
         public long? PreviewTimeOutSeconds { get; set; }
 
 
@@ -430,7 +422,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.
         /// </summary>
         /// <value>Indicates (when true) that the campaign will remain on after contacts are depleted, allowing additional contacts to be appended/added to the contact list and processed by the still-running campaign. The campaign can still be turned off manually.</value>
-        [DataMember(Name="alwaysRunning", EmitDefaultValue=false)]
+        [DataMember(Name = "alwaysRunning", EmitDefaultValue = false)]
         public bool? AlwaysRunning { get; set; }
 
 
@@ -439,7 +431,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The order in which to sort contacts for dialing, based on a column.
         /// </summary>
         /// <value>The order in which to sort contacts for dialing, based on a column.</value>
-        [DataMember(Name="contactSort", EmitDefaultValue=false)]
+        [DataMember(Name = "contactSort", EmitDefaultValue = false)]
         public ContactSort ContactSort { get; set; }
 
 
@@ -448,7 +440,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The order in which to sort contacts for dialing, based on up to four columns.
         /// </summary>
         /// <value>The order in which to sort contacts for dialing, based on up to four columns.</value>
-        [DataMember(Name="contactSorts", EmitDefaultValue=false)]
+        [DataMember(Name = "contactSorts", EmitDefaultValue = false)]
         public List<ContactSort> ContactSorts { get; set; }
 
 
@@ -457,7 +449,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// How long to wait before dispositioning a call as &#39;no-answer&#39;. Default 30 seconds. Only applicable to non-preview campaigns.
         /// </summary>
         /// <value>How long to wait before dispositioning a call as &#39;no-answer&#39;. Default 30 seconds. Only applicable to non-preview campaigns.</value>
-        [DataMember(Name="noAnswerTimeout", EmitDefaultValue=false)]
+        [DataMember(Name = "noAnswerTimeout", EmitDefaultValue = false)]
         public int? NoAnswerTimeout { get; set; }
 
 
@@ -466,7 +458,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The language the edge will use to analyze the call.
         /// </summary>
         /// <value>The language the edge will use to analyze the call.</value>
-        [DataMember(Name="callAnalysisLanguage", EmitDefaultValue=false)]
+        [DataMember(Name = "callAnalysisLanguage", EmitDefaultValue = false)]
         public string CallAnalysisLanguage { get; set; }
 
 
@@ -475,7 +467,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.
         /// </summary>
         /// <value>The priority of this campaign relative to other campaigns that are running on the same queue. 5 is the highest priority, 1 the lowest.</value>
-        [DataMember(Name="priority", EmitDefaultValue=false)]
+        [DataMember(Name = "priority", EmitDefaultValue = false)]
         public int? Priority { get; set; }
 
 
@@ -484,7 +476,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.
         /// </summary>
         /// <value>Filter to apply to the contact list before dialing. Currently a campaign can only have one filter applied.</value>
-        [DataMember(Name="contactListFilters", EmitDefaultValue=false)]
+        [DataMember(Name = "contactListFilters", EmitDefaultValue = false)]
         public List<DomainEntityRef> ContactListFilters { get; set; }
 
 
@@ -493,7 +485,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division this campaign belongs to.
         /// </summary>
         /// <value>The division this campaign belongs to.</value>
-        [DataMember(Name="division", EmitDefaultValue=false)]
+        [DataMember(Name = "division", EmitDefaultValue = false)]
         public DomainEntityRef Division { get; set; }
 
 
@@ -502,7 +494,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.
         /// </summary>
         /// <value>Name of the contact list column containing the id of the agent who owns the record. Only applicable to preview campaigns.</value>
-        [DataMember(Name="agentOwnedColumn", EmitDefaultValue=false)]
+        [DataMember(Name = "agentOwnedColumn", EmitDefaultValue = false)]
         public string AgentOwnedColumn { get; set; }
 
 
@@ -511,7 +503,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Settings for dynamic queueing of contacts.
         /// </summary>
         /// <value>Settings for dynamic queueing of contacts.</value>
-        [DataMember(Name="dynamicContactQueueingSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "dynamicContactQueueingSettings", EmitDefaultValue = false)]
         public DynamicContactQueueingSettings DynamicContactQueueingSettings { get; set; }
 
 
@@ -520,7 +512,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The skill columns on the ContactList that this Campaign should take into account when dialing
         /// </summary>
         /// <value>The skill columns on the ContactList that this Campaign should take into account when dialing</value>
-        [DataMember(Name="skillColumns", EmitDefaultValue=false)]
+        [DataMember(Name = "skillColumns", EmitDefaultValue = false)]
         public List<string> SkillColumns { get; set; }
 
 
@@ -529,7 +521,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of calls that can be placed per agent on this campaign
         /// </summary>
         /// <value>The maximum number of calls that can be placed per agent on this campaign</value>
-        [DataMember(Name="maxCallsPerAgent", EmitDefaultValue=false)]
+        [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
         public int? MaxCallsPerAgent { get; set; }
 
 
@@ -538,7 +530,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of calls that can be placed per agent on this campaign with decimal precision
         /// </summary>
         /// <value>The maximum number of calls that can be placed per agent on this campaign with decimal precision</value>
-        [DataMember(Name="maxCallsPerAgentDecimal", EmitDefaultValue=false)]
+        [DataMember(Name = "maxCallsPerAgentDecimal", EmitDefaultValue = false)]
         public double? MaxCallsPerAgentDecimal { get; set; }
 
 
@@ -547,7 +539,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The option manages the auto-answer callback calls
         /// </summary>
         /// <value>The option manages the auto-answer callback calls</value>
-        [DataMember(Name="callbackAutoAnswer", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackAutoAnswer", EmitDefaultValue = false)]
         public bool? CallbackAutoAnswer { get; set; }
 
 
@@ -556,7 +548,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Dynamic line balancing settings
         /// </summary>
         /// <value>Dynamic line balancing settings</value>
-        [DataMember(Name="dynamicLineBalancingSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "dynamicLineBalancingSettings", EmitDefaultValue = false)]
         public DynamicLineBalancingSettings DynamicLineBalancingSettings { get; set; }
 
 
@@ -565,7 +557,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -620,19 +612,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

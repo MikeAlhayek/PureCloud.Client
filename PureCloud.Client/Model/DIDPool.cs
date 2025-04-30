@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DIDPool
     /// </summary>
     [DataContract]
-    public partial class DIDPool :  IEquatable<DIDPool>
+    public partial class DIDPool : IEquatable<DIDPool>
     {
         /// <summary>
         /// Indicates if the resource is active, inactive, or deleted.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "active"
             /// </summary>
             [EnumMember(Value = "active")]
             Active,
-            
+
             /// <summary>
             /// Enum Inactive for "inactive"
             /// </summary>
             [EnumMember(Value = "inactive")]
             Inactive,
-            
+
             /// <summary>
             /// Enum Deleted for "deleted"
             /// </summary>
@@ -65,13 +57,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Cloud for "PURE_CLOUD"
             /// </summary>
             [EnumMember(Value = "PURE_CLOUD")]
             Cloud,
-            
+
             /// <summary>
             /// Enum CloudVoice for "PURE_CLOUD_VOICE"
             /// </summary>
@@ -82,13 +74,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates if the resource is active, inactive, or deleted.
         /// </summary>
         /// <value>Indicates if the resource is active, inactive, or deleted.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; private set; }
         /// <summary>
         /// The provider for this DID pool
         /// </summary>
         /// <value>The provider for this DID pool</value>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
         public ProviderEnum? Provider { get; set; }
 
         /// <summary>
@@ -117,16 +109,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.EndPhoneNumber = EndPhoneNumber;
             this.Comments = Comments;
             this.Provider = Provider;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -135,7 +127,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the entity.
         /// </summary>
         /// <value>The name of the entity.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division to which this entity belongs.
         /// </summary>
         /// <value>The division to which this entity belongs.</value>
-        [DataMember(Name="division", EmitDefaultValue=false)]
+        [DataMember(Name = "division", EmitDefaultValue = false)]
         public Division Division { get; set; }
 
 
@@ -153,7 +145,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The resource&#39;s description.
         /// </summary>
         /// <value>The resource&#39;s description.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current version of the resource.
         /// </summary>
         /// <value>The current version of the resource.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -171,7 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date the resource was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -180,7 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date of the last modification to the resource. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -189,7 +181,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the user that last modified the resource.
         /// </summary>
         /// <value>The ID of the user that last modified the resource.</value>
-        [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
         public string ModifiedBy { get; private set; }
 
 
@@ -198,7 +190,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the user that created the resource.
         /// </summary>
         /// <value>The ID of the user that created the resource.</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public string CreatedBy { get; private set; }
 
 
@@ -209,7 +201,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The application that last modified the resource.
         /// </summary>
         /// <value>The application that last modified the resource.</value>
-        [DataMember(Name="modifiedByApp", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedByApp", EmitDefaultValue = false)]
         public string ModifiedByApp { get; private set; }
 
 
@@ -218,7 +210,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The application that created the resource.
         /// </summary>
         /// <value>The application that created the resource.</value>
-        [DataMember(Name="createdByApp", EmitDefaultValue=false)]
+        [DataMember(Name = "createdByApp", EmitDefaultValue = false)]
         public string CreatedByApp { get; private set; }
 
 
@@ -227,7 +219,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The starting phone number for the range of this DID pool. Must be in E.164 format
         /// </summary>
         /// <value>The starting phone number for the range of this DID pool. Must be in E.164 format</value>
-        [DataMember(Name="startPhoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "startPhoneNumber", EmitDefaultValue = false)]
         public string StartPhoneNumber { get; set; }
 
 
@@ -236,7 +228,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ending phone number for the range of this DID pool. Must be in E.164 format
         /// </summary>
         /// <value>The ending phone number for the range of this DID pool. Must be in E.164 format</value>
-        [DataMember(Name="endPhoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "endPhoneNumber", EmitDefaultValue = false)]
         public string EndPhoneNumber { get; set; }
 
 
@@ -244,7 +236,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Comments
         /// </summary>
-        [DataMember(Name="comments", EmitDefaultValue=false)]
+        [DataMember(Name = "comments", EmitDefaultValue = false)]
         public string Comments { get; set; }
 
 
@@ -255,7 +247,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -288,19 +280,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

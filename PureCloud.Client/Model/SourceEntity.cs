@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SourceEntity
     /// </summary>
     [DataContract]
-    public partial class SourceEntity :  IEquatable<SourceEntity>
+    public partial class SourceEntity : IEquatable<SourceEntity>
     {
         /// <summary>
         /// The type of the source entity
@@ -32,49 +24,49 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Thankyou for "ThankYou"
             /// </summary>
             [EnumMember(Value = "ThankYou")]
             Thankyou,
-            
+
             /// <summary>
             /// Enum Congratulations for "Congratulations"
             /// </summary>
             [EnumMember(Value = "Congratulations")]
             Congratulations,
-            
+
             /// <summary>
             /// Enum Highperformance for "HighPerformance"
             /// </summary>
             [EnumMember(Value = "HighPerformance")]
             Highperformance,
-            
+
             /// <summary>
             /// Enum Companyvalues for "CompanyValues"
             /// </summary>
             [EnumMember(Value = "CompanyValues")]
             Companyvalues,
-            
+
             /// <summary>
             /// Enum Competition for "Competition"
             /// </summary>
             [EnumMember(Value = "Competition")]
             Competition,
-            
+
             /// <summary>
             /// Enum Race for "Race"
             /// </summary>
             [EnumMember(Value = "Race")]
             Race,
-            
+
             /// <summary>
             /// Enum Raffle for "Raffle"
             /// </summary>
             [EnumMember(Value = "Raffle")]
             Raffle,
-            
+
             /// <summary>
             /// Enum Teamgoal for "TeamGoal"
             /// </summary>
@@ -85,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the source entity
         /// </summary>
         /// <value>The type of the source entity</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SourceEntity" /> class.
@@ -96,16 +88,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Type = Type;
             this.ContestCompleteData = ContestCompleteData;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -116,7 +108,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The contest data - Only supplied when celebration is of type ContestComplete
         /// </summary>
         /// <value>The contest data - Only supplied when celebration is of type ContestComplete</value>
-        [DataMember(Name="contestCompleteData", EmitDefaultValue=false)]
+        [DataMember(Name = "contestCompleteData", EmitDefaultValue = false)]
         public ContestCompleteData ContestCompleteData { get; set; }
 
 
@@ -125,7 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -145,19 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SentimentFeedback
     /// </summary>
     [DataContract]
-    public partial class SentimentFeedback :  IEquatable<SentimentFeedback>
+    public partial class SentimentFeedback : IEquatable<SentimentFeedback>
     {
         /// <summary>
         /// The sentiment feedback value for the given phrase
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Neutral for "Neutral"
             /// </summary>
             [EnumMember(Value = "Neutral")]
             Neutral,
-            
+
             /// <summary>
             /// Enum Positive for "Positive"
             /// </summary>
             [EnumMember(Value = "Positive")]
             Positive,
-            
+
             /// <summary>
             /// Enum Negative for "Negative"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The sentiment feedback value for the given phrase
         /// </summary>
         /// <value>The sentiment feedback value for the given phrase</value>
-        [DataMember(Name="feedbackValue", EmitDefaultValue=false)]
+        [DataMember(Name = "feedbackValue", EmitDefaultValue = false)]
         public FeedbackValueEnum? FeedbackValue { get; set; }
 
         /// <summary>
@@ -74,16 +66,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Phrase = Phrase;
             this.Dialect = Dialect;
             this.FeedbackValue = FeedbackValue;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -92,7 +84,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The phrase for which sentiment feedback is provided
         /// </summary>
         /// <value>The phrase for which sentiment feedback is provided</value>
-        [DataMember(Name="phrase", EmitDefaultValue=false)]
+        [DataMember(Name = "phrase", EmitDefaultValue = false)]
         public string Phrase { get; set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The dialect for the given phrase, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
         /// </summary>
         /// <value>The dialect for the given phrase, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-        [DataMember(Name="dialect", EmitDefaultValue=false)]
+        [DataMember(Name = "dialect", EmitDefaultValue = false)]
         public string Dialect { get; set; }
 
 
@@ -112,7 +104,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The Timestamp when sentiment feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -121,7 +113,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Id of user who created the sentiment feedback
         /// </summary>
         /// <value>The Id of user who created the sentiment feedback</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public AddressableEntityRef CreatedBy { get; private set; }
 
 
@@ -143,19 +135,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

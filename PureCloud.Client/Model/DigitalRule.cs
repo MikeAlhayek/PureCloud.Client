@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DigitalRule
     /// </summary>
     [DataContract]
-    public partial class DigitalRule :  IEquatable<DigitalRule>
+    public partial class DigitalRule : IEquatable<DigitalRule>
     {
         /// <summary>
         /// The category of the rule.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Precontact for "PreContact"
             /// </summary>
             [EnumMember(Value = "PreContact")]
             Precontact,
-            
+
             /// <summary>
             /// Enum Postcontact for "PostContact"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The category of the rule.
         /// </summary>
         /// <value>The category of the rule.</value>
-        [DataMember(Name="category", EmitDefaultValue=false)]
+        [DataMember(Name = "category", EmitDefaultValue = false)]
         public CategoryEnum? Category { get; set; }
 
         /// <summary>
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Category = Category;
             this.Conditions = Conditions;
             this.Actions = Actions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The identifier of the rule.
         /// </summary>
         /// <value>The identifier of the rule.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the rule.
         /// </summary>
         /// <value>The name of the rule.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ranked order of the rule. Rules are processed from lowest number to highest.
         /// </summary>
         /// <value>The ranked order of the rule. Rules are processed from lowest number to highest.</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public int? Order { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of conditions to evaluate. All of the Conditions must evaluate to true to trigger the actions.
         /// </summary>
         /// <value>A list of conditions to evaluate. All of the Conditions must evaluate to true to trigger the actions.</value>
-        [DataMember(Name="conditions", EmitDefaultValue=false)]
+        [DataMember(Name = "conditions", EmitDefaultValue = false)]
         public List<DigitalCondition> Conditions { get; set; }
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of actions to be taken if all conditions are true.
         /// </summary>
         /// <value>The list of actions to be taken if all conditions are true.</value>
-        [DataMember(Name="actions", EmitDefaultValue=false)]
+        [DataMember(Name = "actions", EmitDefaultValue = false)]
         public List<DigitalAction> Actions { get; set; }
 
 
@@ -141,19 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DefaultObjective
     /// </summary>
     [DataContract]
-    public partial class DefaultObjective :  IEquatable<DefaultObjective>
+    public partial class DefaultObjective : IEquatable<DefaultObjective>
     {
         /// <summary>
         /// Gets or Sets MediaTypes
@@ -31,61 +23,61 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Callback for "callback"
             /// </summary>
             [EnumMember(Value = "callback")]
             Callback,
-            
+
             /// <summary>
             /// Enum Chat for "chat"
             /// </summary>
             [EnumMember(Value = "chat")]
             Chat,
-            
+
             /// <summary>
             /// Enum Cobrowse for "cobrowse"
             /// </summary>
             [EnumMember(Value = "cobrowse")]
             Cobrowse,
-            
+
             /// <summary>
             /// Enum Email for "email"
             /// </summary>
             [EnumMember(Value = "email")]
             Email,
-            
+
             /// <summary>
             /// Enum Internalmessage for "internalmessage"
             /// </summary>
             [EnumMember(Value = "internalmessage")]
             Internalmessage,
-            
+
             /// <summary>
             /// Enum Message for "message"
             /// </summary>
             [EnumMember(Value = "message")]
             Message,
-            
+
             /// <summary>
             /// Enum Screenshare for "screenshare"
             /// </summary>
             [EnumMember(Value = "screenshare")]
             Screenshare,
-            
+
             /// <summary>
             /// Enum Unknown for "unknown"
             /// </summary>
             [EnumMember(Value = "unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Video for "video"
             /// </summary>
             [EnumMember(Value = "video")]
             Video,
-            
+
             /// <summary>
             /// Enum Voice for "voice"
             /// </summary>
@@ -106,13 +98,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum And for "and"
             /// </summary>
             [EnumMember(Value = "and")]
             And,
-            
+
             /// <summary>
             /// Enum Or for "or"
             /// </summary>
@@ -133,13 +125,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Inbound for "inbound"
             /// </summary>
             [EnumMember(Value = "inbound")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Outbound for "outbound"
             /// </summary>
@@ -150,13 +142,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".
         /// </summary>
         /// <value>A filter type for topic Ids. It's only used for objectives with topicIds. Default filter behavior is \"or\".</value>
-        [DataMember(Name="topicIdsFilterType", EmitDefaultValue=false)]
+        [DataMember(Name = "topicIdsFilterType", EmitDefaultValue = false)]
         public TopicIdsFilterTypeEnum? TopicIdsFilterType { get; set; }
         /// <summary>
         /// The initial direction to filter on
         /// </summary>
         /// <value>The initial direction to filter on</value>
-        [DataMember(Name="initialDirection", EmitDefaultValue=false)]
+        [DataMember(Name = "initialDirection", EmitDefaultValue = false)]
         public InitialDirectionEnum? InitialDirection { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DefaultObjective" /> class.
@@ -181,16 +173,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TopicIdsFilterType = TopicIdsFilterType;
             this.EvaluationFormContextIds = EvaluationFormContextIds;
             this.InitialDirection = InitialDirection;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -199,7 +191,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of this objective&#39;s base template
         /// </summary>
         /// <value>The id of this objective&#39;s base template</value>
-        [DataMember(Name="templateId", EmitDefaultValue=false)]
+        [DataMember(Name = "templateId", EmitDefaultValue = false)]
         public string TemplateId { get; set; }
 
 
@@ -208,7 +200,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Objective zone specifies min,max points and values for the associated metric
         /// </summary>
         /// <value>Objective zone specifies min,max points and values for the associated metric</value>
-        [DataMember(Name="zones", EmitDefaultValue=false)]
+        [DataMember(Name = "zones", EmitDefaultValue = false)]
         public List<ObjectiveZone> Zones { get; set; }
 
 
@@ -217,7 +209,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A flag for whether this objective is enabled for the related metric
         /// </summary>
         /// <value>A flag for whether this objective is enabled for the related metric</value>
-        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        [DataMember(Name = "enabled", EmitDefaultValue = false)]
         public bool? Enabled { get; set; }
 
 
@@ -226,7 +218,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of media types for the metric
         /// </summary>
         /// <value>A list of media types for the metric</value>
-        [DataMember(Name="mediaTypes", EmitDefaultValue=false)]
+        [DataMember(Name = "mediaTypes", EmitDefaultValue = false)]
         public List<MediaTypesEnum> MediaTypes { get; set; }
 
 
@@ -235,7 +227,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of queues for the metric
         /// </summary>
         /// <value>A list of queues for the metric</value>
-        [DataMember(Name="queues", EmitDefaultValue=false)]
+        [DataMember(Name = "queues", EmitDefaultValue = false)]
         public List<AddressableEntityRef> Queues { get; set; }
 
 
@@ -244,7 +236,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of topic ids for detected topic metrics
         /// </summary>
         /// <value>A list of topic ids for detected topic metrics</value>
-        [DataMember(Name="topics", EmitDefaultValue=false)]
+        [DataMember(Name = "topics", EmitDefaultValue = false)]
         public List<AddressableEntityRef> Topics { get; set; }
 
 
@@ -255,7 +247,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ids of associated evaluation form context, for Quality Evaluation Score metrics
         /// </summary>
         /// <value>The ids of associated evaluation form context, for Quality Evaluation Score metrics</value>
-        [DataMember(Name="evaluationFormContextIds", EmitDefaultValue=false)]
+        [DataMember(Name = "evaluationFormContextIds", EmitDefaultValue = false)]
         public List<string> EvaluationFormContextIds { get; set; }
 
 
@@ -283,19 +275,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

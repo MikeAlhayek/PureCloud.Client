@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SkillGroupWithMemberDivisions
     /// </summary>
     [DataContract]
-    public partial class SkillGroupWithMemberDivisions :  IEquatable<SkillGroupWithMemberDivisions>
+    public partial class SkillGroupWithMemberDivisions : IEquatable<SkillGroupWithMemberDivisions>
     {
         /// <summary>
         /// Group's filling status
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Inprogress for "InProgress"
             /// </summary>
             [EnumMember(Value = "InProgress")]
             Inprogress,
-            
+
             /// <summary>
             /// Enum Complete for "Complete"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Group's filling status
         /// </summary>
         /// <value>Group's filling status</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; private set; }
 
         /// <summary>
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Description = Description;
             this.SkillConditions = SkillConditions;
             this.MemberDivisions = MemberDivisions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The group name.
         /// </summary>
         /// <value>The group name.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division to which this entity belongs.
         /// </summary>
         /// <value>The division to which this entity belongs.</value>
-        [DataMember(Name="division", EmitDefaultValue=false)]
+        [DataMember(Name = "division", EmitDefaultValue = false)]
         public WritableDivision Division { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Group description
         /// </summary>
         /// <value>Group description</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Estimated number of members in this group. It can take some time for the count to be updated after expressions are changed.
         /// </summary>
         /// <value>Estimated number of members in this group. It can take some time for the count to be updated after expressions are changed.</value>
-        [DataMember(Name="memberCount", EmitDefaultValue=false)]
+        [DataMember(Name = "memberCount", EmitDefaultValue = false)]
         public long? MemberCount { get; private set; }
 
 
@@ -126,7 +118,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -135,7 +127,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Created date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Created date/time of the skill group. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -146,7 +138,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Conditions for this group
         /// </summary>
         /// <value>Conditions for this group</value>
-        [DataMember(Name="skillConditions", EmitDefaultValue=false)]
+        [DataMember(Name = "skillConditions", EmitDefaultValue = false)]
         public List<SkillGroupCondition> SkillConditions { get; set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Member divisions for this skill group
         /// </summary>
         /// <value>Member divisions for this skill group</value>
-        [DataMember(Name="memberDivisions", EmitDefaultValue=false)]
+        [DataMember(Name = "memberDivisions", EmitDefaultValue = false)]
         public List<string> MemberDivisions { get; set; }
 
 
@@ -164,7 +156,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -191,19 +183,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

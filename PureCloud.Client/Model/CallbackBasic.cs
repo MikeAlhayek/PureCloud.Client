@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallbackBasic
     /// </summary>
     [DataContract]
-    public partial class CallbackBasic :  IEquatable<CallbackBasic>
+    public partial class CallbackBasic : IEquatable<CallbackBasic>
     {
         /// <summary>
         /// The connection state of this communication.
@@ -32,55 +24,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Alerting for "alerting"
             /// </summary>
             [EnumMember(Value = "alerting")]
             Alerting,
-            
+
             /// <summary>
             /// Enum Dialing for "dialing"
             /// </summary>
             [EnumMember(Value = "dialing")]
             Dialing,
-            
+
             /// <summary>
             /// Enum Contacting for "contacting"
             /// </summary>
             [EnumMember(Value = "contacting")]
             Contacting,
-            
+
             /// <summary>
             /// Enum Offering for "offering"
             /// </summary>
             [EnumMember(Value = "offering")]
             Offering,
-            
+
             /// <summary>
             /// Enum Connected for "connected"
             /// </summary>
             [EnumMember(Value = "connected")]
             Connected,
-            
+
             /// <summary>
             /// Enum Disconnected for "disconnected"
             /// </summary>
             [EnumMember(Value = "disconnected")]
             Disconnected,
-            
+
             /// <summary>
             /// Enum Terminated for "terminated"
             /// </summary>
             [EnumMember(Value = "terminated")]
             Terminated,
-            
+
             /// <summary>
             /// Enum Scheduled for "scheduled"
             /// </summary>
             [EnumMember(Value = "scheduled")]
             Scheduled,
-            
+
             /// <summary>
             /// Enum None for "none"
             /// </summary>
@@ -101,55 +93,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Alerting for "alerting"
             /// </summary>
             [EnumMember(Value = "alerting")]
             Alerting,
-            
+
             /// <summary>
             /// Enum Dialing for "dialing"
             /// </summary>
             [EnumMember(Value = "dialing")]
             Dialing,
-            
+
             /// <summary>
             /// Enum Contacting for "contacting"
             /// </summary>
             [EnumMember(Value = "contacting")]
             Contacting,
-            
+
             /// <summary>
             /// Enum Offering for "offering"
             /// </summary>
             [EnumMember(Value = "offering")]
             Offering,
-            
+
             /// <summary>
             /// Enum Connected for "connected"
             /// </summary>
             [EnumMember(Value = "connected")]
             Connected,
-            
+
             /// <summary>
             /// Enum Disconnected for "disconnected"
             /// </summary>
             [EnumMember(Value = "disconnected")]
             Disconnected,
-            
+
             /// <summary>
             /// Enum Terminated for "terminated"
             /// </summary>
             [EnumMember(Value = "terminated")]
             Terminated,
-            
+
             /// <summary>
             /// Enum Scheduled for "scheduled"
             /// </summary>
             [EnumMember(Value = "scheduled")]
             Scheduled,
-            
+
             /// <summary>
             /// Enum None for "none"
             /// </summary>
@@ -170,13 +162,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Inbound for "inbound"
             /// </summary>
             [EnumMember(Value = "inbound")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Outbound for "outbound"
             /// </summary>
@@ -197,97 +189,97 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Endpoint for "endpoint"
             /// </summary>
             [EnumMember(Value = "endpoint")]
             Endpoint,
-            
+
             /// <summary>
             /// Enum Client for "client"
             /// </summary>
             [EnumMember(Value = "client")]
             Client,
-            
+
             /// <summary>
             /// Enum System for "system"
             /// </summary>
             [EnumMember(Value = "system")]
             System,
-            
+
             /// <summary>
             /// Enum Timeout for "timeout"
             /// </summary>
             [EnumMember(Value = "timeout")]
             Timeout,
-            
+
             /// <summary>
             /// Enum Transfer for "transfer"
             /// </summary>
             [EnumMember(Value = "transfer")]
             Transfer,
-            
+
             /// <summary>
             /// Enum Transferconference for "transfer.conference"
             /// </summary>
             [EnumMember(Value = "transfer.conference")]
             Transferconference,
-            
+
             /// <summary>
             /// Enum Transferconsult for "transfer.consult"
             /// </summary>
             [EnumMember(Value = "transfer.consult")]
             Transferconsult,
-            
+
             /// <summary>
             /// Enum Transferforward for "transfer.forward"
             /// </summary>
             [EnumMember(Value = "transfer.forward")]
             Transferforward,
-            
+
             /// <summary>
             /// Enum Transfernoanswer for "transfer.noanswer"
             /// </summary>
             [EnumMember(Value = "transfer.noanswer")]
             Transfernoanswer,
-            
+
             /// <summary>
             /// Enum Transfernotavailable for "transfer.notavailable"
             /// </summary>
             [EnumMember(Value = "transfer.notavailable")]
             Transfernotavailable,
-            
+
             /// <summary>
             /// Enum Transportfailure for "transport.failure"
             /// </summary>
             [EnumMember(Value = "transport.failure")]
             Transportfailure,
-            
+
             /// <summary>
             /// Enum Error for "error"
             /// </summary>
             [EnumMember(Value = "error")]
             Error,
-            
+
             /// <summary>
             /// Enum Peer for "peer"
             /// </summary>
             [EnumMember(Value = "peer")]
             Peer,
-            
+
             /// <summary>
             /// Enum Other for "other"
             /// </summary>
             [EnumMember(Value = "other")]
             Other,
-            
+
             /// <summary>
             /// Enum Spam for "spam"
             /// </summary>
             [EnumMember(Value = "spam")]
             Spam,
-            
+
             /// <summary>
             /// Enum Uncallable for "uncallable"
             /// </summary>
@@ -298,25 +290,25 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The connection state of this communication.
         /// </summary>
         /// <value>The connection state of this communication.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// The initial connection state of this communication.
         /// </summary>
         /// <value>The initial connection state of this communication.</value>
-        [DataMember(Name="initialState", EmitDefaultValue=false)]
+        [DataMember(Name = "initialState", EmitDefaultValue = false)]
         public InitialStateEnum? InitialState { get; set; }
         /// <summary>
         /// The direction of the call
         /// </summary>
         /// <value>The direction of the call</value>
-        [DataMember(Name="direction", EmitDefaultValue=false)]
+        [DataMember(Name = "direction", EmitDefaultValue = false)]
         public DirectionEnum? Direction { get; set; }
         /// <summary>
         /// System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.
         /// </summary>
         /// <value>System defined string indicating what caused the communication to disconnect. Will be null until the communication disconnects.</value>
-        [DataMember(Name="disconnectType", EmitDefaultValue=false)]
+        [DataMember(Name = "disconnectType", EmitDefaultValue = false)]
         public DisconnectTypeEnum? DisconnectType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CallbackBasic" /> class.
@@ -381,9 +373,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CallerId = CallerId;
             this.CallerIdName = CallerIdName;
             this.QueueMediaSettings = QueueMediaSettings;
-            
+
         }
-        
+
 
 
 
@@ -394,7 +386,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A globally unique identifier for this communication.
         /// </summary>
         /// <value>A globally unique identifier for this communication.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -403,7 +395,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time line of the participant&#39;s callback, divided into activity segments.
         /// </summary>
         /// <value>The time line of the participant&#39;s callback, divided into activity segments.</value>
-        [DataMember(Name="segments", EmitDefaultValue=false)]
+        [DataMember(Name = "segments", EmitDefaultValue = false)]
         public List<Segment> Segments { get; set; }
 
 
@@ -414,7 +406,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if this call is held and the person on this side hears silence.
         /// </summary>
         /// <value>True if this call is held and the person on this side hears silence.</value>
-        [DataMember(Name="held", EmitDefaultValue=false)]
+        [DataMember(Name = "held", EmitDefaultValue = false)]
         public bool? Held { get; set; }
 
 
@@ -425,7 +417,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp the callback was placed on hold in the cloud clock if the callback is currently on hold. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="startHoldTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startHoldTime", EmitDefaultValue = false)]
         public DateTime? StartHoldTime { get; set; }
 
 
@@ -434,7 +426,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The preview data to be used when this callback is a Preview.
         /// </summary>
         /// <value>The preview data to be used when this callback is a Preview.</value>
-        [DataMember(Name="dialerPreview", EmitDefaultValue=false)]
+        [DataMember(Name = "dialerPreview", EmitDefaultValue = false)]
         public DialerPreview DialerPreview { get; set; }
 
 
@@ -443,7 +435,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The voicemail data to be used when this callback is an ACD voicemail.
         /// </summary>
         /// <value>The voicemail data to be used when this callback is an ACD voicemail.</value>
-        [DataMember(Name="voicemail", EmitDefaultValue=false)]
+        [DataMember(Name = "voicemail", EmitDefaultValue = false)]
         public Voicemail Voicemail { get; set; }
 
 
@@ -452,7 +444,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The phone number(s) to use to place the callback.
         /// </summary>
         /// <value>The phone number(s) to use to place the callback.</value>
-        [DataMember(Name="callbackNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
         public List<string> CallbackNumbers { get; set; }
 
 
@@ -461,7 +453,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the user requesting a callback.
         /// </summary>
         /// <value>The name of the user requesting a callback.</value>
-        [DataMember(Name="callbackUserName", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
         public string CallbackUserName { get; set; }
 
 
@@ -470,7 +462,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The UUID of the script to use.
         /// </summary>
         /// <value>The UUID of the script to use.</value>
-        [DataMember(Name="scriptId", EmitDefaultValue=false)]
+        [DataMember(Name = "scriptId", EmitDefaultValue = false)]
         public string ScriptId { get; set; }
 
 
@@ -479,7 +471,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the call for the callback uses external dialing.
         /// </summary>
         /// <value>True if the call for the callback uses external dialing.</value>
-        [DataMember(Name="externalCampaign", EmitDefaultValue=false)]
+        [DataMember(Name = "externalCampaign", EmitDefaultValue = false)]
         public bool? ExternalCampaign { get; set; }
 
 
@@ -488,7 +480,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the ability to skip a callback should be enabled.
         /// </summary>
         /// <value>True if the ability to skip a callback should be enabled.</value>
-        [DataMember(Name="skipEnabled", EmitDefaultValue=false)]
+        [DataMember(Name = "skipEnabled", EmitDefaultValue = false)]
         public bool? SkipEnabled { get; set; }
 
 
@@ -497,7 +489,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.
         /// </summary>
         /// <value>The number of seconds before the system automatically places a call for a callback.  0 means the automatic placement is disabled.</value>
-        [DataMember(Name="timeoutSeconds", EmitDefaultValue=false)]
+        [DataMember(Name = "timeoutSeconds", EmitDefaultValue = false)]
         public int? TimeoutSeconds { get; set; }
 
 
@@ -506,7 +498,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp the communication has when it is first put into an alerting state. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="startAlertingTime", EmitDefaultValue=false)]
+        [DataMember(Name = "startAlertingTime", EmitDefaultValue = false)]
         public DateTime? StartAlertingTime { get; set; }
 
 
@@ -515,7 +507,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp when this communication was connected in the cloud clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="connectedTime", EmitDefaultValue=false)]
+        [DataMember(Name = "connectedTime", EmitDefaultValue = false)]
         public DateTime? ConnectedTime { get; set; }
 
 
@@ -524,7 +516,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp when this communication disconnected from the conversation in the provider clock. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="disconnectedTime", EmitDefaultValue=false)]
+        [DataMember(Name = "disconnectedTime", EmitDefaultValue = false)]
         public DateTime? DisconnectedTime { get; set; }
 
 
@@ -533,7 +525,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The timestamp when this communication is scheduled in the provider clock. If this value is missing it indicates the callback will be placed immediately. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="callbackScheduledTime", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
         public DateTime? CallbackScheduledTime { get; set; }
 
 
@@ -542,7 +534,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.
         /// </summary>
         /// <value>The id of the config for automatically placing the callback (and handling the disposition). If null, the callback will not be placed automatically but routed to an agent as per normal.</value>
-        [DataMember(Name="automatedCallbackConfigId", EmitDefaultValue=false)]
+        [DataMember(Name = "automatedCallbackConfigId", EmitDefaultValue = false)]
         public string AutomatedCallbackConfigId { get; set; }
 
 
@@ -551,7 +543,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The source provider for the callback.
         /// </summary>
         /// <value>The source provider for the callback.</value>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
         public string Provider { get; set; }
 
 
@@ -560,7 +552,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of the peer communication corresponding to a matching leg for this communication.
         /// </summary>
         /// <value>The id of the peer communication corresponding to a matching leg for this communication.</value>
-        [DataMember(Name="peerId", EmitDefaultValue=false)]
+        [DataMember(Name = "peerId", EmitDefaultValue = false)]
         public string PeerId { get; set; }
 
 
@@ -569,7 +561,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Call wrap up or disposition data.
         /// </summary>
         /// <value>Call wrap up or disposition data.</value>
-        [DataMember(Name="wrapup", EmitDefaultValue=false)]
+        [DataMember(Name = "wrapup", EmitDefaultValue = false)]
         public Wrapup Wrapup { get; set; }
 
 
@@ -578,7 +570,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// After-call work for the communication.
         /// </summary>
         /// <value>After-call work for the communication.</value>
-        [DataMember(Name="afterCallWork", EmitDefaultValue=false)]
+        [DataMember(Name = "afterCallWork", EmitDefaultValue = false)]
         public AfterCallWork AfterCallWork { get; set; }
 
 
@@ -587,7 +579,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.
         /// </summary>
         /// <value>Indicates if after-call work is required for a communication. Only used when the ACW Setting is Agent Requested.</value>
-        [DataMember(Name="afterCallWorkRequired", EmitDefaultValue=false)]
+        [DataMember(Name = "afterCallWorkRequired", EmitDefaultValue = false)]
         public bool? AfterCallWorkRequired { get; set; }
 
 
@@ -596,7 +588,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The phone number displayed to recipients of the phone call. The value should conform to the E164 format.
         /// </summary>
         /// <value>The phone number displayed to recipients of the phone call. The value should conform to the E164 format.</value>
-        [DataMember(Name="callerId", EmitDefaultValue=false)]
+        [DataMember(Name = "callerId", EmitDefaultValue = false)]
         public string CallerId { get; set; }
 
 
@@ -605,7 +597,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name displayed to recipients of the phone call.
         /// </summary>
         /// <value>The name displayed to recipients of the phone call.</value>
-        [DataMember(Name="callerIdName", EmitDefaultValue=false)]
+        [DataMember(Name = "callerIdName", EmitDefaultValue = false)]
         public string CallerIdName { get; set; }
 
 
@@ -614,7 +606,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Represents the queue settings for this media type.
         /// </summary>
         /// <value>Represents the queue settings for this media type.</value>
-        [DataMember(Name="queueMediaSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "queueMediaSettings", EmitDefaultValue = false)]
         public ConversationQueueMediaSettings QueueMediaSettings { get; set; }
 
 
@@ -658,19 +650,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  QueueMediaSettings: ").Append(QueueMediaSettings).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

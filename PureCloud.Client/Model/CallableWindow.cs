@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallableWindow
     /// </summary>
     [DataContract]
-    public partial class CallableWindow :  IEquatable<CallableWindow>
+    public partial class CallableWindow : IEquatable<CallableWindow>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallableWindow" /> class.
@@ -27,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Mapped = Mapped;
             this.Unmapped = Unmapped;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The time interval to place outbound calls, for contacts that can be mapped to a time zone.
         /// </summary>
         /// <value>The time interval to place outbound calls, for contacts that can be mapped to a time zone.</value>
-        [DataMember(Name="mapped", EmitDefaultValue=false)]
+        [DataMember(Name = "mapped", EmitDefaultValue = false)]
         public AtzmTimeSlot Mapped { get; set; }
 
 
@@ -45,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time interval and time zone to place outbound calls, for contacts that cannot be mapped to a time zone.
         /// </summary>
         /// <value>The time interval and time zone to place outbound calls, for contacts that cannot be mapped to a time zone.</value>
-        [DataMember(Name="unmapped", EmitDefaultValue=false)]
+        [DataMember(Name = "unmapped", EmitDefaultValue = false)]
         public AtzmTimeSlotWithTimeZone Unmapped { get; set; }
 
 
@@ -62,19 +54,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Unmapped: ").Append(Unmapped).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

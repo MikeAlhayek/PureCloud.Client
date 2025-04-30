@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Defines a reference to SCIM group members.
     /// </summary>
     [DataContract]
-    public partial class ScimV2MemberReference :  IEquatable<ScimV2MemberReference>
+    public partial class ScimV2MemberReference : IEquatable<ScimV2MemberReference>
     {
         /// <summary>
         /// The type of SCIM resource.
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "User"
             /// </summary>
             [EnumMember(Value = "User")]
             User,
-            
+
             /// <summary>
             /// Enum Group for "Group"
             /// </summary>
             [EnumMember(Value = "Group")]
             Group,
-            
+
             /// <summary>
             /// Enum Serviceproviderconfig for "ServiceProviderConfig"
             /// </summary>
             [EnumMember(Value = "ServiceProviderConfig")]
             Serviceproviderconfig,
-            
+
             /// <summary>
             /// Enum Resourcetype for "ResourceType"
             /// </summary>
             [EnumMember(Value = "ResourceType")]
             Resourcetype,
-            
+
             /// <summary>
             /// Enum Schema for "Schema"
             /// </summary>
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of SCIM resource.
         /// </summary>
         /// <value>The type of SCIM resource.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; private set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScimV2MemberReference" /> class.
@@ -76,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
         public ScimV2MemberReference(string Value = null)
         {
             this.Value = Value;
-            
+
         }
-        
+
 
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.
         /// </summary>
         /// <value>The ID of the group member. Can be \&quot;userId\&quot; or \&quot;groupId\&quot;.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The reference URI of the SCIM resource.
         /// </summary>
         /// <value>The reference URI of the SCIM resource.</value>
-        [DataMember(Name="$ref", EmitDefaultValue=false)]
+        [DataMember(Name = "$ref", EmitDefaultValue = false)]
         public string Ref { get; private set; }
 
 
@@ -115,19 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

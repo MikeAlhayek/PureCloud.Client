@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleWarning
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleWarning :  IEquatable<CampaignRuleWarning>
+    public partial class CampaignRuleWarning : IEquatable<CampaignRuleWarning>
     {
         /// <summary>
         /// Warning code for this warning.
@@ -32,73 +24,73 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Conditionsnoentities for "ConditionsNoEntities"
             /// </summary>
             [EnumMember(Value = "ConditionsNoEntities")]
             Conditionsnoentities,
-            
+
             /// <summary>
             /// Enum Conditionsnosequences for "ConditionsNoSequences"
             /// </summary>
             [EnumMember(Value = "ConditionsNoSequences")]
             Conditionsnosequences,
-            
+
             /// <summary>
             /// Enum Conditionsnocampaigns for "ConditionsNoCampaigns"
             /// </summary>
             [EnumMember(Value = "ConditionsNoCampaigns")]
             Conditionsnocampaigns,
-            
+
             /// <summary>
             /// Enum Conditionsnomessagingcampaigns for "ConditionsNoMessagingCampaigns"
             /// </summary>
             [EnumMember(Value = "ConditionsNoMessagingCampaigns")]
             Conditionsnomessagingcampaigns,
-            
+
             /// <summary>
             /// Enum Actionnoentities for "ActionNoEntities"
             /// </summary>
             [EnumMember(Value = "ActionNoEntities")]
             Actionnoentities,
-            
+
             /// <summary>
             /// Enum Actionnosequences for "ActionNoSequences"
             /// </summary>
             [EnumMember(Value = "ActionNoSequences")]
             Actionnosequences,
-            
+
             /// <summary>
             /// Enum Actionnocampaigns for "ActionNoCampaigns"
             /// </summary>
             [EnumMember(Value = "ActionNoCampaigns")]
             Actionnocampaigns,
-            
+
             /// <summary>
             /// Enum Actionnomessagingcampaigns for "ActionNoMessagingCampaigns"
             /// </summary>
             [EnumMember(Value = "ActionNoMessagingCampaigns")]
             Actionnomessagingcampaigns,
-            
+
             /// <summary>
             /// Enum Noqueue for "NoQueue"
             /// </summary>
             [EnumMember(Value = "NoQueue")]
             Noqueue,
-            
+
             /// <summary>
             /// Enum Nocontenttemplates for "NoContentTemplates"
             /// </summary>
             [EnumMember(Value = "NoContentTemplates")]
             Nocontenttemplates,
-            
+
             /// <summary>
             /// Enum Nosmscontenttemplate for "NoSmsContentTemplate"
             /// </summary>
             [EnumMember(Value = "NoSmsContentTemplate")]
             Nosmscontenttemplate,
-            
+
             /// <summary>
             /// Enum Noemailcontenttemplate for "NoEmailContentTemplate"
             /// </summary>
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Warning code for this warning.
         /// </summary>
         /// <value>Warning code for this warning.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public CodeEnum? Code { get; set; }
 
         /// <summary>
@@ -128,9 +120,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Code = Code;
             this.Message = Message;
             this.Params = Params;
-            
+
         }
-        
+
 
 
 
@@ -139,7 +131,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Warning message for this warning.
         /// </summary>
         /// <value>Warning message for this warning.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
 
@@ -148,7 +140,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Additional warning information
         /// </summary>
         /// <value>Additional warning information</value>
-        [DataMember(Name="params", EmitDefaultValue=false)]
+        [DataMember(Name = "params", EmitDefaultValue = false)]
         public CampaignRuleWarningParameters Params { get; set; }
 
 
@@ -166,19 +158,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Params: ").Append(Params).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

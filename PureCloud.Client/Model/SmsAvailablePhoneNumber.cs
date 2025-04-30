@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SmsAvailablePhoneNumber
     /// </summary>
     [DataContract]
-    public partial class SmsAvailablePhoneNumber :  IEquatable<SmsAvailablePhoneNumber>
+    public partial class SmsAvailablePhoneNumber : IEquatable<SmsAvailablePhoneNumber>
     {
         /// <summary>
         /// Gets or Sets Capabilities
@@ -31,19 +23,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sms for "sms"
             /// </summary>
             [EnumMember(Value = "sms")]
             Sms,
-            
+
             /// <summary>
             /// Enum Mms for "mms"
             /// </summary>
             [EnumMember(Value = "mms")]
             Mms,
-            
+
             /// <summary>
             /// Enum Voice for "voice"
             /// </summary>
@@ -64,31 +56,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Local for "local"
             /// </summary>
             [EnumMember(Value = "local")]
             Local,
-            
+
             /// <summary>
             /// Enum Mobile for "mobile"
             /// </summary>
             [EnumMember(Value = "mobile")]
             Mobile,
-            
+
             /// <summary>
             /// Enum Tollfree for "tollfree"
             /// </summary>
             [EnumMember(Value = "tollfree")]
             Tollfree,
-            
+
             /// <summary>
             /// Enum Shortcode for "shortcode"
             /// </summary>
             [EnumMember(Value = "shortcode")]
             Shortcode,
-            
+
             /// <summary>
             /// Enum Alphanumeric for "alphanumeric"
             /// </summary>
@@ -109,25 +101,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum None for "none"
             /// </summary>
             [EnumMember(Value = "none")]
             None,
-            
+
             /// <summary>
             /// Enum Any for "any"
             /// </summary>
             [EnumMember(Value = "any")]
             Any,
-            
+
             /// <summary>
             /// Enum Local for "local"
             /// </summary>
             [EnumMember(Value = "local")]
             Local,
-            
+
             /// <summary>
             /// Enum Foreign for "foreign"
             /// </summary>
@@ -138,13 +130,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of phone number available for provisioning.
         /// </summary>
         /// <value>The type of phone number available for provisioning.</value>
-        [DataMember(Name="phoneNumberType", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumberType", EmitDefaultValue = false)]
         public PhoneNumberTypeEnum? PhoneNumberType { get; set; }
         /// <summary>
         /// The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.
         /// </summary>
         /// <value>The address requirement needed for provisioning this number. If there is a requirement, the address must be the residence or place of business of the individual or entity using the phone number.</value>
-        [DataMember(Name="addressRequirement", EmitDefaultValue=false)]
+        [DataMember(Name = "addressRequirement", EmitDefaultValue = false)]
         public AddressRequirementEnum? AddressRequirement { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SmsAvailablePhoneNumber" /> class.
@@ -167,16 +159,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Capabilities = Capabilities;
             this.PhoneNumberType = PhoneNumberType;
             this.AddressRequirement = AddressRequirement;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -184,7 +176,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -193,7 +185,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A phone number available for provisioning in E.164 format. E.g. +13175555555 or +34234234234
         /// </summary>
         /// <value>A phone number available for provisioning in E.164 format. E.g. +13175555555 or +34234234234</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
 
@@ -202,7 +194,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
         /// </summary>
         /// <value>The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
 
@@ -211,7 +203,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The region/province/state the phone number is associated with.
         /// </summary>
         /// <value>The region/province/state the phone number is associated with.</value>
-        [DataMember(Name="region", EmitDefaultValue=false)]
+        [DataMember(Name = "region", EmitDefaultValue = false)]
         public string Region { get; set; }
 
 
@@ -220,7 +212,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The city the phone number is associated with.
         /// </summary>
         /// <value>The city the phone number is associated with.</value>
-        [DataMember(Name="city", EmitDefaultValue=false)]
+        [DataMember(Name = "city", EmitDefaultValue = false)]
         public string City { get; set; }
 
 
@@ -229,7 +221,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The capabilities of the phone number available for provisioning.
         /// </summary>
         /// <value>The capabilities of the phone number available for provisioning.</value>
-        [DataMember(Name="capabilities", EmitDefaultValue=false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public List<CapabilitiesEnum> Capabilities { get; set; }
 
 
@@ -242,7 +234,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -268,19 +260,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

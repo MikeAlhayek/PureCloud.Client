@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DncPatchCustomExclusionColumnsRequest
     /// </summary>
     [DataContract]
-    public partial class DncPatchCustomExclusionColumnsRequest :  IEquatable<DncPatchCustomExclusionColumnsRequest>
+    public partial class DncPatchCustomExclusionColumnsRequest : IEquatable<DncPatchCustomExclusionColumnsRequest>
     {
         /// <summary>
         /// The action to perform
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Add for "Add"
             /// </summary>
             [EnumMember(Value = "Add")]
             Add,
-            
+
             /// <summary>
             /// Enum Remove for "Remove"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The action to perform
         /// </summary>
         /// <value>The action to perform</value>
-        [DataMember(Name="action", EmitDefaultValue=false)]
+        [DataMember(Name = "action", EmitDefaultValue = false)]
         public ActionEnum? Action { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DncPatchCustomExclusionColumnsRequest" /> class.
@@ -62,9 +54,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Action = Action;
             this.CustomExclusionColumnEntries = CustomExclusionColumnEntries;
             this.ExpirationDateTime = ExpirationDateTime;
-            
+
         }
-        
+
 
 
 
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of custom exclusion column entries to Add to / Remove from the DNC list 
         /// </summary>
         /// <value>The list of custom exclusion column entries to Add to / Remove from the DNC list </value>
-        [DataMember(Name="customExclusionColumnEntries", EmitDefaultValue=false)]
+        [DataMember(Name = "customExclusionColumnEntries", EmitDefaultValue = false)]
         public List<string> CustomExclusionColumnEntries { get; set; }
 
 
@@ -82,7 +74,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Expiration date for DNC customExclusionColumnEntries in yyyy-MM-ddTHH:mmZ format
         /// </summary>
         /// <value>Expiration date for DNC customExclusionColumnEntries in yyyy-MM-ddTHH:mmZ format</value>
-        [DataMember(Name="expirationDateTime", EmitDefaultValue=false)]
+        [DataMember(Name = "expirationDateTime", EmitDefaultValue = false)]
         public string ExpirationDateTime { get; set; }
 
 
@@ -101,19 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateShareRequest
     /// </summary>
     [DataContract]
-    public partial class CreateShareRequest :  IEquatable<CreateShareRequest>
+    public partial class CreateShareRequest : IEquatable<CreateShareRequest>
     {
         /// <summary>
         /// The share entity type
@@ -32,7 +24,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Document for "DOCUMENT"
             /// </summary>
@@ -52,19 +44,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum User for "USER"
             /// </summary>
             [EnumMember(Value = "USER")]
             User,
-            
+
             /// <summary>
             /// Enum Group for "GROUP"
             /// </summary>
             [EnumMember(Value = "GROUP")]
             Group,
-            
+
             /// <summary>
             /// Enum Public for "PUBLIC"
             /// </summary>
@@ -75,12 +67,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The share entity type
         /// </summary>
         /// <value>The share entity type</value>
-        [DataMember(Name="sharedEntityType", EmitDefaultValue=false)]
+        [DataMember(Name = "sharedEntityType", EmitDefaultValue = false)]
         public SharedEntityTypeEnum? SharedEntityType { get; set; }
         /// <summary>
         /// Gets or Sets MemberType
         /// </summary>
-        [DataMember(Name="memberType", EmitDefaultValue=false)]
+        [DataMember(Name = "memberType", EmitDefaultValue = false)]
         public MemberTypeEnum? MemberType { get; set; }
 
         /// <summary>
@@ -103,9 +95,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.MemberType = MemberType;
             this.Member = Member;
             this.Members = Members;
-            
+
         }
-        
+
 
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The entity that will be shared
         /// </summary>
         /// <value>The entity that will be shared</value>
-        [DataMember(Name="sharedEntity", EmitDefaultValue=false)]
+        [DataMember(Name = "sharedEntity", EmitDefaultValue = false)]
         public SharedEntity SharedEntity { get; set; }
 
 
@@ -125,7 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The member that will have access to this share. Only required if a list of members is not provided.
         /// </summary>
         /// <value>The member that will have access to this share. Only required if a list of members is not provided.</value>
-        [DataMember(Name="member", EmitDefaultValue=false)]
+        [DataMember(Name = "member", EmitDefaultValue = false)]
         public SharedEntity Member { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Members
         /// </summary>
-        [DataMember(Name="members", EmitDefaultValue=false)]
+        [DataMember(Name = "members", EmitDefaultValue = false)]
         public List<CreateShareRequestMember> Members { get; set; }
 
 
@@ -154,19 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

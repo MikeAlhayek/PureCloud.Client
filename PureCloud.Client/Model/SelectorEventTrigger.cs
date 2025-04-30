@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Details about a selector event trigger
     /// </summary>
     [DataContract]
-    public partial class SelectorEventTrigger :  IEquatable<SelectorEventTrigger>
+    public partial class SelectorEventTrigger : IEquatable<SelectorEventTrigger>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Selector = Selector;
             this.EventName = EventName;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Element that triggers event.
         /// </summary>
         /// <value>Element that triggers event.</value>
-        [DataMember(Name="selector", EmitDefaultValue=false)]
+        [DataMember(Name = "selector", EmitDefaultValue = false)]
         public string Selector { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Name of event triggered when element matching selector is interacted with.
         /// </summary>
         /// <value>Name of event triggered when element matching selector is interacted with.</value>
-        [DataMember(Name="eventName", EmitDefaultValue=false)]
+        [DataMember(Name = "eventName", EmitDefaultValue = false)]
         public string EventName { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

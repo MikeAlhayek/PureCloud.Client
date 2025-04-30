@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DevelopmentActivityAggregateQueryResponseMetric
     /// </summary>
     [DataContract]
-    public partial class DevelopmentActivityAggregateQueryResponseMetric :  IEquatable<DevelopmentActivityAggregateQueryResponseMetric>
+    public partial class DevelopmentActivityAggregateQueryResponseMetric : IEquatable<DevelopmentActivityAggregateQueryResponseMetric>
     {
         /// <summary>
         /// The metric this applies to
@@ -32,61 +24,61 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Nactivities for "nActivities"
             /// </summary>
             [EnumMember(Value = "nActivities")]
             Nactivities,
-            
+
             /// <summary>
             /// Enum Nplannedactivities for "nPlannedActivities"
             /// </summary>
             [EnumMember(Value = "nPlannedActivities")]
             Nplannedactivities,
-            
+
             /// <summary>
             /// Enum Ninprogressactivities for "nInProgressActivities"
             /// </summary>
             [EnumMember(Value = "nInProgressActivities")]
             Ninprogressactivities,
-            
+
             /// <summary>
             /// Enum Ncompleteactivities for "nCompleteActivities"
             /// </summary>
             [EnumMember(Value = "nCompleteActivities")]
             Ncompleteactivities,
-            
+
             /// <summary>
             /// Enum Noverdueactivities for "nOverdueActivities"
             /// </summary>
             [EnumMember(Value = "nOverdueActivities")]
             Noverdueactivities,
-            
+
             /// <summary>
             /// Enum Ninvalidscheduleactivities for "nInvalidScheduleActivities"
             /// </summary>
             [EnumMember(Value = "nInvalidScheduleActivities")]
             Ninvalidscheduleactivities,
-            
+
             /// <summary>
             /// Enum Npassedactivities for "nPassedActivities"
             /// </summary>
             [EnumMember(Value = "nPassedActivities")]
             Npassedactivities,
-            
+
             /// <summary>
             /// Enum Nfailedactivities for "nFailedActivities"
             /// </summary>
             [EnumMember(Value = "nFailedActivities")]
             Nfailedactivities,
-            
+
             /// <summary>
             /// Enum Oactivityscore for "oActivityScore"
             /// </summary>
             [EnumMember(Value = "oActivityScore")]
             Oactivityscore,
-            
+
             /// <summary>
             /// Enum Nnotcompletedactivities for "nNotCompletedActivities"
             /// </summary>
@@ -97,7 +89,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The metric this applies to
         /// </summary>
         /// <value>The metric this applies to</value>
-        [DataMember(Name="metric", EmitDefaultValue=false)]
+        [DataMember(Name = "metric", EmitDefaultValue = false)]
         public MetricEnum? Metric { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DevelopmentActivityAggregateQueryResponseMetric" /> class.
@@ -108,9 +100,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Metric = Metric;
             this.Stats = Stats;
-            
+
         }
-        
+
 
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The aggregated values for this metric
         /// </summary>
         /// <value>The aggregated values for this metric</value>
-        [DataMember(Name="stats", EmitDefaultValue=false)]
+        [DataMember(Name = "stats", EmitDefaultValue = false)]
         public DevelopmentActivityAggregateQueryResponseStatistics Stats { get; set; }
 
 
@@ -137,19 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

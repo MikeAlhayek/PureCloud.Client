@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateActivityPlanRequest
     /// </summary>
     [DataContract]
-    public partial class CreateActivityPlanRequest :  IEquatable<CreateActivityPlanRequest>
+    public partial class CreateActivityPlanRequest : IEquatable<CreateActivityPlanRequest>
     {
         /// <summary>
         /// The type of the activity plan
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Individual for "Individual"
             /// </summary>
             [EnumMember(Value = "Individual")]
             Individual,
-            
+
             /// <summary>
             /// Enum Group for "Group"
             /// </summary>
@@ -59,13 +51,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Favorservicegoals for "FavorServiceGoals"
             /// </summary>
             [EnumMember(Value = "FavorServiceGoals")]
             Favorservicegoals,
-            
+
             /// <summary>
             /// Enum Favorschedulingall for "FavorSchedulingAll"
             /// </summary>
@@ -86,13 +78,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "Active"
             /// </summary>
             [EnumMember(Value = "Active")]
             Active,
-            
+
             /// <summary>
             /// Enum Inactive for "Inactive"
             /// </summary>
@@ -103,19 +95,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the activity plan
         /// </summary>
         /// <value>The type of the activity plan</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// The optimization objective of this activity plan
         /// </summary>
         /// <value>The optimization objective of this activity plan</value>
-        [DataMember(Name="optimizationObjective", EmitDefaultValue=false)]
+        [DataMember(Name = "optimizationObjective", EmitDefaultValue = false)]
         public OptimizationObjectiveEnum? OptimizationObjective { get; set; }
         /// <summary>
         /// The state of this activity plan
         /// </summary>
         /// <value>The state of this activity plan</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
 
         /// <summary>
@@ -164,16 +156,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.State = State;
             this.CountsAsPaidTime = CountsAsPaidTime;
             this.FixedAvailability = FixedAvailability;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The name of the activity plan
         /// </summary>
         /// <value>The name of the activity plan</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -182,7 +174,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The management units to which this activity plan applies. Empty list or null means this activity plan applies to the entire business unit
         /// </summary>
         /// <value>The management units to which this activity plan applies. Empty list or null means this activity plan applies to the entire business unit</value>
-        [DataMember(Name="managementUnitIds", EmitDefaultValue=false)]
+        [DataMember(Name = "managementUnitIds", EmitDefaultValue = false)]
         public List<string> ManagementUnitIds { get; set; }
 
 
@@ -191,7 +183,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The description of the activity plan
         /// </summary>
         /// <value>The description of the activity plan</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -200,7 +192,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The activity code associated with the activity plan
         /// </summary>
         /// <value>The activity code associated with the activity plan</value>
-        [DataMember(Name="activityCodeId", EmitDefaultValue=false)]
+        [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
         public string ActivityCodeId { get; set; }
 
 
@@ -211,7 +203,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The length in minutes of the activity plan
         /// </summary>
         /// <value>The length in minutes of the activity plan</value>
-        [DataMember(Name="lengthMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
         public int? LengthMinutes { get; set; }
 
 
@@ -220,7 +212,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The initial scheduling period for the activity plan
         /// </summary>
         /// <value>The initial scheduling period for the activity plan</value>
-        [DataMember(Name="initialSchedulePeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "initialSchedulePeriod", EmitDefaultValue = false)]
         public SchedulingPeriod InitialSchedulePeriod { get; set; }
 
 
@@ -229,7 +221,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Group settings for the activity plan
         /// </summary>
         /// <value>Group settings for the activity plan</value>
-        [DataMember(Name="groupSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "groupSettings", EmitDefaultValue = false)]
         public GroupSettings GroupSettings { get; set; }
 
 
@@ -238,7 +230,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once
         /// </summary>
         /// <value>Settings controlling recurrence for the activity plan. If not set the activity plan will only occur once</value>
-        [DataMember(Name="recurrenceSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "recurrenceSettings", EmitDefaultValue = false)]
         public RecurrenceSettings RecurrenceSettings { get; set; }
 
 
@@ -247,7 +239,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Attendee search rule for this activity plan
         /// </summary>
         /// <value>Attendee search rule for this activity plan</value>
-        [DataMember(Name="attendeesSearchRule", EmitDefaultValue=false)]
+        [DataMember(Name = "attendeesSearchRule", EmitDefaultValue = false)]
         public UserSearchRule AttendeesSearchRule { get; set; }
 
 
@@ -256,7 +248,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the sessions created by this activity plan should be facilitated
         /// </summary>
         /// <value>Whether the sessions created by this activity plan should be facilitated</value>
-        [DataMember(Name="facilitated", EmitDefaultValue=false)]
+        [DataMember(Name = "facilitated", EmitDefaultValue = false)]
         public bool? Facilitated { get; set; }
 
 
@@ -265,7 +257,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Facilitator search rule for this activity plan
         /// </summary>
         /// <value>Facilitator search rule for this activity plan</value>
-        [DataMember(Name="facilitatorsSearchRule", EmitDefaultValue=false)]
+        [DataMember(Name = "facilitatorsSearchRule", EmitDefaultValue = false)]
         public UserSearchRule FacilitatorsSearchRule { get; set; }
 
 
@@ -274,7 +266,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Transition time in minutes between facilitated sessions
         /// </summary>
         /// <value>Transition time in minutes between facilitated sessions</value>
-        [DataMember(Name="transitionTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "transitionTimeMinutes", EmitDefaultValue = false)]
         public int? TransitionTimeMinutes { get; set; }
 
 
@@ -283,7 +275,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Allowable service goal impact override settings for this activity plan. If not set the business unit setting will be used
         /// </summary>
         /// <value>Allowable service goal impact override settings for this activity plan. If not set the business unit setting will be used</value>
-        [DataMember(Name="serviceGoalImpactOverrides", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceGoalImpactOverrides", EmitDefaultValue = false)]
         public ActivityPlanServiceGoalImpactOverrides ServiceGoalImpactOverrides { get; set; }
 
 
@@ -296,7 +288,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the activity should count as paid time
         /// </summary>
         /// <value>Whether the activity should count as paid time</value>
-        [DataMember(Name="countsAsPaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
         public bool? CountsAsPaidTime { get; set; }
 
 
@@ -305,7 +297,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Fixed availability configuration for the activity plan
         /// </summary>
         /// <value>Fixed availability configuration for the activity plan</value>
-        [DataMember(Name="fixedAvailability", EmitDefaultValue=false)]
+        [DataMember(Name = "fixedAvailability", EmitDefaultValue = false)]
         public List<FixedAvailability> FixedAvailability { get; set; }
 
 
@@ -339,19 +331,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

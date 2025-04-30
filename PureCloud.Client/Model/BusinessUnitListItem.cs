@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BusinessUnitListItem
     /// </summary>
     [DataContract]
-    public partial class BusinessUnitListItem : IEquatable<BusinessUnitListItem>
+    public partial class BusinessUnitListItem :  IEquatable<BusinessUnitListItem>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BusinessUnitListItem" /> class.
@@ -27,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Name = Name;
             this.Division = Division;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; private set; }
 
 
@@ -44,7 +36,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the user has authorization to interact with this business unit
         /// </summary>
         /// <value>Whether the user has authorization to interact with this business unit</value>
-        [DataMember(Name = "authorized", EmitDefaultValue = false)]
+        [DataMember(Name="authorized", EmitDefaultValue=false)]
         public bool? Authorized { get; private set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division to which this entity belongs.
         /// </summary>
         /// <value>The division to which this entity belongs.</value>
-        [DataMember(Name = "division", EmitDefaultValue = false)]
+        [DataMember(Name="division", EmitDefaultValue=false)]
         public DivisionReference Division { get; set; }
 
 
@@ -71,7 +63,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+        [DataMember(Name="selfUri", EmitDefaultValue=false)]
         public string SelfUri { get; private set; }
 
 
@@ -92,6 +84,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateActivityCodeRequest
     /// </summary>
     [DataContract]
-    public partial class CreateActivityCodeRequest :  IEquatable<CreateActivityCodeRequest>
+    public partial class CreateActivityCodeRequest : IEquatable<CreateActivityCodeRequest>
     {
         /// <summary>
         /// The activity code's category
@@ -32,55 +24,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Onqueuework for "OnQueueWork"
             /// </summary>
             [EnumMember(Value = "OnQueueWork")]
             Onqueuework,
-            
+
             /// <summary>
             /// Enum Break for "Break"
             /// </summary>
             [EnumMember(Value = "Break")]
             Break,
-            
+
             /// <summary>
             /// Enum Meal for "Meal"
             /// </summary>
             [EnumMember(Value = "Meal")]
             Meal,
-            
+
             /// <summary>
             /// Enum Meeting for "Meeting"
             /// </summary>
             [EnumMember(Value = "Meeting")]
             Meeting,
-            
+
             /// <summary>
             /// Enum Offqueuework for "OffQueueWork"
             /// </summary>
             [EnumMember(Value = "OffQueueWork")]
             Offqueuework,
-            
+
             /// <summary>
             /// Enum Timeoff for "TimeOff"
             /// </summary>
             [EnumMember(Value = "TimeOff")]
             Timeoff,
-            
+
             /// <summary>
             /// Enum Training for "Training"
             /// </summary>
             [EnumMember(Value = "Training")]
             Training,
-            
+
             /// <summary>
             /// Enum Unavailable for "Unavailable"
             /// </summary>
             [EnumMember(Value = "Unavailable")]
             Unavailable,
-            
+
             /// <summary>
             /// Enum Unscheduled for "Unscheduled"
             /// </summary>
@@ -91,7 +83,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The activity code's category
         /// </summary>
         /// <value>The activity code's category</value>
-        [DataMember(Name="category", EmitDefaultValue=false)]
+        [DataMember(Name = "category", EmitDefaultValue = false)]
         public CategoryEnum? Category { get; set; }
 
         /// <summary>
@@ -124,16 +116,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.PlannedShrinkage = PlannedShrinkage;
             this.Interruptible = Interruptible;
             this.SecondaryPresences = SecondaryPresences;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The name of the activity code
         /// </summary>
         /// <value>The name of the activity code</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The default length of the activity in minutes
         /// </summary>
         /// <value>The default length of the activity in minutes</value>
-        [DataMember(Name="lengthInMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "lengthInMinutes", EmitDefaultValue = false)]
         public int? LengthInMinutes { get; set; }
 
 
@@ -153,7 +145,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether an agent is paid while performing this activity
         /// </summary>
         /// <value>Whether an agent is paid while performing this activity</value>
-        [DataMember(Name="countsAsPaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "countsAsPaidTime", EmitDefaultValue = false)]
         public bool? CountsAsPaidTime { get; set; }
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates whether or not the activity should be counted as work time
         /// </summary>
         /// <value>Indicates whether or not the activity should be counted as work time</value>
-        [DataMember(Name="countsAsWorkTime", EmitDefaultValue=false)]
+        [DataMember(Name = "countsAsWorkTime", EmitDefaultValue = false)]
         public bool? CountsAsWorkTime { get; set; }
 
 
@@ -171,7 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether an agent can select this activity code when creating or editing a time off request
         /// </summary>
         /// <value>Whether an agent can select this activity code when creating or editing a time off request</value>
-        [DataMember(Name="agentTimeOffSelectable", EmitDefaultValue=false)]
+        [DataMember(Name = "agentTimeOffSelectable", EmitDefaultValue = false)]
         public bool? AgentTimeOffSelectable { get; set; }
 
 
@@ -180,7 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether or not this activity code counts toward shrinkage calculations
         /// </summary>
         /// <value>Whether or not this activity code counts toward shrinkage calculations</value>
-        [DataMember(Name="countsTowardShrinkage", EmitDefaultValue=false)]
+        [DataMember(Name = "countsTowardShrinkage", EmitDefaultValue = false)]
         public bool? CountsTowardShrinkage { get; set; }
 
 
@@ -189,7 +181,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this activity code is considered planned or unplanned shrinkage
         /// </summary>
         /// <value>Whether this activity code is considered planned or unplanned shrinkage</value>
-        [DataMember(Name="plannedShrinkage", EmitDefaultValue=false)]
+        [DataMember(Name = "plannedShrinkage", EmitDefaultValue = false)]
         public bool? PlannedShrinkage { get; set; }
 
 
@@ -198,7 +190,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this activity code is considered interruptible
         /// </summary>
         /// <value>Whether this activity code is considered interruptible</value>
-        [DataMember(Name="interruptible", EmitDefaultValue=false)]
+        [DataMember(Name = "interruptible", EmitDefaultValue = false)]
         public bool? Interruptible { get; set; }
 
 
@@ -207,7 +199,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The secondary presences of this activity code
         /// </summary>
         /// <value>The secondary presences of this activity code</value>
-        [DataMember(Name="secondaryPresences", EmitDefaultValue=false)]
+        [DataMember(Name = "secondaryPresences", EmitDefaultValue = false)]
         public List<SecondaryPresence> SecondaryPresences { get; set; }
 
 
@@ -233,19 +225,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

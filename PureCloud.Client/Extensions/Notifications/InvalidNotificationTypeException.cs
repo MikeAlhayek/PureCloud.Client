@@ -1,5 +1,3 @@
-using System;
-
 namespace PureCloudPlatform.Client.V2.Extensions.Notifications
 {
     ///<Summary>

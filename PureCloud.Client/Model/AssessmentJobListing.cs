@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AssessmentJobListing
     /// </summary>
     [DataContract]
-    public partial class AssessmentJobListing : IEquatable<AssessmentJobListing>
+    public partial class AssessmentJobListing :  IEquatable<AssessmentJobListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AssessmentJobListing" /> class.
@@ -29,15 +21,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Total = Total;
             this.Entities = Entities;
             this.SelfUri = SelfUri;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets Total
         /// </summary>
-        [DataMember(Name = "total", EmitDefaultValue = false)]
+        [DataMember(Name="total", EmitDefaultValue=false)]
         public long? Total { get; set; }
 
 
@@ -45,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name = "entities", EmitDefaultValue = false)]
+        [DataMember(Name="entities", EmitDefaultValue=false)]
         public List<BenefitAssessmentJob> Entities { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SelfUri
         /// </summary>
-        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
+        [DataMember(Name="selfUri", EmitDefaultValue=false)]
         public string SelfUri { get; set; }
 
 
@@ -72,6 +64,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

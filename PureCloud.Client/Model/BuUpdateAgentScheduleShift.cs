@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuUpdateAgentScheduleShift
     /// </summary>
     [DataContract]
-    public partial class BuUpdateAgentScheduleShift : IEquatable<BuUpdateAgentScheduleShift>
+    public partial class BuUpdateAgentScheduleShift :  IEquatable<BuUpdateAgentScheduleShift>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuUpdateAgentScheduleShift" /> class.
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Activities = Activities;
             this.ManuallyEdited = ManuallyEdited;
             this.Delete = Delete;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The ID of the shift
         /// </summary>
         /// <value>The ID of the shift</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
 
 
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The start date of this shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
+        [DataMember(Name="startDate", EmitDefaultValue=false)]
         public DateTime? StartDate { get; private set; }
 
 
@@ -58,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The length of this shift in minutes
         /// </summary>
         /// <value>The length of this shift in minutes</value>
-        [DataMember(Name = "lengthMinutes", EmitDefaultValue = false)]
+        [DataMember(Name="lengthMinutes", EmitDefaultValue=false)]
         public int? LengthMinutes { get; private set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The activities associated with this shift
         /// </summary>
         /// <value>The activities associated with this shift</value>
-        [DataMember(Name = "activities", EmitDefaultValue = false)]
+        [DataMember(Name="activities", EmitDefaultValue=false)]
         public List<BuAgentScheduleActivity> Activities { get; set; }
 
 
@@ -76,7 +68,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this shift was manually edited. This is only set by clients and is used for rescheduling
         /// </summary>
         /// <value>Whether this shift was manually edited. This is only set by clients and is used for rescheduling</value>
-        [DataMember(Name = "manuallyEdited", EmitDefaultValue = false)]
+        [DataMember(Name="manuallyEdited", EmitDefaultValue=false)]
         public bool? ManuallyEdited { get; set; }
 
 
@@ -85,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The schedule to which this shift belongs
         /// </summary>
         /// <value>The schedule to which this shift belongs</value>
-        [DataMember(Name = "schedule", EmitDefaultValue = false)]
+        [DataMember(Name="schedule", EmitDefaultValue=false)]
         public BuScheduleReference Schedule { get; private set; }
 
 
@@ -94,7 +86,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Set to true to delete the shift from the agent&#39;s schedule
         /// </summary>
         /// <value>Set to true to delete the shift from the agent&#39;s schedule</value>
-        [DataMember(Name = "delete", EmitDefaultValue = false)]
+        [DataMember(Name="delete", EmitDefaultValue=false)]
         public bool? Delete { get; set; }
 
 
@@ -117,6 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

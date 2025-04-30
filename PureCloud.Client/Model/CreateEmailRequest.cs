@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateEmailRequest
     /// </summary>
     [DataContract]
-    public partial class CreateEmailRequest :  IEquatable<CreateEmailRequest>
+    public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     {
         /// <summary>
         /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Outbound for "OUTBOUND"
             /// </summary>
             [EnumMember(Value = "OUTBOUND")]
             Outbound,
-            
+
             /// <summary>
             /// Enum Inbound for "INBOUND"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
         /// </summary>
         /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.</value>
-        [DataMember(Name="direction", EmitDefaultValue=false)]
+        [DataMember(Name = "direction", EmitDefaultValue = false)]
         public DirectionEnum? Direction { get; set; }
 
         /// <summary>
@@ -96,16 +88,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TextBody = TextBody;
             this.ExternalContactId = ExternalContactId;
             this.UtilizationLabel = UtilizationLabel;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId
         /// </summary>
         /// <value>The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId</value>
-        [DataMember(Name="queueId", EmitDefaultValue=false)]
+        [DataMember(Name = "queueId", EmitDefaultValue = false)]
         public string QueueId { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId
         /// </summary>
         /// <value>The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId</value>
-        [DataMember(Name="flowId", EmitDefaultValue=false)]
+        [DataMember(Name = "flowId", EmitDefaultValue = false)]
         public string FlowId { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the provider that is sourcing the emails. The Provider \&quot;PureCloud Email\&quot; is reserved for native emails.
         /// </summary>
         /// <value>The name of the provider that is sourcing the emails. The Provider \&quot;PureCloud Email\&quot; is reserved for native emails.</value>
-        [DataMember(Name="provider", EmitDefaultValue=false)]
+        [DataMember(Name = "provider", EmitDefaultValue = false)]
         public string Provider { get; set; }
 
 
@@ -132,7 +124,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of skill ID&#39;s to use for routing.
         /// </summary>
         /// <value>The list of skill ID&#39;s to use for routing.</value>
-        [DataMember(Name="skillIds", EmitDefaultValue=false)]
+        [DataMember(Name = "skillIds", EmitDefaultValue = false)]
         public List<string> SkillIds { get; set; }
 
 
@@ -141,7 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the language to use for routing.
         /// </summary>
         /// <value>The ID of the language to use for routing.</value>
-        [DataMember(Name="languageId", EmitDefaultValue=false)]
+        [DataMember(Name = "languageId", EmitDefaultValue = false)]
         public string LanguageId { get; set; }
 
 
@@ -150,7 +142,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The priority to assign to the conversation for routing.
         /// </summary>
         /// <value>The priority to assign to the conversation for routing.</value>
-        [DataMember(Name="priority", EmitDefaultValue=false)]
+        [DataMember(Name = "priority", EmitDefaultValue = false)]
         public long? Priority { get; set; }
 
 
@@ -159,7 +151,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of attributes to associate with the customer participant.
         /// </summary>
         /// <value>The list of attributes to associate with the customer participant.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, string> Attributes { get; set; }
 
 
@@ -168,7 +160,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The email address of the recipient of the email.
         /// </summary>
         /// <value>The email address of the recipient of the email.</value>
-        [DataMember(Name="toAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "toAddress", EmitDefaultValue = false)]
         public string ToAddress { get; set; }
 
 
@@ -177,7 +169,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the recipient of the email.
         /// </summary>
         /// <value>The name of the recipient of the email.</value>
-        [DataMember(Name="toName", EmitDefaultValue=false)]
+        [DataMember(Name = "toName", EmitDefaultValue = false)]
         public string ToName { get; set; }
 
 
@@ -186,7 +178,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The email address of the sender of the email.
         /// </summary>
         /// <value>The email address of the sender of the email.</value>
-        [DataMember(Name="fromAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "fromAddress", EmitDefaultValue = false)]
         public string FromAddress { get; set; }
 
 
@@ -195,7 +187,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the sender of the email.
         /// </summary>
         /// <value>The name of the sender of the email.</value>
-        [DataMember(Name="fromName", EmitDefaultValue=false)]
+        [DataMember(Name = "fromName", EmitDefaultValue = false)]
         public string FromName { get; set; }
 
 
@@ -204,7 +196,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The subject of the email
         /// </summary>
         /// <value>The subject of the email</value>
-        [DataMember(Name="subject", EmitDefaultValue=false)]
+        [DataMember(Name = "subject", EmitDefaultValue = false)]
         public string Subject { get; set; }
 
 
@@ -215,7 +207,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// An HTML body content of the email.
         /// </summary>
         /// <value>An HTML body content of the email.</value>
-        [DataMember(Name="htmlBody", EmitDefaultValue=false)]
+        [DataMember(Name = "htmlBody", EmitDefaultValue = false)]
         public string HtmlBody { get; set; }
 
 
@@ -224,7 +216,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A text body content of the email.
         /// </summary>
         /// <value>A text body content of the email.</value>
-        [DataMember(Name="textBody", EmitDefaultValue=false)]
+        [DataMember(Name = "textBody", EmitDefaultValue = false)]
         public string TextBody { get; set; }
 
 
@@ -233,7 +225,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The external contact with which the email should be associated. This field is only valid for OUTBOUND email.
         /// </summary>
         /// <value>The external contact with which the email should be associated. This field is only valid for OUTBOUND email.</value>
-        [DataMember(Name="externalContactId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
         public string ExternalContactId { get; set; }
 
 
@@ -242,7 +234,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Optional. The ID of the label to controls the number of agent interactions for INBOUND communications
         /// </summary>
         /// <value>Optional. The ID of the label to controls the number of agent interactions for INBOUND communications</value>
-        [DataMember(Name="utilizationLabel", EmitDefaultValue=false)]
+        [DataMember(Name = "utilizationLabel", EmitDefaultValue = false)]
         public string UtilizationLabel { get; set; }
 
 
@@ -275,19 +267,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

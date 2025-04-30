@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SubjectDivisionGrants
     /// </summary>
     [DataContract]
-    public partial class SubjectDivisionGrants :  IEquatable<SubjectDivisionGrants>
+    public partial class SubjectDivisionGrants : IEquatable<SubjectDivisionGrants>
     {
         /// <summary>
         /// Gets or Sets Type
@@ -31,37 +23,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum PcUser for "PC_USER"
             /// </summary>
             [EnumMember(Value = "PC_USER")]
             PcUser,
-            
+
             /// <summary>
             /// Enum PcGroup for "PC_GROUP"
             /// </summary>
             [EnumMember(Value = "PC_GROUP")]
             PcGroup,
-            
+
             /// <summary>
             /// Enum PcOauthClient for "PC_OAUTH_CLIENT"
             /// </summary>
             [EnumMember(Value = "PC_OAUTH_CLIENT")]
             PcOauthClient,
-            
+
             /// <summary>
             /// Enum PcTrusteeUser for "PC_TRUSTEE_USER"
             /// </summary>
             [EnumMember(Value = "PC_TRUSTEE_USER")]
             PcTrusteeUser,
-            
+
             /// <summary>
             /// Enum PcTrusteeGroup for "PC_TRUSTEE_GROUP"
             /// </summary>
             [EnumMember(Value = "PC_TRUSTEE_GROUP")]
             PcTrusteeGroup,
-            
+
             /// <summary>
             /// Enum Unknown for "UNKNOWN"
             /// </summary>
@@ -71,7 +63,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SubjectDivisionGrants" /> class.
@@ -84,16 +76,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Name = Name;
             this.Divisions = Divisions;
             this.Type = Type;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Divisions
         /// </summary>
-        [DataMember(Name="divisions", EmitDefaultValue=false)]
+        [DataMember(Name = "divisions", EmitDefaultValue = false)]
         public List<Division> Divisions { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -141,19 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

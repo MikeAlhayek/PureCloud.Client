@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateCallbackCommand
     /// </summary>
     [DataContract]
-    public partial class CreateCallbackCommand :  IEquatable<CreateCallbackCommand>
+    public partial class CreateCallbackCommand : IEquatable<CreateCallbackCommand>
     {
 
         /// <summary>
@@ -51,16 +43,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Data = Data;
             this.CallerId = CallerId;
             this.CallerIdName = CallerIdName;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The identifier of the script to be used for the callback
         /// </summary>
         /// <value>The identifier of the script to be used for the callback</value>
-        [DataMember(Name="scriptId", EmitDefaultValue=false)]
+        [DataMember(Name = "scriptId", EmitDefaultValue = false)]
         public string ScriptId { get; set; }
 
 
@@ -69,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The identifier of the queue to be used for the callback. Either queueId or routingData is required.
         /// </summary>
         /// <value>The identifier of the queue to be used for the callback. Either queueId or routingData is required.</value>
-        [DataMember(Name="queueId", EmitDefaultValue=false)]
+        [DataMember(Name = "queueId", EmitDefaultValue = false)]
         public string QueueId { get; set; }
 
 
@@ -78,7 +70,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The routing data to be used for the callback. Either queueId or routingData is required.
         /// </summary>
         /// <value>The routing data to be used for the callback. Either queueId or routingData is required.</value>
-        [DataMember(Name="routingData", EmitDefaultValue=false)]
+        [DataMember(Name = "routingData", EmitDefaultValue = false)]
         public RoutingData RoutingData { get; set; }
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the party to be called back.
         /// </summary>
         /// <value>The name of the party to be called back.</value>
-        [DataMember(Name="callbackUserName", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackUserName", EmitDefaultValue = false)]
         public string CallbackUserName { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of phone numbers for the callback.
         /// </summary>
         /// <value>A list of phone numbers for the callback.</value>
-        [DataMember(Name="callbackNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackNumbers", EmitDefaultValue = false)]
         public List<string> CallbackNumbers { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ
         /// </summary>
         /// <value>The scheduled date-time for the callback as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss.SSSZ</value>
-        [DataMember(Name="callbackScheduledTime", EmitDefaultValue=false)]
+        [DataMember(Name = "callbackScheduledTime", EmitDefaultValue = false)]
         public DateTime? CallbackScheduledTime { get; set; }
 
 
@@ -114,7 +106,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The country code to be associated with the callback numbers.
         /// </summary>
         /// <value>The country code to be associated with the callback numbers.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether or not to validate the callback numbers for phone number format.
         /// </summary>
         /// <value>Whether or not to validate the callback numbers for phone number format.</value>
-        [DataMember(Name="validateCallbackNumbers", EmitDefaultValue=false)]
+        [DataMember(Name = "validateCallbackNumbers", EmitDefaultValue = false)]
         public bool? ValidateCallbackNumbers { get; set; }
 
 
@@ -132,7 +124,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; }
         /// </summary>
         /// <value>A map of key-value pairs containing additional data that can be associated to the callback. These values will appear in the attributes property on the conversation participant. Example: { \&quot;notes\&quot;: \&quot;ready to close the deal!\&quot;, \&quot;customerPreferredName\&quot;: \&quot;Doc\&quot; }</value>
-        [DataMember(Name="data", EmitDefaultValue=false)]
+        [DataMember(Name = "data", EmitDefaultValue = false)]
         public Dictionary<string, string> Data { get; set; }
 
 
@@ -141,7 +133,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerId\&quot; varies.
         /// </summary>
         /// <value>The phone number displayed to recipients when a phone call is placed as part of the callback. Must conform to the E.164 format. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerId\&quot; varies.</value>
-        [DataMember(Name="callerId", EmitDefaultValue=false)]
+        [DataMember(Name = "callerId", EmitDefaultValue = false)]
         public string CallerId { get; set; }
 
 
@@ -150,7 +142,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerIdName\&quot; varies.
         /// </summary>
         /// <value>The name displayed to recipients when a phone call is placed as part of the callback. May be overridden by other settings in the system such as external trunk settings. Telco support for \&quot;callerIdName\&quot; varies.</value>
-        [DataMember(Name="callerIdName", EmitDefaultValue=false)]
+        [DataMember(Name = "callerIdName", EmitDefaultValue = false)]
         public string CallerIdName { get; set; }
 
 
@@ -177,19 +169,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

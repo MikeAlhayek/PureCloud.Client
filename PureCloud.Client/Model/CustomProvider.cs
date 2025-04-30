@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CustomProvider
     /// </summary>
     [DataContract]
-    public partial class CustomProvider :  IEquatable<CustomProvider>
+    public partial class CustomProvider : IEquatable<CustomProvider>
     {
         /// <summary>
         /// Gets or Sets NameIdentifierFormat
@@ -31,49 +23,49 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum _11nameidformatunspecified for "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified")]
             _11nameidformatunspecified,
-            
+
             /// <summary>
             /// Enum _11nameidformatemailaddress for "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress")]
             _11nameidformatemailaddress,
-            
+
             /// <summary>
             /// Enum _11nameidformatx509subjectname for "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:1.1:nameid-format:X509SubjectName")]
             _11nameidformatx509subjectname,
-            
+
             /// <summary>
             /// Enum _11nameidformatwindowsdomainqualifiedname for "urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:1.1:nameid-format:WindowsDomainQualifiedName")]
             _11nameidformatwindowsdomainqualifiedname,
-            
+
             /// <summary>
             /// Enum _20nameidformatkerberos for "urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:2.0:nameid-format:kerberos")]
             _20nameidformatkerberos,
-            
+
             /// <summary>
             /// Enum _20nameidformatentity for "urn:oasis:names:tc:SAML:2.0:nameid-format:entity"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:2.0:nameid-format:entity")]
             _20nameidformatentity,
-            
+
             /// <summary>
             /// Enum _20nameidformatpersistent for "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:2.0:nameid-format:persistent")]
             _20nameidformatpersistent,
-            
+
             /// <summary>
             /// Enum _20nameidformattransient for "urn:oasis:names:tc:SAML:2.0:nameid-format:transient"
             /// </summary>
@@ -93,13 +85,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Post for "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
             /// </summary>
             [EnumMember(Value = "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST")]
             Post,
-            
+
             /// <summary>
             /// Enum Redirect for "urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"
             /// </summary>
@@ -109,12 +101,12 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets NameIdentifierFormat
         /// </summary>
-        [DataMember(Name="nameIdentifierFormat", EmitDefaultValue=false)]
+        [DataMember(Name = "nameIdentifierFormat", EmitDefaultValue = false)]
         public NameIdentifierFormatEnum? NameIdentifierFormat { get; set; }
         /// <summary>
         /// Gets or Sets SsoBinding
         /// </summary>
-        [DataMember(Name="ssoBinding", EmitDefaultValue=false)]
+        [DataMember(Name = "ssoBinding", EmitDefaultValue = false)]
         public SsoBindingEnum? SsoBinding { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CustomProvider" /> class.
@@ -153,16 +145,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ProviderName = ProviderName;
             this.DisplayOnLogin = DisplayOnLogin;
             this.EndpointCompression = EndpointCompression;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -170,7 +162,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -178,7 +170,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Disabled
         /// </summary>
-        [DataMember(Name="disabled", EmitDefaultValue=false)]
+        [DataMember(Name = "disabled", EmitDefaultValue = false)]
         public bool? Disabled { get; set; }
 
 
@@ -186,7 +178,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets IssuerURI
         /// </summary>
-        [DataMember(Name="issuerURI", EmitDefaultValue=false)]
+        [DataMember(Name = "issuerURI", EmitDefaultValue = false)]
         public string IssuerURI { get; set; }
 
 
@@ -194,7 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SsoTargetURI
         /// </summary>
-        [DataMember(Name="ssoTargetURI", EmitDefaultValue=false)]
+        [DataMember(Name = "ssoTargetURI", EmitDefaultValue = false)]
         public string SsoTargetURI { get; set; }
 
 
@@ -202,7 +194,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SloURI
         /// </summary>
-        [DataMember(Name="sloURI", EmitDefaultValue=false)]
+        [DataMember(Name = "sloURI", EmitDefaultValue = false)]
         public string SloURI { get; set; }
 
 
@@ -210,7 +202,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SloBinding
         /// </summary>
-        [DataMember(Name="sloBinding", EmitDefaultValue=false)]
+        [DataMember(Name = "sloBinding", EmitDefaultValue = false)]
         public string SloBinding { get; set; }
 
 
@@ -218,7 +210,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets RelyingPartyIdentifier
         /// </summary>
-        [DataMember(Name="relyingPartyIdentifier", EmitDefaultValue=false)]
+        [DataMember(Name = "relyingPartyIdentifier", EmitDefaultValue = false)]
         public string RelyingPartyIdentifier { get; set; }
 
 
@@ -226,7 +218,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Certificate
         /// </summary>
-        [DataMember(Name="certificate", EmitDefaultValue=false)]
+        [DataMember(Name = "certificate", EmitDefaultValue = false)]
         public string Certificate { get; set; }
 
 
@@ -234,7 +226,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Certificates
         /// </summary>
-        [DataMember(Name="certificates", EmitDefaultValue=false)]
+        [DataMember(Name = "certificates", EmitDefaultValue = false)]
         public List<string> Certificates { get; set; }
 
 
@@ -242,7 +234,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets LogoImageData
         /// </summary>
-        [DataMember(Name="logoImageData", EmitDefaultValue=false)]
+        [DataMember(Name = "logoImageData", EmitDefaultValue = false)]
         public string LogoImageData { get; set; }
 
 
@@ -254,7 +246,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SignAuthnRequests
         /// </summary>
-        [DataMember(Name="signAuthnRequests", EmitDefaultValue=false)]
+        [DataMember(Name = "signAuthnRequests", EmitDefaultValue = false)]
         public bool? SignAuthnRequests { get; set; }
 
 
@@ -262,7 +254,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ProviderName
         /// </summary>
-        [DataMember(Name="providerName", EmitDefaultValue=false)]
+        [DataMember(Name = "providerName", EmitDefaultValue = false)]
         public string ProviderName { get; set; }
 
 
@@ -270,7 +262,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets DisplayOnLogin
         /// </summary>
-        [DataMember(Name="displayOnLogin", EmitDefaultValue=false)]
+        [DataMember(Name = "displayOnLogin", EmitDefaultValue = false)]
         public bool? DisplayOnLogin { get; set; }
 
 
@@ -278,7 +270,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets EndpointCompression
         /// </summary>
-        [DataMember(Name="endpointCompression", EmitDefaultValue=false)]
+        [DataMember(Name = "endpointCompression", EmitDefaultValue = false)]
         public bool? EndpointCompression { get; set; }
 
 
@@ -287,7 +279,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -321,19 +313,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

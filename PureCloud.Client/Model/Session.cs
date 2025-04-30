@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Session
     /// </summary>
     [DataContract]
-    public partial class Session :  IEquatable<Session>
+    public partial class Session : IEquatable<Session>
     {
         /// <summary>
         /// The original direction of the conversation.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
             [EnumMember(Value = "Unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Inbound for "Inbound"
             /// </summary>
             [EnumMember(Value = "Inbound")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Outbound for "Outbound"
             /// </summary>
@@ -65,115 +57,115 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
             [EnumMember(Value = "Unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Endpoint for "Endpoint"
             /// </summary>
             [EnumMember(Value = "Endpoint")]
             Endpoint,
-            
+
             /// <summary>
             /// Enum Client for "Client"
             /// </summary>
             [EnumMember(Value = "Client")]
             Client,
-            
+
             /// <summary>
             /// Enum System for "System"
             /// </summary>
             [EnumMember(Value = "System")]
             System,
-            
+
             /// <summary>
             /// Enum Transfer for "Transfer"
             /// </summary>
             [EnumMember(Value = "Transfer")]
             Transfer,
-            
+
             /// <summary>
             /// Enum Error for "Error"
             /// </summary>
             [EnumMember(Value = "Error")]
             Error,
-            
+
             /// <summary>
             /// Enum Peer for "Peer"
             /// </summary>
             [EnumMember(Value = "Peer")]
             Peer,
-            
+
             /// <summary>
             /// Enum Other for "Other"
             /// </summary>
             [EnumMember(Value = "Other")]
             Other,
-            
+
             /// <summary>
             /// Enum Spam for "Spam"
             /// </summary>
             [EnumMember(Value = "Spam")]
             Spam,
-            
+
             /// <summary>
             /// Enum Timeout for "Timeout"
             /// </summary>
             [EnumMember(Value = "Timeout")]
             Timeout,
-            
+
             /// <summary>
             /// Enum Transportfailure for "TransportFailure"
             /// </summary>
             [EnumMember(Value = "TransportFailure")]
             Transportfailure,
-            
+
             /// <summary>
             /// Enum Conferencetransfer for "ConferenceTransfer"
             /// </summary>
             [EnumMember(Value = "ConferenceTransfer")]
             Conferencetransfer,
-            
+
             /// <summary>
             /// Enum Consulttransfer for "ConsultTransfer"
             /// </summary>
             [EnumMember(Value = "ConsultTransfer")]
             Consulttransfer,
-            
+
             /// <summary>
             /// Enum Forwardtransfer for "ForwardTransfer"
             /// </summary>
             [EnumMember(Value = "ForwardTransfer")]
             Forwardtransfer,
-            
+
             /// <summary>
             /// Enum Noanswertransfer for "NoAnswerTransfer"
             /// </summary>
             [EnumMember(Value = "NoAnswerTransfer")]
             Noanswertransfer,
-            
+
             /// <summary>
             /// Enum Notavailabletransfer for "NotAvailableTransfer"
             /// </summary>
             [EnumMember(Value = "NotAvailableTransfer")]
             Notavailabletransfer,
-            
+
             /// <summary>
             /// Enum Uncallable for "Uncallable"
             /// </summary>
             [EnumMember(Value = "Uncallable")]
             Uncallable,
-            
+
             /// <summary>
             /// Enum Donotdisturbendpoint for "DoNotDisturbEndpoint"
             /// </summary>
             [EnumMember(Value = "DoNotDisturbEndpoint")]
             Donotdisturbendpoint,
-            
+
             /// <summary>
             /// Enum Donotdisturbtransfer for "DoNotDisturbTransfer"
             /// </summary>
@@ -194,25 +186,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
             [EnumMember(Value = "Unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Abandon for "Abandon"
             /// </summary>
             [EnumMember(Value = "Abandon")]
             Abandon,
-            
+
             /// <summary>
             /// Enum Answered for "Answered"
             /// </summary>
             [EnumMember(Value = "Answered")]
             Answered,
-            
+
             /// <summary>
             /// Enum Flowout for "FlowOut"
             /// </summary>
@@ -223,19 +215,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The original direction of the conversation.
         /// </summary>
         /// <value>The original direction of the conversation.</value>
-        [DataMember(Name="originatingDirection", EmitDefaultValue=false)]
+        [DataMember(Name = "originatingDirection", EmitDefaultValue = false)]
         public OriginatingDirectionEnum? OriginatingDirection { get; set; }
         /// <summary>
         /// Disconnect reason for the last user connected to the conversation.
         /// </summary>
         /// <value>Disconnect reason for the last user connected to the conversation.</value>
-        [DataMember(Name="lastUserDisconnectType", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUserDisconnectType", EmitDefaultValue = false)]
         public LastUserDisconnectTypeEnum? LastUserDisconnectType { get; set; }
         /// <summary>
         /// Last ACD outcome for the conversation.
         /// </summary>
         /// <value>Last ACD outcome for the conversation.</value>
-        [DataMember(Name="lastAcdOutcome", EmitDefaultValue=false)]
+        [DataMember(Name = "lastAcdOutcome", EmitDefaultValue = false)]
         public LastAcdOutcomeEnum? LastAcdOutcome { get; set; }
 
         /// <summary>
@@ -336,16 +328,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.EndedDate = EndedDate;
             this.AwayDate = AwayDate;
             this.IdleDate = IdleDate;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the session.
         /// </summary>
         /// <value>The ID of the session.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -354,7 +346,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Primary identifier of the customer in the source where the events for the session originate from.
         /// </summary>
         /// <value>Primary identifier of the customer in the source where the events for the session originate from.</value>
-        [DataMember(Name="customerId", EmitDefaultValue=false)]
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
 
@@ -363,7 +355,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of source customer identifier (e.g. cookie, email, phone).
         /// </summary>
         /// <value>Type of source customer identifier (e.g. cookie, email, phone).</value>
-        [DataMember(Name="customerIdType", EmitDefaultValue=false)]
+        [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
         public string CustomerIdType { get; set; }
 
 
@@ -372,7 +364,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Session types indicate the type or category of sessions (e.g. web, app).
         /// </summary>
         /// <value>Session types indicate the type or category of sessions (e.g. web, app).</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public string Type { get; set; }
 
 
@@ -381,7 +373,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Unique identifier in the external system where the events for the session originate from.
         /// </summary>
         /// <value>Unique identifier in the external system where the events for the session originate from.</value>
-        [DataMember(Name="externalId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalId", EmitDefaultValue = false)]
         public string ExternalId { get; set; }
 
 
@@ -390,7 +382,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A URL that identifies an external system-of-record resource that may have more detailed information on the session.
         /// </summary>
         /// <value>A URL that identifies an external system-of-record resource that may have more detailed information on the session.</value>
-        [DataMember(Name="externalUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "externalUrl", EmitDefaultValue = false)]
         public string ExternalUrl { get; set; }
 
 
@@ -399,7 +391,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Shortened numeric identifier of 4-6 digits.
         /// </summary>
         /// <value>Shortened numeric identifier of 4-6 digits.</value>
-        [DataMember(Name="shortId", EmitDefaultValue=false)]
+        [DataMember(Name = "shortId", EmitDefaultValue = false)]
         public string ShortId { get; set; }
 
 
@@ -408,7 +400,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of the outcome achievements by the customer in this session.
         /// </summary>
         /// <value>List of the outcome achievements by the customer in this session.</value>
-        [DataMember(Name="outcomeAchievements", EmitDefaultValue=false)]
+        [DataMember(Name = "outcomeAchievements", EmitDefaultValue = false)]
         public List<OutcomeAchievement> OutcomeAchievements { get; set; }
 
 
@@ -417,7 +409,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of the segment assignments to the customer in this session.
         /// </summary>
         /// <value>List of the segment assignments to the customer in this session.</value>
-        [DataMember(Name="segmentAssignments", EmitDefaultValue=false)]
+        [DataMember(Name = "segmentAssignments", EmitDefaultValue = false)]
         public List<SessionSegmentAssignment> SegmentAssignments { get; set; }
 
 
@@ -426,7 +418,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Attributes projected from the session&#39;s event stream.
         /// </summary>
         /// <value>Attributes projected from the session&#39;s event stream.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -435,7 +427,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List-type attributes projected from the session&#39;s event stream.
         /// </summary>
         /// <value>List-type attributes projected from the session&#39;s event stream.</value>
-        [DataMember(Name="attributeLists", EmitDefaultValue=false)]
+        [DataMember(Name = "attributeLists", EmitDefaultValue = false)]
         public Dictionary<string, CustomEventAttributeList> AttributeLists { get; set; }
 
 
@@ -444,7 +436,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s browser.
         /// </summary>
         /// <value>Customer&#39;s browser.</value>
-        [DataMember(Name="browser", EmitDefaultValue=false)]
+        [DataMember(Name = "browser", EmitDefaultValue = false)]
         public Browser Browser { get; set; }
 
 
@@ -453,7 +445,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s device.
         /// </summary>
         /// <value>Customer&#39;s device.</value>
-        [DataMember(Name="device", EmitDefaultValue=false)]
+        [DataMember(Name = "device", EmitDefaultValue = false)]
         public Device Device { get; set; }
 
 
@@ -462,7 +454,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s geolocation.
         /// </summary>
         /// <value>Customer&#39;s geolocation.</value>
-        [DataMember(Name="geolocation", EmitDefaultValue=false)]
+        [DataMember(Name = "geolocation", EmitDefaultValue = false)]
         public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -471,7 +463,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s IP address.
         /// </summary>
         /// <value>Customer&#39;s IP address.</value>
-        [DataMember(Name="ipAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "ipAddress", EmitDefaultValue = false)]
         public string IpAddress { get; set; }
 
 
@@ -480,7 +472,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s IP-based organization or ISP name.
         /// </summary>
         /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-        [DataMember(Name="ipOrganization", EmitDefaultValue=false)]
+        [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
         public string IpOrganization { get; set; }
 
 
@@ -489,7 +481,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The webpage where the customer&#39;s last web interaction occurred.
         /// </summary>
         /// <value>The webpage where the customer&#39;s last web interaction occurred.</value>
-        [DataMember(Name="lastPage", EmitDefaultValue=false)]
+        [DataMember(Name = "lastPage", EmitDefaultValue = false)]
         public JourneyPage LastPage { get; set; }
 
 
@@ -498,7 +490,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Marketing / traffic source information.
         /// </summary>
         /// <value>Marketing / traffic source information.</value>
-        [DataMember(Name="mktCampaign", EmitDefaultValue=false)]
+        [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
         public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -507,7 +499,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Identifies the page URL that originally generated the request for the current page being viewed.
         /// </summary>
         /// <value>Identifies the page URL that originally generated the request for the current page being viewed.</value>
-        [DataMember(Name="referrer", EmitDefaultValue=false)]
+        [DataMember(Name = "referrer", EmitDefaultValue = false)]
         public Referrer Referrer { get; set; }
 
 
@@ -516,7 +508,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Application that the customer is interacting with (for app sessions).
         /// </summary>
         /// <value>Application that the customer is interacting with (for app sessions).</value>
-        [DataMember(Name="app", EmitDefaultValue=false)]
+        [DataMember(Name = "app", EmitDefaultValue = false)]
         public JourneyApp App { get; set; }
 
 
@@ -525,7 +517,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// SDK library used to generate the events for the session (for app and web sessions).
         /// </summary>
         /// <value>SDK library used to generate the events for the session (for app and web sessions).</value>
-        [DataMember(Name="sdkLibrary", EmitDefaultValue=false)]
+        [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
         public SdkLibrary SdkLibrary { get; set; }
 
 
@@ -534,7 +526,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information relating to the device&#39;s network connectivity (for app sessions).
         /// </summary>
         /// <value>Information relating to the device&#39;s network connectivity (for app sessions).</value>
-        [DataMember(Name="networkConnectivity", EmitDefaultValue=false)]
+        [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
         public NetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -543,7 +535,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Search terms associated with the session.
         /// </summary>
         /// <value>Search terms associated with the session.</value>
-        [DataMember(Name="searchTerms", EmitDefaultValue=false)]
+        [DataMember(Name = "searchTerms", EmitDefaultValue = false)]
         public List<string> SearchTerms { get; set; }
 
 
@@ -552,7 +544,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// String identifying the user agent.
         /// </summary>
         /// <value>String identifying the user agent.</value>
-        [DataMember(Name="userAgentString", EmitDefaultValue=false)]
+        [DataMember(Name = "userAgentString", EmitDefaultValue = false)]
         public string UserAgentString { get; set; }
 
 
@@ -561,7 +553,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates how long the session has been active (valid for an individual device).
         /// </summary>
         /// <value>Indicates how long the session has been active (valid for an individual device).</value>
-        [DataMember(Name="durationInSeconds", EmitDefaultValue=false)]
+        [DataMember(Name = "durationInSeconds", EmitDefaultValue = false)]
         public int? DurationInSeconds { get; set; }
 
 
@@ -570,7 +562,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The count of all events performed during the session.
         /// </summary>
         /// <value>The count of all events performed during the session.</value>
-        [DataMember(Name="eventCount", EmitDefaultValue=false)]
+        [DataMember(Name = "eventCount", EmitDefaultValue = false)]
         public int? EventCount { get; set; }
 
 
@@ -579,7 +571,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The count of all pageviews performed during the session.
         /// </summary>
         /// <value>The count of all pageviews performed during the session.</value>
-        [DataMember(Name="pageviewCount", EmitDefaultValue=false)]
+        [DataMember(Name = "pageviewCount", EmitDefaultValue = false)]
         public int? PageviewCount { get; set; }
 
 
@@ -588,7 +580,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The count of all screenviews performed during the session.
         /// </summary>
         /// <value>The count of all screenviews performed during the session.</value>
-        [DataMember(Name="screenviewCount", EmitDefaultValue=false)]
+        [DataMember(Name = "screenviewCount", EmitDefaultValue = false)]
         public int? ScreenviewCount { get; set; }
 
 
@@ -597,7 +589,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information about the most recent event in this session.
         /// </summary>
         /// <value>Information about the most recent event in this session.</value>
-        [DataMember(Name="lastEvent", EmitDefaultValue=false)]
+        [DataMember(Name = "lastEvent", EmitDefaultValue = false)]
         public SessionLastEvent LastEvent { get; set; }
 
 
@@ -606,7 +598,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last queue connected to this session.
         /// </summary>
         /// <value>The last queue connected to this session.</value>
-        [DataMember(Name="lastConnectedQueue", EmitDefaultValue=false)]
+        [DataMember(Name = "lastConnectedQueue", EmitDefaultValue = false)]
         public ConnectedQueue LastConnectedQueue { get; set; }
 
 
@@ -615,7 +607,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last user connected to this session.
         /// </summary>
         /// <value>The last user connected to this session.</value>
-        [DataMember(Name="lastConnectedUser", EmitDefaultValue=false)]
+        [DataMember(Name = "lastConnectedUser", EmitDefaultValue = false)]
         public ConnectedUser LastConnectedUser { get; set; }
 
 
@@ -624,7 +616,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last user disposition connected to this session.
         /// </summary>
         /// <value>The last user disposition connected to this session.</value>
-        [DataMember(Name="lastUserDisposition", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUserDisposition", EmitDefaultValue = false)]
         public ConversationUserDisposition LastUserDisposition { get; set; }
 
 
@@ -633,7 +625,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Represents the channels used for this conversation.
         /// </summary>
         /// <value>Represents the channels used for this conversation.</value>
-        [DataMember(Name="conversationChannels", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationChannels", EmitDefaultValue = false)]
         public List<ConversationChannel> ConversationChannels { get; set; }
 
 
@@ -644,7 +636,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The subject for the conversation, for example an email subject.
         /// </summary>
         /// <value>The subject for the conversation, for example an email subject.</value>
-        [DataMember(Name="conversationSubject", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationSubject", EmitDefaultValue = false)]
         public string ConversationSubject { get; set; }
 
 
@@ -657,7 +649,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates whether or not the session is authenticated.
         /// </summary>
         /// <value>Indicates whether or not the session is authenticated.</value>
-        [DataMember(Name="authenticated", EmitDefaultValue=false)]
+        [DataMember(Name = "authenticated", EmitDefaultValue = false)]
         public bool? Authenticated { get; set; }
 
 
@@ -666,7 +658,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of division IDs associated with the session.
         /// </summary>
         /// <value>List of division IDs associated with the session.</value>
-        [DataMember(Name="divisionIds", EmitDefaultValue=false)]
+        [DataMember(Name = "divisionIds", EmitDefaultValue = false)]
         public List<string> DivisionIds { get; set; }
 
 
@@ -675,7 +667,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The app screen name where the customer&#39;s last app interaction occurred.
         /// </summary>
         /// <value>The app screen name where the customer&#39;s last app interaction occurred.</value>
-        [DataMember(Name="lastScreen", EmitDefaultValue=false)]
+        [DataMember(Name = "lastScreen", EmitDefaultValue = false)]
         public string LastScreen { get; set; }
 
 
@@ -684,7 +676,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -693,7 +685,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the session was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="createdDate", EmitDefaultValue=false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime? CreatedDate { get; set; }
 
 
@@ -702,7 +694,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the session was ended. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="endedDate", EmitDefaultValue=false)]
+        [DataMember(Name = "endedDate", EmitDefaultValue = false)]
         public DateTime? EndedDate { get; set; }
 
 
@@ -711,7 +703,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The external contact associated with this session.
         /// </summary>
         /// <value>The external contact associated with this session.</value>
-        [DataMember(Name="externalContact", EmitDefaultValue=false)]
+        [DataMember(Name = "externalContact", EmitDefaultValue = false)]
         public AddressableEntityRef ExternalContact { get; private set; }
 
 
@@ -720,7 +712,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the visitor should be considered as away. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="awayDate", EmitDefaultValue=false)]
+        [DataMember(Name = "awayDate", EmitDefaultValue = false)]
         public DateTime? AwayDate { get; set; }
 
 
@@ -729,7 +721,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp indicating when the visitor should be considered as idle. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="idleDate", EmitDefaultValue=false)]
+        [DataMember(Name = "idleDate", EmitDefaultValue = false)]
         public DateTime? IdleDate { get; set; }
 
 
@@ -738,7 +730,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The conversation for this session.
         /// </summary>
         /// <value>The conversation for this session.</value>
-        [DataMember(Name="conversation", EmitDefaultValue=false)]
+        [DataMember(Name = "conversation", EmitDefaultValue = false)]
         public AddressableEntityRef Conversation { get; private set; }
 
 
@@ -801,19 +793,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

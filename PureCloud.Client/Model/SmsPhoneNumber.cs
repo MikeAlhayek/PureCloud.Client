@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SmsPhoneNumber
     /// </summary>
     [DataContract]
-    public partial class SmsPhoneNumber :  IEquatable<SmsPhoneNumber>
+    public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     {
         /// <summary>
         /// Type of the phone number provisioned.
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Local for "local"
             /// </summary>
             [EnumMember(Value = "local")]
             Local,
-            
+
             /// <summary>
             /// Enum Mobile for "mobile"
             /// </summary>
             [EnumMember(Value = "mobile")]
             Mobile,
-            
+
             /// <summary>
             /// Enum Tollfree for "tollfree"
             /// </summary>
             [EnumMember(Value = "tollfree")]
             Tollfree,
-            
+
             /// <summary>
             /// Enum Shortcode for "shortcode"
             /// </summary>
             [EnumMember(Value = "shortcode")]
             Shortcode,
-            
+
             /// <summary>
             /// Enum Alphanumeric for "alphanumeric"
             /// </summary>
@@ -77,37 +69,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Invalid for "INVALID"
             /// </summary>
             [EnumMember(Value = "INVALID")]
             Invalid,
-            
+
             /// <summary>
             /// Enum Active for "ACTIVE"
             /// </summary>
             [EnumMember(Value = "ACTIVE")]
             Active,
-            
+
             /// <summary>
             /// Enum Porting for "PORTING"
             /// </summary>
             [EnumMember(Value = "PORTING")]
             Porting,
-            
+
             /// <summary>
             /// Enum Pending for "PENDING"
             /// </summary>
             [EnumMember(Value = "PENDING")]
             Pending,
-            
+
             /// <summary>
             /// Enum PendingCancellation for "PENDING_CANCELLATION"
             /// </summary>
             [EnumMember(Value = "PENDING_CANCELLATION")]
             PendingCancellation,
-            
+
             /// <summary>
             /// Enum Initiated for "INITIATED"
             /// </summary>
@@ -127,19 +119,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sms for "sms"
             /// </summary>
             [EnumMember(Value = "sms")]
             Sms,
-            
+
             /// <summary>
             /// Enum Mms for "mms"
             /// </summary>
             [EnumMember(Value = "mms")]
             Mms,
-            
+
             /// <summary>
             /// Enum Voice for "voice"
             /// </summary>
@@ -160,7 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Quarterly for "Quarterly"
             /// </summary>
@@ -181,13 +173,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Basic for "Basic"
             /// </summary>
             [EnumMember(Value = "Basic")]
             Basic,
-            
+
             /// <summary>
             /// Enum Vanity for "Vanity"
             /// </summary>
@@ -198,25 +190,25 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of the phone number provisioned.
         /// </summary>
         /// <value>Type of the phone number provisioned.</value>
-        [DataMember(Name="phoneNumberType", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumberType", EmitDefaultValue = false)]
         public PhoneNumberTypeEnum? PhoneNumberType { get; private set; }
         /// <summary>
         /// Status of the provisioned phone number.
         /// </summary>
         /// <value>Status of the provisioned phone number.</value>
-        [DataMember(Name="phoneNumberStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumberStatus", EmitDefaultValue = false)]
         public PhoneNumberStatusEnum? PhoneNumberStatus { get; set; }
         /// <summary>
         /// Renewal time period of this phone number, if the phoneNumberType is shortcode.
         /// </summary>
         /// <value>Renewal time period of this phone number, if the phoneNumberType is shortcode.</value>
-        [DataMember(Name="autoRenewable", EmitDefaultValue=false)]
+        [DataMember(Name = "autoRenewable", EmitDefaultValue = false)]
         public AutoRenewableEnum? AutoRenewable { get; set; }
         /// <summary>
         /// BillingType of this phone number, if the phoneNumberType is shortcode.
         /// </summary>
         /// <value>BillingType of this phone number, if the phoneNumberType is shortcode.</value>
-        [DataMember(Name="shortCodeBillingType", EmitDefaultValue=false)]
+        [DataMember(Name = "shortCodeBillingType", EmitDefaultValue = false)]
         public ShortCodeBillingTypeEnum? ShortCodeBillingType { get; set; }
 
         /// <summary>
@@ -275,16 +267,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.SupportsVoice = SupportsVoice;
             this.Integration = Integration;
             this.Compliance = Compliance;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -292,7 +284,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -301,7 +293,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A phone number provisioned for SMS communications.
         /// </summary>
         /// <value>A phone number provisioned for SMS communications.</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
 
@@ -312,7 +304,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud
         /// </summary>
         /// <value>Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud</value>
-        [DataMember(Name="provisionedThroughPureCloud", EmitDefaultValue=false)]
+        [DataMember(Name = "provisionedThroughPureCloud", EmitDefaultValue = false)]
         public bool? ProvisionedThroughPureCloud { get; set; }
 
 
@@ -323,7 +315,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The capabilities of the phone number available for provisioning.
         /// </summary>
         /// <value>The capabilities of the phone number available for provisioning.</value>
-        [DataMember(Name="capabilities", EmitDefaultValue=false)]
+        [DataMember(Name = "capabilities", EmitDefaultValue = false)]
         public List<CapabilitiesEnum> Capabilities { get; private set; }
 
 
@@ -332,7 +324,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.
         /// </summary>
         /// <value>The ISO 3166-1 alpha-2 country code of the country this phone number is associated with.</value>
-        [DataMember(Name="countryCode", EmitDefaultValue=false)]
+        [DataMember(Name = "countryCode", EmitDefaultValue = false)]
         public string CountryCode { get; set; }
 
 
@@ -341,7 +333,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date this phone number was provisioned. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -350,7 +342,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date this phone number was modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; set; }
 
 
@@ -359,7 +351,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User that provisioned this phone number
         /// </summary>
         /// <value>User that provisioned this phone number</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public User CreatedBy { get; set; }
 
 
@@ -368,7 +360,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User that last modified this phone number
         /// </summary>
         /// <value>User that last modified this phone number</value>
-        [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
         public User ModifiedBy { get; set; }
 
 
@@ -377,7 +369,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version number required for updates.
         /// </summary>
         /// <value>Version number required for updates.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -386,7 +378,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date this phone number was purchased, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="purchaseDate", EmitDefaultValue=false)]
+        [DataMember(Name = "purchaseDate", EmitDefaultValue = false)]
         public DateTime? PurchaseDate { get; set; }
 
 
@@ -395,7 +387,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Contract end date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="cancellationDate", EmitDefaultValue=false)]
+        [DataMember(Name = "cancellationDate", EmitDefaultValue = false)]
         public DateTime? CancellationDate { get; set; }
 
 
@@ -404,7 +396,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Contract renewal date of this phone number, if the phoneNumberType is shortcode. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="renewalDate", EmitDefaultValue=false)]
+        [DataMember(Name = "renewalDate", EmitDefaultValue = false)]
         public DateTime? RenewalDate { get; set; }
 
 
@@ -415,7 +407,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of an address attached to this phone number.
         /// </summary>
         /// <value>The id of an address attached to this phone number.</value>
-        [DataMember(Name="addressId", EmitDefaultValue=false)]
+        [DataMember(Name = "addressId", EmitDefaultValue = false)]
         public SmsAddress AddressId { get; set; }
 
 
@@ -426,7 +418,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Status of latest asynchronous provisioning action
         /// </summary>
         /// <value>Status of latest asynchronous provisioning action</value>
-        [DataMember(Name="provisioningStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "provisioningStatus", EmitDefaultValue = false)]
         public SmsProvisioningStatus ProvisioningStatus { get; set; }
 
 
@@ -435,7 +427,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Localized country name for the country code this phone number belongs too
         /// </summary>
         /// <value>Localized country name for the country code this phone number belongs too</value>
-        [DataMember(Name="country", EmitDefaultValue=false)]
+        [DataMember(Name = "country", EmitDefaultValue = false)]
         public string Country { get; set; }
 
 
@@ -444,7 +436,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Set to true if this phone number has the capability to support SMS
         /// </summary>
         /// <value>Set to true if this phone number has the capability to support SMS</value>
-        [DataMember(Name="supportsSms", EmitDefaultValue=false)]
+        [DataMember(Name = "supportsSms", EmitDefaultValue = false)]
         public bool? SupportsSms { get; set; }
 
 
@@ -453,7 +445,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Set to true if this phone number has the capability to support MMS
         /// </summary>
         /// <value>Set to true if this phone number has the capability to support MMS</value>
-        [DataMember(Name="supportsMms", EmitDefaultValue=false)]
+        [DataMember(Name = "supportsMms", EmitDefaultValue = false)]
         public bool? SupportsMms { get; set; }
 
 
@@ -462,7 +454,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Set to true if this phone number has the capability to support voice
         /// </summary>
         /// <value>Set to true if this phone number has the capability to support voice</value>
-        [DataMember(Name="supportsVoice", EmitDefaultValue=false)]
+        [DataMember(Name = "supportsVoice", EmitDefaultValue = false)]
         public bool? SupportsVoice { get; set; }
 
 
@@ -471,7 +463,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Genesys Cloud integration this phone number belongs to.
         /// </summary>
         /// <value>The Genesys Cloud integration this phone number belongs to.</value>
-        [DataMember(Name="integration", EmitDefaultValue=false)]
+        [DataMember(Name = "integration", EmitDefaultValue = false)]
         public DomainEntityRef Integration { get; set; }
 
 
@@ -480,7 +472,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Compliance configuration for short codes, including help, stop and opt in.
         /// </summary>
         /// <value>Compliance configuration for short codes, including help, stop and opt in.</value>
-        [DataMember(Name="compliance", EmitDefaultValue=false)]
+        [DataMember(Name = "compliance", EmitDefaultValue = false)]
         public Compliance Compliance { get; set; }
 
 
@@ -489,7 +481,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -532,19 +524,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

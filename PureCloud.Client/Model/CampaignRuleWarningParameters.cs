@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleWarningParameters
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleWarningParameters :  IEquatable<CampaignRuleWarningParameters>
+    public partial class CampaignRuleWarningParameters : IEquatable<CampaignRuleWarningParameters>
     {
         /// <summary>
         /// Type of action
@@ -32,85 +24,85 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Turnoncampaign for "turnOnCampaign"
             /// </summary>
             [EnumMember(Value = "turnOnCampaign")]
             Turnoncampaign,
-            
+
             /// <summary>
             /// Enum Turnoffcampaign for "turnOffCampaign"
             /// </summary>
             [EnumMember(Value = "turnOffCampaign")]
             Turnoffcampaign,
-            
+
             /// <summary>
             /// Enum Turnonsequence for "turnOnSequence"
             /// </summary>
             [EnumMember(Value = "turnOnSequence")]
             Turnonsequence,
-            
+
             /// <summary>
             /// Enum Turnoffsequence for "turnOffSequence"
             /// </summary>
             [EnumMember(Value = "turnOffSequence")]
             Turnoffsequence,
-            
+
             /// <summary>
             /// Enum Setcampaignpriority for "setCampaignPriority"
             /// </summary>
             [EnumMember(Value = "setCampaignPriority")]
             Setcampaignpriority,
-            
+
             /// <summary>
             /// Enum Recyclecampaign for "recycleCampaign"
             /// </summary>
             [EnumMember(Value = "recycleCampaign")]
             Recyclecampaign,
-            
+
             /// <summary>
             /// Enum Setcampaigndialingmode for "setCampaignDialingMode"
             /// </summary>
             [EnumMember(Value = "setCampaignDialingMode")]
             Setcampaigndialingmode,
-            
+
             /// <summary>
             /// Enum Setcampaignabandonrate for "setCampaignAbandonRate"
             /// </summary>
             [EnumMember(Value = "setCampaignAbandonRate")]
             Setcampaignabandonrate,
-            
+
             /// <summary>
             /// Enum Setcampaignnumberoflines for "setCampaignNumberOfLines"
             /// </summary>
             [EnumMember(Value = "setCampaignNumberOfLines")]
             Setcampaignnumberoflines,
-            
+
             /// <summary>
             /// Enum Setcampaignweight for "setCampaignWeight"
             /// </summary>
             [EnumMember(Value = "setCampaignWeight")]
             Setcampaignweight,
-            
+
             /// <summary>
             /// Enum Setcampaignmaxcallsperagent for "setCampaignMaxCallsPerAgent"
             /// </summary>
             [EnumMember(Value = "setCampaignMaxCallsPerAgent")]
             Setcampaignmaxcallsperagent,
-            
+
             /// <summary>
             /// Enum Setcampaignmessagesperminute for "setCampaignMessagesPerMinute"
             /// </summary>
             [EnumMember(Value = "setCampaignMessagesPerMinute")]
             Setcampaignmessagesperminute,
-            
+
             /// <summary>
             /// Enum Changecampaignqueue for "changeCampaignQueue"
             /// </summary>
             [EnumMember(Value = "changeCampaignQueue")]
             Changecampaignqueue,
-            
+
             /// <summary>
             /// Enum Changecampaigntemplate for "changeCampaignTemplate"
             /// </summary>
@@ -131,55 +123,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Campaignprogress for "campaignProgress"
             /// </summary>
             [EnumMember(Value = "campaignProgress")]
             Campaignprogress,
-            
+
             /// <summary>
             /// Enum Campaignagents for "campaignAgents"
             /// </summary>
             [EnumMember(Value = "campaignAgents")]
             Campaignagents,
-            
+
             /// <summary>
             /// Enum Campaignrecordsattempted for "campaignRecordsAttempted"
             /// </summary>
             [EnumMember(Value = "campaignRecordsAttempted")]
             Campaignrecordsattempted,
-            
+
             /// <summary>
             /// Enum Campaigncontactsmessaged for "campaignContactsMessaged"
             /// </summary>
             [EnumMember(Value = "campaignContactsMessaged")]
             Campaigncontactsmessaged,
-            
+
             /// <summary>
             /// Enum Campaignbusinesssuccess for "campaignBusinessSuccess"
             /// </summary>
             [EnumMember(Value = "campaignBusinessSuccess")]
             Campaignbusinesssuccess,
-            
+
             /// <summary>
             /// Enum Campaignbusinessfailure for "campaignBusinessFailure"
             /// </summary>
             [EnumMember(Value = "campaignBusinessFailure")]
             Campaignbusinessfailure,
-            
+
             /// <summary>
             /// Enum Campaignbusinessneutral for "campaignBusinessNeutral"
             /// </summary>
             [EnumMember(Value = "campaignBusinessNeutral")]
             Campaignbusinessneutral,
-            
+
             /// <summary>
             /// Enum Campaignvalidattempts for "campaignValidAttempts"
             /// </summary>
             [EnumMember(Value = "campaignValidAttempts")]
             Campaignvalidattempts,
-            
+
             /// <summary>
             /// Enum Campaignrightpartycontacts for "campaignRightPartyContacts"
             /// </summary>
@@ -190,13 +182,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of action
         /// </summary>
         /// <value>Type of action</value>
-        [DataMember(Name="actionType", EmitDefaultValue=false)]
+        [DataMember(Name = "actionType", EmitDefaultValue = false)]
         public ActionTypeEnum? ActionType { get; set; }
         /// <summary>
         /// Type of condition
         /// </summary>
         /// <value>Type of condition</value>
-        [DataMember(Name="conditionType", EmitDefaultValue=false)]
+        [DataMember(Name = "conditionType", EmitDefaultValue = false)]
         public ConditionTypeEnum? ConditionType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignRuleWarningParameters" /> class.
@@ -211,16 +203,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ConditionId = ConditionId;
             this.ActionType = ActionType;
             this.ConditionType = ConditionType;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// ID of action
         /// </summary>
         /// <value>ID of action</value>
-        [DataMember(Name="actionId", EmitDefaultValue=false)]
+        [DataMember(Name = "actionId", EmitDefaultValue = false)]
         public string ActionId { get; set; }
 
 
@@ -229,7 +221,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// ID of condition
         /// </summary>
         /// <value>ID of condition</value>
-        [DataMember(Name="conditionId", EmitDefaultValue=false)]
+        [DataMember(Name = "conditionId", EmitDefaultValue = false)]
         public string ConditionId { get; set; }
 
 
@@ -252,19 +244,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ConditionType: ").Append(ConditionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

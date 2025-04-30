@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DashboardUser
     /// </summary>
     [DataContract]
-    public partial class DashboardUser :  IEquatable<DashboardUser>
+    public partial class DashboardUser : IEquatable<DashboardUser>
     {
         /// <summary>
         /// The state of the user
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "active"
             /// </summary>
             [EnumMember(Value = "active")]
             Active,
-            
+
             /// <summary>
             /// Enum Inactive for "inactive"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The state of the user
         /// </summary>
         /// <value>The state of the user</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DashboardUser" /> class.
@@ -64,16 +56,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DashboardCount = DashboardCount;
             this.PublicDashboardCount = PublicDashboardCount;
             this.State = State;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -81,7 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The count of dashboards for the user
         /// </summary>
         /// <value>The count of dashboards for the user</value>
-        [DataMember(Name="dashboardCount", EmitDefaultValue=false)]
+        [DataMember(Name = "dashboardCount", EmitDefaultValue = false)]
         public int? DashboardCount { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The count of public dashboards for the user
         /// </summary>
         /// <value>The count of public dashboards for the user</value>
-        [DataMember(Name="publicDashboardCount", EmitDefaultValue=false)]
+        [DataMember(Name = "publicDashboardCount", EmitDefaultValue = false)]
         public int? PublicDashboardCount { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -132,19 +124,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

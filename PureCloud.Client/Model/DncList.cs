@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DncList
     /// </summary>
     [DataContract]
-    public partial class DncList :  IEquatable<DncList>
+    public partial class DncList : IEquatable<DncList>
     {
         /// <summary>
         /// The type of the DncList.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Rds for "rds"
             /// </summary>
             [EnumMember(Value = "rds")]
             Rds,
-            
+
             /// <summary>
             /// Enum RdsCustom for "rds_custom"
             /// </summary>
             [EnumMember(Value = "rds_custom")]
             RdsCustom,
-            
+
             /// <summary>
             /// Enum Dnccom for "dnc.com"
             /// </summary>
             [EnumMember(Value = "dnc.com")]
             Dnccom,
-            
+
             /// <summary>
             /// Enum Gryphon for "gryphon"
             /// </summary>
@@ -71,25 +63,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Email for "Email"
             /// </summary>
             [EnumMember(Value = "Email")]
             Email,
-            
+
             /// <summary>
             /// Enum Phone for "Phone"
             /// </summary>
             [EnumMember(Value = "Phone")]
             Phone,
-            
+
             /// <summary>
             /// Enum Any for "Any"
             /// </summary>
             [EnumMember(Value = "Any")]
             Any,
-            
+
             /// <summary>
             /// Enum Whatsapp for "WhatsApp"
             /// </summary>
@@ -100,13 +92,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the DncList.
         /// </summary>
         /// <value>The type of the DncList.</value>
-        [DataMember(Name="dncSourceType", EmitDefaultValue=false)]
+        [DataMember(Name = "dncSourceType", EmitDefaultValue = false)]
         public DncSourceTypeEnum? DncSourceType { get; private set; }
         /// <summary>
         /// The contact method. Required if dncSourceType is rds.
         /// </summary>
         /// <value>The contact method. Required if dncSourceType is rds.</value>
-        [DataMember(Name="contactMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "contactMethod", EmitDefaultValue = false)]
         public ContactMethodEnum? ContactMethod { get; set; }
 
         /// <summary>
@@ -137,16 +129,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.LicenseId = LicenseId;
             this.Division = Division;
             this.CustomExclusionColumn = CustomExclusionColumn;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the DncList.
         /// </summary>
         /// <value>The name of the DncList.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -164,7 +156,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Creation time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -173,7 +165,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Last modified time of the entity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -182,7 +174,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Required for updates, must match the version number of the most recent update
         /// </summary>
         /// <value>Required for updates, must match the version number of the most recent update</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -191,7 +183,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the import process
         /// </summary>
         /// <value>The status of the import process</value>
-        [DataMember(Name="importStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "importStatus", EmitDefaultValue = false)]
         public ImportStatus ImportStatus { get; private set; }
 
 
@@ -200,7 +192,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The total number of phone numbers in the DncList.
         /// </summary>
         /// <value>The total number of phone numbers in the DncList.</value>
-        [DataMember(Name="size", EmitDefaultValue=false)]
+        [DataMember(Name = "size", EmitDefaultValue = false)]
         public long? Size { get; private set; }
 
 
@@ -213,7 +205,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A dnc.com loginId. Required if the dncSourceType is dnc.com.
         /// </summary>
         /// <value>A dnc.com loginId. Required if the dncSourceType is dnc.com.</value>
-        [DataMember(Name="loginId", EmitDefaultValue=false)]
+        [DataMember(Name = "loginId", EmitDefaultValue = false)]
         public string LoginId { get; set; }
 
 
@@ -222,7 +214,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A dnc.com campaignId. Optional if the dncSourceType is dnc.com.
         /// </summary>
         /// <value>A dnc.com campaignId. Optional if the dncSourceType is dnc.com.</value>
-        [DataMember(Name="campaignId", EmitDefaultValue=false)]
+        [DataMember(Name = "campaignId", EmitDefaultValue = false)]
         public string CampaignId { get; set; }
 
 
@@ -231,7 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.
         /// </summary>
         /// <value>The list of dnc.com codes to be treated as DNC. Required if the dncSourceType is dnc.com.</value>
-        [DataMember(Name="dncCodes", EmitDefaultValue=false)]
+        [DataMember(Name = "dncCodes", EmitDefaultValue = false)]
         public List<string> DncCodes { get; set; }
 
 
@@ -240,7 +232,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A gryphon license number. Required if the dncSourceType is gryphon.
         /// </summary>
         /// <value>A gryphon license number. Required if the dncSourceType is gryphon.</value>
-        [DataMember(Name="licenseId", EmitDefaultValue=false)]
+        [DataMember(Name = "licenseId", EmitDefaultValue = false)]
         public string LicenseId { get; set; }
 
 
@@ -249,7 +241,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The division this DncList belongs to.
         /// </summary>
         /// <value>The division this DncList belongs to.</value>
-        [DataMember(Name="division", EmitDefaultValue=false)]
+        [DataMember(Name = "division", EmitDefaultValue = false)]
         public DomainEntityRef Division { get; set; }
 
 
@@ -258,7 +250,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.
         /// </summary>
         /// <value>The column to evaluate exclusion against. Required if the dncSourceType is rds_custom.</value>
-        [DataMember(Name="customExclusionColumn", EmitDefaultValue=false)]
+        [DataMember(Name = "customExclusionColumn", EmitDefaultValue = false)]
         public string CustomExclusionColumn { get; set; }
 
 
@@ -267,7 +259,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -299,19 +291,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

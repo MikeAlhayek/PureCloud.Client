@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Campaign patch request
     /// </summary>
     [DataContract]
-    public partial class CampaignPatchRequest :  IEquatable<CampaignPatchRequest>
+    public partial class CampaignPatchRequest : IEquatable<CampaignPatchRequest>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignPatchRequest" /> class.
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.MaxCallsPerAgent = MaxCallsPerAgent;
             this.DynamicLineBalancingSettings = DynamicLineBalancingSettings;
             this.Queue = Queue;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The number of outbound lines to be concurrently dialed.
         /// </summary>
         /// <value>The number of outbound lines to be concurrently dialed.</value>
-        [DataMember(Name="outboundLineCount", EmitDefaultValue=false)]
+        [DataMember(Name = "outboundLineCount", EmitDefaultValue = false)]
         public int? OutboundLineCount { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The targeted compliance abandon rate percentage
         /// </summary>
         /// <value>The targeted compliance abandon rate percentage</value>
-        [DataMember(Name="abandonRate", EmitDefaultValue=false)]
+        [DataMember(Name = "abandonRate", EmitDefaultValue = false)]
         public double? AbandonRate { get; set; }
 
 
@@ -60,7 +52,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The maximum number of calls that can be placed per agent on this campaign
         /// </summary>
         /// <value>The maximum number of calls that can be placed per agent on this campaign</value>
-        [DataMember(Name="maxCallsPerAgent", EmitDefaultValue=false)]
+        [DataMember(Name = "maxCallsPerAgent", EmitDefaultValue = false)]
         public double? MaxCallsPerAgent { get; set; }
 
 
@@ -69,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Dynamic line balancing settings
         /// </summary>
         /// <value>Dynamic line balancing settings</value>
-        [DataMember(Name="dynamicLineBalancingSettings", EmitDefaultValue=false)]
+        [DataMember(Name = "dynamicLineBalancingSettings", EmitDefaultValue = false)]
         public DynamicLineBalancingSettingsPatchRequest DynamicLineBalancingSettings { get; set; }
 
 
@@ -78,7 +70,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Queue for this Campaign to route calls to.
         /// </summary>
         /// <value>The Queue for this Campaign to route calls to.</value>
-        [DataMember(Name="queue", EmitDefaultValue=false)]
+        [DataMember(Name = "queue", EmitDefaultValue = false)]
         public AddressableEntityRef Queue { get; set; }
 
 
@@ -98,19 +90,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Queue: ").Append(Queue).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

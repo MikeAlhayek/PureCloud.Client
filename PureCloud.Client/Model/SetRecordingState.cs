@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SetRecordingState
     /// </summary>
     [DataContract]
-    public partial class SetRecordingState :  IEquatable<SetRecordingState>
+    public partial class SetRecordingState : IEquatable<SetRecordingState>
     {
         /// <summary>
         /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "ACTIVE"
             /// </summary>
             [EnumMember(Value = "ACTIVE")]
             Active,
-            
+
             /// <summary>
             /// Enum Paused for "PAUSED"
             /// </summary>
             [EnumMember(Value = "PAUSED")]
             Paused,
-            
+
             /// <summary>
             /// Enum None for "NONE"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.
         /// </summary>
         /// <value>On update, 'paused' initiates a secure pause, 'active' resumes any paused recordings.</value>
-        [DataMember(Name="recordingState", EmitDefaultValue=false)]
+        [DataMember(Name = "recordingState", EmitDefaultValue = false)]
         public RecordingStateEnum? RecordingState { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SetRecordingState" /> class.
@@ -64,9 +56,9 @@ namespace PureCloudPlatform.Client.V2.Model
         public SetRecordingState(RecordingStateEnum? RecordingState = null)
         {
             this.RecordingState = RecordingState;
-            
+
         }
-        
+
 
 
 
@@ -83,19 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

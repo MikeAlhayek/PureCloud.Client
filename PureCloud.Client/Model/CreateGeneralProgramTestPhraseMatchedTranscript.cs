@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateGeneralProgramTestPhraseMatchedTranscript
     /// </summary>
     [DataContract]
-    public partial class CreateGeneralProgramTestPhraseMatchedTranscript :  IEquatable<CreateGeneralProgramTestPhraseMatchedTranscript>
+    public partial class CreateGeneralProgramTestPhraseMatchedTranscript : IEquatable<CreateGeneralProgramTestPhraseMatchedTranscript>
     {
         /// <summary>
         /// Gets or Sets MediaType
@@ -31,43 +23,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "unknown"
             /// </summary>
             [EnumMember(Value = "unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Call for "call"
             /// </summary>
             [EnumMember(Value = "call")]
             Call,
-            
+
             /// <summary>
             /// Enum Message for "message"
             /// </summary>
             [EnumMember(Value = "message")]
             Message,
-            
+
             /// <summary>
             /// Enum Email for "email"
             /// </summary>
             [EnumMember(Value = "email")]
             Email,
-            
+
             /// <summary>
             /// Enum Chat for "chat"
             /// </summary>
             [EnumMember(Value = "chat")]
             Chat,
-            
+
             /// <summary>
             /// Enum Callback for "callback"
             /// </summary>
             [EnumMember(Value = "callback")]
             Callback,
-            
+
             /// <summary>
             /// Enum All for "all"
             /// </summary>
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets MediaType
         /// </summary>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
+        [DataMember(Name = "mediaType", EmitDefaultValue = false)]
         public MediaTypeEnum? MediaType { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateGeneralProgramTestPhraseMatchedTranscript" /> class.
@@ -96,15 +88,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ConversationId = ConversationId;
             this.MediaType = MediaType;
             this.DetectedPhrases = DetectedPhrases;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Timestamp
         /// </summary>
-        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        [DataMember(Name = "timestamp", EmitDefaultValue = false)]
         public long? Timestamp { get; set; }
 
 
@@ -112,7 +104,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets TranscriptId
         /// </summary>
-        [DataMember(Name="transcriptId", EmitDefaultValue=false)]
+        [DataMember(Name = "transcriptId", EmitDefaultValue = false)]
         public string TranscriptId { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CommunicationId
         /// </summary>
-        [DataMember(Name="communicationId", EmitDefaultValue=false)]
+        [DataMember(Name = "communicationId", EmitDefaultValue = false)]
         public string CommunicationId { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ConversationId
         /// </summary>
-        [DataMember(Name="conversationId", EmitDefaultValue=false)]
+        [DataMember(Name = "conversationId", EmitDefaultValue = false)]
         public string ConversationId { get; set; }
 
 
@@ -138,7 +130,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets DetectedPhrases
         /// </summary>
-        [DataMember(Name="detectedPhrases", EmitDefaultValue=false)]
+        [DataMember(Name = "detectedPhrases", EmitDefaultValue = false)]
         public List<CreateGeneralProgramTestPhraseDetectedPhrase> DetectedPhrases { get; set; }
 
 
@@ -160,19 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentBodyImage
     /// </summary>
     [DataContract]
-    public partial class DocumentBodyImage :  IEquatable<DocumentBodyImage>
+    public partial class DocumentBodyImage : IEquatable<DocumentBodyImage>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Url = Url;
             this.Hyperlink = Hyperlink;
             this.Properties = Properties;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The URL for the image.
         /// </summary>
         /// <value>The URL for the image.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;
         /// </summary>
         /// <value>The URL of the page OR an email OR the reference to the knowledge article that the hyperlink goes to. Possible URL value types are https://&lt;url link&gt; | mailto:&lt;email&gt; | grn:knowledge:::documentVariation/&lt;knowledgeBaseId&gt;/&lt;documentId&gt;/&lt;variationId&gt; | grn:knowledge:::document/&lt;knowledgeBaseId&gt;/&lt;documentId&gt; | grn:knowledge:::category/&lt;knowledgeBaseId&gt;/&lt;categoryId&gt; | grn:knowledge:::label/&lt;knowledgeBaseId&gt;/&lt;labelId&gt;</value>
-        [DataMember(Name="hyperlink", EmitDefaultValue=false)]
+        [DataMember(Name = "hyperlink", EmitDefaultValue = false)]
         public string Hyperlink { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The properties for the image.
         /// </summary>
         /// <value>The properties for the image.</value>
-        [DataMember(Name="properties", EmitDefaultValue=false)]
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
         public DocumentBodyImageProperties Properties { get; set; }
 
 
@@ -81,19 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

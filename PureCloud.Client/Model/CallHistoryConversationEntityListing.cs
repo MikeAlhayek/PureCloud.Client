@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallHistoryConversationEntityListing
     /// </summary>
     [DataContract]
-    public partial class CallHistoryConversationEntityListing :  IEquatable<CallHistoryConversationEntityListing>, IPagedResource<CallHistoryConversation>
+    public partial class CallHistoryConversationEntityListing : IEquatable<CallHistoryConversationEntityListing>, IPagedResource<CallHistoryConversation>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallHistoryConversationEntityListing" /> class.
@@ -43,15 +35,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.NextUri = NextUri;
             this.PreviousUri = PreviousUri;
             this.PageCount = PageCount;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name="entities", EmitDefaultValue=false)]
+        [DataMember(Name = "entities", EmitDefaultValue = false)]
         public List<CallHistoryConversation> Entities { get; set; }
 
 
@@ -59,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PageSize
         /// </summary>
-        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
         public int? PageSize { get; set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PageNumber
         /// </summary>
-        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
         public int? PageNumber { get; set; }
 
 
@@ -75,7 +67,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Total
         /// </summary>
-        [DataMember(Name="total", EmitDefaultValue=false)]
+        [DataMember(Name = "total", EmitDefaultValue = false)]
         public long? Total { get; set; }
 
 
@@ -83,7 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets FirstUri
         /// </summary>
-        [DataMember(Name="firstUri", EmitDefaultValue=false)]
+        [DataMember(Name = "firstUri", EmitDefaultValue = false)]
         public string FirstUri { get; set; }
 
 
@@ -91,7 +83,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets LastUri
         /// </summary>
-        [DataMember(Name="lastUri", EmitDefaultValue=false)]
+        [DataMember(Name = "lastUri", EmitDefaultValue = false)]
         public string LastUri { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SelfUri
         /// </summary>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; set; }
 
 
@@ -107,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets NextUri
         /// </summary>
-        [DataMember(Name="nextUri", EmitDefaultValue=false)]
+        [DataMember(Name = "nextUri", EmitDefaultValue = false)]
         public string NextUri { get; set; }
 
 
@@ -115,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PreviousUri
         /// </summary>
-        [DataMember(Name="previousUri", EmitDefaultValue=false)]
+        [DataMember(Name = "previousUri", EmitDefaultValue = false)]
         public string PreviousUri { get; set; }
 
 
@@ -123,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PageCount
         /// </summary>
-        [DataMember(Name="pageCount", EmitDefaultValue=false)]
+        [DataMember(Name = "pageCount", EmitDefaultValue = false)]
         public int? PageCount { get; set; }
 
 
@@ -148,19 +140,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  PageCount: ").Append(PageCount).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

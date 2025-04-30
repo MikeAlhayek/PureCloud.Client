@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentFaq
     /// </summary>
     [DataContract]
-    public partial class DocumentFaq :  IEquatable<DocumentFaq>
+    public partial class DocumentFaq : IEquatable<DocumentFaq>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Question = Question;
             this.Answer = Answer;
             this.Alternatives = Alternatives;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The question for this FAQ
         /// </summary>
         /// <value>The question for this FAQ</value>
-        [DataMember(Name="question", EmitDefaultValue=false)]
+        [DataMember(Name = "question", EmitDefaultValue = false)]
         public string Question { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The answer for this FAQ
         /// </summary>
         /// <value>The answer for this FAQ</value>
-        [DataMember(Name="answer", EmitDefaultValue=false)]
+        [DataMember(Name = "answer", EmitDefaultValue = false)]
         public string Answer { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of Alternative questions related to the answer which helps in improving the likelihood of a match to user query
         /// </summary>
         /// <value>List of Alternative questions related to the answer which helps in improving the likelihood of a match to user query</value>
-        [DataMember(Name="alternatives", EmitDefaultValue=false)]
+        [DataMember(Name = "alternatives", EmitDefaultValue = false)]
         public List<string> Alternatives { get; set; }
 
 
@@ -81,19 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

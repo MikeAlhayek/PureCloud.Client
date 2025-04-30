@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,23 +8,23 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallRecord
     /// </summary>
     [DataContract]
-    public partial class CallRecord :  IEquatable<CallRecord>
+    public partial class CallRecord : IEquatable<CallRecord>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallRecord" /> class.
         /// </summary>
         public CallRecord()
         {
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Timestamp of the last attempt to reach this number. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="lastAttempt", EmitDefaultValue=false)]
+        [DataMember(Name = "lastAttempt", EmitDefaultValue = false)]
         public DateTime? LastAttempt { get; private set; }
 
 
@@ -41,7 +33,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Result of the last attempt to reach this number
         /// </summary>
         /// <value>Result of the last attempt to reach this number</value>
-        [DataMember(Name="lastResult", EmitDefaultValue=false)]
+        [DataMember(Name = "lastResult", EmitDefaultValue = false)]
         public string LastResult { get; private set; }
 
 
@@ -58,19 +50,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  LastResult: ").Append(LastResult).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

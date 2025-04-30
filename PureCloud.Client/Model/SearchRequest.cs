@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SearchRequest
     /// </summary>
     [DataContract]
-    public partial class SearchRequest :  IEquatable<SearchRequest>
+    public partial class SearchRequest : IEquatable<SearchRequest>
     {
         /// <summary>
         /// The sort order for results
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Asc for "ASC"
             /// </summary>
             [EnumMember(Value = "ASC")]
             Asc,
-            
+
             /// <summary>
             /// Enum Desc for "DESC"
             /// </summary>
             [EnumMember(Value = "DESC")]
             Desc,
-            
+
             /// <summary>
             /// Enum Score for "SCORE"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The sort order for results
         /// </summary>
         /// <value>The sort order for results</value>
-        [DataMember(Name="sortOrder", EmitDefaultValue=false)]
+        [DataMember(Name = "sortOrder", EmitDefaultValue = false)]
         public SortOrderEnum? SortOrder { get; set; }
 
         /// <summary>
@@ -88,9 +80,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Types = Types;
             this.Query = Query;
             this.Aggregations = Aggregations;
-            
+
         }
-        
+
 
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The field in the resource that you want to sort the results by
         /// </summary>
         /// <value>The field in the resource that you want to sort the results by</value>
-        [DataMember(Name="sortBy", EmitDefaultValue=false)]
+        [DataMember(Name = "sortBy", EmitDefaultValue = false)]
         public string SortBy { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of results per page
         /// </summary>
         /// <value>The number of results per page</value>
-        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
         public int? PageSize { get; set; }
 
 
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The page of resources you want to retrieve
         /// </summary>
         /// <value>The page of resources you want to retrieve</value>
-        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
         public int? PageNumber { get; set; }
 
 
@@ -126,7 +118,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Multi-value sort order, list of multiple sort values
         /// </summary>
         /// <value>Multi-value sort order, list of multiple sort values</value>
-        [DataMember(Name="sort", EmitDefaultValue=false)]
+        [DataMember(Name = "sort", EmitDefaultValue = false)]
         public List<SearchSort> Sort { get; set; }
 
 
@@ -135,7 +127,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.
         /// </summary>
         /// <value>A List of strings.  Possible values are any field in the resource you are searching on.  The other option is to use ALL_FIELDS, when this is provided all fields in the resource will be returned in the search results.</value>
-        [DataMember(Name="returnFields", EmitDefaultValue=false)]
+        [DataMember(Name = "returnFields", EmitDefaultValue = false)]
         public List<string> ReturnFields { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Provides more details about a specified resource
         /// </summary>
         /// <value>Provides more details about a specified resource</value>
-        [DataMember(Name="expand", EmitDefaultValue=false)]
+        [DataMember(Name = "expand", EmitDefaultValue = false)]
         public List<string> Expand { get; set; }
 
 
@@ -153,7 +145,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Resource domain type to search
         /// </summary>
         /// <value>Resource domain type to search</value>
-        [DataMember(Name="types", EmitDefaultValue=false)]
+        [DataMember(Name = "types", EmitDefaultValue = false)]
         public List<string> Types { get; set; }
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The search criteria
         /// </summary>
         /// <value>The search criteria</value>
-        [DataMember(Name="query", EmitDefaultValue=false)]
+        [DataMember(Name = "query", EmitDefaultValue = false)]
         public List<SearchCriteria> Query { get; set; }
 
 
@@ -171,7 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Aggregation criteria
         /// </summary>
         /// <value>Aggregation criteria</value>
-        [DataMember(Name="aggregations", EmitDefaultValue=false)]
+        [DataMember(Name = "aggregations", EmitDefaultValue = false)]
         public List<SearchAggregation> Aggregations { get; set; }
 
 
@@ -197,19 +189,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

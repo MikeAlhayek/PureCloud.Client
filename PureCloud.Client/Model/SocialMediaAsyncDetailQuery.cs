@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SocialMediaAsyncDetailQuery
     /// </summary>
     [DataContract]
-    public partial class SocialMediaAsyncDetailQuery :  IEquatable<SocialMediaAsyncDetailQuery>
+    public partial class SocialMediaAsyncDetailQuery : IEquatable<SocialMediaAsyncDetailQuery>
     {
         /// <summary>
         /// Sorting of results based on time
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Asc for "asc"
             /// </summary>
             [EnumMember(Value = "asc")]
             Asc,
-            
+
             /// <summary>
             /// Enum Desc for "desc"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Sorting of results based on time
         /// </summary>
         /// <value>Sorting of results based on time</value>
-        [DataMember(Name="order", EmitDefaultValue=false)]
+        [DataMember(Name = "order", EmitDefaultValue = false)]
         public OrderEnum? Order { get; set; }
 
         /// <summary>
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Filter = Filter;
             this.PageSize = PageSize;
             this.Order = Order;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
         /// </summary>
         /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-        [DataMember(Name="interval", EmitDefaultValue=false)]
+        [DataMember(Name = "interval", EmitDefaultValue = false)]
         public string Interval { get; set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
         /// </summary>
         /// <value>Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-        [DataMember(Name="timeZone", EmitDefaultValue=false)]
+        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
         public string TimeZone { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
         /// </summary>
         /// <value>Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters</value>
-        [DataMember(Name="filter", EmitDefaultValue=false)]
+        [DataMember(Name = "filter", EmitDefaultValue = false)]
         public SocialMediaQueryFilter Filter { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of results per page
         /// </summary>
         /// <value>The number of results per page</value>
-        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
         public int? PageSize { get; set; }
 
 
@@ -131,19 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

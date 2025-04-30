@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SplittingInformation
     /// </summary>
     [DataContract]
-    public partial class SplittingInformation :  IEquatable<SplittingInformation>
+    public partial class SplittingInformation : IEquatable<SplittingInformation>
     {
         /// <summary>
         /// The splitting criteria type
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Percentage for "Percentage"
             /// </summary>
             [EnumMember(Value = "Percentage")]
             Percentage,
-            
+
             /// <summary>
             /// Enum Quantity for "Quantity"
             /// </summary>
             [EnumMember(Value = "Quantity")]
             Quantity,
-            
+
             /// <summary>
             /// Enum Column for "Column"
             /// </summary>
             [EnumMember(Value = "Column")]
             Column,
-            
+
             /// <summary>
             /// Enum Custom for "Custom"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The splitting criteria type
         /// </summary>
         /// <value>The splitting criteria type</value>
-        [DataMember(Name="criteria", EmitDefaultValue=false)]
+        [DataMember(Name = "criteria", EmitDefaultValue = false)]
         public CriteriaEnum? Criteria { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SplittingInformation" /> class.
@@ -76,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CriteriaValue = CriteriaValue;
             this.CreateRemainderContactList = CreateRemainderContactList;
             this.UseWaterfallRule = UseWaterfallRule;
-            
+
         }
-        
+
 
 
 
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The criteria value for the specified criteria type
         /// </summary>
         /// <value>The criteria value for the specified criteria type</value>
-        [DataMember(Name="criteriaValue", EmitDefaultValue=false)]
+        [DataMember(Name = "criteriaValue", EmitDefaultValue = false)]
         public string CriteriaValue { get; set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether to create remainder contact list
         /// </summary>
         /// <value>Whether to create remainder contact list</value>
-        [DataMember(Name="createRemainderContactList", EmitDefaultValue=false)]
+        [DataMember(Name = "createRemainderContactList", EmitDefaultValue = false)]
         public bool? CreateRemainderContactList { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether to use waterfall rule
         /// </summary>
         /// <value>Whether to use waterfall rule</value>
-        [DataMember(Name="useWaterfallRule", EmitDefaultValue=false)]
+        [DataMember(Name = "useWaterfallRule", EmitDefaultValue = false)]
         public bool? UseWaterfallRule { get; set; }
 
 
@@ -125,19 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

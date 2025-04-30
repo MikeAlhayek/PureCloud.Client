@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CsvUploadRequest
     /// </summary>
     [DataContract]
-    public partial class CsvUploadRequest :  IEquatable<CsvUploadRequest>
+    public partial class CsvUploadRequest : IEquatable<CsvUploadRequest>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.FileName = FileName;
             this.FileSize = FileSize;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Name of the file to upload
         /// </summary>
         /// <value>Name of the file to upload</value>
-        [DataMember(Name="fileName", EmitDefaultValue=false)]
+        [DataMember(Name = "fileName", EmitDefaultValue = false)]
         public string FileName { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The size of the upload file
         /// </summary>
         /// <value>The size of the upload file</value>
-        [DataMember(Name="fileSize", EmitDefaultValue=false)]
+        [DataMember(Name = "fileSize", EmitDefaultValue = false)]
         public long? FileSize { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

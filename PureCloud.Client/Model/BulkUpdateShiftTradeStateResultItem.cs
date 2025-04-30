@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BulkUpdateShiftTradeStateResultItem
     /// </summary>
     [DataContract]
-    public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdateShiftTradeStateResultItem>
+    public partial class BulkUpdateShiftTradeStateResultItem :  IEquatable<BulkUpdateShiftTradeStateResultItem>
     {
         /// <summary>
         /// The state of the shift trade after the update request is processed
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Unmatched for "Unmatched"
             /// </summary>
             [EnumMember(Value = "Unmatched")]
             Unmatched,
-
+            
             /// <summary>
             /// Enum Matched for "Matched"
             /// </summary>
             [EnumMember(Value = "Matched")]
             Matched,
-
+            
             /// <summary>
             /// Enum Approved for "Approved"
             /// </summary>
             [EnumMember(Value = "Approved")]
             Approved,
-
+            
             /// <summary>
             /// Enum Denied for "Denied"
             /// </summary>
             [EnumMember(Value = "Denied")]
             Denied,
-
+            
             /// <summary>
             /// Enum Expired for "Expired"
             /// </summary>
             [EnumMember(Value = "Expired")]
             Expired,
-
+            
             /// <summary>
             /// Enum Canceled for "Canceled"
             /// </summary>
@@ -83,55 +75,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Initiatingagentschedulenotfound for "InitiatingAgentScheduleNotFound"
             /// </summary>
             [EnumMember(Value = "InitiatingAgentScheduleNotFound")]
             Initiatingagentschedulenotfound,
-
+            
             /// <summary>
             /// Enum Initiatingagentshifthasexternalactivities for "InitiatingAgentShiftHasExternalActivities"
             /// </summary>
             [EnumMember(Value = "InitiatingAgentShiftHasExternalActivities")]
             Initiatingagentshifthasexternalactivities,
-
+            
             /// <summary>
             /// Enum Initiatingagentshiftnotfound for "InitiatingAgentShiftNotFound"
             /// </summary>
             [EnumMember(Value = "InitiatingAgentShiftNotFound")]
             Initiatingagentshiftnotfound,
-
+            
             /// <summary>
             /// Enum Receivingagentnotfound for "ReceivingAgentNotFound"
             /// </summary>
             [EnumMember(Value = "ReceivingAgentNotFound")]
             Receivingagentnotfound,
-
+            
             /// <summary>
             /// Enum Receivingagentschedulenotfound for "ReceivingAgentScheduleNotFound"
             /// </summary>
             [EnumMember(Value = "ReceivingAgentScheduleNotFound")]
             Receivingagentschedulenotfound,
-
+            
             /// <summary>
             /// Enum Receivingagentshifthasexternalactivities for "ReceivingAgentShiftHasExternalActivities"
             /// </summary>
             [EnumMember(Value = "ReceivingAgentShiftHasExternalActivities")]
             Receivingagentshifthasexternalactivities,
-
+            
             /// <summary>
             /// Enum Receivingagentshiftnotfound for "ReceivingAgentShiftNotFound"
             /// </summary>
             [EnumMember(Value = "ReceivingAgentShiftNotFound")]
             Receivingagentshiftnotfound,
-
+            
             /// <summary>
             /// Enum Schedulenotpublished for "ScheduleNotPublished"
             /// </summary>
             [EnumMember(Value = "ScheduleNotPublished")]
             Schedulenotpublished,
-
+            
             /// <summary>
             /// Enum Transitionnotallowed for "TransitionNotAllowed"
             /// </summary>
@@ -142,13 +134,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The state of the shift trade after the update request is processed
         /// </summary>
         /// <value>The state of the shift trade after the update request is processed</value>
-        [DataMember(Name = "state", EmitDefaultValue = false)]
+        [DataMember(Name="state", EmitDefaultValue=false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// The reason the update failed, if applicable
         /// </summary>
         /// <value>The reason the update failed, if applicable</value>
-        [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+        [DataMember(Name="failureReason", EmitDefaultValue=false)]
         public FailureReasonEnum? FailureReason { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkUpdateShiftTradeStateResultItem" /> class.
@@ -165,16 +157,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ReviewedDate = ReviewedDate;
             this.FailureReason = FailureReason;
             this.Metadata = Metadata;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name = "id", EmitDefaultValue = false)]
+        [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; private set; }
 
 
@@ -185,7 +177,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process
         /// </summary>
         /// <value>The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process</value>
-        [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+        [DataMember(Name="reviewedBy", EmitDefaultValue=false)]
         public UserReference ReviewedBy { get; set; }
 
 
@@ -194,7 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+        [DataMember(Name="reviewedDate", EmitDefaultValue=false)]
         public DateTime? ReviewedDate { get; set; }
 
 
@@ -205,7 +197,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the shift trade
         /// </summary>
         /// <value>Version metadata for the shift trade</value>
-        [DataMember(Name = "metadata", EmitDefaultValue = false)]
+        [DataMember(Name="metadata", EmitDefaultValue=false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -227,6 +219,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

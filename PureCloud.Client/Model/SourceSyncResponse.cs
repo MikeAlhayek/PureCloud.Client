@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SourceSyncResponse
     /// </summary>
     [DataContract]
-    public partial class SourceSyncResponse :  IEquatable<SourceSyncResponse>
+    public partial class SourceSyncResponse : IEquatable<SourceSyncResponse>
     {
         /// <summary>
         /// Sync state.
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Success for "Success"
             /// </summary>
             [EnumMember(Value = "Success")]
             Success,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Inprogress for "InProgress"
             /// </summary>
             [EnumMember(Value = "InProgress")]
             Inprogress,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
@@ -61,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Sync state.
         /// </summary>
         /// <value>Sync state.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SourceSyncResponse" /> class.
@@ -80,9 +72,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DateModified = DateModified;
             this.KnowledgeBase = KnowledgeBase;
             this.Source = Source;
-            
+
         }
-        
+
 
 
 
@@ -91,7 +83,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Sync error.
         /// </summary>
         /// <value>Sync error.</value>
-        [DataMember(Name="error", EmitDefaultValue=false)]
+        [DataMember(Name = "error", EmitDefaultValue = false)]
         public ErrorBody Error { get; set; }
 
 
@@ -100,7 +92,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Synchronization creation date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Synchronization creation date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Synchronization last modification date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Synchronization last modification date-time for this source. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Knowledge base to which this synchronization belongs.
         /// </summary>
         /// <value>Knowledge base to which this synchronization belongs.</value>
-        [DataMember(Name="knowledgeBase", EmitDefaultValue=false)]
+        [DataMember(Name = "knowledgeBase", EmitDefaultValue = false)]
         public AddressableEntityRef KnowledgeBase { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Source to which this synchronization belongs.
         /// </summary>
         /// <value>Source to which this synchronization belongs.</value>
-        [DataMember(Name="source", EmitDefaultValue=false)]
+        [DataMember(Name = "source", EmitDefaultValue = false)]
         public AddressableEntityRef Source { get; set; }
 
 
@@ -149,19 +141,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

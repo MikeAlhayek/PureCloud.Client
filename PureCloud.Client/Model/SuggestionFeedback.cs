@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SuggestionFeedback
     /// </summary>
     [DataContract]
-    public partial class SuggestionFeedback :  IEquatable<SuggestionFeedback>
+    public partial class SuggestionFeedback : IEquatable<SuggestionFeedback>
     {
         /// <summary>
         /// The rating value of the suggestion feedback.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Negative for "Negative"
             /// </summary>
             [EnumMember(Value = "Negative")]
             Negative,
-            
+
             /// <summary>
             /// Enum Positive for "Positive"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The rating value of the suggestion feedback.
         /// </summary>
         /// <value>The rating value of the suggestion feedback.</value>
-        [DataMember(Name="rating", EmitDefaultValue=false)]
+        [DataMember(Name = "rating", EmitDefaultValue = false)]
         public RatingEnum? Rating { get; set; }
 
         /// <summary>
@@ -64,9 +56,9 @@ namespace PureCloudPlatform.Client.V2.Model
         public SuggestionFeedback(RatingEnum? Rating = null)
         {
             this.Rating = Rating;
-            
+
         }
-        
+
 
 
 
@@ -83,19 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

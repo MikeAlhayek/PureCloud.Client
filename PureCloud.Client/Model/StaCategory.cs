@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// StaCategory
     /// </summary>
     [DataContract]
-    public partial class StaCategory :  IEquatable<StaCategory>
+    public partial class StaCategory : IEquatable<StaCategory>
     {
         /// <summary>
         /// The type of interaction the category will apply to
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Voice for "Voice"
             /// </summary>
             [EnumMember(Value = "Voice")]
             Voice,
-            
+
             /// <summary>
             /// Enum Digital for "Digital"
             /// </summary>
             [EnumMember(Value = "Digital")]
             Digital,
-            
+
             /// <summary>
             /// Enum All for "All"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of interaction the category will apply to
         /// </summary>
         /// <value>The type of interaction the category will apply to</value>
-        [DataMember(Name="interactionType", EmitDefaultValue=false)]
+        [DataMember(Name = "interactionType", EmitDefaultValue = false)]
         public InteractionTypeEnum? InteractionType { get; set; }
 
         /// <summary>
@@ -84,16 +76,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DateCreated = DateCreated;
             this.ModifiedBy = ModifiedBy;
             this.DateModified = DateModified;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The description of the category
         /// </summary>
         /// <value>The description of the category</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -121,7 +113,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A collection of conditions joined together by logical operation to provide more refined filtering of conversations
         /// </summary>
         /// <value>A collection of conditions joined together by logical operation to provide more refined filtering of conversations</value>
-        [DataMember(Name="criteria", EmitDefaultValue=false)]
+        [DataMember(Name = "criteria", EmitDefaultValue = false)]
         public Operand Criteria { get; set; }
 
 
@@ -130,7 +122,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The user who created the record
         /// </summary>
         /// <value>The user who created the record</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public AddressableEntityRef CreatedBy { get; set; }
 
 
@@ -139,7 +131,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The creation date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The creation date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -148,7 +140,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The user who last modified the record
         /// </summary>
         /// <value>The user who last modified the record</value>
-        [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
         public AddressableEntityRef ModifiedBy { get; set; }
 
 
@@ -157,7 +149,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The last modified date of the record. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; set; }
 
 
@@ -166,7 +158,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -192,19 +184,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

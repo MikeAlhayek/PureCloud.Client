@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DatePicker
     /// </summary>
     [DataContract]
-    public partial class DatePicker :  IEquatable<DatePicker>
+    public partial class DatePicker : IEquatable<DatePicker>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Title = Title;
             this.Subtitle = Subtitle;
             this.DatePickerAvailableDateTimes = DatePickerAvailableDateTimes;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Text to show in the title.
         /// </summary>
         /// <value>Text to show in the title.</value>
-        [DataMember(Name="title", EmitDefaultValue=false)]
+        [DataMember(Name = "title", EmitDefaultValue = false)]
         public string Title { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Text to show in the description.
         /// </summary>
         /// <value>Text to show in the description.</value>
-        [DataMember(Name="subtitle", EmitDefaultValue=false)]
+        [DataMember(Name = "subtitle", EmitDefaultValue = false)]
         public string Subtitle { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// An array of available times objects.
         /// </summary>
         /// <value>An array of available times objects.</value>
-        [DataMember(Name="datePickerAvailableDateTimes", EmitDefaultValue=false)]
+        [DataMember(Name = "datePickerAvailableDateTimes", EmitDefaultValue = false)]
         public List<DatePickerAvailableDateTime> DatePickerAvailableDateTimes { get; set; }
 
 
@@ -81,19 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleConditionGroup
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleConditionGroup :  IEquatable<CampaignRuleConditionGroup>
+    public partial class CampaignRuleConditionGroup : IEquatable<CampaignRuleConditionGroup>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.MatchAnyConditions = MatchAnyConditions;
             this.Conditions = Conditions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Whether or not this condition group should be evaluated as true if any of sub conditions is matched
         /// </summary>
         /// <value>Whether or not this condition group should be evaluated as true if any of sub conditions is matched</value>
-        [DataMember(Name="matchAnyConditions", EmitDefaultValue=false)]
+        [DataMember(Name = "matchAnyConditions", EmitDefaultValue = false)]
         public bool? MatchAnyConditions { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The parameters for the CampaignRuleCondition.
         /// </summary>
         /// <value>The parameters for the CampaignRuleCondition.</value>
-        [DataMember(Name="conditions", EmitDefaultValue=false)]
+        [DataMember(Name = "conditions", EmitDefaultValue = false)]
         public List<CampaignRuleCondition> Conditions { get; set; }
 
 
@@ -68,19 +60,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Conditions: ").Append(Conditions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

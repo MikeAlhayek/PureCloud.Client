@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateManagementUnitApiRequest
     /// </summary>
     [DataContract]
-    public partial class CreateManagementUnitApiRequest :  IEquatable<CreateManagementUnitApiRequest>
+    public partial class CreateManagementUnitApiRequest : IEquatable<CreateManagementUnitApiRequest>
     {
         /// <summary>
         /// The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
@@ -32,43 +24,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Sunday for "Sunday"
             /// </summary>
             [EnumMember(Value = "Sunday")]
             Sunday,
-            
+
             /// <summary>
             /// Enum Monday for "Monday"
             /// </summary>
             [EnumMember(Value = "Monday")]
             Monday,
-            
+
             /// <summary>
             /// Enum Tuesday for "Tuesday"
             /// </summary>
             [EnumMember(Value = "Tuesday")]
             Tuesday,
-            
+
             /// <summary>
             /// Enum Wednesday for "Wednesday"
             /// </summary>
             [EnumMember(Value = "Wednesday")]
             Wednesday,
-            
+
             /// <summary>
             /// Enum Thursday for "Thursday"
             /// </summary>
             [EnumMember(Value = "Thursday")]
             Thursday,
-            
+
             /// <summary>
             /// Enum Friday for "Friday"
             /// </summary>
             [EnumMember(Value = "Friday")]
             Friday,
-            
+
             /// <summary>
             /// Enum Saturday for "Saturday"
             /// </summary>
@@ -79,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit
         /// </summary>
         /// <value>The configured first day of the week for scheduling and forecasting purposes. Moving to Business Unit</value>
-        [DataMember(Name="startDayOfWeek", EmitDefaultValue=false)]
+        [DataMember(Name = "startDayOfWeek", EmitDefaultValue = false)]
         public StartDayOfWeekEnum? StartDayOfWeek { get; set; }
 
         /// <summary>
@@ -104,16 +96,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Settings = Settings;
             this.DivisionId = DivisionId;
             this.BusinessUnitId = BusinessUnitId;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The name of the management unit
         /// </summary>
         /// <value>The name of the management unit</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -122,7 +114,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The default time zone to use for this management unit.  Moving to Business Unit
         /// </summary>
         /// <value>The default time zone to use for this management unit.  Moving to Business Unit</value>
-        [DataMember(Name="timeZone", EmitDefaultValue=false)]
+        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
         public string TimeZone { get; set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The configuration for the management unit.  If omitted, reasonable defaults will be assigned
         /// </summary>
         /// <value>The configuration for the management unit.  If omitted, reasonable defaults will be assigned</value>
-        [DataMember(Name="settings", EmitDefaultValue=false)]
+        [DataMember(Name = "settings", EmitDefaultValue = false)]
         public CreateManagementUnitSettingsRequest Settings { get; set; }
 
 
@@ -142,7 +134,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of the division to which this management unit belongs.  Defaults to home division ID
         /// </summary>
         /// <value>The id of the division to which this management unit belongs.  Defaults to home division ID</value>
-        [DataMember(Name="divisionId", EmitDefaultValue=false)]
+        [DataMember(Name = "divisionId", EmitDefaultValue = false)]
         public string DivisionId { get; set; }
 
 
@@ -151,7 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The id of the business unit to which this management unit belongs
         /// </summary>
         /// <value>The id of the business unit to which this management unit belongs</value>
-        [DataMember(Name="businessUnitId", EmitDefaultValue=false)]
+        [DataMember(Name = "businessUnitId", EmitDefaultValue = false)]
         public string BusinessUnitId { get; set; }
 
 
@@ -173,19 +165,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

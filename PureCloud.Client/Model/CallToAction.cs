@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallToAction
     /// </summary>
     [DataContract]
-    public partial class CallToAction :  IEquatable<CallToAction>
+    public partial class CallToAction : IEquatable<CallToAction>
     {
         /// <summary>
         /// Where the URL should be opened when the user clicks on the call to action button.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Blank for "Blank"
             /// </summary>
             [EnumMember(Value = "Blank")]
             Blank,
-            
+
             /// <summary>
             /// Enum Self for "Self"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Where the URL should be opened when the user clicks on the call to action button.
         /// </summary>
         /// <value>Where the URL should be opened when the user clicks on the call to action button.</value>
-        [DataMember(Name="target", EmitDefaultValue=false)]
+        [DataMember(Name = "target", EmitDefaultValue = false)]
         public TargetEnum? Target { get; set; }
 
         /// <summary>
@@ -68,16 +60,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Text = Text;
             this.Url = Url;
             this.Target = Target;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Text displayed on the call to action button.
         /// </summary>
         /// <value>Text displayed on the call to action button.</value>
-        [DataMember(Name="text", EmitDefaultValue=false)]
+        [DataMember(Name = "text", EmitDefaultValue = false)]
         public string Text { get; set; }
 
 
@@ -86,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// URL to open when user clicks on the call to action button.
         /// </summary>
         /// <value>URL to open when user clicks on the call to action button.</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; set; }
 
 
@@ -106,19 +98,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

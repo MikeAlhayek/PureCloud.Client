@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SelectedAnswer
     /// </summary>
     [DataContract]
-    public partial class SelectedAnswer :  IEquatable<SelectedAnswer>
+    public partial class SelectedAnswer : IEquatable<SelectedAnswer>
     {
 
         /// <summary>
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public SelectedAnswer(AddressableEntityRef Document = null)
         {
             this.Document = Document;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The search result document chosen as the answer.
         /// </summary>
         /// <value>The search result document chosen as the answer.</value>
-        [DataMember(Name="document", EmitDefaultValue=false)]
+        [DataMember(Name = "document", EmitDefaultValue = false)]
         public AddressableEntityRef Document { get; set; }
 
 
@@ -57,19 +49,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

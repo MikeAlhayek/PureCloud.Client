@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateWebChatMessageRequest
     /// </summary>
     [DataContract]
-    public partial class CreateWebChatMessageRequest :  IEquatable<CreateWebChatMessageRequest>
+    public partial class CreateWebChatMessageRequest : IEquatable<CreateWebChatMessageRequest>
     {
         /// <summary>
         /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Standard for "standard"
             /// </summary>
             [EnumMember(Value = "standard")]
             Standard,
-            
+
             /// <summary>
             /// Enum Notice for "notice"
             /// </summary>
             [EnumMember(Value = "notice")]
             Notice,
-            
+
             /// <summary>
             /// Enum Memberjoin for "member-join"
             /// </summary>
             [EnumMember(Value = "member-join")]
             Memberjoin,
-            
+
             /// <summary>
             /// Enum Memberleave for "member-leave"
             /// </summary>
             [EnumMember(Value = "member-leave")]
             Memberleave,
-            
+
             /// <summary>
             /// Enum Mediarequest for "media-request"
             /// </summary>
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The purpose of the message within the conversation, such as a standard text entry versus a greeting.
         /// </summary>
         /// <value>The purpose of the message within the conversation, such as a standard text entry versus a greeting.</value>
-        [DataMember(Name="bodyType", EmitDefaultValue=false)]
+        [DataMember(Name = "bodyType", EmitDefaultValue = false)]
         public BodyTypeEnum? BodyType { get; set; }
 
         /// <summary>
@@ -84,16 +76,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Body = Body;
             this.BodyType = BodyType;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The message body. Note that message bodies are limited to 4,000 characters.
         /// </summary>
         /// <value>The message body. Note that message bodies are limited to 4,000 characters.</value>
-        [DataMember(Name="body", EmitDefaultValue=false)]
+        [DataMember(Name = "body", EmitDefaultValue = false)]
         public string Body { get; set; }
 
 
@@ -113,19 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

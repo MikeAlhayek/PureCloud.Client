@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignOutboundLinesAllocation
     /// </summary>
     [DataContract]
-    public partial class CampaignOutboundLinesAllocation :  IEquatable<CampaignOutboundLinesAllocation>
+    public partial class CampaignOutboundLinesAllocation : IEquatable<CampaignOutboundLinesAllocation>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignOutboundLinesAllocation" /> class.
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.CampaignWeight = CampaignWeight;
             this.LinesAssigned = LinesAssigned;
             this.LegacyWeight = LegacyWeight;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The Campaign
         /// </summary>
         /// <value>The Campaign</value>
-        [DataMember(Name="campaign", EmitDefaultValue=false)]
+        [DataMember(Name = "campaign", EmitDefaultValue = false)]
         public DomainEntityRef Campaign { get; set; }
 
 
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The relative weight of the campaign
         /// </summary>
         /// <value>The relative weight of the campaign</value>
-        [DataMember(Name="campaignWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "campaignWeight", EmitDefaultValue = false)]
         public int? CampaignWeight { get; set; }
 
 
@@ -58,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of lines dynamically assigned to the campaign
         /// </summary>
         /// <value>The number of lines dynamically assigned to the campaign</value>
-        [DataMember(Name="linesAssigned", EmitDefaultValue=false)]
+        [DataMember(Name = "linesAssigned", EmitDefaultValue = false)]
         public int? LinesAssigned { get; set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// true if relative weight of the campaign is not explicitly specified, false otherwise
         /// </summary>
         /// <value>true if relative weight of the campaign is not explicitly specified, false otherwise</value>
-        [DataMember(Name="legacyWeight", EmitDefaultValue=false)]
+        [DataMember(Name = "legacyWeight", EmitDefaultValue = false)]
         public bool? LegacyWeight { get; set; }
 
 
@@ -86,19 +78,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  LegacyWeight: ").Append(LegacyWeight).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

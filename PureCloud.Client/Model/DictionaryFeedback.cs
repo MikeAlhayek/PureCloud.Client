@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DictionaryFeedback
     /// </summary>
     [DataContract]
-    public partial class DictionaryFeedback :  IEquatable<DictionaryFeedback>
+    public partial class DictionaryFeedback : IEquatable<DictionaryFeedback>
     {
         /// <summary>
         /// The source of the given dictionary feedback
@@ -32,7 +24,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Manual for "Manual"
             /// </summary>
@@ -43,7 +35,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The source of the given dictionary feedback
         /// </summary>
         /// <value>The source of the given dictionary feedback</value>
-        [DataMember(Name="source", EmitDefaultValue=false)]
+        [DataMember(Name = "source", EmitDefaultValue = false)]
         public SourceEnum? Source { get; private set; }
 
         /// <summary>
@@ -66,16 +58,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.BoostValue = BoostValue;
             this.ExamplePhrases = ExamplePhrases;
             this.SoundsLike = SoundsLike;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -84,7 +76,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The dictionary term which needs to be added to dictionary feedback system
         /// </summary>
         /// <value>The dictionary term which needs to be added to dictionary feedback system</value>
-        [DataMember(Name="term", EmitDefaultValue=false)]
+        [DataMember(Name = "term", EmitDefaultValue = false)]
         public string Term { get; set; }
 
 
@@ -93,7 +85,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The dialect for the given term, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard
         /// </summary>
         /// <value>The dialect for the given term, dialect format is {language}-{country} where language follows ISO 639-1 standard and country follows ISO 3166-1 alpha 2 standard</value>
-        [DataMember(Name="dialect", EmitDefaultValue=false)]
+        [DataMember(Name = "dialect", EmitDefaultValue = false)]
         public string Dialect { get; set; }
 
 
@@ -102,7 +94,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A weighted value assigned to a phrase. The higher the value, the higher the likelihood that the system will choose the word or phrase from the possible alternatives. Boost range is from 1.0 to 10.0. Default is 2.0
         /// </summary>
         /// <value>A weighted value assigned to a phrase. The higher the value, the higher the likelihood that the system will choose the word or phrase from the possible alternatives. Boost range is from 1.0 to 10.0. Default is 2.0</value>
-        [DataMember(Name="boostValue", EmitDefaultValue=false)]
+        [DataMember(Name = "boostValue", EmitDefaultValue = false)]
         public float? BoostValue { get; set; }
 
 
@@ -113,7 +105,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Timestamp when dictionary feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The Timestamp when dictionary feedback created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -122,7 +114,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Id of the user who created the dictionary feedback
         /// </summary>
         /// <value>The Id of the user who created the dictionary feedback</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public UserReference CreatedBy { get; private set; }
 
 
@@ -131,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The Timestamp when dictionary feedback modified. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; private set; }
 
 
@@ -140,7 +132,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Id of the user who modified the dictionary feedback
         /// </summary>
         /// <value>The Id of the user who modified the dictionary feedback</value>
-        [DataMember(Name="modifiedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "modifiedBy", EmitDefaultValue = false)]
         public UserReference ModifiedBy { get; private set; }
 
 
@@ -149,7 +141,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of at least 3 and up to 20 unique phrases that are example usage of the term
         /// </summary>
         /// <value>A list of at least 3 and up to 20 unique phrases that are example usage of the term</value>
-        [DataMember(Name="examplePhrases", EmitDefaultValue=false)]
+        [DataMember(Name = "examplePhrases", EmitDefaultValue = false)]
         public List<DictionaryFeedbackExamplePhrase> ExamplePhrases { get; set; }
 
 
@@ -158,7 +150,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of up to 10 terms that give examples of how the term sounds
         /// </summary>
         /// <value>A list of up to 10 terms that give examples of how the term sounds</value>
-        [DataMember(Name="soundsLike", EmitDefaultValue=false)]
+        [DataMember(Name = "soundsLike", EmitDefaultValue = false)]
         public List<string> SoundsLike { get; set; }
 
 
@@ -167,7 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -195,19 +187,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

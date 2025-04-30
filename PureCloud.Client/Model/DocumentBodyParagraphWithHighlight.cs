@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentBodyParagraphWithHighlight
     /// </summary>
     [DataContract]
-    public partial class DocumentBodyParagraphWithHighlight :  IEquatable<DocumentBodyParagraphWithHighlight>
+    public partial class DocumentBodyParagraphWithHighlight : IEquatable<DocumentBodyParagraphWithHighlight>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Blocks = Blocks;
             this.Properties = Properties;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The list of blocks for the paragraph.
         /// </summary>
         /// <value>The list of blocks for the paragraph.</value>
-        [DataMember(Name="blocks", EmitDefaultValue=false)]
+        [DataMember(Name = "blocks", EmitDefaultValue = false)]
         public List<DocumentContentBlockWithHighlight> Blocks { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The properties for the paragraph.
         /// </summary>
         /// <value>The properties for the paragraph.</value>
-        [DataMember(Name="properties", EmitDefaultValue=false)]
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
         public DocumentBodyParagraphProperties Properties { get; set; }
 
 
@@ -69,19 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentBodyBlock
     /// </summary>
     [DataContract]
-    public partial class DocumentBodyBlock :  IEquatable<DocumentBodyBlock>
+    public partial class DocumentBodyBlock : IEquatable<DocumentBodyBlock>
     {
         /// <summary>
         /// The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Paragraph for "Paragraph"
             /// </summary>
             [EnumMember(Value = "Paragraph")]
             Paragraph,
-            
+
             /// <summary>
             /// Enum Image for "Image"
             /// </summary>
             [EnumMember(Value = "Image")]
             Image,
-            
+
             /// <summary>
             /// Enum Video for "Video"
             /// </summary>
             [EnumMember(Value = "Video")]
             Video,
-            
+
             /// <summary>
             /// Enum Orderedlist for "OrderedList"
             /// </summary>
             [EnumMember(Value = "OrderedList")]
             Orderedlist,
-            
+
             /// <summary>
             /// Enum Unorderedlist for "UnorderedList"
             /// </summary>
             [EnumMember(Value = "UnorderedList")]
             Unorderedlist,
-            
+
             /// <summary>
             /// Enum Table for "Table"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.
         /// </summary>
         /// <value>The type of the block for the body. This determines which body block object (paragraph, list, video, image or table) would have a value.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
 
         /// <summary>
@@ -98,9 +90,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Paragraph = Paragraph;
             this.List = List;
             this.Table = Table;
-            
+
         }
-        
+
 
 
 
@@ -109,7 +101,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Image. It must contain a value if the type of the block is Image.
         /// </summary>
         /// <value>Image. It must contain a value if the type of the block is Image.</value>
-        [DataMember(Name="image", EmitDefaultValue=false)]
+        [DataMember(Name = "image", EmitDefaultValue = false)]
         public DocumentBodyImage Image { get; set; }
 
 
@@ -118,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Video. It must contain a value if the type of the block is Video.
         /// </summary>
         /// <value>Video. It must contain a value if the type of the block is Video.</value>
-        [DataMember(Name="video", EmitDefaultValue=false)]
+        [DataMember(Name = "video", EmitDefaultValue = false)]
         public DocumentBodyVideo Video { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Paragraph. It must contain a value if the type of the block is Paragraph.
         /// </summary>
         /// <value>Paragraph. It must contain a value if the type of the block is Paragraph.</value>
-        [DataMember(Name="paragraph", EmitDefaultValue=false)]
+        [DataMember(Name = "paragraph", EmitDefaultValue = false)]
         public DocumentBodyParagraph Paragraph { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List. It must contain a value if the type of the block is UnorderedList or OrderedList.
         /// </summary>
         /// <value>List. It must contain a value if the type of the block is UnorderedList or OrderedList.</value>
-        [DataMember(Name="list", EmitDefaultValue=false)]
+        [DataMember(Name = "list", EmitDefaultValue = false)]
         public DocumentBodyList List { get; set; }
 
 
@@ -145,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Table. It must contain a value if type of the block is Table.
         /// </summary>
         /// <value>Table. It must contain a value if type of the block is Table.</value>
-        [DataMember(Name="table", EmitDefaultValue=false)]
+        [DataMember(Name = "table", EmitDefaultValue = false)]
         public DocumentBodyTable Table { get; set; }
 
 
@@ -167,19 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

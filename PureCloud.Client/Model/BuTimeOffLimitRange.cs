@@ -1,13 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -15,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffLimitRange
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
+    public partial class BuTimeOffLimitRange :  IEquatable<BuTimeOffLimitRange>
     {
 
         /// <summary>
@@ -32,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.StartDate = StartDate;
             this.LimitMinutesPerDay = LimitMinutesPerDay;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name = "startDate", EmitDefaultValue = false)]
+        [DataMember(Name="startDate", EmitDefaultValue=false)]
         public String StartDate { get; set; }
 
 
@@ -50,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of time-off limit values in minutes per day. If &#39;null&#39; is specified, then the day-specific value is cleared. Such a day will have a value of 0
         /// </summary>
         /// <value>The list of time-off limit values in minutes per day. If &#39;null&#39; is specified, then the day-specific value is cleared. Such a day will have a value of 0</value>
-        [DataMember(Name = "limitMinutesPerDay", EmitDefaultValue = false)]
+        [DataMember(Name="limitMinutesPerDay", EmitDefaultValue=false)]
         public List<int?> LimitMinutesPerDay { get; set; }
 
 
@@ -68,6 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

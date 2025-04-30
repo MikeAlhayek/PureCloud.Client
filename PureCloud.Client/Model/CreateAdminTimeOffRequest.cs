@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateAdminTimeOffRequest
     /// </summary>
     [DataContract]
-    public partial class CreateAdminTimeOffRequest :  IEquatable<CreateAdminTimeOffRequest>
+    public partial class CreateAdminTimeOffRequest : IEquatable<CreateAdminTimeOffRequest>
     {
         /// <summary>
         /// The status of this time off request
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Pending for "PENDING"
             /// </summary>
             [EnumMember(Value = "PENDING")]
             Pending,
-            
+
             /// <summary>
             /// Enum Approved for "APPROVED"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of this time off request
         /// </summary>
         /// <value>The status of this time off request</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
 
         /// <summary>
@@ -82,9 +74,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.DurationMinutes = DurationMinutes;
             this.PayableMinutes = PayableMinutes;
             this.Paid = Paid;
-            
+
         }
-        
+
 
 
 
@@ -93,7 +85,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A set of IDs for users to associate with this time off request
         /// </summary>
         /// <value>A set of IDs for users to associate with this time off request</value>
-        [DataMember(Name="users", EmitDefaultValue=false)]
+        [DataMember(Name = "users", EmitDefaultValue = false)]
         public List<UserReference> Users { get; set; }
 
 
@@ -102,7 +94,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category
         /// </summary>
         /// <value>The ID of the activity code associated with this time off request. Activity code must be of the TimeOff category</value>
-        [DataMember(Name="activityCodeId", EmitDefaultValue=false)]
+        [DataMember(Name = "activityCodeId", EmitDefaultValue = false)]
         public string ActivityCodeId { get; set; }
 
 
@@ -111,7 +103,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Notes about the time off request
         /// </summary>
         /// <value>Notes about the time off request</value>
-        [DataMember(Name="notes", EmitDefaultValue=false)]
+        [DataMember(Name = "notes", EmitDefaultValue = false)]
         public string Notes { get; set; }
 
 
@@ -120,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.
         /// </summary>
         /// <value>A set of dates in yyyy-MM-dd format.  Should be interpreted in the management unit&#39;s configured time zone.</value>
-        [DataMember(Name="fullDayManagementUnitDates", EmitDefaultValue=false)]
+        [DataMember(Name = "fullDayManagementUnitDates", EmitDefaultValue = false)]
         public List<string> FullDayManagementUnitDates { get; set; }
 
 
@@ -129,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A set of start date-times in ISO-8601 format for partial day requests.
         /// </summary>
         /// <value>A set of start date-times in ISO-8601 format for partial day requests.</value>
-        [DataMember(Name="partialDayStartDateTimes", EmitDefaultValue=false)]
+        [DataMember(Name = "partialDayStartDateTimes", EmitDefaultValue = false)]
         public List<DateTime?> PartialDayStartDateTimes { get; set; }
 
 
@@ -138,7 +130,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The daily duration of this time off request in minutes
         /// </summary>
         /// <value>The daily duration of this time off request in minutes</value>
-        [DataMember(Name="dailyDurationMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "dailyDurationMinutes", EmitDefaultValue = false)]
         public int? DailyDurationMinutes { get; set; }
 
 
@@ -147,7 +139,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Daily durations for each day of this time off request in minutes
         /// </summary>
         /// <value>Daily durations for each day of this time off request in minutes</value>
-        [DataMember(Name="durationMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "durationMinutes", EmitDefaultValue = false)]
         public List<int?> DurationMinutes { get; set; }
 
 
@@ -156,7 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Payable minutes for each day of this time off request
         /// </summary>
         /// <value>Payable minutes for each day of this time off request</value>
-        [DataMember(Name="payableMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "payableMinutes", EmitDefaultValue = false)]
         public List<int?> PayableMinutes { get; set; }
 
 
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this is a paid time off request
         /// </summary>
         /// <value>Whether this is a paid time off request</value>
-        [DataMember(Name="paid", EmitDefaultValue=false)]
+        [DataMember(Name = "paid", EmitDefaultValue = false)]
         public bool? Paid { get; set; }
 
 
@@ -191,19 +183,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

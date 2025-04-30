@@ -1,5 +1,6 @@
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Text.Json;
 
 namespace PureCloudPlatform.Client.V2.Model

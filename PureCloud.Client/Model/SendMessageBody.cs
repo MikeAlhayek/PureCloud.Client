@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SendMessageBody
     /// </summary>
     [DataContract]
-    public partial class SendMessageBody :  IEquatable<SendMessageBody>
+    public partial class SendMessageBody : IEquatable<SendMessageBody>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Message = Message;
             this.Mentions = Mentions;
             this.ThreadId = ThreadId;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The body of the message
         /// </summary>
         /// <value>The body of the message</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// user ids to be notified
         /// </summary>
         /// <value>user ids to be notified</value>
-        [DataMember(Name="mentions", EmitDefaultValue=false)]
+        [DataMember(Name = "mentions", EmitDefaultValue = false)]
         public List<string> Mentions { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The thread id of the message
         /// </summary>
         /// <value>The thread id of the message</value>
-        [DataMember(Name="threadId", EmitDefaultValue=false)]
+        [DataMember(Name = "threadId", EmitDefaultValue = false)]
         public string ThreadId { get; set; }
 
 
@@ -81,19 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

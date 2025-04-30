@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SecureSession
     /// </summary>
     [DataContract]
-    public partial class SecureSession :  IEquatable<SecureSession>
+    public partial class SecureSession : IEquatable<SecureSession>
     {
         /// <summary>
         /// The current state of a secure session
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Pending for "PENDING"
             /// </summary>
             [EnumMember(Value = "PENDING")]
             Pending,
-            
+
             /// <summary>
             /// Enum Completed for "COMPLETED"
             /// </summary>
             [EnumMember(Value = "COMPLETED")]
             Completed,
-            
+
             /// <summary>
             /// Enum Failed for "FAILED"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current state of a secure session
         /// </summary>
         /// <value>The current state of a secure session</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; set; }
 
         /// <summary>
@@ -78,16 +70,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.State = State;
             this.SourceParticipantId = SourceParticipantId;
             this.Disconnect = Disconnect;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -96,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The flow to execute securely
         /// </summary>
         /// <value>The flow to execute securely</value>
-        [DataMember(Name="flow", EmitDefaultValue=false)]
+        [DataMember(Name = "flow", EmitDefaultValue = false)]
         public DomainEntityRef Flow { get; set; }
 
 
@@ -105,7 +97,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer-provided data
         /// </summary>
         /// <value>Customer-provided data</value>
-        [DataMember(Name="userData", EmitDefaultValue=false)]
+        [DataMember(Name = "userData", EmitDefaultValue = false)]
         public string UserData { get; set; }
 
 
@@ -116,7 +108,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Unique identifier for the participant initiating the secure session.
         /// </summary>
         /// <value>Unique identifier for the participant initiating the secure session.</value>
-        [DataMember(Name="sourceParticipantId", EmitDefaultValue=false)]
+        [DataMember(Name = "sourceParticipantId", EmitDefaultValue = false)]
         public string SourceParticipantId { get; set; }
 
 
@@ -125,7 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// If true, disconnect the agent after creating the session
         /// </summary>
         /// <value>If true, disconnect the agent after creating the session</value>
-        [DataMember(Name="disconnect", EmitDefaultValue=false)]
+        [DataMember(Name = "disconnect", EmitDefaultValue = false)]
         public bool? Disconnect { get; set; }
 
 
@@ -134,7 +126,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -157,19 +149,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

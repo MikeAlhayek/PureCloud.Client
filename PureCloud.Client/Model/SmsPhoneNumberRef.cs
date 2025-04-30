@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// SmsPhoneNumberRef
     /// </summary>
     [DataContract]
-    public partial class SmsPhoneNumberRef :  IEquatable<SmsPhoneNumberRef>
+    public partial class SmsPhoneNumberRef : IEquatable<SmsPhoneNumberRef>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.PhoneNumber = PhoneNumber;
             this.SelfUri = SelfUri;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234
         /// </summary>
         /// <value>A phone number provisioned for SMS communications in E.164 format. E.g. +13175555555 or +34234234234</value>
-        [DataMember(Name="phoneNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "phoneNumber", EmitDefaultValue = false)]
         public string PhoneNumber { get; set; }
 
 
@@ -50,7 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SelfUri
         /// </summary>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; set; }
 
 
@@ -68,19 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

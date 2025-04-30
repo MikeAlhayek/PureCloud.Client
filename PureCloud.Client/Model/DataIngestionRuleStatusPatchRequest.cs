@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DataIngestionRuleStatusPatchRequest
     /// </summary>
     [DataContract]
-    public partial class DataIngestionRuleStatusPatchRequest :  IEquatable<DataIngestionRuleStatusPatchRequest>
+    public partial class DataIngestionRuleStatusPatchRequest : IEquatable<DataIngestionRuleStatusPatchRequest>
     {
         /// <summary>
         /// The status of the data ingestion rule.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Active for "Active"
             /// </summary>
             [EnumMember(Value = "Active")]
             Active,
-            
+
             /// <summary>
             /// Enum Paused for "Paused"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the data ingestion rule.
         /// </summary>
         /// <value>The status of the data ingestion rule.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
 
         /// <summary>
@@ -64,9 +56,9 @@ namespace PureCloudPlatform.Client.V2.Model
         public DataIngestionRuleStatusPatchRequest(StatusEnum? Status = null)
         {
             this.Status = Status;
-            
+
         }
-        
+
 
 
 
@@ -83,19 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

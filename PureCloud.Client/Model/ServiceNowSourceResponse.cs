@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ServiceNowSourceResponse
     /// </summary>
     [DataContract]
-    public partial class ServiceNowSourceResponse :  IEquatable<ServiceNowSourceResponse>
+    public partial class ServiceNowSourceResponse : IEquatable<ServiceNowSourceResponse>
     {
         /// <summary>
         /// The source type.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Salesforce for "Salesforce"
             /// </summary>
             [EnumMember(Value = "Salesforce")]
             Salesforce,
-            
+
             /// <summary>
             /// Enum Servicenow for "ServiceNow"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The source type.
         /// </summary>
         /// <value>The source type.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ServiceNowSourceResponse" /> class.
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.SchedulePeriod = SchedulePeriod;
             this.LastSync = LastSync;
             this.Settings = Settings;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Name of the source.
         /// </summary>
         /// <value>Name of the source.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Source creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Source creation date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Source last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Source last modification date-time. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; set; }
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The reference to the integration associated with the source.
         /// </summary>
         /// <value>The reference to the integration associated with the source.</value>
-        [DataMember(Name="integration", EmitDefaultValue=false)]
+        [DataMember(Name = "integration", EmitDefaultValue = false)]
         public KnowledgeIntegrationReference Integration { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The schedule period of the source in hours.
         /// </summary>
         /// <value>The schedule period of the source in hours.</value>
-        [DataMember(Name="schedulePeriod", EmitDefaultValue=false)]
+        [DataMember(Name = "schedulePeriod", EmitDefaultValue = false)]
         public int? SchedulePeriod { get; set; }
 
 
@@ -137,7 +129,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Additional information about the last synchronization of the source.
         /// </summary>
         /// <value>Additional information about the last synchronization of the source.</value>
-        [DataMember(Name="lastSync", EmitDefaultValue=false)]
+        [DataMember(Name = "lastSync", EmitDefaultValue = false)]
         public SourceLastSync LastSync { get; set; }
 
 
@@ -146,7 +138,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The settings of the source.
         /// </summary>
         /// <value>The settings of the source.</value>
-        [DataMember(Name="settings", EmitDefaultValue=false)]
+        [DataMember(Name = "settings", EmitDefaultValue = false)]
         public ServiceNowSettings Settings { get; set; }
 
 
@@ -155,7 +147,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -181,19 +173,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentQueryClause
     /// </summary>
     [DataContract]
-    public partial class DocumentQueryClause :  IEquatable<DocumentQueryClause>
+    public partial class DocumentQueryClause : IEquatable<DocumentQueryClause>
     {
         /// <summary>
         /// Specifies how the predicates will be applied together.
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Or for "Or"
             /// </summary>
             [EnumMember(Value = "Or")]
             Or,
-            
+
             /// <summary>
             /// Enum And for "And"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Specifies how the predicates will be applied together.
         /// </summary>
         /// <value>Specifies how the predicates will be applied together.</value>
-        [DataMember(Name="operator", EmitDefaultValue=false)]
+        [DataMember(Name = "operator", EmitDefaultValue = false)]
         public OperatorEnum? Operator { get; set; }
 
         /// <summary>
@@ -66,9 +58,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Operator = Operator;
             this.Predicates = Predicates;
-            
+
         }
-        
+
 
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// To apply multiple conditions. Limit of 10 predicates across all clauses.
         /// </summary>
         /// <value>To apply multiple conditions. Limit of 10 predicates across all clauses.</value>
-        [DataMember(Name="predicates", EmitDefaultValue=false)]
+        [DataMember(Name = "predicates", EmitDefaultValue = false)]
         public List<DocumentQueryPredicate> Predicates { get; set; }
 
 
@@ -95,19 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

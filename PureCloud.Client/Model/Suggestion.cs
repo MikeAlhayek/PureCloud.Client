@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Suggestion
     /// </summary>
     [DataContract]
-    public partial class Suggestion :  IEquatable<Suggestion>
+    public partial class Suggestion : IEquatable<Suggestion>
     {
         /// <summary>
         /// The type of the documents for which the suggestion is.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Faq for "Faq"
             /// </summary>
             [EnumMember(Value = "Faq")]
             Faq,
-            
+
             /// <summary>
             /// Enum Article for "Article"
             /// </summary>
             [EnumMember(Value = "Article")]
             Article,
-            
+
             /// <summary>
             /// Enum Knowledgearticle for "KnowledgeArticle"
             /// </summary>
             [EnumMember(Value = "KnowledgeArticle")]
             Knowledgearticle,
-            
+
             /// <summary>
             /// Enum Knowledgesearch for "KnowledgeSearch"
             /// </summary>
             [EnumMember(Value = "KnowledgeSearch")]
             Knowledgesearch,
-            
+
             /// <summary>
             /// Enum Cannedresponse for "CannedResponse"
             /// </summary>
             [EnumMember(Value = "CannedResponse")]
             Cannedresponse,
-            
+
             /// <summary>
             /// Enum Script for "Script"
             /// </summary>
@@ -83,37 +75,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Unknown for "Unknown"
             /// </summary>
             [EnumMember(Value = "Unknown")]
             Unknown,
-            
+
             /// <summary>
             /// Enum Fallback for "Fallback"
             /// </summary>
             [EnumMember(Value = "Fallback")]
             Fallback,
-            
+
             /// <summary>
             /// Enum Conversationstart for "ConversationStart"
             /// </summary>
             [EnumMember(Value = "ConversationStart")]
             Conversationstart,
-            
+
             /// <summary>
             /// Enum Conversationtransfer for "ConversationTransfer"
             /// </summary>
             [EnumMember(Value = "ConversationTransfer")]
             Conversationtransfer,
-            
+
             /// <summary>
             /// Enum Conversationend for "ConversationEnd"
             /// </summary>
             [EnumMember(Value = "ConversationEnd")]
             Conversationend,
-            
+
             /// <summary>
             /// Enum Intent for "Intent"
             /// </summary>
@@ -134,31 +126,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Suggested for "Suggested"
             /// </summary>
             [EnumMember(Value = "Suggested")]
             Suggested,
-            
+
             /// <summary>
             /// Enum Accepted for "Accepted"
             /// </summary>
             [EnumMember(Value = "Accepted")]
             Accepted,
-            
+
             /// <summary>
             /// Enum Dismissed for "Dismissed"
             /// </summary>
             [EnumMember(Value = "Dismissed")]
             Dismissed,
-            
+
             /// <summary>
             /// Enum Failed for "Failed"
             /// </summary>
             [EnumMember(Value = "Failed")]
             Failed,
-            
+
             /// <summary>
             /// Enum Rated for "Rated"
             /// </summary>
@@ -169,35 +161,35 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of the documents for which the suggestion is.
         /// </summary>
         /// <value>The type of the documents for which the suggestion is.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; private set; }
         /// <summary>
         /// The trigger type of the suggestion.
         /// </summary>
         /// <value>The trigger type of the suggestion.</value>
-        [DataMember(Name="triggerType", EmitDefaultValue=false)]
+        [DataMember(Name = "triggerType", EmitDefaultValue = false)]
         public TriggerTypeEnum? TriggerType { get; private set; }
         /// <summary>
         /// The state of the suggestion.
         /// </summary>
         /// <value>The state of the suggestion.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
+        [DataMember(Name = "state", EmitDefaultValue = false)]
         public StateEnum? State { get; private set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Suggestion" /> class.
         /// </summary>
         public Suggestion()
         {
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -208,7 +200,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Faq from the knowledgebase that was provided as the suggestion.
         /// </summary>
         /// <value>The Faq from the knowledgebase that was provided as the suggestion.</value>
-        [DataMember(Name="faq", EmitDefaultValue=false)]
+        [DataMember(Name = "faq", EmitDefaultValue = false)]
         public Faq Faq { get; private set; }
 
 
@@ -217,7 +209,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The article from the knowledgebase that was provided as the suggestion.
         /// </summary>
         /// <value>The article from the knowledgebase that was provided as the suggestion.</value>
-        [DataMember(Name="article", EmitDefaultValue=false)]
+        [DataMember(Name = "article", EmitDefaultValue = false)]
         public Article Article { get; private set; }
 
 
@@ -226,7 +218,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date when the suggestion was created. For example: yyyy-MM-ddTHH:mm:ss.SSZ. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date when the suggestion was created. For example: yyyy-MM-ddTHH:mm:ss.SSZ. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -235,7 +227,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the knowledge search that provided the suggestion.
         /// </summary>
         /// <value>The ID of the knowledge search that provided the suggestion.</value>
-        [DataMember(Name="answerRecordId", EmitDefaultValue=false)]
+        [DataMember(Name = "answerRecordId", EmitDefaultValue = false)]
         public string AnswerRecordId { get; private set; }
 
 
@@ -246,7 +238,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The conversation context in which the suggestion was raised.
         /// </summary>
         /// <value>The conversation context in which the suggestion was raised.</value>
-        [DataMember(Name="context", EmitDefaultValue=false)]
+        [DataMember(Name = "context", EmitDefaultValue = false)]
         public SuggestionContext Context { get; private set; }
 
 
@@ -257,7 +249,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The suggested knowledge search result that was provided as the suggestion.
         /// </summary>
         /// <value>The suggested knowledge search result that was provided as the suggestion.</value>
-        [DataMember(Name="knowledgeSearch", EmitDefaultValue=false)]
+        [DataMember(Name = "knowledgeSearch", EmitDefaultValue = false)]
         public SuggestionKnowledgeSearch KnowledgeSearch { get; private set; }
 
 
@@ -266,7 +258,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The suggested knowledge article that was provided as the suggestion.
         /// </summary>
         /// <value>The suggested knowledge article that was provided as the suggestion.</value>
-        [DataMember(Name="knowledgeArticle", EmitDefaultValue=false)]
+        [DataMember(Name = "knowledgeArticle", EmitDefaultValue = false)]
         public SuggestionKnowledgeArticle KnowledgeArticle { get; private set; }
 
 
@@ -275,7 +267,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The suggested canned response that was provided as the suggestion.
         /// </summary>
         /// <value>The suggested canned response that was provided as the suggestion.</value>
-        [DataMember(Name="cannedResponse", EmitDefaultValue=false)]
+        [DataMember(Name = "cannedResponse", EmitDefaultValue = false)]
         public SuggestionCannedResponse CannedResponse { get; private set; }
 
 
@@ -284,7 +276,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The suggested script that was provided as the suggestion.
         /// </summary>
         /// <value>The suggested script that was provided as the suggestion.</value>
-        [DataMember(Name="script", EmitDefaultValue=false)]
+        [DataMember(Name = "script", EmitDefaultValue = false)]
         public SuggestionScript Script { get; private set; }
 
 
@@ -293,7 +285,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -302,7 +294,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The conversation that the suggestions correspond to.
         /// </summary>
         /// <value>The conversation that the suggestions correspond to.</value>
-        [DataMember(Name="conversation", EmitDefaultValue=false)]
+        [DataMember(Name = "conversation", EmitDefaultValue = false)]
         public AddressableEntityRef Conversation { get; private set; }
 
 
@@ -311,7 +303,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The assistant that was used to provide the suggestions.
         /// </summary>
         /// <value>The assistant that was used to provide the suggestions.</value>
-        [DataMember(Name="assistant", EmitDefaultValue=false)]
+        [DataMember(Name = "assistant", EmitDefaultValue = false)]
         public AddressableEntityRef Assistant { get; private set; }
 
 
@@ -343,19 +335,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

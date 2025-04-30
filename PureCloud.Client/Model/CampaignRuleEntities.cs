@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleEntities
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleEntities :  IEquatable<CampaignRuleEntities>
+    public partial class CampaignRuleEntities : IEquatable<CampaignRuleEntities>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignRuleEntities" /> class.
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Sequences = Sequences;
             this.EmailCampaigns = EmailCampaigns;
             this.SmsCampaigns = SmsCampaigns;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.
         /// </summary>
         /// <value>The list of campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a campaign.</value>
-        [DataMember(Name="campaigns", EmitDefaultValue=false)]
+        [DataMember(Name = "campaigns", EmitDefaultValue = false)]
         public List<DomainEntityRef> Campaigns { get; set; }
 
 
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.
         /// </summary>
         /// <value>The list of sequences for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a sequence.</value>
-        [DataMember(Name="sequences", EmitDefaultValue=false)]
+        [DataMember(Name = "sequences", EmitDefaultValue = false)]
         public List<DomainEntityRef> Sequences { get; set; }
 
 
@@ -58,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.
         /// </summary>
         /// <value>The list of Email campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a Email campaign.</value>
-        [DataMember(Name="emailCampaigns", EmitDefaultValue=false)]
+        [DataMember(Name = "emailCampaigns", EmitDefaultValue = false)]
         public List<DomainEntityRef> EmailCampaigns { get; set; }
 
 
@@ -67,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.
         /// </summary>
         /// <value>The list of SMS campaigns for a CampaignRule to monitor. Required if the CampaignRule has any conditions that run on a SMS campaign.</value>
-        [DataMember(Name="smsCampaigns", EmitDefaultValue=false)]
+        [DataMember(Name = "smsCampaigns", EmitDefaultValue = false)]
         public List<DomainEntityRef> SmsCampaigns { get; set; }
 
 
@@ -86,19 +78,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SmsCampaigns: ").Append(SmsCampaigns).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Defines a SCIM email address.
     /// </summary>
     [DataContract]
-    public partial class ScimEmail :  IEquatable<ScimEmail>
+    public partial class ScimEmail : IEquatable<ScimEmail>
     {
         /// <summary>
         /// The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Work for "work"
             /// </summary>
             [EnumMember(Value = "work")]
             Work,
-            
+
             /// <summary>
             /// Enum Other for "other"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of email address. \"value\" is immutable if \"type\" is set to \"other\".
         /// </summary>
         /// <value>The type of email address. \"value\" is immutable if \"type\" is set to \"other\".</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ScimEmail" /> class.
@@ -62,16 +54,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Value = Value;
             this.Type = Type;
             this.Primary = Primary;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The email address. Is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;.
         /// </summary>
         /// <value>The email address. Is immutable if \&quot;type\&quot; is set to \&quot;other\&quot;.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -82,7 +74,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates whether the email address is the primary email address.
         /// </summary>
         /// <value>Indicates whether the email address is the primary email address.</value>
-        [DataMember(Name="primary", EmitDefaultValue=false)]
+        [DataMember(Name = "primary", EmitDefaultValue = false)]
         public bool? Primary { get; set; }
 
 
@@ -101,19 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

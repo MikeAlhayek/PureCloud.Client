@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DevelopmentActivityAggregateQueryRequestClause
     /// </summary>
     [DataContract]
-    public partial class DevelopmentActivityAggregateQueryRequestClause :  IEquatable<DevelopmentActivityAggregateQueryRequestClause>
+    public partial class DevelopmentActivityAggregateQueryRequestClause : IEquatable<DevelopmentActivityAggregateQueryRequestClause>
     {
         /// <summary>
         /// The logic used to combine the predicates
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum And for "And"
             /// </summary>
             [EnumMember(Value = "And")]
             And,
-            
+
             /// <summary>
             /// Enum Or for "Or"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The logic used to combine the predicates
         /// </summary>
         /// <value>The logic used to combine the predicates</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
 
         /// <summary>
@@ -66,9 +58,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Type = Type;
             this.Predicates = Predicates;
-            
+
         }
-        
+
 
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The list of predicates used to filter the data
         /// </summary>
         /// <value>The list of predicates used to filter the data</value>
-        [DataMember(Name="predicates", EmitDefaultValue=false)]
+        [DataMember(Name = "predicates", EmitDefaultValue = false)]
         public List<DevelopmentActivityAggregateQueryRequestPredicate> Predicates { get; set; }
 
 
@@ -95,19 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

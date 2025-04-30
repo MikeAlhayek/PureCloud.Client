@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuScheduleRunListing
     /// </summary>
     [DataContract]
-    public partial class BuScheduleRunListing : IEquatable<BuScheduleRunListing>
+    public partial class BuScheduleRunListing :  IEquatable<BuScheduleRunListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuScheduleRunListing" /> class.
@@ -25,15 +17,15 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuScheduleRunListing(List<BuScheduleRun> Entities = null)
         {
             this.Entities = Entities;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name = "entities", EmitDefaultValue = false)]
+        [DataMember(Name="entities", EmitDefaultValue=false)]
         public List<BuScheduleRun> Entities { get; set; }
 
 
@@ -50,6 +42,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

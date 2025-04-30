@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DialerAction
     /// </summary>
     [DataContract]
-    public partial class DialerAction :  IEquatable<DialerAction>
+    public partial class DialerAction : IEquatable<DialerAction>
     {
         /// <summary>
         /// The type of this DialerAction.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Action for "Action"
             /// </summary>
             [EnumMember(Value = "Action")]
             Action,
-            
+
             /// <summary>
             /// Enum Modifycontactattribute for "modifyContactAttribute"
             /// </summary>
             [EnumMember(Value = "modifyContactAttribute")]
             Modifycontactattribute,
-            
+
             /// <summary>
             /// Enum Dataactionbehavior for "dataActionBehavior"
             /// </summary>
@@ -65,67 +57,67 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum DoNotDial for "DO_NOT_DIAL"
             /// </summary>
             [EnumMember(Value = "DO_NOT_DIAL")]
             DoNotDial,
-            
+
             /// <summary>
             /// Enum ModifyContactAttribute for "MODIFY_CONTACT_ATTRIBUTE"
             /// </summary>
             [EnumMember(Value = "MODIFY_CONTACT_ATTRIBUTE")]
             ModifyContactAttribute,
-            
+
             /// <summary>
             /// Enum SwitchToPreview for "SWITCH_TO_PREVIEW"
             /// </summary>
             [EnumMember(Value = "SWITCH_TO_PREVIEW")]
             SwitchToPreview,
-            
+
             /// <summary>
             /// Enum AppendNumberToDncList for "APPEND_NUMBER_TO_DNC_LIST"
             /// </summary>
             [EnumMember(Value = "APPEND_NUMBER_TO_DNC_LIST")]
             AppendNumberToDncList,
-            
+
             /// <summary>
             /// Enum AppendCustomEntryToDncList for "APPEND_CUSTOM_ENTRY_TO_DNC_LIST"
             /// </summary>
             [EnumMember(Value = "APPEND_CUSTOM_ENTRY_TO_DNC_LIST")]
             AppendCustomEntryToDncList,
-            
+
             /// <summary>
             /// Enum ScheduleCallback for "SCHEDULE_CALLBACK"
             /// </summary>
             [EnumMember(Value = "SCHEDULE_CALLBACK")]
             ScheduleCallback,
-            
+
             /// <summary>
             /// Enum ContactUncallable for "CONTACT_UNCALLABLE"
             /// </summary>
             [EnumMember(Value = "CONTACT_UNCALLABLE")]
             ContactUncallable,
-            
+
             /// <summary>
             /// Enum NumberUncallable for "NUMBER_UNCALLABLE"
             /// </summary>
             [EnumMember(Value = "NUMBER_UNCALLABLE")]
             NumberUncallable,
-            
+
             /// <summary>
             /// Enum SetCallerId for "SET_CALLER_ID"
             /// </summary>
             [EnumMember(Value = "SET_CALLER_ID")]
             SetCallerId,
-            
+
             /// <summary>
             /// Enum SetSkills for "SET_SKILLS"
             /// </summary>
             [EnumMember(Value = "SET_SKILLS")]
             SetSkills,
-            
+
             /// <summary>
             /// Enum DataAction for "DATA_ACTION"
             /// </summary>
@@ -146,25 +138,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Set for "SET"
             /// </summary>
             [EnumMember(Value = "SET")]
             Set,
-            
+
             /// <summary>
             /// Enum Increment for "INCREMENT"
             /// </summary>
             [EnumMember(Value = "INCREMENT")]
             Increment,
-            
+
             /// <summary>
             /// Enum Decrement for "DECREMENT"
             /// </summary>
             [EnumMember(Value = "DECREMENT")]
             Decrement,
-            
+
             /// <summary>
             /// Enum CurrentTime for "CURRENT_TIME"
             /// </summary>
@@ -175,19 +167,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of this DialerAction.
         /// </summary>
         /// <value>The type of this DialerAction.</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Additional type specification for this DialerAction.
         /// </summary>
         /// <value>Additional type specification for this DialerAction.</value>
-        [DataMember(Name="actionTypeName", EmitDefaultValue=false)]
+        [DataMember(Name = "actionTypeName", EmitDefaultValue = false)]
         public ActionTypeNameEnum? ActionTypeName { get; set; }
         /// <summary>
         /// Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.
         /// </summary>
         /// <value>Specifies how a contact attribute should be updated. Required for MODIFY_CONTACT_ATTRIBUTE.</value>
-        [DataMember(Name="updateOption", EmitDefaultValue=false)]
+        [DataMember(Name = "updateOption", EmitDefaultValue = false)]
         public UpdateOptionEnum? UpdateOption { get; set; }
 
         /// <summary>
@@ -218,9 +210,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ContactIdField = ContactIdField;
             this.CallAnalysisResultField = CallAnalysisResultField;
             this.AgentWrapupField = AgentWrapupField;
-            
+
         }
-        
+
 
 
 
@@ -233,7 +225,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key &#39;callbackOffset&#39; that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: &#39;callerAddress&#39;, which should be the caller id phone number, and &#39;callerName&#39;. For either key, you can also specify a column on the contact to get the value from. To do this, specify &#39;contact.Column&#39;, where &#39;Column&#39; is the name of the contact column from which to get the value. SET_SKILLS takes a key &#39;skills&#39; with an array of skill ids wrapped into a string (Example: {&#39;skills&#39;: &#39;[&#39;skillIdHere&#39;]&#39;} ).
         /// </summary>
         /// <value>A map of key-value pairs pertinent to the DialerAction. Different types of DialerActions require different properties. MODIFY_CONTACT_ATTRIBUTE with an updateOption of SET takes a contact column as the key and accepts any value. SCHEDULE_CALLBACK takes a key &#39;callbackOffset&#39; that specifies how far in the future the callback should be scheduled, in minutes. SET_CALLER_ID takes two keys: &#39;callerAddress&#39;, which should be the caller id phone number, and &#39;callerName&#39;. For either key, you can also specify a column on the contact to get the value from. To do this, specify &#39;contact.Column&#39;, where &#39;Column&#39; is the name of the contact column from which to get the value. SET_SKILLS takes a key &#39;skills&#39; with an array of skill ids wrapped into a string (Example: {&#39;skills&#39;: &#39;[&#39;skillIdHere&#39;]&#39;} ).</value>
-        [DataMember(Name="properties", EmitDefaultValue=false)]
+        [DataMember(Name = "properties", EmitDefaultValue = false)]
         public Dictionary<string, string> Properties { get; set; }
 
 
@@ -242,7 +234,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The Data Action to use for this action. Required for a dataActionBehavior.
         /// </summary>
         /// <value>The Data Action to use for this action. Required for a dataActionBehavior.</value>
-        [DataMember(Name="dataAction", EmitDefaultValue=false)]
+        [DataMember(Name = "dataAction", EmitDefaultValue = false)]
         public DomainEntityRef DataAction { get; set; }
 
 
@@ -251,7 +243,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.
         /// </summary>
         /// <value>A list of mappings defining which contact data fields will be passed to which data action input fields for this condition. Valid for a dataActionBehavior.</value>
-        [DataMember(Name="contactColumnToDataActionFieldMappings", EmitDefaultValue=false)]
+        [DataMember(Name = "contactColumnToDataActionFieldMappings", EmitDefaultValue = false)]
         public List<ContactColumnToDataActionFieldMapping> ContactColumnToDataActionFieldMappings { get; set; }
 
 
@@ -260,7 +252,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.
         /// </summary>
         /// <value>The input field from the data action that the contactId will be passed to for this condition. Valid for a dataActionBehavior.</value>
-        [DataMember(Name="contactIdField", EmitDefaultValue=false)]
+        [DataMember(Name = "contactIdField", EmitDefaultValue = false)]
         public string ContactIdField { get; set; }
 
 
@@ -269,7 +261,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.
         /// </summary>
         /// <value>The input field from the data action that the callAnalysisResult will be passed to for this condition. Valid for a wrapup dataActionBehavior.</value>
-        [DataMember(Name="callAnalysisResultField", EmitDefaultValue=false)]
+        [DataMember(Name = "callAnalysisResultField", EmitDefaultValue = false)]
         public string CallAnalysisResultField { get; set; }
 
 
@@ -278,7 +270,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.
         /// </summary>
         /// <value>The input field from the data action that the agentWrapup will be passed to for this condition. Valid for a wrapup dataActionBehavior.</value>
-        [DataMember(Name="agentWrapupField", EmitDefaultValue=false)]
+        [DataMember(Name = "agentWrapupField", EmitDefaultValue = false)]
         public string AgentWrapupField { get; set; }
 
 
@@ -303,19 +295,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuScheduleNotificationsSettingsResponse
     /// </summary>
     [DataContract]
-    public partial class BuScheduleNotificationsSettingsResponse : IEquatable<BuScheduleNotificationsSettingsResponse>
+    public partial class BuScheduleNotificationsSettingsResponse :  IEquatable<BuScheduleNotificationsSettingsResponse>
     {
 
         /// <summary>
@@ -33,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.EarlyReminderMinutes = EarlyReminderMinutes;
             this.ActivityCategorySettings = ActivityCategorySettings;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The number of minutes prior to the scheduled event to display an early reminder notification
         /// </summary>
         /// <value>The number of minutes prior to the scheduled event to display an early reminder notification</value>
-        [DataMember(Name = "earlyReminderMinutes", EmitDefaultValue = false)]
+        [DataMember(Name="earlyReminderMinutes", EmitDefaultValue=false)]
         public int? EarlyReminderMinutes { get; set; }
 
 
@@ -51,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of activity category notification settings
         /// </summary>
         /// <value>List of activity category notification settings</value>
-        [DataMember(Name = "activityCategorySettings", EmitDefaultValue = false)]
+        [DataMember(Name="activityCategorySettings", EmitDefaultValue=false)]
         public List<BuScheduleNotificationsCategorySettings> ActivityCategorySettings { get; set; }
 
 
@@ -69,6 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

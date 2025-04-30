@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CreateTimeOffLimitRequest
     /// </summary>
     [DataContract]
-    public partial class CreateTimeOffLimitRequest :  IEquatable<CreateTimeOffLimitRequest>
+    public partial class CreateTimeOffLimitRequest : IEquatable<CreateTimeOffLimitRequest>
     {
         /// <summary>
         /// Granularity choice for time off limit. If not specified, 'Daily' is assumed
@@ -32,7 +24,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Daily for "Daily"
             /// </summary>
@@ -43,7 +35,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Granularity choice for time off limit. If not specified, 'Daily' is assumed
         /// </summary>
         /// <value>Granularity choice for time off limit. If not specified, 'Daily' is assumed</value>
-        [DataMember(Name="granularity", EmitDefaultValue=false)]
+        [DataMember(Name = "granularity", EmitDefaultValue = false)]
         public GranularityEnum? Granularity { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateTimeOffLimitRequest" /> class.
@@ -54,9 +46,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Granularity = Granularity;
             this.DefaultLimitMinutes = DefaultLimitMinutes;
-            
+
         }
-        
+
 
 
 
@@ -65,7 +57,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available
         /// </summary>
         /// <value>The default limit value in minutes per granularity. If not specified, then 0 is assumed, which means there are no time off minutes available</value>
-        [DataMember(Name="defaultLimitMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "defaultLimitMinutes", EmitDefaultValue = false)]
         public int? DefaultLimitMinutes { get; set; }
 
 
@@ -83,19 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

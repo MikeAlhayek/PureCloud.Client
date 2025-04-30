@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Development Activity object
     /// </summary>
     [DataContract]
-    public partial class DevelopmentActivity :  IEquatable<DevelopmentActivity>
+    public partial class DevelopmentActivity : IEquatable<DevelopmentActivity>
     {
         /// <summary>
         /// Module archive type
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Graceful for "Graceful"
             /// </summary>
             [EnumMember(Value = "Graceful")]
             Graceful,
-            
+
             /// <summary>
             /// Enum Immediate for "Immediate"
             /// </summary>
@@ -59,37 +51,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Informational for "Informational"
             /// </summary>
             [EnumMember(Value = "Informational")]
             Informational,
-            
+
             /// <summary>
             /// Enum Coaching for "Coaching"
             /// </summary>
             [EnumMember(Value = "Coaching")]
             Coaching,
-            
+
             /// <summary>
             /// Enum Assessedcontent for "AssessedContent"
             /// </summary>
             [EnumMember(Value = "AssessedContent")]
             Assessedcontent,
-            
+
             /// <summary>
             /// Enum Assessment for "Assessment"
             /// </summary>
             [EnumMember(Value = "Assessment")]
             Assessment,
-            
+
             /// <summary>
             /// Enum External for "External"
             /// </summary>
             [EnumMember(Value = "External")]
             External,
-            
+
             /// <summary>
             /// Enum Native for "Native"
             /// </summary>
@@ -110,31 +102,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Planned for "Planned"
             /// </summary>
             [EnumMember(Value = "Planned")]
             Planned,
-            
+
             /// <summary>
             /// Enum Inprogress for "InProgress"
             /// </summary>
             [EnumMember(Value = "InProgress")]
             Inprogress,
-            
+
             /// <summary>
             /// Enum Completed for "Completed"
             /// </summary>
             [EnumMember(Value = "Completed")]
             Completed,
-            
+
             /// <summary>
             /// Enum Invalidschedule for "InvalidSchedule"
             /// </summary>
             [EnumMember(Value = "InvalidSchedule")]
             Invalidschedule,
-            
+
             /// <summary>
             /// Enum Notcompleted for "NotCompleted"
             /// </summary>
@@ -145,19 +137,19 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Module archive type
         /// </summary>
         /// <value>Module archive type</value>
-        [DataMember(Name="archivalMode", EmitDefaultValue=false)]
+        [DataMember(Name = "archivalMode", EmitDefaultValue = false)]
         public ArchivalModeEnum? ArchivalMode { get; set; }
         /// <summary>
         /// The type of activity
         /// </summary>
         /// <value>The type of activity</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// The status of the activity
         /// </summary>
         /// <value>The status of the activity</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DevelopmentActivity" /> class.
@@ -184,16 +176,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Facilitator = Facilitator;
             this.Attendees = Attendees;
             this.IsOverdue = IsOverdue;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -202,7 +194,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date that activity was completed. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCompleted", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCompleted", EmitDefaultValue = false)]
         public DateTime? DateCompleted { get; private set; }
 
 
@@ -211,7 +203,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User that created activity
         /// </summary>
         /// <value>User that created activity</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public UserReference CreatedBy { get; private set; }
 
 
@@ -220,7 +212,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date activity was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -229,7 +221,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The user&#39;s percentage score for this activity
         /// </summary>
         /// <value>The user&#39;s percentage score for this activity</value>
-        [DataMember(Name="percentageScore", EmitDefaultValue=false)]
+        [DataMember(Name = "percentageScore", EmitDefaultValue = false)]
         public float? PercentageScore { get; private set; }
 
 
@@ -238,7 +230,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the activity was passed
         /// </summary>
         /// <value>True if the activity was passed</value>
-        [DataMember(Name="isPassed", EmitDefaultValue=false)]
+        [DataMember(Name = "isPassed", EmitDefaultValue = false)]
         public bool? IsPassed { get; private set; }
 
 
@@ -247,7 +239,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if this is the latest version of assignment assigned to the user
         /// </summary>
         /// <value>True if this is the latest version of assignment assigned to the user</value>
-        [DataMember(Name="isLatest", EmitDefaultValue=false)]
+        [DataMember(Name = "isLatest", EmitDefaultValue = false)]
         public bool? IsLatest { get; set; }
 
 
@@ -256,7 +248,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the associated module is archived
         /// </summary>
         /// <value>True if the associated module is archived</value>
-        [DataMember(Name="isModuleArchived", EmitDefaultValue=false)]
+        [DataMember(Name = "isModuleArchived", EmitDefaultValue = false)]
         public bool? IsModuleArchived { get; set; }
 
 
@@ -267,7 +259,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -276,7 +268,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the activity
         /// </summary>
         /// <value>The name of the activity</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -289,7 +281,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Due date for completion of the activity. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateDue", EmitDefaultValue=false)]
+        [DataMember(Name = "dateDue", EmitDefaultValue = false)]
         public DateTime? DateDue { get; set; }
 
 
@@ -298,7 +290,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Facilitator of the activity
         /// </summary>
         /// <value>Facilitator of the activity</value>
-        [DataMember(Name="facilitator", EmitDefaultValue=false)]
+        [DataMember(Name = "facilitator", EmitDefaultValue = false)]
         public UserReference Facilitator { get; set; }
 
 
@@ -307,7 +299,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of users attending the activity
         /// </summary>
         /// <value>List of users attending the activity</value>
-        [DataMember(Name="attendees", EmitDefaultValue=false)]
+        [DataMember(Name = "attendees", EmitDefaultValue = false)]
         public List<UserReference> Attendees { get; set; }
 
 
@@ -316,7 +308,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates if the activity is overdue
         /// </summary>
         /// <value>Indicates if the activity is overdue</value>
-        [DataMember(Name="isOverdue", EmitDefaultValue=false)]
+        [DataMember(Name = "isOverdue", EmitDefaultValue = false)]
         public bool? IsOverdue { get; set; }
 
 
@@ -349,19 +341,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AttendanceStatus
     /// </summary>
     [DataContract]
-    public partial class AttendanceStatus : IEquatable<AttendanceStatus>
+    public partial class AttendanceStatus :  IEquatable<AttendanceStatus>
     {
         /// <summary>
         /// the attendance status
@@ -32,31 +24,31 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Hasdata for "HasData"
             /// </summary>
             [EnumMember(Value = "HasData")]
             Hasdata,
-
+            
             /// <summary>
             /// Enum Scheduled for "Scheduled"
             /// </summary>
             [EnumMember(Value = "Scheduled")]
             Scheduled,
-
+            
             /// <summary>
             /// Enum Absent for "Absent"
             /// </summary>
             [EnumMember(Value = "Absent")]
             Absent,
-
+            
             /// <summary>
             /// Enum Present for "Present"
             /// </summary>
             [EnumMember(Value = "Present")]
             Present,
-
+            
             /// <summary>
             /// Enum Noschedule for "NoSchedule"
             /// </summary>
@@ -77,13 +69,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-
+            
             /// <summary>
             /// Enum Hasqualityevaluation for "HasQualityEvaluation"
             /// </summary>
             [EnumMember(Value = "HasQualityEvaluation")]
             Hasqualityevaluation,
-
+            
             /// <summary>
             /// Enum Noqualityevaluation for "NoQualityEvaluation"
             /// </summary>
@@ -94,29 +86,29 @@ namespace PureCloudPlatform.Client.V2.Model
         /// the attendance status
         /// </summary>
         /// <value>the attendance status</value>
-        [DataMember(Name = "attendanceStatusType", EmitDefaultValue = false)]
+        [DataMember(Name="attendanceStatusType", EmitDefaultValue=false)]
         public AttendanceStatusTypeEnum? AttendanceStatusType { get; private set; }
         /// <summary>
         /// the quality evaluation score status
         /// </summary>
         /// <value>the quality evaluation score status</value>
-        [DataMember(Name = "hasEvaluation", EmitDefaultValue = false)]
+        [DataMember(Name="hasEvaluation", EmitDefaultValue=false)]
         public HasEvaluationEnum? HasEvaluation { get; private set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AttendanceStatus" /> class.
         /// </summary>
         public AttendanceStatus()
         {
-
+            
         }
-
+        
 
 
         /// <summary>
         /// the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>the workday date of this attendance status. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
+        [DataMember(Name="dateWorkday", EmitDefaultValue=false)]
         public String DateWorkday { get; private set; }
 
 
@@ -139,6 +131,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

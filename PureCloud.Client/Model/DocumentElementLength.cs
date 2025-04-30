@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DocumentElementLength
     /// </summary>
     [DataContract]
-    public partial class DocumentElementLength :  IEquatable<DocumentElementLength>
+    public partial class DocumentElementLength : IEquatable<DocumentElementLength>
     {
         /// <summary>
         /// The unit of length.
@@ -32,19 +24,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Em for "Em"
             /// </summary>
             [EnumMember(Value = "Em")]
             Em,
-            
+
             /// <summary>
             /// Enum Percentage for "Percentage"
             /// </summary>
             [EnumMember(Value = "Percentage")]
             Percentage,
-            
+
             /// <summary>
             /// Enum Px for "Px"
             /// </summary>
@@ -55,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The unit of length.
         /// </summary>
         /// <value>The unit of length.</value>
-        [DataMember(Name="unit", EmitDefaultValue=false)]
+        [DataMember(Name = "unit", EmitDefaultValue = false)]
         public UnitEnum? Unit { get; set; }
 
         /// <summary>
@@ -72,16 +64,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Value = Value;
             this.Unit = Unit;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The length value of the element in the selected unit.
         /// </summary>
         /// <value>The length value of the element in the selected unit.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public float? Value { get; set; }
 
 
@@ -101,19 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

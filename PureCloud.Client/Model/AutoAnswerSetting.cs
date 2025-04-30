@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AutoAnswerSetting
     /// </summary>
     [DataContract]
-    public partial class AutoAnswerSetting : IEquatable<AutoAnswerSetting>
+    public partial class AutoAnswerSetting :  IEquatable<AutoAnswerSetting>
     {
 
         /// <summary>
@@ -31,16 +23,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public AutoAnswerSetting(bool? Enabled = null)
         {
             this.Enabled = Enabled;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// The media type status.
         /// </summary>
         /// <value>The media type status.</value>
-        [DataMember(Name = "enabled", EmitDefaultValue = false)]
+        [DataMember(Name="enabled", EmitDefaultValue=false)]
         public bool? Enabled { get; set; }
 
 
@@ -57,6 +49,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

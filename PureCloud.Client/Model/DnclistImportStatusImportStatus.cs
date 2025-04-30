@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DnclistImportStatusImportStatus
     /// </summary>
     [DataContract]
-    public partial class DnclistImportStatusImportStatus :  IEquatable<DnclistImportStatusImportStatus>
+    public partial class DnclistImportStatusImportStatus : IEquatable<DnclistImportStatusImportStatus>
     {
         /// <summary>
         /// current status of the import
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum InProgress for "IN_PROGRESS"
             /// </summary>
             [EnumMember(Value = "IN_PROGRESS")]
             InProgress,
-            
+
             /// <summary>
             /// Enum Failed for "FAILED"
             /// </summary>
@@ -49,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// current status of the import
         /// </summary>
         /// <value>current status of the import</value>
-        [DataMember(Name="importState", EmitDefaultValue=false)]
+        [DataMember(Name = "importState", EmitDefaultValue = false)]
         public ImportStateEnum? ImportState { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="DnclistImportStatusImportStatus" /> class.
@@ -72,9 +64,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TargetContactListIds = TargetContactListIds;
             this.ListNamePrefix = ListNamePrefix;
             this.AdditionalProperties = AdditionalProperties;
-            
+
         }
-        
+
 
 
 
@@ -83,7 +75,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// total number of records to be imported
         /// </summary>
         /// <value>total number of records to be imported</value>
-        [DataMember(Name="totalRecords", EmitDefaultValue=false)]
+        [DataMember(Name = "totalRecords", EmitDefaultValue = false)]
         public long? TotalRecords { get; set; }
 
 
@@ -92,7 +84,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// number of records finished importing
         /// </summary>
         /// <value>number of records finished importing</value>
-        [DataMember(Name="completedRecords", EmitDefaultValue=false)]
+        [DataMember(Name = "completedRecords", EmitDefaultValue = false)]
         public long? CompletedRecords { get; set; }
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// percentage of records finished importing
         /// </summary>
         /// <value>percentage of records finished importing</value>
-        [DataMember(Name="percentageComplete", EmitDefaultValue=false)]
+        [DataMember(Name = "percentageComplete", EmitDefaultValue = false)]
         public long? PercentageComplete { get; set; }
 
 
@@ -110,7 +102,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// if the import has failed, the reason for the failure
         /// </summary>
         /// <value>if the import has failed, the reason for the failure</value>
-        [DataMember(Name="failureReason", EmitDefaultValue=false)]
+        [DataMember(Name = "failureReason", EmitDefaultValue = false)]
         public string FailureReason { get; set; }
 
 
@@ -119,7 +111,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ids for target contact lists
         /// </summary>
         /// <value>The ids for target contact lists</value>
-        [DataMember(Name="targetContactListIds", EmitDefaultValue=false)]
+        [DataMember(Name = "targetContactListIds", EmitDefaultValue = false)]
         public List<string> TargetContactListIds { get; set; }
 
 
@@ -128,7 +120,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The prefix used for target contact list names
         /// </summary>
         /// <value>The prefix used for target contact list names</value>
-        [DataMember(Name="listNamePrefix", EmitDefaultValue=false)]
+        [DataMember(Name = "listNamePrefix", EmitDefaultValue = false)]
         public string ListNamePrefix { get; set; }
 
 
@@ -136,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AdditionalProperties
         /// </summary>
-        [DataMember(Name="additionalProperties", EmitDefaultValue=false)]
+        [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
         public Dictionary<string, Object> AdditionalProperties { get; set; }
 
 
@@ -160,19 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

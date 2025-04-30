@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CallForwardingEventUser
     /// </summary>
     [DataContract]
-    public partial class CallForwardingEventUser :  IEquatable<CallForwardingEventUser>
+    public partial class CallForwardingEventUser : IEquatable<CallForwardingEventUser>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CallForwardingEventUser" /> class.
@@ -25,15 +17,15 @@ namespace PureCloudPlatform.Client.V2.Model
         public CallForwardingEventUser(string Id = null)
         {
             this.Id = Id;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -49,19 +41,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

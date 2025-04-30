@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// DataSchema
     /// </summary>
     [DataContract]
-    public partial class DataSchema :  IEquatable<DataSchema>
+    public partial class DataSchema : IEquatable<DataSchema>
     {
         /// <summary>
         /// Gets or Sets AppliesTo
@@ -31,37 +23,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Contact for "CONTACT"
             /// </summary>
             [EnumMember(Value = "CONTACT")]
             Contact,
-            
+
             /// <summary>
             /// Enum Conversation for "CONVERSATION"
             /// </summary>
             [EnumMember(Value = "CONVERSATION")]
             Conversation,
-            
+
             /// <summary>
             /// Enum ExternalOrganization for "EXTERNAL_ORGANIZATION"
             /// </summary>
             [EnumMember(Value = "EXTERNAL_ORGANIZATION")]
             ExternalOrganization,
-            
+
             /// <summary>
             /// Enum OpenAction for "OPEN_ACTION"
             /// </summary>
             [EnumMember(Value = "OPEN_ACTION")]
             OpenAction,
-            
+
             /// <summary>
             /// Enum Workitem for "WORKITEM"
             /// </summary>
             [EnumMember(Value = "WORKITEM")]
             Workitem,
-            
+
             /// <summary>
             /// Enum DecisionTable for "DECISION_TABLE"
             /// </summary>
@@ -89,16 +81,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Version = Version;
             this.Enabled = Enabled;
             this.JsonSchema = JsonSchema;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.
         /// </summary>
         /// <value>The globally unique identifier for the schema.  Only required if a schema is used for custom fields during external entity creation or updates.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -106,7 +98,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -115,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The schema&#39;s version, a positive integer. Required for updates.
         /// </summary>
         /// <value>The schema&#39;s version, a positive integer. Required for updates.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
+        [DataMember(Name = "version", EmitDefaultValue = false)]
         public int? Version { get; set; }
 
 
@@ -124,7 +116,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates the built-in entity type to which this schema applies.
         /// </summary>
         /// <value>Indicates the built-in entity type to which this schema applies.</value>
-        [DataMember(Name="appliesTo", EmitDefaultValue=false)]
+        [DataMember(Name = "appliesTo", EmitDefaultValue = false)]
         public List<AppliesToEnum> AppliesTo { get; private set; }
 
 
@@ -133,7 +125,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The schema&#39;s enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.
         /// </summary>
         /// <value>The schema&#39;s enabled/disabled status. A disabled schema cannot be assigned to any other entities, but the data on those entities from the schema still exists.</value>
-        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        [DataMember(Name = "enabled", EmitDefaultValue = false)]
         public bool? Enabled { get; set; }
 
 
@@ -142,7 +134,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI of the user that created this schema.
         /// </summary>
         /// <value>The URI of the user that created this schema.</value>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public DomainEntityRef CreatedBy { get; private set; }
 
 
@@ -151,7 +143,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date and time this schema was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -160,7 +152,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A JSON schema defining the extension to the built-in entity type.
         /// </summary>
         /// <value>A JSON schema defining the extension to the built-in entity type.</value>
-        [DataMember(Name="jsonSchema", EmitDefaultValue=false)]
+        [DataMember(Name = "jsonSchema", EmitDefaultValue = false)]
         public JsonSchemaDocument JsonSchema { get; set; }
 
 
@@ -169,7 +161,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -194,19 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

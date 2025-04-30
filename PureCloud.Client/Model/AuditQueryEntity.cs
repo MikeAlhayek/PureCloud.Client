@@ -1,13 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -15,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AuditQueryEntity
     /// </summary>
     [DataContract]
-    public partial class AuditQueryEntity : IEquatable<AuditQueryEntity>
+    public partial class AuditQueryEntity :  IEquatable<AuditQueryEntity>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AuditQueryEntity" /> class.
@@ -26,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Name = Name;
             this.Actions = Actions;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Name of the Entity
         /// </summary>
         /// <value>Name of the Entity</value>
-        [DataMember(Name = "name", EmitDefaultValue = false)]
+        [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
 
 
@@ -44,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of Actions
         /// </summary>
         /// <value>List of Actions</value>
-        [DataMember(Name = "actions", EmitDefaultValue = false)]
+        [DataMember(Name="actions", EmitDefaultValue=false)]
         public List<string> Actions { get; set; }
 
 
@@ -62,6 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

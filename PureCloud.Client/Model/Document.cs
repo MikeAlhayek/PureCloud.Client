@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
+using System.Text.Json.Serialization;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Document
     /// </summary>
     [DataContract]
-    public partial class Document :  IEquatable<Document>
+    public partial class Document : IEquatable<Document>
     {
         /// <summary>
         /// Gets or Sets SystemType
@@ -31,19 +23,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Document for "DOCUMENT"
             /// </summary>
             [EnumMember(Value = "DOCUMENT")]
             Document,
-            
+
             /// <summary>
             /// Enum Fax for "FAX"
             /// </summary>
             [EnumMember(Value = "FAX")]
             Fax,
-            
+
             /// <summary>
             /// Enum Recording for "RECORDING"
             /// </summary>
@@ -63,13 +55,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum SinglePut for "SINGLE_PUT"
             /// </summary>
             [EnumMember(Value = "SINGLE_PUT")]
             SinglePut,
-            
+
             /// <summary>
             /// Enum MultipartPost for "MULTIPART_POST"
             /// </summary>
@@ -89,19 +81,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum None for "NONE"
             /// </summary>
             [EnumMember(Value = "NONE")]
             None,
-            
+
             /// <summary>
             /// Enum Limited for "LIMITED"
             /// </summary>
             [EnumMember(Value = "LIMITED")]
             Limited,
-            
+
             /// <summary>
             /// Enum Public for "PUBLIC"
             /// </summary>
@@ -111,17 +103,17 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SystemType
         /// </summary>
-        [DataMember(Name="systemType", EmitDefaultValue=false)]
+        [DataMember(Name = "systemType", EmitDefaultValue = false)]
         public SystemTypeEnum? SystemType { get; set; }
         /// <summary>
         /// Gets or Sets UploadMethod
         /// </summary>
-        [DataMember(Name="uploadMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadMethod", EmitDefaultValue = false)]
         public UploadMethodEnum? UploadMethod { get; set; }
         /// <summary>
         /// Gets or Sets SharingStatus
         /// </summary>
-        [DataMember(Name="sharingStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "sharingStatus", EmitDefaultValue = false)]
         public SharingStatusEnum? SharingStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Document" /> class.
@@ -186,16 +178,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Acl = Acl;
             this.SharingStatus = SharingStatus;
             this.DownloadSharingUri = DownloadSharingUri;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -203,7 +195,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -211,7 +203,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ChangeNumber
         /// </summary>
-        [DataMember(Name="changeNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "changeNumber", EmitDefaultValue = false)]
         public int? ChangeNumber { get; set; }
 
 
@@ -220,7 +212,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; set; }
 
 
@@ -229,7 +221,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateModified", EmitDefaultValue=false)]
+        [DataMember(Name = "dateModified", EmitDefaultValue = false)]
         public DateTime? DateModified { get; set; }
 
 
@@ -238,7 +230,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateUploaded", EmitDefaultValue=false)]
+        [DataMember(Name = "dateUploaded", EmitDefaultValue = false)]
         public DateTime? DateUploaded { get; set; }
 
 
@@ -246,7 +238,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ContentUri
         /// </summary>
-        [DataMember(Name="contentUri", EmitDefaultValue=false)]
+        [DataMember(Name = "contentUri", EmitDefaultValue = false)]
         public string ContentUri { get; set; }
 
 
@@ -254,7 +246,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Workspace
         /// </summary>
-        [DataMember(Name="workspace", EmitDefaultValue=false)]
+        [DataMember(Name = "workspace", EmitDefaultValue = false)]
         public DomainEntityRef Workspace { get; set; }
 
 
@@ -262,7 +254,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CreatedBy
         /// </summary>
-        [DataMember(Name="createdBy", EmitDefaultValue=false)]
+        [DataMember(Name = "createdBy", EmitDefaultValue = false)]
         public DomainEntityRef CreatedBy { get; set; }
 
 
@@ -270,7 +262,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets UploadedBy
         /// </summary>
-        [DataMember(Name="uploadedBy", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadedBy", EmitDefaultValue = false)]
         public DomainEntityRef UploadedBy { get; set; }
 
 
@@ -278,7 +270,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SharingUri
         /// </summary>
-        [DataMember(Name="sharingUri", EmitDefaultValue=false)]
+        [DataMember(Name = "sharingUri", EmitDefaultValue = false)]
         public string SharingUri { get; set; }
 
 
@@ -286,7 +278,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ContentType
         /// </summary>
-        [DataMember(Name="contentType", EmitDefaultValue=false)]
+        [DataMember(Name = "contentType", EmitDefaultValue = false)]
         public string ContentType { get; set; }
 
 
@@ -294,7 +286,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ContentLength
         /// </summary>
-        [DataMember(Name="contentLength", EmitDefaultValue=false)]
+        [DataMember(Name = "contentLength", EmitDefaultValue = false)]
         public long? ContentLength { get; set; }
 
 
@@ -304,7 +296,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Filename
         /// </summary>
-        [DataMember(Name="filename", EmitDefaultValue=false)]
+        [DataMember(Name = "filename", EmitDefaultValue = false)]
         public string Filename { get; set; }
 
 
@@ -312,7 +304,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PageCount
         /// </summary>
-        [DataMember(Name="pageCount", EmitDefaultValue=false)]
+        [DataMember(Name = "pageCount", EmitDefaultValue = false)]
         public long? PageCount { get; set; }
 
 
@@ -320,7 +312,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Read
         /// </summary>
-        [DataMember(Name="read", EmitDefaultValue=false)]
+        [DataMember(Name = "read", EmitDefaultValue = false)]
         public bool? Read { get; set; }
 
 
@@ -328,7 +320,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets CallerAddress
         /// </summary>
-        [DataMember(Name="callerAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "callerAddress", EmitDefaultValue = false)]
         public string CallerAddress { get; set; }
 
 
@@ -336,7 +328,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ReceiverAddress
         /// </summary>
-        [DataMember(Name="receiverAddress", EmitDefaultValue=false)]
+        [DataMember(Name = "receiverAddress", EmitDefaultValue = false)]
         public string ReceiverAddress { get; set; }
 
 
@@ -344,7 +336,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Tags
         /// </summary>
-        [DataMember(Name="tags", EmitDefaultValue=false)]
+        [DataMember(Name = "tags", EmitDefaultValue = false)]
         public List<string> Tags { get; set; }
 
 
@@ -352,7 +344,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets TagValues
         /// </summary>
-        [DataMember(Name="tagValues", EmitDefaultValue=false)]
+        [DataMember(Name = "tagValues", EmitDefaultValue = false)]
         public List<TagValue> TagValues { get; set; }
 
 
@@ -360,7 +352,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Attributes
         /// </summary>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public List<DocumentAttribute> Attributes { get; set; }
 
 
@@ -368,7 +360,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Thumbnails
         /// </summary>
-        [DataMember(Name="thumbnails", EmitDefaultValue=false)]
+        [DataMember(Name = "thumbnails", EmitDefaultValue = false)]
         public List<DocumentThumbnail> Thumbnails { get; set; }
 
 
@@ -376,7 +368,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets UploadStatus
         /// </summary>
-        [DataMember(Name="uploadStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadStatus", EmitDefaultValue = false)]
         public DomainEntityRef UploadStatus { get; set; }
 
 
@@ -384,7 +376,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets UploadDestinationUri
         /// </summary>
-        [DataMember(Name="uploadDestinationUri", EmitDefaultValue=false)]
+        [DataMember(Name = "uploadDestinationUri", EmitDefaultValue = false)]
         public string UploadDestinationUri { get; set; }
 
 
@@ -394,7 +386,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets LockInfo
         /// </summary>
-        [DataMember(Name="lockInfo", EmitDefaultValue=false)]
+        [DataMember(Name = "lockInfo", EmitDefaultValue = false)]
         public LockInfo LockInfo { get; set; }
 
 
@@ -403,7 +395,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of permitted action rights for the user making the request
         /// </summary>
         /// <value>A list of permitted action rights for the user making the request</value>
-        [DataMember(Name="acl", EmitDefaultValue=false)]
+        [DataMember(Name = "acl", EmitDefaultValue = false)]
         public List<string> Acl { get; set; }
 
 
@@ -413,7 +405,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets DownloadSharingUri
         /// </summary>
-        [DataMember(Name="downloadSharingUri", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadSharingUri", EmitDefaultValue = false)]
         public string DownloadSharingUri { get; set; }
 
 
@@ -422,7 +414,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -469,19 +461,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
-        }
+
 
         /// <summary>
         /// Returns true if objects are equal

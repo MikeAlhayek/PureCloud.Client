@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuActivitySettingsResponse
     /// </summary>
     [DataContract]
-    public partial class BuActivitySettingsResponse : IEquatable<BuActivitySettingsResponse>
+    public partial class BuActivitySettingsResponse :  IEquatable<BuActivitySettingsResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuActivitySettingsResponse" /> class.
@@ -25,16 +17,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuActivitySettingsResponse(ActivityCodeReference DefaultActivityCode = null)
         {
             this.DefaultActivityCode = DefaultActivityCode;
-
+            
         }
-
+        
 
 
         /// <summary>
         /// Default Activity Code settings
         /// </summary>
         /// <value>Default Activity Code settings</value>
-        [DataMember(Name = "defaultActivityCode", EmitDefaultValue = false)]
+        [DataMember(Name="defaultActivityCode", EmitDefaultValue=false)]
         public ActivityCodeReference DefaultActivityCode { get; set; }
 
 
@@ -51,6 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("}\n");
             return sb.ToString();
         }
+
 
         /// <summary>
         /// Returns true if objects are equal

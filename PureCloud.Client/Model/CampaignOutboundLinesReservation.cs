@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignOutboundLinesReservation
     /// </summary>
     [DataContract]
-    public partial class CampaignOutboundLinesReservation :  IEquatable<CampaignOutboundLinesReservation>
+    public partial class CampaignOutboundLinesReservation : IEquatable<CampaignOutboundLinesReservation>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CampaignOutboundLinesReservation" /> class.
@@ -27,16 +19,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Campaign = Campaign;
             this.LinesReserved = LinesReserved;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The Campaign
         /// </summary>
         /// <value>The Campaign</value>
-        [DataMember(Name="campaign", EmitDefaultValue=false)]
+        [DataMember(Name = "campaign", EmitDefaultValue = false)]
         public DomainEntityRef Campaign { get; set; }
 
 
@@ -45,7 +37,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of lines reserved for the campaign
         /// </summary>
         /// <value>The number of lines reserved for the campaign</value>
-        [DataMember(Name="linesReserved", EmitDefaultValue=false)]
+        [DataMember(Name = "linesReserved", EmitDefaultValue = false)]
         public int? LinesReserved { get; set; }
 
 
@@ -62,19 +54,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  LinesReserved: ").Append(LinesReserved).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

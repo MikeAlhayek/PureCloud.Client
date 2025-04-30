@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CampaignRuleCondition
     /// </summary>
     [DataContract]
-    public partial class CampaignRuleCondition :  IEquatable<CampaignRuleCondition>
+    public partial class CampaignRuleCondition : IEquatable<CampaignRuleCondition>
     {
         /// <summary>
         /// The type of condition to evaluate.
@@ -32,55 +24,55 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Campaignprogress for "campaignProgress"
             /// </summary>
             [EnumMember(Value = "campaignProgress")]
             Campaignprogress,
-            
+
             /// <summary>
             /// Enum Campaignagents for "campaignAgents"
             /// </summary>
             [EnumMember(Value = "campaignAgents")]
             Campaignagents,
-            
+
             /// <summary>
             /// Enum Campaignrecordsattempted for "campaignRecordsAttempted"
             /// </summary>
             [EnumMember(Value = "campaignRecordsAttempted")]
             Campaignrecordsattempted,
-            
+
             /// <summary>
             /// Enum Campaigncontactsmessaged for "campaignContactsMessaged"
             /// </summary>
             [EnumMember(Value = "campaignContactsMessaged")]
             Campaigncontactsmessaged,
-            
+
             /// <summary>
             /// Enum Campaignbusinesssuccess for "campaignBusinessSuccess"
             /// </summary>
             [EnumMember(Value = "campaignBusinessSuccess")]
             Campaignbusinesssuccess,
-            
+
             /// <summary>
             /// Enum Campaignbusinessfailure for "campaignBusinessFailure"
             /// </summary>
             [EnumMember(Value = "campaignBusinessFailure")]
             Campaignbusinessfailure,
-            
+
             /// <summary>
             /// Enum Campaignbusinessneutral for "campaignBusinessNeutral"
             /// </summary>
             [EnumMember(Value = "campaignBusinessNeutral")]
             Campaignbusinessneutral,
-            
+
             /// <summary>
             /// Enum Campaignvalidattempts for "campaignValidAttempts"
             /// </summary>
             [EnumMember(Value = "campaignValidAttempts")]
             Campaignvalidattempts,
-            
+
             /// <summary>
             /// Enum Campaignrightpartycontacts for "campaignRightPartyContacts"
             /// </summary>
@@ -91,7 +83,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The type of condition to evaluate.
         /// </summary>
         /// <value>The type of condition to evaluate.</value>
-        [DataMember(Name="conditionType", EmitDefaultValue=false)]
+        [DataMember(Name = "conditionType", EmitDefaultValue = false)]
         public ConditionTypeEnum? ConditionType { get; set; }
 
         /// <summary>
@@ -110,15 +102,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Id = Id;
             this.Parameters = Parameters;
             this.ConditionType = ConditionType;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -127,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The parameters for the CampaignRuleCondition.
         /// </summary>
         /// <value>The parameters for the CampaignRuleCondition.</value>
-        [DataMember(Name="parameters", EmitDefaultValue=false)]
+        [DataMember(Name = "parameters", EmitDefaultValue = false)]
         public CampaignRuleParameters Parameters { get; set; }
 
 
@@ -147,19 +139,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ConditionType: ").Append(ConditionType).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>
