@@ -1,14 +1,5 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +7,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// The user who initiated the change.
     /// </summary>
     [DataContract]
-    public partial class ArchitectFlowNotificationUser :  IEquatable<ArchitectFlowNotificationUser>
+    public partial class ArchitectFlowNotificationUser : IEquatable<ArchitectFlowNotificationUser>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectFlowNotificationUser" /> class.
@@ -29,16 +20,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Id = Id;
             this.Name = Name;
             this.HomeOrg = HomeOrg;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the user.
         /// </summary>
         /// <value>The ID of the user.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -47,7 +38,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the user, if available.
         /// </summary>
         /// <value>The name of the user, if available.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -55,7 +46,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets HomeOrg
         /// </summary>
-        [DataMember(Name="homeOrg", EmitDefaultValue=false)]
+        [DataMember(Name = "homeOrg", EmitDefaultValue = false)]
         public ArchitectFlowNotificationHomeOrganization HomeOrg { get; set; }
 
 
@@ -73,19 +64,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  HomeOrg: ").Append(HomeOrg).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

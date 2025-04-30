@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AuditRealtimeQueryRequest
     /// </summary>
     [DataContract]
-    public partial class AuditRealtimeQueryRequest :  IEquatable<AuditRealtimeQueryRequest>
+    public partial class AuditRealtimeQueryRequest : IEquatable<AuditRealtimeQueryRequest>
     {
 
         /// <summary>
@@ -41,16 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Sort = Sort;
             this.PageNumber = PageNumber;
             this.PageSize = PageSize;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ
         /// </summary>
         /// <value>Date and time range of data to query. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ssZ/YYYY-MM-DDThh:mm:ssZ</value>
-        [DataMember(Name="interval", EmitDefaultValue=false)]
+        [DataMember(Name = "interval", EmitDefaultValue = false)]
         public string Interval { get; set; }
 
 
@@ -59,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Name of the service to query audits for.
         /// </summary>
         /// <value>Name of the service to query audits for.</value>
-        [DataMember(Name="serviceName", EmitDefaultValue=false)]
+        [DataMember(Name = "serviceName", EmitDefaultValue = false)]
         public string ServiceName { get; set; }
 
 
@@ -68,7 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Additional filters for the query.
         /// </summary>
         /// <value>Additional filters for the query.</value>
-        [DataMember(Name="filters", EmitDefaultValue=false)]
+        [DataMember(Name = "filters", EmitDefaultValue = false)]
         public List<AuditQueryFilter> Filters { get; set; }
 
 
@@ -77,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Sort parameter for the query.
         /// </summary>
         /// <value>Sort parameter for the query.</value>
-        [DataMember(Name="sort", EmitDefaultValue=false)]
+        [DataMember(Name = "sort", EmitDefaultValue = false)]
         public List<AuditQuerySort> Sort { get; set; }
 
 
@@ -86,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Page number
         /// </summary>
         /// <value>Page number</value>
-        [DataMember(Name="pageNumber", EmitDefaultValue=false)]
+        [DataMember(Name = "pageNumber", EmitDefaultValue = false)]
         public int? PageNumber { get; set; }
 
 
@@ -95,7 +87,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Page size
         /// </summary>
         /// <value>Page size</value>
-        [DataMember(Name="pageSize", EmitDefaultValue=false)]
+        [DataMember(Name = "pageSize", EmitDefaultValue = false)]
         public int? PageSize { get; set; }
 
 
@@ -116,19 +108,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  PageSize: ").Append(PageSize).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

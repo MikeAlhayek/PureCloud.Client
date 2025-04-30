@@ -1,14 +1,5 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +7,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AuthzDivisionCursorListing
     /// </summary>
     [DataContract]
-    public partial class AuthzDivisionCursorListing :  IEquatable<AuthzDivisionCursorListing>
+    public partial class AuthzDivisionCursorListing : IEquatable<AuthzDivisionCursorListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AuthzDivisionCursorListing" /> class.
@@ -31,15 +22,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.NextUri = NextUri;
             this.SelfUri = SelfUri;
             this.PreviousUri = PreviousUri;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name="entities", EmitDefaultValue=false)]
+        [DataMember(Name = "entities", EmitDefaultValue = false)]
         public List<AuthzDivision> Entities { get; set; }
 
 
@@ -47,7 +38,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets NextUri
         /// </summary>
-        [DataMember(Name="nextUri", EmitDefaultValue=false)]
+        [DataMember(Name = "nextUri", EmitDefaultValue = false)]
         public string NextUri { get; set; }
 
 
@@ -55,7 +46,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets SelfUri
         /// </summary>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; set; }
 
 
@@ -63,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PreviousUri
         /// </summary>
-        [DataMember(Name="previousUri", EmitDefaultValue=false)]
+        [DataMember(Name = "previousUri", EmitDefaultValue = false)]
         public string PreviousUri { get; set; }
 
 
@@ -82,19 +73,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  PreviousUri: ").Append(PreviousUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

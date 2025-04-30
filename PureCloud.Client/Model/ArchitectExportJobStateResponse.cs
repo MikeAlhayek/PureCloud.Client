@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ArchitectExportJobStateResponse
     /// </summary>
     [DataContract]
-    public partial class ArchitectExportJobStateResponse :  IEquatable<ArchitectExportJobStateResponse>
+    public partial class ArchitectExportJobStateResponse : IEquatable<ArchitectExportJobStateResponse>
     {
         /// <summary>
         /// Status of the Architect Export Job
@@ -32,25 +24,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Registered for "Registered"
             /// </summary>
             [EnumMember(Value = "Registered")]
             Registered,
-            
+
             /// <summary>
             /// Enum Started for "Started"
             /// </summary>
             [EnumMember(Value = "Started")]
             Started,
-            
+
             /// <summary>
             /// Enum Success for "Success"
             /// </summary>
             [EnumMember(Value = "Success")]
             Success,
-            
+
             /// <summary>
             /// Enum Failure for "Failure"
             /// </summary>
@@ -71,25 +63,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Publish for "Publish"
             /// </summary>
             [EnumMember(Value = "Publish")]
             Publish,
-            
+
             /// <summary>
             /// Enum Create for "Create"
             /// </summary>
             [EnumMember(Value = "Create")]
             Create,
-            
+
             /// <summary>
             /// Enum Update for "Update"
             /// </summary>
             [EnumMember(Value = "Update")]
             Update,
-            
+
             /// <summary>
             /// Enum Export for "Export"
             /// </summary>
@@ -100,13 +92,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Status of the Architect Export Job
         /// </summary>
         /// <value>Status of the Architect Export Job</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// The command executed by the Architect Job
         /// </summary>
         /// <value>The command executed by the Architect Job</value>
-        [DataMember(Name="command", EmitDefaultValue=false)]
+        [DataMember(Name = "command", EmitDefaultValue = false)]
         public CommandEnum? Command { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectExportJobStateResponse" /> class.
@@ -121,16 +113,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Command = Command;
             this.DownloadUrl = DownloadUrl;
             this.Messages = Messages;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -143,7 +135,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The signed URL for downloading exported Architect data. If more than one flow was exported as part of the job, the URL provides a zipped folder containing all flows.
         /// </summary>
         /// <value>The signed URL for downloading exported Architect data. If more than one flow was exported as part of the job, the URL provides a zipped folder containing all flows.</value>
-        [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
         public string DownloadUrl { get; set; }
 
 
@@ -152,7 +144,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Warnings and Errors messages of the Architect Job
         /// </summary>
         /// <value>Warnings and Errors messages of the Architect Job</value>
-        [DataMember(Name="messages", EmitDefaultValue=false)]
+        [DataMember(Name = "messages", EmitDefaultValue = false)]
         public List<ArchitectJobMessage> Messages { get; set; }
 
 
@@ -161,7 +153,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -182,19 +174,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

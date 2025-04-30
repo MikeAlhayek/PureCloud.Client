@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AppEventResponse
     /// </summary>
     [DataContract]
-    public partial class AppEventResponse :  IEquatable<AppEventResponse>
+    public partial class AppEventResponse : IEquatable<AppEventResponse>
     {
 
         /// <summary>
@@ -63,16 +55,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Attributes = Attributes;
             this.Traits = Traits;
             this.CreatedDate = CreatedDate;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// System-generated UUID for the event.
         /// </summary>
         /// <value>System-generated UUID for the event.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -81,7 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Identifier of the customer in the source of the event.
         /// </summary>
         /// <value>Identifier of the customer in the source of the event.</value>
-        [DataMember(Name="customerId", EmitDefaultValue=false)]
+        [DataMember(Name = "customerId", EmitDefaultValue = false)]
         public string CustomerId { get; set; }
 
 
@@ -90,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of identifier for the customer ID (cookie, email etc.).
         /// </summary>
         /// <value>Type of identifier for the customer ID (cookie, email etc.).</value>
-        [DataMember(Name="customerIdType", EmitDefaultValue=false)]
+        [DataMember(Name = "customerIdType", EmitDefaultValue = false)]
         public string CustomerIdType { get; set; }
 
 
@@ -99,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).
         /// </summary>
         /// <value>Represents the action the customer performed. A good event name is typically an object followed by the action performed in past tense (e.g. screen_viewed, order_completed, user_registered).</value>
-        [DataMember(Name="eventName", EmitDefaultValue=false)]
+        [DataMember(Name = "eventName", EmitDefaultValue = false)]
         public string EventName { get; set; }
 
 
@@ -108,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the screen in the app that the event took place.
         /// </summary>
         /// <value>The name of the screen in the app that the event took place.</value>
-        [DataMember(Name="screenName", EmitDefaultValue=false)]
+        [DataMember(Name = "screenName", EmitDefaultValue = false)]
         public string ScreenName { get; set; }
 
 
@@ -117,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Application that the customer is interacting with.
         /// </summary>
         /// <value>Application that the customer is interacting with.</value>
-        [DataMember(Name="app", EmitDefaultValue=false)]
+        [DataMember(Name = "app", EmitDefaultValue = false)]
         public JourneyApp App { get; set; }
 
 
@@ -126,7 +118,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s device.
         /// </summary>
         /// <value>Customer&#39;s device.</value>
-        [DataMember(Name="device", EmitDefaultValue=false)]
+        [DataMember(Name = "device", EmitDefaultValue = false)]
         public Device Device { get; set; }
 
 
@@ -135,7 +127,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s IP-based organization or ISP name.
         /// </summary>
         /// <value>Customer&#39;s IP-based organization or ISP name.</value>
-        [DataMember(Name="ipOrganization", EmitDefaultValue=false)]
+        [DataMember(Name = "ipOrganization", EmitDefaultValue = false)]
         public string IpOrganization { get; set; }
 
 
@@ -144,7 +136,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Customer&#39;s geolocation.
         /// </summary>
         /// <value>Customer&#39;s geolocation.</value>
-        [DataMember(Name="geolocation", EmitDefaultValue=false)]
+        [DataMember(Name = "geolocation", EmitDefaultValue = false)]
         public JourneyGeolocation Geolocation { get; set; }
 
 
@@ -153,7 +145,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// SDK library used to generate the event.
         /// </summary>
         /// <value>SDK library used to generate the event.</value>
-        [DataMember(Name="sdkLibrary", EmitDefaultValue=false)]
+        [DataMember(Name = "sdkLibrary", EmitDefaultValue = false)]
         public SdkLibrary SdkLibrary { get; set; }
 
 
@@ -162,7 +154,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Information relating to the device&#39;s network connectivity.
         /// </summary>
         /// <value>Information relating to the device&#39;s network connectivity.</value>
-        [DataMember(Name="networkConnectivity", EmitDefaultValue=false)]
+        [DataMember(Name = "networkConnectivity", EmitDefaultValue = false)]
         public NetworkConnectivity NetworkConnectivity { get; set; }
 
 
@@ -171,7 +163,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Marketing / traffic source information.
         /// </summary>
         /// <value>Marketing / traffic source information.</value>
-        [DataMember(Name="mktCampaign", EmitDefaultValue=false)]
+        [DataMember(Name = "mktCampaign", EmitDefaultValue = false)]
         public JourneyCampaign MktCampaign { get; set; }
 
 
@@ -180,7 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The app session the event belongs to.
         /// </summary>
         /// <value>The app session the event belongs to.</value>
-        [DataMember(Name="session", EmitDefaultValue=false)]
+        [DataMember(Name = "session", EmitDefaultValue = false)]
         public AppEventResponseSession Session { get; set; }
 
 
@@ -189,7 +181,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Represents the keywords in a customer search query.
         /// </summary>
         /// <value>Represents the keywords in a customer search query.</value>
-        [DataMember(Name="searchQuery", EmitDefaultValue=false)]
+        [DataMember(Name = "searchQuery", EmitDefaultValue = false)]
         public string SearchQuery { get; set; }
 
 
@@ -198,7 +190,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// User-defined attributes associated with a particular event.
         /// </summary>
         /// <value>User-defined attributes associated with a particular event.</value>
-        [DataMember(Name="attributes", EmitDefaultValue=false)]
+        [DataMember(Name = "attributes", EmitDefaultValue = false)]
         public Dictionary<string, CustomEventAttribute> Attributes { get; set; }
 
 
@@ -207,7 +199,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).
         /// </summary>
         /// <value>Traits are attributes intrinsic to the customer that may be sent in selected events (e.g. email, name, phone).</value>
-        [DataMember(Name="traits", EmitDefaultValue=false)]
+        [DataMember(Name = "traits", EmitDefaultValue = false)]
         public Dictionary<string, CustomEventAttribute> Traits { get; set; }
 
 
@@ -216,7 +208,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>UTC timestamp indicating when the event actually took place. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="createdDate", EmitDefaultValue=false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime? CreatedDate { get; set; }
 
 
@@ -248,19 +240,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  CreatedDate: ").Append(CreatedDate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

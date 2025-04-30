@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ArchiveRetention
     /// </summary>
     [DataContract]
-    public partial class ArchiveRetention :  IEquatable<ArchiveRetention>
+    public partial class ArchiveRetention : IEquatable<ArchiveRetention>
     {
         /// <summary>
         /// Gets or Sets StorageMedium
@@ -31,7 +23,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Cloudarchive for "CLOUDARCHIVE"
             /// </summary>
@@ -41,7 +33,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets StorageMedium
         /// </summary>
-        [DataMember(Name="storageMedium", EmitDefaultValue=false)]
+        [DataMember(Name = "storageMedium", EmitDefaultValue = false)]
         public StorageMediumEnum? StorageMedium { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchiveRetention" /> class.
@@ -52,15 +44,15 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Days = Days;
             this.StorageMedium = StorageMedium;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Days
         /// </summary>
-        [DataMember(Name="days", EmitDefaultValue=false)]
+        [DataMember(Name = "days", EmitDefaultValue = false)]
         public int? Days { get; set; }
 
 
@@ -79,19 +71,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  StorageMedium: ").Append(StorageMedium).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

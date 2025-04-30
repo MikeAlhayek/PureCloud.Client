@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AvailableTopic
     /// </summary>
     [DataContract]
-    public partial class AvailableTopic :  IEquatable<AvailableTopic>
+    public partial class AvailableTopic : IEquatable<AvailableTopic>
     {
         /// <summary>
         /// Visibility of this topic (Public or Preview)
@@ -32,13 +24,13 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Public for "Public"
             /// </summary>
             [EnumMember(Value = "Public")]
             Public,
-            
+
             /// <summary>
             /// Enum Preview for "Preview"
             /// </summary>
@@ -58,25 +50,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum All for "All"
             /// </summary>
             [EnumMember(Value = "All")]
             All,
-            
+
             /// <summary>
             /// Enum Websocket for "Websocket"
             /// </summary>
             [EnumMember(Value = "Websocket")]
             Websocket,
-            
+
             /// <summary>
             /// Enum Eventbridge for "EventBridge"
             /// </summary>
             [EnumMember(Value = "EventBridge")]
             Eventbridge,
-            
+
             /// <summary>
             /// Enum Processautomation for "ProcessAutomation"
             /// </summary>
@@ -87,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Visibility of this topic (Public or Preview)
         /// </summary>
         /// <value>Visibility of this topic (Public or Preview)</value>
-        [DataMember(Name="visibility", EmitDefaultValue=false)]
+        [DataMember(Name = "visibility", EmitDefaultValue = false)]
         public VisibilityEnum? Visibility { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AvailableTopic" /> class.
@@ -122,15 +114,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Transports = Transports;
             this.PublicApiTemplateUriPaths = PublicApiTemplateUriPaths;
             this.TopicParameters = TopicParameters;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Description
         /// </summary>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -138,7 +130,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -147,7 +139,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Full detailed permissions required to subscribe to the topic
         /// </summary>
         /// <value>Full detailed permissions required to subscribe to the topic</value>
-        [DataMember(Name="permissionDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "permissionDetails", EmitDefaultValue = false)]
         public List<PermissionDetails> PermissionDetails { get; set; }
 
 
@@ -156,7 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Permissions required to subscribe to the topic
         /// </summary>
         /// <value>Permissions required to subscribe to the topic</value>
-        [DataMember(Name="requiresPermissions", EmitDefaultValue=false)]
+        [DataMember(Name = "requiresPermissions", EmitDefaultValue = false)]
         public List<string> RequiresPermissions { get; set; }
 
 
@@ -165,7 +157,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the subscribing user must belong to the same division as the topic object ID
         /// </summary>
         /// <value>True if the subscribing user must belong to the same division as the topic object ID</value>
-        [DataMember(Name="requiresDivisionPermissions", EmitDefaultValue=false)]
+        [DataMember(Name = "requiresDivisionPermissions", EmitDefaultValue = false)]
         public bool? RequiresDivisionPermissions { get; set; }
 
 
@@ -174,7 +166,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.
         /// </summary>
         /// <value>If multiple permissions are required for this topic, such as both requiresCurrentUser and requiresDivisionPermissions, then true here indicates that meeting any one condition will satisfy the requirements; false indicates all conditions must be met.</value>
-        [DataMember(Name="requiresAnyValidator", EmitDefaultValue=false)]
+        [DataMember(Name = "requiresAnyValidator", EmitDefaultValue = false)]
         public bool? RequiresAnyValidator { get; set; }
 
 
@@ -183,7 +175,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether or not the permissions on this topic are enforced
         /// </summary>
         /// <value>Whether or not the permissions on this topic are enforced</value>
-        [DataMember(Name="enforced", EmitDefaultValue=false)]
+        [DataMember(Name = "enforced", EmitDefaultValue = false)]
         public bool? Enforced { get; set; }
 
 
@@ -193,7 +185,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Schema
         /// </summary>
-        [DataMember(Name="schema", EmitDefaultValue=false)]
+        [DataMember(Name = "schema", EmitDefaultValue = false)]
         public Dictionary<string, Object> Schema { get; set; }
 
 
@@ -202,7 +194,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if the topic user ID is required to match the subscribing user ID
         /// </summary>
         /// <value>True if the topic user ID is required to match the subscribing user ID</value>
-        [DataMember(Name="requiresCurrentUser", EmitDefaultValue=false)]
+        [DataMember(Name = "requiresCurrentUser", EmitDefaultValue = false)]
         public bool? RequiresCurrentUser { get; set; }
 
 
@@ -211,7 +203,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// True if permissions are only required when the topic user ID does not match the subscribing user ID
         /// </summary>
         /// <value>True if permissions are only required when the topic user ID does not match the subscribing user ID</value>
-        [DataMember(Name="requiresCurrentUserOrPermission", EmitDefaultValue=false)]
+        [DataMember(Name = "requiresCurrentUserOrPermission", EmitDefaultValue = false)]
         public bool? RequiresCurrentUserOrPermission { get; set; }
 
 
@@ -220,7 +212,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Transports that support events for the topic
         /// </summary>
         /// <value>Transports that support events for the topic</value>
-        [DataMember(Name="transports", EmitDefaultValue=false)]
+        [DataMember(Name = "transports", EmitDefaultValue = false)]
         public List<TransportsEnum> Transports { get; set; }
 
 
@@ -228,7 +220,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets PublicApiTemplateUriPaths
         /// </summary>
-        [DataMember(Name="publicApiTemplateUriPaths", EmitDefaultValue=false)]
+        [DataMember(Name = "publicApiTemplateUriPaths", EmitDefaultValue = false)]
         public List<string> PublicApiTemplateUriPaths { get; set; }
 
 
@@ -237,7 +229,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Parameters in the topic name that can be substituted, in the order they appear in the topic name
         /// </summary>
         /// <value>Parameters in the topic name that can be substituted, in the order they appear in the topic name</value>
-        [DataMember(Name="topicParameters", EmitDefaultValue=false)]
+        [DataMember(Name = "topicParameters", EmitDefaultValue = false)]
         public List<string> TopicParameters { get; set; }
 
 
@@ -266,19 +258,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  TopicParameters: ").Append(TopicParameters).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

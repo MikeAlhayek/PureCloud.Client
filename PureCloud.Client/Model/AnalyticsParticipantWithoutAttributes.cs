@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AnalyticsParticipantWithoutAttributes
     /// </summary>
     [DataContract]
-    public partial class AnalyticsParticipantWithoutAttributes :  IEquatable<AnalyticsParticipantWithoutAttributes>
+    public partial class AnalyticsParticipantWithoutAttributes : IEquatable<AnalyticsParticipantWithoutAttributes>
     {
         /// <summary>
         /// Reason for which participant flagged conversation
@@ -32,7 +24,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum General for "general"
             /// </summary>
@@ -53,115 +45,115 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Acd for "acd"
             /// </summary>
             [EnumMember(Value = "acd")]
             Acd,
-            
+
             /// <summary>
             /// Enum Agent for "agent"
             /// </summary>
             [EnumMember(Value = "agent")]
             Agent,
-            
+
             /// <summary>
             /// Enum Api for "api"
             /// </summary>
             [EnumMember(Value = "api")]
             Api,
-            
+
             /// <summary>
             /// Enum Botflow for "botflow"
             /// </summary>
             [EnumMember(Value = "botflow")]
             Botflow,
-            
+
             /// <summary>
             /// Enum Campaign for "campaign"
             /// </summary>
             [EnumMember(Value = "campaign")]
             Campaign,
-            
+
             /// <summary>
             /// Enum Customer for "customer"
             /// </summary>
             [EnumMember(Value = "customer")]
             Customer,
-            
+
             /// <summary>
             /// Enum Dialer for "dialer"
             /// </summary>
             [EnumMember(Value = "dialer")]
             Dialer,
-            
+
             /// <summary>
             /// Enum External for "external"
             /// </summary>
             [EnumMember(Value = "external")]
             External,
-            
+
             /// <summary>
             /// Enum Fax for "fax"
             /// </summary>
             [EnumMember(Value = "fax")]
             Fax,
-            
+
             /// <summary>
             /// Enum Group for "group"
             /// </summary>
             [EnumMember(Value = "group")]
             Group,
-            
+
             /// <summary>
             /// Enum Inbound for "inbound"
             /// </summary>
             [EnumMember(Value = "inbound")]
             Inbound,
-            
+
             /// <summary>
             /// Enum Ivr for "ivr"
             /// </summary>
             [EnumMember(Value = "ivr")]
             Ivr,
-            
+
             /// <summary>
             /// Enum Manual for "manual"
             /// </summary>
             [EnumMember(Value = "manual")]
             Manual,
-            
+
             /// <summary>
             /// Enum Outbound for "outbound"
             /// </summary>
             [EnumMember(Value = "outbound")]
             Outbound,
-            
+
             /// <summary>
             /// Enum Station for "station"
             /// </summary>
             [EnumMember(Value = "station")]
             Station,
-            
+
             /// <summary>
             /// Enum User for "user"
             /// </summary>
             [EnumMember(Value = "user")]
             User,
-            
+
             /// <summary>
             /// Enum Voicemail for "voicemail"
             /// </summary>
             [EnumMember(Value = "voicemail")]
             Voicemail,
-            
+
             /// <summary>
             /// Enum Voicesurveyflow for "voicesurveyflow"
             /// </summary>
             [EnumMember(Value = "voicesurveyflow")]
             Voicesurveyflow,
-            
+
             /// <summary>
             /// Enum Workflow for "workflow"
             /// </summary>
@@ -172,13 +164,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Reason for which participant flagged conversation
         /// </summary>
         /// <value>Reason for which participant flagged conversation</value>
-        [DataMember(Name="flaggedReason", EmitDefaultValue=false)]
+        [DataMember(Name = "flaggedReason", EmitDefaultValue = false)]
         public FlaggedReasonEnum? FlaggedReason { get; set; }
         /// <summary>
         /// The participant's purpose
         /// </summary>
         /// <value>The participant's purpose</value>
-        [DataMember(Name="purpose", EmitDefaultValue=false)]
+        [DataMember(Name = "purpose", EmitDefaultValue = false)]
         public PurposeEnum? Purpose { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyticsParticipantWithoutAttributes" /> class.
@@ -205,16 +197,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TeamId = TeamId;
             this.UserId = UserId;
             this.Sessions = Sessions;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// External contact identifier
         /// </summary>
         /// <value>External contact identifier</value>
-        [DataMember(Name="externalContactId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalContactId", EmitDefaultValue = false)]
         public string ExternalContactId { get; set; }
 
 
@@ -223,7 +215,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// External organization identifier
         /// </summary>
         /// <value>External organization identifier</value>
-        [DataMember(Name="externalOrganizationId", EmitDefaultValue=false)]
+        [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
         public string ExternalOrganizationId { get; set; }
 
 
@@ -234,7 +226,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Unique identifier for the participant
         /// </summary>
         /// <value>Unique identifier for the participant</value>
-        [DataMember(Name="participantId", EmitDefaultValue=false)]
+        [DataMember(Name = "participantId", EmitDefaultValue = false)]
         public string ParticipantId { get; set; }
 
 
@@ -243,7 +235,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A human readable name identifying the participant
         /// </summary>
         /// <value>A human readable name identifying the participant</value>
-        [DataMember(Name="participantName", EmitDefaultValue=false)]
+        [DataMember(Name = "participantName", EmitDefaultValue = false)]
         public string ParticipantName { get; set; }
 
 
@@ -254,7 +246,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Flag determining if a screen recording was started or not
         /// </summary>
         /// <value>Flag determining if a screen recording was started or not</value>
-        [DataMember(Name="screenRecording", EmitDefaultValue=false)]
+        [DataMember(Name = "screenRecording", EmitDefaultValue = false)]
         public bool? ScreenRecording { get; set; }
 
 
@@ -263,7 +255,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The team ID the user is a member of
         /// </summary>
         /// <value>The team ID the user is a member of</value>
-        [DataMember(Name="teamId", EmitDefaultValue=false)]
+        [DataMember(Name = "teamId", EmitDefaultValue = false)]
         public string TeamId { get; set; }
 
 
@@ -272,7 +264,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Unique identifier for the user
         /// </summary>
         /// <value>Unique identifier for the user</value>
-        [DataMember(Name="userId", EmitDefaultValue=false)]
+        [DataMember(Name = "userId", EmitDefaultValue = false)]
         public string UserId { get; set; }
 
 
@@ -281,7 +273,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of sessions associated to this participant
         /// </summary>
         /// <value>List of sessions associated to this participant</value>
-        [DataMember(Name="sessions", EmitDefaultValue=false)]
+        [DataMember(Name = "sessions", EmitDefaultValue = false)]
         public List<AnalyticsSession> Sessions { get; set; }
 
 
@@ -306,19 +298,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Sessions: ").Append(Sessions).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

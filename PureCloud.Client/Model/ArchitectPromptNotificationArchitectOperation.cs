@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Describes an operation being performed on an Architect object
     /// </summary>
     [DataContract]
-    public partial class ArchitectPromptNotificationArchitectOperation :  IEquatable<ArchitectPromptNotificationArchitectOperation>
+    public partial class ArchitectPromptNotificationArchitectOperation : IEquatable<ArchitectPromptNotificationArchitectOperation>
     {
         /// <summary>
         /// The action being performed
@@ -32,79 +24,79 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Create for "CREATE"
             /// </summary>
             [EnumMember(Value = "CREATE")]
             Create,
-            
+
             /// <summary>
             /// Enum Checkin for "CHECKIN"
             /// </summary>
             [EnumMember(Value = "CHECKIN")]
             Checkin,
-            
+
             /// <summary>
             /// Enum Checkout for "CHECKOUT"
             /// </summary>
             [EnumMember(Value = "CHECKOUT")]
             Checkout,
-            
+
             /// <summary>
             /// Enum Deactivate for "DEACTIVATE"
             /// </summary>
             [EnumMember(Value = "DEACTIVATE")]
             Deactivate,
-            
+
             /// <summary>
             /// Enum Debug for "DEBUG"
             /// </summary>
             [EnumMember(Value = "DEBUG")]
             Debug,
-            
+
             /// <summary>
             /// Enum Delete for "DELETE"
             /// </summary>
             [EnumMember(Value = "DELETE")]
             Delete,
-            
+
             /// <summary>
             /// Enum History for "HISTORY"
             /// </summary>
             [EnumMember(Value = "HISTORY")]
             History,
-            
+
             /// <summary>
             /// Enum Publish for "PUBLISH"
             /// </summary>
             [EnumMember(Value = "PUBLISH")]
             Publish,
-            
+
             /// <summary>
             /// Enum Revert for "REVERT"
             /// </summary>
             [EnumMember(Value = "REVERT")]
             Revert,
-            
+
             /// <summary>
             /// Enum Save for "SAVE"
             /// </summary>
             [EnumMember(Value = "SAVE")]
             Save,
-            
+
             /// <summary>
             /// Enum StateChange for "STATE_CHANGE"
             /// </summary>
             [EnumMember(Value = "STATE_CHANGE")]
             StateChange,
-            
+
             /// <summary>
             /// Enum Update for "UPDATE"
             /// </summary>
             [EnumMember(Value = "UPDATE")]
             Update,
-            
+
             /// <summary>
             /// Enum Validate for "VALIDATE"
             /// </summary>
@@ -125,43 +117,43 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Locked for "LOCKED"
             /// </summary>
             [EnumMember(Value = "LOCKED")]
             Locked,
-            
+
             /// <summary>
             /// Enum Unlocked for "UNLOCKED"
             /// </summary>
             [EnumMember(Value = "UNLOCKED")]
             Unlocked,
-            
+
             /// <summary>
             /// Enum Started for "STARTED"
             /// </summary>
             [EnumMember(Value = "STARTED")]
             Started,
-            
+
             /// <summary>
             /// Enum PendingGeneration for "PENDING_GENERATION"
             /// </summary>
             [EnumMember(Value = "PENDING_GENERATION")]
             PendingGeneration,
-            
+
             /// <summary>
             /// Enum PendingBackendNotification for "PENDING_BACKEND_NOTIFICATION"
             /// </summary>
             [EnumMember(Value = "PENDING_BACKEND_NOTIFICATION")]
             PendingBackendNotification,
-            
+
             /// <summary>
             /// Enum Success for "SUCCESS"
             /// </summary>
             [EnumMember(Value = "SUCCESS")]
             Success,
-            
+
             /// <summary>
             /// Enum Failure for "FAILURE"
             /// </summary>
@@ -172,13 +164,13 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The action being performed
         /// </summary>
         /// <value>The action being performed</value>
-        [DataMember(Name="actionName", EmitDefaultValue=false)]
+        [DataMember(Name = "actionName", EmitDefaultValue = false)]
         public ActionNameEnum? ActionName { get; set; }
         /// <summary>
         /// The action status
         /// </summary>
         /// <value>The action status</value>
-        [DataMember(Name="actionStatus", EmitDefaultValue=false)]
+        [DataMember(Name = "actionStatus", EmitDefaultValue = false)]
         public ActionStatusEnum? ActionStatus { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectPromptNotificationArchitectOperation" /> class.
@@ -205,16 +197,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ErrorCode = ErrorCode;
             this.ErrorMessageParams = ErrorMessageParams;
             this.ErrorDetails = ErrorDetails;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// A unique identifier for this operation, as generated by the initiating client
         /// </summary>
         /// <value>A unique identifier for this operation, as generated by the initiating client</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -223,7 +215,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Indicates if the operation is complete
         /// </summary>
         /// <value>Indicates if the operation is complete</value>
-        [DataMember(Name="complete", EmitDefaultValue=false)]
+        [DataMember(Name = "complete", EmitDefaultValue = false)]
         public bool? Complete { get; set; }
 
 
@@ -231,7 +223,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets User
         /// </summary>
-        [DataMember(Name="user", EmitDefaultValue=false)]
+        [DataMember(Name = "user", EmitDefaultValue = false)]
         public ArchitectPromptNotificationUser User { get; set; }
 
 
@@ -239,7 +231,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Client
         /// </summary>
-        [DataMember(Name="client", EmitDefaultValue=false)]
+        [DataMember(Name = "client", EmitDefaultValue = false)]
         public ArchitectPromptNotificationClient Client { get; set; }
 
 
@@ -252,7 +244,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The error message, if the action failed
         /// </summary>
         /// <value>The error message, if the action failed</value>
-        [DataMember(Name="errorMessage", EmitDefaultValue=false)]
+        [DataMember(Name = "errorMessage", EmitDefaultValue = false)]
         public string ErrorMessage { get; set; }
 
 
@@ -261,7 +253,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The error code, if the action failed
         /// </summary>
         /// <value>The error code, if the action failed</value>
-        [DataMember(Name="errorCode", EmitDefaultValue=false)]
+        [DataMember(Name = "errorCode", EmitDefaultValue = false)]
         public string ErrorCode { get; set; }
 
 
@@ -269,7 +261,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ErrorMessageParams
         /// </summary>
-        [DataMember(Name="errorMessageParams", EmitDefaultValue=false)]
+        [DataMember(Name = "errorMessageParams", EmitDefaultValue = false)]
         public ArchitectPromptNotificationErrorMessageParams ErrorMessageParams { get; set; }
 
 
@@ -278,7 +270,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The error details, if the action failed
         /// </summary>
         /// <value>The error details, if the action failed</value>
-        [DataMember(Name="errorDetails", EmitDefaultValue=false)]
+        [DataMember(Name = "errorDetails", EmitDefaultValue = false)]
         public List<ArchitectPromptNotificationErrorDetail> ErrorDetails { get; set; }
 
 
@@ -303,19 +295,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ErrorDetails: ").Append(ErrorDetails).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

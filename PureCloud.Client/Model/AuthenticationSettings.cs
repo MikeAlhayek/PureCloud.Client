@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Settings for authenticated webdeployments.
     /// </summary>
     [DataContract]
-    public partial class AuthenticationSettings :  IEquatable<AuthenticationSettings>
+    public partial class AuthenticationSettings : IEquatable<AuthenticationSettings>
     {
 
         /// <summary>
@@ -35,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Enabled = Enabled;
             this.IntegrationId = IntegrationId;
             this.AllowSessionUpgrade = AllowSessionUpgrade;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Indicate if these auth is required for this deployment. If, for example, this flag is set to true then webmessaging sessions can not send messages unless the end-user is authenticated.
         /// </summary>
         /// <value>Indicate if these auth is required for this deployment. If, for example, this flag is set to true then webmessaging sessions can not send messages unless the end-user is authenticated.</value>
-        [DataMember(Name="enabled", EmitDefaultValue=false)]
+        [DataMember(Name = "enabled", EmitDefaultValue = false)]
         public bool? Enabled { get; set; }
 
 
@@ -53,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The integration identifier which contains the auth settings required on the deployment.
         /// </summary>
         /// <value>The integration identifier which contains the auth settings required on the deployment.</value>
-        [DataMember(Name="integrationId", EmitDefaultValue=false)]
+        [DataMember(Name = "integrationId", EmitDefaultValue = false)]
         public string IntegrationId { get; set; }
 
 
@@ -62,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Allow end-users to upgrade an anonymous session to authenticated conversation.
         /// </summary>
         /// <value>Allow end-users to upgrade an anonymous session to authenticated conversation.</value>
-        [DataMember(Name="allowSessionUpgrade", EmitDefaultValue=false)]
+        [DataMember(Name = "allowSessionUpgrade", EmitDefaultValue = false)]
         public bool? AllowSessionUpgrade { get; set; }
 
 
@@ -80,19 +72,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  AllowSessionUpgrade: ").Append(AllowSessionUpgrade).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

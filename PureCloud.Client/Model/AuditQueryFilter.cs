@@ -1,14 +1,6 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+using System.Text;
 using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +8,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AuditQueryFilter
     /// </summary>
     [DataContract]
-    public partial class AuditQueryFilter :  IEquatable<AuditQueryFilter>
+    public partial class AuditQueryFilter : IEquatable<AuditQueryFilter>
     {
         /// <summary>
         /// Name of the property to filter.
@@ -32,37 +24,37 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Userid for "UserId"
             /// </summary>
             [EnumMember(Value = "UserId")]
             Userid,
-            
+
             /// <summary>
             /// Enum Trusteeorganizationid for "TrusteeOrganizationId"
             /// </summary>
             [EnumMember(Value = "TrusteeOrganizationId")]
             Trusteeorganizationid,
-            
+
             /// <summary>
             /// Enum Clientid for "ClientId"
             /// </summary>
             [EnumMember(Value = "ClientId")]
             Clientid,
-            
+
             /// <summary>
             /// Enum Action for "Action"
             /// </summary>
             [EnumMember(Value = "Action")]
             Action,
-            
+
             /// <summary>
             /// Enum Entitytype for "EntityType"
             /// </summary>
             [EnumMember(Value = "EntityType")]
             Entitytype,
-            
+
             /// <summary>
             /// Enum Entityid for "EntityId"
             /// </summary>
@@ -73,7 +65,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Name of the property to filter.
         /// </summary>
         /// <value>Name of the property to filter.</value>
-        [DataMember(Name="property", EmitDefaultValue=false)]
+        [DataMember(Name = "property", EmitDefaultValue = false)]
         public PropertyEnum? Property { get; set; }
 
         /// <summary>
@@ -90,9 +82,9 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Property = Property;
             this.Value = Value;
-            
+
         }
-        
+
 
 
 
@@ -101,7 +93,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Value of the property to filter.
         /// </summary>
         /// <value>Value of the property to filter.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
+        [DataMember(Name = "value", EmitDefaultValue = false)]
         public string Value { get; set; }
 
 
@@ -118,19 +110,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -1,14 +1,5 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +7,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ArchitectFlowOutcomeNotificationHomeOrganization
     /// </summary>
     [DataContract]
-    public partial class ArchitectFlowOutcomeNotificationHomeOrganization :  IEquatable<ArchitectFlowOutcomeNotificationHomeOrganization>
+    public partial class ArchitectFlowOutcomeNotificationHomeOrganization : IEquatable<ArchitectFlowOutcomeNotificationHomeOrganization>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectFlowOutcomeNotificationHomeOrganization" /> class.
@@ -29,15 +20,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Id = Id;
             this.Name = Name;
             this.ThirdPartyOrgName = ThirdPartyOrgName;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Id
         /// </summary>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -45,7 +36,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -53,7 +44,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ThirdPartyOrgName
         /// </summary>
-        [DataMember(Name="thirdPartyOrgName", EmitDefaultValue=false)]
+        [DataMember(Name = "thirdPartyOrgName", EmitDefaultValue = false)]
         public string ThirdPartyOrgName { get; set; }
 
 
@@ -71,19 +62,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ThirdPartyOrgName: ").Append(ThirdPartyOrgName).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -1,14 +1,5 @@
-using System;
-using System.Linq;
-using System.IO;
-using System.Text;
-using System.Collections;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
-using PureCloudPlatform.Client.V2.Client;
+using System.Text;
 
 namespace PureCloudPlatform.Client.V2.Model
 {
@@ -16,7 +7,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// ArticlesFilter
     /// </summary>
     [DataContract]
-    public partial class ArticlesFilter :  IEquatable<ArticlesFilter>
+    public partial class ArticlesFilter : IEquatable<ArticlesFilter>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArticlesFilter" /> class.
@@ -27,16 +18,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Labels = Labels;
             this.Categories = Categories;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The labels filter.
         /// </summary>
         /// <value>The labels filter.</value>
-        [DataMember(Name="labels", EmitDefaultValue=false)]
+        [DataMember(Name = "labels", EmitDefaultValue = false)]
         public LabelsFilter Labels { get; set; }
 
 
@@ -45,7 +36,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The categories filter.
         /// </summary>
         /// <value>The categories filter.</value>
-        [DataMember(Name="categories", EmitDefaultValue=false)]
+        [DataMember(Name = "categories", EmitDefaultValue = false)]
         public CategoriesFilter Categories { get; set; }
 
 
@@ -62,19 +53,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Categories: ").Append(Categories).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>
