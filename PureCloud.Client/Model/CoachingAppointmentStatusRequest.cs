@@ -2,134 +2,136 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// CoachingAppointmentStatusRequest
+/// </summary>
+[DataContract]
+public partial class CoachingAppointmentStatusRequest : IEquatable<CoachingAppointmentStatusRequest>
 {
     /// <summary>
-    /// CoachingAppointmentStatusRequest
+    /// The status of the coaching appointment
     /// </summary>
-    [DataContract]
-    public partial class CoachingAppointmentStatusRequest :  IEquatable<CoachingAppointmentStatusRequest>
+    /// <value>The status of the coaching appointment</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum StatusEnum
     {
         /// <summary>
-        /// The status of the coaching appointment
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>The status of the coaching appointment</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum StatusEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Scheduled for "Scheduled"
-            /// </summary>
-            [EnumMember(Value = "Scheduled")]
-            Scheduled,
-            
-            /// <summary>
-            /// Enum Inprogress for "InProgress"
-            /// </summary>
-            [EnumMember(Value = "InProgress")]
-            Inprogress,
-            
-            /// <summary>
-            /// Enum Completed for "Completed"
-            /// </summary>
-            [EnumMember(Value = "Completed")]
-            Completed
-        }
-        /// <summary>
-        /// The status of the coaching appointment
-        /// </summary>
-        /// <value>The status of the coaching appointment</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
-        public StatusEnum? Status { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CoachingAppointmentStatusRequest" /> class.
+        /// Enum Scheduled for "Scheduled"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CoachingAppointmentStatusRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CoachingAppointmentStatusRequest" /> class.
-        /// </summary>
-        /// <param name="Status">The status of the coaching appointment (required).</param>
-        public CoachingAppointmentStatusRequest(StatusEnum? Status = null)
-        {
-            this.Status = Status;
-            
-        }
-        
-
-
+        [EnumMember(Value = "Scheduled")]
+        Scheduled,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Inprogress for "InProgress"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class CoachingAppointmentStatusRequest {\n");
-
-            sb.Append("  Status: ").Append(Status).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "InProgress")]
+        Inprogress,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Completed for "Completed"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as CoachingAppointmentStatusRequest);
-        }
+        [EnumMember(Value = "Completed")]
+        Completed
+    }
+    /// <summary>
+    /// The status of the coaching appointment
+    /// </summary>
+    /// <value>The status of the coaching appointment</value>
+    [DataMember(Name = "status", EmitDefaultValue = false)]
+    public StatusEnum? Status { get; set; }
 
-        /// <summary>
-        /// Returns true if CoachingAppointmentStatusRequest instances are equal
-        /// </summary>
-        /// <param name="other">Instance of CoachingAppointmentStatusRequest to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(CoachingAppointmentStatusRequest other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CoachingAppointmentStatusRequest" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected CoachingAppointmentStatusRequest() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="CoachingAppointmentStatusRequest" /> class.
+    /// </summary>
+    /// <param name="Status">The status of the coaching appointment (required).</param>
+    public CoachingAppointmentStatusRequest(StatusEnum? Status = null)
+    {
+        this.Status = Status;
 
-            return true &&
-                (
-                    this.Status == other.Status ||
-                    this.Status != null &&
-                    this.Status.Equals(other.Status)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Status != null)
-                    hash = hash * 59 + this.Status.GetHashCode();
-
-                return hash;
-            }
-        }
     }
 
+
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class CoachingAppointmentStatusRequest {\n");
+
+        sb.Append("  Status: ").Append(Status).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as CoachingAppointmentStatusRequest);
+    }
+
+    /// <summary>
+    /// Returns true if CoachingAppointmentStatusRequest instances are equal
+    /// </summary>
+    /// <param name="other">Instance of CoachingAppointmentStatusRequest to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(CoachingAppointmentStatusRequest other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Status == other.Status ||
+                this.Status != null &&
+                this.Status.Equals(other.Status)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Status != null)
+            {
+                hash = hash * 59 + this.Status.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

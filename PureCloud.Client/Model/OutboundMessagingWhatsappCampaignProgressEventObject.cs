@@ -2,76 +2,76 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// OutboundMessagingWhatsappCampaignProgressEventObject
+/// </summary>
+[DataContract]
+public partial class OutboundMessagingWhatsappCampaignProgressEventObject : IEquatable<OutboundMessagingWhatsappCampaignProgressEventObject>
 {
     /// <summary>
-    /// OutboundMessagingWhatsappCampaignProgressEventObject
+    /// Initializes a new instance of the <see cref="OutboundMessagingWhatsappCampaignProgressEventObject" /> class.
     /// </summary>
-    [DataContract]
-    public partial class OutboundMessagingWhatsappCampaignProgressEventObject :  IEquatable<OutboundMessagingWhatsappCampaignProgressEventObject>
+    public OutboundMessagingWhatsappCampaignProgressEventObject()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="OutboundMessagingWhatsappCampaignProgressEventObject" /> class.
-        /// </summary>
-        public OutboundMessagingWhatsappCampaignProgressEventObject()
-        {
-            
-        }
-        
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class OutboundMessagingWhatsappCampaignProgressEventObject {\n");
-
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as OutboundMessagingWhatsappCampaignProgressEventObject);
-        }
-
-        /// <summary>
-        /// Returns true if OutboundMessagingWhatsappCampaignProgressEventObject instances are equal
-        /// </summary>
-        /// <param name="other">Instance of OutboundMessagingWhatsappCampaignProgressEventObject to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(OutboundMessagingWhatsappCampaignProgressEventObject other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true && false;
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                return hash;
-            }
-        }
     }
 
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class OutboundMessagingWhatsappCampaignProgressEventObject {\n");
+
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as OutboundMessagingWhatsappCampaignProgressEventObject);
+    }
+
+    /// <summary>
+    /// Returns true if OutboundMessagingWhatsappCampaignProgressEventObject instances are equal
+    /// </summary>
+    /// <param name="other">Instance of OutboundMessagingWhatsappCampaignProgressEventObject to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(OutboundMessagingWhatsappCampaignProgressEventObject other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true && false;
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            return hash;
+        }
+    }
 }

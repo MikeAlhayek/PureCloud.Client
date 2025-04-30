@@ -2,925 +2,996 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloud.Client;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface IEventsApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Publish Conversation Batch Events
     /// </summary>
-    public interface IEventsApi : IApiAccessor
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
+
+    BatchEventResponse PostEventsConversations(BatchConversationEventRequest body);
+
+    /// <summary>
+    /// Publish Conversation Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
+
+    ApiResponse<BatchEventResponse> PostEventsConversationsWithHttpInfo(BatchConversationEventRequest body);
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
+
+    BatchEventResponse PostEventsUsersPresence(BatchUserPresenceEventRequest body);
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
+
+    ApiResponse<BatchEventResponse> PostEventsUsersPresenceWithHttpInfo(BatchUserPresenceEventRequest body);
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
+
+    BatchEventResponse PostEventsUsersRoutingstatus(BatchUserRoutingStatusEventRequest body);
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
+
+    ApiResponse<BatchEventResponse> PostEventsUsersRoutingstatusWithHttpInfo(BatchUserRoutingStatusEventRequest body);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Publish Conversation Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    System.Threading.Tasks.Task<BatchEventResponse> PostEventsConversationsAsync(BatchConversationEventRequest body);
+
+    /// <summary>
+    /// Publish Conversation Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsConversationsAsyncWithHttpInfo(BatchConversationEventRequest body);
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersPresenceAsync(BatchUserPresenceEventRequest body);
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersPresenceAsyncWithHttpInfo(BatchUserPresenceEventRequest body);
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersRoutingstatusAsync(BatchUserRoutingStatusEventRequest body);
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersRoutingstatusAsyncWithHttpInfo(BatchUserRoutingStatusEventRequest body);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class EventsApi : IEventsApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="EventsApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public EventsApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Publish Conversation Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        BatchEventResponse PostEventsConversations (BatchConversationEventRequest body);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Publish Conversation Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        ApiResponse<BatchEventResponse> PostEventsConversationsWithHttpInfo (BatchConversationEventRequest body);
+    /// <summary>
+    /// Initializes a new instance of the <see cref="EventsApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public EventsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        BatchEventResponse PostEventsUsersPresence (BatchUserPresenceEventRequest body);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        ApiResponse<BatchEventResponse> PostEventsUsersPresenceWithHttpInfo (BatchUserPresenceEventRequest body);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        BatchEventResponse PostEventsUsersRoutingstatus (BatchUserRoutingStatusEventRequest body);
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        ApiResponse<BatchEventResponse> PostEventsUsersRoutingstatusWithHttpInfo (BatchUserRoutingStatusEventRequest body);
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        #endregion Synchronous Operations
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        #region Asynchronous Operations
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        /// <summary>
-        /// Publish Conversation Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        System.Threading.Tasks.Task<BatchEventResponse> PostEventsConversationsAsync (BatchConversationEventRequest body);
 
-        /// <summary>
-        /// Publish Conversation Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsConversationsAsyncWithHttpInfo (BatchConversationEventRequest body);
+    /// <summary>
+    /// Publish Conversation Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersPresenceAsync (BatchUserPresenceEventRequest body);
+    public BatchEventResponse PostEventsConversations(BatchConversationEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = PostEventsConversationsWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersPresenceAsyncWithHttpInfo (BatchUserPresenceEventRequest body);
+    /// <summary>
+    /// Publish Conversation Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersRoutingstatusAsync (BatchUserRoutingStatusEventRequest body);
+    public ApiResponse<BatchEventResponse> PostEventsConversationsWithHttpInfo(BatchConversationEventRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsConversations");
+        }
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersRoutingstatusAsyncWithHttpInfo (BatchUserRoutingStatusEventRequest body);
+        var localVarPath = "/api/v2/events/conversations";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-        #endregion Asynchronous Operations
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Publish Conversation Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsConversationsAsync(BatchConversationEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = await PostEventsConversationsAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Publish Conversation Batch Events 
+    /// 
     /// </summary>
-    public partial class EventsApi : IEventsApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsConversationsAsyncWithHttpInfo(BatchConversationEventRequest body)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public EventsApi(String basePath)
+        // verify the required parameter 'body' is set
+        if (body == null)
         {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
-
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsConversations");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="EventsApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public EventsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        var localVarPath = "/api/v2/events/conversations";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
         {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
         }
-
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        else
         {
-            // do nothing
-        }
-
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
-        {
-            return this.Configuration.DefaultHeader;
-        }
-
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
+            localVarPostBody = body; // byte array
         }
 
 
-        /// <summary>
-        /// Publish Conversation Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        public BatchEventResponse PostEventsConversations (BatchConversationEventRequest body)
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-             ApiResponse<BatchEventResponse> localVarResponse = PostEventsConversationsWithHttpInfo(body);
-             return localVarResponse.Data;
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Publish Conversation Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        public ApiResponse< BatchEventResponse > PostEventsConversationsWithHttpInfo (BatchConversationEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsConversations");
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            var localVarPath = "/api/v2/events/conversations";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Publish Conversation Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsConversationsAsync (BatchConversationEventRequest body)
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<BatchEventResponse> localVarResponse = await PostEventsConversationsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Publish Conversation Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsConversationsAsyncWithHttpInfo (BatchConversationEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsConversations");
-            
-
-            var localVarPath = "/api/v2/events/conversations";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Publish User Presence Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        public BatchEventResponse PostEventsUsersPresence (BatchUserPresenceEventRequest body)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<BatchEventResponse> localVarResponse = PostEventsUsersPresenceWithHttpInfo(body);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsConversations: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        public ApiResponse< BatchEventResponse > PostEventsUsersPresenceWithHttpInfo (BatchUserPresenceEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersPresence");
-
-            var localVarPath = "/api/v2/events/users/presence";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
+    /// <summary>
+    /// Publish User Presence Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    public BatchEventResponse PostEventsUsersPresence(BatchUserPresenceEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = PostEventsUsersPresenceWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+    /// <summary>
+    /// Publish User Presence Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Publish User Presence Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersPresenceAsync (BatchUserPresenceEventRequest body)
+    public ApiResponse<BatchEventResponse> PostEventsUsersPresenceWithHttpInfo(BatchUserPresenceEventRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
         {
-             ApiResponse<BatchEventResponse> localVarResponse = await PostEventsUsersPresenceAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersPresence");
         }
 
-        /// <summary>
-        /// Publish User Presence Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersPresenceAsyncWithHttpInfo (BatchUserPresenceEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersPresence");
-            
+        var localVarPath = "/api/v2/events/users/presence";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/events/users/presence";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+            "application/json"
 
 
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>BatchEventResponse</returns>
-        
-        public BatchEventResponse PostEventsUsersRoutingstatus (BatchUserRoutingStatusEventRequest body)
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
         {
-             ApiResponse<BatchEventResponse> localVarResponse = PostEventsUsersRoutingstatusWithHttpInfo(body);
-             return localVarResponse.Data;
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>ApiResponse of BatchEventResponse</returns>
-        
-        public ApiResponse< BatchEventResponse > PostEventsUsersRoutingstatusWithHttpInfo (BatchUserRoutingStatusEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersRoutingstatus");
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            var localVarPath = "/api/v2/events/users/routingstatus";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Path params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // Query params
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+        // Header params
 
-                "application/json"
-                
+        // Form params
 
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of BatchEventResponse</returns>
-        
-        public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersRoutingstatusAsync (BatchUserRoutingStatusEventRequest body)
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
         {
-             ApiResponse<BatchEventResponse> localVarResponse = await PostEventsUsersRoutingstatusAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
         }
 
-        /// <summary>
-        /// Publish Agent Routing Status Batch Events 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">batchRequest</param>
-        /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersRoutingstatusAsyncWithHttpInfo (BatchUserRoutingStatusEventRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersRoutingstatus");
-            
-
-            var localVarPath = "/api/v2/events/users/routingstatus";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
 
 
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<BatchEventResponse>(localVarStatusCode,
-                localVarHeaders,
-                (BatchEventResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersPresenceAsync(BatchUserPresenceEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = await PostEventsUsersPresenceAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
 
     }
+
+    /// <summary>
+    /// Publish User Presence Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersPresenceAsyncWithHttpInfo(BatchUserPresenceEventRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersPresence");
+        }
+
+        var localVarPath = "/api/v2/events/users/presence";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersPresence: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>BatchEventResponse</returns>
+
+    public BatchEventResponse PostEventsUsersRoutingstatus(BatchUserRoutingStatusEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = PostEventsUsersRoutingstatusWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>ApiResponse of BatchEventResponse</returns>
+
+    public ApiResponse<BatchEventResponse> PostEventsUsersRoutingstatusWithHttpInfo(BatchUserRoutingStatusEventRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersRoutingstatus");
+        }
+
+        var localVarPath = "/api/v2/events/users/routingstatus";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of BatchEventResponse</returns>
+
+    public async System.Threading.Tasks.Task<BatchEventResponse> PostEventsUsersRoutingstatusAsync(BatchUserRoutingStatusEventRequest body)
+    {
+        ApiResponse<BatchEventResponse> localVarResponse = await PostEventsUsersRoutingstatusAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Publish Agent Routing Status Batch Events 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">batchRequest</param>
+    /// <returns>Task of ApiResponse (BatchEventResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<BatchEventResponse>> PostEventsUsersRoutingstatusAsyncWithHttpInfo(BatchUserRoutingStatusEventRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling EventsApi->PostEventsUsersRoutingstatus");
+        }
+
+        var localVarPath = "/api/v2/events/users/routingstatus";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostEventsUsersRoutingstatus: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<BatchEventResponse>(localVarStatusCode,
+            localVarHeaders,
+            (BatchEventResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BatchEventResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

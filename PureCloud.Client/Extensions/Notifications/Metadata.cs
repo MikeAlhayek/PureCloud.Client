@@ -1,16 +1,15 @@
 using System.Runtime.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Extensions.Notifications
+namespace PureCloudPlatform.Client.V2.Extensions.Notifications;
+
+///<Summary>
+/// Notification (i.e. topic) Metadata
+///</Summary>
+public class Metadata
 {
     ///<Summary>
-    /// Notification (i.e. topic) Metadata
+    /// CorrelationId
     ///</Summary>
-    public class Metadata
-    {
-        ///<Summary>
-        /// CorrelationId
-        ///</Summary>
-        [DataMember(EmitDefaultValue = false, Name = "CorrelationId")]
-        public string CorrelationId { get; set; }
-    }
+    [DataMember(EmitDefaultValue = false, Name = "CorrelationId")]
+    public string CorrelationId { get; set; }
 }

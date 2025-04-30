@@ -2,2197 +2,2365 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloud.Client;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface IFaxApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Delete a fax document.
     /// </summary>
-    public interface IFaxApi : IApiAccessor
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns></returns>
+
+    void DeleteFaxDocument(string documentId);
+
+    /// <summary>
+    /// Delete a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+
+    ApiResponse<Object> DeleteFaxDocumentWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Get a document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>FaxDocument</returns>
+
+    FaxDocument GetFaxDocument(string documentId);
+
+    /// <summary>
+    /// Get a document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of FaxDocument</returns>
+
+    ApiResponse<FaxDocument> GetFaxDocumentWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Download a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>DownloadResponse</returns>
+
+    DownloadResponse GetFaxDocumentContent(string documentId);
+
+    /// <summary>
+    /// Download a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of DownloadResponse</returns>
+
+    ApiResponse<DownloadResponse> GetFaxDocumentContentWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Get a list of fax documents.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>FaxDocumentEntityListing</returns>
+
+    FaxDocumentEntityListing GetFaxDocuments(int? pageSize = null, int? pageNumber = null);
+
+    /// <summary>
+    /// Get a list of fax documents.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>ApiResponse of FaxDocumentEntityListing</returns>
+
+    ApiResponse<FaxDocumentEntityListing> GetFaxDocumentsWithHttpInfo(int? pageSize = null, int? pageNumber = null);
+
+    /// <summary>
+    /// Get organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>FaxConfig</returns>
+
+    FaxConfig GetFaxSettings();
+
+    /// <summary>
+    /// Get organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of FaxConfig</returns>
+
+    ApiResponse<FaxConfig> GetFaxSettingsWithHttpInfo();
+
+    /// <summary>
+    /// Get fax summary
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>FaxSummary</returns>
+
+    FaxSummary GetFaxSummary();
+
+    /// <summary>
+    /// Get fax summary
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of FaxSummary</returns>
+
+    ApiResponse<FaxSummary> GetFaxSummaryWithHttpInfo();
+
+    /// <summary>
+    /// Update a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>FaxDocument</returns>
+
+    FaxDocument PutFaxDocument(string documentId, FaxDocument body);
+
+    /// <summary>
+    /// Update a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>ApiResponse of FaxDocument</returns>
+
+    ApiResponse<FaxDocument> PutFaxDocumentWithHttpInfo(string documentId, FaxDocument body);
+
+    /// <summary>
+    /// Update/write organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>FaxConfig</returns>
+
+    FaxConfig PutFaxSettings(FaxConfig body = null);
+
+    /// <summary>
+    /// Update/write organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of FaxConfig</returns>
+
+    ApiResponse<FaxConfig> PutFaxSettingsWithHttpInfo(FaxConfig body = null);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Delete a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of void</returns>
+
+    System.Threading.Tasks.Task DeleteFaxDocumentAsync(string documentId);
+
+    /// <summary>
+    /// Delete a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFaxDocumentAsyncWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Get a document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of FaxDocument</returns>
+
+    System.Threading.Tasks.Task<FaxDocument> GetFaxDocumentAsync(string documentId);
+
+    /// <summary>
+    /// Get a document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse (FaxDocument)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxDocument>> GetFaxDocumentAsyncWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Download a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of DownloadResponse</returns>
+
+    System.Threading.Tasks.Task<DownloadResponse> GetFaxDocumentContentAsync(string documentId);
+
+    /// <summary>
+    /// Download a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse (DownloadResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<DownloadResponse>> GetFaxDocumentContentAsyncWithHttpInfo(string documentId);
+
+    /// <summary>
+    /// Get a list of fax documents.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>Task of FaxDocumentEntityListing</returns>
+
+    System.Threading.Tasks.Task<FaxDocumentEntityListing> GetFaxDocumentsAsync(int? pageSize = null, int? pageNumber = null);
+
+    /// <summary>
+    /// Get a list of fax documents.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>Task of ApiResponse (FaxDocumentEntityListing)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxDocumentEntityListing>> GetFaxDocumentsAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null);
+
+    /// <summary>
+    /// Get organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of FaxConfig</returns>
+
+    System.Threading.Tasks.Task<FaxConfig> GetFaxSettingsAsync();
+
+    /// <summary>
+    /// Get organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (FaxConfig)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxConfig>> GetFaxSettingsAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Get fax summary
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of FaxSummary</returns>
+
+    System.Threading.Tasks.Task<FaxSummary> GetFaxSummaryAsync();
+
+    /// <summary>
+    /// Get fax summary
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (FaxSummary)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxSummary>> GetFaxSummaryAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Update a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>Task of FaxDocument</returns>
+
+    System.Threading.Tasks.Task<FaxDocument> PutFaxDocumentAsync(string documentId, FaxDocument body);
+
+    /// <summary>
+    /// Update a fax document.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>Task of ApiResponse (FaxDocument)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxDocument>> PutFaxDocumentAsyncWithHttpInfo(string documentId, FaxDocument body);
+
+    /// <summary>
+    /// Update/write organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of FaxConfig</returns>
+
+    System.Threading.Tasks.Task<FaxConfig> PutFaxSettingsAsync(FaxConfig body = null);
+
+    /// <summary>
+    /// Update/write organization config for given organization
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (FaxConfig)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<FaxConfig>> PutFaxSettingsAsyncWithHttpInfo(FaxConfig body = null);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class FaxApi : IFaxApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="FaxApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public FaxApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Delete a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns></returns>
-        
-        void DeleteFaxDocument (string documentId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Delete a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        ApiResponse<Object> DeleteFaxDocumentWithHttpInfo (string documentId);
+    /// <summary>
+    /// Initializes a new instance of the <see cref="FaxApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public FaxApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Get a document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>FaxDocument</returns>
-        
-        FaxDocument GetFaxDocument (string documentId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Get a document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of FaxDocument</returns>
-        
-        ApiResponse<FaxDocument> GetFaxDocumentWithHttpInfo (string documentId);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        /// <summary>
-        /// Download a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>DownloadResponse</returns>
-        
-        DownloadResponse GetFaxDocumentContent (string documentId);
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        /// <summary>
-        /// Download a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of DownloadResponse</returns>
-        
-        ApiResponse<DownloadResponse> GetFaxDocumentContentWithHttpInfo (string documentId);
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        /// <summary>
-        /// Get a list of fax documents.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>FaxDocumentEntityListing</returns>
-        
-        FaxDocumentEntityListing GetFaxDocuments (int? pageSize = null, int? pageNumber = null);
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        /// <summary>
-        /// Get a list of fax documents.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of FaxDocumentEntityListing</returns>
-        
-        ApiResponse<FaxDocumentEntityListing> GetFaxDocumentsWithHttpInfo (int? pageSize = null, int? pageNumber = null);
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        /// <summary>
-        /// Get organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FaxConfig</returns>
-        
-        FaxConfig GetFaxSettings ();
 
-        /// <summary>
-        /// Get organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FaxConfig</returns>
-        
-        ApiResponse<FaxConfig> GetFaxSettingsWithHttpInfo ();
+    /// <summary>
+    /// Delete a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns></returns>
 
-        /// <summary>
-        /// Get fax summary
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FaxSummary</returns>
-        
-        FaxSummary GetFaxSummary ();
+    public void DeleteFaxDocument(string documentId)
+    {
+        DeleteFaxDocumentWithHttpInfo(documentId);
+    }
 
-        /// <summary>
-        /// Get fax summary
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FaxSummary</returns>
-        
-        ApiResponse<FaxSummary> GetFaxSummaryWithHttpInfo ();
+    /// <summary>
+    /// Delete a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of Object(void)</returns>
 
-        /// <summary>
-        /// Update a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>FaxDocument</returns>
-        
-        FaxDocument PutFaxDocument (string documentId, FaxDocument body);
+    public ApiResponse<Object> DeleteFaxDocumentWithHttpInfo(string documentId)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->DeleteFaxDocument");
+        }
 
-        /// <summary>
-        /// Update a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>ApiResponse of FaxDocument</returns>
-        
-        ApiResponse<FaxDocument> PutFaxDocumentWithHttpInfo (string documentId, FaxDocument body);
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-        /// <summary>
-        /// Update/write organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>FaxConfig</returns>
-        
-        FaxConfig PutFaxSettings (FaxConfig body = null);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-        /// <summary>
-        /// Update/write organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of FaxConfig</returns>
-        
-        ApiResponse<FaxConfig> PutFaxSettingsWithHttpInfo (FaxConfig body = null);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-        #endregion Synchronous Operations
+            "application/json"
 
-        #region Asynchronous Operations
 
-        /// <summary>
-        /// Delete a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of void</returns>
-        
-        System.Threading.Tasks.Task DeleteFaxDocumentAsync (string documentId);
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
 
-        /// <summary>
-        /// Delete a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFaxDocumentAsyncWithHttpInfo (string documentId);
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-        /// <summary>
-        /// Get a document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of FaxDocument</returns>
-        
-        System.Threading.Tasks.Task<FaxDocument> GetFaxDocumentAsync (string documentId);
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
 
-        /// <summary>
-        /// Get a document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse (FaxDocument)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxDocument>> GetFaxDocumentAsyncWithHttpInfo (string documentId);
+        // Query params
 
-        /// <summary>
-        /// Download a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of DownloadResponse</returns>
-        
-        System.Threading.Tasks.Task<DownloadResponse> GetFaxDocumentContentAsync (string documentId);
+        // Header params
 
-        /// <summary>
-        /// Download a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse (DownloadResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<DownloadResponse>> GetFaxDocumentContentAsyncWithHttpInfo (string documentId);
+        // Form params
 
-        /// <summary>
-        /// Get a list of fax documents.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>Task of FaxDocumentEntityListing</returns>
-        
-        System.Threading.Tasks.Task<FaxDocumentEntityListing> GetFaxDocumentsAsync (int? pageSize = null, int? pageNumber = null);
+        // Body param
 
-        /// <summary>
-        /// Get a list of fax documents.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (FaxDocumentEntityListing)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxDocumentEntityListing>> GetFaxDocumentsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null);
 
-        /// <summary>
-        /// Get organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of FaxConfig</returns>
-        
-        System.Threading.Tasks.Task<FaxConfig> GetFaxSettingsAsync ();
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
 
-        /// <summary>
-        /// Get organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (FaxConfig)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxConfig>> GetFaxSettingsAsyncWithHttpInfo ();
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Get fax summary
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of FaxSummary</returns>
-        
-        System.Threading.Tasks.Task<FaxSummary> GetFaxSummaryAsync ();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Get fax summary
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (FaxSummary)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxSummary>> GetFaxSummaryAsyncWithHttpInfo ();
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-        /// <summary>
-        /// Update a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>Task of FaxDocument</returns>
-        
-        System.Threading.Tasks.Task<FaxDocument> PutFaxDocumentAsync (string documentId, FaxDocument body);
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
 
-        /// <summary>
-        /// Update a fax document.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>Task of ApiResponse (FaxDocument)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxDocument>> PutFaxDocumentAsyncWithHttpInfo (string documentId, FaxDocument body);
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
-        /// <summary>
-        /// Update/write organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of FaxConfig</returns>
-        
-        System.Threading.Tasks.Task<FaxConfig> PutFaxSettingsAsync (FaxConfig body = null);
 
-        /// <summary>
-        /// Update/write organization config for given organization
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (FaxConfig)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<FaxConfig>> PutFaxSettingsAsyncWithHttpInfo (FaxConfig body = null);
+    /// <summary>
+    /// Delete a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of void</returns>
 
-        #endregion Asynchronous Operations
+    public async System.Threading.Tasks.Task DeleteFaxDocumentAsync(string documentId)
+    {
+        await DeleteFaxDocumentAsyncWithHttpInfo(documentId);
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Delete a fax document. 
+    /// 
     /// </summary>
-    public partial class FaxApi : IFaxApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFaxDocumentAsyncWithHttpInfo(string documentId)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FaxApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public FaxApi(String basePath)
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
         {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
-
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->DeleteFaxDocument");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="FaxApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public FaxApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
         {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
         }
 
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-            // do nothing
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
-        {
-            return this.Configuration.DefaultHeader;
-        }
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
-        }
-
-
-        /// <summary>
-        /// Delete a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns></returns>
-        
-        public void DeleteFaxDocument (string documentId)
-        {
-             DeleteFaxDocumentWithHttpInfo(documentId);
-        }
-
-        /// <summary>
-        /// Delete a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        public ApiResponse<Object> DeleteFaxDocumentWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->DeleteFaxDocument");
-
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Delete a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of void</returns>
-        
-        public async System.Threading.Tasks.Task DeleteFaxDocumentAsync (string documentId)
+        if (localVarStatusCode >= 400)
         {
-             await DeleteFaxDocumentAsyncWithHttpInfo(documentId);
-
+            throw new ApiException(localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Delete a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteFaxDocumentAsyncWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->DeleteFaxDocument");
-            
-
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get a document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>FaxDocument</returns>
-        
-        public FaxDocument GetFaxDocument (string documentId)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<FaxDocument> localVarResponse = GetFaxDocumentWithHttpInfo(documentId);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling DeleteFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Get a document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of FaxDocument</returns>
-        
-        public ApiResponse< FaxDocument > GetFaxDocumentWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocument");
-
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    /// <summary>
+    /// Get a document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>FaxDocument</returns>
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+    public FaxDocument GetFaxDocument(string documentId)
+    {
+        ApiResponse<FaxDocument> localVarResponse = GetFaxDocumentWithHttpInfo(documentId);
+        return localVarResponse.Data;
+    }
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+    /// <summary>
+    /// Get a document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of FaxDocument</returns>
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocument>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocument) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get a document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of FaxDocument</returns>
-        
-        public async System.Threading.Tasks.Task<FaxDocument> GetFaxDocumentAsync (string documentId)
+    public ApiResponse<FaxDocument> GetFaxDocumentWithHttpInfo(string documentId)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
         {
-             ApiResponse<FaxDocument> localVarResponse = await GetFaxDocumentAsyncWithHttpInfo(documentId);
-             return localVarResponse.Data;
-
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocument");
         }
 
-        /// <summary>
-        /// Get a document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse (FaxDocument)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxDocument>> GetFaxDocumentAsyncWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocument");
-            
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+            "application/json"
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocument>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocument) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Download a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>DownloadResponse</returns>
-        
-        public DownloadResponse GetFaxDocumentContent (string documentId)
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
         {
-             ApiResponse<DownloadResponse> localVarResponse = GetFaxDocumentContentWithHttpInfo(documentId);
-             return localVarResponse.Data;
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Download a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>ApiResponse of DownloadResponse</returns>
-        
-        public ApiResponse< DownloadResponse > GetFaxDocumentContentWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocumentContent");
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            var localVarPath = "/api/v2/fax/documents/{documentId}/content";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<DownloadResponse>(localVarStatusCode,
-                localVarHeaders,
-                (DownloadResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DownloadResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Download a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of DownloadResponse</returns>
-        
-        public async System.Threading.Tasks.Task<DownloadResponse> GetFaxDocumentContentAsync (string documentId)
+        // Path params
+        if (documentId != null)
         {
-             ApiResponse<DownloadResponse> localVarResponse = await GetFaxDocumentContentAsyncWithHttpInfo(documentId);
-             return localVarResponse.Data;
-
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
         }
 
-        /// <summary>
-        /// Download a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <returns>Task of ApiResponse (DownloadResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<DownloadResponse>> GetFaxDocumentContentAsyncWithHttpInfo (string documentId)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocumentContent");
-            
+        // Query params
 
-            var localVarPath = "/api/v2/fax/documents/{documentId}/content";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Header params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // Form params
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        // Body param
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<DownloadResponse>(localVarStatusCode,
-                localVarHeaders,
-                (DownloadResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DownloadResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get a list of fax documents. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>FaxDocumentEntityListing</returns>
-        
-        public FaxDocumentEntityListing GetFaxDocuments (int? pageSize = null, int? pageNumber = null)
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-             ApiResponse<FaxDocumentEntityListing> localVarResponse = GetFaxDocumentsWithHttpInfo(pageSize, pageNumber);
-             return localVarResponse.Data;
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Get a list of fax documents. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>ApiResponse of FaxDocumentEntityListing</returns>
-        
-        public ApiResponse< FaxDocumentEntityListing > GetFaxDocumentsWithHttpInfo (int? pageSize = null, int? pageNumber = null)
-        { 
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            var localVarPath = "/api/v2/fax/documents";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
-            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocumentEntityListing>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocumentEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocumentEntityListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get a list of fax documents. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>Task of FaxDocumentEntityListing</returns>
-        
-        public async System.Threading.Tasks.Task<FaxDocumentEntityListing> GetFaxDocumentsAsync (int? pageSize = null, int? pageNumber = null)
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<FaxDocumentEntityListing> localVarResponse = await GetFaxDocumentsAsyncWithHttpInfo(pageSize, pageNumber);
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Get a list of fax documents. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="pageSize">Page size (optional, default to 25)</param>
-        /// <param name="pageNumber">Page number (optional, default to 1)</param>
-        /// <returns>Task of ApiResponse (FaxDocumentEntityListing)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxDocumentEntityListing>> GetFaxDocumentsAsyncWithHttpInfo (int? pageSize = null, int? pageNumber = null)
-        { 
-
-            var localVarPath = "/api/v2/fax/documents";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (pageSize != null) localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
-            if (pageNumber != null) localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocumentEntityListing>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocumentEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocumentEntityListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FaxConfig</returns>
-        
-        public FaxConfig GetFaxSettings ()
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<FaxConfig> localVarResponse = GetFaxSettingsWithHttpInfo();
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Get organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FaxConfig</returns>
-        
-        public ApiResponse< FaxConfig > GetFaxSettingsWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/fax/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxConfig>(localVarStatusCode,
-                localVarHeaders,
-                (FaxConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of FaxConfig</returns>
-        
-        public async System.Threading.Tasks.Task<FaxConfig> GetFaxSettingsAsync ()
-        {
-             ApiResponse<FaxConfig> localVarResponse = await GetFaxSettingsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (FaxConfig)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxConfig>> GetFaxSettingsAsyncWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/fax/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxConfig>(localVarStatusCode,
-                localVarHeaders,
-                (FaxConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get fax summary 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>FaxSummary</returns>
-        
-        public FaxSummary GetFaxSummary ()
-        {
-             ApiResponse<FaxSummary> localVarResponse = GetFaxSummaryWithHttpInfo();
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get fax summary 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of FaxSummary</returns>
-        
-        public ApiResponse< FaxSummary > GetFaxSummaryWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/fax/summary";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxSummary>(localVarStatusCode,
-                localVarHeaders,
-                (FaxSummary) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxSummary)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get fax summary 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of FaxSummary</returns>
-        
-        public async System.Threading.Tasks.Task<FaxSummary> GetFaxSummaryAsync ()
-        {
-             ApiResponse<FaxSummary> localVarResponse = await GetFaxSummaryAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get fax summary 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (FaxSummary)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxSummary>> GetFaxSummaryAsyncWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/fax/summary";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxSummary>(localVarStatusCode,
-                localVarHeaders,
-                (FaxSummary) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxSummary)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Update a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>FaxDocument</returns>
-        
-        public FaxDocument PutFaxDocument (string documentId, FaxDocument body)
-        {
-             ApiResponse<FaxDocument> localVarResponse = PutFaxDocumentWithHttpInfo(documentId, body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>ApiResponse of FaxDocument</returns>
-        
-        public ApiResponse< FaxDocument > PutFaxDocumentWithHttpInfo (string documentId, FaxDocument body)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->PutFaxDocument");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling FaxApi->PutFaxDocument");
-
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocument>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocument) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Update a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>Task of FaxDocument</returns>
-        
-        public async System.Threading.Tasks.Task<FaxDocument> PutFaxDocumentAsync (string documentId, FaxDocument body)
-        {
-             ApiResponse<FaxDocument> localVarResponse = await PutFaxDocumentAsyncWithHttpInfo(documentId, body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update a fax document. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="documentId">Document ID</param>
-        /// <param name="body">Document</param>
-        /// <returns>Task of ApiResponse (FaxDocument)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxDocument>> PutFaxDocumentAsyncWithHttpInfo (string documentId, FaxDocument body)
-        { 
-            // verify the required parameter 'documentId' is set
-            if (documentId == null)
-                throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->PutFaxDocument");
-            
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling FaxApi->PutFaxDocument");
-            
-
-            var localVarPath = "/api/v2/fax/documents/{documentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (documentId != null) localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxDocument>(localVarStatusCode,
-                localVarHeaders,
-                (FaxDocument) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Update/write organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>FaxConfig</returns>
-        
-        public FaxConfig PutFaxSettings (FaxConfig body = null)
-        {
-             ApiResponse<FaxConfig> localVarResponse = PutFaxSettingsWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update/write organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of FaxConfig</returns>
-        
-        public ApiResponse< FaxConfig > PutFaxSettingsWithHttpInfo (FaxConfig body = null)
-        { 
-
-            var localVarPath = "/api/v2/fax/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxConfig>(localVarStatusCode,
-                localVarHeaders,
-                (FaxConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Update/write organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of FaxConfig</returns>
-        
-        public async System.Threading.Tasks.Task<FaxConfig> PutFaxSettingsAsync (FaxConfig body = null)
-        {
-             ApiResponse<FaxConfig> localVarResponse = await PutFaxSettingsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update/write organization config for given organization 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (FaxConfig)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<FaxConfig>> PutFaxSettingsAsyncWithHttpInfo (FaxConfig body = null)
-        { 
-
-            var localVarPath = "/api/v2/fax/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<FaxConfig>(localVarStatusCode,
-                localVarHeaders,
-                (FaxConfig) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
+        return new ApiResponse<FaxDocument>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get a document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of FaxDocument</returns>
+
+    public async System.Threading.Tasks.Task<FaxDocument> GetFaxDocumentAsync(string documentId)
+    {
+        ApiResponse<FaxDocument> localVarResponse = await GetFaxDocumentAsyncWithHttpInfo(documentId);
+        return localVarResponse.Data;
 
     }
+
+    /// <summary>
+    /// Get a document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse (FaxDocument)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxDocument>> GetFaxDocumentAsyncWithHttpInfo(string documentId)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocument");
+        }
+
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxDocument>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Download a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>DownloadResponse</returns>
+
+    public DownloadResponse GetFaxDocumentContent(string documentId)
+    {
+        ApiResponse<DownloadResponse> localVarResponse = GetFaxDocumentContentWithHttpInfo(documentId);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Download a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>ApiResponse of DownloadResponse</returns>
+
+    public ApiResponse<DownloadResponse> GetFaxDocumentContentWithHttpInfo(string documentId)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocumentContent");
+        }
+
+        var localVarPath = "/api/v2/fax/documents/{documentId}/content";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<DownloadResponse>(localVarStatusCode,
+            localVarHeaders,
+            (DownloadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DownloadResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Download a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of DownloadResponse</returns>
+
+    public async System.Threading.Tasks.Task<DownloadResponse> GetFaxDocumentContentAsync(string documentId)
+    {
+        ApiResponse<DownloadResponse> localVarResponse = await GetFaxDocumentContentAsyncWithHttpInfo(documentId);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Download a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <returns>Task of ApiResponse (DownloadResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<DownloadResponse>> GetFaxDocumentContentAsyncWithHttpInfo(string documentId)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->GetFaxDocumentContent");
+        }
+
+        var localVarPath = "/api/v2/fax/documents/{documentId}/content";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocumentContent: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<DownloadResponse>(localVarStatusCode,
+            localVarHeaders,
+            (DownloadResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(DownloadResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get a list of fax documents. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>FaxDocumentEntityListing</returns>
+
+    public FaxDocumentEntityListing GetFaxDocuments(int? pageSize = null, int? pageNumber = null)
+    {
+        ApiResponse<FaxDocumentEntityListing> localVarResponse = GetFaxDocumentsWithHttpInfo(pageSize, pageNumber);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get a list of fax documents. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>ApiResponse of FaxDocumentEntityListing</returns>
+
+    public ApiResponse<FaxDocumentEntityListing> GetFaxDocumentsWithHttpInfo(int? pageSize = null, int? pageNumber = null)
+    {
+
+        var localVarPath = "/api/v2/fax/documents";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (pageSize != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+        }
+
+        if (pageNumber != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxDocumentEntityListing>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocumentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocumentEntityListing)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get a list of fax documents. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>Task of FaxDocumentEntityListing</returns>
+
+    public async System.Threading.Tasks.Task<FaxDocumentEntityListing> GetFaxDocumentsAsync(int? pageSize = null, int? pageNumber = null)
+    {
+        ApiResponse<FaxDocumentEntityListing> localVarResponse = await GetFaxDocumentsAsyncWithHttpInfo(pageSize, pageNumber);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get a list of fax documents. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="pageSize">Page size (optional, default to 25)</param>
+    /// <param name="pageNumber">Page number (optional, default to 1)</param>
+    /// <returns>Task of ApiResponse (FaxDocumentEntityListing)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxDocumentEntityListing>> GetFaxDocumentsAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null)
+    {
+
+        var localVarPath = "/api/v2/fax/documents";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (pageSize != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("pageSize", this.Configuration.ApiClient.ParameterToString(pageSize)));
+        }
+
+        if (pageNumber != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("pageNumber", this.Configuration.ApiClient.ParameterToString(pageNumber)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxDocuments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxDocumentEntityListing>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocumentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocumentEntityListing)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>FaxConfig</returns>
+
+    public FaxConfig GetFaxSettings()
+    {
+        ApiResponse<FaxConfig> localVarResponse = GetFaxSettingsWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of FaxConfig</returns>
+
+    public ApiResponse<FaxConfig> GetFaxSettingsWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/fax/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxConfig>(localVarStatusCode,
+            localVarHeaders,
+            (FaxConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of FaxConfig</returns>
+
+    public async System.Threading.Tasks.Task<FaxConfig> GetFaxSettingsAsync()
+    {
+        ApiResponse<FaxConfig> localVarResponse = await GetFaxSettingsAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (FaxConfig)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxConfig>> GetFaxSettingsAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/fax/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxConfig>(localVarStatusCode,
+            localVarHeaders,
+            (FaxConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get fax summary 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>FaxSummary</returns>
+
+    public FaxSummary GetFaxSummary()
+    {
+        ApiResponse<FaxSummary> localVarResponse = GetFaxSummaryWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get fax summary 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of FaxSummary</returns>
+
+    public ApiResponse<FaxSummary> GetFaxSummaryWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/fax/summary";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxSummary>(localVarStatusCode,
+            localVarHeaders,
+            (FaxSummary)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxSummary)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get fax summary 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of FaxSummary</returns>
+
+    public async System.Threading.Tasks.Task<FaxSummary> GetFaxSummaryAsync()
+    {
+        ApiResponse<FaxSummary> localVarResponse = await GetFaxSummaryAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get fax summary 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (FaxSummary)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxSummary>> GetFaxSummaryAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/fax/summary";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetFaxSummary: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxSummary>(localVarStatusCode,
+            localVarHeaders,
+            (FaxSummary)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxSummary)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Update a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>FaxDocument</returns>
+
+    public FaxDocument PutFaxDocument(string documentId, FaxDocument body)
+    {
+        ApiResponse<FaxDocument> localVarResponse = PutFaxDocumentWithHttpInfo(documentId, body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Update a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>ApiResponse of FaxDocument</returns>
+
+    public ApiResponse<FaxDocument> PutFaxDocumentWithHttpInfo(string documentId, FaxDocument body)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->PutFaxDocument");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling FaxApi->PutFaxDocument");
+        }
+
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxDocument>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Update a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>Task of FaxDocument</returns>
+
+    public async System.Threading.Tasks.Task<FaxDocument> PutFaxDocumentAsync(string documentId, FaxDocument body)
+    {
+        ApiResponse<FaxDocument> localVarResponse = await PutFaxDocumentAsyncWithHttpInfo(documentId, body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Update a fax document. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="documentId">Document ID</param>
+    /// <param name="body">Document</param>
+    /// <returns>Task of ApiResponse (FaxDocument)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxDocument>> PutFaxDocumentAsyncWithHttpInfo(string documentId, FaxDocument body)
+    {
+        // verify the required parameter 'documentId' is set
+        if (documentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'documentId' when calling FaxApi->PutFaxDocument");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling FaxApi->PutFaxDocument");
+        }
+
+        var localVarPath = "/api/v2/fax/documents/{documentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (documentId != null)
+        {
+            localVarPathParams.Add("documentId", this.Configuration.ApiClient.ParameterToString(documentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxDocument: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxDocument>(localVarStatusCode,
+            localVarHeaders,
+            (FaxDocument)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxDocument)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Update/write organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>FaxConfig</returns>
+
+    public FaxConfig PutFaxSettings(FaxConfig body = null)
+    {
+        ApiResponse<FaxConfig> localVarResponse = PutFaxSettingsWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Update/write organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of FaxConfig</returns>
+
+    public ApiResponse<FaxConfig> PutFaxSettingsWithHttpInfo(FaxConfig body = null)
+    {
+
+        var localVarPath = "/api/v2/fax/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxConfig>(localVarStatusCode,
+            localVarHeaders,
+            (FaxConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Update/write organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of FaxConfig</returns>
+
+    public async System.Threading.Tasks.Task<FaxConfig> PutFaxSettingsAsync(FaxConfig body = null)
+    {
+        ApiResponse<FaxConfig> localVarResponse = await PutFaxSettingsAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Update/write organization config for given organization 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (FaxConfig)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<FaxConfig>> PutFaxSettingsAsyncWithHttpInfo(FaxConfig body = null)
+    {
+
+        var localVarPath = "/api/v2/fax/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutFaxSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<FaxConfig>(localVarStatusCode,
+            localVarHeaders,
+            (FaxConfig)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(FaxConfig)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

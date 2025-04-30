@@ -2,2981 +2,3202 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloudPlatform.Client.V2.Api;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface ISettingsApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Reset email threading settings to default
     /// </summary>
-    public interface ISettingsApi : IApiAccessor
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns></returns>
+
+    void DeleteEmailsSettingsThreading();
+
+    /// <summary>
+    /// Reset email threading settings to default
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of Object(void)</returns>
+
+    ApiResponse<Object> DeleteEmailsSettingsThreadingWithHttpInfo();
+
+    /// <summary>
+    /// Delete agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns></returns>
+
+    void DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId);
+
+    /// <summary>
+    /// Delete agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+
+    ApiResponse<Object> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId);
+
+    /// <summary>
+    /// Get email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>EmailSettings</returns>
+
+    EmailSettings GetEmailsSettings();
+
+    /// <summary>
+    /// Get email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of EmailSettings</returns>
+
+    ApiResponse<EmailSettings> GetEmailsSettingsWithHttpInfo();
+
+    /// <summary>
+    /// Get email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>EmailThreadingSettings</returns>
+
+    EmailThreadingSettings GetEmailsSettingsThreading();
+
+    /// <summary>
+    /// Get email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of EmailThreadingSettings</returns>
+
+    ApiResponse<EmailThreadingSettings> GetEmailsSettingsThreadingWithHttpInfo();
+
+    /// <summary>
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <remarks>
+    /// Get the execution history enabled setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ExecutionDataGlobalSettingsResponse</returns>
+
+    ExecutionDataGlobalSettingsResponse GetSettingsExecutiondata();
+
+    /// <summary>
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <remarks>
+    /// Get the execution history enabled setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
+
+    ApiResponse<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataWithHttpInfo();
+
+    /// <summary>
+    /// Get agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    AutoAnswerSettings GetUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId);
+
+    /// <summary>
+    /// Get agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    ApiResponse<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId);
+
+    /// <summary>
+    /// Patch email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>EmailSettings</returns>
+
+    EmailSettings PatchEmailsSettings(EmailSettings body = null);
+
+    /// <summary>
+    /// Patch email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of EmailSettings</returns>
+
+    ApiResponse<EmailSettings> PatchEmailsSettingsWithHttpInfo(EmailSettings body = null);
+
+    /// <summary>
+    /// Patch email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>EmailThreadingSettings</returns>
+
+    EmailThreadingSettings PatchEmailsSettingsThreading(EmailThreadingSettings body = null);
+
+    /// <summary>
+    /// Patch email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of EmailThreadingSettings</returns>
+
+    ApiResponse<EmailThreadingSettings> PatchEmailsSettingsThreadingWithHttpInfo(EmailThreadingSettings body = null);
+
+    /// <summary>
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <remarks>
+    /// Edit the execution history on off setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>ExecutionDataGlobalSettingsResponse</returns>
+
+    ExecutionDataGlobalSettingsResponse PatchSettingsExecutiondata(ExecutionDataSettingsRequest body);
+
+    /// <summary>
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <remarks>
+    /// Edit the execution history on off setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
+
+    ApiResponse<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataWithHttpInfo(ExecutionDataSettingsRequest body);
+
+    /// <summary>
+    /// Update agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    AutoAnswerSettings PatchUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Update agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    ApiResponse<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Set agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    AutoAnswerSettings PutUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Set agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    ApiResponse<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId, AutoAnswerSettings body);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Reset email threading settings to default
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of void</returns>
+
+    System.Threading.Tasks.Task DeleteEmailsSettingsThreadingAsync();
+
+    /// <summary>
+    /// Reset email threading settings to default
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmailsSettingsThreadingAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Delete agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of void</returns>
+
+    System.Threading.Tasks.Task DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId);
+
+    /// <summary>
+    /// Delete agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of ApiResponse</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId);
+
+    /// <summary>
+    /// Get email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of EmailSettings</returns>
+
+    System.Threading.Tasks.Task<EmailSettings> GetEmailsSettingsAsync();
+
+    /// <summary>
+    /// Get email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (EmailSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<EmailSettings>> GetEmailsSettingsAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Get email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of EmailThreadingSettings</returns>
+
+    System.Threading.Tasks.Task<EmailThreadingSettings> GetEmailsSettingsThreadingAsync();
+
+    /// <summary>
+    /// Get email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> GetEmailsSettingsThreadingAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <remarks>
+    /// Get the execution history enabled setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
+
+    System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataAsync();
+
+    /// <summary>
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <remarks>
+    /// Get the execution history enabled setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> GetSettingsExecutiondataAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Get agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    System.Threading.Tasks.Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId);
+
+    /// <summary>
+    /// Get agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId);
+
+    /// <summary>
+    /// Patch email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of EmailSettings</returns>
+
+    System.Threading.Tasks.Task<EmailSettings> PatchEmailsSettingsAsync(EmailSettings body = null);
+
+    /// <summary>
+    /// Patch email Contact Center settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (EmailSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<EmailSettings>> PatchEmailsSettingsAsyncWithHttpInfo(EmailSettings body = null);
+
+    /// <summary>
+    /// Patch email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of EmailThreadingSettings</returns>
+
+    System.Threading.Tasks.Task<EmailThreadingSettings> PatchEmailsSettingsThreadingAsync(EmailThreadingSettings body = null);
+
+    /// <summary>
+    /// Patch email threading settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> PatchEmailsSettingsThreadingAsyncWithHttpInfo(EmailThreadingSettings body = null);
+
+    /// <summary>
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <remarks>
+    /// Edit the execution history on off setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
+
+    System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataAsync(ExecutionDataSettingsRequest body);
+
+    /// <summary>
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <remarks>
+    /// Edit the execution history on off setting.
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> PatchSettingsExecutiondataAsyncWithHttpInfo(ExecutionDataSettingsRequest body);
+
+    /// <summary>
+    /// Update agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    System.Threading.Tasks.Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Update agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Set agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    System.Threading.Tasks.Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body);
+
+    /// <summary>
+    /// Set agent auto answer settings
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId, AutoAnswerSettings body);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class SettingsApi : ISettingsApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SettingsApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public SettingsApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Reset email threading settings to default
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        
-        void DeleteEmailsSettingsThreading ();
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Reset email threading settings to default
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        ApiResponse<Object> DeleteEmailsSettingsThreadingWithHttpInfo ();
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SettingsApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public SettingsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Delete agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns></returns>
-        
-        void DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Delete agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        ApiResponse<Object> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        /// <summary>
-        /// Get email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>EmailSettings</returns>
-        
-        EmailSettings GetEmailsSettings ();
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        /// <summary>
-        /// Get email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of EmailSettings</returns>
-        
-        ApiResponse<EmailSettings> GetEmailsSettingsWithHttpInfo ();
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        /// <summary>
-        /// Get email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>EmailThreadingSettings</returns>
-        
-        EmailThreadingSettings GetEmailsSettingsThreading ();
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        /// <summary>
-        /// Get email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of EmailThreadingSettings</returns>
-        
-        ApiResponse<EmailThreadingSettings> GetEmailsSettingsThreadingWithHttpInfo ();
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        /// <summary>
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <remarks>
-        /// Get the execution history enabled setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ExecutionDataGlobalSettingsResponse</returns>
-        
-        ExecutionDataGlobalSettingsResponse GetSettingsExecutiondata ();
 
-        /// <summary>
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <remarks>
-        /// Get the execution history enabled setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
-        
-        ApiResponse<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataWithHttpInfo ();
+    /// <summary>
+    /// Reset email threading settings to default 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns></returns>
 
-        /// <summary>
-        /// Get agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        AutoAnswerSettings GetUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId);
+    public void DeleteEmailsSettingsThreading()
+    {
+        DeleteEmailsSettingsThreadingWithHttpInfo();
+    }
 
-        /// <summary>
-        /// Get agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        ApiResponse<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId);
+    /// <summary>
+    /// Reset email threading settings to default 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of Object(void)</returns>
 
-        /// <summary>
-        /// Patch email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>EmailSettings</returns>
-        
-        EmailSettings PatchEmailsSettings (EmailSettings body = null);
+    public ApiResponse<Object> DeleteEmailsSettingsThreadingWithHttpInfo()
+    {
 
-        /// <summary>
-        /// Patch email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of EmailSettings</returns>
-        
-        ApiResponse<EmailSettings> PatchEmailsSettingsWithHttpInfo (EmailSettings body = null);
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-        /// <summary>
-        /// Patch email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>EmailThreadingSettings</returns>
-        
-        EmailThreadingSettings PatchEmailsSettingsThreading (EmailThreadingSettings body = null);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-        /// <summary>
-        /// Patch email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of EmailThreadingSettings</returns>
-        
-        ApiResponse<EmailThreadingSettings> PatchEmailsSettingsThreadingWithHttpInfo (EmailThreadingSettings body = null);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-        /// <summary>
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <remarks>
-        /// Edit the execution history on off setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>ExecutionDataGlobalSettingsResponse</returns>
-        
-        ExecutionDataGlobalSettingsResponse PatchSettingsExecutiondata (ExecutionDataSettingsRequest body);
+            "application/json"
 
-        /// <summary>
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <remarks>
-        /// Edit the execution history on off setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
-        
-        ApiResponse<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataWithHttpInfo (ExecutionDataSettingsRequest body);
 
-        /// <summary>
-        /// Update agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        AutoAnswerSettings PatchUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId, AutoAnswerSettings body);
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
 
-        /// <summary>
-        /// Update agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        ApiResponse<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId, AutoAnswerSettings body);
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-        /// <summary>
-        /// Set agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        AutoAnswerSettings PutUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId, AutoAnswerSettings body);
+        // Path params
 
-        /// <summary>
-        /// Set agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        ApiResponse<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId, AutoAnswerSettings body);
+        // Query params
 
-        #endregion Synchronous Operations
+        // Header params
 
-        #region Asynchronous Operations
+        // Form params
 
-        /// <summary>
-        /// Reset email threading settings to default
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        
-        System.Threading.Tasks.Task DeleteEmailsSettingsThreadingAsync ();
+        // Body param
 
-        /// <summary>
-        /// Reset email threading settings to default
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmailsSettingsThreadingAsyncWithHttpInfo ();
 
-        /// <summary>
-        /// Delete agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of void</returns>
-        
-        System.Threading.Tasks.Task DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId);
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
 
-        /// <summary>
-        /// Delete agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of ApiResponse</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId);
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Get email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of EmailSettings</returns>
-        
-        System.Threading.Tasks.Task<EmailSettings> GetEmailsSettingsAsync ();
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Get email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (EmailSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<EmailSettings>> GetEmailsSettingsAsyncWithHttpInfo ();
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-        /// <summary>
-        /// Get email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of EmailThreadingSettings</returns>
-        
-        System.Threading.Tasks.Task<EmailThreadingSettings> GetEmailsSettingsThreadingAsync ();
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
 
-        /// <summary>
-        /// Get email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> GetEmailsSettingsThreadingAsyncWithHttpInfo ();
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
-        /// <summary>
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <remarks>
-        /// Get the execution history enabled setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
-        
-        System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataAsync ();
 
-        /// <summary>
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <remarks>
-        /// Get the execution history enabled setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> GetSettingsExecutiondataAsyncWithHttpInfo ();
+    /// <summary>
+    /// Reset email threading settings to default 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of void</returns>
 
-        /// <summary>
-        /// Get agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        System.Threading.Tasks.Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId);
-
-        /// <summary>
-        /// Get agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId);
-
-        /// <summary>
-        /// Patch email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of EmailSettings</returns>
-        
-        System.Threading.Tasks.Task<EmailSettings> PatchEmailsSettingsAsync (EmailSettings body = null);
-
-        /// <summary>
-        /// Patch email Contact Center settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (EmailSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<EmailSettings>> PatchEmailsSettingsAsyncWithHttpInfo (EmailSettings body = null);
-
-        /// <summary>
-        /// Patch email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of EmailThreadingSettings</returns>
-        
-        System.Threading.Tasks.Task<EmailThreadingSettings> PatchEmailsSettingsThreadingAsync (EmailThreadingSettings body = null);
-
-        /// <summary>
-        /// Patch email threading settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> PatchEmailsSettingsThreadingAsyncWithHttpInfo (EmailThreadingSettings body = null);
-
-        /// <summary>
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <remarks>
-        /// Edit the execution history on off setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
-        
-        System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataAsync (ExecutionDataSettingsRequest body);
-
-        /// <summary>
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <remarks>
-        /// Edit the execution history on off setting.
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> PatchSettingsExecutiondataAsyncWithHttpInfo (ExecutionDataSettingsRequest body);
-
-        /// <summary>
-        /// Update agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        System.Threading.Tasks.Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId, AutoAnswerSettings body);
-
-        /// <summary>
-        /// Update agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId, AutoAnswerSettings body);
-
-        /// <summary>
-        /// Set agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        System.Threading.Tasks.Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId, AutoAnswerSettings body);
-
-        /// <summary>
-        /// Set agent auto answer settings
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId, AutoAnswerSettings body);
-
-        #endregion Asynchronous Operations
+    public async System.Threading.Tasks.Task DeleteEmailsSettingsThreadingAsync()
+    {
+        await DeleteEmailsSettingsThreadingAsyncWithHttpInfo();
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Reset email threading settings to default 
+    /// 
     /// </summary>
-    public partial class SettingsApi : ISettingsApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmailsSettingsThreadingAsyncWithHttpInfo()
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public SettingsApi(String basePath)
-        {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SettingsApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public SettingsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
-        {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
-        }
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
-        {
-            // do nothing
-        }
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
-        {
-            return this.Configuration.DefaultHeader;
-        }
-
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
-        }
-
-
-        /// <summary>
-        /// Reset email threading settings to default 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns></returns>
-        
-        public void DeleteEmailsSettingsThreading ()
-        {
-             DeleteEmailsSettingsThreadingWithHttpInfo();
-        }
-
-        /// <summary>
-        /// Reset email threading settings to default 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        public ApiResponse<Object> DeleteEmailsSettingsThreadingWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Reset email threading settings to default 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of void</returns>
-        
-        public async System.Threading.Tasks.Task DeleteEmailsSettingsThreadingAsync ()
+        if (localVarStatusCode >= 400)
         {
-             await DeleteEmailsSettingsThreadingAsyncWithHttpInfo();
-
+            throw new ApiException(localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Reset email threading settings to default 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteEmailsSettingsThreadingAsyncWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Delete agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns></returns>
-        
-        public void DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId)
+        else if (localVarStatusCode == 0)
         {
-             DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId);
+            throw new ApiException(localVarStatusCode, "Error calling DeleteEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Delete agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        
-        public ApiResponse<Object> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings");
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    /// <summary>
+    /// Delete agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns></returns>
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+    public void DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId)
+    {
+        DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId);
+    }
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+    /// <summary>
+    /// Delete agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>ApiResponse of Object(void)</returns>
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Delete agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of void</returns>
-        
-        public async System.Threading.Tasks.Task DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId)
+    public ApiResponse<Object> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
         {
-             await DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId);
-
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings");
         }
 
-        /// <summary>
-        /// Delete agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of ApiResponse</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+            "application/json"
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>EmailSettings</returns>
-        
-        public EmailSettings GetEmailsSettings ()
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
         {
-             ApiResponse<EmailSettings> localVarResponse = GetEmailsSettingsWithHttpInfo();
-             return localVarResponse.Data;
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Get email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of EmailSettings</returns>
-        
-        public ApiResponse< EmailSettings > GetEmailsSettingsWithHttpInfo ()
-        { 
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            var localVarPath = "/api/v2/emails/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of EmailSettings</returns>
-        
-        public async System.Threading.Tasks.Task<EmailSettings> GetEmailsSettingsAsync ()
+        // Path params
+        if (agentId != null)
         {
-             ApiResponse<EmailSettings> localVarResponse = await GetEmailsSettingsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
         }
 
-        /// <summary>
-        /// Get email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (EmailSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<EmailSettings>> GetEmailsSettingsAsyncWithHttpInfo ()
-        { 
+        // Query params
 
-            var localVarPath = "/api/v2/emails/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Header params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // Form params
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        // Body param
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>EmailThreadingSettings</returns>
-        
-        public EmailThreadingSettings GetEmailsSettingsThreading ()
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-             ApiResponse<EmailThreadingSettings> localVarResponse = GetEmailsSettingsThreadingWithHttpInfo();
-             return localVarResponse.Data;
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Get email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of EmailThreadingSettings</returns>
-        
-        public ApiResponse< EmailThreadingSettings > GetEmailsSettingsThreadingWithHttpInfo ()
-        { 
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailThreadingSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of EmailThreadingSettings</returns>
-        
-        public async System.Threading.Tasks.Task<EmailThreadingSettings> GetEmailsSettingsThreadingAsync ()
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<EmailThreadingSettings> localVarResponse = await GetEmailsSettingsThreadingAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Get email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> GetEmailsSettingsThreadingAsyncWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailThreadingSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get the execution history enabled setting. 
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ExecutionDataGlobalSettingsResponse</returns>
-        
-        public ExecutionDataGlobalSettingsResponse GetSettingsExecutiondata ()
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = GetSettingsExecutiondataWithHttpInfo();
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Get the execution history enabled setting. 
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
-        
-        public ApiResponse< ExecutionDataGlobalSettingsResponse > GetSettingsExecutiondataWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/settings/executiondata";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
-                localVarHeaders,
-                (ExecutionDataGlobalSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get the execution history enabled setting. 
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
-        
-        public async System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataAsync ()
-        {
-             ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = await GetSettingsExecutiondataAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get the execution history enabled setting. 
-        /// Get the execution history enabled setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> GetSettingsExecutiondataAsyncWithHttpInfo ()
-        { 
-
-            var localVarPath = "/api/v2/settings/executiondata";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
-                localVarHeaders,
-                (ExecutionDataGlobalSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        public AutoAnswerSettings GetUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        public ApiResponse< AutoAnswerSettings > GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->GetUsersAgentuiAgentsAutoanswerAgentIdSettings");
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        public async System.Threading.Tasks.Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = await GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Get agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->GetUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Patch email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>EmailSettings</returns>
-        
-        public EmailSettings PatchEmailsSettings (EmailSettings body = null)
-        {
-             ApiResponse<EmailSettings> localVarResponse = PatchEmailsSettingsWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Patch email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of EmailSettings</returns>
-        
-        public ApiResponse< EmailSettings > PatchEmailsSettingsWithHttpInfo (EmailSettings body = null)
-        { 
-
-            var localVarPath = "/api/v2/emails/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Patch email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of EmailSettings</returns>
-        
-        public async System.Threading.Tasks.Task<EmailSettings> PatchEmailsSettingsAsync (EmailSettings body = null)
-        {
-             ApiResponse<EmailSettings> localVarResponse = await PatchEmailsSettingsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Patch email Contact Center settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (EmailSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<EmailSettings>> PatchEmailsSettingsAsyncWithHttpInfo (EmailSettings body = null)
-        { 
-
-            var localVarPath = "/api/v2/emails/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Patch email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>EmailThreadingSettings</returns>
-        
-        public EmailThreadingSettings PatchEmailsSettingsThreading (EmailThreadingSettings body = null)
-        {
-             ApiResponse<EmailThreadingSettings> localVarResponse = PatchEmailsSettingsThreadingWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Patch email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>ApiResponse of EmailThreadingSettings</returns>
-        
-        public ApiResponse< EmailThreadingSettings > PatchEmailsSettingsThreadingWithHttpInfo (EmailThreadingSettings body = null)
-        { 
-
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailThreadingSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Patch email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of EmailThreadingSettings</returns>
-        
-        public async System.Threading.Tasks.Task<EmailThreadingSettings> PatchEmailsSettingsThreadingAsync (EmailThreadingSettings body = null)
-        {
-             ApiResponse<EmailThreadingSettings> localVarResponse = await PatchEmailsSettingsThreadingAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Patch email threading settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body"> (optional)</param>
-        /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> PatchEmailsSettingsThreadingAsyncWithHttpInfo (EmailThreadingSettings body = null)
-        { 
-
-            var localVarPath = "/api/v2/emails/settings/threading";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
-                localVarHeaders,
-                (EmailThreadingSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Edit the execution history on off setting. 
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>ExecutionDataGlobalSettingsResponse</returns>
-        
-        public ExecutionDataGlobalSettingsResponse PatchSettingsExecutiondata (ExecutionDataSettingsRequest body)
-        {
-             ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = PatchSettingsExecutiondataWithHttpInfo(body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Edit the execution history on off setting. 
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
-        
-        public ApiResponse< ExecutionDataGlobalSettingsResponse > PatchSettingsExecutiondataWithHttpInfo (ExecutionDataSettingsRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchSettingsExecutiondata");
-
-            var localVarPath = "/api/v2/settings/executiondata";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
-                localVarHeaders,
-                (ExecutionDataGlobalSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Edit the execution history on off setting. 
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
-        
-        public async System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataAsync (ExecutionDataSettingsRequest body)
-        {
-             ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = await PatchSettingsExecutiondataAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Edit the execution history on off setting. 
-        /// Edit the execution history on off setting.
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">New Execution Data Setting</param>
-        /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> PatchSettingsExecutiondataAsyncWithHttpInfo (ExecutionDataSettingsRequest body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchSettingsExecutiondata");
-            
-
-            var localVarPath = "/api/v2/settings/executiondata";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
-                localVarHeaders,
-                (ExecutionDataGlobalSettingsResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Update agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        public AutoAnswerSettings PatchUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId, AutoAnswerSettings body)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId, body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Update agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        public ApiResponse< AutoAnswerSettings > PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId, AutoAnswerSettings body)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Update agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        public async System.Threading.Tasks.Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId, AutoAnswerSettings body)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = await PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId, body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId, AutoAnswerSettings body)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Set agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>AutoAnswerSettings</returns>
-        
-        public AutoAnswerSettings PutUsersAgentuiAgentsAutoanswerAgentIdSettings (string agentId, AutoAnswerSettings body)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId, body);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Set agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>ApiResponse of AutoAnswerSettings</returns>
-        
-        public ApiResponse< AutoAnswerSettings > PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo (string agentId, AutoAnswerSettings body)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Set agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of AutoAnswerSettings</returns>
-        
-        public async System.Threading.Tasks.Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync (string agentId, AutoAnswerSettings body)
-        {
-             ApiResponse<AutoAnswerSettings> localVarResponse = await PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId, body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Set agent auto answer settings 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="agentId">The agent to apply the auto answer settings to</param>
-        /// <param name="body">AutoAnswerSettings</param>
-        /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo (string agentId, AutoAnswerSettings body)
-        { 
-            // verify the required parameter 'agentId' is set
-            if (agentId == null)
-                throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
-            
-
-            var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (agentId != null) localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
-                localVarHeaders,
-                (AutoAnswerSettings) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Delete agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of void</returns>
+
+    public async System.Threading.Tasks.Task DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId)
+    {
+        await DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId);
 
     }
+
+    /// <summary>
+    /// Delete agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of ApiResponse</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>EmailSettings</returns>
+
+    public EmailSettings GetEmailsSettings()
+    {
+        ApiResponse<EmailSettings> localVarResponse = GetEmailsSettingsWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of EmailSettings</returns>
+
+    public ApiResponse<EmailSettings> GetEmailsSettingsWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/emails/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of EmailSettings</returns>
+
+    public async System.Threading.Tasks.Task<EmailSettings> GetEmailsSettingsAsync()
+    {
+        ApiResponse<EmailSettings> localVarResponse = await GetEmailsSettingsAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (EmailSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<EmailSettings>> GetEmailsSettingsAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/emails/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>EmailThreadingSettings</returns>
+
+    public EmailThreadingSettings GetEmailsSettingsThreading()
+    {
+        ApiResponse<EmailThreadingSettings> localVarResponse = GetEmailsSettingsThreadingWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of EmailThreadingSettings</returns>
+
+    public ApiResponse<EmailThreadingSettings> GetEmailsSettingsThreadingWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailThreadingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of EmailThreadingSettings</returns>
+
+    public async System.Threading.Tasks.Task<EmailThreadingSettings> GetEmailsSettingsThreadingAsync()
+    {
+        ApiResponse<EmailThreadingSettings> localVarResponse = await GetEmailsSettingsThreadingAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> GetEmailsSettingsThreadingAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailThreadingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get the execution history enabled setting. 
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ExecutionDataGlobalSettingsResponse</returns>
+
+    public ExecutionDataGlobalSettingsResponse GetSettingsExecutiondata()
+    {
+        ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = GetSettingsExecutiondataWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get the execution history enabled setting. 
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
+
+    public ApiResponse<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/settings/executiondata";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
+            localVarHeaders,
+            (ExecutionDataGlobalSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get the execution history enabled setting. 
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
+
+    public async System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> GetSettingsExecutiondataAsync()
+    {
+        ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = await GetSettingsExecutiondataAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get the execution history enabled setting. 
+    /// Get the execution history enabled setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> GetSettingsExecutiondataAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/settings/executiondata";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
+            localVarHeaders,
+            (ExecutionDataGlobalSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Get agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    public AutoAnswerSettings GetUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    public ApiResponse<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->GetUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    public async System.Threading.Tasks.Task<AutoAnswerSettings> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = await GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Get agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> GetUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->GetUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Patch email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>EmailSettings</returns>
+
+    public EmailSettings PatchEmailsSettings(EmailSettings body = null)
+    {
+        ApiResponse<EmailSettings> localVarResponse = PatchEmailsSettingsWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Patch email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of EmailSettings</returns>
+
+    public ApiResponse<EmailSettings> PatchEmailsSettingsWithHttpInfo(EmailSettings body = null)
+    {
+
+        var localVarPath = "/api/v2/emails/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Patch email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of EmailSettings</returns>
+
+    public async System.Threading.Tasks.Task<EmailSettings> PatchEmailsSettingsAsync(EmailSettings body = null)
+    {
+        ApiResponse<EmailSettings> localVarResponse = await PatchEmailsSettingsAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Patch email Contact Center settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (EmailSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<EmailSettings>> PatchEmailsSettingsAsyncWithHttpInfo(EmailSettings body = null)
+    {
+
+        var localVarPath = "/api/v2/emails/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Patch email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>EmailThreadingSettings</returns>
+
+    public EmailThreadingSettings PatchEmailsSettingsThreading(EmailThreadingSettings body = null)
+    {
+        ApiResponse<EmailThreadingSettings> localVarResponse = PatchEmailsSettingsThreadingWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Patch email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>ApiResponse of EmailThreadingSettings</returns>
+
+    public ApiResponse<EmailThreadingSettings> PatchEmailsSettingsThreadingWithHttpInfo(EmailThreadingSettings body = null)
+    {
+
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailThreadingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Patch email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of EmailThreadingSettings</returns>
+
+    public async System.Threading.Tasks.Task<EmailThreadingSettings> PatchEmailsSettingsThreadingAsync(EmailThreadingSettings body = null)
+    {
+        ApiResponse<EmailThreadingSettings> localVarResponse = await PatchEmailsSettingsThreadingAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Patch email threading settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body"> (optional)</param>
+    /// <returns>Task of ApiResponse (EmailThreadingSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<EmailThreadingSettings>> PatchEmailsSettingsThreadingAsyncWithHttpInfo(EmailThreadingSettings body = null)
+    {
+
+        var localVarPath = "/api/v2/emails/settings/threading";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchEmailsSettingsThreading: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<EmailThreadingSettings>(localVarStatusCode,
+            localVarHeaders,
+            (EmailThreadingSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(EmailThreadingSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Edit the execution history on off setting. 
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>ExecutionDataGlobalSettingsResponse</returns>
+
+    public ExecutionDataGlobalSettingsResponse PatchSettingsExecutiondata(ExecutionDataSettingsRequest body)
+    {
+        ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = PatchSettingsExecutiondataWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Edit the execution history on off setting. 
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>ApiResponse of ExecutionDataGlobalSettingsResponse</returns>
+
+    public ApiResponse<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataWithHttpInfo(ExecutionDataSettingsRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchSettingsExecutiondata");
+        }
+
+        var localVarPath = "/api/v2/settings/executiondata";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
+            localVarHeaders,
+            (ExecutionDataGlobalSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Edit the execution history on off setting. 
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>Task of ExecutionDataGlobalSettingsResponse</returns>
+
+    public async System.Threading.Tasks.Task<ExecutionDataGlobalSettingsResponse> PatchSettingsExecutiondataAsync(ExecutionDataSettingsRequest body)
+    {
+        ApiResponse<ExecutionDataGlobalSettingsResponse> localVarResponse = await PatchSettingsExecutiondataAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Edit the execution history on off setting. 
+    /// Edit the execution history on off setting.
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">New Execution Data Setting</param>
+    /// <returns>Task of ApiResponse (ExecutionDataGlobalSettingsResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<ExecutionDataGlobalSettingsResponse>> PatchSettingsExecutiondataAsyncWithHttpInfo(ExecutionDataSettingsRequest body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchSettingsExecutiondata");
+        }
+
+        var localVarPath = "/api/v2/settings/executiondata";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchSettingsExecutiondata: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<ExecutionDataGlobalSettingsResponse>(localVarStatusCode,
+            localVarHeaders,
+            (ExecutionDataGlobalSettingsResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(ExecutionDataGlobalSettingsResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Update agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    public AutoAnswerSettings PatchUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId, AutoAnswerSettings body)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId, body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Update agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    public ApiResponse<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId, AutoAnswerSettings body)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Update agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    public async System.Threading.Tasks.Task<AutoAnswerSettings> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = await PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId, body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Update agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PatchUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId, AutoAnswerSettings body)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PatchUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Patch, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PatchUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Set agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>AutoAnswerSettings</returns>
+
+    public AutoAnswerSettings PutUsersAgentuiAgentsAutoanswerAgentIdSettings(string agentId, AutoAnswerSettings body)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(agentId, body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Set agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>ApiResponse of AutoAnswerSettings</returns>
+
+    public ApiResponse<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsWithHttpInfo(string agentId, AutoAnswerSettings body)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Set agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of AutoAnswerSettings</returns>
+
+    public async System.Threading.Tasks.Task<AutoAnswerSettings> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsync(string agentId, AutoAnswerSettings body)
+    {
+        ApiResponse<AutoAnswerSettings> localVarResponse = await PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(agentId, body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Set agent auto answer settings 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="agentId">The agent to apply the auto answer settings to</param>
+    /// <param name="body">AutoAnswerSettings</param>
+    /// <returns>Task of ApiResponse (AutoAnswerSettings)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<AutoAnswerSettings>> PutUsersAgentuiAgentsAutoanswerAgentIdSettingsAsyncWithHttpInfo(string agentId, AutoAnswerSettings body)
+    {
+        // verify the required parameter 'agentId' is set
+        if (agentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'agentId' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SettingsApi->PutUsersAgentuiAgentsAutoanswerAgentIdSettings");
+        }
+
+        var localVarPath = "/api/v2/users/agentui/agents/autoanswer/{agentId}/settings";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (agentId != null)
+        {
+            localVarPathParams.Add("agentId", this.Configuration.ApiClient.ParameterToString(agentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutUsersAgentuiAgentsAutoanswerAgentIdSettings: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<AutoAnswerSettings>(localVarStatusCode,
+            localVarHeaders,
+            (AutoAnswerSettings)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(AutoAnswerSettings)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

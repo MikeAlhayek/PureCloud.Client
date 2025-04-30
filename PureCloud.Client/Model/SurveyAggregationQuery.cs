@@ -2,568 +2,586 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// SurveyAggregationQuery
+/// </summary>
+[DataContract]
+public partial class SurveyAggregationQuery : IEquatable<SurveyAggregationQuery>
 {
     /// <summary>
-    /// SurveyAggregationQuery
+    /// Gets or Sets GroupBy
     /// </summary>
-    [DataContract]
-    public partial class SurveyAggregationQuery : IEquatable<SurveyAggregationQuery>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum GroupByEnum
     {
         /// <summary>
-        /// Gets or Sets GroupBy
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum GroupByEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-
-            /// <summary>
-            /// Enum Conversationid for "conversationId"
-            /// </summary>
-            [EnumMember(Value = "conversationId")]
-            Conversationid,
-
-            /// <summary>
-            /// Enum Divisionid for "divisionId"
-            /// </summary>
-            [EnumMember(Value = "divisionId")]
-            Divisionid,
-
-            /// <summary>
-            /// Enum Externalcontactid for "externalContactId"
-            /// </summary>
-            [EnumMember(Value = "externalContactId")]
-            Externalcontactid,
-
-            /// <summary>
-            /// Enum Mediatype for "mediaType"
-            /// </summary>
-            [EnumMember(Value = "mediaType")]
-            Mediatype,
-
-            /// <summary>
-            /// Enum Queueid for "queueId"
-            /// </summary>
-            [EnumMember(Value = "queueId")]
-            Queueid,
-
-            /// <summary>
-            /// Enum Requestedlanguageid for "requestedLanguageId"
-            /// </summary>
-            [EnumMember(Value = "requestedLanguageId")]
-            Requestedlanguageid,
-
-            /// <summary>
-            /// Enum Requestedroutingskillid for "requestedRoutingSkillId"
-            /// </summary>
-            [EnumMember(Value = "requestedRoutingSkillId")]
-            Requestedroutingskillid,
-
-            /// <summary>
-            /// Enum Surveyanswerid for "surveyAnswerId"
-            /// </summary>
-            [EnumMember(Value = "surveyAnswerId")]
-            Surveyanswerid,
-
-            /// <summary>
-            /// Enum Surveyerrorreason for "surveyErrorReason"
-            /// </summary>
-            [EnumMember(Value = "surveyErrorReason")]
-            Surveyerrorreason,
-
-            /// <summary>
-            /// Enum Surveyformcontextid for "surveyFormContextId"
-            /// </summary>
-            [EnumMember(Value = "surveyFormContextId")]
-            Surveyformcontextid,
-
-            /// <summary>
-            /// Enum Surveyformid for "surveyFormId"
-            /// </summary>
-            [EnumMember(Value = "surveyFormId")]
-            Surveyformid,
-
-            /// <summary>
-            /// Enum Surveyformname for "surveyFormName"
-            /// </summary>
-            [EnumMember(Value = "surveyFormName")]
-            Surveyformname,
-
-            /// <summary>
-            /// Enum Surveyid for "surveyId"
-            /// </summary>
-            [EnumMember(Value = "surveyId")]
-            Surveyid,
-
-            /// <summary>
-            /// Enum Surveypartialresponse for "surveyPartialResponse"
-            /// </summary>
-            [EnumMember(Value = "surveyPartialResponse")]
-            Surveypartialresponse,
-
-            /// <summary>
-            /// Enum Surveypreviousstatus for "surveyPreviousStatus"
-            /// </summary>
-            [EnumMember(Value = "surveyPreviousStatus")]
-            Surveypreviousstatus,
-
-            /// <summary>
-            /// Enum Surveypromoterscore for "surveyPromoterScore"
-            /// </summary>
-            [EnumMember(Value = "surveyPromoterScore")]
-            Surveypromoterscore,
-
-            /// <summary>
-            /// Enum Surveyquestiongroupid for "surveyQuestionGroupId"
-            /// </summary>
-            [EnumMember(Value = "surveyQuestionGroupId")]
-            Surveyquestiongroupid,
-
-            /// <summary>
-            /// Enum Surveyquestionid for "surveyQuestionId"
-            /// </summary>
-            [EnumMember(Value = "surveyQuestionId")]
-            Surveyquestionid,
-
-            /// <summary>
-            /// Enum Surveystatus for "surveyStatus"
-            /// </summary>
-            [EnumMember(Value = "surveyStatus")]
-            Surveystatus,
-
-            /// <summary>
-            /// Enum Surveytype for "surveyType"
-            /// </summary>
-            [EnumMember(Value = "surveyType")]
-            Surveytype,
-
-            /// <summary>
-            /// Enum Teamid for "teamId"
-            /// </summary>
-            [EnumMember(Value = "teamId")]
-            Teamid,
-
-            /// <summary>
-            /// Enum Userid for "userId"
-            /// </summary>
-            [EnumMember(Value = "userId")]
-            Userid,
-
-            /// <summary>
-            /// Enum Wrapupcode for "wrapUpCode"
-            /// </summary>
-            [EnumMember(Value = "wrapUpCode")]
-            Wrapupcode
-        }
-        /// <summary>
-        /// Gets or Sets Metrics
-        /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum MetricsEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-
-            /// <summary>
-            /// Enum Nsurveyerrors for "nSurveyErrors"
-            /// </summary>
-            [EnumMember(Value = "nSurveyErrors")]
-            Nsurveyerrors,
-
-            /// <summary>
-            /// Enum Nsurveyfullresponses for "nSurveyFullResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyFullResponses")]
-            Nsurveyfullresponses,
-
-            /// <summary>
-            /// Enum Nsurveynpsdetractors for "nSurveyNpsDetractors"
-            /// </summary>
-            [EnumMember(Value = "nSurveyNpsDetractors")]
-            Nsurveynpsdetractors,
-
-            /// <summary>
-            /// Enum Nsurveynpspromoters for "nSurveyNpsPromoters"
-            /// </summary>
-            [EnumMember(Value = "nSurveyNpsPromoters")]
-            Nsurveynpspromoters,
-
-            /// <summary>
-            /// Enum Nsurveynpsresponses for "nSurveyNpsResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyNpsResponses")]
-            Nsurveynpsresponses,
-
-            /// <summary>
-            /// Enum Nsurveypartialresponses for "nSurveyPartialResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyPartialResponses")]
-            Nsurveypartialresponses,
-
-            /// <summary>
-            /// Enum Nsurveyquestiongroupresponses for "nSurveyQuestionGroupResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyQuestionGroupResponses")]
-            Nsurveyquestiongroupresponses,
-
-            /// <summary>
-            /// Enum Nsurveyquestionresponses for "nSurveyQuestionResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyQuestionResponses")]
-            Nsurveyquestionresponses,
-
-            /// <summary>
-            /// Enum Nsurveyresponses for "nSurveyResponses"
-            /// </summary>
-            [EnumMember(Value = "nSurveyResponses")]
-            Nsurveyresponses,
-
-            /// <summary>
-            /// Enum Nsurveysabandoned for "nSurveysAbandoned"
-            /// </summary>
-            [EnumMember(Value = "nSurveysAbandoned")]
-            Nsurveysabandoned,
-
-            /// <summary>
-            /// Enum Nsurveysdeleted for "nSurveysDeleted"
-            /// </summary>
-            [EnumMember(Value = "nSurveysDeleted")]
-            Nsurveysdeleted,
-
-            /// <summary>
-            /// Enum Nsurveysexpired for "nSurveysExpired"
-            /// </summary>
-            [EnumMember(Value = "nSurveysExpired")]
-            Nsurveysexpired,
-
-            /// <summary>
-            /// Enum Nsurveyssent for "nSurveysSent"
-            /// </summary>
-            [EnumMember(Value = "nSurveysSent")]
-            Nsurveyssent,
-
-            /// <summary>
-            /// Enum Nsurveysstarted for "nSurveysStarted"
-            /// </summary>
-            [EnumMember(Value = "nSurveysStarted")]
-            Nsurveysstarted,
-
-            /// <summary>
-            /// Enum Nvoicesurveys for "nVoiceSurveys"
-            /// </summary>
-            [EnumMember(Value = "nVoiceSurveys")]
-            Nvoicesurveys,
-
-            /// <summary>
-            /// Enum Nwebsurveys for "nWebSurveys"
-            /// </summary>
-            [EnumMember(Value = "nWebSurveys")]
-            Nwebsurveys,
-
-            /// <summary>
-            /// Enum Osurveyquestiongroupscore for "oSurveyQuestionGroupScore"
-            /// </summary>
-            [EnumMember(Value = "oSurveyQuestionGroupScore")]
-            Osurveyquestiongroupscore,
-
-            /// <summary>
-            /// Enum Osurveyquestionscore for "oSurveyQuestionScore"
-            /// </summary>
-            [EnumMember(Value = "oSurveyQuestionScore")]
-            Osurveyquestionscore,
-
-            /// <summary>
-            /// Enum Osurveytotalscore for "oSurveyTotalScore"
-            /// </summary>
-            [EnumMember(Value = "oSurveyTotalScore")]
-            Osurveytotalscore
-        }
-        /// <summary>
-        /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
-        /// </summary>
-        /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum AlternateTimeDimensionEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-
-            /// <summary>
-            /// Enum Eventtime for "eventTime"
-            /// </summary>
-            [EnumMember(Value = "eventTime")]
-            Eventtime,
-
-            /// <summary>
-            /// Enum Surveycreateddate for "surveyCreatedDate"
-            /// </summary>
-            [EnumMember(Value = "surveyCreatedDate")]
-            Surveycreateddate
-        }
-        /// <summary>
-        /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
-        /// </summary>
-        /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
-        [DataMember(Name = "alternateTimeDimension", EmitDefaultValue = false)]
-        public AlternateTimeDimensionEnum? AlternateTimeDimension { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SurveyAggregationQuery" /> class.
+        /// Enum Conversationid for "conversationId"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SurveyAggregationQuery() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SurveyAggregationQuery" /> class.
-        /// </summary>
-        /// <param name="Interval">Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (required).</param>
-        /// <param name="Granularity">Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H.</param>
-        /// <param name="TimeZone">Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London.</param>
-        /// <param name="GroupBy">Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group..</param>
-        /// <param name="Filter">Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters.</param>
-        /// <param name="Metrics">Behaves like a SQL SELECT clause. Only named metrics will be retrieved. (required).</param>
-        /// <param name="FlattenMultivaluedDimensions">Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;).</param>
-        /// <param name="Views">Custom derived metric views.</param>
-        /// <param name="AlternateTimeDimension">Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event..</param>
-        public SurveyAggregationQuery(string Interval = null, string Granularity = null, string TimeZone = null, List<GroupByEnum> GroupBy = null, SurveyAggregateQueryFilter Filter = null, List<MetricsEnum> Metrics = null, bool? FlattenMultivaluedDimensions = null, List<SurveyAggregationView> Views = null, AlternateTimeDimensionEnum? AlternateTimeDimension = null)
-        {
-            this.Interval = Interval;
-            this.Granularity = Granularity;
-            this.TimeZone = TimeZone;
-            this.GroupBy = GroupBy;
-            this.Filter = Filter;
-            this.Metrics = Metrics;
-            this.FlattenMultivaluedDimensions = FlattenMultivaluedDimensions;
-            this.Views = Views;
-            this.AlternateTimeDimension = AlternateTimeDimension;
-
-        }
-
-
+        [EnumMember(Value = "conversationId")]
+        Conversationid,
 
         /// <summary>
-        /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+        /// Enum Divisionid for "divisionId"
         /// </summary>
-        /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
-        [DataMember(Name = "interval", EmitDefaultValue = false)]
-        public string Interval { get; set; }
-
-
+        [EnumMember(Value = "divisionId")]
+        Divisionid,
 
         /// <summary>
-        /// Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+        /// Enum Externalcontactid for "externalContactId"
         /// </summary>
-        /// <value>Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
-        [DataMember(Name = "granularity", EmitDefaultValue = false)]
-        public string Granularity { get; set; }
-
-
+        [EnumMember(Value = "externalContactId")]
+        Externalcontactid,
 
         /// <summary>
-        /// Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+        /// Enum Mediatype for "mediaType"
         /// </summary>
-        /// <value>Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
-        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
-        public string TimeZone { get; set; }
-
-
+        [EnumMember(Value = "mediaType")]
+        Mediatype,
 
         /// <summary>
-        /// Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
+        /// Enum Queueid for "queueId"
         /// </summary>
-        /// <value>Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.</value>
-        [DataMember(Name = "groupBy", EmitDefaultValue = false)]
-        public List<GroupByEnum> GroupBy { get; set; }
-
-
+        [EnumMember(Value = "queueId")]
+        Queueid,
 
         /// <summary>
-        /// Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
+        /// Enum Requestedlanguageid for "requestedLanguageId"
         /// </summary>
-        /// <value>Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters</value>
-        [DataMember(Name = "filter", EmitDefaultValue = false)]
-        public SurveyAggregateQueryFilter Filter { get; set; }
-
-
+        [EnumMember(Value = "requestedLanguageId")]
+        Requestedlanguageid,
 
         /// <summary>
-        /// Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
+        /// Enum Requestedroutingskillid for "requestedRoutingSkillId"
         /// </summary>
-        /// <value>Behaves like a SQL SELECT clause. Only named metrics will be retrieved.</value>
-        [DataMember(Name = "metrics", EmitDefaultValue = false)]
-        public List<MetricsEnum> Metrics { get; set; }
-
-
+        [EnumMember(Value = "requestedRoutingSkillId")]
+        Requestedroutingskillid,
 
         /// <summary>
-        /// Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)
+        /// Enum Surveyanswerid for "surveyAnswerId"
         /// </summary>
-        /// <value>Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)</value>
-        [DataMember(Name = "flattenMultivaluedDimensions", EmitDefaultValue = false)]
-        public bool? FlattenMultivaluedDimensions { get; set; }
-
-
+        [EnumMember(Value = "surveyAnswerId")]
+        Surveyanswerid,
 
         /// <summary>
-        /// Custom derived metric views
+        /// Enum Surveyerrorreason for "surveyErrorReason"
         /// </summary>
-        /// <value>Custom derived metric views</value>
-        [DataMember(Name = "views", EmitDefaultValue = false)]
-        public List<SurveyAggregationView> Views { get; set; }
-
-
-
+        [EnumMember(Value = "surveyErrorReason")]
+        Surveyerrorreason,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Surveyformcontextid for "surveyFormContextId"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class SurveyAggregationQuery {\n");
-
-            sb.Append("  Interval: ").Append(Interval).Append("\n");
-            sb.Append("  Granularity: ").Append(Granularity).Append("\n");
-            sb.Append("  TimeZone: ").Append(TimeZone).Append("\n");
-            sb.Append("  GroupBy: ").Append(GroupBy).Append("\n");
-            sb.Append("  Filter: ").Append(Filter).Append("\n");
-            sb.Append("  Metrics: ").Append(Metrics).Append("\n");
-            sb.Append("  FlattenMultivaluedDimensions: ").Append(FlattenMultivaluedDimensions).Append("\n");
-            sb.Append("  Views: ").Append(Views).Append("\n");
-            sb.Append("  AlternateTimeDimension: ").Append(AlternateTimeDimension).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "surveyFormContextId")]
+        Surveyformcontextid,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Surveyformid for "surveyFormId"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as SurveyAggregationQuery);
-        }
+        [EnumMember(Value = "surveyFormId")]
+        Surveyformid,
 
         /// <summary>
-        /// Returns true if SurveyAggregationQuery instances are equal
+        /// Enum Surveyformname for "surveyFormName"
         /// </summary>
-        /// <param name="other">Instance of SurveyAggregationQuery to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SurveyAggregationQuery other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Interval == other.Interval ||
-                    this.Interval != null &&
-                    this.Interval.Equals(other.Interval)
-                ) &&
-                (
-                    this.Granularity == other.Granularity ||
-                    this.Granularity != null &&
-                    this.Granularity.Equals(other.Granularity)
-                ) &&
-                (
-                    this.TimeZone == other.TimeZone ||
-                    this.TimeZone != null &&
-                    this.TimeZone.Equals(other.TimeZone)
-                ) &&
-                (
-                    this.GroupBy == other.GroupBy ||
-                    this.GroupBy != null &&
-                    this.GroupBy.SequenceEqual(other.GroupBy)
-                ) &&
-                (
-                    this.Filter == other.Filter ||
-                    this.Filter != null &&
-                    this.Filter.Equals(other.Filter)
-                ) &&
-                (
-                    this.Metrics == other.Metrics ||
-                    this.Metrics != null &&
-                    this.Metrics.SequenceEqual(other.Metrics)
-                ) &&
-                (
-                    this.FlattenMultivaluedDimensions == other.FlattenMultivaluedDimensions ||
-                    this.FlattenMultivaluedDimensions != null &&
-                    this.FlattenMultivaluedDimensions.Equals(other.FlattenMultivaluedDimensions)
-                ) &&
-                (
-                    this.Views == other.Views ||
-                    this.Views != null &&
-                    this.Views.SequenceEqual(other.Views)
-                ) &&
-                (
-                    this.AlternateTimeDimension == other.AlternateTimeDimension ||
-                    this.AlternateTimeDimension != null &&
-                    this.AlternateTimeDimension.Equals(other.AlternateTimeDimension)
-                );
-        }
+        [EnumMember(Value = "surveyFormName")]
+        Surveyformname,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Surveyid for "surveyId"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Interval != null)
-                    hash = hash * 59 + this.Interval.GetHashCode();
+        [EnumMember(Value = "surveyId")]
+        Surveyid,
 
-                if (this.Granularity != null)
-                    hash = hash * 59 + this.Granularity.GetHashCode();
+        /// <summary>
+        /// Enum Surveypartialresponse for "surveyPartialResponse"
+        /// </summary>
+        [EnumMember(Value = "surveyPartialResponse")]
+        Surveypartialresponse,
 
-                if (this.TimeZone != null)
-                    hash = hash * 59 + this.TimeZone.GetHashCode();
+        /// <summary>
+        /// Enum Surveypreviousstatus for "surveyPreviousStatus"
+        /// </summary>
+        [EnumMember(Value = "surveyPreviousStatus")]
+        Surveypreviousstatus,
 
-                if (this.GroupBy != null)
-                    hash = hash * 59 + this.GroupBy.GetHashCode();
+        /// <summary>
+        /// Enum Surveypromoterscore for "surveyPromoterScore"
+        /// </summary>
+        [EnumMember(Value = "surveyPromoterScore")]
+        Surveypromoterscore,
 
-                if (this.Filter != null)
-                    hash = hash * 59 + this.Filter.GetHashCode();
+        /// <summary>
+        /// Enum Surveyquestiongroupid for "surveyQuestionGroupId"
+        /// </summary>
+        [EnumMember(Value = "surveyQuestionGroupId")]
+        Surveyquestiongroupid,
 
-                if (this.Metrics != null)
-                    hash = hash * 59 + this.Metrics.GetHashCode();
+        /// <summary>
+        /// Enum Surveyquestionid for "surveyQuestionId"
+        /// </summary>
+        [EnumMember(Value = "surveyQuestionId")]
+        Surveyquestionid,
 
-                if (this.FlattenMultivaluedDimensions != null)
-                    hash = hash * 59 + this.FlattenMultivaluedDimensions.GetHashCode();
+        /// <summary>
+        /// Enum Surveystatus for "surveyStatus"
+        /// </summary>
+        [EnumMember(Value = "surveyStatus")]
+        Surveystatus,
 
-                if (this.Views != null)
-                    hash = hash * 59 + this.Views.GetHashCode();
+        /// <summary>
+        /// Enum Surveytype for "surveyType"
+        /// </summary>
+        [EnumMember(Value = "surveyType")]
+        Surveytype,
 
-                if (this.AlternateTimeDimension != null)
-                    hash = hash * 59 + this.AlternateTimeDimension.GetHashCode();
+        /// <summary>
+        /// Enum Teamid for "teamId"
+        /// </summary>
+        [EnumMember(Value = "teamId")]
+        Teamid,
 
-                return hash;
-            }
-        }
+        /// <summary>
+        /// Enum Userid for "userId"
+        /// </summary>
+        [EnumMember(Value = "userId")]
+        Userid,
+
+        /// <summary>
+        /// Enum Wrapupcode for "wrapUpCode"
+        /// </summary>
+        [EnumMember(Value = "wrapUpCode")]
+        Wrapupcode
+    }
+    /// <summary>
+    /// Gets or Sets Metrics
+    /// </summary>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum MetricsEnum
+    {
+        /// <summary>
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
+        /// </summary>
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
+
+        /// <summary>
+        /// Enum Nsurveyerrors for "nSurveyErrors"
+        /// </summary>
+        [EnumMember(Value = "nSurveyErrors")]
+        Nsurveyerrors,
+
+        /// <summary>
+        /// Enum Nsurveyfullresponses for "nSurveyFullResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyFullResponses")]
+        Nsurveyfullresponses,
+
+        /// <summary>
+        /// Enum Nsurveynpsdetractors for "nSurveyNpsDetractors"
+        /// </summary>
+        [EnumMember(Value = "nSurveyNpsDetractors")]
+        Nsurveynpsdetractors,
+
+        /// <summary>
+        /// Enum Nsurveynpspromoters for "nSurveyNpsPromoters"
+        /// </summary>
+        [EnumMember(Value = "nSurveyNpsPromoters")]
+        Nsurveynpspromoters,
+
+        /// <summary>
+        /// Enum Nsurveynpsresponses for "nSurveyNpsResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyNpsResponses")]
+        Nsurveynpsresponses,
+
+        /// <summary>
+        /// Enum Nsurveypartialresponses for "nSurveyPartialResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyPartialResponses")]
+        Nsurveypartialresponses,
+
+        /// <summary>
+        /// Enum Nsurveyquestiongroupresponses for "nSurveyQuestionGroupResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyQuestionGroupResponses")]
+        Nsurveyquestiongroupresponses,
+
+        /// <summary>
+        /// Enum Nsurveyquestionresponses for "nSurveyQuestionResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyQuestionResponses")]
+        Nsurveyquestionresponses,
+
+        /// <summary>
+        /// Enum Nsurveyresponses for "nSurveyResponses"
+        /// </summary>
+        [EnumMember(Value = "nSurveyResponses")]
+        Nsurveyresponses,
+
+        /// <summary>
+        /// Enum Nsurveysabandoned for "nSurveysAbandoned"
+        /// </summary>
+        [EnumMember(Value = "nSurveysAbandoned")]
+        Nsurveysabandoned,
+
+        /// <summary>
+        /// Enum Nsurveysdeleted for "nSurveysDeleted"
+        /// </summary>
+        [EnumMember(Value = "nSurveysDeleted")]
+        Nsurveysdeleted,
+
+        /// <summary>
+        /// Enum Nsurveysexpired for "nSurveysExpired"
+        /// </summary>
+        [EnumMember(Value = "nSurveysExpired")]
+        Nsurveysexpired,
+
+        /// <summary>
+        /// Enum Nsurveyssent for "nSurveysSent"
+        /// </summary>
+        [EnumMember(Value = "nSurveysSent")]
+        Nsurveyssent,
+
+        /// <summary>
+        /// Enum Nsurveysstarted for "nSurveysStarted"
+        /// </summary>
+        [EnumMember(Value = "nSurveysStarted")]
+        Nsurveysstarted,
+
+        /// <summary>
+        /// Enum Nvoicesurveys for "nVoiceSurveys"
+        /// </summary>
+        [EnumMember(Value = "nVoiceSurveys")]
+        Nvoicesurveys,
+
+        /// <summary>
+        /// Enum Nwebsurveys for "nWebSurveys"
+        /// </summary>
+        [EnumMember(Value = "nWebSurveys")]
+        Nwebsurveys,
+
+        /// <summary>
+        /// Enum Osurveyquestiongroupscore for "oSurveyQuestionGroupScore"
+        /// </summary>
+        [EnumMember(Value = "oSurveyQuestionGroupScore")]
+        Osurveyquestiongroupscore,
+
+        /// <summary>
+        /// Enum Osurveyquestionscore for "oSurveyQuestionScore"
+        /// </summary>
+        [EnumMember(Value = "oSurveyQuestionScore")]
+        Osurveyquestionscore,
+
+        /// <summary>
+        /// Enum Osurveytotalscore for "oSurveyTotalScore"
+        /// </summary>
+        [EnumMember(Value = "oSurveyTotalScore")]
+        Osurveytotalscore
+    }
+    /// <summary>
+    /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+    /// </summary>
+    /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum AlternateTimeDimensionEnum
+    {
+        /// <summary>
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
+        /// </summary>
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
+
+        /// <summary>
+        /// Enum Eventtime for "eventTime"
+        /// </summary>
+        [EnumMember(Value = "eventTime")]
+        Eventtime,
+
+        /// <summary>
+        /// Enum Surveycreateddate for "surveyCreatedDate"
+        /// </summary>
+        [EnumMember(Value = "surveyCreatedDate")]
+        Surveycreateddate
+    }
+    /// <summary>
+    /// Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.
+    /// </summary>
+    /// <value>Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \"eventTime\" uses the actual time of the data event.</value>
+    [DataMember(Name = "alternateTimeDimension", EmitDefaultValue = false)]
+    public AlternateTimeDimensionEnum? AlternateTimeDimension { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SurveyAggregationQuery" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected SurveyAggregationQuery() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SurveyAggregationQuery" /> class.
+    /// </summary>
+    /// <param name="Interval">Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss (required).</param>
+    /// <param name="Granularity">Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H.</param>
+    /// <param name="TimeZone">Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London.</param>
+    /// <param name="GroupBy">Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group..</param>
+    /// <param name="Filter">Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters.</param>
+    /// <param name="Metrics">Behaves like a SQL SELECT clause. Only named metrics will be retrieved. (required).</param>
+    /// <param name="FlattenMultivaluedDimensions">Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;).</param>
+    /// <param name="Views">Custom derived metric views.</param>
+    /// <param name="AlternateTimeDimension">Dimension to use as the alternative timestamp for data in the aggregate.  Choosing \&quot;eventTime\&quot; uses the actual time of the data event..</param>
+    public SurveyAggregationQuery(string Interval = null, string Granularity = null, string TimeZone = null, List<GroupByEnum> GroupBy = null, SurveyAggregateQueryFilter Filter = null, List<MetricsEnum> Metrics = null, bool? FlattenMultivaluedDimensions = null, List<SurveyAggregationView> Views = null, AlternateTimeDimensionEnum? AlternateTimeDimension = null)
+    {
+        this.Interval = Interval;
+        this.Granularity = Granularity;
+        this.TimeZone = TimeZone;
+        this.GroupBy = GroupBy;
+        this.Filter = Filter;
+        this.Metrics = Metrics;
+        this.FlattenMultivaluedDimensions = FlattenMultivaluedDimensions;
+        this.Views = Views;
+        this.AlternateTimeDimension = AlternateTimeDimension;
+
     }
 
+
+
+    /// <summary>
+    /// Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss
+    /// </summary>
+    /// <value>Behaves like one clause in a SQL WHERE. Specifies the date and time range of data being queried. Intervals are represented as an ISO-8601 string. For example: YYYY-MM-DDThh:mm:ss/YYYY-MM-DDThh:mm:ss</value>
+    [DataMember(Name = "interval", EmitDefaultValue = false)]
+    public string Interval { get; set; }
+
+
+
+    /// <summary>
+    /// Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H
+    /// </summary>
+    /// <value>Granularity aggregates metrics into subpartitions within the time interval specified. The default granularity is the same duration as the interval. Periods are represented as an ISO-8601 string. For example: P1D or P1DT12H</value>
+    [DataMember(Name = "granularity", EmitDefaultValue = false)]
+    public string Granularity { get; set; }
+
+
+
+    /// <summary>
+    /// Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London
+    /// </summary>
+    /// <value>Time zone context used to calculate response intervals (this allows resolving DST changes). The interval offset is used even when timeZone is specified. Default is UTC. Time zones are represented as a string of the zone name as found in the IANA time zone database. For example: UTC, Etc/UTC, or Europe/London</value>
+    [DataMember(Name = "timeZone", EmitDefaultValue = false)]
+    public string TimeZone { get; set; }
+
+
+
+    /// <summary>
+    /// Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.
+    /// </summary>
+    /// <value>Behaves like a SQL GROUPBY. Allows for multiple levels of grouping as a list of dimensions. Partitions resulting aggregate computations into distinct named subgroups rather than across the entire result set as if it were one group.</value>
+    [DataMember(Name = "groupBy", EmitDefaultValue = false)]
+    public List<GroupByEnum> GroupBy { get; set; }
+
+
+
+    /// <summary>
+    /// Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters
+    /// </summary>
+    /// <value>Behaves like a SQL WHERE clause. This is ANDed with the interval parameter. Expresses boolean logical predicates as well as dimensional filters</value>
+    [DataMember(Name = "filter", EmitDefaultValue = false)]
+    public SurveyAggregateQueryFilter Filter { get; set; }
+
+
+
+    /// <summary>
+    /// Behaves like a SQL SELECT clause. Only named metrics will be retrieved.
+    /// </summary>
+    /// <value>Behaves like a SQL SELECT clause. Only named metrics will be retrieved.</value>
+    [DataMember(Name = "metrics", EmitDefaultValue = false)]
+    public List<MetricsEnum> Metrics { get; set; }
+
+
+
+    /// <summary>
+    /// Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)
+    /// </summary>
+    /// <value>Flattens any multivalued dimensions used in response groups (e.g. [&#39;a&#39;,&#39;b&#39;,&#39;c&#39;]-&gt;&#39;a,b,c&#39;)</value>
+    [DataMember(Name = "flattenMultivaluedDimensions", EmitDefaultValue = false)]
+    public bool? FlattenMultivaluedDimensions { get; set; }
+
+
+
+    /// <summary>
+    /// Custom derived metric views
+    /// </summary>
+    /// <value>Custom derived metric views</value>
+    [DataMember(Name = "views", EmitDefaultValue = false)]
+    public List<SurveyAggregationView> Views { get; set; }
+
+
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class SurveyAggregationQuery {\n");
+
+        sb.Append("  Interval: ").Append(Interval).Append("\n");
+        sb.Append("  Granularity: ").Append(Granularity).Append("\n");
+        sb.Append("  TimeZone: ").Append(TimeZone).Append("\n");
+        sb.Append("  GroupBy: ").Append(GroupBy).Append("\n");
+        sb.Append("  Filter: ").Append(Filter).Append("\n");
+        sb.Append("  Metrics: ").Append(Metrics).Append("\n");
+        sb.Append("  FlattenMultivaluedDimensions: ").Append(FlattenMultivaluedDimensions).Append("\n");
+        sb.Append("  Views: ").Append(Views).Append("\n");
+        sb.Append("  AlternateTimeDimension: ").Append(AlternateTimeDimension).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as SurveyAggregationQuery);
+    }
+
+    /// <summary>
+    /// Returns true if SurveyAggregationQuery instances are equal
+    /// </summary>
+    /// <param name="other">Instance of SurveyAggregationQuery to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(SurveyAggregationQuery other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Interval == other.Interval ||
+                this.Interval != null &&
+                this.Interval.Equals(other.Interval)
+            ) &&
+            (
+                this.Granularity == other.Granularity ||
+                this.Granularity != null &&
+                this.Granularity.Equals(other.Granularity)
+            ) &&
+            (
+                this.TimeZone == other.TimeZone ||
+                this.TimeZone != null &&
+                this.TimeZone.Equals(other.TimeZone)
+            ) &&
+            (
+                this.GroupBy == other.GroupBy ||
+                this.GroupBy != null &&
+                this.GroupBy.SequenceEqual(other.GroupBy)
+            ) &&
+            (
+                this.Filter == other.Filter ||
+                this.Filter != null &&
+                this.Filter.Equals(other.Filter)
+            ) &&
+            (
+                this.Metrics == other.Metrics ||
+                this.Metrics != null &&
+                this.Metrics.SequenceEqual(other.Metrics)
+            ) &&
+            (
+                this.FlattenMultivaluedDimensions == other.FlattenMultivaluedDimensions ||
+                this.FlattenMultivaluedDimensions != null &&
+                this.FlattenMultivaluedDimensions.Equals(other.FlattenMultivaluedDimensions)
+            ) &&
+            (
+                this.Views == other.Views ||
+                this.Views != null &&
+                this.Views.SequenceEqual(other.Views)
+            ) &&
+            (
+                this.AlternateTimeDimension == other.AlternateTimeDimension ||
+                this.AlternateTimeDimension != null &&
+                this.AlternateTimeDimension.Equals(other.AlternateTimeDimension)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Interval != null)
+            {
+                hash = hash * 59 + this.Interval.GetHashCode();
+            }
+
+            if (this.Granularity != null)
+            {
+                hash = hash * 59 + this.Granularity.GetHashCode();
+            }
+
+            if (this.TimeZone != null)
+            {
+                hash = hash * 59 + this.TimeZone.GetHashCode();
+            }
+
+            if (this.GroupBy != null)
+            {
+                hash = hash * 59 + this.GroupBy.GetHashCode();
+            }
+
+            if (this.Filter != null)
+            {
+                hash = hash * 59 + this.Filter.GetHashCode();
+            }
+
+            if (this.Metrics != null)
+            {
+                hash = hash * 59 + this.Metrics.GetHashCode();
+            }
+
+            if (this.FlattenMultivaluedDimensions != null)
+            {
+                hash = hash * 59 + this.FlattenMultivaluedDimensions.GetHashCode();
+            }
+
+            if (this.Views != null)
+            {
+                hash = hash * 59 + this.Views.GetHashCode();
+            }
+
+            if (this.AlternateTimeDimension != null)
+            {
+                hash = hash * 59 + this.AlternateTimeDimension.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

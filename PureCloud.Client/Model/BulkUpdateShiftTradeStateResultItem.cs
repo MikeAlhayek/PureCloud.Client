@@ -2,312 +2,324 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// BulkUpdateShiftTradeStateResultItem
+/// </summary>
+[DataContract]
+public partial class BulkUpdateShiftTradeStateResultItem : IEquatable<BulkUpdateShiftTradeStateResultItem>
 {
     /// <summary>
-    /// BulkUpdateShiftTradeStateResultItem
+    /// The state of the shift trade after the update request is processed
     /// </summary>
-    [DataContract]
-    public partial class BulkUpdateShiftTradeStateResultItem :  IEquatable<BulkUpdateShiftTradeStateResultItem>
+    /// <value>The state of the shift trade after the update request is processed</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum StateEnum
     {
         /// <summary>
-        /// The state of the shift trade after the update request is processed
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>The state of the shift trade after the update request is processed</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum StateEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Unmatched for "Unmatched"
-            /// </summary>
-            [EnumMember(Value = "Unmatched")]
-            Unmatched,
-            
-            /// <summary>
-            /// Enum Matched for "Matched"
-            /// </summary>
-            [EnumMember(Value = "Matched")]
-            Matched,
-            
-            /// <summary>
-            /// Enum Approved for "Approved"
-            /// </summary>
-            [EnumMember(Value = "Approved")]
-            Approved,
-            
-            /// <summary>
-            /// Enum Denied for "Denied"
-            /// </summary>
-            [EnumMember(Value = "Denied")]
-            Denied,
-            
-            /// <summary>
-            /// Enum Expired for "Expired"
-            /// </summary>
-            [EnumMember(Value = "Expired")]
-            Expired,
-            
-            /// <summary>
-            /// Enum Canceled for "Canceled"
-            /// </summary>
-            [EnumMember(Value = "Canceled")]
-            Canceled
-        }
-        /// <summary>
-        /// The reason the update failed, if applicable
-        /// </summary>
-        /// <value>The reason the update failed, if applicable</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum FailureReasonEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Initiatingagentschedulenotfound for "InitiatingAgentScheduleNotFound"
-            /// </summary>
-            [EnumMember(Value = "InitiatingAgentScheduleNotFound")]
-            Initiatingagentschedulenotfound,
-            
-            /// <summary>
-            /// Enum Initiatingagentshifthasexternalactivities for "InitiatingAgentShiftHasExternalActivities"
-            /// </summary>
-            [EnumMember(Value = "InitiatingAgentShiftHasExternalActivities")]
-            Initiatingagentshifthasexternalactivities,
-            
-            /// <summary>
-            /// Enum Initiatingagentshiftnotfound for "InitiatingAgentShiftNotFound"
-            /// </summary>
-            [EnumMember(Value = "InitiatingAgentShiftNotFound")]
-            Initiatingagentshiftnotfound,
-            
-            /// <summary>
-            /// Enum Receivingagentnotfound for "ReceivingAgentNotFound"
-            /// </summary>
-            [EnumMember(Value = "ReceivingAgentNotFound")]
-            Receivingagentnotfound,
-            
-            /// <summary>
-            /// Enum Receivingagentschedulenotfound for "ReceivingAgentScheduleNotFound"
-            /// </summary>
-            [EnumMember(Value = "ReceivingAgentScheduleNotFound")]
-            Receivingagentschedulenotfound,
-            
-            /// <summary>
-            /// Enum Receivingagentshifthasexternalactivities for "ReceivingAgentShiftHasExternalActivities"
-            /// </summary>
-            [EnumMember(Value = "ReceivingAgentShiftHasExternalActivities")]
-            Receivingagentshifthasexternalactivities,
-            
-            /// <summary>
-            /// Enum Receivingagentshiftnotfound for "ReceivingAgentShiftNotFound"
-            /// </summary>
-            [EnumMember(Value = "ReceivingAgentShiftNotFound")]
-            Receivingagentshiftnotfound,
-            
-            /// <summary>
-            /// Enum Schedulenotpublished for "ScheduleNotPublished"
-            /// </summary>
-            [EnumMember(Value = "ScheduleNotPublished")]
-            Schedulenotpublished,
-            
-            /// <summary>
-            /// Enum Transitionnotallowed for "TransitionNotAllowed"
-            /// </summary>
-            [EnumMember(Value = "TransitionNotAllowed")]
-            Transitionnotallowed
-        }
-        /// <summary>
-        /// The state of the shift trade after the update request is processed
-        /// </summary>
-        /// <value>The state of the shift trade after the update request is processed</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
-        /// <summary>
-        /// The reason the update failed, if applicable
-        /// </summary>
-        /// <value>The reason the update failed, if applicable</value>
-        [DataMember(Name="failureReason", EmitDefaultValue=false)]
-        public FailureReasonEnum? FailureReason { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="BulkUpdateShiftTradeStateResultItem" /> class.
-        /// </summary>
-        /// <param name="State">The state of the shift trade after the update request is processed.</param>
-        /// <param name="ReviewedBy">The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process.</param>
-        /// <param name="ReviewedDate">The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
-        /// <param name="FailureReason">The reason the update failed, if applicable.</param>
-        /// <param name="Metadata">Version metadata for the shift trade.</param>
-        public BulkUpdateShiftTradeStateResultItem(StateEnum? State = null, UserReference ReviewedBy = null, DateTime? ReviewedDate = null, FailureReasonEnum? FailureReason = null, WfmVersionedEntityMetadata Metadata = null)
-        {
-            this.State = State;
-            this.ReviewedBy = ReviewedBy;
-            this.ReviewedDate = ReviewedDate;
-            this.FailureReason = FailureReason;
-            this.Metadata = Metadata;
-            
-        }
-        
-
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// The globally unique identifier for the object.
+        /// Enum Unmatched for "Unmatched"
         /// </summary>
-        /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
-        public string Id { get; private set; }
-
-
-
-
+        [EnumMember(Value = "Unmatched")]
+        Unmatched,
 
         /// <summary>
-        /// The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process
+        /// Enum Matched for "Matched"
         /// </summary>
-        /// <value>The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process</value>
-        [DataMember(Name="reviewedBy", EmitDefaultValue=false)]
-        public UserReference ReviewedBy { get; set; }
-
-
+        [EnumMember(Value = "Matched")]
+        Matched,
 
         /// <summary>
-        /// The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+        /// Enum Approved for "Approved"
         /// </summary>
-        /// <value>The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="reviewedDate", EmitDefaultValue=false)]
-        public DateTime? ReviewedDate { get; set; }
-
-
-
-
+        [EnumMember(Value = "Approved")]
+        Approved,
 
         /// <summary>
-        /// Version metadata for the shift trade
+        /// Enum Denied for "Denied"
         /// </summary>
-        /// <value>Version metadata for the shift trade</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
-        public WfmVersionedEntityMetadata Metadata { get; set; }
-
+        [EnumMember(Value = "Denied")]
+        Denied,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Expired for "Expired"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class BulkUpdateShiftTradeStateResultItem {\n");
-
-            sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  ReviewedBy: ").Append(ReviewedBy).Append("\n");
-            sb.Append("  ReviewedDate: ").Append(ReviewedDate).Append("\n");
-            sb.Append("  FailureReason: ").Append(FailureReason).Append("\n");
-            sb.Append("  Metadata: ").Append(Metadata).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "Expired")]
+        Expired,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Canceled for "Canceled"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as BulkUpdateShiftTradeStateResultItem);
-        }
+        [EnumMember(Value = "Canceled")]
+        Canceled
+    }
+    /// <summary>
+    /// The reason the update failed, if applicable
+    /// </summary>
+    /// <value>The reason the update failed, if applicable</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum FailureReasonEnum
+    {
+        /// <summary>
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
+        /// </summary>
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Returns true if BulkUpdateShiftTradeStateResultItem instances are equal
+        /// Enum Initiatingagentschedulenotfound for "InitiatingAgentScheduleNotFound"
         /// </summary>
-        /// <param name="other">Instance of BulkUpdateShiftTradeStateResultItem to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(BulkUpdateShiftTradeStateResultItem other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
-                ) &&
-                (
-                    this.State == other.State ||
-                    this.State != null &&
-                    this.State.Equals(other.State)
-                ) &&
-                (
-                    this.ReviewedBy == other.ReviewedBy ||
-                    this.ReviewedBy != null &&
-                    this.ReviewedBy.Equals(other.ReviewedBy)
-                ) &&
-                (
-                    this.ReviewedDate == other.ReviewedDate ||
-                    this.ReviewedDate != null &&
-                    this.ReviewedDate.Equals(other.ReviewedDate)
-                ) &&
-                (
-                    this.FailureReason == other.FailureReason ||
-                    this.FailureReason != null &&
-                    this.FailureReason.Equals(other.FailureReason)
-                ) &&
-                (
-                    this.Metadata == other.Metadata ||
-                    this.Metadata != null &&
-                    this.Metadata.Equals(other.Metadata)
-                );
-        }
+        [EnumMember(Value = "InitiatingAgentScheduleNotFound")]
+        Initiatingagentschedulenotfound,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Initiatingagentshifthasexternalactivities for "InitiatingAgentShiftHasExternalActivities"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+        [EnumMember(Value = "InitiatingAgentShiftHasExternalActivities")]
+        Initiatingagentshifthasexternalactivities,
 
-                if (this.State != null)
-                    hash = hash * 59 + this.State.GetHashCode();
+        /// <summary>
+        /// Enum Initiatingagentshiftnotfound for "InitiatingAgentShiftNotFound"
+        /// </summary>
+        [EnumMember(Value = "InitiatingAgentShiftNotFound")]
+        Initiatingagentshiftnotfound,
 
-                if (this.ReviewedBy != null)
-                    hash = hash * 59 + this.ReviewedBy.GetHashCode();
+        /// <summary>
+        /// Enum Receivingagentnotfound for "ReceivingAgentNotFound"
+        /// </summary>
+        [EnumMember(Value = "ReceivingAgentNotFound")]
+        Receivingagentnotfound,
 
-                if (this.ReviewedDate != null)
-                    hash = hash * 59 + this.ReviewedDate.GetHashCode();
+        /// <summary>
+        /// Enum Receivingagentschedulenotfound for "ReceivingAgentScheduleNotFound"
+        /// </summary>
+        [EnumMember(Value = "ReceivingAgentScheduleNotFound")]
+        Receivingagentschedulenotfound,
 
-                if (this.FailureReason != null)
-                    hash = hash * 59 + this.FailureReason.GetHashCode();
+        /// <summary>
+        /// Enum Receivingagentshifthasexternalactivities for "ReceivingAgentShiftHasExternalActivities"
+        /// </summary>
+        [EnumMember(Value = "ReceivingAgentShiftHasExternalActivities")]
+        Receivingagentshifthasexternalactivities,
 
-                if (this.Metadata != null)
-                    hash = hash * 59 + this.Metadata.GetHashCode();
+        /// <summary>
+        /// Enum Receivingagentshiftnotfound for "ReceivingAgentShiftNotFound"
+        /// </summary>
+        [EnumMember(Value = "ReceivingAgentShiftNotFound")]
+        Receivingagentshiftnotfound,
 
-                return hash;
-            }
-        }
+        /// <summary>
+        /// Enum Schedulenotpublished for "ScheduleNotPublished"
+        /// </summary>
+        [EnumMember(Value = "ScheduleNotPublished")]
+        Schedulenotpublished,
+
+        /// <summary>
+        /// Enum Transitionnotallowed for "TransitionNotAllowed"
+        /// </summary>
+        [EnumMember(Value = "TransitionNotAllowed")]
+        Transitionnotallowed
+    }
+    /// <summary>
+    /// The state of the shift trade after the update request is processed
+    /// </summary>
+    /// <value>The state of the shift trade after the update request is processed</value>
+    [DataMember(Name = "state", EmitDefaultValue = false)]
+    public StateEnum? State { get; set; }
+    /// <summary>
+    /// The reason the update failed, if applicable
+    /// </summary>
+    /// <value>The reason the update failed, if applicable</value>
+    [DataMember(Name = "failureReason", EmitDefaultValue = false)]
+    public FailureReasonEnum? FailureReason { get; set; }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="BulkUpdateShiftTradeStateResultItem" /> class.
+    /// </summary>
+    /// <param name="State">The state of the shift trade after the update request is processed.</param>
+    /// <param name="ReviewedBy">The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process.</param>
+    /// <param name="ReviewedDate">The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
+    /// <param name="FailureReason">The reason the update failed, if applicable.</param>
+    /// <param name="Metadata">Version metadata for the shift trade.</param>
+    public BulkUpdateShiftTradeStateResultItem(StateEnum? State = null, UserReference ReviewedBy = null, DateTime? ReviewedDate = null, FailureReasonEnum? FailureReason = null, WfmVersionedEntityMetadata Metadata = null)
+    {
+        this.State = State;
+        this.ReviewedBy = ReviewedBy;
+        this.ReviewedDate = ReviewedDate;
+        this.FailureReason = FailureReason;
+        this.Metadata = Metadata;
+
     }
 
+
+
+    /// <summary>
+    /// The globally unique identifier for the object.
+    /// </summary>
+    /// <value>The globally unique identifier for the object.</value>
+    [DataMember(Name = "id", EmitDefaultValue = false)]
+    public string Id { get; private set; }
+
+
+
+
+
+    /// <summary>
+    /// The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process
+    /// </summary>
+    /// <value>The user who reviewed the request, if applicable. The id may be &#39;System&#39; if it was an automated process</value>
+    [DataMember(Name = "reviewedBy", EmitDefaultValue = false)]
+    public UserReference ReviewedBy { get; set; }
+
+
+
+    /// <summary>
+    /// The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
+    /// </summary>
+    /// <value>The date the request was reviewed, if applicable. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
+    [DataMember(Name = "reviewedDate", EmitDefaultValue = false)]
+    public DateTime? ReviewedDate { get; set; }
+
+
+
+
+
+    /// <summary>
+    /// Version metadata for the shift trade
+    /// </summary>
+    /// <value>Version metadata for the shift trade</value>
+    [DataMember(Name = "metadata", EmitDefaultValue = false)]
+    public WfmVersionedEntityMetadata Metadata { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class BulkUpdateShiftTradeStateResultItem {\n");
+
+        sb.Append("  Id: ").Append(Id).Append("\n");
+        sb.Append("  State: ").Append(State).Append("\n");
+        sb.Append("  ReviewedBy: ").Append(ReviewedBy).Append("\n");
+        sb.Append("  ReviewedDate: ").Append(ReviewedDate).Append("\n");
+        sb.Append("  FailureReason: ").Append(FailureReason).Append("\n");
+        sb.Append("  Metadata: ").Append(Metadata).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as BulkUpdateShiftTradeStateResultItem);
+    }
+
+    /// <summary>
+    /// Returns true if BulkUpdateShiftTradeStateResultItem instances are equal
+    /// </summary>
+    /// <param name="other">Instance of BulkUpdateShiftTradeStateResultItem to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(BulkUpdateShiftTradeStateResultItem other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Id == other.Id ||
+                this.Id != null &&
+                this.Id.Equals(other.Id)
+            ) &&
+            (
+                this.State == other.State ||
+                this.State != null &&
+                this.State.Equals(other.State)
+            ) &&
+            (
+                this.ReviewedBy == other.ReviewedBy ||
+                this.ReviewedBy != null &&
+                this.ReviewedBy.Equals(other.ReviewedBy)
+            ) &&
+            (
+                this.ReviewedDate == other.ReviewedDate ||
+                this.ReviewedDate != null &&
+                this.ReviewedDate.Equals(other.ReviewedDate)
+            ) &&
+            (
+                this.FailureReason == other.FailureReason ||
+                this.FailureReason != null &&
+                this.FailureReason.Equals(other.FailureReason)
+            ) &&
+            (
+                this.Metadata == other.Metadata ||
+                this.Metadata != null &&
+                this.Metadata.Equals(other.Metadata)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Id != null)
+            {
+                hash = hash * 59 + this.Id.GetHashCode();
+            }
+
+            if (this.State != null)
+            {
+                hash = hash * 59 + this.State.GetHashCode();
+            }
+
+            if (this.ReviewedBy != null)
+            {
+                hash = hash * 59 + this.ReviewedBy.GetHashCode();
+            }
+
+            if (this.ReviewedDate != null)
+            {
+                hash = hash * 59 + this.ReviewedDate.GetHashCode();
+            }
+
+            if (this.FailureReason != null)
+            {
+                hash = hash * 59 + this.FailureReason.GetHashCode();
+            }
+
+            if (this.Metadata != null)
+            {
+                hash = hash * 59 + this.Metadata.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

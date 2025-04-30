@@ -2,1435 +2,1547 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloudPlatform.Client.V2.Api;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface IWidgetsApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Delete a Widget deployment
     /// </summary>
-    public interface IWidgetsApi : IApiAccessor
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns></returns>
+    [Obsolete]
+    void DeleteWidgetsDeployment(string deploymentId);
+
+    /// <summary>
+    /// Delete a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    [Obsolete]
+    ApiResponse<Object> DeleteWidgetsDeploymentWithHttpInfo(string deploymentId);
+
+    /// <summary>
+    /// Get a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    WidgetDeployment GetWidgetsDeployment(string deploymentId);
+
+    /// <summary>
+    /// Get a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    ApiResponse<WidgetDeployment> GetWidgetsDeploymentWithHttpInfo(string deploymentId);
+
+    /// <summary>
+    /// List Widget deployments
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    WidgetDeploymentEntityListing GetWidgetsDeployments();
+
+    /// <summary>
+    /// List Widget deployments
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    ApiResponse<WidgetDeploymentEntityListing> GetWidgetsDeploymentsWithHttpInfo();
+
+    /// <summary>
+    /// Create Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    WidgetDeployment PostWidgetsDeployments(WidgetDeployment body);
+
+    /// <summary>
+    /// Create Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    ApiResponse<WidgetDeployment> PostWidgetsDeploymentsWithHttpInfo(WidgetDeployment body);
+
+    /// <summary>
+    /// Update a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    WidgetDeployment PutWidgetsDeployment(string deploymentId, WidgetDeployment body);
+
+    /// <summary>
+    /// Update a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    ApiResponse<WidgetDeployment> PutWidgetsDeploymentWithHttpInfo(string deploymentId, WidgetDeployment body);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Delete a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of void</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task DeleteWidgetsDeploymentAsync(string deploymentId);
+
+    /// <summary>
+    /// Delete a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of ApiResponse</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWidgetsDeploymentAsyncWithHttpInfo(string deploymentId);
+
+    /// <summary>
+    /// Get a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<WidgetDeployment> GetWidgetsDeploymentAsync(string deploymentId);
+
+    /// <summary>
+    /// Get a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> GetWidgetsDeploymentAsyncWithHttpInfo(string deploymentId);
+
+    /// <summary>
+    /// List Widget deployments
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<WidgetDeploymentEntityListing> GetWidgetsDeploymentsAsync();
+
+    /// <summary>
+    /// List Widget deployments
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (WidgetDeploymentEntityListing)</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<ApiResponse<WidgetDeploymentEntityListing>> GetWidgetsDeploymentsAsyncWithHttpInfo();
+
+    /// <summary>
+    /// Create Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<WidgetDeployment> PostWidgetsDeploymentsAsync(WidgetDeployment body);
+
+    /// <summary>
+    /// Create Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PostWidgetsDeploymentsAsyncWithHttpInfo(WidgetDeployment body);
+
+    /// <summary>
+    /// Update a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<WidgetDeployment> PutWidgetsDeploymentAsync(string deploymentId, WidgetDeployment body);
+
+    /// <summary>
+    /// Update a Widget deployment
+    /// </summary>
+    /// <remarks>
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PutWidgetsDeploymentAsyncWithHttpInfo(string deploymentId, WidgetDeployment body);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class WidgetsApi : IWidgetsApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WidgetsApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public WidgetsApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Delete a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns></returns>
-        [Obsolete]
-        void DeleteWidgetsDeployment (string deploymentId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Delete a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        [Obsolete]
-        ApiResponse<Object> DeleteWidgetsDeploymentWithHttpInfo (string deploymentId);
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WidgetsApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public WidgetsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Get a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        WidgetDeployment GetWidgetsDeployment (string deploymentId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Get a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        ApiResponse<WidgetDeployment> GetWidgetsDeploymentWithHttpInfo (string deploymentId);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        /// <summary>
-        /// List Widget deployments
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        WidgetDeploymentEntityListing GetWidgetsDeployments ();
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        /// <summary>
-        /// List Widget deployments
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        ApiResponse<WidgetDeploymentEntityListing> GetWidgetsDeploymentsWithHttpInfo ();
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        /// <summary>
-        /// Create Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        WidgetDeployment PostWidgetsDeployments (WidgetDeployment body);
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        /// <summary>
-        /// Create Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        ApiResponse<WidgetDeployment> PostWidgetsDeploymentsWithHttpInfo (WidgetDeployment body);
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        /// <summary>
-        /// Update a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        WidgetDeployment PutWidgetsDeployment (string deploymentId, WidgetDeployment body);
 
-        /// <summary>
-        /// Update a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        ApiResponse<WidgetDeployment> PutWidgetsDeploymentWithHttpInfo (string deploymentId, WidgetDeployment body);
+    /// <summary>
+    /// Delete a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns></returns>
+    [Obsolete]
+    public void DeleteWidgetsDeployment(string deploymentId)
+    {
+        DeleteWidgetsDeploymentWithHttpInfo(deploymentId);
+    }
 
-        #endregion Synchronous Operations
+    /// <summary>
+    /// Delete a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>ApiResponse of Object(void)</returns>
+    [Obsolete]
+    public ApiResponse<Object> DeleteWidgetsDeploymentWithHttpInfo(string deploymentId)
+    {
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->DeleteWidgetsDeployment");
+        }
 
-        #region Asynchronous Operations
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-        /// <summary>
-        /// Delete a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of void</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task DeleteWidgetsDeploymentAsync (string deploymentId);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-        /// <summary>
-        /// Delete a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of ApiResponse</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWidgetsDeploymentAsyncWithHttpInfo (string deploymentId);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-        /// <summary>
-        /// Get a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<WidgetDeployment> GetWidgetsDeploymentAsync (string deploymentId);
+            "application/json"
 
-        /// <summary>
-        /// Get a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> GetWidgetsDeploymentAsyncWithHttpInfo (string deploymentId);
 
-        /// <summary>
-        /// List Widget deployments
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<WidgetDeploymentEntityListing> GetWidgetsDeploymentsAsync ();
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
 
-        /// <summary>
-        /// List Widget deployments
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (WidgetDeploymentEntityListing)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<WidgetDeploymentEntityListing>> GetWidgetsDeploymentsAsyncWithHttpInfo ();
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-        /// <summary>
-        /// Create Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<WidgetDeployment> PostWidgetsDeploymentsAsync (WidgetDeployment body);
+        // Path params
+        if (deploymentId != null)
+        {
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+        }
 
-        /// <summary>
-        /// Create Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PostWidgetsDeploymentsAsyncWithHttpInfo (WidgetDeployment body);
+        // Query params
 
-        /// <summary>
-        /// Update a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<WidgetDeployment> PutWidgetsDeploymentAsync (string deploymentId, WidgetDeployment body);
+        // Header params
 
-        /// <summary>
-        /// Update a Widget deployment
-        /// </summary>
-        /// <remarks>
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PutWidgetsDeploymentAsyncWithHttpInfo (string deploymentId, WidgetDeployment body);
+        // Form params
 
-        #endregion Asynchronous Operations
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Delete a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of void</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task DeleteWidgetsDeploymentAsync(string deploymentId)
+    {
+        await DeleteWidgetsDeploymentAsyncWithHttpInfo(deploymentId);
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Delete a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
     /// </summary>
-    public partial class WidgetsApi : IWidgetsApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of ApiResponse</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWidgetsDeploymentAsyncWithHttpInfo(string deploymentId)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WidgetsApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public WidgetsApi(String basePath)
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
         {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
-
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->DeleteWidgetsDeployment");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WidgetsApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public WidgetsApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (deploymentId != null)
         {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-            // do nothing
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
-        {
-            return this.Configuration.DefaultHeader;
-        }
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
-        }
-
-
-        /// <summary>
-        /// Delete a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns></returns>
-        [Obsolete]
-        public void DeleteWidgetsDeployment (string deploymentId)
-        {
-             DeleteWidgetsDeploymentWithHttpInfo(deploymentId);
-        }
-
-        /// <summary>
-        /// Delete a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>ApiResponse of Object(void)</returns>
-        [Obsolete]
-        public ApiResponse<Object> DeleteWidgetsDeploymentWithHttpInfo (string deploymentId)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->DeleteWidgetsDeployment");
-
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Delete a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of void</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task DeleteWidgetsDeploymentAsync (string deploymentId)
+        if (localVarStatusCode >= 400)
         {
-             await DeleteWidgetsDeploymentAsyncWithHttpInfo(deploymentId);
-
+            throw new ApiException(localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Delete a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of ApiResponse</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<Object>> DeleteWidgetsDeploymentAsyncWithHttpInfo (string deploymentId)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->DeleteWidgetsDeployment");
-            
-
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Delete, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Object>(localVarStatusCode,
-                localVarHeaders,
-                null,
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Get a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        public WidgetDeployment GetWidgetsDeployment (string deploymentId)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<WidgetDeployment> localVarResponse = GetWidgetsDeploymentWithHttpInfo(deploymentId);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling DeleteWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Get a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        public ApiResponse< WidgetDeployment > GetWidgetsDeploymentWithHttpInfo (string deploymentId)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->GetWidgetsDeployment");
-
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        return new ApiResponse<Object>(localVarStatusCode,
+            localVarHeaders,
+            null,
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    /// <summary>
+    /// Get a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    public WidgetDeployment GetWidgetsDeployment(string deploymentId)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = GetWidgetsDeploymentWithHttpInfo(deploymentId);
+        return localVarResponse.Data;
+    }
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<WidgetDeployment> GetWidgetsDeploymentAsync (string deploymentId)
+    /// <summary>
+    /// Get a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    public ApiResponse<WidgetDeployment> GetWidgetsDeploymentWithHttpInfo(string deploymentId)
+    {
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
         {
-             ApiResponse<WidgetDeployment> localVarResponse = await GetWidgetsDeploymentAsyncWithHttpInfo(deploymentId);
-             return localVarResponse.Data;
-
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->GetWidgetsDeployment");
         }
 
-        /// <summary>
-        /// Get a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> GetWidgetsDeploymentAsyncWithHttpInfo (string deploymentId)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->GetWidgetsDeployment");
-            
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+            "application/json"
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// List Widget deployments 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        public WidgetDeploymentEntityListing GetWidgetsDeployments ()
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
         {
-             ApiResponse<WidgetDeploymentEntityListing> localVarResponse = GetWidgetsDeploymentsWithHttpInfo();
-             return localVarResponse.Data;
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// List Widget deployments 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        public ApiResponse< WidgetDeploymentEntityListing > GetWidgetsDeploymentsWithHttpInfo ()
-        { 
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            var localVarPath = "/api/v2/widgets/deployments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeploymentEntityListing>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeploymentEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeploymentEntityListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// List Widget deployments 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of WidgetDeploymentEntityListing</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<WidgetDeploymentEntityListing> GetWidgetsDeploymentsAsync ()
+        // Path params
+        if (deploymentId != null)
         {
-             ApiResponse<WidgetDeploymentEntityListing> localVarResponse = await GetWidgetsDeploymentsAsyncWithHttpInfo();
-             return localVarResponse.Data;
-
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
         }
 
-        /// <summary>
-        /// List Widget deployments 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>Task of ApiResponse (WidgetDeploymentEntityListing)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<WidgetDeploymentEntityListing>> GetWidgetsDeploymentsAsyncWithHttpInfo ()
-        { 
+        // Query params
 
-            var localVarPath = "/api/v2/widgets/deployments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Header params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // Form params
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        // Body param
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeploymentEntityListing>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeploymentEntityListing) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeploymentEntityListing)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Create Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        public WidgetDeployment PostWidgetsDeployments (WidgetDeployment body)
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-             ApiResponse<WidgetDeployment> localVarResponse = PostWidgetsDeploymentsWithHttpInfo(body);
-             return localVarResponse.Data;
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Create Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        public ApiResponse< WidgetDeployment > PostWidgetsDeploymentsWithHttpInfo (WidgetDeployment body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PostWidgetsDeployments");
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            var localVarPath = "/api/v2/widgets/deployments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Create Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<WidgetDeployment> PostWidgetsDeploymentsAsync (WidgetDeployment body)
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<WidgetDeployment> localVarResponse = await PostWidgetsDeploymentsAsyncWithHttpInfo(body);
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Create Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PostWidgetsDeploymentsAsyncWithHttpInfo (WidgetDeployment body)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PostWidgetsDeployments");
-            
-
-            var localVarPath = "/api/v2/widgets/deployments";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Update a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>WidgetDeployment</returns>
-        [Obsolete]
-        public WidgetDeployment PutWidgetsDeployment (string deploymentId, WidgetDeployment body)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<WidgetDeployment> localVarResponse = PutWidgetsDeploymentWithHttpInfo(deploymentId, body);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Update a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>ApiResponse of WidgetDeployment</returns>
-        [Obsolete]
-        public ApiResponse< WidgetDeployment > PutWidgetsDeploymentWithHttpInfo (string deploymentId, WidgetDeployment body)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->PutWidgetsDeployment");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PutWidgetsDeployment");
-
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Update a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of WidgetDeployment</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<WidgetDeployment> PutWidgetsDeploymentAsync (string deploymentId, WidgetDeployment body)
-        {
-             ApiResponse<WidgetDeployment> localVarResponse = await PutWidgetsDeploymentAsyncWithHttpInfo(deploymentId, body);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// Update a Widget deployment 
-        /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="deploymentId">Widget Config Id</param>
-        /// <param name="body">Deployment</param>
-        /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
-        [Obsolete]
-        public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PutWidgetsDeploymentAsyncWithHttpInfo (string deploymentId, WidgetDeployment body)
-        { 
-            // verify the required parameter 'deploymentId' is set
-            if (deploymentId == null)
-                throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->PutWidgetsDeployment");
-            
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PutWidgetsDeployment");
-            
-
-            var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (deploymentId != null) localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<WidgetDeployment>(localVarStatusCode,
-                localVarHeaders,
-                (WidgetDeployment) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
+    /// <summary>
+    /// Get a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<WidgetDeployment> GetWidgetsDeploymentAsync(string deploymentId)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = await GetWidgetsDeploymentAsyncWithHttpInfo(deploymentId);
+        return localVarResponse.Data;
 
     }
+
+    /// <summary>
+    /// Get a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> GetWidgetsDeploymentAsyncWithHttpInfo(string deploymentId)
+    {
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->GetWidgetsDeployment");
+        }
+
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (deploymentId != null)
+        {
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// List Widget deployments 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    public WidgetDeploymentEntityListing GetWidgetsDeployments()
+    {
+        ApiResponse<WidgetDeploymentEntityListing> localVarResponse = GetWidgetsDeploymentsWithHttpInfo();
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// List Widget deployments 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>ApiResponse of WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    public ApiResponse<WidgetDeploymentEntityListing> GetWidgetsDeploymentsWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/widgets/deployments";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeploymentEntityListing>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeploymentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeploymentEntityListing)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// List Widget deployments 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of WidgetDeploymentEntityListing</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<WidgetDeploymentEntityListing> GetWidgetsDeploymentsAsync()
+    {
+        ApiResponse<WidgetDeploymentEntityListing> localVarResponse = await GetWidgetsDeploymentsAsyncWithHttpInfo();
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// List Widget deployments 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <returns>Task of ApiResponse (WidgetDeploymentEntityListing)</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<ApiResponse<WidgetDeploymentEntityListing>> GetWidgetsDeploymentsAsyncWithHttpInfo()
+    {
+
+        var localVarPath = "/api/v2/widgets/deployments";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeploymentEntityListing>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeploymentEntityListing)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeploymentEntityListing)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Create Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    public WidgetDeployment PostWidgetsDeployments(WidgetDeployment body)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = PostWidgetsDeploymentsWithHttpInfo(body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Create Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    public ApiResponse<WidgetDeployment> PostWidgetsDeploymentsWithHttpInfo(WidgetDeployment body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PostWidgetsDeployments");
+        }
+
+        var localVarPath = "/api/v2/widgets/deployments";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Create Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<WidgetDeployment> PostWidgetsDeploymentsAsync(WidgetDeployment body)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = await PostWidgetsDeploymentsAsyncWithHttpInfo(body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Create Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PostWidgetsDeploymentsAsyncWithHttpInfo(WidgetDeployment body)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PostWidgetsDeployments");
+        }
+
+        var localVarPath = "/api/v2/widgets/deployments";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostWidgetsDeployments: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Update a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>WidgetDeployment</returns>
+    [Obsolete]
+    public WidgetDeployment PutWidgetsDeployment(string deploymentId, WidgetDeployment body)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = PutWidgetsDeploymentWithHttpInfo(deploymentId, body);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Update a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>ApiResponse of WidgetDeployment</returns>
+    [Obsolete]
+    public ApiResponse<WidgetDeployment> PutWidgetsDeploymentWithHttpInfo(string deploymentId, WidgetDeployment body)
+    {
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->PutWidgetsDeployment");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PutWidgetsDeployment");
+        }
+
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (deploymentId != null)
+        {
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Update a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of WidgetDeployment</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<WidgetDeployment> PutWidgetsDeploymentAsync(string deploymentId, WidgetDeployment body)
+    {
+        ApiResponse<WidgetDeployment> localVarResponse = await PutWidgetsDeploymentAsyncWithHttpInfo(deploymentId, body);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Update a Widget deployment 
+    /// This endpoint is deprecated. Please see the article https://help.mypurecloud.com/articles/deprecation-removal-of-acd-web-chat-version-2/. 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="deploymentId">Widget Config Id</param>
+    /// <param name="body">Deployment</param>
+    /// <returns>Task of ApiResponse (WidgetDeployment)</returns>
+    [Obsolete]
+    public async System.Threading.Tasks.Task<ApiResponse<WidgetDeployment>> PutWidgetsDeploymentAsyncWithHttpInfo(string deploymentId, WidgetDeployment body)
+    {
+        // verify the required parameter 'deploymentId' is set
+        if (deploymentId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'deploymentId' when calling WidgetsApi->PutWidgetsDeployment");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling WidgetsApi->PutWidgetsDeployment");
+        }
+
+        var localVarPath = "/api/v2/widgets/deployments/{deploymentId}";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (deploymentId != null)
+        {
+            localVarPathParams.Add("deploymentId", this.Configuration.ApiClient.ParameterToString(deploymentId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutWidgetsDeployment: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<WidgetDeployment>(localVarStatusCode,
+            localVarHeaders,
+            (WidgetDeployment)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(WidgetDeployment)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

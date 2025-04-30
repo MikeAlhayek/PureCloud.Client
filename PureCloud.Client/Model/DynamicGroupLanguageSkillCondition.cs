@@ -2,212 +2,220 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// DynamicGroupLanguageSkillCondition
+/// </summary>
+[DataContract]
+public partial class DynamicGroupLanguageSkillCondition : IEquatable<DynamicGroupLanguageSkillCondition>
 {
     /// <summary>
-    /// DynamicGroupLanguageSkillCondition
+    /// Comparator that will be applied to the proficiency
     /// </summary>
-    [DataContract]
-    public partial class DynamicGroupLanguageSkillCondition :  IEquatable<DynamicGroupLanguageSkillCondition>
+    /// <value>Comparator that will be applied to the proficiency</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum ComparatorEnum
     {
         /// <summary>
-        /// Comparator that will be applied to the proficiency
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>Comparator that will be applied to the proficiency</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum ComparatorEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Equalto for "EqualTo"
-            /// </summary>
-            [EnumMember(Value = "EqualTo")]
-            Equalto,
-            
-            /// <summary>
-            /// Enum Notequalto for "NotEqualTo"
-            /// </summary>
-            [EnumMember(Value = "NotEqualTo")]
-            Notequalto,
-            
-            /// <summary>
-            /// Enum Lessthan for "LessThan"
-            /// </summary>
-            [EnumMember(Value = "LessThan")]
-            Lessthan,
-            
-            /// <summary>
-            /// Enum Greaterthan for "GreaterThan"
-            /// </summary>
-            [EnumMember(Value = "GreaterThan")]
-            Greaterthan,
-            
-            /// <summary>
-            /// Enum Greaterthanorequalto for "GreaterThanOrEqualTo"
-            /// </summary>
-            [EnumMember(Value = "GreaterThanOrEqualTo")]
-            Greaterthanorequalto,
-            
-            /// <summary>
-            /// Enum Lessthanorequalto for "LessThanOrEqualTo"
-            /// </summary>
-            [EnumMember(Value = "LessThanOrEqualTo")]
-            Lessthanorequalto
-        }
-        /// <summary>
-        /// Comparator that will be applied to the proficiency
-        /// </summary>
-        /// <value>Comparator that will be applied to the proficiency</value>
-        [DataMember(Name="comparator", EmitDefaultValue=false)]
-        public ComparatorEnum? Comparator { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="DynamicGroupLanguageSkillCondition" /> class.
+        /// Enum Equalto for "EqualTo"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected DynamicGroupLanguageSkillCondition() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="DynamicGroupLanguageSkillCondition" /> class.
-        /// </summary>
-        /// <param name="LanguageSkill">The language skill to be used in the skill condition query (required).</param>
-        /// <param name="Comparator">Comparator that will be applied to the proficiency (required).</param>
-        /// <param name="Proficiency">The skill proficiency that will be used for the language skill. Integer range 0-5 (required).</param>
-        /// <param name="ChildConditions">Nested conditions to be applied to this skill condition.</param>
-        public DynamicGroupLanguageSkillCondition(string LanguageSkill = null, ComparatorEnum? Comparator = null, int? Proficiency = null, List<DynamicGroupSkillCondition> ChildConditions = null)
-        {
-            this.LanguageSkill = LanguageSkill;
-            this.Comparator = Comparator;
-            this.Proficiency = Proficiency;
-            this.ChildConditions = ChildConditions;
-            
-        }
-        
-
+        [EnumMember(Value = "EqualTo")]
+        Equalto,
 
         /// <summary>
-        /// The language skill to be used in the skill condition query
+        /// Enum Notequalto for "NotEqualTo"
         /// </summary>
-        /// <value>The language skill to be used in the skill condition query</value>
-        [DataMember(Name="languageSkill", EmitDefaultValue=false)]
-        public string LanguageSkill { get; set; }
-
-
-
-
+        [EnumMember(Value = "NotEqualTo")]
+        Notequalto,
 
         /// <summary>
-        /// The skill proficiency that will be used for the language skill. Integer range 0-5
+        /// Enum Lessthan for "LessThan"
         /// </summary>
-        /// <value>The skill proficiency that will be used for the language skill. Integer range 0-5</value>
-        [DataMember(Name="proficiency", EmitDefaultValue=false)]
-        public int? Proficiency { get; set; }
-
-
+        [EnumMember(Value = "LessThan")]
+        Lessthan,
 
         /// <summary>
-        /// Nested conditions to be applied to this skill condition
+        /// Enum Greaterthan for "GreaterThan"
         /// </summary>
-        /// <value>Nested conditions to be applied to this skill condition</value>
-        [DataMember(Name="childConditions", EmitDefaultValue=false)]
-        public List<DynamicGroupSkillCondition> ChildConditions { get; set; }
-
+        [EnumMember(Value = "GreaterThan")]
+        Greaterthan,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Greaterthanorequalto for "GreaterThanOrEqualTo"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class DynamicGroupLanguageSkillCondition {\n");
-
-            sb.Append("  LanguageSkill: ").Append(LanguageSkill).Append("\n");
-            sb.Append("  Comparator: ").Append(Comparator).Append("\n");
-            sb.Append("  Proficiency: ").Append(Proficiency).Append("\n");
-            sb.Append("  ChildConditions: ").Append(ChildConditions).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "GreaterThanOrEqualTo")]
+        Greaterthanorequalto,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Lessthanorequalto for "LessThanOrEqualTo"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as DynamicGroupLanguageSkillCondition);
-        }
+        [EnumMember(Value = "LessThanOrEqualTo")]
+        Lessthanorequalto
+    }
+    /// <summary>
+    /// Comparator that will be applied to the proficiency
+    /// </summary>
+    /// <value>Comparator that will be applied to the proficiency</value>
+    [DataMember(Name = "comparator", EmitDefaultValue = false)]
+    public ComparatorEnum? Comparator { get; set; }
 
-        /// <summary>
-        /// Returns true if DynamicGroupLanguageSkillCondition instances are equal
-        /// </summary>
-        /// <param name="other">Instance of DynamicGroupLanguageSkillCondition to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(DynamicGroupLanguageSkillCondition other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DynamicGroupLanguageSkillCondition" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected DynamicGroupLanguageSkillCondition() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DynamicGroupLanguageSkillCondition" /> class.
+    /// </summary>
+    /// <param name="LanguageSkill">The language skill to be used in the skill condition query (required).</param>
+    /// <param name="Comparator">Comparator that will be applied to the proficiency (required).</param>
+    /// <param name="Proficiency">The skill proficiency that will be used for the language skill. Integer range 0-5 (required).</param>
+    /// <param name="ChildConditions">Nested conditions to be applied to this skill condition.</param>
+    public DynamicGroupLanguageSkillCondition(string LanguageSkill = null, ComparatorEnum? Comparator = null, int? Proficiency = null, List<DynamicGroupSkillCondition> ChildConditions = null)
+    {
+        this.LanguageSkill = LanguageSkill;
+        this.Comparator = Comparator;
+        this.Proficiency = Proficiency;
+        this.ChildConditions = ChildConditions;
 
-            return true &&
-                (
-                    this.LanguageSkill == other.LanguageSkill ||
-                    this.LanguageSkill != null &&
-                    this.LanguageSkill.Equals(other.LanguageSkill)
-                ) &&
-                (
-                    this.Comparator == other.Comparator ||
-                    this.Comparator != null &&
-                    this.Comparator.Equals(other.Comparator)
-                ) &&
-                (
-                    this.Proficiency == other.Proficiency ||
-                    this.Proficiency != null &&
-                    this.Proficiency.Equals(other.Proficiency)
-                ) &&
-                (
-                    this.ChildConditions == other.ChildConditions ||
-                    this.ChildConditions != null &&
-                    this.ChildConditions.SequenceEqual(other.ChildConditions)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.LanguageSkill != null)
-                    hash = hash * 59 + this.LanguageSkill.GetHashCode();
-
-                if (this.Comparator != null)
-                    hash = hash * 59 + this.Comparator.GetHashCode();
-
-                if (this.Proficiency != null)
-                    hash = hash * 59 + this.Proficiency.GetHashCode();
-
-                if (this.ChildConditions != null)
-                    hash = hash * 59 + this.ChildConditions.GetHashCode();
-
-                return hash;
-            }
-        }
     }
 
+
+
+    /// <summary>
+    /// The language skill to be used in the skill condition query
+    /// </summary>
+    /// <value>The language skill to be used in the skill condition query</value>
+    [DataMember(Name = "languageSkill", EmitDefaultValue = false)]
+    public string LanguageSkill { get; set; }
+
+
+
+
+
+    /// <summary>
+    /// The skill proficiency that will be used for the language skill. Integer range 0-5
+    /// </summary>
+    /// <value>The skill proficiency that will be used for the language skill. Integer range 0-5</value>
+    [DataMember(Name = "proficiency", EmitDefaultValue = false)]
+    public int? Proficiency { get; set; }
+
+
+
+    /// <summary>
+    /// Nested conditions to be applied to this skill condition
+    /// </summary>
+    /// <value>Nested conditions to be applied to this skill condition</value>
+    [DataMember(Name = "childConditions", EmitDefaultValue = false)]
+    public List<DynamicGroupSkillCondition> ChildConditions { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class DynamicGroupLanguageSkillCondition {\n");
+
+        sb.Append("  LanguageSkill: ").Append(LanguageSkill).Append("\n");
+        sb.Append("  Comparator: ").Append(Comparator).Append("\n");
+        sb.Append("  Proficiency: ").Append(Proficiency).Append("\n");
+        sb.Append("  ChildConditions: ").Append(ChildConditions).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as DynamicGroupLanguageSkillCondition);
+    }
+
+    /// <summary>
+    /// Returns true if DynamicGroupLanguageSkillCondition instances are equal
+    /// </summary>
+    /// <param name="other">Instance of DynamicGroupLanguageSkillCondition to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(DynamicGroupLanguageSkillCondition other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.LanguageSkill == other.LanguageSkill ||
+                this.LanguageSkill != null &&
+                this.LanguageSkill.Equals(other.LanguageSkill)
+            ) &&
+            (
+                this.Comparator == other.Comparator ||
+                this.Comparator != null &&
+                this.Comparator.Equals(other.Comparator)
+            ) &&
+            (
+                this.Proficiency == other.Proficiency ||
+                this.Proficiency != null &&
+                this.Proficiency.Equals(other.Proficiency)
+            ) &&
+            (
+                this.ChildConditions == other.ChildConditions ||
+                this.ChildConditions != null &&
+                this.ChildConditions.SequenceEqual(other.ChildConditions)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.LanguageSkill != null)
+            {
+                hash = hash * 59 + this.LanguageSkill.GetHashCode();
+            }
+
+            if (this.Comparator != null)
+            {
+                hash = hash * 59 + this.Comparator.GetHashCode();
+            }
+
+            if (this.Proficiency != null)
+            {
+                hash = hash * 59 + this.Proficiency.GetHashCode();
+            }
+
+            if (this.ChildConditions != null)
+            {
+                hash = hash * 59 + this.ChildConditions.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

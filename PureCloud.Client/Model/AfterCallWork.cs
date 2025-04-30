@@ -129,7 +129,9 @@ public partial class AfterCallWork : IEquatable<AfterCallWork>
     {
         // credit: http://stackoverflow.com/a/10454552/677735
         if (other == null)
+        {
             return false;
+        }
 
         return true &&
             (

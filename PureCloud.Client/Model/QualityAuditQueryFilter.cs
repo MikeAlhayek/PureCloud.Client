@@ -2,190 +2,194 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// QualityAuditQueryFilter
+/// </summary>
+[DataContract]
+public partial class QualityAuditQueryFilter : IEquatable<QualityAuditQueryFilter>
 {
     /// <summary>
-    /// QualityAuditQueryFilter
+    /// Name of the property to filter.
     /// </summary>
-    [DataContract]
-    public partial class QualityAuditQueryFilter :  IEquatable<QualityAuditQueryFilter>
+    /// <value>Name of the property to filter.</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum PropertyEnum
     {
         /// <summary>
-        /// Name of the property to filter.
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>Name of the property to filter.</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum PropertyEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Userid for "UserId"
-            /// </summary>
-            [EnumMember(Value = "UserId")]
-            Userid,
-            
-            /// <summary>
-            /// Enum Trusteeorganizationid for "TrusteeOrganizationId"
-            /// </summary>
-            [EnumMember(Value = "TrusteeOrganizationId")]
-            Trusteeorganizationid,
-            
-            /// <summary>
-            /// Enum Trusteeonlyaudits for "TrusteeOnlyAudits"
-            /// </summary>
-            [EnumMember(Value = "TrusteeOnlyAudits")]
-            Trusteeonlyaudits,
-            
-            /// <summary>
-            /// Enum Clientid for "ClientId"
-            /// </summary>
-            [EnumMember(Value = "ClientId")]
-            Clientid,
-            
-            /// <summary>
-            /// Enum Action for "Action"
-            /// </summary>
-            [EnumMember(Value = "Action")]
-            Action,
-            
-            /// <summary>
-            /// Enum Entitytype for "EntityType"
-            /// </summary>
-            [EnumMember(Value = "EntityType")]
-            Entitytype,
-            
-            /// <summary>
-            /// Enum Entityid for "EntityId"
-            /// </summary>
-            [EnumMember(Value = "EntityId")]
-            Entityid,
-            
-            /// <summary>
-            /// Enum Conversationid for "ConversationId"
-            /// </summary>
-            [EnumMember(Value = "ConversationId")]
-            Conversationid,
-            
-            /// <summary>
-            /// Enum Servicename for "ServiceName"
-            /// </summary>
-            [EnumMember(Value = "ServiceName")]
-            Servicename
-        }
-        /// <summary>
-        /// Name of the property to filter.
-        /// </summary>
-        /// <value>Name of the property to filter.</value>
-        [DataMember(Name="property", EmitDefaultValue=false)]
-        public PropertyEnum? Property { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="QualityAuditQueryFilter" /> class.
+        /// Enum Userid for "UserId"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected QualityAuditQueryFilter() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="QualityAuditQueryFilter" /> class.
-        /// </summary>
-        /// <param name="Property">Name of the property to filter. (required).</param>
-        /// <param name="Value">Value of the property to filter. (required).</param>
-        public QualityAuditQueryFilter(PropertyEnum? Property = null, string Value = null)
-        {
-            this.Property = Property;
-            this.Value = Value;
-            
-        }
-        
-
-
-
+        [EnumMember(Value = "UserId")]
+        Userid,
 
         /// <summary>
-        /// Value of the property to filter.
+        /// Enum Trusteeorganizationid for "TrusteeOrganizationId"
         /// </summary>
-        /// <value>Value of the property to filter.</value>
-        [DataMember(Name="value", EmitDefaultValue=false)]
-        public string Value { get; set; }
-
+        [EnumMember(Value = "TrusteeOrganizationId")]
+        Trusteeorganizationid,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Trusteeonlyaudits for "TrusteeOnlyAudits"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class QualityAuditQueryFilter {\n");
-
-            sb.Append("  Property: ").Append(Property).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "TrusteeOnlyAudits")]
+        Trusteeonlyaudits,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Clientid for "ClientId"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as QualityAuditQueryFilter);
-        }
+        [EnumMember(Value = "ClientId")]
+        Clientid,
 
         /// <summary>
-        /// Returns true if QualityAuditQueryFilter instances are equal
+        /// Enum Action for "Action"
         /// </summary>
-        /// <param name="other">Instance of QualityAuditQueryFilter to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(QualityAuditQueryFilter other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Property == other.Property ||
-                    this.Property != null &&
-                    this.Property.Equals(other.Property)
-                ) &&
-                (
-                    this.Value == other.Value ||
-                    this.Value != null &&
-                    this.Value.Equals(other.Value)
-                );
-        }
+        [EnumMember(Value = "Action")]
+        Action,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Entitytype for "EntityType"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Property != null)
-                    hash = hash * 59 + this.Property.GetHashCode();
+        [EnumMember(Value = "EntityType")]
+        Entitytype,
 
-                if (this.Value != null)
-                    hash = hash * 59 + this.Value.GetHashCode();
+        /// <summary>
+        /// Enum Entityid for "EntityId"
+        /// </summary>
+        [EnumMember(Value = "EntityId")]
+        Entityid,
 
-                return hash;
-            }
-        }
+        /// <summary>
+        /// Enum Conversationid for "ConversationId"
+        /// </summary>
+        [EnumMember(Value = "ConversationId")]
+        Conversationid,
+
+        /// <summary>
+        /// Enum Servicename for "ServiceName"
+        /// </summary>
+        [EnumMember(Value = "ServiceName")]
+        Servicename
+    }
+    /// <summary>
+    /// Name of the property to filter.
+    /// </summary>
+    /// <value>Name of the property to filter.</value>
+    [DataMember(Name = "property", EmitDefaultValue = false)]
+    public PropertyEnum? Property { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="QualityAuditQueryFilter" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected QualityAuditQueryFilter() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="QualityAuditQueryFilter" /> class.
+    /// </summary>
+    /// <param name="Property">Name of the property to filter. (required).</param>
+    /// <param name="Value">Value of the property to filter. (required).</param>
+    public QualityAuditQueryFilter(PropertyEnum? Property = null, string Value = null)
+    {
+        this.Property = Property;
+        this.Value = Value;
+
     }
 
+
+
+
+
+    /// <summary>
+    /// Value of the property to filter.
+    /// </summary>
+    /// <value>Value of the property to filter.</value>
+    [DataMember(Name = "value", EmitDefaultValue = false)]
+    public string Value { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class QualityAuditQueryFilter {\n");
+
+        sb.Append("  Property: ").Append(Property).Append("\n");
+        sb.Append("  Value: ").Append(Value).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as QualityAuditQueryFilter);
+    }
+
+    /// <summary>
+    /// Returns true if QualityAuditQueryFilter instances are equal
+    /// </summary>
+    /// <param name="other">Instance of QualityAuditQueryFilter to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(QualityAuditQueryFilter other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Property == other.Property ||
+                this.Property != null &&
+                this.Property.Equals(other.Property)
+            ) &&
+            (
+                this.Value == other.Value ||
+                this.Value != null &&
+                this.Value.Equals(other.Value)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Property != null)
+            {
+                hash = hash * 59 + this.Property.GetHashCode();
+            }
+
+            if (this.Value != null)
+            {
+                hash = hash * 59 + this.Value.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

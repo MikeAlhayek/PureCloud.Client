@@ -2,148 +2,152 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// SocialMediaQueryClause
+/// </summary>
+[DataContract]
+public partial class SocialMediaQueryClause : IEquatable<SocialMediaQueryClause>
 {
     /// <summary>
-    /// SocialMediaQueryClause
+    /// Boolean operation to apply to the provided predicates
     /// </summary>
-    [DataContract]
-    public partial class SocialMediaQueryClause : IEquatable<SocialMediaQueryClause>
+    /// <value>Boolean operation to apply to the provided predicates</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum TypeEnum
     {
         /// <summary>
-        /// Boolean operation to apply to the provided predicates
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>Boolean operation to apply to the provided predicates</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum TypeEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-
-            /// <summary>
-            /// Enum And for "and"
-            /// </summary>
-            [EnumMember(Value = "and")]
-            And,
-
-            /// <summary>
-            /// Enum Or for "or"
-            /// </summary>
-            [EnumMember(Value = "or")]
-            Or
-        }
-        /// <summary>
-        /// Boolean operation to apply to the provided predicates
-        /// </summary>
-        /// <value>Boolean operation to apply to the provided predicates</value>
-        [DataMember(Name = "type", EmitDefaultValue = false)]
-        public TypeEnum? Type { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SocialMediaQueryClause" /> class.
+        /// Enum And for "and"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected SocialMediaQueryClause() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SocialMediaQueryClause" /> class.
-        /// </summary>
-        /// <param name="Type">Boolean operation to apply to the provided predicates (required).</param>
-        /// <param name="Predicates">Like a three-word sentence: (attribute-name) (operator) (target-value). (required).</param>
-        public SocialMediaQueryClause(TypeEnum? Type = null, List<SocialMediaQueryPredicate> Predicates = null)
-        {
-            this.Type = Type;
-            this.Predicates = Predicates;
-
-        }
-
-
-
-
+        [EnumMember(Value = "and")]
+        And,
 
         /// <summary>
-        /// Like a three-word sentence: (attribute-name) (operator) (target-value).
+        /// Enum Or for "or"
         /// </summary>
-        /// <value>Like a three-word sentence: (attribute-name) (operator) (target-value).</value>
-        [DataMember(Name = "predicates", EmitDefaultValue = false)]
-        public List<SocialMediaQueryPredicate> Predicates { get; set; }
+        [EnumMember(Value = "or")]
+        Or
+    }
+    /// <summary>
+    /// Boolean operation to apply to the provided predicates
+    /// </summary>
+    /// <value>Boolean operation to apply to the provided predicates</value>
+    [DataMember(Name = "type", EmitDefaultValue = false)]
+    public TypeEnum? Type { get; set; }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SocialMediaQueryClause" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected SocialMediaQueryClause() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SocialMediaQueryClause" /> class.
+    /// </summary>
+    /// <param name="Type">Boolean operation to apply to the provided predicates (required).</param>
+    /// <param name="Predicates">Like a three-word sentence: (attribute-name) (operator) (target-value). (required).</param>
+    public SocialMediaQueryClause(TypeEnum? Type = null, List<SocialMediaQueryPredicate> Predicates = null)
+    {
+        this.Type = Type;
+        this.Predicates = Predicates;
 
-        /// <summary>
-        /// Returns the string presentation of the object
-        /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class SocialMediaQueryClause {\n");
-
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Predicates: ").Append(Predicates).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
-
-        /// <summary>
-        /// Returns true if objects are equal
-        /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as SocialMediaQueryClause);
-        }
-
-        /// <summary>
-        /// Returns true if SocialMediaQueryClause instances are equal
-        /// </summary>
-        /// <param name="other">Instance of SocialMediaQueryClause to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(SocialMediaQueryClause other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Type == other.Type ||
-                    this.Type != null &&
-                    this.Type.Equals(other.Type)
-                ) &&
-                (
-                    this.Predicates == other.Predicates ||
-                    this.Predicates != null &&
-                    this.Predicates.SequenceEqual(other.Predicates)
-                );
-        }
-
-        /// <summary>
-        /// Gets the hash code
-        /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Type != null)
-                    hash = hash * 59 + this.Type.GetHashCode();
-
-                if (this.Predicates != null)
-                    hash = hash * 59 + this.Predicates.GetHashCode();
-
-                return hash;
-            }
-        }
     }
 
+
+
+
+
+    /// <summary>
+    /// Like a three-word sentence: (attribute-name) (operator) (target-value).
+    /// </summary>
+    /// <value>Like a three-word sentence: (attribute-name) (operator) (target-value).</value>
+    [DataMember(Name = "predicates", EmitDefaultValue = false)]
+    public List<SocialMediaQueryPredicate> Predicates { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class SocialMediaQueryClause {\n");
+
+        sb.Append("  Type: ").Append(Type).Append("\n");
+        sb.Append("  Predicates: ").Append(Predicates).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as SocialMediaQueryClause);
+    }
+
+    /// <summary>
+    /// Returns true if SocialMediaQueryClause instances are equal
+    /// </summary>
+    /// <param name="other">Instance of SocialMediaQueryClause to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(SocialMediaQueryClause other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Type == other.Type ||
+                this.Type != null &&
+                this.Type.Equals(other.Type)
+            ) &&
+            (
+                this.Predicates == other.Predicates ||
+                this.Predicates != null &&
+                this.Predicates.SequenceEqual(other.Predicates)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Type != null)
+            {
+                hash = hash * 59 + this.Type.GetHashCode();
+            }
+
+            if (this.Predicates != null)
+            {
+                hash = hash * 59 + this.Predicates.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

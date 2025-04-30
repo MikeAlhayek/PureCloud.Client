@@ -2,157 +2,161 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// WorkitemsEventsNotificationCustomAttribute
+/// </summary>
+[DataContract]
+public partial class WorkitemsEventsNotificationCustomAttribute : IEquatable<WorkitemsEventsNotificationCustomAttribute>
 {
     /// <summary>
-    /// WorkitemsEventsNotificationCustomAttribute
+    /// Gets or Sets DataType
     /// </summary>
-    [DataContract]
-    public partial class WorkitemsEventsNotificationCustomAttribute :  IEquatable<WorkitemsEventsNotificationCustomAttribute>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum DataTypeEnum
     {
         /// <summary>
-        /// Gets or Sets DataType
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum DataTypeEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Unknown for "unknown"
-            /// </summary>
-            [EnumMember(Value = "unknown")]
-            Unknown,
-            
-            /// <summary>
-            /// Enum String for "string"
-            /// </summary>
-            [EnumMember(Value = "string")]
-            String,
-            
-            /// <summary>
-            /// Enum Number for "number"
-            /// </summary>
-            [EnumMember(Value = "number")]
-            Number,
-            
-            /// <summary>
-            /// Enum Boolean for "boolean$"
-            /// </summary>
-            [EnumMember(Value = "boolean$")]
-            Boolean,
-            
-            /// <summary>
-            /// Enum Integer for "integer"
-            /// </summary>
-            [EnumMember(Value = "integer")]
-            Integer
-        }
-        /// <summary>
-        /// Gets or Sets DataType
-        /// </summary>
-        [DataMember(Name="dataType", EmitDefaultValue=false)]
-        public DataTypeEnum? DataType { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="WorkitemsEventsNotificationCustomAttribute" /> class.
-        /// </summary>
-        /// <param name="DataType">DataType.</param>
-        /// <param name="Value">Value.</param>
-        public WorkitemsEventsNotificationCustomAttribute(DataTypeEnum? DataType = null, string Value = null)
-        {
-            this.DataType = DataType;
-            this.Value = Value;
-            
-        }
-        
-
-
-
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Gets or Sets Value
+        /// Enum Unknown for "unknown"
         /// </summary>
-        [DataMember(Name="value", EmitDefaultValue=false)]
-        public string Value { get; set; }
-
+        [EnumMember(Value = "unknown")]
+        Unknown,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum String for "string"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class WorkitemsEventsNotificationCustomAttribute {\n");
-
-            sb.Append("  DataType: ").Append(DataType).Append("\n");
-            sb.Append("  Value: ").Append(Value).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "string")]
+        String,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Number for "number"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as WorkitemsEventsNotificationCustomAttribute);
-        }
+        [EnumMember(Value = "number")]
+        Number,
 
         /// <summary>
-        /// Returns true if WorkitemsEventsNotificationCustomAttribute instances are equal
+        /// Enum Boolean for "boolean$"
         /// </summary>
-        /// <param name="other">Instance of WorkitemsEventsNotificationCustomAttribute to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(WorkitemsEventsNotificationCustomAttribute other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.DataType == other.DataType ||
-                    this.DataType != null &&
-                    this.DataType.Equals(other.DataType)
-                ) &&
-                (
-                    this.Value == other.Value ||
-                    this.Value != null &&
-                    this.Value.Equals(other.Value)
-                );
-        }
+        [EnumMember(Value = "boolean$")]
+        Boolean,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Integer for "integer"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.DataType != null)
-                    hash = hash * 59 + this.DataType.GetHashCode();
+        [EnumMember(Value = "integer")]
+        Integer
+    }
+    /// <summary>
+    /// Gets or Sets DataType
+    /// </summary>
+    [DataMember(Name = "dataType", EmitDefaultValue = false)]
+    public DataTypeEnum? DataType { get; set; }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="WorkitemsEventsNotificationCustomAttribute" /> class.
+    /// </summary>
+    /// <param name="DataType">DataType.</param>
+    /// <param name="Value">Value.</param>
+    public WorkitemsEventsNotificationCustomAttribute(DataTypeEnum? DataType = null, string Value = null)
+    {
+        this.DataType = DataType;
+        this.Value = Value;
 
-                if (this.Value != null)
-                    hash = hash * 59 + this.Value.GetHashCode();
-
-                return hash;
-            }
-        }
     }
 
+
+
+
+
+    /// <summary>
+    /// Gets or Sets Value
+    /// </summary>
+    [DataMember(Name = "value", EmitDefaultValue = false)]
+    public string Value { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class WorkitemsEventsNotificationCustomAttribute {\n");
+
+        sb.Append("  DataType: ").Append(DataType).Append("\n");
+        sb.Append("  Value: ").Append(Value).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as WorkitemsEventsNotificationCustomAttribute);
+    }
+
+    /// <summary>
+    /// Returns true if WorkitemsEventsNotificationCustomAttribute instances are equal
+    /// </summary>
+    /// <param name="other">Instance of WorkitemsEventsNotificationCustomAttribute to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(WorkitemsEventsNotificationCustomAttribute other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.DataType == other.DataType ||
+                this.DataType != null &&
+                this.DataType.Equals(other.DataType)
+            ) &&
+            (
+                this.Value == other.Value ||
+                this.Value != null &&
+                this.Value.Equals(other.Value)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.DataType != null)
+            {
+                hash = hash * 59 + this.DataType.GetHashCode();
+            }
+
+            if (this.Value != null)
+            {
+                hash = hash * 59 + this.Value.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

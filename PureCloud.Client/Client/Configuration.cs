@@ -61,11 +61,19 @@ public class Configuration
         UserAgent = userAgent;
 
         if (defaultHeader != null)
+        {
             DefaultHeader = defaultHeader;
+        }
+
         if (apiKey != null)
+        {
             ApiKey = apiKey;
+        }
+
         if (apiKeyPrefix != null)
+        {
             ApiKeyPrefix = apiKeyPrefix;
+        }
 
         TempFolderPath = tempFolderPath;
         DateTimeFormat = dateTimeFormat;
@@ -118,14 +126,18 @@ public class Configuration
         if (apiClient == null)
         {
             if (Default != null && Default.ApiClient == null)
+            {
                 Default.ApiClient = new ApiClient(this);
+            }
 
             ApiClient = Default != null ? Default.ApiClient : new ApiClient(this);
         }
         else
         {
             if (Default != null && Default.ApiClient == null)
+            {
                 Default.ApiClient = apiClient;
+            }
 
             ApiClient = apiClient;
         }
@@ -252,9 +264,13 @@ public class Configuration
         ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
         var apiKeyPrefix = "";
         if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
+        {
             return apiKeyPrefix + " " + apiKeyValue;
+        }
         else
+        {
             return apiKeyValue;
+        }
     }
 
     private string _tempFolderPath = Path.GetTempPath();
@@ -277,13 +293,19 @@ public class Configuration
 
             // create the directory if it does not exist
             if (!Directory.Exists(value))
+            {
                 Directory.CreateDirectory(value);
+            }
 
             // check if the path contains directory separator at the end
             if (value[value.Length - 1] == Path.DirectorySeparatorChar)
+            {
                 _tempFolderPath = value;
+            }
             else
+            {
                 _tempFolderPath = value + Path.DirectorySeparatorChar;
+            }
         }
     }
 

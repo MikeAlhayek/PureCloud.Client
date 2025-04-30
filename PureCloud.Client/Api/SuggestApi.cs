@@ -2,1236 +2,1370 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloudPlatform.Client.V2.Api;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface ISuggestApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Search using the q64 value returned from a previous search.
     /// </summary>
-    public interface ISuggestApi : IApiAccessor
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    JsonNodeSearchResponse GetSearch(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Search using the q64 value returned from a previous search.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    ApiResponse<JsonNodeSearchResponse> GetSearchWithHttpInfo(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    JsonNodeSearchResponse GetSearchSuggest(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    ApiResponse<JsonNodeSearchResponse> GetSearchSuggestWithHttpInfo(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Search resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    JsonNodeSearchResponse PostSearch(SearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Search resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    ApiResponse<JsonNodeSearchResponse> PostSearchWithHttpInfo(SearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    JsonNodeSearchResponse PostSearchSuggest(SuggestSearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    ApiResponse<JsonNodeSearchResponse> PostSearchSuggestWithHttpInfo(SuggestSearchRequest body, bool? profile = null);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Search using the q64 value returned from a previous search.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchAsync(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Search using the q64 value returned from a previous search.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchAsyncWithHttpInfo(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchSuggestAsyncWithHttpInfo(string q64, List<string> expand = null, bool? profile = null);
+
+    /// <summary>
+    /// Search resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchAsync(SearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Search resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchAsyncWithHttpInfo(SearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null);
+
+    /// <summary>
+    /// Suggest resources.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchSuggestAsyncWithHttpInfo(SuggestSearchRequest body, bool? profile = null);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class SuggestApi : ISuggestApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SuggestApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public SuggestApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        JsonNodeSearchResponse GetSearch (string q64, List<string> expand = null, bool? profile = null);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        ApiResponse<JsonNodeSearchResponse> GetSearchWithHttpInfo (string q64, List<string> expand = null, bool? profile = null);
+    /// <summary>
+    /// Initializes a new instance of the <see cref="SuggestApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public SuggestApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        JsonNodeSearchResponse GetSearchSuggest (string q64, List<string> expand = null, bool? profile = null);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        ApiResponse<JsonNodeSearchResponse> GetSearchSuggestWithHttpInfo (string q64, List<string> expand = null, bool? profile = null);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        /// <summary>
-        /// Search resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        JsonNodeSearchResponse PostSearch (SearchRequest body, bool? profile = null);
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        /// <summary>
-        /// Search resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        ApiResponse<JsonNodeSearchResponse> PostSearchWithHttpInfo (SearchRequest body, bool? profile = null);
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        /// <summary>
-        /// Suggest resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        JsonNodeSearchResponse PostSearchSuggest (SuggestSearchRequest body, bool? profile = null);
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        /// <summary>
-        /// Suggest resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        ApiResponse<JsonNodeSearchResponse> PostSearchSuggestWithHttpInfo (SuggestSearchRequest body, bool? profile = null);
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        #endregion Synchronous Operations
 
-        #region Asynchronous Operations
+    /// <summary>
+    /// Search using the q64 value returned from a previous search. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchAsync (string q64, List<string> expand = null, bool? profile = null);
+    public JsonNodeSearchResponse GetSearch(string q64, List<string> expand = null, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = GetSearchWithHttpInfo(q64, expand, profile);
+        return localVarResponse.Data;
+    }
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchAsyncWithHttpInfo (string q64, List<string> expand = null, bool? profile = null);
+    /// <summary>
+    /// Search using the q64 value returned from a previous search. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchSuggestAsync (string q64, List<string> expand = null, bool? profile = null);
+    public ApiResponse<JsonNodeSearchResponse> GetSearchWithHttpInfo(string q64, List<string> expand = null, bool? profile = null)
+    {
+        // verify the required parameter 'q64' is set
+        if (q64 == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearch");
+        }
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchSuggestAsyncWithHttpInfo (string q64, List<string> expand = null, bool? profile = null);
+        var localVarPath = "/api/v2/search";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-        /// <summary>
-        /// Search resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchAsync (SearchRequest body, bool? profile = null);
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-        /// <summary>
-        /// Search resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchAsyncWithHttpInfo (SearchRequest body, bool? profile = null);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-        /// <summary>
-        /// Suggest resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchSuggestAsync (SuggestSearchRequest body, bool? profile = null);
+            "application/json"
 
-        /// <summary>
-        /// Suggest resources.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchSuggestAsyncWithHttpInfo (SuggestSearchRequest body, bool? profile = null);
 
-        #endregion Asynchronous Operations
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (q64 != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+        }
+
+        if (expand != null)
+        {
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+        }
+
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Search using the q64 value returned from a previous search. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    public async System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchAsync(string q64, List<string> expand = null, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = await GetSearchAsyncWithHttpInfo(q64, expand, profile);
+        return localVarResponse.Data;
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Search using the q64 value returned from a previous search. 
+    /// 
     /// </summary>
-    public partial class SuggestApi : ISuggestApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchAsyncWithHttpInfo(string q64, List<string> expand = null, bool? profile = null)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SuggestApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public SuggestApi(String basePath)
+        // verify the required parameter 'q64' is set
+        if (q64 == null)
         {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
-
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+            throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearch");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="SuggestApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public SuggestApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        var localVarPath = "/api/v2/search";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (q64 != null)
         {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
         }
 
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        if (expand != null)
         {
-            // do nothing
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
         }
 
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
-
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
+        if (profile != null)
         {
-            return this.Configuration.DefaultHeader;
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
         }
 
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-            this.Configuration.AddDefaultHeader(key, value);
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        public JsonNodeSearchResponse GetSearch (string q64, List<string> expand = null, bool? profile = null)
-        {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = GetSearchWithHttpInfo(q64, expand, profile);
-             return localVarResponse.Data;
-        }
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Search using the q64 value returned from a previous search. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        public ApiResponse< JsonNodeSearchResponse > GetSearchWithHttpInfo (string q64, List<string> expand = null, bool? profile = null)
-        { 
-            // verify the required parameter 'q64' is set
-            if (q64 == null)
-                throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearch");
-
-            var localVarPath = "/api/v2/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (q64 != null) localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Search using the q64 value returned from a previous search. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        public async System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchAsync (string q64, List<string> expand = null, bool? profile = null)
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = await GetSearchAsyncWithHttpInfo(q64, expand, profile);
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling GetSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Search using the q64 value returned from a previous search. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchAsyncWithHttpInfo (string q64, List<string> expand = null, bool? profile = null)
-        { 
-            // verify the required parameter 'q64' is set
-            if (q64 == null)
-                throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearch");
-            
-
-            var localVarPath = "/api/v2/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (q64 != null) localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        public JsonNodeSearchResponse GetSearchSuggest (string q64, List<string> expand = null, bool? profile = null)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = GetSearchSuggestWithHttpInfo(q64, expand, profile);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling GetSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        public ApiResponse< JsonNodeSearchResponse > GetSearchSuggestWithHttpInfo (string q64, List<string> expand = null, bool? profile = null)
-        { 
-            // verify the required parameter 'q64' is set
-            if (q64 == null)
-                throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearchSuggest");
-
-            var localVarPath = "/api/v2/search/suggest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (q64 != null) localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+    public JsonNodeSearchResponse GetSearchSuggest(string q64, List<string> expand = null, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = GetSearchSuggestWithHttpInfo(q64, expand, profile);
+        return localVarResponse.Data;
+    }
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        public async System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchSuggestAsync (string q64, List<string> expand = null, bool? profile = null)
+    public ApiResponse<JsonNodeSearchResponse> GetSearchSuggestWithHttpInfo(string q64, List<string> expand = null, bool? profile = null)
+    {
+        // verify the required parameter 'q64' is set
+        if (q64 == null)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = await GetSearchSuggestAsyncWithHttpInfo(q64, expand, profile);
-             return localVarResponse.Data;
-
+            throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearchSuggest");
         }
 
-        /// <summary>
-        /// Suggest resources using the q64 value returned from a previous suggest query. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="q64">q64</param>
-        /// <param name="expand">Which fields, if any, to expand (optional)</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchSuggestAsyncWithHttpInfo (string q64, List<string> expand = null, bool? profile = null)
-        { 
-            // verify the required parameter 'q64' is set
-            if (q64 == null)
-                throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearchSuggest");
-            
+        var localVarPath = "/api/v2/search/suggest";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/search/suggest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (q64 != null) localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
-            if (expand != null) expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
+            "application/json"
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Search resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        public JsonNodeSearchResponse PostSearch (SearchRequest body, bool? profile = null)
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = PostSearchWithHttpInfo(body, profile);
-             return localVarResponse.Data;
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Search resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        public ApiResponse< JsonNodeSearchResponse > PostSearchWithHttpInfo (SearchRequest body, bool? profile = null)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearch");
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            var localVarPath = "/api/v2/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Path params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Search resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        public async System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchAsync (SearchRequest body, bool? profile = null)
+        // Query params
+        if (q64 != null)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = await PostSearchAsyncWithHttpInfo(body, profile);
-             return localVarResponse.Data;
-
+            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
         }
 
-        /// <summary>
-        /// Search resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchAsyncWithHttpInfo (SearchRequest body, bool? profile = null)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearch");
-            
-
-            var localVarPath = "/api/v2/search";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Suggest resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>JsonNodeSearchResponse</returns>
-        
-        public JsonNodeSearchResponse PostSearchSuggest (SuggestSearchRequest body, bool? profile = null)
+        if (expand != null)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = PostSearchSuggestWithHttpInfo(body, profile);
-             return localVarResponse.Data;
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
         }
 
-        /// <summary>
-        /// Suggest resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
-        
-        public ApiResponse< JsonNodeSearchResponse > PostSearchSuggestWithHttpInfo (SuggestSearchRequest body, bool? profile = null)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearchSuggest");
-
-            var localVarPath = "/api/v2/search/suggest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
-
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Suggest resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of JsonNodeSearchResponse</returns>
-        
-        public async System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchSuggestAsync (SuggestSearchRequest body, bool? profile = null)
+        if (profile != null)
         {
-             ApiResponse<JsonNodeSearchResponse> localVarResponse = await PostSearchSuggestAsyncWithHttpInfo(body, profile);
-             return localVarResponse.Data;
-
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
         }
 
-        /// <summary>
-        /// Suggest resources. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="body">Search request options</param>
-        /// <param name="profile">profile (optional, default to true)</param>
-        /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchSuggestAsyncWithHttpInfo (SuggestSearchRequest body, bool? profile = null)
-        { 
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearchSuggest");
-            
+        // Header params
 
-            var localVarPath = "/api/v2/search/suggest";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // Form params
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-
-            // Query params
-            if (profile != null) localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+        // Body param
 
 
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
-                localVarHeaders,
-                (JsonNodeSearchResponse) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    public async System.Threading.Tasks.Task<JsonNodeSearchResponse> GetSearchSuggestAsync(string q64, List<string> expand = null, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = await GetSearchSuggestAsyncWithHttpInfo(q64, expand, profile);
+        return localVarResponse.Data;
 
     }
+
+    /// <summary>
+    /// Suggest resources using the q64 value returned from a previous suggest query. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="q64">q64</param>
+    /// <param name="expand">Which fields, if any, to expand (optional)</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> GetSearchSuggestAsyncWithHttpInfo(string q64, List<string> expand = null, bool? profile = null)
+    {
+        // verify the required parameter 'q64' is set
+        if (q64 == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'q64' when calling SuggestApi->GetSearchSuggest");
+        }
+
+        var localVarPath = "/api/v2/search/suggest";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (q64 != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("q64", this.Configuration.ApiClient.ParameterToString(q64)));
+        }
+
+        if (expand != null)
+        {
+            expand.ForEach(obj => { localVarQueryParams.Add(new Tuple<string, string>("expand", this.Configuration.ApiClient.ParameterToString(obj))); });
+        }
+
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Search resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    public JsonNodeSearchResponse PostSearch(SearchRequest body, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = PostSearchWithHttpInfo(body, profile);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Search resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    public ApiResponse<JsonNodeSearchResponse> PostSearchWithHttpInfo(SearchRequest body, bool? profile = null)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearch");
+        }
+
+        var localVarPath = "/api/v2/search";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Search resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    public async System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchAsync(SearchRequest body, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = await PostSearchAsyncWithHttpInfo(body, profile);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Search resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchAsyncWithHttpInfo(SearchRequest body, bool? profile = null)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearch");
+        }
+
+        var localVarPath = "/api/v2/search";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearch: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearch: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+
+    /// <summary>
+    /// Suggest resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>JsonNodeSearchResponse</returns>
+
+    public JsonNodeSearchResponse PostSearchSuggest(SuggestSearchRequest body, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = PostSearchSuggestWithHttpInfo(body, profile);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Suggest resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>ApiResponse of JsonNodeSearchResponse</returns>
+
+    public ApiResponse<JsonNodeSearchResponse> PostSearchSuggestWithHttpInfo(SuggestSearchRequest body, bool? profile = null)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearchSuggest");
+        }
+
+        var localVarPath = "/api/v2/search/suggest";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Suggest resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of JsonNodeSearchResponse</returns>
+
+    public async System.Threading.Tasks.Task<JsonNodeSearchResponse> PostSearchSuggestAsync(SuggestSearchRequest body, bool? profile = null)
+    {
+        ApiResponse<JsonNodeSearchResponse> localVarResponse = await PostSearchSuggestAsyncWithHttpInfo(body, profile);
+        return localVarResponse.Data;
+
+    }
+
+    /// <summary>
+    /// Suggest resources. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="body">Search request options</param>
+    /// <param name="profile">profile (optional, default to true)</param>
+    /// <returns>Task of ApiResponse (JsonNodeSearchResponse)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<JsonNodeSearchResponse>> PostSearchSuggestAsyncWithHttpInfo(SuggestSearchRequest body, bool? profile = null)
+    {
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling SuggestApi->PostSearchSuggest");
+        }
+
+        var localVarPath = "/api/v2/search/suggest";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+
+        // Query params
+        if (profile != null)
+        {
+            localVarQueryParams.Add(new Tuple<string, string>("profile", this.Configuration.ApiClient.ParameterToString(profile)));
+        }
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Post, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PostSearchSuggest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<JsonNodeSearchResponse>(localVarStatusCode,
+            localVarHeaders,
+            (JsonNodeSearchResponse)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(JsonNodeSearchResponse)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

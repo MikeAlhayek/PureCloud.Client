@@ -2,661 +2,717 @@ using PureCloudPlatform.Client.V2.Client;
 using PureCloudPlatform.Client.V2.Model;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Api
+namespace PureCloud.Client;
+
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public interface IAgentCopilotApi : IApiAccessor
 {
+    #region Synchronous Operations
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Get copilot configuration of an assistant.
     /// </summary>
-    public interface IAgentCopilotApi : IApiAccessor
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Copilot</returns>
+
+    Copilot GetAssistantCopilot(string assistantId);
+
+    /// <summary>
+    /// Get copilot configuration of an assistant.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>ApiResponse of Copilot</returns>
+
+    ApiResponse<Copilot> GetAssistantCopilotWithHttpInfo(string assistantId);
+
+    /// <summary>
+    /// Update agent copilot configuration
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Copilot</returns>
+
+    Copilot PutAssistantCopilot(string assistantId, Copilot body);
+
+    /// <summary>
+    /// Update agent copilot configuration
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>ApiResponse of Copilot</returns>
+
+    ApiResponse<Copilot> PutAssistantCopilotWithHttpInfo(string assistantId, Copilot body);
+
+    #endregion Synchronous Operations
+
+    #region Asynchronous Operations
+
+    /// <summary>
+    /// Get copilot configuration of an assistant.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Task of Copilot</returns>
+
+    System.Threading.Tasks.Task<Copilot> GetAssistantCopilotAsync(string assistantId);
+
+    /// <summary>
+    /// Get copilot configuration of an assistant.
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Task of ApiResponse (Copilot)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<Copilot>> GetAssistantCopilotAsyncWithHttpInfo(string assistantId);
+
+    /// <summary>
+    /// Update agent copilot configuration
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Task of Copilot</returns>
+
+    System.Threading.Tasks.Task<Copilot> PutAssistantCopilotAsync(string assistantId, Copilot body);
+
+    /// <summary>
+    /// Update agent copilot configuration
+    /// </summary>
+    /// <remarks>
+    /// 
+    /// </remarks>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Task of ApiResponse (Copilot)</returns>
+
+    System.Threading.Tasks.Task<ApiResponse<Copilot>> PutAssistantCopilotAsyncWithHttpInfo(string assistantId, Copilot body);
+
+    #endregion Asynchronous Operations
+
+}
+
+/// <summary>
+/// Represents a collection of functions to interact with the API endpoints
+/// </summary>
+public partial class AgentCopilotApi : IAgentCopilotApi
+{
+    /// <summary>
+    /// Initializes a new instance of the <see cref="AgentCopilotApi"/> class.
+    /// </summary>
+    /// <returns></returns>
+    public AgentCopilotApi(String basePath)
     {
-        #region Synchronous Operations
+        this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
 
-        /// <summary>
-        /// Get copilot configuration of an assistant.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Copilot</returns>
-        
-        Copilot GetAssistantCopilot (string assistantId);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Get copilot configuration of an assistant.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>ApiResponse of Copilot</returns>
-        
-        ApiResponse<Copilot> GetAssistantCopilotWithHttpInfo (string assistantId);
+    /// <summary>
+    /// Initializes a new instance of the <see cref="AgentCopilotApi"/> class
+    /// using Configuration object
+    /// </summary>
+    /// <param name="configuration">An instance of Configuration</param>
+    /// <returns></returns>
+    public AgentCopilotApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
+    {
+        if (configuration == null) // use the default one in Configuration
+        {
+            this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
+        }
+        else
+        {
+            this.Configuration = configuration;
+        }
 
-        /// <summary>
-        /// Update agent copilot configuration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Copilot</returns>
-        
-        Copilot PutAssistantCopilot (string assistantId, Copilot body);
+        // ensure API client has configuration ready
+        if (this.Configuration.ApiClient.Configuration == null)
+        {
+            this.Configuration.ApiClient.Configuration = this.Configuration;
+        }
+    }
 
-        /// <summary>
-        /// Update agent copilot configuration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of Copilot</returns>
-        
-        ApiResponse<Copilot> PutAssistantCopilotWithHttpInfo (string assistantId, Copilot body);
+    /// <summary>
+    /// Gets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    public String GetBasePath()
+    {
+        return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+    }
 
-        #endregion Synchronous Operations
+    /// <summary>
+    /// Sets the base path of the API client.
+    /// </summary>
+    /// <value>The base path</value>
+    [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
+    public void SetBasePath(String basePath)
+    {
+        // do nothing
+    }
 
-        #region Asynchronous Operations
+    /// <summary>
+    /// Gets or sets the configuration object
+    /// </summary>
+    /// <value>An instance of the Configuration</value>
+    public PureCloudPlatform.Client.V2.Client.Configuration Configuration { get; set; }
 
-        /// <summary>
-        /// Get copilot configuration of an assistant.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Task of Copilot</returns>
-        
-        System.Threading.Tasks.Task<Copilot> GetAssistantCopilotAsync (string assistantId);
+    /// <summary>
+    /// Gets the default header.
+    /// </summary>
+    /// <returns>Dictionary of HTTP header</returns>
+    [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
+    public Dictionary<String, String> DefaultHeader()
+    {
+        return this.Configuration.DefaultHeader;
+    }
 
-        /// <summary>
-        /// Get copilot configuration of an assistant.
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Task of ApiResponse (Copilot)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<Copilot>> GetAssistantCopilotAsyncWithHttpInfo (string assistantId);
+    /// <summary>
+    /// Add default header.
+    /// </summary>
+    /// <param name="key">Header field name.</param>
+    /// <param name="value">Header field value.</param>
+    /// <returns></returns>
+    [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
+    public void AddDefaultHeader(string key, string value)
+    {
+        this.Configuration.AddDefaultHeader(key, value);
+    }
 
-        /// <summary>
-        /// Update agent copilot configuration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Task of Copilot</returns>
-        
-        System.Threading.Tasks.Task<Copilot> PutAssistantCopilotAsync (string assistantId, Copilot body);
 
-        /// <summary>
-        /// Update agent copilot configuration
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (Copilot)</returns>
-        
-        System.Threading.Tasks.Task<ApiResponse<Copilot>> PutAssistantCopilotAsyncWithHttpInfo (string assistantId, Copilot body);
+    /// <summary>
+    /// Get copilot configuration of an assistant. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Copilot</returns>
 
-        #endregion Asynchronous Operations
+    public Copilot GetAssistantCopilot(string assistantId)
+    {
+        ApiResponse<Copilot> localVarResponse = GetAssistantCopilotWithHttpInfo(assistantId);
+        return localVarResponse.Data;
+    }
+
+    /// <summary>
+    /// Get copilot configuration of an assistant. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>ApiResponse of Copilot</returns>
+
+    public ApiResponse<Copilot> GetAssistantCopilotWithHttpInfo(string assistantId)
+    {
+        // verify the required parameter 'assistantId' is set
+        if (assistantId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->GetAssistantCopilot");
+        }
+
+        var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (assistantId != null)
+        {
+            localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<Copilot>(localVarStatusCode,
+            localVarHeaders,
+            (Copilot)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
+    /// <summary>
+    /// Get copilot configuration of an assistant. 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Task of Copilot</returns>
+
+    public async System.Threading.Tasks.Task<Copilot> GetAssistantCopilotAsync(string assistantId)
+    {
+        ApiResponse<Copilot> localVarResponse = await GetAssistantCopilotAsyncWithHttpInfo(assistantId);
+        return localVarResponse.Data;
 
     }
 
     /// <summary>
-    /// Represents a collection of functions to interact with the API endpoints
+    /// Get copilot configuration of an assistant. 
+    /// 
     /// </summary>
-    public partial class AgentCopilotApi : IAgentCopilotApi
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <returns>Task of ApiResponse (Copilot)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<Copilot>> GetAssistantCopilotAsyncWithHttpInfo(string assistantId)
     {
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AgentCopilotApi"/> class.
-        /// </summary>
-        /// <returns></returns>
-        public AgentCopilotApi(String basePath)
+        // verify the required parameter 'assistantId' is set
+        if (assistantId == null)
         {
-            this.Configuration = new PureCloudPlatform.Client.V2.Client.Configuration(new ApiClient(basePath));
-
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+            throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->GetAssistantCopilot");
         }
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="AgentCopilotApi"/> class
-        /// using Configuration object
-        /// </summary>
-        /// <param name="configuration">An instance of Configuration</param>
-        /// <returns></returns>
-        public AgentCopilotApi(PureCloudPlatform.Client.V2.Client.Configuration configuration = null)
-        {
-            if (configuration == null) // use the default one in Configuration
-                this.Configuration = PureCloudPlatform.Client.V2.Client.Configuration.Default;
-            else
-                this.Configuration = configuration;
+        var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            // ensure API client has configuration ready
-            if (this.Configuration.ApiClient.Configuration == null)
-            {
-                this.Configuration.ApiClient.Configuration = this.Configuration;
-            }
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
         }
 
-        /// <summary>
-        /// Gets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        public String GetBasePath()
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (assistantId != null)
         {
-             return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
+            localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
         }
 
-        /// <summary>
-        /// Sets the base path of the API client.
-        /// </summary>
-        /// <value>The base path</value>
-        [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-        public void SetBasePath(String basePath)
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
         {
-            // do nothing
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
 
-        /// <summary>
-        /// Gets or sets the configuration object
-        /// </summary>
-        /// <value>An instance of the Configuration</value>
-        public PureCloudPlatform.Client.V2.Client.Configuration Configuration {get; set;}
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-        /// <summary>
-        /// Gets the default header.
-        /// </summary>
-        /// <returns>Dictionary of HTTP header</returns>
-        [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-        public Dictionary<String, String> DefaultHeader()
-        {
-            return this.Configuration.DefaultHeader;
-        }
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-        /// <summary>
-        /// Add default header.
-        /// </summary>
-        /// <param name="key">Header field name.</param>
-        /// <param name="value">Header field value.</param>
-        /// <returns></returns>
-        [Obsolete("AddDefaultHeader is deprecated, please use this.Configuration.AddDefaultHeader instead.")]
-        public void AddDefaultHeader(string key, string value)
-        {
-            this.Configuration.AddDefaultHeader(key, value);
-        }
-
-
-        /// <summary>
-        /// Get copilot configuration of an assistant. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Copilot</returns>
-        
-        public Copilot GetAssistantCopilot (string assistantId)
-        {
-             ApiResponse<Copilot> localVarResponse = GetAssistantCopilotWithHttpInfo(assistantId);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// Get copilot configuration of an assistant. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>ApiResponse of Copilot</returns>
-        
-        public ApiResponse< Copilot > GetAssistantCopilotWithHttpInfo (string assistantId)
-        { 
-            // verify the required parameter 'assistantId' is set
-            if (assistantId == null)
-                throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->GetAssistantCopilot");
-
-            var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (assistantId != null) localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Copilot>(localVarStatusCode,
-                localVarHeaders,
-                (Copilot) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Get copilot configuration of an assistant. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Task of Copilot</returns>
-        
-        public async System.Threading.Tasks.Task<Copilot> GetAssistantCopilotAsync (string assistantId)
+        if (localVarStatusCode >= 400)
         {
-             ApiResponse<Copilot> localVarResponse = await GetAssistantCopilotAsyncWithHttpInfo(assistantId);
-             return localVarResponse.Data;
-
+            throw new ApiException(localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
         }
-
-        /// <summary>
-        /// Get copilot configuration of an assistant. 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <returns>Task of ApiResponse (Copilot)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<Copilot>> GetAssistantCopilotAsyncWithHttpInfo (string assistantId)
-        { 
-            // verify the required parameter 'assistantId' is set
-            if (assistantId == null)
-                throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->GetAssistantCopilot");
-            
-
-            var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (assistantId != null) localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-
-
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
-
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Get, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Copilot>(localVarStatusCode,
-                localVarHeaders,
-                (Copilot) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-
-        /// <summary>
-        /// Update agent copilot configuration 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Copilot</returns>
-        
-        public Copilot PutAssistantCopilot (string assistantId, Copilot body)
+        else if (localVarStatusCode == 0)
         {
-             ApiResponse<Copilot> localVarResponse = PutAssistantCopilotWithHttpInfo(assistantId, body);
-             return localVarResponse.Data;
+            throw new ApiException(localVarStatusCode, "Error calling GetAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        /// <summary>
-        /// Update agent copilot configuration 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>ApiResponse of Copilot</returns>
-        
-        public ApiResponse< Copilot > PutAssistantCopilotWithHttpInfo (string assistantId, Copilot body)
-        { 
-            // verify the required parameter 'assistantId' is set
-            if (assistantId == null)
-                throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->PutAssistantCopilot");
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling AgentCopilotApi->PutAssistantCopilot");
-
-            var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-
-                "application/json"
-                
-
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-
-            // Path params
-            if (assistantId != null) localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
-
-            // Query params
-
-            // Header params
-
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+        return new ApiResponse<Copilot>(localVarStatusCode,
+            localVarHeaders,
+            (Copilot)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
+    /// <summary>
+    /// Update agent copilot configuration 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Copilot</returns>
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+    public Copilot PutAssistantCopilot(string assistantId, Copilot body)
+    {
+        ApiResponse<Copilot> localVarResponse = PutAssistantCopilotWithHttpInfo(assistantId, body);
+        return localVarResponse.Data;
+    }
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+    /// <summary>
+    /// Update agent copilot configuration 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>ApiResponse of Copilot</returns>
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
-                                                         {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
-
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Copilot>(localVarStatusCode,
-                localVarHeaders,
-                (Copilot) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
-        }
-
-
-        /// <summary>
-        /// Update agent copilot configuration 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Task of Copilot</returns>
-        
-        public async System.Threading.Tasks.Task<Copilot> PutAssistantCopilotAsync (string assistantId, Copilot body)
+    public ApiResponse<Copilot> PutAssistantCopilotWithHttpInfo(string assistantId, Copilot body)
+    {
+        // verify the required parameter 'assistantId' is set
+        if (assistantId == null)
         {
-             ApiResponse<Copilot> localVarResponse = await PutAssistantCopilotAsyncWithHttpInfo(assistantId, body);
-             return localVarResponse.Data;
-
+            throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->PutAssistantCopilot");
+        }
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling AgentCopilotApi->PutAssistantCopilot");
         }
 
-        /// <summary>
-        /// Update agent copilot configuration 
-        /// 
-        /// </summary>
-        /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="assistantId">Assistant ID</param>
-        /// <param name="body"></param>
-        /// <returns>Task of ApiResponse (Copilot)</returns>
-        
-        public async System.Threading.Tasks.Task<ApiResponse<Copilot>> PutAssistantCopilotAsyncWithHttpInfo (string assistantId, Copilot body)
-        { 
-            // verify the required parameter 'assistantId' is set
-            if (assistantId == null)
-                throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->PutAssistantCopilot");
-            
-            // verify the required parameter 'body' is set
-            if (body == null)
-                throw new ApiException(400, "Missing required parameter 'body' when calling AgentCopilotApi->PutAssistantCopilot");
-            
+        var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
 
-            var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new List<Tuple<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
 
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-                
-            };
-            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
 
-                "application/json"
+            "application/json"
 
-                
-            };
-            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
 
-            // Path params
-            if (assistantId != null) localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
 
-            // Query params
+        // Path params
+        if (assistantId != null)
+        {
+            localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
+        }
 
-            // Header params
+        // Query params
 
-            // Form params
-            
-            // Body param
-            if (body != null && body.GetType() != typeof(byte[]))
-                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
-            else
-                localVarPostBody = body; // byte array
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
 
 
 
-            // authentication (PureCloud OAuth) required
-            // oauth required
-            if (!String.IsNullOrEmpty(Configuration.AccessToken))
-            {
-                localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
-            }
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
 
-            // make the HTTP request
-            RestResponse localVarResponse = (RestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)this.Configuration.ApiClient.CallApi(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
 
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
 
-            Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
-                                                             .GroupBy(header => header?.Name)
-                                                             .Select(header => new
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
                                                          {
-                                                            Name = header?.FirstOrDefault()?.Name,
-                                                            Value = header.Select(x => x?.Value)?.ToList()
-                                                            }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray())) 
-                                                        ?? new Dictionary<string, string>();
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
 
-            if (localVarStatusCode >= 400)
-                throw new ApiException (localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
-            else if (localVarStatusCode == 0)
-                throw new ApiException (localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
-
-            return new ApiResponse<Copilot>(localVarStatusCode,
-                localVarHeaders,
-                (Copilot) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
-                localVarResponse.Content,
-                localVarResponse.StatusDescription);
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
+        return new ApiResponse<Copilot>(localVarStatusCode,
+            localVarHeaders,
+            (Copilot)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
 
+
+    /// <summary>
+    /// Update agent copilot configuration 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Task of Copilot</returns>
+
+    public async System.Threading.Tasks.Task<Copilot> PutAssistantCopilotAsync(string assistantId, Copilot body)
+    {
+        ApiResponse<Copilot> localVarResponse = await PutAssistantCopilotAsyncWithHttpInfo(assistantId, body);
+        return localVarResponse.Data;
 
     }
+
+    /// <summary>
+    /// Update agent copilot configuration 
+    /// 
+    /// </summary>
+    /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
+    /// <param name="assistantId">Assistant ID</param>
+    /// <param name="body"></param>
+    /// <returns>Task of ApiResponse (Copilot)</returns>
+
+    public async System.Threading.Tasks.Task<ApiResponse<Copilot>> PutAssistantCopilotAsyncWithHttpInfo(string assistantId, Copilot body)
+    {
+        // verify the required parameter 'assistantId' is set
+        if (assistantId == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'assistantId' when calling AgentCopilotApi->PutAssistantCopilot");
+        }
+
+        // verify the required parameter 'body' is set
+        if (body == null)
+        {
+            throw new ApiException(400, "Missing required parameter 'body' when calling AgentCopilotApi->PutAssistantCopilot");
+        }
+
+        var localVarPath = "/api/v2/assistants/{assistantId}/copilot";
+        var localVarPathParams = new Dictionary<String, String>();
+        var localVarQueryParams = new List<Tuple<String, String>>();
+        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<String, String>();
+        var localVarFileParams = new Dictionary<String, FileParameter>();
+        Object localVarPostBody = null;
+
+        // to determine the Content-Type header
+        String[] localVarHttpContentTypes = new String[] {
+            "application/json"
+
+        };
+        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+        // to determine the Accept header
+        String[] localVarHttpHeaderAccepts = new String[] {
+
+            "application/json"
+
+
+        };
+        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        if (localVarHttpHeaderAccept != null)
+        {
+            localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+        }
+
+        // set "format" to json by default
+        // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+        localVarPathParams.Add("format", "json");
+
+        // Path params
+        if (assistantId != null)
+        {
+            localVarPathParams.Add("assistantId", this.Configuration.ApiClient.ParameterToString(assistantId));
+        }
+
+        // Query params
+
+        // Header params
+
+        // Form params
+
+        // Body param
+        if (body != null && body.GetType() != typeof(byte[]))
+        {
+            localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
+        }
+        else
+        {
+            localVarPostBody = body; // byte array
+        }
+
+
+
+        // authentication (PureCloud OAuth) required
+        // oauth required
+        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        {
+            localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
+        }
+
+        // make the HTTP request
+        RestResponse localVarResponse = (RestResponse)await this.Configuration.ApiClient.CallApiAsync(localVarPath,
+            Method.Put, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+            localVarPathParams, localVarHttpContentType);
+
+        int localVarStatusCode = (int)localVarResponse.StatusCode;
+
+        Dictionary<string, string> localVarHeaders = localVarResponse.Headers?
+                                                         .GroupBy(header => header?.Name)
+                                                         .Select(header => new
+                                                         {
+                                                             Name = header?.FirstOrDefault()?.Name,
+                                                             Value = header.Select(x => x?.Value)?.ToList()
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                    ?? new Dictionary<string, string>();
+
+        if (localVarStatusCode >= 400)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.Content, localVarResponse.Content, localVarHeaders);
+        }
+        else if (localVarStatusCode == 0)
+        {
+            throw new ApiException(localVarStatusCode, "Error calling PutAssistantCopilot: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
+        }
+
+        return new ApiResponse<Copilot>(localVarStatusCode,
+            localVarHeaders,
+            (Copilot)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Copilot)),
+            localVarResponse.Content,
+            localVarResponse.StatusDescription);
+    }
+
+
 
 }

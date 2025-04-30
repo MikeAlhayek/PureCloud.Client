@@ -2,262 +2,270 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// PredictionResults
+/// </summary>
+[DataContract]
+public partial class PredictionResults : IEquatable<PredictionResults>
 {
     /// <summary>
-    /// PredictionResults
+    /// Indicates the media type scope of this estimated wait time
     /// </summary>
-    [DataContract]
-    public partial class PredictionResults :  IEquatable<PredictionResults>
+    /// <value>Indicates the media type scope of this estimated wait time</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum IntentEnum
     {
         /// <summary>
-        /// Indicates the media type scope of this estimated wait time
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>Indicates the media type scope of this estimated wait time</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum IntentEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum All for "ALL"
-            /// </summary>
-            [EnumMember(Value = "ALL")]
-            All,
-            
-            /// <summary>
-            /// Enum Call for "CALL"
-            /// </summary>
-            [EnumMember(Value = "CALL")]
-            Call,
-            
-            /// <summary>
-            /// Enum Callback for "CALLBACK"
-            /// </summary>
-            [EnumMember(Value = "CALLBACK")]
-            Callback,
-            
-            /// <summary>
-            /// Enum Chat for "CHAT"
-            /// </summary>
-            [EnumMember(Value = "CHAT")]
-            Chat,
-            
-            /// <summary>
-            /// Enum Email for "EMAIL"
-            /// </summary>
-            [EnumMember(Value = "EMAIL")]
-            Email,
-            
-            /// <summary>
-            /// Enum Socialexpression for "SOCIALEXPRESSION"
-            /// </summary>
-            [EnumMember(Value = "SOCIALEXPRESSION")]
-            Socialexpression,
-            
-            /// <summary>
-            /// Enum Videocomm for "VIDEOCOMM"
-            /// </summary>
-            [EnumMember(Value = "VIDEOCOMM")]
-            Videocomm,
-            
-            /// <summary>
-            /// Enum Message for "MESSAGE"
-            /// </summary>
-            [EnumMember(Value = "MESSAGE")]
-            Message
-        }
-        /// <summary>
-        /// Indicates the estimated wait time Formula
-        /// </summary>
-        /// <value>Indicates the estimated wait time Formula</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum FormulaEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Best for "BEST"
-            /// </summary>
-            [EnumMember(Value = "BEST")]
-            Best,
-            
-            /// <summary>
-            /// Enum Simple for "SIMPLE"
-            /// </summary>
-            [EnumMember(Value = "SIMPLE")]
-            Simple,
-            
-            /// <summary>
-            /// Enum Abandon for "ABANDON"
-            /// </summary>
-            [EnumMember(Value = "ABANDON")]
-            Abandon,
-            
-            /// <summary>
-            /// Enum PatienceAbandon for "PATIENCE_ABANDON"
-            /// </summary>
-            [EnumMember(Value = "PATIENCE_ABANDON")]
-            PatienceAbandon
-        }
-        /// <summary>
-        /// Indicates the media type scope of this estimated wait time
-        /// </summary>
-        /// <value>Indicates the media type scope of this estimated wait time</value>
-        [DataMember(Name="intent", EmitDefaultValue=false)]
-        public IntentEnum? Intent { get; set; }
-        /// <summary>
-        /// Indicates the estimated wait time Formula
-        /// </summary>
-        /// <value>Indicates the estimated wait time Formula</value>
-        [DataMember(Name="formula", EmitDefaultValue=false)]
-        public FormulaEnum? Formula { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PredictionResults" /> class.
+        /// Enum All for "ALL"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PredictionResults() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PredictionResults" /> class.
-        /// </summary>
-        /// <param name="Intent">Indicates the media type scope of this estimated wait time.</param>
-        /// <param name="Formula">Indicates the estimated wait time Formula (required).</param>
-        /// <param name="EstimatedWaitTimeSeconds">Estimated wait time in seconds (required).</param>
-        /// <param name="Label">This specifies the interaction label scoped to this estimated wait time calculation.</param>
-        public PredictionResults(IntentEnum? Intent = null, FormulaEnum? Formula = null, int? EstimatedWaitTimeSeconds = null, AddressableEntityRef Label = null)
-        {
-            this.Intent = Intent;
-            this.Formula = Formula;
-            this.EstimatedWaitTimeSeconds = EstimatedWaitTimeSeconds;
-            this.Label = Label;
-            
-        }
-        
-
-
-
-
-
+        [EnumMember(Value = "ALL")]
+        All,
 
         /// <summary>
-        /// Estimated wait time in seconds
+        /// Enum Call for "CALL"
         /// </summary>
-        /// <value>Estimated wait time in seconds</value>
-        [DataMember(Name="estimatedWaitTimeSeconds", EmitDefaultValue=false)]
-        public int? EstimatedWaitTimeSeconds { get; set; }
-
-
+        [EnumMember(Value = "CALL")]
+        Call,
 
         /// <summary>
-        /// This specifies the interaction label scoped to this estimated wait time calculation
+        /// Enum Callback for "CALLBACK"
         /// </summary>
-        /// <value>This specifies the interaction label scoped to this estimated wait time calculation</value>
-        [DataMember(Name="label", EmitDefaultValue=false)]
-        public AddressableEntityRef Label { get; set; }
-
+        [EnumMember(Value = "CALLBACK")]
+        Callback,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Chat for "CHAT"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class PredictionResults {\n");
-
-            sb.Append("  Intent: ").Append(Intent).Append("\n");
-            sb.Append("  Formula: ").Append(Formula).Append("\n");
-            sb.Append("  EstimatedWaitTimeSeconds: ").Append(EstimatedWaitTimeSeconds).Append("\n");
-            sb.Append("  Label: ").Append(Label).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "CHAT")]
+        Chat,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Email for "EMAIL"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as PredictionResults);
-        }
+        [EnumMember(Value = "EMAIL")]
+        Email,
 
         /// <summary>
-        /// Returns true if PredictionResults instances are equal
+        /// Enum Socialexpression for "SOCIALEXPRESSION"
         /// </summary>
-        /// <param name="other">Instance of PredictionResults to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PredictionResults other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Intent == other.Intent ||
-                    this.Intent != null &&
-                    this.Intent.Equals(other.Intent)
-                ) &&
-                (
-                    this.Formula == other.Formula ||
-                    this.Formula != null &&
-                    this.Formula.Equals(other.Formula)
-                ) &&
-                (
-                    this.EstimatedWaitTimeSeconds == other.EstimatedWaitTimeSeconds ||
-                    this.EstimatedWaitTimeSeconds != null &&
-                    this.EstimatedWaitTimeSeconds.Equals(other.EstimatedWaitTimeSeconds)
-                ) &&
-                (
-                    this.Label == other.Label ||
-                    this.Label != null &&
-                    this.Label.Equals(other.Label)
-                );
-        }
+        [EnumMember(Value = "SOCIALEXPRESSION")]
+        Socialexpression,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Videocomm for "VIDEOCOMM"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Intent != null)
-                    hash = hash * 59 + this.Intent.GetHashCode();
+        [EnumMember(Value = "VIDEOCOMM")]
+        Videocomm,
 
-                if (this.Formula != null)
-                    hash = hash * 59 + this.Formula.GetHashCode();
+        /// <summary>
+        /// Enum Message for "MESSAGE"
+        /// </summary>
+        [EnumMember(Value = "MESSAGE")]
+        Message
+    }
+    /// <summary>
+    /// Indicates the estimated wait time Formula
+    /// </summary>
+    /// <value>Indicates the estimated wait time Formula</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum FormulaEnum
+    {
+        /// <summary>
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
+        /// </summary>
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
-                if (this.EstimatedWaitTimeSeconds != null)
-                    hash = hash * 59 + this.EstimatedWaitTimeSeconds.GetHashCode();
+        /// <summary>
+        /// Enum Best for "BEST"
+        /// </summary>
+        [EnumMember(Value = "BEST")]
+        Best,
 
-                if (this.Label != null)
-                    hash = hash * 59 + this.Label.GetHashCode();
+        /// <summary>
+        /// Enum Simple for "SIMPLE"
+        /// </summary>
+        [EnumMember(Value = "SIMPLE")]
+        Simple,
 
-                return hash;
-            }
-        }
+        /// <summary>
+        /// Enum Abandon for "ABANDON"
+        /// </summary>
+        [EnumMember(Value = "ABANDON")]
+        Abandon,
+
+        /// <summary>
+        /// Enum PatienceAbandon for "PATIENCE_ABANDON"
+        /// </summary>
+        [EnumMember(Value = "PATIENCE_ABANDON")]
+        PatienceAbandon
+    }
+    /// <summary>
+    /// Indicates the media type scope of this estimated wait time
+    /// </summary>
+    /// <value>Indicates the media type scope of this estimated wait time</value>
+    [DataMember(Name = "intent", EmitDefaultValue = false)]
+    public IntentEnum? Intent { get; set; }
+    /// <summary>
+    /// Indicates the estimated wait time Formula
+    /// </summary>
+    /// <value>Indicates the estimated wait time Formula</value>
+    [DataMember(Name = "formula", EmitDefaultValue = false)]
+    public FormulaEnum? Formula { get; set; }
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PredictionResults" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected PredictionResults() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PredictionResults" /> class.
+    /// </summary>
+    /// <param name="Intent">Indicates the media type scope of this estimated wait time.</param>
+    /// <param name="Formula">Indicates the estimated wait time Formula (required).</param>
+    /// <param name="EstimatedWaitTimeSeconds">Estimated wait time in seconds (required).</param>
+    /// <param name="Label">This specifies the interaction label scoped to this estimated wait time calculation.</param>
+    public PredictionResults(IntentEnum? Intent = null, FormulaEnum? Formula = null, int? EstimatedWaitTimeSeconds = null, AddressableEntityRef Label = null)
+    {
+        this.Intent = Intent;
+        this.Formula = Formula;
+        this.EstimatedWaitTimeSeconds = EstimatedWaitTimeSeconds;
+        this.Label = Label;
+
     }
 
+
+
+
+
+
+
+    /// <summary>
+    /// Estimated wait time in seconds
+    /// </summary>
+    /// <value>Estimated wait time in seconds</value>
+    [DataMember(Name = "estimatedWaitTimeSeconds", EmitDefaultValue = false)]
+    public int? EstimatedWaitTimeSeconds { get; set; }
+
+
+
+    /// <summary>
+    /// This specifies the interaction label scoped to this estimated wait time calculation
+    /// </summary>
+    /// <value>This specifies the interaction label scoped to this estimated wait time calculation</value>
+    [DataMember(Name = "label", EmitDefaultValue = false)]
+    public AddressableEntityRef Label { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class PredictionResults {\n");
+
+        sb.Append("  Intent: ").Append(Intent).Append("\n");
+        sb.Append("  Formula: ").Append(Formula).Append("\n");
+        sb.Append("  EstimatedWaitTimeSeconds: ").Append(EstimatedWaitTimeSeconds).Append("\n");
+        sb.Append("  Label: ").Append(Label).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as PredictionResults);
+    }
+
+    /// <summary>
+    /// Returns true if PredictionResults instances are equal
+    /// </summary>
+    /// <param name="other">Instance of PredictionResults to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(PredictionResults other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Intent == other.Intent ||
+                this.Intent != null &&
+                this.Intent.Equals(other.Intent)
+            ) &&
+            (
+                this.Formula == other.Formula ||
+                this.Formula != null &&
+                this.Formula.Equals(other.Formula)
+            ) &&
+            (
+                this.EstimatedWaitTimeSeconds == other.EstimatedWaitTimeSeconds ||
+                this.EstimatedWaitTimeSeconds != null &&
+                this.EstimatedWaitTimeSeconds.Equals(other.EstimatedWaitTimeSeconds)
+            ) &&
+            (
+                this.Label == other.Label ||
+                this.Label != null &&
+                this.Label.Equals(other.Label)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Intent != null)
+            {
+                hash = hash * 59 + this.Intent.GetHashCode();
+            }
+
+            if (this.Formula != null)
+            {
+                hash = hash * 59 + this.Formula.GetHashCode();
+            }
+
+            if (this.EstimatedWaitTimeSeconds != null)
+            {
+                hash = hash * 59 + this.EstimatedWaitTimeSeconds.GetHashCode();
+            }
+
+            if (this.Label != null)
+            {
+                hash = hash * 59 + this.Label.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }

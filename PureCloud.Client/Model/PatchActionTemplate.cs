@@ -2,284 +2,296 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model
+namespace PureCloudPlatform.Client.V2.Model;
+
+/// <summary>
+/// PatchActionTemplate
+/// </summary>
+[DataContract]
+public partial class PatchActionTemplate : IEquatable<PatchActionTemplate>
 {
     /// <summary>
-    /// PatchActionTemplate
+    /// Media type of action described by the action template.
     /// </summary>
-    [DataContract]
-    public partial class PatchActionTemplate :  IEquatable<PatchActionTemplate>
+    /// <value>Media type of action described by the action template.</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum MediaTypeEnum
     {
         /// <summary>
-        /// Media type of action described by the action template.
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
         /// </summary>
-        /// <value>Media type of action described by the action template.</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum MediaTypeEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Webchat for "webchat"
-            /// </summary>
-            [EnumMember(Value = "webchat")]
-            Webchat,
-            
-            /// <summary>
-            /// Enum Webmessagingoffer for "webMessagingOffer"
-            /// </summary>
-            [EnumMember(Value = "webMessagingOffer")]
-            Webmessagingoffer,
-            
-            /// <summary>
-            /// Enum Contentoffer for "contentOffer"
-            /// </summary>
-            [EnumMember(Value = "contentOffer")]
-            Contentoffer,
-            
-            /// <summary>
-            /// Enum Integrationaction for "integrationAction"
-            /// </summary>
-            [EnumMember(Value = "integrationAction")]
-            Integrationaction,
-            
-            /// <summary>
-            /// Enum Architectflow for "architectFlow"
-            /// </summary>
-            [EnumMember(Value = "architectFlow")]
-            Architectflow,
-            
-            /// <summary>
-            /// Enum Openaction for "openAction"
-            /// </summary>
-            [EnumMember(Value = "openAction")]
-            Openaction
-        }
-        /// <summary>
-        /// Whether the action template is currently active, inactive or deleted.
-        /// </summary>
-        /// <value>Whether the action template is currently active, inactive or deleted.</value>
-        [JsonConverter(typeof(JsonStringEnumConverter))]
-        public enum StateEnum
-        {
-            /// <summary>
-            /// Your SDK version is out of date and an unknown enum value was encountered. 
-            /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
-            /// in the Package Manager Console
-            /// </summary>
-            [EnumMember(Value = "OUTDATED_SDK_VERSION")]
-            OutdatedSdkVersion,
-            
-            /// <summary>
-            /// Enum Active for "Active"
-            /// </summary>
-            [EnumMember(Value = "Active")]
-            Active,
-            
-            /// <summary>
-            /// Enum Inactive for "Inactive"
-            /// </summary>
-            [EnumMember(Value = "Inactive")]
-            Inactive,
-            
-            /// <summary>
-            /// Enum Deleted for "Deleted"
-            /// </summary>
-            [EnumMember(Value = "Deleted")]
-            Deleted
-        }
-        /// <summary>
-        /// Media type of action described by the action template.
-        /// </summary>
-        /// <value>Media type of action described by the action template.</value>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
-        public MediaTypeEnum? MediaType { get; set; }
-        /// <summary>
-        /// Whether the action template is currently active, inactive or deleted.
-        /// </summary>
-        /// <value>Whether the action template is currently active, inactive or deleted.</value>
-        [DataMember(Name="state", EmitDefaultValue=false)]
-        public StateEnum? State { get; set; }
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="PatchActionTemplate" /> class.
+        /// Enum Webchat for "webchat"
         /// </summary>
-        [JsonConstructorAttribute]
-        protected PatchActionTemplate() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="PatchActionTemplate" /> class.
-        /// </summary>
-        /// <param name="Name">Name of the action template. (required).</param>
-        /// <param name="Description">Description of the action template&#39;s functionality..</param>
-        /// <param name="Version">The version of the action template..</param>
-        /// <param name="MediaType">Media type of action described by the action template..</param>
-        /// <param name="State">Whether the action template is currently active, inactive or deleted..</param>
-        /// <param name="ContentOffer">Properties used to configure an action of type content offer.</param>
-        public PatchActionTemplate(string Name = null, string Description = null, int? Version = null, MediaTypeEnum? MediaType = null, StateEnum? State = null, PatchContentOffer ContentOffer = null)
-        {
-            this.Name = Name;
-            this.Description = Description;
-            this.Version = Version;
-            this.MediaType = MediaType;
-            this.State = State;
-            this.ContentOffer = ContentOffer;
-            
-        }
-        
-
+        [EnumMember(Value = "webchat")]
+        Webchat,
 
         /// <summary>
-        /// Name of the action template.
+        /// Enum Webmessagingoffer for "webMessagingOffer"
         /// </summary>
-        /// <value>Name of the action template.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-
+        [EnumMember(Value = "webMessagingOffer")]
+        Webmessagingoffer,
 
         /// <summary>
-        /// Description of the action template&#39;s functionality.
+        /// Enum Contentoffer for "contentOffer"
         /// </summary>
-        /// <value>Description of the action template&#39;s functionality.</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
-        public string Description { get; set; }
-
-
+        [EnumMember(Value = "contentOffer")]
+        Contentoffer,
 
         /// <summary>
-        /// The version of the action template.
+        /// Enum Integrationaction for "integrationAction"
         /// </summary>
-        /// <value>The version of the action template.</value>
-        [DataMember(Name="version", EmitDefaultValue=false)]
-        public int? Version { get; set; }
-
-
-
-
-
-
+        [EnumMember(Value = "integrationAction")]
+        Integrationaction,
 
         /// <summary>
-        /// Properties used to configure an action of type content offer
+        /// Enum Architectflow for "architectFlow"
         /// </summary>
-        /// <value>Properties used to configure an action of type content offer</value>
-        [DataMember(Name="contentOffer", EmitDefaultValue=false)]
-        public PatchContentOffer ContentOffer { get; set; }
-
+        [EnumMember(Value = "architectFlow")]
+        Architectflow,
 
         /// <summary>
-        /// Returns the string presentation of the object
+        /// Enum Openaction for "openAction"
         /// </summary>
-        /// <returns>String presentation of the object</returns>
-        public override string ToString()
-        {
-            var sb = new StringBuilder();
-            sb.Append("class PatchActionTemplate {\n");
-
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Version: ").Append(Version).Append("\n");
-            sb.Append("  MediaType: ").Append(MediaType).Append("\n");
-            sb.Append("  State: ").Append(State).Append("\n");
-            sb.Append("  ContentOffer: ").Append(ContentOffer).Append("\n");
-            sb.Append("}\n");
-            return sb.ToString();
-        }
-
+        [EnumMember(Value = "openAction")]
+        Openaction
+    }
+    /// <summary>
+    /// Whether the action template is currently active, inactive or deleted.
+    /// </summary>
+    /// <value>Whether the action template is currently active, inactive or deleted.</value>
+    [JsonConverter(typeof(JsonStringEnumConverter))]
+    public enum StateEnum
+    {
+        /// <summary>
+        /// Your SDK version is out of date and an unknown enum value was encountered. 
+        /// Please upgrade the SDK using the command "Upgrade-Package PureCloudApiSdk" 
+        /// in the Package Manager Console
+        /// </summary>
+        [EnumMember(Value = "OUTDATED_SDK_VERSION")]
+        OutdatedSdkVersion,
 
         /// <summary>
-        /// Returns true if objects are equal
+        /// Enum Active for "Active"
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
-        /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as PatchActionTemplate);
-        }
+        [EnumMember(Value = "Active")]
+        Active,
 
         /// <summary>
-        /// Returns true if PatchActionTemplate instances are equal
+        /// Enum Inactive for "Inactive"
         /// </summary>
-        /// <param name="other">Instance of PatchActionTemplate to be compared</param>
-        /// <returns>Boolean</returns>
-        public bool Equals(PatchActionTemplate other)
-        {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
-                return false;
-
-            return true &&
-                (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
-                ) &&
-                (
-                    this.Description == other.Description ||
-                    this.Description != null &&
-                    this.Description.Equals(other.Description)
-                ) &&
-                (
-                    this.Version == other.Version ||
-                    this.Version != null &&
-                    this.Version.Equals(other.Version)
-                ) &&
-                (
-                    this.MediaType == other.MediaType ||
-                    this.MediaType != null &&
-                    this.MediaType.Equals(other.MediaType)
-                ) &&
-                (
-                    this.State == other.State ||
-                    this.State != null &&
-                    this.State.Equals(other.State)
-                ) &&
-                (
-                    this.ContentOffer == other.ContentOffer ||
-                    this.ContentOffer != null &&
-                    this.ContentOffer.Equals(other.ContentOffer)
-                );
-        }
+        [EnumMember(Value = "Inactive")]
+        Inactive,
 
         /// <summary>
-        /// Gets the hash code
+        /// Enum Deleted for "Deleted"
         /// </summary>
-        /// <returns>Hash code</returns>
-        public override int GetHashCode()
-        {
-            // credit: http://stackoverflow.com/a/263416/677735
-            unchecked // Overflow is fine, just wrap
-            {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
-                if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
+        [EnumMember(Value = "Deleted")]
+        Deleted
+    }
+    /// <summary>
+    /// Media type of action described by the action template.
+    /// </summary>
+    /// <value>Media type of action described by the action template.</value>
+    [DataMember(Name = "mediaType", EmitDefaultValue = false)]
+    public MediaTypeEnum? MediaType { get; set; }
+    /// <summary>
+    /// Whether the action template is currently active, inactive or deleted.
+    /// </summary>
+    /// <value>Whether the action template is currently active, inactive or deleted.</value>
+    [DataMember(Name = "state", EmitDefaultValue = false)]
+    public StateEnum? State { get; set; }
 
-                if (this.Description != null)
-                    hash = hash * 59 + this.Description.GetHashCode();
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PatchActionTemplate" /> class.
+    /// </summary>
+    [JsonConstructorAttribute]
+    protected PatchActionTemplate() { }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PatchActionTemplate" /> class.
+    /// </summary>
+    /// <param name="Name">Name of the action template. (required).</param>
+    /// <param name="Description">Description of the action template&#39;s functionality..</param>
+    /// <param name="Version">The version of the action template..</param>
+    /// <param name="MediaType">Media type of action described by the action template..</param>
+    /// <param name="State">Whether the action template is currently active, inactive or deleted..</param>
+    /// <param name="ContentOffer">Properties used to configure an action of type content offer.</param>
+    public PatchActionTemplate(string Name = null, string Description = null, int? Version = null, MediaTypeEnum? MediaType = null, StateEnum? State = null, PatchContentOffer ContentOffer = null)
+    {
+        this.Name = Name;
+        this.Description = Description;
+        this.Version = Version;
+        this.MediaType = MediaType;
+        this.State = State;
+        this.ContentOffer = ContentOffer;
 
-                if (this.Version != null)
-                    hash = hash * 59 + this.Version.GetHashCode();
-
-                if (this.MediaType != null)
-                    hash = hash * 59 + this.MediaType.GetHashCode();
-
-                if (this.State != null)
-                    hash = hash * 59 + this.State.GetHashCode();
-
-                if (this.ContentOffer != null)
-                    hash = hash * 59 + this.ContentOffer.GetHashCode();
-
-                return hash;
-            }
-        }
     }
 
+
+
+    /// <summary>
+    /// Name of the action template.
+    /// </summary>
+    /// <value>Name of the action template.</value>
+    [DataMember(Name = "name", EmitDefaultValue = false)]
+    public string Name { get; set; }
+
+
+
+    /// <summary>
+    /// Description of the action template&#39;s functionality.
+    /// </summary>
+    /// <value>Description of the action template&#39;s functionality.</value>
+    [DataMember(Name = "description", EmitDefaultValue = false)]
+    public string Description { get; set; }
+
+
+
+    /// <summary>
+    /// The version of the action template.
+    /// </summary>
+    /// <value>The version of the action template.</value>
+    [DataMember(Name = "version", EmitDefaultValue = false)]
+    public int? Version { get; set; }
+
+
+
+
+
+
+
+    /// <summary>
+    /// Properties used to configure an action of type content offer
+    /// </summary>
+    /// <value>Properties used to configure an action of type content offer</value>
+    [DataMember(Name = "contentOffer", EmitDefaultValue = false)]
+    public PatchContentOffer ContentOffer { get; set; }
+
+
+    /// <summary>
+    /// Returns the string presentation of the object
+    /// </summary>
+    /// <returns>String presentation of the object</returns>
+    public override string ToString()
+    {
+        var sb = new StringBuilder();
+        sb.Append("class PatchActionTemplate {\n");
+
+        sb.Append("  Name: ").Append(Name).Append("\n");
+        sb.Append("  Description: ").Append(Description).Append("\n");
+        sb.Append("  Version: ").Append(Version).Append("\n");
+        sb.Append("  MediaType: ").Append(MediaType).Append("\n");
+        sb.Append("  State: ").Append(State).Append("\n");
+        sb.Append("  ContentOffer: ").Append(ContentOffer).Append("\n");
+        sb.Append("}\n");
+        return sb.ToString();
+    }
+
+
+    /// <summary>
+    /// Returns true if objects are equal
+    /// </summary>
+    /// <param name="obj">Object to be compared</param>
+    /// <returns>Boolean</returns>
+    public override bool Equals(object obj)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        return this.Equals(obj as PatchActionTemplate);
+    }
+
+    /// <summary>
+    /// Returns true if PatchActionTemplate instances are equal
+    /// </summary>
+    /// <param name="other">Instance of PatchActionTemplate to be compared</param>
+    /// <returns>Boolean</returns>
+    public bool Equals(PatchActionTemplate other)
+    {
+        // credit: http://stackoverflow.com/a/10454552/677735
+        if (other == null)
+        {
+            return false;
+        }
+
+        return true &&
+            (
+                this.Name == other.Name ||
+                this.Name != null &&
+                this.Name.Equals(other.Name)
+            ) &&
+            (
+                this.Description == other.Description ||
+                this.Description != null &&
+                this.Description.Equals(other.Description)
+            ) &&
+            (
+                this.Version == other.Version ||
+                this.Version != null &&
+                this.Version.Equals(other.Version)
+            ) &&
+            (
+                this.MediaType == other.MediaType ||
+                this.MediaType != null &&
+                this.MediaType.Equals(other.MediaType)
+            ) &&
+            (
+                this.State == other.State ||
+                this.State != null &&
+                this.State.Equals(other.State)
+            ) &&
+            (
+                this.ContentOffer == other.ContentOffer ||
+                this.ContentOffer != null &&
+                this.ContentOffer.Equals(other.ContentOffer)
+            );
+    }
+
+    /// <summary>
+    /// Gets the hash code
+    /// </summary>
+    /// <returns>Hash code</returns>
+    public override int GetHashCode()
+    {
+        // credit: http://stackoverflow.com/a/263416/677735
+        unchecked // Overflow is fine, just wrap
+        {
+            int hash = 41;
+            // Suitable nullity checks etc, of course :)
+            if (this.Name != null)
+            {
+                hash = hash * 59 + this.Name.GetHashCode();
+            }
+
+            if (this.Description != null)
+            {
+                hash = hash * 59 + this.Description.GetHashCode();
+            }
+
+            if (this.Version != null)
+            {
+                hash = hash * 59 + this.Version.GetHashCode();
+            }
+
+            if (this.MediaType != null)
+            {
+                hash = hash * 59 + this.MediaType.GetHashCode();
+            }
+
+            if (this.State != null)
+            {
+                hash = hash * 59 + this.State.GetHashCode();
+            }
+
+            if (this.ContentOffer != null)
+            {
+                hash = hash * 59 + this.ContentOffer.GetHashCode();
+            }
+
+            return hash;
+        }
+    }
 }
