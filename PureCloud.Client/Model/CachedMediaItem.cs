@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,23 +16,23 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Defines an external media that has been ingested and cached by Genesys Cloud for conversation messaging
     /// </summary>
     [DataContract]
-    public partial class CachedMediaItem :  IEquatable<CachedMediaItem>
+    public partial class CachedMediaItem : IEquatable<CachedMediaItem>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CachedMediaItem" /> class.
         /// </summary>
         public CachedMediaItem()
         {
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The unique identifier for the cached media.
         /// </summary>
         /// <value>The unique identifier for the cached media.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -41,7 +41,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URL that represents the external media that has been cached
         /// </summary>
         /// <value>The URL that represents the external media that has been cached</value>
-        [DataMember(Name="url", EmitDefaultValue=false)]
+        [DataMember(Name = "url", EmitDefaultValue = false)]
         public string Url { get; private set; }
 
 
@@ -50,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A URL to fetch the cached media
         /// </summary>
         /// <value>A URL to fetch the cached media</value>
-        [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
         public string DownloadUrl { get; private set; }
 
 
@@ -59,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The media type for the URL
         /// </summary>
         /// <value>The media type for the URL</value>
-        [DataMember(Name="mediaType", EmitDefaultValue=false)]
+        [DataMember(Name = "mediaType", EmitDefaultValue = false)]
         public string MediaType { get; private set; }
 
 
@@ -68,7 +68,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The content length of the media represented by the URL, in bytes.
         /// </summary>
         /// <value>The content length of the media represented by the URL, in bytes.</value>
-        [DataMember(Name="contentLengthBytes", EmitDefaultValue=false)]
+        [DataMember(Name = "contentLengthBytes", EmitDefaultValue = false)]
         public int? ContentLengthBytes { get; private set; }
 
 
@@ -77,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date the cached item was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date the cached item was created. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateCreated", EmitDefaultValue=false)]
+        [DataMember(Name = "dateCreated", EmitDefaultValue = false)]
         public DateTime? DateCreated { get; private set; }
 
 
@@ -86,7 +86,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The date the cached item expires and will be removed from the cache. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The date the cached item expires and will be removed from the cache. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="dateExpires", EmitDefaultValue=false)]
+        [DataMember(Name = "dateExpires", EmitDefaultValue = false)]
         public DateTime? DateExpires { get; private set; }
 
 
@@ -95,7 +95,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -118,19 +118,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

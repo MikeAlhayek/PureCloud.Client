@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AnalyticsConversationQueryResponse
     /// </summary>
     [DataContract]
-    public partial class AnalyticsConversationQueryResponse :  IEquatable<AnalyticsConversationQueryResponse>
+    public partial class AnalyticsConversationQueryResponse : IEquatable<AnalyticsConversationQueryResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="AnalyticsConversationQueryResponse" /> class.
@@ -29,15 +28,15 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Conversations = Conversations;
             this.Aggregations = Aggregations;
             this.TotalHits = TotalHits;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Conversations
         /// </summary>
-        [DataMember(Name="conversations", EmitDefaultValue=false)]
+        [DataMember(Name = "conversations", EmitDefaultValue = false)]
         public List<AnalyticsConversationWithoutAttributes> Conversations { get; set; }
 
 
@@ -45,7 +44,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Aggregations
         /// </summary>
-        [DataMember(Name="aggregations", EmitDefaultValue=false)]
+        [DataMember(Name = "aggregations", EmitDefaultValue = false)]
         public List<AggregationResult> Aggregations { get; set; }
 
 
@@ -53,7 +52,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets TotalHits
         /// </summary>
-        [DataMember(Name="totalHits", EmitDefaultValue=false)]
+        [DataMember(Name = "totalHits", EmitDefaultValue = false)]
         public int? TotalHits { get; set; }
 
 
@@ -71,19 +70,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  TotalHits: ").Append(TotalHits).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// Button
     /// </summary>
     [DataContract]
-    public partial class Button :  IEquatable<Button>
+    public partial class Button : IEquatable<Button>
     {
         /// <summary>
         /// Type of button to include in whatsApp template
@@ -32,19 +32,19 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Quickreply for "QuickReply"
             /// </summary>
             [EnumMember(Value = "QuickReply")]
             Quickreply,
-            
+
             /// <summary>
             /// Enum Phonenumber for "PhoneNumber"
             /// </summary>
             [EnumMember(Value = "PhoneNumber")]
             Phonenumber,
-            
+
             /// <summary>
             /// Enum Url for "Url"
             /// </summary>
@@ -55,7 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Type of button to include in whatsApp template
         /// </summary>
         /// <value>Type of button to include in whatsApp template</value>
-        [DataMember(Name="type", EmitDefaultValue=false)]
+        [DataMember(Name = "type", EmitDefaultValue = false)]
         public TypeEnum? Type { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="Button" /> class.
@@ -68,9 +68,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Type = Type;
             this.Content = Content;
             this.ContentText = ContentText;
-            
+
         }
-        
+
 
 
 
@@ -79,7 +79,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Content of the button. Use for &#39;Url&#39; or &#39;PhoneNumber&#39; button type
         /// </summary>
         /// <value>Content of the button. Use for &#39;Url&#39; or &#39;PhoneNumber&#39; button type</value>
-        [DataMember(Name="content", EmitDefaultValue=false)]
+        [DataMember(Name = "content", EmitDefaultValue = false)]
         public string Content { get; set; }
 
 
@@ -88,7 +88,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The text label that will be displayed on the button
         /// </summary>
         /// <value>The text label that will be displayed on the button</value>
-        [DataMember(Name="contentText", EmitDefaultValue=false)]
+        [DataMember(Name = "contentText", EmitDefaultValue = false)]
         public string ContentText { get; set; }
 
 
@@ -106,19 +106,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ContentText: ").Append(ContentText).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

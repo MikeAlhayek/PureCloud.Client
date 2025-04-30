@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CalendarUrlResponse
     /// </summary>
     [DataContract]
-    public partial class CalendarUrlResponse :  IEquatable<CalendarUrlResponse>
+    public partial class CalendarUrlResponse : IEquatable<CalendarUrlResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="CalendarUrlResponse" /> class.
@@ -25,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public CalendarUrlResponse(string CalendarUrl = null)
         {
             this.CalendarUrl = CalendarUrl;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The calendar url for the user to subscribe with supported clients
         /// </summary>
         /// <value>The calendar url for the user to subscribe with supported clients</value>
-        [DataMember(Name="calendarUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "calendarUrl", EmitDefaultValue = false)]
         public string CalendarUrl { get; set; }
 
 
@@ -43,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -60,19 +60,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuSetTimeOffLimitValuesRequest
     /// </summary>
     [DataContract]
-    public partial class BuSetTimeOffLimitValuesRequest :  IEquatable<BuSetTimeOffLimitValuesRequest>
+    public partial class BuSetTimeOffLimitValuesRequest : IEquatable<BuSetTimeOffLimitValuesRequest>
     {
 
         /// <summary>
@@ -33,15 +32,15 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Values = Values;
             this.Metadata = Metadata;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name="values", EmitDefaultValue=false)]
+        [DataMember(Name = "values", EmitDefaultValue = false)]
         public List<BuTimeOffLimitRange> Values { get; set; }
 
 
@@ -50,7 +49,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the time-off limit
         /// </summary>
         /// <value>Version metadata for the time-off limit</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -67,19 +66,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Metadata: ").Append(Metadata).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

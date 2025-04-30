@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuScheduleReferenceForMuRoute
     /// </summary>
     [DataContract]
-    public partial class BuScheduleReferenceForMuRoute :  IEquatable<BuScheduleReferenceForMuRoute>
+    public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleReferenceForMuRoute>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuScheduleReferenceForMuRoute" /> class.
@@ -27,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.WeekDate = WeekDate;
             this.BusinessUnit = BusinessUnit;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -45,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="weekDate", EmitDefaultValue=false)]
+        [DataMember(Name = "weekDate", EmitDefaultValue = false)]
         public String WeekDate { get; set; }
 
 
@@ -54,7 +54,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start week date for this schedule
         /// </summary>
         /// <value>The start week date for this schedule</value>
-        [DataMember(Name="businessUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "businessUnit", EmitDefaultValue = false)]
         public BusinessUnitReference BusinessUnit { get; set; }
 
 
@@ -63,7 +63,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -82,19 +82,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// CalibrationCreate
     /// </summary>
     [DataContract]
-    public partial class CalibrationCreate :  IEquatable<CalibrationCreate>
+    public partial class CalibrationCreate : IEquatable<CalibrationCreate>
     {
 
         /// <summary>
@@ -57,16 +57,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Evaluators = Evaluators;
             this.ScoringIndex = ScoringIndex;
             this.ExpertEvaluator = ExpertEvaluator;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -74,7 +74,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Name
         /// </summary>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -82,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Calibrator
         /// </summary>
-        [DataMember(Name="calibrator", EmitDefaultValue=false)]
+        [DataMember(Name = "calibrator", EmitDefaultValue = false)]
         public User Calibrator { get; set; }
 
 
@@ -90,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Agent
         /// </summary>
-        [DataMember(Name="agent", EmitDefaultValue=false)]
+        [DataMember(Name = "agent", EmitDefaultValue = false)]
         public User Agent { get; set; }
 
 
@@ -99,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The conversation to use for the calibration.
         /// </summary>
         /// <value>The conversation to use for the calibration.</value>
-        [DataMember(Name="conversation", EmitDefaultValue=false)]
+        [DataMember(Name = "conversation", EmitDefaultValue = false)]
         public ConversationReference Conversation { get; set; }
 
 
@@ -107,7 +107,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets EvaluationForm
         /// </summary>
-        [DataMember(Name="evaluationForm", EmitDefaultValue=false)]
+        [DataMember(Name = "evaluationForm", EmitDefaultValue = false)]
         public EvaluationForm EvaluationForm { get; set; }
 
 
@@ -115,7 +115,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ContextId
         /// </summary>
-        [DataMember(Name="contextId", EmitDefaultValue=false)]
+        [DataMember(Name = "contextId", EmitDefaultValue = false)]
         public string ContextId { get; set; }
 
 
@@ -123,7 +123,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets AverageScore
         /// </summary>
-        [DataMember(Name="averageScore", EmitDefaultValue=false)]
+        [DataMember(Name = "averageScore", EmitDefaultValue = false)]
         public int? AverageScore { get; set; }
 
 
@@ -131,7 +131,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets HighScore
         /// </summary>
-        [DataMember(Name="highScore", EmitDefaultValue=false)]
+        [DataMember(Name = "highScore", EmitDefaultValue = false)]
         public int? HighScore { get; set; }
 
 
@@ -139,7 +139,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets LowScore
         /// </summary>
-        [DataMember(Name="lowScore", EmitDefaultValue=false)]
+        [DataMember(Name = "lowScore", EmitDefaultValue = false)]
         public int? LowScore { get; set; }
 
 
@@ -148,7 +148,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="createdDate", EmitDefaultValue=false)]
+        [DataMember(Name = "createdDate", EmitDefaultValue = false)]
         public DateTime? CreatedDate { get; set; }
 
 
@@ -156,7 +156,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Evaluations
         /// </summary>
-        [DataMember(Name="evaluations", EmitDefaultValue=false)]
+        [DataMember(Name = "evaluations", EmitDefaultValue = false)]
         public List<Evaluation> Evaluations { get; set; }
 
 
@@ -164,7 +164,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets Evaluators
         /// </summary>
-        [DataMember(Name="evaluators", EmitDefaultValue=false)]
+        [DataMember(Name = "evaluators", EmitDefaultValue = false)]
         public List<User> Evaluators { get; set; }
 
 
@@ -172,7 +172,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ScoringIndex
         /// </summary>
-        [DataMember(Name="scoringIndex", EmitDefaultValue=false)]
+        [DataMember(Name = "scoringIndex", EmitDefaultValue = false)]
         public Evaluation ScoringIndex { get; set; }
 
 
@@ -180,7 +180,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// <summary>
         /// Gets or Sets ExpertEvaluator
         /// </summary>
-        [DataMember(Name="expertEvaluator", EmitDefaultValue=false)]
+        [DataMember(Name = "expertEvaluator", EmitDefaultValue = false)]
         public User ExpertEvaluator { get; set; }
 
 
@@ -189,7 +189,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -220,19 +220,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

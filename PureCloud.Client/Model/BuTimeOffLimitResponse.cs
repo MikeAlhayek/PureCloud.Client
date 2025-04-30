@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffLimitResponse
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffLimitResponse :  IEquatable<BuTimeOffLimitResponse>
+    public partial class BuTimeOffLimitResponse : IEquatable<BuTimeOffLimitResponse>
     {
 
         /// <summary>
@@ -35,16 +35,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.StaffingGroup = StaffingGroup;
             this.ManagementUnit = ManagementUnit;
             this.Metadata = Metadata;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -53,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The staffing group to which this time-off limit is associated. If managementUnit is set, then the staffing group belongs to that management unit.Otherwise, if managementUnit is not set, it is a business unit level staffing group.At least one of managementUnit and staffingGroup must be set
         /// </summary>
         /// <value>The staffing group to which this time-off limit is associated. If managementUnit is set, then the staffing group belongs to that management unit.Otherwise, if managementUnit is not set, it is a business unit level staffing group.At least one of managementUnit and staffingGroup must be set</value>
-        [DataMember(Name="staffingGroup", EmitDefaultValue=false)]
+        [DataMember(Name = "staffingGroup", EmitDefaultValue = false)]
         public StaffingGroupReference StaffingGroup { get; set; }
 
 
@@ -62,7 +62,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The management unit to which this time-off limit is associated. If staffingGroup is set, then the limit is associated with that staffing group, which belongs to this management unit.At least one of managementUnit and staffingGroup must be set
         /// </summary>
         /// <value>The management unit to which this time-off limit is associated. If staffingGroup is set, then the limit is associated with that staffing group, which belongs to this management unit.At least one of managementUnit and staffingGroup must be set</value>
-        [DataMember(Name="managementUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
         public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -71,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the time-off limit
         /// </summary>
         /// <value>Version metadata for the time-off limit</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -80,7 +80,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -100,19 +100,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

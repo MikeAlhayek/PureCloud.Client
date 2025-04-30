@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AssignUsers
     /// </summary>
     [DataContract]
-    public partial class AssignUsers :  IEquatable<AssignUsers>
+    public partial class AssignUsers : IEquatable<AssignUsers>
     {
 
         /// <summary>
@@ -33,16 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.MembersToAssign = MembersToAssign;
             this.MembersToRemove = MembersToRemove;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// List of user ids to assign to a performance profile
         /// </summary>
         /// <value>List of user ids to assign to a performance profile</value>
-        [DataMember(Name="membersToAssign", EmitDefaultValue=false)]
+        [DataMember(Name = "membersToAssign", EmitDefaultValue = false)]
         public List<string> MembersToAssign { get; set; }
 
 
@@ -51,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of user ids to remove from a performance profile
         /// </summary>
         /// <value>List of user ids to remove from a performance profile</value>
-        [DataMember(Name="membersToRemove", EmitDefaultValue=false)]
+        [DataMember(Name = "membersToRemove", EmitDefaultValue = false)]
         public List<string> MembersToRemove { get; set; }
 
 
@@ -68,19 +68,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  MembersToRemove: ").Append(MembersToRemove).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

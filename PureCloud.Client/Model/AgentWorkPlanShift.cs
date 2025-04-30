@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// AgentWorkPlanShift
     /// </summary>
     [DataContract]
-    public partial class AgentWorkPlanShift :  IEquatable<AgentWorkPlanShift>
+    public partial class AgentWorkPlanShift : IEquatable<AgentWorkPlanShift>
     {
 
         /// <summary>
@@ -55,16 +54,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.MinimumPaidTimeMinutes = MinimumPaidTimeMinutes;
             this.MaximumPaidTimeMinutes = MaximumPaidTimeMinutes;
             this.Activities = Activities;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Days of the week applicable for this shift
         /// </summary>
         /// <value>Days of the week applicable for this shift</value>
-        [DataMember(Name="days", EmitDefaultValue=false)]
+        [DataMember(Name = "days", EmitDefaultValue = false)]
         public SetWrapperDayOfWeek Days { get; set; }
 
 
@@ -73,7 +72,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the start time of the shift is flexible
         /// </summary>
         /// <value>Whether the start time of the shift is flexible</value>
-        [DataMember(Name="flexibleStartTime", EmitDefaultValue=false)]
+        [DataMember(Name = "flexibleStartTime", EmitDefaultValue = false)]
         public bool? FlexibleStartTime { get; set; }
 
 
@@ -82,7 +81,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false
         /// </summary>
         /// <value>Exact start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; false</value>
-        [DataMember(Name="exactStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "exactStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? ExactStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -91,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Earliest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="earliestStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? EarliestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -100,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Latest start time of the shift defined as offset minutes from midnight. Used if flexibleStartTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="latestStartTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "latestStartTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? LatestStartTimeMinutesFromMidnight { get; set; }
 
 
@@ -109,7 +108,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// This is the earliest time a shift can end
         /// </summary>
         /// <value>This is the earliest time a shift can end</value>
-        [DataMember(Name="earliestStopTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "earliestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? EarliestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -118,7 +117,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the latest stop time constraint for the shift is enabled
         /// </summary>
         /// <value>Whether the latest stop time constraint for the shift is enabled</value>
-        [DataMember(Name="constrainLatestStopTime", EmitDefaultValue=false)]
+        [DataMember(Name = "constrainLatestStopTime", EmitDefaultValue = false)]
         public bool? ConstrainLatestStopTime { get; set; }
 
 
@@ -127,7 +126,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Latest stop time of the shift defined as offset minutes from midnight. Used if constrainStopTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="latestStopTimeMinutesFromMidnight", EmitDefaultValue=false)]
+        [DataMember(Name = "latestStopTimeMinutesFromMidnight", EmitDefaultValue = false)]
         public int? LatestStopTimeMinutesFromMidnight { get; set; }
 
 
@@ -136,7 +135,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether the paid time setting for the shift is flexible
         /// </summary>
         /// <value>Whether the paid time setting for the shift is flexible</value>
-        [DataMember(Name="flexiblePaidTime", EmitDefaultValue=false)]
+        [DataMember(Name = "flexiblePaidTime", EmitDefaultValue = false)]
         public bool? FlexiblePaidTime { get; set; }
 
 
@@ -145,7 +144,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false
         /// </summary>
         /// <value>Exact paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; false</value>
-        [DataMember(Name="exactPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "exactPaidTimeMinutes", EmitDefaultValue = false)]
         public int? ExactPaidTimeMinutes { get; set; }
 
 
@@ -154,7 +153,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Minimum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="minimumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "minimumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MinimumPaidTimeMinutes { get; set; }
 
 
@@ -163,7 +162,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true
         /// </summary>
         /// <value>Maximum paid time in minutes configured for the shift. Used if flexiblePaidTime &#x3D;&#x3D; true</value>
-        [DataMember(Name="maximumPaidTimeMinutes", EmitDefaultValue=false)]
+        [DataMember(Name = "maximumPaidTimeMinutes", EmitDefaultValue = false)]
         public int? MaximumPaidTimeMinutes { get; set; }
 
 
@@ -172,7 +171,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Activities configured for this shift
         /// </summary>
         /// <value>Activities configured for this shift</value>
-        [DataMember(Name="activities", EmitDefaultValue=false)]
+        [DataMember(Name = "activities", EmitDefaultValue = false)]
         public List<AgentWorkPlanActivity> Activities { get; set; }
 
 
@@ -200,19 +199,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Activities: ").Append(Activities).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

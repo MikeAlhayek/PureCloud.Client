@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuNotificationSettingsResponse
     /// </summary>
     [DataContract]
-    public partial class BuNotificationSettingsResponse :  IEquatable<BuNotificationSettingsResponse>
+    public partial class BuNotificationSettingsResponse : IEquatable<BuNotificationSettingsResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuNotificationSettingsResponse" /> class.
@@ -25,16 +25,16 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuNotificationSettingsResponse(BuScheduleNotificationsSettingsResponse Scheduling = null)
         {
             this.Scheduling = Scheduling;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Schedule notification settings
         /// </summary>
         /// <value>Schedule notification settings</value>
-        [DataMember(Name="scheduling", EmitDefaultValue=false)]
+        [DataMember(Name = "scheduling", EmitDefaultValue = false)]
         public BuScheduleNotificationsSettingsResponse Scheduling { get; set; }
 
 
@@ -50,19 +50,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Scheduling: ").Append(Scheduling).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

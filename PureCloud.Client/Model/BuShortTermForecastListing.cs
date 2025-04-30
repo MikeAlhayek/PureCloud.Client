@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuShortTermForecastListing
     /// </summary>
     [DataContract]
-    public partial class BuShortTermForecastListing :  IEquatable<BuShortTermForecastListing>
+    public partial class BuShortTermForecastListing : IEquatable<BuShortTermForecastListing>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuShortTermForecastListing" /> class.
@@ -25,15 +25,15 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuShortTermForecastListing(List<BuShortTermForecastListItem> Entities = null)
         {
             this.Entities = Entities;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Entities
         /// </summary>
-        [DataMember(Name="entities", EmitDefaultValue=false)]
+        [DataMember(Name = "entities", EmitDefaultValue = false)]
         public List<BuShortTermForecastListItem> Entities { get; set; }
 
 
@@ -49,19 +49,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Entities: ").Append(Entities).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

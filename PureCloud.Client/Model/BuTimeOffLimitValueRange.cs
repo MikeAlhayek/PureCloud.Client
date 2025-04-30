@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffLimitValueRange
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffLimitValueRange :  IEquatable<BuTimeOffLimitValueRange>
+    public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRange>
     {
         /// <summary>
         /// Granularity choice for time-off limit
@@ -32,7 +32,7 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Daily for "Daily"
             /// </summary>
@@ -43,7 +43,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Granularity choice for time-off limit
         /// </summary>
         /// <value>Granularity choice for time-off limit</value>
-        [DataMember(Name="granularity", EmitDefaultValue=false)]
+        [DataMember(Name = "granularity", EmitDefaultValue = false)]
         public GranularityEnum? Granularity { get; set; }
 
         /// <summary>
@@ -72,16 +72,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.WaitlistedMinutesPerInterval = WaitlistedMinutesPerInterval;
             this.WaitlistedRequestsPerInterval = WaitlistedRequestsPerInterval;
             this.Metadata = Metadata;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -90,7 +90,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID of the time-off limit
         /// </summary>
         /// <value>The ID of the time-off limit</value>
-        [DataMember(Name="timeOffLimit", EmitDefaultValue=false)]
+        [DataMember(Name = "timeOffLimit", EmitDefaultValue = false)]
         public BuTimeOffLimitReference TimeOffLimit { get; set; }
 
 
@@ -99,7 +99,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists
         /// </summary>
         /// <value>Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists</value>
-        [DataMember(Name="startDate", EmitDefaultValue=false)]
+        [DataMember(Name = "startDate", EmitDefaultValue = false)]
         public String StartDate { get; set; }
 
 
@@ -110,7 +110,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of time-off limit values in minutes per granularity interval
         /// </summary>
         /// <value>A list of time-off limit values in minutes per granularity interval</value>
-        [DataMember(Name="limitMinutesPerInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "limitMinutesPerInterval", EmitDefaultValue = false)]
         public List<int?> LimitMinutesPerInterval { get; set; }
 
 
@@ -119,7 +119,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of allocated time-off minutes per granularity interval
         /// </summary>
         /// <value>A list of allocated time-off minutes per granularity interval</value>
-        [DataMember(Name="allocatedMinutesPerInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "allocatedMinutesPerInterval", EmitDefaultValue = false)]
         public List<int?> AllocatedMinutesPerInterval { get; set; }
 
 
@@ -128,7 +128,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A list of waitlisted time-off minutes per granularity interval
         /// </summary>
         /// <value>A list of waitlisted time-off minutes per granularity interval</value>
-        [DataMember(Name="waitlistedMinutesPerInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "waitlistedMinutesPerInterval", EmitDefaultValue = false)]
         public List<int?> WaitlistedMinutesPerInterval { get; set; }
 
 
@@ -137,7 +137,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The current number of waitlisted time-off requests for every interval per granularity
         /// </summary>
         /// <value>The current number of waitlisted time-off requests for every interval per granularity</value>
-        [DataMember(Name="waitlistedRequestsPerInterval", EmitDefaultValue=false)]
+        [DataMember(Name = "waitlistedRequestsPerInterval", EmitDefaultValue = false)]
         public List<int?> WaitlistedRequestsPerInterval { get; set; }
 
 
@@ -146,7 +146,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for the time-off limit
         /// </summary>
         /// <value>Version metadata for the time-off limit</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -155,7 +155,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -180,19 +180,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

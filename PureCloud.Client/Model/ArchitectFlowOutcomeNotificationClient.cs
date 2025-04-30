@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// The client who initiated the change.
     /// </summary>
     [DataContract]
-    public partial class ArchitectFlowOutcomeNotificationClient :  IEquatable<ArchitectFlowOutcomeNotificationClient>
+    public partial class ArchitectFlowOutcomeNotificationClient : IEquatable<ArchitectFlowOutcomeNotificationClient>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="ArchitectFlowOutcomeNotificationClient" /> class.
@@ -27,16 +26,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.Id = Id;
             this.Name = Name;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the client.
         /// </summary>
         /// <value>The ID of the client.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; set; }
 
 
@@ -45,7 +44,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The name of the client, if available.
         /// </summary>
         /// <value>The name of the client, if available.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
+        [DataMember(Name = "name", EmitDefaultValue = false)]
         public string Name { get; set; }
 
 
@@ -62,19 +61,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BulkUpdateShiftTradeStateResponse
     /// </summary>
     [DataContract]
-    public partial class BulkUpdateShiftTradeStateResponse :  IEquatable<BulkUpdateShiftTradeStateResponse>
+    public partial class BulkUpdateShiftTradeStateResponse : IEquatable<BulkUpdateShiftTradeStateResponse>
     {
         /// <summary>
         /// The status of the operation
@@ -32,25 +32,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Processing for "Processing"
             /// </summary>
             [EnumMember(Value = "Processing")]
             Processing,
-            
+
             /// <summary>
             /// Enum Complete for "Complete"
             /// </summary>
             [EnumMember(Value = "Complete")]
             Complete,
-            
+
             /// <summary>
             /// Enum Canceled for "Canceled"
             /// </summary>
             [EnumMember(Value = "Canceled")]
             Canceled,
-            
+
             /// <summary>
             /// Enum Error for "Error"
             /// </summary>
@@ -61,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The status of the operation
         /// </summary>
         /// <value>The status of the operation</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public StatusEnum? Status { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkUpdateShiftTradeStateResponse" /> class.
@@ -74,9 +74,9 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Status = Status;
             this.OperationId = OperationId;
             this.Result = Result;
-            
+
         }
-        
+
 
 
 
@@ -85,7 +85,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The ID for the operation
         /// </summary>
         /// <value>The ID for the operation</value>
-        [DataMember(Name="operationId", EmitDefaultValue=false)]
+        [DataMember(Name = "operationId", EmitDefaultValue = false)]
         public string OperationId { get; set; }
 
 
@@ -94,7 +94,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The result of the operation.  Null unless status &#x3D;&#x3D; Complete
         /// </summary>
         /// <value>The result of the operation.  Null unless status &#x3D;&#x3D; Complete</value>
-        [DataMember(Name="result", EmitDefaultValue=false)]
+        [DataMember(Name = "result", EmitDefaultValue = false)]
         public BulkUpdateShiftTradeStateResult Result { get; set; }
 
 
@@ -112,19 +112,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

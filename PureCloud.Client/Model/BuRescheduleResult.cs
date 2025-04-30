@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuRescheduleResult
     /// </summary>
     [DataContract]
-    public partial class BuRescheduleResult :  IEquatable<BuRescheduleResult>
+    public partial class BuRescheduleResult : IEquatable<BuRescheduleResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuRescheduleResult" /> class.
@@ -33,16 +33,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.HeadcountForecast = HeadcountForecast;
             this.HeadcountForecastDownloadUrl = HeadcountForecastDownloadUrl;
             this.AgentSchedules = AgentSchedules;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation
         /// </summary>
         /// <value>The generation results.  Note the result will always be delivered via the generationResultsDownloadUrl; however the schema is included for documentation</value>
-        [DataMember(Name="generationResults", EmitDefaultValue=false)]
+        [DataMember(Name = "generationResults", EmitDefaultValue = false)]
         public ScheduleGenerationResult GenerationResults { get; set; }
 
 
@@ -51,7 +51,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The download URL from which to fetch the generation results for the rescheduling run
         /// </summary>
         /// <value>The download URL from which to fetch the generation results for the rescheduling run</value>
-        [DataMember(Name="generationResultsDownloadUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "generationResultsDownloadUrl", EmitDefaultValue = false)]
         public string GenerationResultsDownloadUrl { get; set; }
 
 
@@ -60,7 +60,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation
         /// </summary>
         /// <value>The headcount forecast.  Note the result will always be delivered via the headcountForecastDownloadUrl; however the schema is included for documentation</value>
-        [DataMember(Name="headcountForecast", EmitDefaultValue=false)]
+        [DataMember(Name = "headcountForecast", EmitDefaultValue = false)]
         public BuHeadcountForecast HeadcountForecast { get; set; }
 
 
@@ -69,7 +69,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The download URL from which to fetch the headcount forecast for the rescheduling run
         /// </summary>
         /// <value>The download URL from which to fetch the headcount forecast for the rescheduling run</value>
-        [DataMember(Name="headcountForecastDownloadUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "headcountForecastDownloadUrl", EmitDefaultValue = false)]
         public string HeadcountForecastDownloadUrl { get; set; }
 
 
@@ -78,7 +78,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// List of download links for agent schedules produced by the rescheduling run
         /// </summary>
         /// <value>List of download links for agent schedules produced by the rescheduling run</value>
-        [DataMember(Name="agentSchedules", EmitDefaultValue=false)]
+        [DataMember(Name = "agentSchedules", EmitDefaultValue = false)]
         public List<BuRescheduleAgentScheduleResult> AgentSchedules { get; set; }
 
 
@@ -98,19 +98,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  AgentSchedules: ").Append(AgentSchedules).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

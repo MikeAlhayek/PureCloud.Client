@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BulkFetchRelationshipsResponse
     /// </summary>
     [DataContract]
-    public partial class BulkFetchRelationshipsResponse :  IEquatable<BulkFetchRelationshipsResponse>
+    public partial class BulkFetchRelationshipsResponse : IEquatable<BulkFetchRelationshipsResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkFetchRelationshipsResponse" /> class.
@@ -29,16 +29,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Results = Results;
             this.ErrorCount = ErrorCount;
             this.ErrorIndexes = ErrorIndexes;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.
         /// </summary>
         /// <value>A list of results for all of the Bulk operations specified in the request. Includes both successes and failures. Ordering is NOT guaranteed - may be in a different order from the request.</value>
-        [DataMember(Name="results", EmitDefaultValue=false)]
+        [DataMember(Name = "results", EmitDefaultValue = false)]
         public List<BulkResponseResultRelationshipEntityBulkEntityErrorEntity> Results { get; set; }
 
 
@@ -47,7 +47,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of failed operations in the results.
         /// </summary>
         /// <value>The number of failed operations in the results.</value>
-        [DataMember(Name="errorCount", EmitDefaultValue=false)]
+        [DataMember(Name = "errorCount", EmitDefaultValue = false)]
         public int? ErrorCount { get; set; }
 
 
@@ -56,7 +56,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The indexes of all failed operations in the results field.
         /// </summary>
         /// <value>The indexes of all failed operations in the results field.</value>
-        [DataMember(Name="errorIndexes", EmitDefaultValue=false)]
+        [DataMember(Name = "errorIndexes", EmitDefaultValue = false)]
         public List<int?> ErrorIndexes { get; set; }
 
 
@@ -74,19 +74,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  ErrorIndexes: ").Append(ErrorIndexes).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

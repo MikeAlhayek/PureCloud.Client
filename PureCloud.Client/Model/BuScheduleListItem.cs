@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuScheduleListItem
     /// </summary>
     [DataContract]
-    public partial class BuScheduleListItem :  IEquatable<BuScheduleListItem>
+    public partial class BuScheduleListItem : IEquatable<BuScheduleListItem>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuScheduleListItem" /> class.
@@ -37,16 +37,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ShortTermForecast = ShortTermForecast;
             this.GenerationResults = GenerationResults;
             this.Metadata = Metadata;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -55,7 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="weekDate", EmitDefaultValue=false)]
+        [DataMember(Name = "weekDate", EmitDefaultValue = false)]
         public String WeekDate { get; set; }
 
 
@@ -64,7 +64,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of weeks spanned by this schedule
         /// </summary>
         /// <value>The number of weeks spanned by this schedule</value>
-        [DataMember(Name="weekCount", EmitDefaultValue=false)]
+        [DataMember(Name = "weekCount", EmitDefaultValue = false)]
         public int? WeekCount { get; set; }
 
 
@@ -73,7 +73,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The description of this schedule
         /// </summary>
         /// <value>The description of this schedule</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -82,7 +82,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this schedule is published
         /// </summary>
         /// <value>Whether this schedule is published</value>
-        [DataMember(Name="published", EmitDefaultValue=false)]
+        [DataMember(Name = "published", EmitDefaultValue = false)]
         public bool? Published { get; set; }
 
 
@@ -91,7 +91,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The forecast used for this schedule, if applicable
         /// </summary>
         /// <value>The forecast used for this schedule, if applicable</value>
-        [DataMember(Name="shortTermForecast", EmitDefaultValue=false)]
+        [DataMember(Name = "shortTermForecast", EmitDefaultValue = false)]
         public BuShortTermForecastReference ShortTermForecast { get; set; }
 
 
@@ -100,7 +100,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Generation result summary for this schedule, if applicable
         /// </summary>
         /// <value>Generation result summary for this schedule, if applicable</value>
-        [DataMember(Name="generationResults", EmitDefaultValue=false)]
+        [DataMember(Name = "generationResults", EmitDefaultValue = false)]
         public ScheduleGenerationResultSummary GenerationResults { get; set; }
 
 
@@ -109,7 +109,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Version metadata for this schedule
         /// </summary>
         /// <value>Version metadata for this schedule</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -118,7 +118,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -142,19 +142,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuManagementUnitScheduleSummary
     /// </summary>
     [DataContract]
-    public partial class BuManagementUnitScheduleSummary :  IEquatable<BuManagementUnitScheduleSummary>
+    public partial class BuManagementUnitScheduleSummary : IEquatable<BuManagementUnitScheduleSummary>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuManagementUnitScheduleSummary" /> class.
@@ -33,16 +32,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.StartDate = StartDate;
             this.EndDate = EndDate;
             this.Agents = Agents;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The management unit to which this summary applies
         /// </summary>
         /// <value>The management unit to which this summary applies</value>
-        [DataMember(Name="managementUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
         public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -51,7 +50,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of agents from this management unit that are in the schedule
         /// </summary>
         /// <value>The number of agents from this management unit that are in the schedule</value>
-        [DataMember(Name="agentCount", EmitDefaultValue=false)]
+        [DataMember(Name = "agentCount", EmitDefaultValue = false)]
         public int? AgentCount { get; set; }
 
 
@@ -60,7 +59,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The start of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="startDate", EmitDefaultValue=false)]
+        [DataMember(Name = "startDate", EmitDefaultValue = false)]
         public DateTime? StartDate { get; set; }
 
 
@@ -69,7 +68,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The end of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The end of the schedule change in the management unit. Only populated in schedule update notifications. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="endDate", EmitDefaultValue=false)]
+        [DataMember(Name = "endDate", EmitDefaultValue = false)]
         public DateTime? EndDate { get; set; }
 
 
@@ -78,7 +77,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed
         /// </summary>
         /// <value>The agents in the management unit who are part of this schedule, or in schedule change notifications, the agents that were changed. Note this will come back as an empty list unless the appropriate expand query parameter is passed</value>
-        [DataMember(Name="agents", EmitDefaultValue=false)]
+        [DataMember(Name = "agents", EmitDefaultValue = false)]
         public List<UserReference> Agents { get; set; }
 
 
@@ -98,19 +97,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Agents: ").Append(Agents).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

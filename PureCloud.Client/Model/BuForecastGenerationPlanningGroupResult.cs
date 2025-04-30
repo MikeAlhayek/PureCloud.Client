@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuForecastGenerationPlanningGroupResult
     /// </summary>
     [DataContract]
-    public partial class BuForecastGenerationPlanningGroupResult :  IEquatable<BuForecastGenerationPlanningGroupResult>
+    public partial class BuForecastGenerationPlanningGroupResult : IEquatable<BuForecastGenerationPlanningGroupResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuForecastGenerationPlanningGroupResult" /> class.
@@ -27,16 +27,16 @@ namespace PureCloudPlatform.Client.V2.Model
         {
             this.PlanningGroupId = PlanningGroupId;
             this.MetricResults = MetricResults;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The ID of the planning group
         /// </summary>
         /// <value>The ID of the planning group</value>
-        [DataMember(Name="planningGroupId", EmitDefaultValue=false)]
+        [DataMember(Name = "planningGroupId", EmitDefaultValue = false)]
         public string PlanningGroupId { get; set; }
 
 
@@ -45,7 +45,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The generation results for the associated planning group
         /// </summary>
         /// <value>The generation results for the associated planning group</value>
-        [DataMember(Name="metricResults", EmitDefaultValue=false)]
+        [DataMember(Name = "metricResults", EmitDefaultValue = false)]
         public List<BuForecastTimeSeriesResult> MetricResults { get; set; }
 
 
@@ -62,19 +62,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  MetricResults: ").Append(MetricResults).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

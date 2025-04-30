@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuTimeOffLimitValuesResponse
     /// </summary>
     [DataContract]
-    public partial class BuTimeOffLimitValuesResponse :  IEquatable<BuTimeOffLimitValuesResponse>
+    public partial class BuTimeOffLimitValuesResponse : IEquatable<BuTimeOffLimitValuesResponse>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuTimeOffLimitValuesResponse" /> class.
@@ -25,15 +25,15 @@ namespace PureCloudPlatform.Client.V2.Model
         public BuTimeOffLimitValuesResponse(List<BuTimeOffLimitValueRange> Values = null)
         {
             this.Values = Values;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// Gets or Sets Values
         /// </summary>
-        [DataMember(Name="values", EmitDefaultValue=false)]
+        [DataMember(Name = "values", EmitDefaultValue = false)]
         public List<BuTimeOffLimitValueRange> Values { get; set; }
 
 
@@ -49,19 +49,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Values: ").Append(Values).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

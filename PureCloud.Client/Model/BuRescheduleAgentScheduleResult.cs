@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +15,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuRescheduleAgentScheduleResult
     /// </summary>
     [DataContract]
-    public partial class BuRescheduleAgentScheduleResult :  IEquatable<BuRescheduleAgentScheduleResult>
+    public partial class BuRescheduleAgentScheduleResult : IEquatable<BuRescheduleAgentScheduleResult>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BuRescheduleAgentScheduleResult" /> class.
@@ -29,16 +28,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.ManagementUnit = ManagementUnit;
             this.DownloadResult = DownloadResult;
             this.DownloadUrl = DownloadUrl;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The management unit to which this part of the result applies
         /// </summary>
         /// <value>The management unit to which this part of the result applies</value>
-        [DataMember(Name="managementUnit", EmitDefaultValue=false)]
+        [DataMember(Name = "managementUnit", EmitDefaultValue = false)]
         public ManagementUnitReference ManagementUnit { get; set; }
 
 
@@ -47,7 +46,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The agent schedules.  Result will always come via the downloadUrl; however the schema is included for documentation
         /// </summary>
         /// <value>The agent schedules.  Result will always come via the downloadUrl; however the schema is included for documentation</value>
-        [DataMember(Name="downloadResult", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadResult", EmitDefaultValue = false)]
         public MuRescheduleResultWrapper DownloadResult { get; set; }
 
 
@@ -56,7 +55,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The download URL from which to fetch the result
         /// </summary>
         /// <value>The download URL from which to fetch the result</value>
-        [DataMember(Name="downloadUrl", EmitDefaultValue=false)]
+        [DataMember(Name = "downloadUrl", EmitDefaultValue = false)]
         public string DownloadUrl { get; set; }
 
 
@@ -74,19 +73,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  DownloadUrl: ").Append(DownloadUrl).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BulkEntityErrorExternalContact
     /// </summary>
     [DataContract]
-    public partial class BulkEntityErrorExternalContact :  IEquatable<BulkEntityErrorExternalContact>
+    public partial class BulkEntityErrorExternalContact : IEquatable<BulkEntityErrorExternalContact>
     {
         /// <summary>
         /// Initializes a new instance of the <see cref="BulkEntityErrorExternalContact" /> class.
@@ -35,16 +35,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.Retryable = Retryable;
             this.Details = Details;
             this.Entity = Entity;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// An error code for the specific error condition.
         /// </summary>
         /// <value>An error code for the specific error condition.</value>
-        [DataMember(Name="code", EmitDefaultValue=false)]
+        [DataMember(Name = "code", EmitDefaultValue = false)]
         public string Code { get; set; }
 
 
@@ -53,7 +53,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A short error message.
         /// </summary>
         /// <value>A short error message.</value>
-        [DataMember(Name="message", EmitDefaultValue=false)]
+        [DataMember(Name = "message", EmitDefaultValue = false)]
         public string Message { get; set; }
 
 
@@ -62,7 +62,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The HTTP Status Code for the error.
         /// </summary>
         /// <value>The HTTP Status Code for the error.</value>
-        [DataMember(Name="status", EmitDefaultValue=false)]
+        [DataMember(Name = "status", EmitDefaultValue = false)]
         public int? Status { get; set; }
 
 
@@ -71,7 +71,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this particular error should be retried.
         /// </summary>
         /// <value>Whether this particular error should be retried.</value>
-        [DataMember(Name="retryable", EmitDefaultValue=false)]
+        [DataMember(Name = "retryable", EmitDefaultValue = false)]
         public bool? Retryable { get; set; }
 
 
@@ -80,7 +80,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Additional error details for specific fields.
         /// </summary>
         /// <value>Additional error details for specific fields.</value>
-        [DataMember(Name="details", EmitDefaultValue=false)]
+        [DataMember(Name = "details", EmitDefaultValue = false)]
         public List<BulkErrorDetail> Details { get; set; }
 
 
@@ -89,7 +89,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The entity body specified in the Bulk request operation that caused this error.
         /// </summary>
         /// <value>The entity body specified in the Bulk request operation that caused this error.</value>
-        [DataMember(Name="entity", EmitDefaultValue=false)]
+        [DataMember(Name = "entity", EmitDefaultValue = false)]
         public ExternalContact Entity { get; set; }
 
 
@@ -110,19 +110,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  Entity: ").Append(Entity).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>

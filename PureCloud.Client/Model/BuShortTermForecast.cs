@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
-using Newtonsoft.Json;
+
 using System.Text.Json.Serialization;
 using PureCloudPlatform.Client.V2.Client;
 
@@ -16,7 +16,7 @@ namespace PureCloudPlatform.Client.V2.Model
     /// BuShortTermForecast
     /// </summary>
     [DataContract]
-    public partial class BuShortTermForecast :  IEquatable<BuShortTermForecast>
+    public partial class BuShortTermForecast : IEquatable<BuShortTermForecast>
     {
         /// <summary>
         /// The method by which this forecast was created
@@ -32,25 +32,25 @@ namespace PureCloudPlatform.Client.V2.Model
             /// </summary>
             [EnumMember(Value = "OUTDATED_SDK_VERSION")]
             OutdatedSdkVersion,
-            
+
             /// <summary>
             /// Enum Import for "Import"
             /// </summary>
             [EnumMember(Value = "Import")]
             Import,
-            
+
             /// <summary>
             /// Enum Importedhistoricalweightedaverage for "ImportedHistoricalWeightedAverage"
             /// </summary>
             [EnumMember(Value = "ImportedHistoricalWeightedAverage")]
             Importedhistoricalweightedaverage,
-            
+
             /// <summary>
             /// Enum Historicalweightedaverage for "HistoricalWeightedAverage"
             /// </summary>
             [EnumMember(Value = "HistoricalWeightedAverage")]
             Historicalweightedaverage,
-            
+
             /// <summary>
             /// Enum Advanced for "Advanced"
             /// </summary>
@@ -61,7 +61,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The method by which this forecast was created
         /// </summary>
         /// <value>The method by which this forecast was created</value>
-        [DataMember(Name="creationMethod", EmitDefaultValue=false)]
+        [DataMember(Name = "creationMethod", EmitDefaultValue = false)]
         public CreationMethodEnum? CreationMethod { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="BuShortTermForecast" /> class.
@@ -94,16 +94,16 @@ namespace PureCloudPlatform.Client.V2.Model
             this.TimeZone = TimeZone;
             this.PlanningGroupsVersion = PlanningGroupsVersion;
             this.PlanningGroups = PlanningGroups;
-            
+
         }
-        
+
 
 
         /// <summary>
         /// The globally unique identifier for the object.
         /// </summary>
         /// <value>The globally unique identifier for the object.</value>
-        [DataMember(Name="id", EmitDefaultValue=false)]
+        [DataMember(Name = "id", EmitDefaultValue = false)]
         public string Id { get; private set; }
 
 
@@ -112,7 +112,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd
         /// </summary>
         /// <value>The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
-        [DataMember(Name="weekDate", EmitDefaultValue=false)]
+        [DataMember(Name = "weekDate", EmitDefaultValue = false)]
         public String WeekDate { get; set; }
 
 
@@ -121,7 +121,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The number of weeks this forecast covers
         /// </summary>
         /// <value>The number of weeks this forecast covers</value>
-        [DataMember(Name="weekCount", EmitDefaultValue=false)]
+        [DataMember(Name = "weekCount", EmitDefaultValue = false)]
         public int? WeekCount { get; set; }
 
 
@@ -132,7 +132,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The description of this forecast
         /// </summary>
         /// <value>The description of this forecast</value>
-        [DataMember(Name="description", EmitDefaultValue=false)]
+        [DataMember(Name = "description", EmitDefaultValue = false)]
         public string Description { get; set; }
 
 
@@ -141,7 +141,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this forecast contains modifications on legacy metrics
         /// </summary>
         /// <value>Whether this forecast contains modifications on legacy metrics</value>
-        [DataMember(Name="legacy", EmitDefaultValue=false)]
+        [DataMember(Name = "legacy", EmitDefaultValue = false)]
         public bool? Legacy { get; private set; }
 
 
@@ -150,7 +150,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Metadata for this forecast
         /// </summary>
         /// <value>Metadata for this forecast</value>
-        [DataMember(Name="metadata", EmitDefaultValue=false)]
+        [DataMember(Name = "metadata", EmitDefaultValue = false)]
         public WfmVersionedEntityMetadata Metadata { get; set; }
 
 
@@ -159,7 +159,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Whether this forecast can be used for scheduling
         /// </summary>
         /// <value>Whether this forecast can be used for scheduling</value>
-        [DataMember(Name="canUseForScheduling", EmitDefaultValue=false)]
+        [DataMember(Name = "canUseForScheduling", EmitDefaultValue = false)]
         public bool? CanUseForScheduling { get; set; }
 
 
@@ -168,7 +168,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z
         /// </summary>
         /// <value>The reference start date for interval-based data for this forecast. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z</value>
-        [DataMember(Name="referenceStartDate", EmitDefaultValue=false)]
+        [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
         public DateTime? ReferenceStartDate { get; set; }
 
 
@@ -177,7 +177,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The source day pointers for this forecast
         /// </summary>
         /// <value>The source day pointers for this forecast</value>
-        [DataMember(Name="sourceDays", EmitDefaultValue=false)]
+        [DataMember(Name = "sourceDays", EmitDefaultValue = false)]
         public List<ForecastSourceDayPointer> SourceDays { get; set; }
 
 
@@ -186,7 +186,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Any manual modifications applied to this forecast
         /// </summary>
         /// <value>Any manual modifications applied to this forecast</value>
-        [DataMember(Name="modifications", EmitDefaultValue=false)]
+        [DataMember(Name = "modifications", EmitDefaultValue = false)]
         public List<BuForecastModificationResponse> Modifications { get; set; }
 
 
@@ -195,7 +195,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// Generation result metadata
         /// </summary>
         /// <value>Generation result metadata</value>
-        [DataMember(Name="generationResults", EmitDefaultValue=false)]
+        [DataMember(Name = "generationResults", EmitDefaultValue = false)]
         public BuForecastGenerationResult GenerationResults { get; set; }
 
 
@@ -204,7 +204,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The time zone for this forecast
         /// </summary>
         /// <value>The time zone for this forecast</value>
-        [DataMember(Name="timeZone", EmitDefaultValue=false)]
+        [DataMember(Name = "timeZone", EmitDefaultValue = false)]
         public string TimeZone { get; set; }
 
 
@@ -213,7 +213,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The version of the planning groups that was used for this forecast
         /// </summary>
         /// <value>The version of the planning groups that was used for this forecast</value>
-        [DataMember(Name="planningGroupsVersion", EmitDefaultValue=false)]
+        [DataMember(Name = "planningGroupsVersion", EmitDefaultValue = false)]
         public int? PlanningGroupsVersion { get; set; }
 
 
@@ -222,7 +222,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// A snapshot of the planning groups used for this forecast as of the version number indicated
         /// </summary>
         /// <value>A snapshot of the planning groups used for this forecast as of the version number indicated</value>
-        [DataMember(Name="planningGroups", EmitDefaultValue=false)]
+        [DataMember(Name = "planningGroups", EmitDefaultValue = false)]
         public ForecastPlanningGroupsResponse PlanningGroups { get; set; }
 
 
@@ -231,7 +231,7 @@ namespace PureCloudPlatform.Client.V2.Model
         /// The URI for this object
         /// </summary>
         /// <value>The URI for this object</value>
-        [DataMember(Name="selfUri", EmitDefaultValue=false)]
+        [DataMember(Name = "selfUri", EmitDefaultValue = false)]
         public string SelfUri { get; private set; }
 
 
@@ -262,19 +262,6 @@ namespace PureCloudPlatform.Client.V2.Model
             sb.Append("  SelfUri: ").Append(SelfUri).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
-        }
-  
-        /// <summary>
-        /// Returns the JSON string presentation of the object
-        /// </summary>
-        /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
-        {
-            return JsonConvert.SerializeObject(this, new JsonSerializerSettings
-            {
-                MetadataPropertyHandling = MetadataPropertyHandling.Ignore,
-                Formatting = Formatting.Indented
-            });
         }
 
         /// <summary>
