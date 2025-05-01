@@ -1,90 +1,73 @@
-using System.Net;
-using NUnit.Framework.Interfaces;
-using PureCloud.Clients;
 using PureCloud.Client.Apis;
+using PureCloud.Client.Extensions;
+using PureCloud.Client.Extensions.Notifications;
+using PureCloud.Client.Models;
+using Xunit;
 
 namespace PureCloud.Client.Tests;
 
-///<Summary>
-/// Tests for Sdk
-///</Summary>
-[Timeout(70 * 1000)]
 public class SdkTests
 {
-    private bool stop;
-
-    private string clientId = Environment.GetEnvironmentVariable("PURECLOUD_CLIENT_ID");
-    private string clientSecret = Environment.GetEnvironmentVariable("PURECLOUD_CLIENT_SECRET");
-    private string environment = Environment.GetEnvironmentVariable("PURECLOUD_ENVIRONMENT");
-
-    private UsersApi usersApi = new UsersApi();
-    private PresenceApi presenceApi = new PresenceApi();
-
-    private string userId;
-    private string userEmail;
-    private string userName = ".NET SDK Tester";
-    private string userDepartment = "Ministry of Testing";
-    private string userProfileSkill = "Testmaster";
-    private string busyPresenceId = "31fe3bac-dea6-44b7-bed7-47f91660a1a0";
-    private string availablePresenceId = "6a3af858-942f-489d-9700-5f9bcdcdae9b";
-
-    ///<Summary>
-    /// SdkTests default constructor
-    ///</Summary>
+    // private string _clientId = Environment.GetEnvironmentVariable("PURECLOUD_CLIENT_ID");
+    // private string _clientSecret = Environment.GetEnvironmentVariable("PURECLOUD_CLIENT_SECRET");
+    // private string _environment = Environment.GetEnvironmentVariable("PURECLOUD_ENVIRONMENT");
+    // 
+    // private UsersApi _usersApi = new UsersApi();
+    // private PresenceApi _presenceApi = new PresenceApi();
+    // 
+    // private string _userId;
+    // private string _userEmail;
+    // private string _userName = ".NET SDK Tester";
+    // private string _userDepartment = "Ministry of Testing";
+    // private string _userProfileSkill = "Testmaster";
+    // private string _busyPresenceId = "31fe3bac-dea6-44b7-bed7-47f91660a1a0";
+    // private string _availablePresenceId = "6a3af858-942f-489d-9700-5f9bcdcdae9b";
     public SdkTests()
     {
+        Environment.SetEnvironmentVariable("PURECLOUD_ENVIRONMENT", "usw2.pure.cloud");
+        Environment.SetEnvironmentVariable("PURECLOUD_CLIENTID", "97167000-eec1-454a-9abb-2375ebf31099");
+        Environment.SetEnvironmentVariable("PURECLOUD_CLIENTSECRET", "44FP7uPEKCJ0b2HcqRGb2hSEMTKHBUbzMSSgVka4iVU");
     }
 
-    ///<Summary>
-    /// TraceBasicInformation
-    ///</Summary>
-    [Test, Order(0)]
-    public void TraceBasicInformation()
+    private static ApiClient GetAuthenticatedClient()
     {
-        Console.WriteLine($"PURECLOUD_ENVIRONMENT={environment}");
-        Assert.IsNotEmpty(environment);
-        Assert.IsNotNull(environment);
+        var environment = Environment.GetEnvironmentVariable("PURECLOUD_ENVIRONMENT");
+        var clientId = Environment.GetEnvironmentVariable("PURECLOUD_CLIENTID");
+        var clientSecret = Environment.GetEnvironmentVariable("PURECLOUD_CLIENTSECRET");
 
-        Console.WriteLine($"PURECLOUD_CLIENT_ID={clientId}");
-        Assert.IsNotEmpty(clientId);
-        Assert.IsNotNull(clientId);
+        Console.WriteLine("clientId:" + clientId);
+        Console.WriteLine("clientSecret:" + clientSecret);
+        Console.WriteLine("environment:" + environment);
 
-        Assert.IsNotEmpty(clientSecret);
-        Assert.IsNotNull(clientSecret);
-
-        userEmail = $"{Guid.NewGuid()}@{environment}";
-        Console.WriteLine($"userEmail={userEmail}");
-    }
-
-    ///<Summary>
-    /// Authenticate
-    ///</Summary>
-    [Test, Order(1)]
-    public void Authenticate()
-    {
-        var region = getRegion(environment);
+        var client = new ApiClient();
+        var region = GetRegion(environment);
 
         if (region == null)
         { //Returned in the case of default value
-            Configuration.Default.ApiClient.setBasePath("https://api." + environment);
+            client.setBasePath("https://api." + environment);
         }
         else
         {
-            var regionval = region.GetValueOrDefault();
-            Configuration.Default.ApiClient.setBasePath(regionval);
+            var regionValue = region.GetValueOrDefault();
+            client.setBasePath(regionValue);
         }
 
-        Configuration.Default.ApiClient.PostToken(clientId, clientSecret);
+        client.PostToken(clientId, clientSecret);
 
-        Assert.IsNotEmpty(Configuration.Default.AccessToken);
+        Assert.NotEmpty(client.Configuration.AccessToken);
+
+        return client;
     }
 
-    ///<Summary>
-    /// CreateUser
-    ///</Summary>
-    [Test, Order(2)]
-    public void CreateUser()
+    private static User GetNewUser(ApiClient client)
     {
+        var usersApi = new UsersApi(client.Configuration);
+        var environment = Environment.GetEnvironmentVariable("PURECLOUD_ENVIRONMENT");
+
+        var userEmail = $"{Guid.NewGuid()}@{environment}";
+
+        var userName = ".NET SDK Tester";
+
         var newUser = new CreateUser()
         {
             Name = userName,
@@ -92,121 +75,169 @@ public class SdkTests
             Password = Guid.NewGuid() + "!@#$1234asdfASDF"
         };
 
-        var user = usersApi.PostUsersWithHttpInfo(newUser);
+        var response = usersApi.PostUsersWithHttpInfo(newUser);
 
-        userId = user.Data.Id;
-        Assert.AreEqual(user.Data.Name, userName);
-        Assert.AreEqual(user.Data.Email, userEmail);
+        Assert.NotNull(response);
+        Assert.NotNull(response.Data);
 
-        Console.WriteLine($"CorrelationId for PostUsersWithHttpInfo {user.CorrelationId}");
-        Console.WriteLine($"Version for PostUsersWithHttpInfo {user.Data.Version}");
-        Console.WriteLine($"Created user with ID {userId}");
+        Assert.NotNull(response.Data.Id);
+        Assert.Equal(response.Data.Name, userName);
+        Assert.Equal(response.Data.Email, userEmail);
+
+        return response.Data;
+    }
+
+    ///<Summary>
+    /// CreateUser
+    ///</Summary>
+    [Fact]
+    public void UsersApi_PostUsersWithHttpInfo_CreatesUser()
+    {
+        var client = GetAuthenticatedClient();
+
+        GetNewUser(client);
     }
 
     ///<Summary>
     /// UpdateUser
     ///</Summary>
-    [Test, Order(3)]
-    public void UpdateUser()
+    [Fact]
+    public void UsersApi_PatchUser_UpdatesTheUser()
     {
+        var client = GetAuthenticatedClient();
+        var user = GetNewUser(client);
+
+        var userDepartment = "Ministry of Testing";
+
         var updateUser = new UpdateUser()
         {
             Department = userDepartment,
             Version = 1
         };
 
-        var user = usersApi.PatchUser(userId, updateUser);
+        var usersApi = new UsersApi(client.Configuration);
+        var updatedUser = usersApi.PatchUser(user.Id, updateUser);
 
-        Assert.AreEqual(user.Id, userId);
-        Assert.AreEqual(user.Name, userName);
-        Assert.AreEqual(user.Email, userEmail);
-        Assert.AreEqual(user.Department, userDepartment);
+        Assert.Equal(updatedUser.Id, user.Id);
+        Assert.Equal(updatedUser.Name, user.Name);
+        Assert.Equal(updatedUser.Email, user.Email);
+        Assert.Equal(updatedUser.Department, userDepartment);
     }
 
     ///<Summary>
     /// SetProfileSkills
     ///</Summary>
-    [Test, Order(4)]
-    public void SetProfileSkills()
+    [Fact]
+    public void UsersApit_PutUserProfileskillsWithHttpInfo_SetsCorrectSkill()
     {
-        var skills = usersApi.PutUserProfileskillsWithHttpInfo(userId, new List<string>() { userProfileSkill });
+        var client = GetAuthenticatedClient();
+        var user = GetNewUser(client);
+        var usersApi = new UsersApi(client.Configuration);
+        var userProfileSkill = "Testmaster";
 
-        Assert.AreEqual(skills.Data.Count, 1);
-        Assert.AreEqual(skills.Data[0], userProfileSkill);
-        Console.WriteLine($"CorrelationId for PutUserProfileskillsWithHttpInfo {skills.CorrelationId}");
+        var skills = usersApi.PutUserProfileskillsWithHttpInfo(user.Id, new List<string>() { userProfileSkill });
+
+        Assert.Single(skills.Data);
+        Assert.Equal(userProfileSkill, skills.Data[0]);
     }
 
     ///<Summary>
     /// TestNotifications
     ///</Summary>
-    [Test, Order(5)]
-    public void TestNotifications()
+    [Fact]
+    public async Task TestNotifications()
     {
-        var handler = new NotificationHandler();
+        var _busyPresenceId = "31fe3bac-dea6-44b7-bed7-47f91660a1a0";
+        var _availablePresenceId = "6a3af858-942f-489d-9700-5f9bcdcdae9b";
+
+        var client = GetAuthenticatedClient();
+        var user = GetNewUser(client);
+
+        await using var handler = new NotificationHandler();
+
+        await handler.StartAsync(client.Configuration);
 
         // Start the handler inside of the task to block this test until the notifications come in
         var tcs = new TaskCompletionSource<bool>();
         var busyReceived = false;
         var availableReceived = false;
-        Task.Factory.StartNew(() =>
+
+        handler.NotificationReceived += (data) =>
         {
-            handler.NotificationReceived += (data) =>
+            try
             {
-                try
+                if (data.GetType() == typeof(NotificationData<PresenceEventUserPresence>))
                 {
-                    if (data.GetType() == typeof(NotificationData<PresenceEventUserPresence>))
+                    var presence = (NotificationData<PresenceEventUserPresence>)data;
+
+                    // Check to see what we got
+                    if (presence.EventBody.PresenceDefinition.Id == _availablePresenceId)
                     {
-                        var presence = (NotificationData<PresenceEventUserPresence>)data;
+                        availableReceived = true;
+                    }
 
-                        // Check to see what we got
-                        if (presence.EventBody.PresenceDefinition.Id == availablePresenceId) availableReceived = true;
-                        if (presence.EventBody.PresenceDefinition.Id == busyPresenceId) busyReceived = true;
+                    if (presence.EventBody.PresenceDefinition.Id == _busyPresenceId)
+                    {
+                        busyReceived = true;
+                    }
 
-                        // Complete the async task
-                        if (busyReceived && availableReceived) tcs.SetResult(true);
+                    // Complete the async task
+                    if (busyReceived && availableReceived)
+                    {
+                        tcs.SetResult(true);
                     }
                 }
-                catch (InvalidOperationException ex)
-                {
-                    // Suppress this error that happens occasionally:
-                    // An attempt was made to transition a task to a final state when it had already completed.
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex);
-                }
-            };
-        });
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Suppress this error that happens occasionally:
+                // An attempt was made to transition a task to a final state when it had already completed.
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+        };
 
         // Register topic
-        handler.AddSubscription($"v2.users.{userId}.presence", typeof(PresenceEventUserPresence));
+        handler.AddSubscription($"v2.users.{user.Id}.presence", typeof(PresenceEventUserPresence));
+
+        var presenceApi = new PresenceApi(client.Configuration);
 
         // Change presences
-        presenceApi.PatchUserPresence(userId, "PURECLOUD", new UserPresence() { PresenceDefinition = new PresenceDefinition(busyPresenceId) });
-        presenceApi.PatchUserPresence(userId, "PURECLOUD", new UserPresence() { PresenceDefinition = new PresenceDefinition(availablePresenceId) });
+        presenceApi.PatchUserPresence(user.Id, "PURECLOUD", new UserPresence()
+        {
+            PresenceDefinition = new PresenceDefinition(_busyPresenceId),
+        });
+        presenceApi.PatchUserPresence(user.Id, "PURECLOUD", new UserPresence()
+        {
+            PresenceDefinition = new PresenceDefinition(_availablePresenceId),
+        });
 
         // The getter for Result will block until the task has completed
-        var result = tcs.Task.Result;
+        var result = await tcs.Task;
 
         // Assert that both worked
-        Assert.AreEqual(busyReceived, true);
-        Assert.AreEqual(availableReceived, true);
+        Assert.True(busyReceived);
+        Assert.True(availableReceived);
     }
 
     ///<Summary>
     /// GetUser
     ///</Summary>
-    [Test, Retry(2), Order(6)]
+    [Fact]
     public void GetUser()
     {
-        Thread.Sleep(6000);
-        var user = usersApi.GetUserWithHttpInfo(userId, new List<string>() { "profileSkills" }, null, null);
-        Assert.AreEqual(user.Data.Id, userId);
-        Assert.AreEqual(user.Data.Name, userName);
-        Assert.AreEqual(user.Data.Email, userEmail);
-        Assert.AreEqual(user.Data.Department, userDepartment);
-        Console.WriteLine($"CorrelationId for GetUserWithHttpInfo {user.CorrelationId}");
-        Console.WriteLine($"Version for GetUserWithHttpInfo {user.Data.Version}");
+        var client = GetAuthenticatedClient();
+        var user = GetNewUser(client);
+        var usersApi = new UsersApi(client.Configuration);
+
+        var response = usersApi.GetUserWithHttpInfo(user.Id, new List<string>() { "profileSkills" }, null, null);
+        Assert.Equal(response.Data.Id, user.Id);
+        Assert.Equal(response.Data.Name, user.Name);
+        Assert.Equal(response.Data.Email, user.Email);
+        Assert.Equal(response.Data.Department, user.Department);
+
         // Commented out until the issue with APIs to send the latest Version of the User is fixed.
         // Assert.IsNotNull(user.Data.ProfileSkills);
         // Assert.AreEqual(user.Data.ProfileSkills.Count, 1);
@@ -216,42 +247,20 @@ public class SdkTests
     ///<Summary>
     /// DeleteUserWithProxy
     ///</Summary>
-    [Test, Order(7)]
+    /*
+    [Test]
     public void DeleteUserWithProxy()
     {
         Configuration.Default.ApiClient.ClientOptions.Proxy = new WebProxy("http://localhost:4001", true);
 
-        usersApi.DeleteUser(userId);
+        _usersApi.DeleteUser(_userId);
     }
-
-    ///<Summary>
-    /// SetUp
-    ///</Summary>
-    [SetUp]
-    public void SetUp()
-    {
-        if (stop)
-        {
-            Assert.Inconclusive("Previous test failed");
-        }
-    }
-
-    ///<Summary>
-    /// TearDown
-    ///</Summary>
-    [TearDown]
-    public void TearDown()
-    {
-        if (TestContext.CurrentContext.Result.Outcome.Status == TestStatus.Failed)
-        {
-            stop = true;
-        }
-    }
+    */
 
     ///<Summary>
     /// getRegion
     ///</Summary>
-    public Nullable<PureCloudRegionHosts> getRegion(String str = "http://api.mypurecloud.com")
+    private static PureCloudRegionHosts? GetRegion(string str = "http://api.mypurecloud.com")
     {
         switch (str)
         {

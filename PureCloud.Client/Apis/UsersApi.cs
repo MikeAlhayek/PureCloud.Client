@@ -26520,18 +26520,16 @@ public partial class UsersApi : IUsersApi
         object localVarPostBody = null;
 
         // to determine the Content-Type header
-        string[] localVarHttpContentTypes = new string[] {
+        string[] localVarHttpContentTypes = new string[]
+        {
             "application/json"
-
         };
         string localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        string[] localVarHttpHeaderAccepts = new string[] {
-
+        string[] localVarHttpHeaderAccepts = new string[]
+        {
             "application/json"
-
-
         };
         string localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)

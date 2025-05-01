@@ -45,11 +45,11 @@ public class Configuration
     {
         if (useDefaultApiClient == true)
         {
-            setApiClientUsingDefault(apiClient);
+            SetApiClientUsingDefault(apiClient);
         }
         else
         {
-            setApiClient(apiClient);
+            SetApiClient(apiClient);
         }
 
         Username = username;
@@ -86,7 +86,7 @@ public class Configuration
     /// <param name="apiClient">Api client.</param>
     public Configuration(ApiClient apiClient)
     {
-        setApiClientUsingDefault(apiClient);
+        SetApiClientUsingDefault(apiClient);
     }
 
     /// <summary>
@@ -118,7 +118,7 @@ public class Configuration
     /// </summary>
     /// <param name="apiClient">An instance of ApiClient.</param>
     /// <returns></returns>
-    public void setApiClientUsingDefault(ApiClient apiClient = null)
+    public void SetApiClientUsingDefault(ApiClient apiClient = null)
     {
         AuthTokenInfo = new AuthTokenInfo();
         if (apiClient == null)
@@ -146,7 +146,7 @@ public class Configuration
     /// </summary>
     /// <param name="apiClient">An instance of ApiClient.</param>
     /// <returns></returns>
-    public void setApiClient(ApiClient apiClient = null)
+    public void SetApiClient(ApiClient apiClient = null)
     {
         AuthTokenInfo = new AuthTokenInfo();
         if (apiClient == null)

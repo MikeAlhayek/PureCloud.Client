@@ -110,7 +110,7 @@ public static class AuthExtensions
             Method.Post, queryParams, postBody, headerParams, formParams, fileParams,
             pathParams, httpContentType);
 
-        int statusCode = (int)response.StatusCode;
+        var statusCode = (int)response.StatusCode;
 
         if (statusCode >= 400)
         {
@@ -412,7 +412,7 @@ public static class AuthExtensions
         int statusCode = (int)response.StatusCode;
         var fullUrl = restClient.BuildUri(request);
         string url = fullUrl == null ? path : fullUrl.ToString();
-        apiClient.Configuration.Logger.LogTrace(method.ToString(), url, postBody, statusCode, headerParams, response.Headers?
+        apiClient.Configuration.Logger?.LogTrace(method.ToString(), url, postBody, statusCode, headerParams, response.Headers?
                                                          .GroupBy(header => header?.Name)
                                                          .Select(header => new
                                                          {
@@ -420,11 +420,11 @@ public static class AuthExtensions
                                                              Value = header.Select(x => x?.Value)?.ToList()
                                                          }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
-        apiClient.Configuration.Logger.LogDebug(method.ToString(), url, postBody, statusCode, headerParams);
+        apiClient.Configuration.Logger?.LogDebug(method.ToString(), url, postBody, statusCode, headerParams);
 
         if (statusCode >= 400 || statusCode == 0)
         {
-            apiClient.Configuration.Logger.LogError(method.ToString(), url, postBody, response.Content, statusCode, headerParams, response.Headers?
+            apiClient.Configuration.Logger?.LogError(method.ToString(), url, postBody, response.Content, statusCode, headerParams, response.Headers?
                                                          .GroupBy(header => header?.Name)
                                                          .Select(header => new
                                                          {

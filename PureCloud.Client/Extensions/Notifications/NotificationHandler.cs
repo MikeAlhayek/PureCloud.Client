@@ -10,8 +10,6 @@ namespace PureCloud.Client.Extensions.Notifications;
 /// </summary>
 public class NotificationHandler : INotificationHandler
 {
-    private readonly NotificationsApi _notificationsApi = new();
-
     private readonly Dictionary<string, Type> _typeMap = new(StringComparer.OrdinalIgnoreCase);
 
     private readonly int _reconnectDelaySeconds = 5;
@@ -24,11 +22,12 @@ public class NotificationHandler : INotificationHandler
     /// </summary>
     private ClientWebSocket _webSocket;
 
+    private NotificationsApi _notificationsApi;
+
     /// <summary>
     /// The notification channel object
     /// </summary>
     private Channel _channel;
-
     private readonly CancellationToken _cancellationToken;
 
     /// <summary>
@@ -50,10 +49,13 @@ public class NotificationHandler : INotificationHandler
         _cancellationToken = cancellationToken;
     }
 
-    public Task StartAsync()
+    public Task StartAsync(Configuration configuration)
     {
+        ArgumentNullException.ThrowIfNull(configuration);
+
         _webSocket?.Dispose();
 
+        _notificationsApi = new NotificationsApi(configuration);
         _webSocket = new ClientWebSocket();
 
         _channel = _notificationsApi.PostNotificationsChannels();

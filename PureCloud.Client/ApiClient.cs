@@ -19,8 +19,8 @@ public class ApiClient
     {
         TypeInfoResolver = null, // Set this only if you are using source generators or custom resolvers
         IncludeFields = false,
-        DefaultIgnoreCondition = JsonIgnoreCondition.Never // Closest to MetadataPropertyHandling.Ignore
-
+        DefaultIgnoreCondition = JsonIgnoreCondition.Never, // Closest to MetadataPropertyHandling.Ignore
+        PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
     };
 
     static ApiClient()
@@ -402,8 +402,8 @@ public class ApiClient
         do
         {
             response = _restClient.Execute(request);
-            Configuration.Logger.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams);
-            Configuration.Logger.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams, response.Headers?
+            Configuration.Logger?.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams);
+            Configuration.Logger?.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams, response.Headers?
                                                          .GroupBy(header => header?.Name)
                                                          .Select(header => new
                                                          {
@@ -427,7 +427,7 @@ public class ApiClient
 
         if ((int)response.StatusCode < 200 || (int)response.StatusCode >= 300)
         {
-            Configuration.Logger.LogError(method.ToString(), url, postBody, response.Content, (int)response.StatusCode, headerParams, response.Headers?
+            Configuration.Logger?.LogError(method.ToString(), url, postBody, response.Content, (int)response.StatusCode, headerParams, response.Headers?
                                                          .GroupBy(header => header?.Name)
                                                          .Select(header => new
                                                          {
@@ -498,8 +498,8 @@ public class ApiClient
         do
         {
             response = await _restClient.ExecuteAsync(request);
-            Configuration.Logger.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams);
-            Configuration.Logger.LogTrace(method.ToString(), url, postBody, (int)response.StatusCode, headerParams, response.Headers?
+            Configuration.Logger?.LogDebug(method.ToString(), url, postBody, (int)response.StatusCode, headerParams);
+            Configuration.Logger?.LogTrace(method.ToString(), url, postBody, (int)response.StatusCode, headerParams, response.Headers?
                                                          .GroupBy(header => header?.Name)
                                                          .Select(header => new
                                                          {
@@ -634,7 +634,7 @@ public class ApiClient
     /// <returns>Object representation of the JSON string.</returns>
     public object Deserialize(RestResponse response, Type type)
     {
-        IReadOnlyCollection<RestSharp.HeaderParameter> headers = response.Headers;
+        var headers = response.Headers;
         if (type == typeof(byte[])) // return byte array
         {
             return response.RawBytes;
