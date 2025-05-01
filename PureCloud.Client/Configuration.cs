@@ -258,10 +258,8 @@ public class Configuration
     /// <returns>API key with prefix.</returns>
     public string GetApiKeyWithPrefix(string apiKeyIdentifier)
     {
-        var apiKeyValue = "";
-        ApiKey.TryGetValue(apiKeyIdentifier, out apiKeyValue);
-        var apiKeyPrefix = "";
-        if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out apiKeyPrefix))
+        ApiKey.TryGetValue(apiKeyIdentifier, out var apiKeyValue);
+        if (ApiKeyPrefix.TryGetValue(apiKeyIdentifier, out var apiKeyPrefix))
         {
             return apiKeyPrefix + " " + apiKeyValue;
         }

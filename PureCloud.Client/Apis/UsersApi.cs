@@ -1,4 +1,3 @@
-using PureCloud.Client;
 using PureCloud.Client.Models;
 using RestSharp;
 

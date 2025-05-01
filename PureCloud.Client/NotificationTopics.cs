@@ -10,11 +10,7 @@ public static class NotificationTopics
     /// <Summary>
     /// Topic Name to Type Dictionary
     /// </Summary>
-    public static Dictionary<string, Type> Topics;
-
-    static NotificationTopics()
-    {
-        Topics = new Dictionary<string, Type>
+    public readonly static Dictionary<string, Type> Topics = new Dictionary<string, Type>
         {
           {"v2.analytics.conversation.{id}.metrics", typeof(ConversationMetricsTopicConversationMetricRecord)},
           {"v2.analytics.conversations.details.jobs.availability", typeof(ConversationDetailsDatalakeAvailabilityTopicDataAvailabilityChangeNotification)},
@@ -218,5 +214,4 @@ public static class NotificationTopics
           {"v2.workforcemanagement.users.{id}.schedules.query", typeof(WfmBuScheduleQueryResultTopicBuScheduleSearchResultNotification)},
           {"v2.workforcemanagement.users.{id}.schedules.search", typeof(WfmBuScheduleSearchResultTopicBuScheduleSearchResultNotification)},
         };
-    }
 }
