@@ -121,7 +121,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// <param name="EffectiveDate">The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="Status">The state of the bid (required).</param>
     /// <param name="WorkPlanFieldsVisibleToAgents">The work plan fields visible to agents whenever work plan preferences are made (required).</param>
-    public AgentWorkPlanBid(string Id = null, string Name = null, String BidWindowStartDate = null, String BidWindowEndDate = null, String EffectiveDate = null, StatusEnum? Status = null, List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents = null)
+    public AgentWorkPlanBid(string Id = null, string Name = null, string BidWindowStartDate = null, string BidWindowEndDate = null, string EffectiveDate = null, StatusEnum? Status = null, List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -157,7 +157,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// </summary>
     /// <value>The date when agents can start participating in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
-    public String BidWindowStartDate { get; set; }
+    public string BidWindowStartDate { get; set; }
 
 
 
@@ -166,7 +166,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// </summary>
     /// <value>The inclusive end date of a bid window. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
-    public String BidWindowEndDate { get; set; }
+    public string BidWindowEndDate { get; set; }
 
 
 
@@ -175,7 +175,7 @@ public partial class AgentWorkPlanBid : IEquatable<AgentWorkPlanBid>
     /// </summary>
     /// <value>The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
-    public String EffectiveDate { get; set; }
+    public string EffectiveDate { get; set; }
 
 
 

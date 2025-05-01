@@ -17,7 +17,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// <param name="V2">V2.</param>
     /// <param name="V1Http">V1Http.</param>
     /// <param name="ThirdParty">ThirdParty.</param>
-    public WidgetClientConfig(WidgetClientConfigV1 V1 = null, Object V2 = null, WidgetClientConfigV1Http V1Http = null, Object ThirdParty = null)
+    public WidgetClientConfig(WidgetClientConfigV1 V1 = null, object V2 = null, WidgetClientConfigV1Http V1Http = null, object ThirdParty = null)
     {
         this.V1 = V1;
         this.V2 = V2;
@@ -40,7 +40,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// Gets or Sets V2
     /// </summary>
     [DataMember(Name = "v2", EmitDefaultValue = false)]
-    public Object V2 { get; set; }
+    public object V2 { get; set; }
 
 
 
@@ -56,7 +56,7 @@ public partial class WidgetClientConfig : IEquatable<WidgetClientConfig>
     /// Gets or Sets ThirdParty
     /// </summary>
     [DataMember(Name = "third-party", EmitDefaultValue = false)]
-    public Object ThirdParty { get; set; }
+    public object ThirdParty { get; set; }
 
 
     /// <summary>

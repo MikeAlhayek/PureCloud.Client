@@ -42,7 +42,7 @@ public partial class WorkitemCreate : IEquatable<WorkitemCreate>
     /// <param name="UtilizationLabelId">The ID of utilization label of the Workitem. Must be a valid UUID..</param>
     /// <param name="ScoredAgents">A list of scored agents for the Workitem. A workitem can have a maximum of 20 scored agents..</param>
     /// <param name="PreferredAgentIds">The preferred agent IDs of the Workitem. Must be valid UUIDs..</param>
-    public WorkitemCreate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, string TypeId = null, Dictionary<string, Object> CustomFields = null, string QueueId = null, string AssigneeId = null, string LanguageId = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string ScriptId = null, string WrapupCode = null, string UtilizationLabelId = null, List<WorkitemScoredAgentRequest> ScoredAgents = null, List<string> PreferredAgentIds = null)
+    public WorkitemCreate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, string TypeId = null, Dictionary<string, object> CustomFields = null, string QueueId = null, string AssigneeId = null, string LanguageId = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string ScriptId = null, string WrapupCode = null, string UtilizationLabelId = null, List<WorkitemScoredAgentRequest> ScoredAgents = null, List<string> PreferredAgentIds = null)
     {
         this.Name = Name;
         this.Priority = Priority;
@@ -176,7 +176,7 @@ public partial class WorkitemCreate : IEquatable<WorkitemCreate>
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the worktype of the workitem.</value>
     [DataMember(Name = "customFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> CustomFields { get; set; }
+    public Dictionary<string, object> CustomFields { get; set; }
 
 
 

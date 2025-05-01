@@ -261,7 +261,7 @@ public interface IOrganizationApi : IApiAccessor
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Object</returns>
 
-    Object GetOrganizationsLimitsNamespaces(int? pageSize = null, int? pageNumber = null);
+    object GetOrganizationsLimitsNamespaces(int? pageSize = null, int? pageNumber = null);
 
     /// <summary>
     /// Get the available limit namespaces
@@ -274,7 +274,7 @@ public interface IOrganizationApi : IApiAccessor
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    ApiResponse<Object> GetOrganizationsLimitsNamespacesWithHttpInfo(int? pageSize = null, int? pageNumber = null);
+    ApiResponse<object> GetOrganizationsLimitsNamespacesWithHttpInfo(int? pageSize = null, int? pageNumber = null);
 
     /// <summary>
     /// Get organization.
@@ -719,7 +719,7 @@ public interface IOrganizationApi : IApiAccessor
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Task of Object</returns>
 
-    Task<Object> GetOrganizationsLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null);
+    Task<object> GetOrganizationsLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null);
 
     /// <summary>
     /// Get the available limit namespaces
@@ -732,7 +732,7 @@ public interface IOrganizationApi : IApiAccessor
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    Task<ApiResponse<Object>> GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null);
+    Task<ApiResponse<object>> GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null);
 
     /// <summary>
     /// Get organization.
@@ -937,7 +937,7 @@ public partial class OrganizationApi : IOrganizationApi
     /// Initializes a new instance of the <see cref="OrganizationApi"/> class.
     /// </summary>
     /// <returns></returns>
-    public OrganizationApi(String basePath)
+    public OrganizationApi(string basePath)
     {
         this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -976,7 +976,7 @@ public partial class OrganizationApi : IOrganizationApi
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    public String GetBasePath()
+    public string GetBasePath()
     {
         return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
@@ -986,7 +986,7 @@ public partial class OrganizationApi : IOrganizationApi
     /// </summary>
     /// <value>The base path</value>
     [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-    public void SetBasePath(String basePath)
+    public void SetBasePath(string basePath)
     {
         // do nothing
     }
@@ -1002,7 +1002,7 @@ public partial class OrganizationApi : IOrganizationApi
     /// </summary>
     /// <returns>Dictionary of HTTP header</returns>
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-    public Dictionary<String, String> DefaultHeader()
+    public Dictionary<string, string> DefaultHeader()
     {
         return this.Configuration.DefaultHeader;
     }
@@ -1051,27 +1051,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/fieldconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1098,7 +1098,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1116,7 +1116,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1168,27 +1168,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/fieldconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1215,7 +1215,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1233,7 +1233,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1278,27 +1278,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/authentication/settings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1321,7 +1321,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1339,7 +1339,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1384,27 +1384,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/authentication/settings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1427,7 +1427,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1445,7 +1445,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1490,27 +1490,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/embeddedintegration";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1533,7 +1533,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1551,7 +1551,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1596,27 +1596,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/embeddedintegration";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1639,7 +1639,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1657,7 +1657,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1702,27 +1702,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/ipaddressauthentication";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1745,7 +1745,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1763,7 +1763,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1808,27 +1808,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/ipaddressauthentication";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1851,7 +1851,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1869,7 +1869,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1921,27 +1921,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/changerequests/{requestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1968,7 +1968,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1986,7 +1986,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2038,27 +2038,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/changerequests/{requestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2085,7 +2085,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2103,7 +2103,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2158,27 +2158,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/changerequests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2225,7 +2225,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2243,7 +2243,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2298,27 +2298,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/changerequests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2365,7 +2365,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2383,7 +2383,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2428,27 +2428,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/docs";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2471,7 +2471,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2489,7 +2489,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2534,27 +2534,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/docs";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2577,7 +2577,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2595,7 +2595,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2640,27 +2640,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/docs/freetrial";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2683,7 +2683,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2701,7 +2701,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2746,27 +2746,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/limits/docs/freetrial";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2789,7 +2789,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2807,7 +2807,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2859,27 +2859,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/namespaces/{namespaceName}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2906,7 +2906,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2924,7 +2924,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2976,27 +2976,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/namespaces/{namespaceName}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3023,7 +3023,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3041,7 +3041,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3093,27 +3093,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/namespaces/{namespaceName}/defaults";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3140,7 +3140,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3158,7 +3158,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3210,27 +3210,27 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/limits/namespaces/{namespaceName}/defaults";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3257,7 +3257,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3275,7 +3275,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3305,9 +3305,9 @@ public partial class OrganizationApi : IOrganizationApi
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Object</returns>
 
-    public Object GetOrganizationsLimitsNamespaces(int? pageSize = null, int? pageNumber = null)
+    public object GetOrganizationsLimitsNamespaces(int? pageSize = null, int? pageNumber = null)
     {
-        ApiResponse<Object> localVarResponse = GetOrganizationsLimitsNamespacesWithHttpInfo(pageSize, pageNumber);
+        ApiResponse<object> localVarResponse = GetOrganizationsLimitsNamespacesWithHttpInfo(pageSize, pageNumber);
         return localVarResponse.Data;
     }
 
@@ -3320,31 +3320,31 @@ public partial class OrganizationApi : IOrganizationApi
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    public ApiResponse<Object> GetOrganizationsLimitsNamespacesWithHttpInfo(int? pageSize = null, int? pageNumber = null)
+    public ApiResponse<object> GetOrganizationsLimitsNamespacesWithHttpInfo(int? pageSize = null, int? pageNumber = null)
     {
 
         var localVarPath = "/api/v2/organizations/limits/namespaces";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3376,7 +3376,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3394,7 +3394,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3406,9 +3406,9 @@ public partial class OrganizationApi : IOrganizationApi
             throw new ApiException(localVarStatusCode, "Error calling GetOrganizationsLimitsNamespaces: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3423,9 +3423,9 @@ public partial class OrganizationApi : IOrganizationApi
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Task of Object</returns>
 
-    public async Task<Object> GetOrganizationsLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null)
+    public async Task<object> GetOrganizationsLimitsNamespacesAsync(int? pageSize = null, int? pageNumber = null)
     {
-        ApiResponse<Object> localVarResponse = await GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(pageSize, pageNumber);
+        ApiResponse<object> localVarResponse = await GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(pageSize, pageNumber);
         return localVarResponse.Data;
 
     }
@@ -3439,31 +3439,31 @@ public partial class OrganizationApi : IOrganizationApi
     /// <param name="pageNumber">Page number (optional, default to 1)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    public async Task<ApiResponse<Object>> GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null)
+    public async Task<ApiResponse<object>> GetOrganizationsLimitsNamespacesAsyncWithHttpInfo(int? pageSize = null, int? pageNumber = null)
     {
 
         var localVarPath = "/api/v2/organizations/limits/namespaces";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3495,7 +3495,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3513,7 +3513,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3525,9 +3525,9 @@ public partial class OrganizationApi : IOrganizationApi
             throw new ApiException(localVarStatusCode, "Error calling GetOrganizationsLimitsNamespaces: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -3558,27 +3558,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3601,7 +3601,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3619,7 +3619,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3664,27 +3664,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3707,7 +3707,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3725,7 +3725,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3770,27 +3770,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/whitelist";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3813,7 +3813,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3831,7 +3831,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3876,27 +3876,27 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/whitelist";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3919,7 +3919,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3937,7 +3937,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3989,28 +3989,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/authentication/settings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4042,7 +4042,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4060,7 +4060,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4112,28 +4112,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/authentication/settings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4165,7 +4165,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4183,7 +4183,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4242,28 +4242,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/features/{featureName}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4299,7 +4299,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4317,7 +4317,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4377,28 +4377,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/features/{featureName}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4434,7 +4434,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4452,7 +4452,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4504,28 +4504,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/embeddedintegration";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4557,7 +4557,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4575,7 +4575,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4627,28 +4627,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/embeddedintegration";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4680,7 +4680,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4698,7 +4698,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4750,28 +4750,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/ipaddressauthentication";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4803,7 +4803,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4821,7 +4821,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4873,28 +4873,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/ipaddressauthentication";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4926,7 +4926,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4944,7 +4944,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4991,28 +4991,28 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5044,7 +5044,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5062,7 +5062,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5109,28 +5109,28 @@ public partial class OrganizationApi : IOrganizationApi
     {
 
         var localVarPath = "/api/v2/organizations/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5162,7 +5162,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5180,7 +5180,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5232,28 +5232,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/whitelist";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5285,7 +5285,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5303,7 +5303,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5355,28 +5355,28 @@ public partial class OrganizationApi : IOrganizationApi
         }
 
         var localVarPath = "/api/v2/organizations/whitelist";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5408,7 +5408,7 @@ public partial class OrganizationApi : IOrganizationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5426,7 +5426,7 @@ public partial class OrganizationApi : IOrganizationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)

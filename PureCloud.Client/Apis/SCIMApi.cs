@@ -23,7 +23,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Object</returns>
 
-    Object DeleteScimUser(string userId, string ifMatch = null);
+    object DeleteScimUser(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -36,7 +36,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    ApiResponse<Object> DeleteScimUserWithHttpInfo(string userId, string ifMatch = null);
+    ApiResponse<object> DeleteScimUserWithHttpInfo(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -49,7 +49,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Object</returns>
 
-    Object DeleteScimV2User(string userId, string ifMatch = null);
+    object DeleteScimV2User(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -62,7 +62,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    ApiResponse<Object> DeleteScimV2UserWithHttpInfo(string userId, string ifMatch = null);
+    ApiResponse<object> DeleteScimV2UserWithHttpInfo(string userId, string ifMatch = null);
 
     /// <summary>
     /// Get a group
@@ -835,7 +835,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of Object</returns>
 
-    Task<Object> DeleteScimUserAsync(string userId, string ifMatch = null);
+    Task<object> DeleteScimUserAsync(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -848,7 +848,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    Task<ApiResponse<Object>> DeleteScimUserAsyncWithHttpInfo(string userId, string ifMatch = null);
+    Task<ApiResponse<object>> DeleteScimUserAsyncWithHttpInfo(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -861,7 +861,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of Object</returns>
 
-    Task<Object> DeleteScimV2UserAsync(string userId, string ifMatch = null);
+    Task<object> DeleteScimV2UserAsync(string userId, string ifMatch = null);
 
     /// <summary>
     /// Delete a user
@@ -874,7 +874,7 @@ public interface ISCIMApi : IApiAccessor
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    Task<ApiResponse<Object>> DeleteScimV2UserAsyncWithHttpInfo(string userId, string ifMatch = null);
+    Task<ApiResponse<object>> DeleteScimV2UserAsyncWithHttpInfo(string userId, string ifMatch = null);
 
     /// <summary>
     /// Get a group
@@ -1645,7 +1645,7 @@ public partial class SCIMApi : ISCIMApi
     /// Initializes a new instance of the <see cref="SCIMApi"/> class.
     /// </summary>
     /// <returns></returns>
-    public SCIMApi(String basePath)
+    public SCIMApi(string basePath)
     {
         this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -1684,7 +1684,7 @@ public partial class SCIMApi : ISCIMApi
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    public String GetBasePath()
+    public string GetBasePath()
     {
         return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
@@ -1694,7 +1694,7 @@ public partial class SCIMApi : ISCIMApi
     /// </summary>
     /// <value>The base path</value>
     [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-    public void SetBasePath(String basePath)
+    public void SetBasePath(string basePath)
     {
         // do nothing
     }
@@ -1710,7 +1710,7 @@ public partial class SCIMApi : ISCIMApi
     /// </summary>
     /// <returns>Dictionary of HTTP header</returns>
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-    public Dictionary<String, String> DefaultHeader()
+    public Dictionary<string, string> DefaultHeader()
     {
         return this.Configuration.DefaultHeader;
     }
@@ -1737,9 +1737,9 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Object</returns>
 
-    public Object DeleteScimUser(string userId, string ifMatch = null)
+    public object DeleteScimUser(string userId, string ifMatch = null)
     {
-        ApiResponse<Object> localVarResponse = DeleteScimUserWithHttpInfo(userId, ifMatch);
+        ApiResponse<object> localVarResponse = DeleteScimUserWithHttpInfo(userId, ifMatch);
         return localVarResponse.Data;
     }
 
@@ -1752,7 +1752,7 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    public ApiResponse<Object> DeleteScimUserWithHttpInfo(string userId, string ifMatch = null)
+    public ApiResponse<object> DeleteScimUserWithHttpInfo(string userId, string ifMatch = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -1761,21 +1761,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -1783,7 +1783,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1814,7 +1814,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1832,7 +1832,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1844,9 +1844,9 @@ public partial class SCIMApi : ISCIMApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteScimUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1861,9 +1861,9 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of Object</returns>
 
-    public async Task<Object> DeleteScimUserAsync(string userId, string ifMatch = null)
+    public async Task<object> DeleteScimUserAsync(string userId, string ifMatch = null)
     {
-        ApiResponse<Object> localVarResponse = await DeleteScimUserAsyncWithHttpInfo(userId, ifMatch);
+        ApiResponse<object> localVarResponse = await DeleteScimUserAsyncWithHttpInfo(userId, ifMatch);
         return localVarResponse.Data;
 
     }
@@ -1877,7 +1877,7 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    public async Task<ApiResponse<Object>> DeleteScimUserAsyncWithHttpInfo(string userId, string ifMatch = null)
+    public async Task<ApiResponse<object>> DeleteScimUserAsyncWithHttpInfo(string userId, string ifMatch = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -1886,21 +1886,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -1909,7 +1909,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1940,7 +1940,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1958,7 +1958,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1970,9 +1970,9 @@ public partial class SCIMApi : ISCIMApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteScimUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1988,9 +1988,9 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Object</returns>
 
-    public Object DeleteScimV2User(string userId, string ifMatch = null)
+    public object DeleteScimV2User(string userId, string ifMatch = null)
     {
-        ApiResponse<Object> localVarResponse = DeleteScimV2UserWithHttpInfo(userId, ifMatch);
+        ApiResponse<object> localVarResponse = DeleteScimV2UserWithHttpInfo(userId, ifMatch);
         return localVarResponse.Data;
     }
 
@@ -2003,7 +2003,7 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    public ApiResponse<Object> DeleteScimV2UserWithHttpInfo(string userId, string ifMatch = null)
+    public ApiResponse<object> DeleteScimV2UserWithHttpInfo(string userId, string ifMatch = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -2012,21 +2012,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2034,7 +2034,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2065,7 +2065,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2083,7 +2083,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2095,9 +2095,9 @@ public partial class SCIMApi : ISCIMApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteScimV2User: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2112,9 +2112,9 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of Object</returns>
 
-    public async Task<Object> DeleteScimV2UserAsync(string userId, string ifMatch = null)
+    public async Task<object> DeleteScimV2UserAsync(string userId, string ifMatch = null)
     {
-        ApiResponse<Object> localVarResponse = await DeleteScimV2UserAsyncWithHttpInfo(userId, ifMatch);
+        ApiResponse<object> localVarResponse = await DeleteScimV2UserAsyncWithHttpInfo(userId, ifMatch);
         return localVarResponse.Data;
 
     }
@@ -2128,7 +2128,7 @@ public partial class SCIMApi : ISCIMApi
     /// <param name="ifMatch">The ETag of a resource in double quotes. Returned as header and meta.version with initial call to GET /api/v2/scim/v2/users/{userId}. Example: \&quot;42\&quot;. If the ETag is different from the version on the server, returns 400 with a \&quot;scimType\&quot; of \&quot;invalidVers\&quot;. (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    public async Task<ApiResponse<Object>> DeleteScimV2UserAsyncWithHttpInfo(string userId, string ifMatch = null)
+    public async Task<ApiResponse<object>> DeleteScimV2UserAsyncWithHttpInfo(string userId, string ifMatch = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -2137,21 +2137,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2160,7 +2160,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2191,7 +2191,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2209,7 +2209,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2221,9 +2221,9 @@ public partial class SCIMApi : ISCIMApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteScimV2User: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2267,21 +2267,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2289,7 +2289,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2329,7 +2329,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2347,7 +2347,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2405,21 +2405,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2428,7 +2428,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2468,7 +2468,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2486,7 +2486,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2541,21 +2541,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/groups";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2563,7 +2563,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2610,7 +2610,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2628,7 +2628,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2683,21 +2683,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/groups";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2706,7 +2706,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2753,7 +2753,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2771,7 +2771,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2823,21 +2823,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/resourcetypes/{resourceType}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2845,7 +2845,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2872,7 +2872,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2890,7 +2890,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2942,21 +2942,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/resourcetypes/{resourceType}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -2965,7 +2965,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2992,7 +2992,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3010,7 +3010,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3055,21 +3055,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/resourcetypes";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3077,7 +3077,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3100,7 +3100,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3118,7 +3118,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3163,21 +3163,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/resourcetypes";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3186,7 +3186,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3209,7 +3209,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3227,7 +3227,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3279,21 +3279,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/schemas/{schemaId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3301,7 +3301,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3328,7 +3328,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3346,7 +3346,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3398,21 +3398,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/schemas/{schemaId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3421,7 +3421,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3448,7 +3448,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3466,7 +3466,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3513,21 +3513,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/schemas";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3535,7 +3535,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3562,7 +3562,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3580,7 +3580,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3627,21 +3627,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/schemas";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3650,7 +3650,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3677,7 +3677,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3695,7 +3695,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3742,21 +3742,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/serviceproviderconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3764,7 +3764,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3791,7 +3791,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3809,7 +3809,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3856,21 +3856,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/serviceproviderconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -3879,7 +3879,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3906,7 +3906,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3924,7 +3924,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3982,21 +3982,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4004,7 +4004,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4044,7 +4044,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4062,7 +4062,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4120,21 +4120,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4143,7 +4143,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4183,7 +4183,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4201,7 +4201,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4256,21 +4256,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4278,7 +4278,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4325,7 +4325,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4343,7 +4343,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4398,21 +4398,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4421,7 +4421,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4468,7 +4468,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4486,7 +4486,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4544,21 +4544,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4566,7 +4566,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4606,7 +4606,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4624,7 +4624,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4682,21 +4682,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4705,7 +4705,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4745,7 +4745,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4763,7 +4763,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4823,21 +4823,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4845,7 +4845,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4892,7 +4892,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4910,7 +4910,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4970,21 +4970,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -4993,7 +4993,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5040,7 +5040,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5058,7 +5058,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5110,21 +5110,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/resourcetypes/{resourceType}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5132,7 +5132,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5159,7 +5159,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5177,7 +5177,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5229,21 +5229,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/resourcetypes/{resourceType}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5252,7 +5252,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5279,7 +5279,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5297,7 +5297,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5342,21 +5342,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/resourcetypes";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5364,7 +5364,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5387,7 +5387,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5405,7 +5405,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5450,21 +5450,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/resourcetypes";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5473,7 +5473,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5496,7 +5496,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5514,7 +5514,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5566,21 +5566,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/schemas/{schemaId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5588,7 +5588,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5615,7 +5615,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5633,7 +5633,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5685,21 +5685,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/schemas/{schemaId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5708,7 +5708,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5735,7 +5735,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5753,7 +5753,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5800,21 +5800,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/schemas";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5822,7 +5822,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5849,7 +5849,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5867,7 +5867,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5914,21 +5914,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/schemas";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -5937,7 +5937,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5964,7 +5964,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5982,7 +5982,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6029,21 +6029,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/serviceproviderconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6051,7 +6051,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6078,7 +6078,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6096,7 +6096,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6143,21 +6143,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/serviceproviderconfig";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6166,7 +6166,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6193,7 +6193,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6211,7 +6211,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6269,21 +6269,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6291,7 +6291,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6331,7 +6331,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6349,7 +6349,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6407,21 +6407,21 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6430,7 +6430,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6470,7 +6470,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6488,7 +6488,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6543,21 +6543,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6565,7 +6565,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6612,7 +6612,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6630,7 +6630,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6685,21 +6685,21 @@ public partial class SCIMApi : ISCIMApi
     {
 
         var localVarPath = "/api/v2/scim/v2/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6708,7 +6708,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6755,7 +6755,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6773,7 +6773,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6834,23 +6834,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -6858,7 +6858,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6898,7 +6898,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6916,7 +6916,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6978,23 +6978,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7003,7 +7003,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7043,7 +7043,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7061,7 +7061,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7122,23 +7122,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7146,7 +7146,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7186,7 +7186,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7204,7 +7204,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7266,23 +7266,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7291,7 +7291,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7331,7 +7331,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7349,7 +7349,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7410,23 +7410,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7434,7 +7434,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7474,7 +7474,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7492,7 +7492,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7554,23 +7554,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7579,7 +7579,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7619,7 +7619,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7637,7 +7637,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7698,23 +7698,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7722,7 +7722,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7762,7 +7762,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7780,7 +7780,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7842,23 +7842,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -7867,7 +7867,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7907,7 +7907,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7925,7 +7925,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7977,23 +7977,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8001,7 +8001,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8033,7 +8033,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8051,7 +8051,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8103,23 +8103,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8128,7 +8128,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8160,7 +8160,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8178,7 +8178,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8230,23 +8230,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8254,7 +8254,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8286,7 +8286,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8304,7 +8304,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8356,23 +8356,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8381,7 +8381,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8413,7 +8413,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8431,7 +8431,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8492,23 +8492,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8516,7 +8516,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8556,7 +8556,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8574,7 +8574,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8636,23 +8636,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8661,7 +8661,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8701,7 +8701,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8719,7 +8719,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8780,23 +8780,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8804,7 +8804,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8844,7 +8844,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8862,7 +8862,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8924,23 +8924,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -8949,7 +8949,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8989,7 +8989,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9007,7 +9007,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9068,23 +9068,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -9092,7 +9092,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9132,7 +9132,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9150,7 +9150,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9212,23 +9212,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/groups/{groupId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -9237,7 +9237,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9277,7 +9277,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9295,7 +9295,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9356,23 +9356,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -9380,7 +9380,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9420,7 +9420,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9438,7 +9438,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9500,23 +9500,23 @@ public partial class SCIMApi : ISCIMApi
         }
 
         var localVarPath = "/api/v2/scim/v2/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/scim+json",
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/scim+json",
 
@@ -9525,7 +9525,7 @@ public partial class SCIMApi : ISCIMApi
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9565,7 +9565,7 @@ public partial class SCIMApi : ISCIMApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9583,7 +9583,7 @@ public partial class SCIMApi : ISCIMApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)

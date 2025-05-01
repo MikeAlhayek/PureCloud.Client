@@ -48,7 +48,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// <param name="Direction">Direction.</param>
     /// <param name="Numeric">Whether that column contains numeric data.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public OutboundMessagingMessagingCampaignConfigChangeContactSort(string FieldName = null, DirectionEnum? Direction = null, bool? Numeric = null, Dictionary<string, Object> AdditionalProperties = null)
+    public OutboundMessagingMessagingCampaignConfigChangeContactSort(string FieldName = null, DirectionEnum? Direction = null, bool? Numeric = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.FieldName = FieldName;
         this.Direction = Direction;
@@ -82,7 +82,7 @@ public partial class OutboundMessagingMessagingCampaignConfigChangeContactSort :
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

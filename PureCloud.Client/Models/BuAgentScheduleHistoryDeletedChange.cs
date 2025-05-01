@@ -16,7 +16,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     /// <param name="ShiftIds">The IDs of deleted shifts.</param>
     /// <param name="FullDayTimeOffMarkerDates">The dates of any deleted full day time off markers.</param>
     /// <param name="AgentSchedule">Whether the entire agent schedule was deleted.</param>
-    public BuAgentScheduleHistoryDeletedChange(List<string> ShiftIds = null, List<String> FullDayTimeOffMarkerDates = null, bool? AgentSchedule = null)
+    public BuAgentScheduleHistoryDeletedChange(List<string> ShiftIds = null, List<string> FullDayTimeOffMarkerDates = null, bool? AgentSchedule = null)
     {
         this.ShiftIds = ShiftIds;
         this.FullDayTimeOffMarkerDates = FullDayTimeOffMarkerDates;
@@ -40,7 +40,7 @@ public partial class BuAgentScheduleHistoryDeletedChange : IEquatable<BuAgentSch
     /// </summary>
     /// <value>The dates of any deleted full day time off markers</value>
     [DataMember(Name = "fullDayTimeOffMarkerDates", EmitDefaultValue = false)]
-    public List<String> FullDayTimeOffMarkerDates { get; set; }
+    public List<string> FullDayTimeOffMarkerDates { get; set; }
 
 
 

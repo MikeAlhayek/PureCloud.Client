@@ -50,7 +50,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// <param name="Parameters">The parameters to match this condition.</param>
     /// <param name="ConditionType">The type of this condition.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignRuleConfigChangeCampaignRuleCondition(string Id = null, Dictionary<string, string> Parameters = null, ConditionTypeEnum? ConditionType = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignRuleConfigChangeCampaignRuleCondition(string Id = null, Dictionary<string, string> Parameters = null, ConditionTypeEnum? ConditionType = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Id = Id;
         this.Parameters = Parameters;
@@ -85,7 +85,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleCondition : IEqua
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

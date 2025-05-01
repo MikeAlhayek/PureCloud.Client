@@ -14,7 +14,7 @@ public partial class ValueWrapperLocalDate : IEquatable<ValueWrapperLocalDate>
     /// Initializes a new instance of the <see cref="ValueWrapperLocalDate" /> class.
     /// </summary>
     /// <param name="Value">The value for the associated field. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public ValueWrapperLocalDate(String Value = null)
+    public ValueWrapperLocalDate(string Value = null)
     {
         this.Value = Value;
 
@@ -27,7 +27,7 @@ public partial class ValueWrapperLocalDate : IEquatable<ValueWrapperLocalDate>
     /// </summary>
     /// <value>The value for the associated field. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "value", EmitDefaultValue = false)]
-    public String Value { get; set; }
+    public string Value { get; set; }
 
 
     /// <summary>

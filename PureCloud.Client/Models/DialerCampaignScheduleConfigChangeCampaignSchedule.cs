@@ -23,7 +23,7 @@ public partial class DialerCampaignScheduleConfigChangeCampaignSchedule : IEquat
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerCampaignScheduleConfigChangeCampaignSchedule(List<DialerCampaignScheduleConfigChangeScheduleInterval> Intervals = null, List<DialerCampaignScheduleConfigChangeScheduleRecurrence> Recurrences = null, string TimeZone = null, DialerCampaignScheduleConfigChangeUriReference Campaign = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerCampaignScheduleConfigChangeCampaignSchedule(List<DialerCampaignScheduleConfigChangeScheduleInterval> Intervals = null, List<DialerCampaignScheduleConfigChangeScheduleRecurrence> Recurrences = null, string TimeZone = null, DialerCampaignScheduleConfigChangeUriReference Campaign = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.Intervals = Intervals;
         this.Recurrences = Recurrences;
@@ -79,7 +79,7 @@ public partial class DialerCampaignScheduleConfigChangeCampaignSchedule : IEquat
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

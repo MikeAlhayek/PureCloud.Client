@@ -21,7 +21,7 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
     /// </summary>
     /// <param name="Description">The description for the new schedule (required).</param>
     /// <param name="WeekDate">The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public BuCopyScheduleRequest(string Description = null, String WeekDate = null)
+    public BuCopyScheduleRequest(string Description = null, string WeekDate = null)
     {
         this.Description = Description;
         this.WeekDate = WeekDate;
@@ -44,7 +44,7 @@ public partial class BuCopyScheduleRequest : IEquatable<BuCopyScheduleRequest>
     /// </summary>
     /// <value>The start weekDate for the new copy of the schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
     /// <summary>

@@ -21,7 +21,7 @@ public partial class BuShortTermForecastReference : IEquatable<BuShortTermForeca
     /// </summary>
     /// <param name="Id">The globally unique identifier for the object..</param>
     /// <param name="WeekDate">The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public BuShortTermForecastReference(string Id = null, String WeekDate = null)
+    public BuShortTermForecastReference(string Id = null, string WeekDate = null)
     {
         this.Id = Id;
         this.WeekDate = WeekDate;
@@ -44,7 +44,7 @@ public partial class BuShortTermForecastReference : IEquatable<BuShortTermForeca
     /// </summary>
     /// <value>The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

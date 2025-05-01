@@ -34,7 +34,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="alertId">Alert ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    ApiResponse<Object> DeleteAlertingAlertWithHttpInfo(string alertId);
+    ApiResponse<object> DeleteAlertingAlertWithHttpInfo(string alertId);
 
     /// <summary>
     /// Delete all alerts for the user
@@ -45,7 +45,7 @@ public interface IAlertingApi : IApiAccessor
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Object</returns>
 
-    Object DeleteAlertingAlertsAll();
+    object DeleteAlertingAlertsAll();
 
     /// <summary>
     /// Delete all alerts for the user
@@ -56,7 +56,7 @@ public interface IAlertingApi : IApiAccessor
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of Object</returns>
 
-    ApiResponse<Object> DeleteAlertingAlertsAllWithHttpInfo();
+    ApiResponse<object> DeleteAlertingAlertsAllWithHttpInfo();
 
     /// <summary>
     /// Delete a rule.
@@ -80,7 +80,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="ruleId">Rule Id</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    ApiResponse<Object> DeleteAlertingRuleWithHttpInfo(string ruleId);
+    ApiResponse<object> DeleteAlertingRuleWithHttpInfo(string ruleId);
 
     /// <summary>
     /// Get an alert
@@ -166,7 +166,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="body"> (optional)</param>
     /// <returns>Object</returns>
 
-    Object PatchAlertingAlertsAll(CommonAllAlertUpdateRequest body = null);
+    object PatchAlertingAlertsAll(CommonAllAlertUpdateRequest body = null);
 
     /// <summary>
     /// Updates all alerts
@@ -178,7 +178,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="body"> (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    ApiResponse<Object> PatchAlertingAlertsAllWithHttpInfo(CommonAllAlertUpdateRequest body = null);
+    ApiResponse<object> PatchAlertingAlertsAllWithHttpInfo(CommonAllAlertUpdateRequest body = null);
 
     /// <summary>
     /// Bulk alert updates
@@ -402,7 +402,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="alertId">Alert ID</param>
     /// <returns>Task of ApiResponse</returns>
 
-    Task<ApiResponse<Object>> DeleteAlertingAlertAsyncWithHttpInfo(string alertId);
+    Task<ApiResponse<object>> DeleteAlertingAlertAsyncWithHttpInfo(string alertId);
 
     /// <summary>
     /// Delete all alerts for the user
@@ -413,7 +413,7 @@ public interface IAlertingApi : IApiAccessor
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Task of Object</returns>
 
-    Task<Object> DeleteAlertingAlertsAllAsync();
+    Task<object> DeleteAlertingAlertsAllAsync();
 
     /// <summary>
     /// Delete all alerts for the user
@@ -424,7 +424,7 @@ public interface IAlertingApi : IApiAccessor
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    Task<ApiResponse<Object>> DeleteAlertingAlertsAllAsyncWithHttpInfo();
+    Task<ApiResponse<object>> DeleteAlertingAlertsAllAsyncWithHttpInfo();
 
     /// <summary>
     /// Delete a rule.
@@ -448,7 +448,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="ruleId">Rule Id</param>
     /// <returns>Task of ApiResponse</returns>
 
-    Task<ApiResponse<Object>> DeleteAlertingRuleAsyncWithHttpInfo(string ruleId);
+    Task<ApiResponse<object>> DeleteAlertingRuleAsyncWithHttpInfo(string ruleId);
 
     /// <summary>
     /// Get an alert
@@ -534,7 +534,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="body"> (optional)</param>
     /// <returns>Task of Object</returns>
 
-    Task<Object> PatchAlertingAlertsAllAsync(CommonAllAlertUpdateRequest body = null);
+    Task<object> PatchAlertingAlertsAllAsync(CommonAllAlertUpdateRequest body = null);
 
     /// <summary>
     /// Updates all alerts
@@ -546,7 +546,7 @@ public interface IAlertingApi : IApiAccessor
     /// <param name="body"> (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    Task<ApiResponse<Object>> PatchAlertingAlertsAllAsyncWithHttpInfo(CommonAllAlertUpdateRequest body = null);
+    Task<ApiResponse<object>> PatchAlertingAlertsAllAsyncWithHttpInfo(CommonAllAlertUpdateRequest body = null);
 
     /// <summary>
     /// Bulk alert updates
@@ -757,7 +757,7 @@ public partial class AlertingApi : IAlertingApi
     /// Initializes a new instance of the <see cref="AlertingApi"/> class.
     /// </summary>
     /// <returns></returns>
-    public AlertingApi(String basePath)
+    public AlertingApi(string basePath)
     {
         this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -796,7 +796,7 @@ public partial class AlertingApi : IAlertingApi
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    public String GetBasePath()
+    public string GetBasePath()
     {
         return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
@@ -806,7 +806,7 @@ public partial class AlertingApi : IAlertingApi
     /// </summary>
     /// <value>The base path</value>
     [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-    public void SetBasePath(String basePath)
+    public void SetBasePath(string basePath)
     {
         // do nothing
     }
@@ -822,7 +822,7 @@ public partial class AlertingApi : IAlertingApi
     /// </summary>
     /// <returns>Dictionary of HTTP header</returns>
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-    public Dictionary<String, String> DefaultHeader()
+    public Dictionary<string, string> DefaultHeader()
     {
         return this.Configuration.DefaultHeader;
     }
@@ -861,7 +861,7 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="alertId">Alert ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    public ApiResponse<Object> DeleteAlertingAlertWithHttpInfo(string alertId)
+    public ApiResponse<object> DeleteAlertingAlertWithHttpInfo(string alertId)
     {
         // verify the required parameter 'alertId' is set
         if (alertId == null)
@@ -870,27 +870,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -917,7 +917,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -935,7 +935,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -947,7 +947,7 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingAlert: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -977,7 +977,7 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="alertId">Alert ID</param>
     /// <returns>Task of ApiResponse</returns>
 
-    public async Task<ApiResponse<Object>> DeleteAlertingAlertAsyncWithHttpInfo(string alertId)
+    public async Task<ApiResponse<object>> DeleteAlertingAlertAsyncWithHttpInfo(string alertId)
     {
         // verify the required parameter 'alertId' is set
         if (alertId == null)
@@ -986,27 +986,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1033,7 +1033,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1051,7 +1051,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1063,7 +1063,7 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingAlert: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -1079,9 +1079,9 @@ public partial class AlertingApi : IAlertingApi
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Object</returns>
 
-    public Object DeleteAlertingAlertsAll()
+    public object DeleteAlertingAlertsAll()
     {
-        ApiResponse<Object> localVarResponse = DeleteAlertingAlertsAllWithHttpInfo();
+        ApiResponse<object> localVarResponse = DeleteAlertingAlertsAllWithHttpInfo();
         return localVarResponse.Data;
     }
 
@@ -1092,31 +1092,31 @@ public partial class AlertingApi : IAlertingApi
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>ApiResponse of Object</returns>
 
-    public ApiResponse<Object> DeleteAlertingAlertsAllWithHttpInfo()
+    public ApiResponse<object> DeleteAlertingAlertsAllWithHttpInfo()
     {
 
         var localVarPath = "/api/v2/alerting/alerts/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1139,7 +1139,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1157,7 +1157,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1169,9 +1169,9 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingAlertsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1184,9 +1184,9 @@ public partial class AlertingApi : IAlertingApi
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Task of Object</returns>
 
-    public async Task<Object> DeleteAlertingAlertsAllAsync()
+    public async Task<object> DeleteAlertingAlertsAllAsync()
     {
-        ApiResponse<Object> localVarResponse = await DeleteAlertingAlertsAllAsyncWithHttpInfo();
+        ApiResponse<object> localVarResponse = await DeleteAlertingAlertsAllAsyncWithHttpInfo();
         return localVarResponse.Data;
 
     }
@@ -1198,31 +1198,31 @@ public partial class AlertingApi : IAlertingApi
     /// <exception cref="PureCloudPlatform.Client.V2.Client.ApiException">Thrown when fails to make API call</exception>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    public async Task<ApiResponse<Object>> DeleteAlertingAlertsAllAsyncWithHttpInfo()
+    public async Task<ApiResponse<object>> DeleteAlertingAlertsAllAsyncWithHttpInfo()
     {
 
         var localVarPath = "/api/v2/alerting/alerts/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1245,7 +1245,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1263,7 +1263,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1275,9 +1275,9 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingAlertsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1305,7 +1305,7 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="ruleId">Rule Id</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    public ApiResponse<Object> DeleteAlertingRuleWithHttpInfo(string ruleId)
+    public ApiResponse<object> DeleteAlertingRuleWithHttpInfo(string ruleId)
     {
         // verify the required parameter 'ruleId' is set
         if (ruleId == null)
@@ -1314,27 +1314,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1361,7 +1361,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1379,7 +1379,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1391,7 +1391,7 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -1421,7 +1421,7 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="ruleId">Rule Id</param>
     /// <returns>Task of ApiResponse</returns>
 
-    public async Task<ApiResponse<Object>> DeleteAlertingRuleAsyncWithHttpInfo(string ruleId)
+    public async Task<ApiResponse<object>> DeleteAlertingRuleAsyncWithHttpInfo(string ruleId)
     {
         // verify the required parameter 'ruleId' is set
         if (ruleId == null)
@@ -1430,27 +1430,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1477,7 +1477,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1495,7 +1495,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1507,7 +1507,7 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteAlertingRule: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -1547,27 +1547,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1594,7 +1594,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1612,7 +1612,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1664,27 +1664,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1711,7 +1711,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1729,7 +1729,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1781,27 +1781,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1828,7 +1828,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1846,7 +1846,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1898,27 +1898,27 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1945,7 +1945,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1963,7 +1963,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2017,28 +2017,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2074,7 +2074,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2092,7 +2092,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2146,28 +2146,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2203,7 +2203,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2221,7 +2221,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2250,9 +2250,9 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="body"> (optional)</param>
     /// <returns>Object</returns>
 
-    public Object PatchAlertingAlertsAll(CommonAllAlertUpdateRequest body = null)
+    public object PatchAlertingAlertsAll(CommonAllAlertUpdateRequest body = null)
     {
-        ApiResponse<Object> localVarResponse = PatchAlertingAlertsAllWithHttpInfo(body);
+        ApiResponse<object> localVarResponse = PatchAlertingAlertsAllWithHttpInfo(body);
         return localVarResponse.Data;
     }
 
@@ -2264,32 +2264,32 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="body"> (optional)</param>
     /// <returns>ApiResponse of Object</returns>
 
-    public ApiResponse<Object> PatchAlertingAlertsAllWithHttpInfo(CommonAllAlertUpdateRequest body = null)
+    public ApiResponse<object> PatchAlertingAlertsAllWithHttpInfo(CommonAllAlertUpdateRequest body = null)
     {
 
         var localVarPath = "/api/v2/alerting/alerts/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2321,7 +2321,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2339,7 +2339,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2351,9 +2351,9 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling PatchAlertingAlertsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2367,9 +2367,9 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="body"> (optional)</param>
     /// <returns>Task of Object</returns>
 
-    public async Task<Object> PatchAlertingAlertsAllAsync(CommonAllAlertUpdateRequest body = null)
+    public async Task<object> PatchAlertingAlertsAllAsync(CommonAllAlertUpdateRequest body = null)
     {
-        ApiResponse<Object> localVarResponse = await PatchAlertingAlertsAllAsyncWithHttpInfo(body);
+        ApiResponse<object> localVarResponse = await PatchAlertingAlertsAllAsyncWithHttpInfo(body);
         return localVarResponse.Data;
 
     }
@@ -2382,32 +2382,32 @@ public partial class AlertingApi : IAlertingApi
     /// <param name="body"> (optional)</param>
     /// <returns>Task of ApiResponse (Object)</returns>
 
-    public async Task<ApiResponse<Object>> PatchAlertingAlertsAllAsyncWithHttpInfo(CommonAllAlertUpdateRequest body = null)
+    public async Task<ApiResponse<object>> PatchAlertingAlertsAllAsyncWithHttpInfo(CommonAllAlertUpdateRequest body = null)
     {
 
         var localVarPath = "/api/v2/alerting/alerts/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2439,7 +2439,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2457,7 +2457,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2469,9 +2469,9 @@ public partial class AlertingApi : IAlertingApi
             throw new ApiException(localVarStatusCode, "Error calling PatchAlertingAlertsAll: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
-            (Object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)),
+            (object)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(object)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2509,28 +2509,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/bulk";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2562,7 +2562,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2580,7 +2580,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2632,28 +2632,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/bulk";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2685,7 +2685,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2703,7 +2703,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2755,28 +2755,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/bulk";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2808,7 +2808,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2826,7 +2826,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2878,28 +2878,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/bulk";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2931,7 +2931,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2949,7 +2949,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2996,28 +2996,28 @@ public partial class AlertingApi : IAlertingApi
     {
 
         var localVarPath = "/api/v2/alerting/alerts/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3049,7 +3049,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3067,7 +3067,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3114,28 +3114,28 @@ public partial class AlertingApi : IAlertingApi
     {
 
         var localVarPath = "/api/v2/alerting/alerts/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3167,7 +3167,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3185,7 +3185,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3237,28 +3237,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3290,7 +3290,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3308,7 +3308,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3360,28 +3360,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3413,7 +3413,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3431,7 +3431,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3483,28 +3483,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/bulk/remove";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3536,7 +3536,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3554,7 +3554,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3606,28 +3606,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/bulk/remove";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3659,7 +3659,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3677,7 +3677,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3724,28 +3724,28 @@ public partial class AlertingApi : IAlertingApi
     {
 
         var localVarPath = "/api/v2/alerting/rules/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3777,7 +3777,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3795,7 +3795,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3842,28 +3842,28 @@ public partial class AlertingApi : IAlertingApi
     {
 
         var localVarPath = "/api/v2/alerting/rules/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -3895,7 +3895,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -3913,7 +3913,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -3967,28 +3967,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4024,7 +4024,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4042,7 +4042,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4096,28 +4096,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/alerts/{alertId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4153,7 +4153,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4171,7 +4171,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4230,28 +4230,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4287,7 +4287,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4305,7 +4305,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4365,28 +4365,28 @@ public partial class AlertingApi : IAlertingApi
         }
 
         var localVarPath = "/api/v2/alerting/rules/{ruleId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4422,7 +4422,7 @@ public partial class AlertingApi : IAlertingApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4440,7 +4440,7 @@ public partial class AlertingApi : IAlertingApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)

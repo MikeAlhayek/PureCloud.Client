@@ -19,7 +19,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// <param name="AverageValue">Average metric value.</param>
     /// <param name="RankTotalPoints">Rank, ordered by total points.</param>
     /// <param name="RankPercentagePoints">Rank, ordered by percentage of points.</param>
-    public UserTrendData(String DateStartWorkday = null, String DateEndWorkday = null, double? PercentOfGoal = null, double? AverageValue = null, int? RankTotalPoints = null, int? RankPercentagePoints = null)
+    public UserTrendData(string DateStartWorkday = null, string DateEndWorkday = null, double? PercentOfGoal = null, double? AverageValue = null, int? RankTotalPoints = null, int? RankPercentagePoints = null)
     {
         this.DateStartWorkday = DateStartWorkday;
         this.DateEndWorkday = DateEndWorkday;
@@ -37,7 +37,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -46,7 +46,7 @@ public partial class UserTrendData : IEquatable<UserTrendData>
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; set; }
+    public string DateEndWorkday { get; set; }
 
 
 

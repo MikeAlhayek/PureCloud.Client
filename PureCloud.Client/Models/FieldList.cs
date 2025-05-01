@@ -23,7 +23,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// <param name="Type">Type.</param>
     /// <param name="Required">Required.</param>
     /// <param name="Gdpr">Gdpr.</param>
-    public FieldList(bool? CustomLabels = null, string InstructionText = null, string Key = null, List<string> LabelKeys = null, Dictionary<string, Object> Params = null, bool? Repeatable = null, string State = null, string Type = null, bool? Required = null, bool? Gdpr = null)
+    public FieldList(bool? CustomLabels = null, string InstructionText = null, string Key = null, List<string> LabelKeys = null, Dictionary<string, object> Params = null, bool? Repeatable = null, string State = null, string Type = null, bool? Required = null, bool? Gdpr = null)
     {
         this.CustomLabels = CustomLabels;
         this.InstructionText = InstructionText;
@@ -76,7 +76,7 @@ public partial class FieldList : IEquatable<FieldList>
     /// Gets or Sets Params
     /// </summary>
     [DataMember(Name = "params", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Params { get; set; }
+    public Dictionary<string, object> Params { get; set; }
 
 
 

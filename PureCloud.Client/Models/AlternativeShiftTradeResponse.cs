@@ -162,7 +162,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// <param name="AdminReviewedBy">The admin who reviewed this alternative shift trade after system denial.</param>
     /// <param name="Violations">A list of trade match violations (required).</param>
     /// <param name="Metadata">Version metadata for this alternative shift trade (required).</param>
-    public AlternativeShiftTradeResponse(string ShiftOfferJobId = null, List<AlternativeShiftAgentScheduledShift> ExistingShifts = null, List<AlternativeShiftAgentScheduledShift> OfferedShifts = null, AlternativeShiftScheduleLookup Schedule = null, ManagementUnitReference ManagementUnit = null, UserReference User = null, String WeekDate = null, DateTime? ExpirationDate = null, StateEnum? State = null, ProcessingStatusEnum? ProcessingStatus = null, DateTime? SystemDateReviewed = null, DateTime? AdminDateReviewed = null, UserReference AdminReviewedBy = null, List<ViolationsEnum> Violations = null, WfmVersionedEntityMetadata Metadata = null)
+    public AlternativeShiftTradeResponse(string ShiftOfferJobId = null, List<AlternativeShiftAgentScheduledShift> ExistingShifts = null, List<AlternativeShiftAgentScheduledShift> OfferedShifts = null, AlternativeShiftScheduleLookup Schedule = null, ManagementUnitReference ManagementUnit = null, UserReference User = null, string WeekDate = null, DateTime? ExpirationDate = null, StateEnum? State = null, ProcessingStatusEnum? ProcessingStatus = null, DateTime? SystemDateReviewed = null, DateTime? AdminDateReviewed = null, UserReference AdminReviewedBy = null, List<ViolationsEnum> Violations = null, WfmVersionedEntityMetadata Metadata = null)
     {
         this.ShiftOfferJobId = ShiftOfferJobId;
         this.ExistingShifts = ExistingShifts;
@@ -252,7 +252,7 @@ public partial class AlternativeShiftTradeResponse : IEquatable<AlternativeShift
     /// </summary>
     /// <value>The start week date of the associated schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

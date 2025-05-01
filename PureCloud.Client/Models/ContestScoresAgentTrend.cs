@@ -17,7 +17,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// <param name="MetricScores">The Contest metric scores.</param>
     /// <param name="Disqualified">Indicates whether an agent is disqualified or not.</param>
     /// <param name="DateWorkday">Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public ContestScoresAgentTrend(ContestScoreRanked ContestScore = null, List<ContestMetricScoreRanked> MetricScores = null, bool? Disqualified = null, String DateWorkday = null)
+    public ContestScoresAgentTrend(ContestScoreRanked ContestScore = null, List<ContestMetricScoreRanked> MetricScores = null, bool? Disqualified = null, string DateWorkday = null)
     {
         this.ContestScore = ContestScore;
         this.MetricScores = MetricScores;
@@ -60,7 +60,7 @@ public partial class ContestScoresAgentTrend : IEquatable<ContestScoresAgentTren
     /// </summary>
     /// <value>Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
-    public String DateWorkday { get; set; }
+    public string DateWorkday { get; set; }
 
 
     /// <summary>

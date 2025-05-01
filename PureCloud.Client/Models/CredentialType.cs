@@ -44,7 +44,7 @@ public partial class CredentialType : IEquatable<CredentialType>
     /// </summary>
     /// <value>Properties describing credentials of this type.</value>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Object Properties { get; private set; }
+    public object Properties { get; private set; }
 
 
 

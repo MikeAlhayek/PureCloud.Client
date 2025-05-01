@@ -55,7 +55,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// <param name="Categories">The metric categories (required).</param>
     /// <param name="PlanningGroupIds">The IDs of the planning groups for which to fetch data.  Omitting or passing an empty list will return all available planning groups.</param>
     /// <param name="IntervalLengthMinutes">The period/interval in minutes for which to aggregate the data. Required, defaults to 15.</param>
-    public IntradayPlanningGroupRequest(String BusinessUnitDate = null, List<CategoriesEnum> Categories = null, List<string> PlanningGroupIds = null, int? IntervalLengthMinutes = null)
+    public IntradayPlanningGroupRequest(string BusinessUnitDate = null, List<CategoriesEnum> Categories = null, List<string> PlanningGroupIds = null, int? IntervalLengthMinutes = null)
     {
         this.BusinessUnitDate = BusinessUnitDate;
         this.Categories = Categories;
@@ -71,7 +71,7 @@ public partial class IntradayPlanningGroupRequest : IEquatable<IntradayPlanningG
     /// </summary>
     /// <value>Requested date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "businessUnitDate", EmitDefaultValue = false)]
-    public String BusinessUnitDate { get; set; }
+    public string BusinessUnitDate { get; set; }
 
 
 

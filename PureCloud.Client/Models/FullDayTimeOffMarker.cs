@@ -19,7 +19,7 @@ public partial class FullDayTimeOffMarker : IEquatable<FullDayTimeOffMarker>
     /// <param name="ActivityCodeId">The ID of the activity code associated with the time off marker.</param>
     /// <param name="Paid">Whether the time off marker is paid.</param>
     /// <param name="TimeOffRequestId">The ID of the time off request.</param>
-    public FullDayTimeOffMarker(String BusinessUnitDate = null, int? LengthMinutes = null, string Description = null, string ActivityCodeId = null, bool? Paid = null, string TimeOffRequestId = null)
+    public FullDayTimeOffMarker(string BusinessUnitDate = null, int? LengthMinutes = null, string Description = null, string ActivityCodeId = null, bool? Paid = null, string TimeOffRequestId = null)
     {
         this.BusinessUnitDate = BusinessUnitDate;
         this.LengthMinutes = LengthMinutes;
@@ -37,7 +37,7 @@ public partial class FullDayTimeOffMarker : IEquatable<FullDayTimeOffMarker>
     /// </summary>
     /// <value>The date of the time off marker, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "businessUnitDate", EmitDefaultValue = false)]
-    public String BusinessUnitDate { get; set; }
+    public string BusinessUnitDate { get; set; }
 
 
 

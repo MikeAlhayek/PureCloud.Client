@@ -24,7 +24,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerCampaignRuleConfigChangeCampaignRule(DialerCampaignRuleConfigChangeCampaignRuleEntities CampaignRuleEntities = null, List<DialerCampaignRuleConfigChangeCampaignRuleCondition> CampaignRuleConditions = null, List<DialerCampaignRuleConfigChangeCampaignRuleAction> CampaignRuleActions = null, bool? MatchAnyConditions = null, bool? Enabled = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerCampaignRuleConfigChangeCampaignRule(DialerCampaignRuleConfigChangeCampaignRuleEntities CampaignRuleEntities = null, List<DialerCampaignRuleConfigChangeCampaignRuleCondition> CampaignRuleConditions = null, List<DialerCampaignRuleConfigChangeCampaignRuleAction> CampaignRuleActions = null, bool? MatchAnyConditions = null, bool? Enabled = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.CampaignRuleEntities = CampaignRuleEntities;
         this.CampaignRuleConditions = CampaignRuleConditions;
@@ -90,7 +90,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRule : IEquatable<Dia
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

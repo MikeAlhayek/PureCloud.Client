@@ -16,7 +16,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquat
     /// <param name="Start">scheduled start time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ.</param>
     /// <param name="End">scheduled end time represented as an ISO-8601 string; for example, yyyy-MM-ddTHH:mm:ss.SSSZ.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignScheduleConfigChangeScheduleInterval(string Start = null, string End = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignScheduleConfigChangeScheduleInterval(string Start = null, string End = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Start = Start;
         this.End = End;
@@ -48,7 +48,7 @@ public partial class DialerCampaignScheduleConfigChangeScheduleInterval : IEquat
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

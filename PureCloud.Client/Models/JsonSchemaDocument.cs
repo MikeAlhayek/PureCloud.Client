@@ -21,7 +21,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// <param name="Required">Required.</param>
     /// <param name="Properties">Properties.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public JsonSchemaDocument(string Id = null, string Schema = null, string Title = null, string Description = null, string Type = null, List<string> Required = null, Dictionary<string, Object> Properties = null, Object AdditionalProperties = null)
+    public JsonSchemaDocument(string Id = null, string Schema = null, string Title = null, string Description = null, string Type = null, List<string> Required = null, Dictionary<string, object> Properties = null, object AdditionalProperties = null)
     {
         this.Id = Id;
         this.Schema = Schema;
@@ -88,7 +88,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 
@@ -96,7 +96,7 @@ public partial class JsonSchemaDocument : IEquatable<JsonSchemaDocument>
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Object AdditionalProperties { get; set; }
+    public object AdditionalProperties { get; set; }
 
 
     /// <summary>

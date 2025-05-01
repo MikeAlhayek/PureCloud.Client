@@ -19,7 +19,7 @@ public partial class ContestScoresAgentsPagedList : IEquatable<ContestScoresAgen
     /// <param name="Total">Total.</param>
     /// <param name="DateWorkday">Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="PageCount">PageCount.</param>
-    public ContestScoresAgentsPagedList(List<ContestScoresAgents> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, String DateWorkday = null, int? PageCount = null)
+    public ContestScoresAgentsPagedList(List<ContestScoresAgents> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string DateWorkday = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -69,7 +69,7 @@ public partial class ContestScoresAgentsPagedList : IEquatable<ContestScoresAgen
     /// </summary>
     /// <value>Workday of the contest scores leaderboard. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
-    public String DateWorkday { get; set; }
+    public string DateWorkday { get; set; }
 
 
 

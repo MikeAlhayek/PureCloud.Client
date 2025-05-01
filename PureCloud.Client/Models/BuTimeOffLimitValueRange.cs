@@ -54,7 +54,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// <param name="WaitlistedMinutesPerInterval">A list of waitlisted time-off minutes per granularity interval (required).</param>
     /// <param name="WaitlistedRequestsPerInterval">The current number of waitlisted time-off requests for every interval per granularity (required).</param>
     /// <param name="Metadata">Version metadata for the time-off limit (required).</param>
-    public BuTimeOffLimitValueRange(BuTimeOffLimitReference TimeOffLimit = null, String StartDate = null, GranularityEnum? Granularity = null, List<int?> LimitMinutesPerInterval = null, List<int?> AllocatedMinutesPerInterval = null, List<int?> WaitlistedMinutesPerInterval = null, List<int?> WaitlistedRequestsPerInterval = null, WfmVersionedEntityMetadata Metadata = null)
+    public BuTimeOffLimitValueRange(BuTimeOffLimitReference TimeOffLimit = null, string StartDate = null, GranularityEnum? Granularity = null, List<int?> LimitMinutesPerInterval = null, List<int?> AllocatedMinutesPerInterval = null, List<int?> WaitlistedMinutesPerInterval = null, List<int?> WaitlistedRequestsPerInterval = null, WfmVersionedEntityMetadata Metadata = null)
     {
         this.TimeOffLimit = TimeOffLimit;
         this.StartDate = StartDate;
@@ -92,7 +92,7 @@ public partial class BuTimeOffLimitValueRange : IEquatable<BuTimeOffLimitValueRa
     /// </summary>
     /// <value>Start date of the requested date range, in ISO-8601 format. The end date is determined by the size of interval lists</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

@@ -38,7 +38,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// <param name="ExternalTag">The external tag of the Workitem..</param>
     /// <param name="SkillIds">The skill IDs of the Workitem. Must be valid UUIDs..</param>
     /// <param name="ScriptId">The ID of the Workitems script. Must be a valid UUID..</param>
-    public WorkitemCommonCreate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, string TypeId = null, Dictionary<string, Object> CustomFields = null, string QueueId = null, string AssigneeId = null, string LanguageId = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string ScriptId = null)
+    public WorkitemCommonCreate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, string TypeId = null, Dictionary<string, object> CustomFields = null, string QueueId = null, string AssigneeId = null, string LanguageId = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string ScriptId = null)
     {
         this.Name = Name;
         this.Priority = Priority;
@@ -168,7 +168,7 @@ public partial class WorkitemCommonCreate : IEquatable<WorkitemCommonCreate>
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the worktype of the workitem.</value>
     [DataMember(Name = "customFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> CustomFields { get; set; }
+    public Dictionary<string, object> CustomFields { get; set; }
 
 
 

@@ -204,7 +204,7 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
     /// <param name="PublishedDate">The date the work plan bid published. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="WorkPlanFieldsVisibleToAgents">The work plan fields visible to agents whenever work plan preferences are made (required).</param>
     /// <param name="Metadata">The meta data of this bid.</param>
-    public WorkPlanBid(string Id = null, string Name = null, BuShortTermForecastWeekReference Forecast = null, String BidWindowStartDate = null, String BidWindowEndDate = null, String EffectiveDate = null, StatusEnum? Status = null, AgentRankingTypeEnum? AgentRankingType = null, RankingTiebreakerTypeEnum? RankingTiebreakerType = null, DateTime? PublishedDate = null, List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents = null, WorkPlanBidMetadata Metadata = null)
+    public WorkPlanBid(string Id = null, string Name = null, BuShortTermForecastWeekReference Forecast = null, string BidWindowStartDate = null, string BidWindowEndDate = null, string EffectiveDate = null, StatusEnum? Status = null, AgentRankingTypeEnum? AgentRankingType = null, RankingTiebreakerTypeEnum? RankingTiebreakerType = null, DateTime? PublishedDate = null, List<WorkPlanFieldsVisibleToAgentsEnum> WorkPlanFieldsVisibleToAgents = null, WorkPlanBidMetadata Metadata = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -255,7 +255,7 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
     /// </summary>
     /// <value>The bid start date where agents start participate in work plan bidding. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "bidWindowStartDate", EmitDefaultValue = false)]
-    public String BidWindowStartDate { get; set; }
+    public string BidWindowStartDate { get; set; }
 
 
 
@@ -264,7 +264,7 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
     /// </summary>
     /// <value>The bid end date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "bidWindowEndDate", EmitDefaultValue = false)]
-    public String BidWindowEndDate { get; set; }
+    public string BidWindowEndDate { get; set; }
 
 
 
@@ -273,7 +273,7 @@ public partial class WorkPlanBid : IEquatable<WorkPlanBid>
     /// </summary>
     /// <value>The date when agents will be assigned to the new work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "effectiveDate", EmitDefaultValue = false)]
-    public String EffectiveDate { get; set; }
+    public string EffectiveDate { get; set; }
 
 
 

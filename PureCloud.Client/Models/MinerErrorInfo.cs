@@ -17,7 +17,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// <param name="Code">Code.</param>
     /// <param name="MessageWithParams">Error message with params included..</param>
     /// <param name="MessageParams">Map of variables and params for the error message..</param>
-    public MinerErrorInfo(string Message = null, string Code = null, string MessageWithParams = null, Dictionary<string, Object> MessageParams = null)
+    public MinerErrorInfo(string Message = null, string Code = null, string MessageWithParams = null, Dictionary<string, object> MessageParams = null)
     {
         this.Message = Message;
         this.Code = Code;
@@ -58,7 +58,7 @@ public partial class MinerErrorInfo : IEquatable<MinerErrorInfo>
     /// </summary>
     /// <value>Map of variables and params for the error message.</value>
     [DataMember(Name = "messageParams", EmitDefaultValue = false)]
-    public Dictionary<string, Object> MessageParams { get; set; }
+    public Dictionary<string, object> MessageParams { get; set; }
 
 
     /// <summary>

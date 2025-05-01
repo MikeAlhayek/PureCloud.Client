@@ -22,7 +22,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     /// <param name="AgentIds">The list of agent IDs (required).</param>
     /// <param name="StartDate">The start of a date in yyyy-MM-dd format. Response contains values rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="WeekCount">The number of weeks to query (required).</param>
-    public GetAgentsWorkPlansRequest(List<string> AgentIds = null, String StartDate = null, int? WeekCount = null)
+    public GetAgentsWorkPlansRequest(List<string> AgentIds = null, string StartDate = null, int? WeekCount = null)
     {
         this.AgentIds = AgentIds;
         this.StartDate = StartDate;
@@ -46,7 +46,7 @@ public partial class GetAgentsWorkPlansRequest : IEquatable<GetAgentsWorkPlansRe
     /// </summary>
     /// <value>The start of a date in yyyy-MM-dd format. Response contains values rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

@@ -22,7 +22,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// <param name="TimeOffRequestId">The ID of the time off request.</param>
     /// <param name="TimeOffRequestSyncVersion">The sync version of the full day time off request for which the scheduled activity is associated.</param>
     /// <param name="Delete">Set to &#39;true&#39; to delete this time off marker. Will always be null on responses, only has an effect on schedule update.</param>
-    public BuFullDayTimeOffMarker(String BusinessUnitDate = null, int? LengthMinutes = null, string Description = null, string ActivityCodeId = null, bool? Paid = null, int? PayableMinutes = null, string TimeOffRequestId = null, int? TimeOffRequestSyncVersion = null, bool? Delete = null)
+    public BuFullDayTimeOffMarker(string BusinessUnitDate = null, int? LengthMinutes = null, string Description = null, string ActivityCodeId = null, bool? Paid = null, int? PayableMinutes = null, string TimeOffRequestId = null, int? TimeOffRequestSyncVersion = null, bool? Delete = null)
     {
         this.BusinessUnitDate = BusinessUnitDate;
         this.LengthMinutes = LengthMinutes;
@@ -43,7 +43,7 @@ public partial class BuFullDayTimeOffMarker : IEquatable<BuFullDayTimeOffMarker>
     /// </summary>
     /// <value>The date of the time off marker, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "businessUnitDate", EmitDefaultValue = false)]
-    public String BusinessUnitDate { get; set; }
+    public string BusinessUnitDate { get; set; }
 
 
 

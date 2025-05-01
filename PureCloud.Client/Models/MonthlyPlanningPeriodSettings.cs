@@ -20,7 +20,7 @@ public partial class MonthlyPlanningPeriodSettings : IEquatable<MonthlyPlanningP
     /// Initializes a new instance of the <see cref="MonthlyPlanningPeriodSettings" /> class.
     /// </summary>
     /// <param name="StartDate">Start date of the monthly planning period in yyyy-MM-dd format. The date must represent the first day of the given month. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public MonthlyPlanningPeriodSettings(String StartDate = null)
+    public MonthlyPlanningPeriodSettings(string StartDate = null)
     {
         this.StartDate = StartDate;
 
@@ -33,7 +33,7 @@ public partial class MonthlyPlanningPeriodSettings : IEquatable<MonthlyPlanningP
     /// </summary>
     /// <value>Start date of the monthly planning period in yyyy-MM-dd format. The date must represent the first day of the given month. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
     /// <summary>

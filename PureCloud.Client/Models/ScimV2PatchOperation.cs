@@ -61,7 +61,7 @@ public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
     /// <param name="Op">The PATCH operation to perform. (required).</param>
     /// <param name="Path">The attribute path that describes the target of the operation. Required for a \&quot;remove\&quot; operation..</param>
     /// <param name="Value">The value to set in the path..</param>
-    public ScimV2PatchOperation(OpEnum? Op = null, string Path = null, Object Value = null)
+    public ScimV2PatchOperation(OpEnum? Op = null, string Path = null, object Value = null)
     {
         this.Op = Op;
         this.Path = Path;
@@ -87,7 +87,7 @@ public partial class ScimV2PatchOperation : IEquatable<ScimV2PatchOperation>
     /// </summary>
     /// <value>The value to set in the path.</value>
     [DataMember(Name = "value", EmitDefaultValue = false)]
-    public Object Value { get; set; }
+    public object Value { get; set; }
 
 
     /// <summary>

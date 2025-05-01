@@ -19,7 +19,7 @@ public partial class Page : IEquatable<Page>
     /// <param name="ModifiedDate">Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="RootContainer">RootContainer.</param>
     /// <param name="Properties">Properties.</param>
-    public Page(string Name = null, string VersionId = null, DateTime? CreatedDate = null, DateTime? ModifiedDate = null, Dictionary<string, Object> RootContainer = null, Dictionary<string, Object> Properties = null)
+    public Page(string Name = null, string VersionId = null, DateTime? CreatedDate = null, DateTime? ModifiedDate = null, Dictionary<string, object> RootContainer = null, Dictionary<string, object> Properties = null)
     {
         this.Name = Name;
         this.VersionId = VersionId;
@@ -79,7 +79,7 @@ public partial class Page : IEquatable<Page>
     /// Gets or Sets RootContainer
     /// </summary>
     [DataMember(Name = "rootContainer", EmitDefaultValue = false)]
-    public Dictionary<string, Object> RootContainer { get; set; }
+    public Dictionary<string, object> RootContainer { get; set; }
 
 
 
@@ -87,7 +87,7 @@ public partial class Page : IEquatable<Page>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

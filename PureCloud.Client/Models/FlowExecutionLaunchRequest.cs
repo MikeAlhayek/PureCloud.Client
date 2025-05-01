@@ -23,7 +23,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// <param name="FlowVersion">The version of the flow to launch. Omit this value (or supply null/empty) to use the latest published version..</param>
     /// <param name="InputData">Input values to the flow. Valid values are defined by a flow&#39;s input JSON schema..</param>
     /// <param name="Name">A displayable name to assign to the new flow execution.</param>
-    public FlowExecutionLaunchRequest(string FlowId = null, string FlowVersion = null, Dictionary<string, Object> InputData = null, string Name = null)
+    public FlowExecutionLaunchRequest(string FlowId = null, string FlowVersion = null, Dictionary<string, object> InputData = null, string Name = null)
     {
         this.FlowId = FlowId;
         this.FlowVersion = FlowVersion;
@@ -57,7 +57,7 @@ public partial class FlowExecutionLaunchRequest : IEquatable<FlowExecutionLaunch
     /// </summary>
     /// <value>Input values to the flow. Valid values are defined by a flow&#39;s input JSON schema.</value>
     [DataMember(Name = "inputData", EmitDefaultValue = false)]
-    public Dictionary<string, Object> InputData { get; set; }
+    public Dictionary<string, object> InputData { get; set; }
 
 
 

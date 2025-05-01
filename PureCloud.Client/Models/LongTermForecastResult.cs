@@ -16,7 +16,7 @@ public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
     /// <param name="PlanningGroups">The forecast data broken up by planning group.</param>
     /// <param name="ReferenceStartDate">The reference start date relative to the business unit time zone in this forecast. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="WeekCount">The number of weeks in this forecast.</param>
-    public LongTermForecastResult(List<LongTermForecastPlanningGroupData> PlanningGroups = null, String ReferenceStartDate = null, int? WeekCount = null)
+    public LongTermForecastResult(List<LongTermForecastPlanningGroupData> PlanningGroups = null, string ReferenceStartDate = null, int? WeekCount = null)
     {
         this.PlanningGroups = PlanningGroups;
         this.ReferenceStartDate = ReferenceStartDate;
@@ -40,7 +40,7 @@ public partial class LongTermForecastResult : IEquatable<LongTermForecastResult>
     /// </summary>
     /// <value>The reference start date relative to the business unit time zone in this forecast. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "referenceStartDate", EmitDefaultValue = false)]
-    public String ReferenceStartDate { get; set; }
+    public string ReferenceStartDate { get; set; }
 
 
 

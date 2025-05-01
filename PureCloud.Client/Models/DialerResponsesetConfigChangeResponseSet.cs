@@ -21,7 +21,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerResponsesetConfigChangeResponseSet(Dictionary<string, DialerResponsesetConfigChangeReaction> Responses = null, bool? BeepDetectionEnabled = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerResponsesetConfigChangeResponseSet(Dictionary<string, DialerResponsesetConfigChangeReaction> Responses = null, bool? BeepDetectionEnabled = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.Responses = Responses;
         this.BeepDetectionEnabled = BeepDetectionEnabled;
@@ -58,7 +58,7 @@ public partial class DialerResponsesetConfigChangeResponseSet : IEquatable<Diale
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

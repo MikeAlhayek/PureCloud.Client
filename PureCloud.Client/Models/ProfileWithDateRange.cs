@@ -18,7 +18,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// <param name="Division">The division to which this entity belongs..</param>
     /// <param name="DateStartWorkday">Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="DateEndWorkday">End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public ProfileWithDateRange(string Id = null, string Name = null, Division Division = null, String DateStartWorkday = null, String DateEndWorkday = null)
+    public ProfileWithDateRange(string Id = null, string Name = null, Division Division = null, string DateStartWorkday = null, string DateEndWorkday = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -61,7 +61,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -70,7 +70,7 @@ public partial class ProfileWithDateRange : IEquatable<ProfileWithDateRange>
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; set; }
+    public string DateEndWorkday { get; set; }
 
 
 

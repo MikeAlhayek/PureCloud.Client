@@ -63,7 +63,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// <param name="DownloadUrl">The url to GET the results of the performance prediction. This field is populated only if query state is &#39;Complete&#39;.</param>
     /// <param name="DownloadResult">Result will always come via downloadUrls; however the schema is included for documentation.</param>
     /// <param name="State">The state of the performance prediction (required).</param>
-    public PerformancePredictionResponse(String WeekDate = null, string ScheduleId = null, string DownloadUrl = null, PerformancePredictionOutputs DownloadResult = null, StateEnum? State = null)
+    public PerformancePredictionResponse(string WeekDate = null, string ScheduleId = null, string DownloadUrl = null, PerformancePredictionOutputs DownloadResult = null, StateEnum? State = null)
     {
         this.WeekDate = WeekDate;
         this.ScheduleId = ScheduleId;
@@ -89,7 +89,7 @@ public partial class PerformancePredictionResponse : IEquatable<PerformancePredi
     /// </summary>
     /// <value>The weekDate of the short term forecast in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

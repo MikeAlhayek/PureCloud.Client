@@ -59,7 +59,7 @@ public partial class ExternalMetricDataItem : IEquatable<ExternalMetricDataItem>
     /// <param name="Value">The value of the metric data. When value is null, the metric data will be deleted. (required).</param>
     /// <param name="Count">The number of data points. The default value is 0 when type is Cumulative and the metric data already exists, otherwise 1. When total count reaches 0, the metric data will be deleted..</param>
     /// <param name="Type">The type of the metric data. The default value is Total..</param>
-    public ExternalMetricDataItem(string UserId = null, string UserEmail = null, string MetricId = null, String DateOccurred = null, double? Value = null, int? Count = null, TypeEnum? Type = null)
+    public ExternalMetricDataItem(string UserId = null, string UserEmail = null, string MetricId = null, string DateOccurred = null, double? Value = null, int? Count = null, TypeEnum? Type = null)
     {
         this.UserId = UserId;
         this.UserEmail = UserEmail;
@@ -105,7 +105,7 @@ public partial class ExternalMetricDataItem : IEquatable<ExternalMetricDataItem>
     /// </summary>
     /// <value>The date of the metric data. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateOccurred", EmitDefaultValue = false)]
-    public String DateOccurred { get; set; }
+    public string DateOccurred { get; set; }
 
 
 

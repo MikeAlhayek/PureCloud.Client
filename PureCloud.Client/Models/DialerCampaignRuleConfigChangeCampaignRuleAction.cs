@@ -75,7 +75,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// <param name="ActionType">The type of this action.</param>
     /// <param name="CampaignRuleActionEntities">CampaignRuleActionEntities.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignRuleConfigChangeCampaignRuleAction(string Id = null, Dictionary<string, string> Parameters = null, ActionTypeEnum? ActionType = null, DialerCampaignRuleConfigChangeCampaignRuleActionEntities CampaignRuleActionEntities = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignRuleConfigChangeCampaignRuleAction(string Id = null, Dictionary<string, string> Parameters = null, ActionTypeEnum? ActionType = null, DialerCampaignRuleConfigChangeCampaignRuleActionEntities CampaignRuleActionEntities = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Id = Id;
         this.Parameters = Parameters;
@@ -119,7 +119,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleAction : IEquatab
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

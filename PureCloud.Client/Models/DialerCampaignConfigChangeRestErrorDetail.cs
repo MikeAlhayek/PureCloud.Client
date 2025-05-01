@@ -16,7 +16,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     /// <param name="Error">name of the error.</param>
     /// <param name="Details">additional information regarding the error.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignConfigChangeRestErrorDetail(string Error = null, string Details = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignConfigChangeRestErrorDetail(string Error = null, string Details = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Error = Error;
         this.Details = Details;
@@ -48,7 +48,7 @@ public partial class DialerCampaignConfigChangeRestErrorDetail : IEquatable<Dial
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

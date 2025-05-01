@@ -90,7 +90,7 @@ public partial class SystemMessageSystemMessage : IEquatable<SystemMessageSystem
     /// <param name="Reason">Reason.</param>
     /// <param name="Message">Message.</param>
     /// <param name="Data">Data.</param>
-    public SystemMessageSystemMessage(string ChannelId = null, SystemTopicTypeEnum? SystemTopicType = null, string CorrelationId = null, string OrganizationId = null, string UserId = null, string OauthClientId = null, ReasonEnum? Reason = null, string Message = null, Dictionary<string, Object> Data = null)
+    public SystemMessageSystemMessage(string ChannelId = null, SystemTopicTypeEnum? SystemTopicType = null, string CorrelationId = null, string OrganizationId = null, string UserId = null, string OauthClientId = null, ReasonEnum? Reason = null, string Message = null, Dictionary<string, object> Data = null)
     {
         this.ChannelId = ChannelId;
         this.SystemTopicType = SystemTopicType;
@@ -162,7 +162,7 @@ public partial class SystemMessageSystemMessage : IEquatable<SystemMessageSystem
     /// Gets or Sets Data
     /// </summary>
     [DataMember(Name = "data", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Data { get; set; }
+    public Dictionary<string, object> Data { get; set; }
 
 
     /// <summary>

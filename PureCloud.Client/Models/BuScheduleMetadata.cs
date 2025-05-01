@@ -21,7 +21,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// <param name="GenerationResults">Generation result summary for this schedule, if applicable.</param>
     /// <param name="Metadata">Version metadata for this schedule.</param>
     /// <param name="ManagementUnits">High level per-management unit schedule metadata.</param>
-    public BuScheduleMetadata(String WeekDate = null, int? WeekCount = null, string Description = null, bool? Published = null, BuShortTermForecastReference ShortTermForecast = null, ScheduleGenerationResultSummary GenerationResults = null, WfmVersionedEntityMetadata Metadata = null, List<BuManagementUnitScheduleSummary> ManagementUnits = null)
+    public BuScheduleMetadata(string WeekDate = null, int? WeekCount = null, string Description = null, bool? Published = null, BuShortTermForecastReference ShortTermForecast = null, ScheduleGenerationResultSummary GenerationResults = null, WfmVersionedEntityMetadata Metadata = null, List<BuManagementUnitScheduleSummary> ManagementUnits = null)
     {
         this.WeekDate = WeekDate;
         this.WeekCount = WeekCount;
@@ -50,7 +50,7 @@ public partial class BuScheduleMetadata : IEquatable<BuScheduleMetadata>
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

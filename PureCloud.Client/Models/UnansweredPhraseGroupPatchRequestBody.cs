@@ -22,7 +22,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// <param name="PhraseAssociations">List of phrases and documents to be linked (required).</param>
     /// <param name="DateStart">The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="DateEnd">The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public UnansweredPhraseGroupPatchRequestBody(List<PhraseAssociations> PhraseAssociations = null, String DateStart = null, String DateEnd = null)
+    public UnansweredPhraseGroupPatchRequestBody(List<PhraseAssociations> PhraseAssociations = null, string DateStart = null, string DateEnd = null)
     {
         this.PhraseAssociations = PhraseAssociations;
         this.DateStart = DateStart;
@@ -46,7 +46,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// </summary>
     /// <value>The start date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -55,7 +55,7 @@ public partial class UnansweredPhraseGroupPatchRequestBody : IEquatable<Unanswer
     /// </summary>
     /// <value>The end date to be used for filtering phrases. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
     /// <summary>

@@ -15,7 +15,7 @@ public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttribut
     /// </summary>
     /// <param name="NewValue">New property value.</param>
     /// <param name="OldValue">Old property value.</param>
-    public WorkitemsAttributeChangeList(List<Object> NewValue = null, List<Object> OldValue = null)
+    public WorkitemsAttributeChangeList(List<object> NewValue = null, List<object> OldValue = null)
     {
         this.NewValue = NewValue;
         this.OldValue = OldValue;
@@ -29,7 +29,7 @@ public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttribut
     /// </summary>
     /// <value>New property value</value>
     [DataMember(Name = "newValue", EmitDefaultValue = false)]
-    public List<Object> NewValue { get; set; }
+    public List<object> NewValue { get; set; }
 
 
 
@@ -38,7 +38,7 @@ public partial class WorkitemsAttributeChangeList : IEquatable<WorkitemsAttribut
     /// </summary>
     /// <value>Old property value</value>
     [DataMember(Name = "oldValue", EmitDefaultValue = false)]
-    public List<Object> OldValue { get; set; }
+    public List<object> OldValue { get; set; }
 
 
     /// <summary>

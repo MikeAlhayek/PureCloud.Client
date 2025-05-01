@@ -15,7 +15,7 @@ public partial class OpenActionProperties : IEquatable<OpenActionProperties>
     /// </summary>
     /// <param name="OpenActionName">The specific type of the open action..</param>
     /// <param name="ConfigurationFields">Custom fields defined in the schema referenced by the open action type selected..</param>
-    public OpenActionProperties(string OpenActionName = null, Dictionary<string, Object> ConfigurationFields = null)
+    public OpenActionProperties(string OpenActionName = null, Dictionary<string, object> ConfigurationFields = null)
     {
         this.OpenActionName = OpenActionName;
         this.ConfigurationFields = ConfigurationFields;
@@ -38,7 +38,7 @@ public partial class OpenActionProperties : IEquatable<OpenActionProperties>
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the open action type selected.</value>
     [DataMember(Name = "configurationFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> ConfigurationFields { get; set; }
+    public Dictionary<string, object> ConfigurationFields { get; set; }
 
 
     /// <summary>

@@ -17,7 +17,7 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
     /// <param name="DateStartWorkday">Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="DateEndWorkday">End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="Profiles">The list of profiles of the agent.</param>
-    public UserProfilesInDateRange(UserReference User = null, String DateStartWorkday = null, String DateEndWorkday = null, List<ProfileWithDateRange> Profiles = null)
+    public UserProfilesInDateRange(UserReference User = null, string DateStartWorkday = null, string DateEndWorkday = null, List<ProfileWithDateRange> Profiles = null)
     {
         this.User = User;
         this.DateStartWorkday = DateStartWorkday;
@@ -42,7 +42,7 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -51,7 +51,7 @@ public partial class UserProfilesInDateRange : IEquatable<UserProfilesInDateRang
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; set; }
+    public string DateEndWorkday { get; set; }
 
 
 

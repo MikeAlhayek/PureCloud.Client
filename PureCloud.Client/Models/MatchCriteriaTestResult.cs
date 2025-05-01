@@ -113,7 +113,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// <param name="GeneratedJsonPathCondition">The generated json path condition.</param>
     /// <param name="Match">Did the generated json path condition match.</param>
     /// <param name="JsonPathExtraction">The json paths and their values that were compared.</param>
-    public MatchCriteriaTestResult(string JsonPath = null, OperatorEnum? Operator = null, Object Value = null, List<Object> Values = null, string GeneratedJsonPathCondition = null, bool? Match = null, List<MatchTestResult> JsonPathExtraction = null)
+    public MatchCriteriaTestResult(string JsonPath = null, OperatorEnum? Operator = null, object Value = null, List<object> Values = null, string GeneratedJsonPathCondition = null, bool? Match = null, List<MatchTestResult> JsonPathExtraction = null)
     {
         this.JsonPath = JsonPath;
         this.Operator = Operator;
@@ -143,7 +143,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// </summary>
     /// <value>The value to match on. Only one of value and values can be included</value>
     [DataMember(Name = "value", EmitDefaultValue = false)]
-    public Object Value { get; set; }
+    public object Value { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class MatchCriteriaTestResult : IEquatable<MatchCriteriaTestResul
     /// </summary>
     /// <value>The list of values to match on. Only one of value and values can be included</value>
     [DataMember(Name = "values", EmitDefaultValue = false)]
-    public List<Object> Values { get; set; }
+    public List<object> Values { get; set; }
 
 
 

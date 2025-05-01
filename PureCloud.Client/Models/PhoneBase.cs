@@ -66,7 +66,7 @@ public partial class PhoneBase : IEquatable<PhoneBase>
     /// <param name="Lines">The list of linebases associated with the phone base. (required).</param>
     /// <param name="Properties">Properties.</param>
     /// <param name="Capabilities">Capabilities.</param>
-    public PhoneBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef PhoneMetaBase = null, List<LineBase> Lines = null, Dictionary<string, Object> Properties = null, PhoneCapabilities Capabilities = null)
+    public PhoneBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef PhoneMetaBase = null, List<LineBase> Lines = null, Dictionary<string, object> Properties = null, PhoneCapabilities Capabilities = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -204,7 +204,7 @@ public partial class PhoneBase : IEquatable<PhoneBase>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

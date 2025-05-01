@@ -21,7 +21,7 @@ public partial class AlternativeShiftScheduleLookup : IEquatable<AlternativeShif
     /// </summary>
     /// <param name="Id">The unique identifier of the schedule (required).</param>
     /// <param name="WeekDate">The start date for this schedule in yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public AlternativeShiftScheduleLookup(string Id = null, String WeekDate = null)
+    public AlternativeShiftScheduleLookup(string Id = null, string WeekDate = null)
     {
         this.Id = Id;
         this.WeekDate = WeekDate;
@@ -44,7 +44,7 @@ public partial class AlternativeShiftScheduleLookup : IEquatable<AlternativeShif
     /// </summary>
     /// <value>The start date for this schedule in yyyy-MM-dd. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
     /// <summary>

@@ -109,7 +109,7 @@ public partial class WorkitemQueryJobQueryFiltersPredicate : IEquatable<Workitem
     /// <param name="Name">Property name. (required).</param>
     /// <param name="Operator">Query filter predicate operator. (required).</param>
     /// <param name="Values">List of values to be used in the query filter predicate..</param>
-    public WorkitemQueryJobQueryFiltersPredicate(string Name = null, OperatorEnum? Operator = null, List<Object> Values = null)
+    public WorkitemQueryJobQueryFiltersPredicate(string Name = null, OperatorEnum? Operator = null, List<object> Values = null)
     {
         this.Name = Name;
         this.Operator = Operator;
@@ -135,7 +135,7 @@ public partial class WorkitemQueryJobQueryFiltersPredicate : IEquatable<Workitem
     /// </summary>
     /// <value>List of values to be used in the query filter predicate.</value>
     [DataMember(Name = "values", EmitDefaultValue = false)]
-    public List<Object> Values { get; set; }
+    public List<object> Values { get; set; }
 
 
     /// <summary>

@@ -16,7 +16,7 @@ public partial class ContestScoresGroupTrend : IEquatable<ContestScoresGroupTren
     /// <param name="DateWorkday">Workday of the contest score. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="ContestScore">The Contest score.</param>
     /// <param name="MetricScores">The Contest metric scores.</param>
-    public ContestScoresGroupTrend(String DateWorkday = null, ContestScore ContestScore = null, List<ContestMetricScore> MetricScores = null)
+    public ContestScoresGroupTrend(string DateWorkday = null, ContestScore ContestScore = null, List<ContestMetricScore> MetricScores = null)
     {
         this.DateWorkday = DateWorkday;
         this.ContestScore = ContestScore;
@@ -31,7 +31,7 @@ public partial class ContestScoresGroupTrend : IEquatable<ContestScoresGroupTren
     /// </summary>
     /// <value>Workday of the contest score. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
-    public String DateWorkday { get; set; }
+    public string DateWorkday { get; set; }
 
 
 

@@ -34,7 +34,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Specifies the External Metric Definition ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    ApiResponse<Object> DeleteEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(string metricId);
+    ApiResponse<object> DeleteEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(string metricId);
 
     /// <summary>
     /// Delete a Contest by Id
@@ -58,7 +58,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="contestId">The ID of the contest</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    ApiResponse<Object> DeleteGamificationContestWithHttpInfo(string contestId);
+    ApiResponse<object> DeleteGamificationContestWithHttpInfo(string contestId);
 
     /// <summary>
     /// Get an External Metric Definition
@@ -148,7 +148,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>ContestScoresAgentsPagedList</returns>
 
-    ContestScoresAgentsPagedList GetGamificationContestAgentsScores(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    ContestScoresAgentsPagedList GetGamificationContestAgentsScores(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores (Admin)
@@ -164,7 +164,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>ApiResponse of ContestScoresAgentsPagedList</returns>
 
-    ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores for the requesting Agent/Supervisor
@@ -180,7 +180,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>ContestScoresAgentsPagedList</returns>
 
-    ContestScoresAgentsPagedList GetGamificationContestAgentsScoresMe(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    ContestScoresAgentsPagedList GetGamificationContestAgentsScoresMe(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores for the requesting Agent/Supervisor
@@ -196,7 +196,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>ApiResponse of ContestScoresAgentsPagedList</returns>
 
-    ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get a Contest Score Trend (Average Trend)
@@ -288,7 +288,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>GetContestsEssentialsListing</returns>
 
-    GetContestsEssentialsListing GetGamificationContests(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
+    GetContestsEssentialsListing GetGamificationContests(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
 
     /// <summary>
     /// Get a List of Contests (Admin)
@@ -306,7 +306,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>ApiResponse of GetContestsEssentialsListing</returns>
 
-    ApiResponse<GetContestsEssentialsListing> GetGamificationContestsWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
+    ApiResponse<GetContestsEssentialsListing> GetGamificationContestsWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
 
     /// <summary>
     /// Get a List of Contests (Agent/Supervisor)
@@ -325,7 +325,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>GetContestsEssentialsListing</returns>
 
-    GetContestsEssentialsListing GetGamificationContestsMe(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
+    GetContestsEssentialsListing GetGamificationContestsMe(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
 
     /// <summary>
     /// Get a List of Contests (Agent/Supervisor)
@@ -344,7 +344,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>ApiResponse of GetContestsEssentialsListing</returns>
 
-    ApiResponse<GetContestsEssentialsListing> GetGamificationContestsMeWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
+    ApiResponse<GetContestsEssentialsListing> GetGamificationContestsMeWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
 
     /// <summary>
     /// Get insights summary
@@ -366,7 +366,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>InsightsSummary</returns>
 
-    InsightsSummary GetGamificationInsights(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
+    InsightsSummary GetGamificationInsights(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
 
     /// <summary>
     /// Get insights summary
@@ -388,7 +388,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>ApiResponse of InsightsSummary</returns>
 
-    ApiResponse<InsightsSummary> GetGamificationInsightsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
+    ApiResponse<InsightsSummary> GetGamificationInsightsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
 
     /// <summary>
     /// Get insights details for the current user
@@ -404,7 +404,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsDetails</returns>
 
-    InsightsDetails GetGamificationInsightsDetails(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    InsightsDetails GetGamificationInsightsDetails(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights details for the current user
@@ -420,7 +420,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsDetails</returns>
 
-    ApiResponse<InsightsDetails> GetGamificationInsightsDetailsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    ApiResponse<InsightsDetails> GetGamificationInsightsDetailsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights overall trend for the current user
@@ -438,7 +438,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsTrend</returns>
 
-    InsightsTrend GetGamificationInsightsGroupsTrends(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    InsightsTrend GetGamificationInsightsGroupsTrends(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend for the current user
@@ -456,7 +456,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsTrend</returns>
 
-    ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend
@@ -474,7 +474,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsTrend</returns>
 
-    InsightsTrend GetGamificationInsightsGroupsTrendsAll(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    InsightsTrend GetGamificationInsightsGroupsTrendsAll(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend
@@ -492,7 +492,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsTrend</returns>
 
-    ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsAllWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsAllWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Query users in a profile during a period of time
@@ -507,7 +507,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsAgents</returns>
 
-    InsightsAgents GetGamificationInsightsMembers(string filterType, string filterId, string granularity, String startWorkday);
+    InsightsAgents GetGamificationInsightsMembers(string filterType, string filterId, string granularity, string startWorkday);
 
     /// <summary>
     /// Query users in a profile during a period of time
@@ -522,7 +522,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsAgents</returns>
 
-    ApiResponse<InsightsAgents> GetGamificationInsightsMembersWithHttpInfo(string filterType, string filterId, string granularity, String startWorkday);
+    ApiResponse<InsightsAgents> GetGamificationInsightsMembersWithHttpInfo(string filterType, string filterId, string granularity, string startWorkday);
 
     /// <summary>
     /// Get insights rankings
@@ -542,7 +542,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>InsightsRankings</returns>
 
-    InsightsRankings GetGamificationInsightsRankings(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
+    InsightsRankings GetGamificationInsightsRankings(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
 
     /// <summary>
     /// Get insights rankings
@@ -562,7 +562,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>ApiResponse of InsightsRankings</returns>
 
-    ApiResponse<InsightsRankings> GetGamificationInsightsRankingsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
+    ApiResponse<InsightsRankings> GetGamificationInsightsRankingsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
 
     /// <summary>
     /// Get insights user trend for the current user
@@ -580,7 +580,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>UserInsightsTrend</returns>
 
-    UserInsightsTrend GetGamificationInsightsTrends(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    UserInsightsTrend GetGamificationInsightsTrends(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights user trend for the current user
@@ -598,7 +598,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of UserInsightsTrend</returns>
 
-    ApiResponse<UserInsightsTrend> GetGamificationInsightsTrendsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    ApiResponse<UserInsightsTrend> GetGamificationInsightsTrendsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights details for the user
@@ -615,7 +615,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsDetails</returns>
 
-    InsightsDetails GetGamificationInsightsUserDetails(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    InsightsDetails GetGamificationInsightsUserDetails(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights details for the user
@@ -632,7 +632,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsDetails</returns>
 
-    ApiResponse<InsightsDetails> GetGamificationInsightsUserDetailsWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    ApiResponse<InsightsDetails> GetGamificationInsightsUserDetailsWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights user trend for the user
@@ -651,7 +651,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>UserInsightsTrend</returns>
 
-    UserInsightsTrend GetGamificationInsightsUserTrends(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    UserInsightsTrend GetGamificationInsightsUserTrends(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights user trend for the user
@@ -670,7 +670,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of UserInsightsTrend</returns>
 
-    ApiResponse<UserInsightsTrend> GetGamificationInsightsUserTrendsWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    ApiResponse<UserInsightsTrend> GetGamificationInsightsUserTrendsWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Leaderboard of the requesting user&#39;s division or performance profile
@@ -684,7 +684,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Leaderboard</returns>
 
-    Leaderboard GetGamificationLeaderboard(String startWorkday, String endWorkday, string metricId = null);
+    Leaderboard GetGamificationLeaderboard(string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard of the requesting user&#39;s division or performance profile
@@ -698,7 +698,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>ApiResponse of Leaderboard</returns>
 
-    ApiResponse<Leaderboard> GetGamificationLeaderboardWithHttpInfo(String startWorkday, String endWorkday, string metricId = null);
+    ApiResponse<Leaderboard> GetGamificationLeaderboardWithHttpInfo(string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard by filter type
@@ -714,7 +714,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Leaderboard</returns>
 
-    Leaderboard GetGamificationLeaderboardAll(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null);
+    Leaderboard GetGamificationLeaderboardAll(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard by filter type
@@ -730,7 +730,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>ApiResponse of Leaderboard</returns>
 
-    ApiResponse<Leaderboard> GetGamificationLeaderboardAllWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null);
+    ApiResponse<Leaderboard> GetGamificationLeaderboardAllWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Best Points by division or performance profile
@@ -886,7 +886,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Metric</returns>
 
-    Metric GetGamificationProfileMetric(string profileId, string metricId, String workday = null);
+    Metric GetGamificationProfileMetric(string profileId, string metricId, string workday = null);
 
     /// <summary>
     /// Performance profile gamified metric by id
@@ -900,7 +900,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of Metric</returns>
 
-    ApiResponse<Metric> GetGamificationProfileMetricWithHttpInfo(string profileId, string metricId, String workday = null);
+    ApiResponse<Metric> GetGamificationProfileMetricWithHttpInfo(string profileId, string metricId, string workday = null);
 
     /// <summary>
     /// All gamified metrics for a given performance profile
@@ -915,7 +915,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>GetMetricResponse</returns>
 
-    GetMetricResponse GetGamificationProfileMetrics(string profileId, List<string> expand = null, String workday = null, string metricIds = null);
+    GetMetricResponse GetGamificationProfileMetrics(string profileId, List<string> expand = null, string workday = null, string metricIds = null);
 
     /// <summary>
     /// All gamified metrics for a given performance profile
@@ -930,7 +930,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>ApiResponse of GetMetricResponse</returns>
 
-    ApiResponse<GetMetricResponse> GetGamificationProfileMetricsWithHttpInfo(string profileId, List<string> expand = null, String workday = null, string metricIds = null);
+    ApiResponse<GetMetricResponse> GetGamificationProfileMetricsWithHttpInfo(string profileId, List<string> expand = null, string workday = null, string metricIds = null);
 
     /// <summary>
     /// All metrics for a given performance profile with objective details such as order and maxPoints
@@ -943,7 +943,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>GetMetricsResponse</returns>
 
-    GetMetricsResponse GetGamificationProfileMetricsObjectivedetails(string profileId, String workday = null);
+    GetMetricsResponse GetGamificationProfileMetricsObjectivedetails(string profileId, string workday = null);
 
     /// <summary>
     /// All metrics for a given performance profile with objective details such as order and maxPoints
@@ -956,7 +956,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of GetMetricsResponse</returns>
 
-    ApiResponse<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsWithHttpInfo(string profileId, String workday = null);
+    ApiResponse<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsWithHttpInfo(string profileId, string workday = null);
 
     /// <summary>
     /// All performance profiles
@@ -991,7 +991,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>PerformanceProfile</returns>
 
-    PerformanceProfile GetGamificationProfilesUser(string userId, String workday = null);
+    PerformanceProfile GetGamificationProfilesUser(string userId, string workday = null);
 
     /// <summary>
     /// Performance profile of a user
@@ -1004,7 +1004,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of PerformanceProfile</returns>
 
-    ApiResponse<PerformanceProfile> GetGamificationProfilesUserWithHttpInfo(string userId, String workday = null);
+    ApiResponse<PerformanceProfile> GetGamificationProfilesUserWithHttpInfo(string userId, string workday = null);
 
     /// <summary>
     /// Performance profile of the requesting user
@@ -1016,7 +1016,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>PerformanceProfile</returns>
 
-    PerformanceProfile GetGamificationProfilesUsersMe(String workday = null);
+    PerformanceProfile GetGamificationProfilesUsersMe(string workday = null);
 
     /// <summary>
     /// Performance profile of the requesting user
@@ -1028,7 +1028,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of PerformanceProfile</returns>
 
-    ApiResponse<PerformanceProfile> GetGamificationProfilesUsersMeWithHttpInfo(String workday = null);
+    ApiResponse<PerformanceProfile> GetGamificationProfilesUsersMeWithHttpInfo(string workday = null);
 
     /// <summary>
     /// Workday performance metrics of the requesting user
@@ -1041,7 +1041,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>WorkdayMetricListing</returns>
 
-    WorkdayMetricListing GetGamificationScorecards(String workday, List<string> expand = null);
+    WorkdayMetricListing GetGamificationScorecards(string workday, List<string> expand = null);
 
     /// <summary>
     /// Workday performance metrics of the requesting user
@@ -1054,7 +1054,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>ApiResponse of WorkdayMetricListing</returns>
 
-    ApiResponse<WorkdayMetricListing> GetGamificationScorecardsWithHttpInfo(String workday, List<string> expand = null);
+    ApiResponse<WorkdayMetricListing> GetGamificationScorecardsWithHttpInfo(string workday, List<string> expand = null);
 
     /// <summary>
     /// Attendance status metrics of the requesting user
@@ -1067,7 +1067,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AttendanceStatusListing</returns>
 
-    AttendanceStatusListing GetGamificationScorecardsAttendance(String startWorkday, String endWorkday);
+    AttendanceStatusListing GetGamificationScorecardsAttendance(string startWorkday, string endWorkday);
 
     /// <summary>
     /// Attendance status metrics of the requesting user
@@ -1080,7 +1080,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AttendanceStatusListing</returns>
 
-    ApiResponse<AttendanceStatusListing> GetGamificationScorecardsAttendanceWithHttpInfo(String startWorkday, String endWorkday);
+    ApiResponse<AttendanceStatusListing> GetGamificationScorecardsAttendanceWithHttpInfo(string startWorkday, string endWorkday);
 
     /// <summary>
     /// Best points of the requesting user
@@ -1114,7 +1114,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AllTimePoints</returns>
 
-    AllTimePoints GetGamificationScorecardsPointsAlltime(String endWorkday);
+    AllTimePoints GetGamificationScorecardsPointsAlltime(string endWorkday);
 
     /// <summary>
     /// All-time points of the requesting user
@@ -1126,7 +1126,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AllTimePoints</returns>
 
-    ApiResponse<AllTimePoints> GetGamificationScorecardsPointsAlltimeWithHttpInfo(String endWorkday);
+    ApiResponse<AllTimePoints> GetGamificationScorecardsPointsAlltimeWithHttpInfo(string endWorkday);
 
     /// <summary>
     /// Average points of the requesting user&#39;s division or performance profile
@@ -1138,7 +1138,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>SingleWorkdayAveragePoints</returns>
 
-    SingleWorkdayAveragePoints GetGamificationScorecardsPointsAverage(String workday);
+    SingleWorkdayAveragePoints GetGamificationScorecardsPointsAverage(string workday);
 
     /// <summary>
     /// Average points of the requesting user&#39;s division or performance profile
@@ -1150,7 +1150,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of SingleWorkdayAveragePoints</returns>
 
-    ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageWithHttpInfo(String workday);
+    ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageWithHttpInfo(string workday);
 
     /// <summary>
     /// Points trends of the requesting user
@@ -1164,7 +1164,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>WorkdayPointsTrend</returns>
 
-    WorkdayPointsTrend GetGamificationScorecardsPointsTrends(String startWorkday, String endWorkday, string dayOfWeek = null);
+    WorkdayPointsTrend GetGamificationScorecardsPointsTrends(string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Points trends of the requesting user
@@ -1178,7 +1178,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>ApiResponse of WorkdayPointsTrend</returns>
 
-    ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsWithHttpInfo(String startWorkday, String endWorkday, string dayOfWeek = null);
+    ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsWithHttpInfo(string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Average performance values trends by metric of a user
@@ -1196,7 +1196,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    MetricValueTrendAverage GetGamificationScorecardsProfileMetricUserValuesTrends(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null);
+    MetricValueTrendAverage GetGamificationScorecardsProfileMetricUserValuesTrends(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a user
@@ -1214,7 +1214,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null);
+    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a division or a performance profile
@@ -1233,7 +1233,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    MetricValueTrendAverage GetGamificationScorecardsProfileMetricUsersValuesTrends(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null);
+    MetricValueTrendAverage GetGamificationScorecardsProfileMetricUsersValuesTrends(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a division or a performance profile
@@ -1252,7 +1252,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null);
+    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of the requesting user
@@ -1270,7 +1270,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    MetricValueTrendAverage GetGamificationScorecardsProfileMetricValuesTrends(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    MetricValueTrendAverage GetGamificationScorecardsProfileMetricValuesTrends(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of the requesting user
@@ -1288,7 +1288,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Workday performance metrics for a user
@@ -1302,7 +1302,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>WorkdayMetricListing</returns>
 
-    WorkdayMetricListing GetGamificationScorecardsUser(string userId, String workday, List<string> expand = null);
+    WorkdayMetricListing GetGamificationScorecardsUser(string userId, string workday, List<string> expand = null);
 
     /// <summary>
     /// Workday performance metrics for a user
@@ -1316,7 +1316,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>ApiResponse of WorkdayMetricListing</returns>
 
-    ApiResponse<WorkdayMetricListing> GetGamificationScorecardsUserWithHttpInfo(string userId, String workday, List<string> expand = null);
+    ApiResponse<WorkdayMetricListing> GetGamificationScorecardsUserWithHttpInfo(string userId, string workday, List<string> expand = null);
 
     /// <summary>
     /// Attendance status metrics for a user
@@ -1330,7 +1330,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AttendanceStatusListing</returns>
 
-    AttendanceStatusListing GetGamificationScorecardsUserAttendance(string userId, String startWorkday, String endWorkday);
+    AttendanceStatusListing GetGamificationScorecardsUserAttendance(string userId, string startWorkday, string endWorkday);
 
     /// <summary>
     /// Attendance status metrics for a user
@@ -1344,7 +1344,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AttendanceStatusListing</returns>
 
-    ApiResponse<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceWithHttpInfo(string userId, String startWorkday, String endWorkday);
+    ApiResponse<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceWithHttpInfo(string userId, string startWorkday, string endWorkday);
 
     /// <summary>
     /// Best points of a user
@@ -1381,7 +1381,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AllTimePoints</returns>
 
-    AllTimePoints GetGamificationScorecardsUserPointsAlltime(string userId, String endWorkday);
+    AllTimePoints GetGamificationScorecardsUserPointsAlltime(string userId, string endWorkday);
 
     /// <summary>
     /// All-time points for a user
@@ -1394,7 +1394,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AllTimePoints</returns>
 
-    ApiResponse<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeWithHttpInfo(string userId, String endWorkday);
+    ApiResponse<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeWithHttpInfo(string userId, string endWorkday);
 
     /// <summary>
     /// Points trend for a user
@@ -1409,7 +1409,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>WorkdayPointsTrend</returns>
 
-    WorkdayPointsTrend GetGamificationScorecardsUserPointsTrends(string userId, String startWorkday, String endWorkday, string dayOfWeek = null);
+    WorkdayPointsTrend GetGamificationScorecardsUserPointsTrends(string userId, string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Points trend for a user
@@ -1424,7 +1424,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>ApiResponse of WorkdayPointsTrend</returns>
 
-    ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsWithHttpInfo(string userId, String startWorkday, String endWorkday, string dayOfWeek = null);
+    ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsWithHttpInfo(string userId, string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Values trends of a user
@@ -1439,7 +1439,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    WorkdayValuesTrend GetGamificationScorecardsUserValuesTrends(string userId, String startWorkday, String endWorkday, string timeZone = null);
+    WorkdayValuesTrend GetGamificationScorecardsUserValuesTrends(string userId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Values trends of a user
@@ -1454,7 +1454,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsWithHttpInfo(string userId, String startWorkday, String endWorkday, string timeZone = null);
+    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsWithHttpInfo(string userId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Workday average points by target group
@@ -1468,7 +1468,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>SingleWorkdayAveragePoints</returns>
 
-    SingleWorkdayAveragePoints GetGamificationScorecardsUsersPointsAverage(string filterType, string filterId, String workday);
+    SingleWorkdayAveragePoints GetGamificationScorecardsUsersPointsAverage(string filterType, string filterId, string workday);
 
     /// <summary>
     /// Workday average points by target group
@@ -1482,7 +1482,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of SingleWorkdayAveragePoints</returns>
 
-    ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageWithHttpInfo(string filterType, string filterId, String workday);
+    ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageWithHttpInfo(string filterType, string filterId, string workday);
 
     /// <summary>
     /// Workday average values by target group
@@ -1497,7 +1497,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>SingleWorkdayAverageValues</returns>
 
-    SingleWorkdayAverageValues GetGamificationScorecardsUsersValuesAverage(string filterType, string filterId, String workday, string timeZone = null);
+    SingleWorkdayAverageValues GetGamificationScorecardsUsersValuesAverage(string filterType, string filterId, string workday, string timeZone = null);
 
     /// <summary>
     /// Workday average values by target group
@@ -1512,7 +1512,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of SingleWorkdayAverageValues</returns>
 
-    ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageWithHttpInfo(string filterType, string filterId, String workday, string timeZone = null);
+    ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageWithHttpInfo(string filterType, string filterId, string workday, string timeZone = null);
 
     /// <summary>
     /// Values trend by target group
@@ -1528,7 +1528,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    WorkdayValuesTrend GetGamificationScorecardsUsersValuesTrends(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null);
+    WorkdayValuesTrend GetGamificationScorecardsUsersValuesTrends(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Values trend by target group
@@ -1544,7 +1544,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null);
+    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Average values of the requesting user&#39;s division or performance profile
@@ -1557,7 +1557,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>SingleWorkdayAverageValues</returns>
 
-    SingleWorkdayAverageValues GetGamificationScorecardsValuesAverage(String workday, string timeZone = null);
+    SingleWorkdayAverageValues GetGamificationScorecardsValuesAverage(string workday, string timeZone = null);
 
     /// <summary>
     /// Average values of the requesting user&#39;s division or performance profile
@@ -1570,7 +1570,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of SingleWorkdayAverageValues</returns>
 
-    ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageWithHttpInfo(String workday, string timeZone = null);
+    ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageWithHttpInfo(string workday, string timeZone = null);
 
     /// <summary>
     /// Values trends of the requesting user or group
@@ -1586,7 +1586,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    WorkdayValuesTrend GetGamificationScorecardsValuesTrends(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    WorkdayValuesTrend GetGamificationScorecardsValuesTrends(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Values trends of the requesting user or group
@@ -1602,7 +1602,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsWithHttpInfo(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsWithHttpInfo(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Gamification activation status
@@ -2180,7 +2180,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Specifies the External Metric Definition ID</param>
     /// <returns>Task of ApiResponse</returns>
 
-    Task<ApiResponse<Object>> DeleteEmployeeperformanceExternalmetricsDefinitionAsyncWithHttpInfo(string metricId);
+    Task<ApiResponse<object>> DeleteEmployeeperformanceExternalmetricsDefinitionAsyncWithHttpInfo(string metricId);
 
     /// <summary>
     /// Delete a Contest by Id
@@ -2204,7 +2204,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="contestId">The ID of the contest</param>
     /// <returns>Task of ApiResponse</returns>
 
-    Task<ApiResponse<Object>> DeleteGamificationContestAsyncWithHttpInfo(string contestId);
+    Task<ApiResponse<object>> DeleteGamificationContestAsyncWithHttpInfo(string contestId);
 
     /// <summary>
     /// Get an External Metric Definition
@@ -2294,7 +2294,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>Task of ContestScoresAgentsPagedList</returns>
 
-    Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresAsync(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresAsync(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores (Admin)
@@ -2310,7 +2310,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>Task of ApiResponse (ContestScoresAgentsPagedList)</returns>
 
-    Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores for the requesting Agent/Supervisor
@@ -2326,7 +2326,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>Task of ContestScoresAgentsPagedList</returns>
 
-    Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeAsync(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeAsync(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get Contest Scores for the requesting Agent/Supervisor
@@ -2342,7 +2342,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>Task of ApiResponse (ContestScoresAgentsPagedList)</returns>
 
-    Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresMeAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null);
+    Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresMeAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null);
 
     /// <summary>
     /// Get a Contest Score Trend (Average Trend)
@@ -2434,7 +2434,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>Task of GetContestsEssentialsListing</returns>
 
-    Task<GetContestsEssentialsListing> GetGamificationContestsAsync(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
+    Task<GetContestsEssentialsListing> GetGamificationContestsAsync(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
 
     /// <summary>
     /// Get a List of Contests (Admin)
@@ -2452,7 +2452,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>Task of ApiResponse (GetContestsEssentialsListing)</returns>
 
-    Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
+    Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null);
 
     /// <summary>
     /// Get a List of Contests (Agent/Supervisor)
@@ -2471,7 +2471,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>Task of GetContestsEssentialsListing</returns>
 
-    Task<GetContestsEssentialsListing> GetGamificationContestsMeAsync(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
+    Task<GetContestsEssentialsListing> GetGamificationContestsMeAsync(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
 
     /// <summary>
     /// Get a List of Contests (Agent/Supervisor)
@@ -2490,7 +2490,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>Task of ApiResponse (GetContestsEssentialsListing)</returns>
 
-    Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsMeAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
+    Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsMeAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null);
 
     /// <summary>
     /// Get insights summary
@@ -2512,7 +2512,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of InsightsSummary</returns>
 
-    Task<InsightsSummary> GetGamificationInsightsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
+    Task<InsightsSummary> GetGamificationInsightsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
 
     /// <summary>
     /// Get insights summary
@@ -2534,7 +2534,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of ApiResponse (InsightsSummary)</returns>
 
-    Task<ApiResponse<InsightsSummary>> GetGamificationInsightsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
+    Task<ApiResponse<InsightsSummary>> GetGamificationInsightsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null);
 
     /// <summary>
     /// Get insights details for the current user
@@ -2550,7 +2550,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsDetails</returns>
 
-    Task<InsightsDetails> GetGamificationInsightsDetailsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    Task<InsightsDetails> GetGamificationInsightsDetailsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights details for the current user
@@ -2566,7 +2566,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsDetails)</returns>
 
-    Task<ApiResponse<InsightsDetails>> GetGamificationInsightsDetailsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    Task<ApiResponse<InsightsDetails>> GetGamificationInsightsDetailsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights overall trend for the current user
@@ -2584,7 +2584,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsTrend</returns>
 
-    Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend for the current user
@@ -2602,7 +2602,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsTrend)</returns>
 
-    Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend
@@ -2620,7 +2620,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsTrend</returns>
 
-    Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAllAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAllAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights overall trend
@@ -2638,7 +2638,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsTrend)</returns>
 
-    Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAllAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAllAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Query users in a profile during a period of time
@@ -2653,7 +2653,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsAgents</returns>
 
-    Task<InsightsAgents> GetGamificationInsightsMembersAsync(string filterType, string filterId, string granularity, String startWorkday);
+    Task<InsightsAgents> GetGamificationInsightsMembersAsync(string filterType, string filterId, string granularity, string startWorkday);
 
     /// <summary>
     /// Query users in a profile during a period of time
@@ -2668,7 +2668,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsAgents)</returns>
 
-    Task<ApiResponse<InsightsAgents>> GetGamificationInsightsMembersAsyncWithHttpInfo(string filterType, string filterId, string granularity, String startWorkday);
+    Task<ApiResponse<InsightsAgents>> GetGamificationInsightsMembersAsyncWithHttpInfo(string filterType, string filterId, string granularity, string startWorkday);
 
     /// <summary>
     /// Get insights rankings
@@ -2688,7 +2688,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of InsightsRankings</returns>
 
-    Task<InsightsRankings> GetGamificationInsightsRankingsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
+    Task<InsightsRankings> GetGamificationInsightsRankingsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
 
     /// <summary>
     /// Get insights rankings
@@ -2708,7 +2708,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of ApiResponse (InsightsRankings)</returns>
 
-    Task<ApiResponse<InsightsRankings>> GetGamificationInsightsRankingsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
+    Task<ApiResponse<InsightsRankings>> GetGamificationInsightsRankingsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null);
 
     /// <summary>
     /// Get insights user trend for the current user
@@ -2726,7 +2726,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of UserInsightsTrend</returns>
 
-    Task<UserInsightsTrend> GetGamificationInsightsTrendsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<UserInsightsTrend> GetGamificationInsightsTrendsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights user trend for the current user
@@ -2744,7 +2744,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (UserInsightsTrend)</returns>
 
-    Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights details for the user
@@ -2761,7 +2761,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsDetails</returns>
 
-    Task<InsightsDetails> GetGamificationInsightsUserDetailsAsync(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    Task<InsightsDetails> GetGamificationInsightsUserDetailsAsync(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights details for the user
@@ -2778,7 +2778,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsDetails)</returns>
 
-    Task<ApiResponse<InsightsDetails>> GetGamificationInsightsUserDetailsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday);
+    Task<ApiResponse<InsightsDetails>> GetGamificationInsightsUserDetailsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday);
 
     /// <summary>
     /// Get insights user trend for the user
@@ -2797,7 +2797,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of UserInsightsTrend</returns>
 
-    Task<UserInsightsTrend> GetGamificationInsightsUserTrendsAsync(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<UserInsightsTrend> GetGamificationInsightsUserTrendsAsync(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Get insights user trend for the user
@@ -2816,7 +2816,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (UserInsightsTrend)</returns>
 
-    Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsUserTrendsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday);
+    Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsUserTrendsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday);
 
     /// <summary>
     /// Leaderboard of the requesting user&#39;s division or performance profile
@@ -2830,7 +2830,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of Leaderboard</returns>
 
-    Task<Leaderboard> GetGamificationLeaderboardAsync(String startWorkday, String endWorkday, string metricId = null);
+    Task<Leaderboard> GetGamificationLeaderboardAsync(string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard of the requesting user&#39;s division or performance profile
@@ -2844,7 +2844,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of ApiResponse (Leaderboard)</returns>
 
-    Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAsyncWithHttpInfo(String startWorkday, String endWorkday, string metricId = null);
+    Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAsyncWithHttpInfo(string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard by filter type
@@ -2860,7 +2860,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of Leaderboard</returns>
 
-    Task<Leaderboard> GetGamificationLeaderboardAllAsync(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null);
+    Task<Leaderboard> GetGamificationLeaderboardAllAsync(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Leaderboard by filter type
@@ -2876,7 +2876,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of ApiResponse (Leaderboard)</returns>
 
-    Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAllAsyncWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null);
+    Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAllAsyncWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null);
 
     /// <summary>
     /// Best Points by division or performance profile
@@ -3032,7 +3032,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of Metric</returns>
 
-    Task<Metric> GetGamificationProfileMetricAsync(string profileId, string metricId, String workday = null);
+    Task<Metric> GetGamificationProfileMetricAsync(string profileId, string metricId, string workday = null);
 
     /// <summary>
     /// Performance profile gamified metric by id
@@ -3046,7 +3046,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (Metric)</returns>
 
-    Task<ApiResponse<Metric>> GetGamificationProfileMetricAsyncWithHttpInfo(string profileId, string metricId, String workday = null);
+    Task<ApiResponse<Metric>> GetGamificationProfileMetricAsyncWithHttpInfo(string profileId, string metricId, string workday = null);
 
     /// <summary>
     /// All gamified metrics for a given performance profile
@@ -3061,7 +3061,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>Task of GetMetricResponse</returns>
 
-    Task<GetMetricResponse> GetGamificationProfileMetricsAsync(string profileId, List<string> expand = null, String workday = null, string metricIds = null);
+    Task<GetMetricResponse> GetGamificationProfileMetricsAsync(string profileId, List<string> expand = null, string workday = null, string metricIds = null);
 
     /// <summary>
     /// All gamified metrics for a given performance profile
@@ -3076,7 +3076,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>Task of ApiResponse (GetMetricResponse)</returns>
 
-    Task<ApiResponse<GetMetricResponse>> GetGamificationProfileMetricsAsyncWithHttpInfo(string profileId, List<string> expand = null, String workday = null, string metricIds = null);
+    Task<ApiResponse<GetMetricResponse>> GetGamificationProfileMetricsAsyncWithHttpInfo(string profileId, List<string> expand = null, string workday = null, string metricIds = null);
 
     /// <summary>
     /// All metrics for a given performance profile with objective details such as order and maxPoints
@@ -3089,7 +3089,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of GetMetricsResponse</returns>
 
-    Task<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsAsync(string profileId, String workday = null);
+    Task<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsAsync(string profileId, string workday = null);
 
     /// <summary>
     /// All metrics for a given performance profile with objective details such as order and maxPoints
@@ -3102,7 +3102,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (GetMetricsResponse)</returns>
 
-    Task<ApiResponse<GetMetricsResponse>> GetGamificationProfileMetricsObjectivedetailsAsyncWithHttpInfo(string profileId, String workday = null);
+    Task<ApiResponse<GetMetricsResponse>> GetGamificationProfileMetricsObjectivedetailsAsyncWithHttpInfo(string profileId, string workday = null);
 
     /// <summary>
     /// All performance profiles
@@ -3137,7 +3137,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of PerformanceProfile</returns>
 
-    Task<PerformanceProfile> GetGamificationProfilesUserAsync(string userId, String workday = null);
+    Task<PerformanceProfile> GetGamificationProfilesUserAsync(string userId, string workday = null);
 
     /// <summary>
     /// Performance profile of a user
@@ -3150,7 +3150,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (PerformanceProfile)</returns>
 
-    Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUserAsyncWithHttpInfo(string userId, String workday = null);
+    Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUserAsyncWithHttpInfo(string userId, string workday = null);
 
     /// <summary>
     /// Performance profile of the requesting user
@@ -3162,7 +3162,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of PerformanceProfile</returns>
 
-    Task<PerformanceProfile> GetGamificationProfilesUsersMeAsync(String workday = null);
+    Task<PerformanceProfile> GetGamificationProfilesUsersMeAsync(string workday = null);
 
     /// <summary>
     /// Performance profile of the requesting user
@@ -3174,7 +3174,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (PerformanceProfile)</returns>
 
-    Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUsersMeAsyncWithHttpInfo(String workday = null);
+    Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUsersMeAsyncWithHttpInfo(string workday = null);
 
     /// <summary>
     /// Workday performance metrics of the requesting user
@@ -3187,7 +3187,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of WorkdayMetricListing</returns>
 
-    Task<WorkdayMetricListing> GetGamificationScorecardsAsync(String workday, List<string> expand = null);
+    Task<WorkdayMetricListing> GetGamificationScorecardsAsync(string workday, List<string> expand = null);
 
     /// <summary>
     /// Workday performance metrics of the requesting user
@@ -3200,7 +3200,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayMetricListing)</returns>
 
-    Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsAsyncWithHttpInfo(String workday, List<string> expand = null);
+    Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsAsyncWithHttpInfo(string workday, List<string> expand = null);
 
     /// <summary>
     /// Attendance status metrics of the requesting user
@@ -3213,7 +3213,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AttendanceStatusListing</returns>
 
-    Task<AttendanceStatusListing> GetGamificationScorecardsAttendanceAsync(String startWorkday, String endWorkday);
+    Task<AttendanceStatusListing> GetGamificationScorecardsAttendanceAsync(string startWorkday, string endWorkday);
 
     /// <summary>
     /// Attendance status metrics of the requesting user
@@ -3226,7 +3226,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AttendanceStatusListing)</returns>
 
-    Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsAttendanceAsyncWithHttpInfo(String startWorkday, String endWorkday);
+    Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsAttendanceAsyncWithHttpInfo(string startWorkday, string endWorkday);
 
     /// <summary>
     /// Best points of the requesting user
@@ -3260,7 +3260,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AllTimePoints</returns>
 
-    Task<AllTimePoints> GetGamificationScorecardsPointsAlltimeAsync(String endWorkday);
+    Task<AllTimePoints> GetGamificationScorecardsPointsAlltimeAsync(string endWorkday);
 
     /// <summary>
     /// All-time points of the requesting user
@@ -3272,7 +3272,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AllTimePoints)</returns>
 
-    Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsPointsAlltimeAsyncWithHttpInfo(String endWorkday);
+    Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsPointsAlltimeAsyncWithHttpInfo(string endWorkday);
 
     /// <summary>
     /// Average points of the requesting user&#39;s division or performance profile
@@ -3284,7 +3284,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of SingleWorkdayAveragePoints</returns>
 
-    Task<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageAsync(String workday);
+    Task<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageAsync(string workday);
 
     /// <summary>
     /// Average points of the requesting user&#39;s division or performance profile
@@ -3296,7 +3296,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAveragePoints)</returns>
 
-    Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsPointsAverageAsyncWithHttpInfo(String workday);
+    Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsPointsAverageAsyncWithHttpInfo(string workday);
 
     /// <summary>
     /// Points trends of the requesting user
@@ -3310,7 +3310,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of WorkdayPointsTrend</returns>
 
-    Task<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsAsync(String startWorkday, String endWorkday, string dayOfWeek = null);
+    Task<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsAsync(string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Points trends of the requesting user
@@ -3324,7 +3324,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayPointsTrend)</returns>
 
-    Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsPointsTrendsAsyncWithHttpInfo(String startWorkday, String endWorkday, string dayOfWeek = null);
+    Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsPointsTrendsAsyncWithHttpInfo(string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Average performance values trends by metric of a user
@@ -3342,7 +3342,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsAsync(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null);
+    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsAsync(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a user
@@ -3360,7 +3360,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUserValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null);
+    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUserValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a division or a performance profile
@@ -3379,7 +3379,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsync(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null);
+    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsync(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of a division or a performance profile
@@ -3398,7 +3398,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null);
+    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of the requesting user
@@ -3416,7 +3416,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsAsync(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsAsync(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Average performance values trends by metric of the requesting user
@@ -3434,7 +3434,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Workday performance metrics for a user
@@ -3448,7 +3448,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of WorkdayMetricListing</returns>
 
-    Task<WorkdayMetricListing> GetGamificationScorecardsUserAsync(string userId, String workday, List<string> expand = null);
+    Task<WorkdayMetricListing> GetGamificationScorecardsUserAsync(string userId, string workday, List<string> expand = null);
 
     /// <summary>
     /// Workday performance metrics for a user
@@ -3462,7 +3462,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayMetricListing)</returns>
 
-    Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsUserAsyncWithHttpInfo(string userId, String workday, List<string> expand = null);
+    Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsUserAsyncWithHttpInfo(string userId, string workday, List<string> expand = null);
 
     /// <summary>
     /// Attendance status metrics for a user
@@ -3476,7 +3476,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AttendanceStatusListing</returns>
 
-    Task<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceAsync(string userId, String startWorkday, String endWorkday);
+    Task<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceAsync(string userId, string startWorkday, string endWorkday);
 
     /// <summary>
     /// Attendance status metrics for a user
@@ -3490,7 +3490,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AttendanceStatusListing)</returns>
 
-    Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsUserAttendanceAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday);
+    Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsUserAttendanceAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday);
 
     /// <summary>
     /// Best points of a user
@@ -3527,7 +3527,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AllTimePoints</returns>
 
-    Task<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeAsync(string userId, String endWorkday);
+    Task<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeAsync(string userId, string endWorkday);
 
     /// <summary>
     /// All-time points for a user
@@ -3540,7 +3540,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AllTimePoints)</returns>
 
-    Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsUserPointsAlltimeAsyncWithHttpInfo(string userId, String endWorkday);
+    Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsUserPointsAlltimeAsyncWithHttpInfo(string userId, string endWorkday);
 
     /// <summary>
     /// Points trend for a user
@@ -3555,7 +3555,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of WorkdayPointsTrend</returns>
 
-    Task<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsAsync(string userId, String startWorkday, String endWorkday, string dayOfWeek = null);
+    Task<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsAsync(string userId, string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Points trend for a user
@@ -3570,7 +3570,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayPointsTrend)</returns>
 
-    Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsUserPointsTrendsAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday, string dayOfWeek = null);
+    Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsUserPointsTrendsAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday, string dayOfWeek = null);
 
     /// <summary>
     /// Values trends of a user
@@ -3585,7 +3585,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    Task<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsAsync(string userId, String startWorkday, String endWorkday, string timeZone = null);
+    Task<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsAsync(string userId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Values trends of a user
@@ -3600,7 +3600,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUserValuesTrendsAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday, string timeZone = null);
+    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUserValuesTrendsAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Workday average points by target group
@@ -3614,7 +3614,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of SingleWorkdayAveragePoints</returns>
 
-    Task<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageAsync(string filterType, string filterId, String workday);
+    Task<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageAsync(string filterType, string filterId, string workday);
 
     /// <summary>
     /// Workday average points by target group
@@ -3628,7 +3628,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAveragePoints)</returns>
 
-    Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsUsersPointsAverageAsyncWithHttpInfo(string filterType, string filterId, String workday);
+    Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsUsersPointsAverageAsyncWithHttpInfo(string filterType, string filterId, string workday);
 
     /// <summary>
     /// Workday average values by target group
@@ -3643,7 +3643,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of SingleWorkdayAverageValues</returns>
 
-    Task<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageAsync(string filterType, string filterId, String workday, string timeZone = null);
+    Task<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageAsync(string filterType, string filterId, string workday, string timeZone = null);
 
     /// <summary>
     /// Workday average values by target group
@@ -3658,7 +3658,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAverageValues)</returns>
 
-    Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsUsersValuesAverageAsyncWithHttpInfo(string filterType, string filterId, String workday, string timeZone = null);
+    Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsUsersValuesAverageAsyncWithHttpInfo(string filterType, string filterId, string workday, string timeZone = null);
 
     /// <summary>
     /// Values trend by target group
@@ -3674,7 +3674,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    Task<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsAsync(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null);
+    Task<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsAsync(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Values trend by target group
@@ -3690,7 +3690,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUsersValuesTrendsAsyncWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null);
+    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUsersValuesTrendsAsyncWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null);
 
     /// <summary>
     /// Average values of the requesting user&#39;s division or performance profile
@@ -3703,7 +3703,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of SingleWorkdayAverageValues</returns>
 
-    Task<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageAsync(String workday, string timeZone = null);
+    Task<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageAsync(string workday, string timeZone = null);
 
     /// <summary>
     /// Average values of the requesting user&#39;s division or performance profile
@@ -3716,7 +3716,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAverageValues)</returns>
 
-    Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsValuesAverageAsyncWithHttpInfo(String workday, string timeZone = null);
+    Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsValuesAverageAsyncWithHttpInfo(string workday, string timeZone = null);
 
     /// <summary>
     /// Values trends of the requesting user or group
@@ -3732,7 +3732,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    Task<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsAsync(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    Task<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsAsync(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Values trends of the requesting user or group
@@ -3748,7 +3748,7 @@ public interface IGamificationApi : IApiAccessor
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsValuesTrendsAsyncWithHttpInfo(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null);
+    Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsValuesTrendsAsyncWithHttpInfo(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null);
 
     /// <summary>
     /// Gamification activation status
@@ -4313,7 +4313,7 @@ public partial class GamificationApi : IGamificationApi
     /// Initializes a new instance of the <see cref="GamificationApi"/> class.
     /// </summary>
     /// <returns></returns>
-    public GamificationApi(String basePath)
+    public GamificationApi(string basePath)
     {
         this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -4352,7 +4352,7 @@ public partial class GamificationApi : IGamificationApi
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    public String GetBasePath()
+    public string GetBasePath()
     {
         return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
@@ -4362,7 +4362,7 @@ public partial class GamificationApi : IGamificationApi
     /// </summary>
     /// <value>The base path</value>
     [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-    public void SetBasePath(String basePath)
+    public void SetBasePath(string basePath)
     {
         // do nothing
     }
@@ -4378,7 +4378,7 @@ public partial class GamificationApi : IGamificationApi
     /// </summary>
     /// <returns>Dictionary of HTTP header</returns>
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-    public Dictionary<String, String> DefaultHeader()
+    public Dictionary<string, string> DefaultHeader()
     {
         return this.Configuration.DefaultHeader;
     }
@@ -4417,7 +4417,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Specifies the External Metric Definition ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    public ApiResponse<Object> DeleteEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(string metricId)
+    public ApiResponse<object> DeleteEmployeeperformanceExternalmetricsDefinitionWithHttpInfo(string metricId)
     {
         // verify the required parameter 'metricId' is set
         if (metricId == null)
@@ -4426,27 +4426,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4473,7 +4473,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4491,7 +4491,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4503,7 +4503,7 @@ public partial class GamificationApi : IGamificationApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteEmployeeperformanceExternalmetricsDefinition: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -4533,7 +4533,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Specifies the External Metric Definition ID</param>
     /// <returns>Task of ApiResponse</returns>
 
-    public async Task<ApiResponse<Object>> DeleteEmployeeperformanceExternalmetricsDefinitionAsyncWithHttpInfo(string metricId)
+    public async Task<ApiResponse<object>> DeleteEmployeeperformanceExternalmetricsDefinitionAsyncWithHttpInfo(string metricId)
     {
         // verify the required parameter 'metricId' is set
         if (metricId == null)
@@ -4542,27 +4542,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4589,7 +4589,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4607,7 +4607,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4619,7 +4619,7 @@ public partial class GamificationApi : IGamificationApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteEmployeeperformanceExternalmetricsDefinition: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -4649,7 +4649,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="contestId">The ID of the contest</param>
     /// <returns>ApiResponse of Object(void)</returns>
 
-    public ApiResponse<Object> DeleteGamificationContestWithHttpInfo(string contestId)
+    public ApiResponse<object> DeleteGamificationContestWithHttpInfo(string contestId)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -4658,27 +4658,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4705,7 +4705,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4723,7 +4723,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4735,7 +4735,7 @@ public partial class GamificationApi : IGamificationApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteGamificationContest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -4765,7 +4765,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="contestId">The ID of the contest</param>
     /// <returns>Task of ApiResponse</returns>
 
-    public async Task<ApiResponse<Object>> DeleteGamificationContestAsyncWithHttpInfo(string contestId)
+    public async Task<ApiResponse<object>> DeleteGamificationContestAsyncWithHttpInfo(string contestId)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -4774,27 +4774,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4821,7 +4821,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4839,7 +4839,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -4851,7 +4851,7 @@ public partial class GamificationApi : IGamificationApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteGamificationContest: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -4891,27 +4891,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -4938,7 +4938,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -4956,7 +4956,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5008,27 +5008,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5055,7 +5055,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5073,7 +5073,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5122,27 +5122,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5174,7 +5174,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5192,7 +5192,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5241,27 +5241,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5293,7 +5293,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5311,7 +5311,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5363,27 +5363,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5410,7 +5410,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5428,7 +5428,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5480,27 +5480,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5527,7 +5527,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5545,7 +5545,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5578,7 +5578,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>ContestScoresAgentsPagedList</returns>
 
-    public ContestScoresAgentsPagedList GetGamificationContestAgentsScores(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public ContestScoresAgentsPagedList GetGamificationContestAgentsScores(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         ApiResponse<ContestScoresAgentsPagedList> localVarResponse = GetGamificationContestAgentsScoresWithHttpInfo(contestId, pageNumber, pageSize, workday, returnsView);
         return localVarResponse.Data;
@@ -5596,7 +5596,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>ApiResponse of ContestScoresAgentsPagedList</returns>
 
-    public ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -5605,27 +5605,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5671,7 +5671,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5689,7 +5689,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5721,7 +5721,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>Task of ContestScoresAgentsPagedList</returns>
 
-    public async Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresAsync(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public async Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresAsync(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         ApiResponse<ContestScoresAgentsPagedList> localVarResponse = await GetGamificationContestAgentsScoresAsyncWithHttpInfo(contestId, pageNumber, pageSize, workday, returnsView);
         return localVarResponse.Data;
@@ -5740,7 +5740,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (optional, default to All)</param>
     /// <returns>Task of ApiResponse (ContestScoresAgentsPagedList)</returns>
 
-    public async Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public async Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -5749,27 +5749,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5815,7 +5815,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5833,7 +5833,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -5866,7 +5866,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>ContestScoresAgentsPagedList</returns>
 
-    public ContestScoresAgentsPagedList GetGamificationContestAgentsScoresMe(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public ContestScoresAgentsPagedList GetGamificationContestAgentsScoresMe(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         ApiResponse<ContestScoresAgentsPagedList> localVarResponse = GetGamificationContestAgentsScoresMeWithHttpInfo(contestId, pageNumber, pageSize, workday, returnsView);
         return localVarResponse.Data;
@@ -5884,7 +5884,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>ApiResponse of ContestScoresAgentsPagedList</returns>
 
-    public ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public ApiResponse<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -5893,27 +5893,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -5959,7 +5959,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -5977,7 +5977,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6009,7 +6009,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>Task of ContestScoresAgentsPagedList</returns>
 
-    public async Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeAsync(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public async Task<ContestScoresAgentsPagedList> GetGamificationContestAgentsScoresMeAsync(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         ApiResponse<ContestScoresAgentsPagedList> localVarResponse = await GetGamificationContestAgentsScoresMeAsyncWithHttpInfo(contestId, pageNumber, pageSize, workday, returnsView);
         return localVarResponse.Data;
@@ -6028,7 +6028,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="returnsView">Desired response results (Supervisor Only) (optional, default to All)</param>
     /// <returns>Task of ApiResponse (ContestScoresAgentsPagedList)</returns>
 
-    public async Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresMeAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, String workday = null, string returnsView = null)
+    public async Task<ApiResponse<ContestScoresAgentsPagedList>> GetGamificationContestAgentsScoresMeAsyncWithHttpInfo(string contestId, int? pageNumber = null, int? pageSize = null, string workday = null, string returnsView = null)
     {
         // verify the required parameter 'contestId' is set
         if (contestId == null)
@@ -6037,27 +6037,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6103,7 +6103,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6121,7 +6121,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6173,27 +6173,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6220,7 +6220,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6238,7 +6238,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6290,27 +6290,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6337,7 +6337,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6355,7 +6355,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6407,27 +6407,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/trends/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6454,7 +6454,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6472,7 +6472,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6524,27 +6524,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/agents/scores/trends/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6571,7 +6571,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6589,7 +6589,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6648,27 +6648,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6700,7 +6700,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6718,7 +6718,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6778,27 +6778,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}/prizeimages/{prizeImageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6830,7 +6830,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -6848,7 +6848,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -6883,7 +6883,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>GetContestsEssentialsListing</returns>
 
-    public GetContestsEssentialsListing GetGamificationContests(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
+    public GetContestsEssentialsListing GetGamificationContests(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
     {
         ApiResponse<GetContestsEssentialsListing> localVarResponse = GetGamificationContestsWithHttpInfo(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder);
         return localVarResponse.Data;
@@ -6903,31 +6903,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>ApiResponse of GetContestsEssentialsListing</returns>
 
-    public ApiResponse<GetContestsEssentialsListing> GetGamificationContestsWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
+    public ApiResponse<GetContestsEssentialsListing> GetGamificationContestsWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
     {
 
         var localVarPath = "/api/v2/gamification/contests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -6984,7 +6984,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7002,7 +7002,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7036,7 +7036,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>Task of GetContestsEssentialsListing</returns>
 
-    public async Task<GetContestsEssentialsListing> GetGamificationContestsAsync(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
+    public async Task<GetContestsEssentialsListing> GetGamificationContestsAsync(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
     {
         ApiResponse<GetContestsEssentialsListing> localVarResponse = await GetGamificationContestsAsyncWithHttpInfo(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder);
         return localVarResponse.Data;
@@ -7057,31 +7057,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="sortOrder"> (optional, default to desc)</param>
     /// <returns>Task of ApiResponse (GetContestsEssentialsListing)</returns>
 
-    public async Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
+    public async Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null)
     {
 
         var localVarPath = "/api/v2/gamification/contests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7138,7 +7138,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7156,7 +7156,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7192,7 +7192,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>GetContestsEssentialsListing</returns>
 
-    public GetContestsEssentialsListing GetGamificationContestsMe(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
+    public GetContestsEssentialsListing GetGamificationContestsMe(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
     {
         ApiResponse<GetContestsEssentialsListing> localVarResponse = GetGamificationContestsMeWithHttpInfo(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view);
         return localVarResponse.Data;
@@ -7213,31 +7213,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>ApiResponse of GetContestsEssentialsListing</returns>
 
-    public ApiResponse<GetContestsEssentialsListing> GetGamificationContestsMeWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
+    public ApiResponse<GetContestsEssentialsListing> GetGamificationContestsMeWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
     {
 
         var localVarPath = "/api/v2/gamification/contests/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7299,7 +7299,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7317,7 +7317,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7352,7 +7352,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>Task of GetContestsEssentialsListing</returns>
 
-    public async Task<GetContestsEssentialsListing> GetGamificationContestsMeAsync(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
+    public async Task<GetContestsEssentialsListing> GetGamificationContestsMeAsync(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
     {
         ApiResponse<GetContestsEssentialsListing> localVarResponse = await GetGamificationContestsMeAsyncWithHttpInfo(pageNumber, pageSize, dateStart, dateEnd, status, sortBy, sortOrder, view);
         return localVarResponse.Data;
@@ -7374,31 +7374,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="view"> (optional, default to participant)</param>
     /// <returns>Task of ApiResponse (GetContestsEssentialsListing)</returns>
 
-    public async Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsMeAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, String dateStart = null, String dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
+    public async Task<ApiResponse<GetContestsEssentialsListing>> GetGamificationContestsMeAsyncWithHttpInfo(int? pageNumber = null, int? pageSize = null, string dateStart = null, string dateEnd = null, List<string> status = null, string sortBy = null, string sortOrder = null, string view = null)
     {
 
         var localVarPath = "/api/v2/gamification/contests/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7460,7 +7460,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7478,7 +7478,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7517,7 +7517,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>InsightsSummary</returns>
 
-    public InsightsSummary GetGamificationInsights(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
+    public InsightsSummary GetGamificationInsights(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
     {
         ApiResponse<InsightsSummary> localVarResponse = GetGamificationInsightsWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds);
         return localVarResponse.Data;
@@ -7541,7 +7541,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>ApiResponse of InsightsSummary</returns>
 
-    public ApiResponse<InsightsSummary> GetGamificationInsightsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
+    public ApiResponse<InsightsSummary> GetGamificationInsightsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -7570,27 +7570,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7667,7 +7667,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7685,7 +7685,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7723,7 +7723,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of InsightsSummary</returns>
 
-    public async Task<InsightsSummary> GetGamificationInsightsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
+    public async Task<InsightsSummary> GetGamificationInsightsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
     {
         ApiResponse<InsightsSummary> localVarResponse = await GetGamificationInsightsAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, pageSize, pageNumber, sortKey, sortMetricId, sortOrder, userIds);
         return localVarResponse.Data;
@@ -7748,7 +7748,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of ApiResponse (InsightsSummary)</returns>
 
-    public async Task<ApiResponse<InsightsSummary>> GetGamificationInsightsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
+    public async Task<ApiResponse<InsightsSummary>> GetGamificationInsightsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, int? pageSize = null, int? pageNumber = null, string sortKey = null, string sortMetricId = null, string sortOrder = null, string userIds = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -7781,27 +7781,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -7878,7 +7878,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -7896,7 +7896,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -7929,7 +7929,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsDetails</returns>
 
-    public InsightsDetails GetGamificationInsightsDetails(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public InsightsDetails GetGamificationInsightsDetails(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         ApiResponse<InsightsDetails> localVarResponse = GetGamificationInsightsDetailsWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);
         return localVarResponse.Data;
@@ -7947,7 +7947,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsDetails</returns>
 
-    public ApiResponse<InsightsDetails> GetGamificationInsightsDetailsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public ApiResponse<InsightsDetails> GetGamificationInsightsDetailsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -7976,27 +7976,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/details";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8043,7 +8043,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8061,7 +8061,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8093,7 +8093,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsDetails</returns>
 
-    public async Task<InsightsDetails> GetGamificationInsightsDetailsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public async Task<InsightsDetails> GetGamificationInsightsDetailsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         ApiResponse<InsightsDetails> localVarResponse = await GetGamificationInsightsDetailsAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);
         return localVarResponse.Data;
@@ -8112,7 +8112,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsDetails)</returns>
 
-    public async Task<ApiResponse<InsightsDetails>> GetGamificationInsightsDetailsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public async Task<ApiResponse<InsightsDetails>> GetGamificationInsightsDetailsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -8145,27 +8145,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/details";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8212,7 +8212,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8230,7 +8230,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8265,7 +8265,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsTrend</returns>
 
-    public InsightsTrend GetGamificationInsightsGroupsTrends(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public InsightsTrend GetGamificationInsightsGroupsTrends(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<InsightsTrend> localVarResponse = GetGamificationInsightsGroupsTrendsWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -8285,7 +8285,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsTrend</returns>
 
-    public ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -8324,27 +8324,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/groups/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8401,7 +8401,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8419,7 +8419,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8453,7 +8453,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsTrend</returns>
 
-    public async Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<InsightsTrend> localVarResponse = await GetGamificationInsightsGroupsTrendsAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -8474,7 +8474,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsTrend)</returns>
 
-    public async Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -8519,27 +8519,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/groups/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8596,7 +8596,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8614,7 +8614,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8649,7 +8649,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsTrend</returns>
 
-    public InsightsTrend GetGamificationInsightsGroupsTrendsAll(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public InsightsTrend GetGamificationInsightsGroupsTrendsAll(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<InsightsTrend> localVarResponse = GetGamificationInsightsGroupsTrendsAllWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -8669,7 +8669,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsTrend</returns>
 
-    public ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsAllWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public ApiResponse<InsightsTrend> GetGamificationInsightsGroupsTrendsAllWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -8708,27 +8708,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/groups/trends/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8785,7 +8785,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8803,7 +8803,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -8837,7 +8837,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsTrend</returns>
 
-    public async Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAllAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<InsightsTrend> GetGamificationInsightsGroupsTrendsAllAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<InsightsTrend> localVarResponse = await GetGamificationInsightsGroupsTrendsAllAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -8858,7 +8858,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsTrend)</returns>
 
-    public async Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAllAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<ApiResponse<InsightsTrend>> GetGamificationInsightsGroupsTrendsAllAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -8903,27 +8903,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/groups/trends/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -8980,7 +8980,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -8998,7 +8998,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9030,7 +9030,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsAgents</returns>
 
-    public InsightsAgents GetGamificationInsightsMembers(string filterType, string filterId, string granularity, String startWorkday)
+    public InsightsAgents GetGamificationInsightsMembers(string filterType, string filterId, string granularity, string startWorkday)
     {
         ApiResponse<InsightsAgents> localVarResponse = GetGamificationInsightsMembersWithHttpInfo(filterType, filterId, granularity, startWorkday);
         return localVarResponse.Data;
@@ -9047,7 +9047,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsAgents</returns>
 
-    public ApiResponse<InsightsAgents> GetGamificationInsightsMembersWithHttpInfo(string filterType, string filterId, string granularity, String startWorkday)
+    public ApiResponse<InsightsAgents> GetGamificationInsightsMembersWithHttpInfo(string filterType, string filterId, string granularity, string startWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9071,27 +9071,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9133,7 +9133,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9151,7 +9151,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9182,7 +9182,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsAgents</returns>
 
-    public async Task<InsightsAgents> GetGamificationInsightsMembersAsync(string filterType, string filterId, string granularity, String startWorkday)
+    public async Task<InsightsAgents> GetGamificationInsightsMembersAsync(string filterType, string filterId, string granularity, string startWorkday)
     {
         ApiResponse<InsightsAgents> localVarResponse = await GetGamificationInsightsMembersAsyncWithHttpInfo(filterType, filterId, granularity, startWorkday);
         return localVarResponse.Data;
@@ -9200,7 +9200,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="startWorkday">The start work day. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsAgents)</returns>
 
-    public async Task<ApiResponse<InsightsAgents>> GetGamificationInsightsMembersAsyncWithHttpInfo(string filterType, string filterId, string granularity, String startWorkday)
+    public async Task<ApiResponse<InsightsAgents>> GetGamificationInsightsMembersAsyncWithHttpInfo(string filterType, string filterId, string granularity, string startWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9227,27 +9227,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9289,7 +9289,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9307,7 +9307,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9344,7 +9344,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>InsightsRankings</returns>
 
-    public InsightsRankings GetGamificationInsightsRankings(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
+    public InsightsRankings GetGamificationInsightsRankings(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
     {
         ApiResponse<InsightsRankings> localVarResponse = GetGamificationInsightsRankingsWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds);
         return localVarResponse.Data;
@@ -9366,7 +9366,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>ApiResponse of InsightsRankings</returns>
 
-    public ApiResponse<InsightsRankings> GetGamificationInsightsRankingsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
+    public ApiResponse<InsightsRankings> GetGamificationInsightsRankingsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9400,27 +9400,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/rankings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9487,7 +9487,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9505,7 +9505,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9541,7 +9541,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of InsightsRankings</returns>
 
-    public async Task<InsightsRankings> GetGamificationInsightsRankingsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
+    public async Task<InsightsRankings> GetGamificationInsightsRankingsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
     {
         ApiResponse<InsightsRankings> localVarResponse = await GetGamificationInsightsRankingsAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday, sortKey, sortMetricId, sectionSize, userIds);
         return localVarResponse.Data;
@@ -9564,7 +9564,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="userIds">A list of up to 100 comma-separated user Ids (optional)</param>
     /// <returns>Task of ApiResponse (InsightsRankings)</returns>
 
-    public async Task<ApiResponse<InsightsRankings>> GetGamificationInsightsRankingsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
+    public async Task<ApiResponse<InsightsRankings>> GetGamificationInsightsRankingsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday, string sortKey, string sortMetricId = null, int? sectionSize = null, string userIds = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9603,27 +9603,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/rankings";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9690,7 +9690,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9708,7 +9708,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9743,7 +9743,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>UserInsightsTrend</returns>
 
-    public UserInsightsTrend GetGamificationInsightsTrends(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public UserInsightsTrend GetGamificationInsightsTrends(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<UserInsightsTrend> localVarResponse = GetGamificationInsightsTrendsWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -9763,7 +9763,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of UserInsightsTrend</returns>
 
-    public ApiResponse<UserInsightsTrend> GetGamificationInsightsTrendsWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public ApiResponse<UserInsightsTrend> GetGamificationInsightsTrendsWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9802,27 +9802,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -9879,7 +9879,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -9897,7 +9897,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -9931,7 +9931,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of UserInsightsTrend</returns>
 
-    public async Task<UserInsightsTrend> GetGamificationInsightsTrendsAsync(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<UserInsightsTrend> GetGamificationInsightsTrendsAsync(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<UserInsightsTrend> localVarResponse = await GetGamificationInsightsTrendsAsyncWithHttpInfo(filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -9952,7 +9952,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (UserInsightsTrend)</returns>
 
-    public async Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsTrendsAsyncWithHttpInfo(string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -9997,27 +9997,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10074,7 +10074,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10092,7 +10092,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -10126,7 +10126,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>InsightsDetails</returns>
 
-    public InsightsDetails GetGamificationInsightsUserDetails(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public InsightsDetails GetGamificationInsightsUserDetails(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         ApiResponse<InsightsDetails> localVarResponse = GetGamificationInsightsUserDetailsWithHttpInfo(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);
         return localVarResponse.Data;
@@ -10145,7 +10145,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of InsightsDetails</returns>
 
-    public ApiResponse<InsightsDetails> GetGamificationInsightsUserDetailsWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public ApiResponse<InsightsDetails> GetGamificationInsightsUserDetailsWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -10179,27 +10179,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/users/{userId}/details";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10250,7 +10250,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10268,7 +10268,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -10301,7 +10301,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of InsightsDetails</returns>
 
-    public async Task<InsightsDetails> GetGamificationInsightsUserDetailsAsync(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public async Task<InsightsDetails> GetGamificationInsightsUserDetailsAsync(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         ApiResponse<InsightsDetails> localVarResponse = await GetGamificationInsightsUserDetailsAsyncWithHttpInfo(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, primaryPeriodStartWorkday);
         return localVarResponse.Data;
@@ -10321,7 +10321,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodStartWorkday">The start work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (InsightsDetails)</returns>
 
-    public async Task<ApiResponse<InsightsDetails>> GetGamificationInsightsUserDetailsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String primaryPeriodStartWorkday)
+    public async Task<ApiResponse<InsightsDetails>> GetGamificationInsightsUserDetailsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string primaryPeriodStartWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -10360,27 +10360,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/users/{userId}/details";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10431,7 +10431,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10449,7 +10449,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -10485,7 +10485,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>UserInsightsTrend</returns>
 
-    public UserInsightsTrend GetGamificationInsightsUserTrends(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public UserInsightsTrend GetGamificationInsightsUserTrends(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<UserInsightsTrend> localVarResponse = GetGamificationInsightsUserTrendsWithHttpInfo(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -10506,7 +10506,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of UserInsightsTrend</returns>
 
-    public ApiResponse<UserInsightsTrend> GetGamificationInsightsUserTrendsWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public ApiResponse<UserInsightsTrend> GetGamificationInsightsUserTrendsWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -10550,27 +10550,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/users/{userId}/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10631,7 +10631,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10649,7 +10649,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -10684,7 +10684,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of UserInsightsTrend</returns>
 
-    public async Task<UserInsightsTrend> GetGamificationInsightsUserTrendsAsync(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<UserInsightsTrend> GetGamificationInsightsUserTrendsAsync(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         ApiResponse<UserInsightsTrend> localVarResponse = await GetGamificationInsightsUserTrendsAsyncWithHttpInfo(userId, filterType, filterId, granularity, comparativePeriodStartWorkday, comparativePeriodEndWorkday, primaryPeriodStartWorkday, primaryPeriodEndWorkday);
         return localVarResponse.Data;
@@ -10706,7 +10706,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="primaryPeriodEndWorkday">The end work day of primary period. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (UserInsightsTrend)</returns>
 
-    public async Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsUserTrendsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, String comparativePeriodStartWorkday, String comparativePeriodEndWorkday, String primaryPeriodStartWorkday, String primaryPeriodEndWorkday)
+    public async Task<ApiResponse<UserInsightsTrend>> GetGamificationInsightsUserTrendsAsyncWithHttpInfo(string userId, string filterType, string filterId, string granularity, string comparativePeriodStartWorkday, string comparativePeriodEndWorkday, string primaryPeriodStartWorkday, string primaryPeriodEndWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -10757,27 +10757,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/insights/users/{userId}/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10838,7 +10838,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10856,7 +10856,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -10887,7 +10887,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Leaderboard</returns>
 
-    public Leaderboard GetGamificationLeaderboard(String startWorkday, String endWorkday, string metricId = null)
+    public Leaderboard GetGamificationLeaderboard(string startWorkday, string endWorkday, string metricId = null)
     {
         ApiResponse<Leaderboard> localVarResponse = GetGamificationLeaderboardWithHttpInfo(startWorkday, endWorkday, metricId);
         return localVarResponse.Data;
@@ -10903,7 +10903,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>ApiResponse of Leaderboard</returns>
 
-    public ApiResponse<Leaderboard> GetGamificationLeaderboardWithHttpInfo(String startWorkday, String endWorkday, string metricId = null)
+    public ApiResponse<Leaderboard> GetGamificationLeaderboardWithHttpInfo(string startWorkday, string endWorkday, string metricId = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -10917,27 +10917,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -10974,7 +10974,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -10992,7 +10992,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11022,7 +11022,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of Leaderboard</returns>
 
-    public async Task<Leaderboard> GetGamificationLeaderboardAsync(String startWorkday, String endWorkday, string metricId = null)
+    public async Task<Leaderboard> GetGamificationLeaderboardAsync(string startWorkday, string endWorkday, string metricId = null)
     {
         ApiResponse<Leaderboard> localVarResponse = await GetGamificationLeaderboardAsyncWithHttpInfo(startWorkday, endWorkday, metricId);
         return localVarResponse.Data;
@@ -11039,7 +11039,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of ApiResponse (Leaderboard)</returns>
 
-    public async Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAsyncWithHttpInfo(String startWorkday, String endWorkday, string metricId = null)
+    public async Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAsyncWithHttpInfo(string startWorkday, string endWorkday, string metricId = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -11054,27 +11054,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11111,7 +11111,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11129,7 +11129,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11162,7 +11162,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Leaderboard</returns>
 
-    public Leaderboard GetGamificationLeaderboardAll(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null)
+    public Leaderboard GetGamificationLeaderboardAll(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null)
     {
         ApiResponse<Leaderboard> localVarResponse = GetGamificationLeaderboardAllWithHttpInfo(filterType, filterId, startWorkday, endWorkday, metricId);
         return localVarResponse.Data;
@@ -11180,7 +11180,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>ApiResponse of Leaderboard</returns>
 
-    public ApiResponse<Leaderboard> GetGamificationLeaderboardAllWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null)
+    public ApiResponse<Leaderboard> GetGamificationLeaderboardAllWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -11204,27 +11204,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11271,7 +11271,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11289,7 +11289,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11321,7 +11321,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of Leaderboard</returns>
 
-    public async Task<Leaderboard> GetGamificationLeaderboardAllAsync(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null)
+    public async Task<Leaderboard> GetGamificationLeaderboardAllAsync(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null)
     {
         ApiResponse<Leaderboard> localVarResponse = await GetGamificationLeaderboardAllAsyncWithHttpInfo(filterType, filterId, startWorkday, endWorkday, metricId);
         return localVarResponse.Data;
@@ -11340,7 +11340,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricId">Metric Id for which the leaderboard is to be generated. The total points is used if nothing is given. (optional)</param>
     /// <returns>Task of ApiResponse (Leaderboard)</returns>
 
-    public async Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAllAsyncWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string metricId = null)
+    public async Task<ApiResponse<Leaderboard>> GetGamificationLeaderboardAllAsyncWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string metricId = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -11367,27 +11367,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard/all";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11434,7 +11434,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11452,7 +11452,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11511,27 +11511,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard/all/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11563,7 +11563,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11581,7 +11581,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11641,27 +11641,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/leaderboard/all/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11693,7 +11693,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11711,7 +11711,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11756,27 +11756,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/leaderboard/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11799,7 +11799,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11817,7 +11817,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11862,27 +11862,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/leaderboard/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -11905,7 +11905,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -11923,7 +11923,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -11975,27 +11975,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/metricdefinitions/{metricDefinitionId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12022,7 +12022,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12040,7 +12040,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12092,27 +12092,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/metricdefinitions/{metricDefinitionId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12139,7 +12139,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12157,7 +12157,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12202,27 +12202,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/metricdefinitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12245,7 +12245,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12263,7 +12263,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12308,27 +12308,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/metricdefinitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12351,7 +12351,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12369,7 +12369,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12421,27 +12421,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12468,7 +12468,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12486,7 +12486,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12538,27 +12538,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12585,7 +12585,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12603,7 +12603,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12655,27 +12655,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12702,7 +12702,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12720,7 +12720,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12772,27 +12772,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12819,7 +12819,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12837,7 +12837,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -12868,7 +12868,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Metric</returns>
 
-    public Metric GetGamificationProfileMetric(string profileId, string metricId, String workday = null)
+    public Metric GetGamificationProfileMetric(string profileId, string metricId, string workday = null)
     {
         ApiResponse<Metric> localVarResponse = GetGamificationProfileMetricWithHttpInfo(profileId, metricId, workday);
         return localVarResponse.Data;
@@ -12884,7 +12884,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of Metric</returns>
 
-    public ApiResponse<Metric> GetGamificationProfileMetricWithHttpInfo(string profileId, string metricId, String workday = null)
+    public ApiResponse<Metric> GetGamificationProfileMetricWithHttpInfo(string profileId, string metricId, string workday = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -12898,27 +12898,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -12954,7 +12954,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -12972,7 +12972,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13002,7 +13002,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of Metric</returns>
 
-    public async Task<Metric> GetGamificationProfileMetricAsync(string profileId, string metricId, String workday = null)
+    public async Task<Metric> GetGamificationProfileMetricAsync(string profileId, string metricId, string workday = null)
     {
         ApiResponse<Metric> localVarResponse = await GetGamificationProfileMetricAsyncWithHttpInfo(profileId, metricId, workday);
         return localVarResponse.Data;
@@ -13019,7 +13019,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (Metric)</returns>
 
-    public async Task<ApiResponse<Metric>> GetGamificationProfileMetricAsyncWithHttpInfo(string profileId, string metricId, String workday = null)
+    public async Task<ApiResponse<Metric>> GetGamificationProfileMetricAsyncWithHttpInfo(string profileId, string metricId, string workday = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -13034,27 +13034,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13090,7 +13090,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13108,7 +13108,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13140,7 +13140,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>GetMetricResponse</returns>
 
-    public GetMetricResponse GetGamificationProfileMetrics(string profileId, List<string> expand = null, String workday = null, string metricIds = null)
+    public GetMetricResponse GetGamificationProfileMetrics(string profileId, List<string> expand = null, string workday = null, string metricIds = null)
     {
         ApiResponse<GetMetricResponse> localVarResponse = GetGamificationProfileMetricsWithHttpInfo(profileId, expand, workday, metricIds);
         return localVarResponse.Data;
@@ -13157,7 +13157,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>ApiResponse of GetMetricResponse</returns>
 
-    public ApiResponse<GetMetricResponse> GetGamificationProfileMetricsWithHttpInfo(string profileId, List<string> expand = null, String workday = null, string metricIds = null)
+    public ApiResponse<GetMetricResponse> GetGamificationProfileMetricsWithHttpInfo(string profileId, List<string> expand = null, string workday = null, string metricIds = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -13166,27 +13166,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13227,7 +13227,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13245,7 +13245,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13276,7 +13276,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>Task of GetMetricResponse</returns>
 
-    public async Task<GetMetricResponse> GetGamificationProfileMetricsAsync(string profileId, List<string> expand = null, String workday = null, string metricIds = null)
+    public async Task<GetMetricResponse> GetGamificationProfileMetricsAsync(string profileId, List<string> expand = null, string workday = null, string metricIds = null)
     {
         ApiResponse<GetMetricResponse> localVarResponse = await GetGamificationProfileMetricsAsyncWithHttpInfo(profileId, expand, workday, metricIds);
         return localVarResponse.Data;
@@ -13294,7 +13294,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="metricIds">List of metric ids to filter the response (Optional, comma-separated). (optional)</param>
     /// <returns>Task of ApiResponse (GetMetricResponse)</returns>
 
-    public async Task<ApiResponse<GetMetricResponse>> GetGamificationProfileMetricsAsyncWithHttpInfo(string profileId, List<string> expand = null, String workday = null, string metricIds = null)
+    public async Task<ApiResponse<GetMetricResponse>> GetGamificationProfileMetricsAsyncWithHttpInfo(string profileId, List<string> expand = null, string workday = null, string metricIds = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -13303,27 +13303,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13364,7 +13364,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13382,7 +13382,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13412,7 +13412,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>GetMetricsResponse</returns>
 
-    public GetMetricsResponse GetGamificationProfileMetricsObjectivedetails(string profileId, String workday = null)
+    public GetMetricsResponse GetGamificationProfileMetricsObjectivedetails(string profileId, string workday = null)
     {
         ApiResponse<GetMetricsResponse> localVarResponse = GetGamificationProfileMetricsObjectivedetailsWithHttpInfo(profileId, workday);
         return localVarResponse.Data;
@@ -13427,7 +13427,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of GetMetricsResponse</returns>
 
-    public ApiResponse<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsWithHttpInfo(string profileId, String workday = null)
+    public ApiResponse<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsWithHttpInfo(string profileId, string workday = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -13436,27 +13436,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13487,7 +13487,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13505,7 +13505,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13534,7 +13534,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of GetMetricsResponse</returns>
 
-    public async Task<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsAsync(string profileId, String workday = null)
+    public async Task<GetMetricsResponse> GetGamificationProfileMetricsObjectivedetailsAsync(string profileId, string workday = null)
     {
         ApiResponse<GetMetricsResponse> localVarResponse = await GetGamificationProfileMetricsObjectivedetailsAsyncWithHttpInfo(profileId, workday);
         return localVarResponse.Data;
@@ -13550,7 +13550,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The objective query workday. If not specified, then it retrieves the current objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (GetMetricsResponse)</returns>
 
-    public async Task<ApiResponse<GetMetricsResponse>> GetGamificationProfileMetricsObjectivedetailsAsyncWithHttpInfo(string profileId, String workday = null)
+    public async Task<ApiResponse<GetMetricsResponse>> GetGamificationProfileMetricsObjectivedetailsAsyncWithHttpInfo(string profileId, string workday = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -13559,27 +13559,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/objectivedetails";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13610,7 +13610,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13628,7 +13628,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13673,27 +13673,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/profiles";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13716,7 +13716,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13734,7 +13734,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13779,27 +13779,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/profiles";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13822,7 +13822,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13840,7 +13840,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13870,7 +13870,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>PerformanceProfile</returns>
 
-    public PerformanceProfile GetGamificationProfilesUser(string userId, String workday = null)
+    public PerformanceProfile GetGamificationProfilesUser(string userId, string workday = null)
     {
         ApiResponse<PerformanceProfile> localVarResponse = GetGamificationProfilesUserWithHttpInfo(userId, workday);
         return localVarResponse.Data;
@@ -13885,7 +13885,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of PerformanceProfile</returns>
 
-    public ApiResponse<PerformanceProfile> GetGamificationProfilesUserWithHttpInfo(string userId, String workday = null)
+    public ApiResponse<PerformanceProfile> GetGamificationProfilesUserWithHttpInfo(string userId, string workday = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -13894,27 +13894,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -13945,7 +13945,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -13963,7 +13963,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -13992,7 +13992,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of PerformanceProfile</returns>
 
-    public async Task<PerformanceProfile> GetGamificationProfilesUserAsync(string userId, String workday = null)
+    public async Task<PerformanceProfile> GetGamificationProfilesUserAsync(string userId, string workday = null)
     {
         ApiResponse<PerformanceProfile> localVarResponse = await GetGamificationProfilesUserAsyncWithHttpInfo(userId, workday);
         return localVarResponse.Data;
@@ -14008,7 +14008,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (PerformanceProfile)</returns>
 
-    public async Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUserAsyncWithHttpInfo(string userId, String workday = null)
+    public async Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUserAsyncWithHttpInfo(string userId, string workday = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -14017,27 +14017,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14068,7 +14068,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14086,7 +14086,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14115,7 +14115,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>PerformanceProfile</returns>
 
-    public PerformanceProfile GetGamificationProfilesUsersMe(String workday = null)
+    public PerformanceProfile GetGamificationProfilesUsersMe(string workday = null)
     {
         ApiResponse<PerformanceProfile> localVarResponse = GetGamificationProfilesUsersMeWithHttpInfo(workday);
         return localVarResponse.Data;
@@ -14129,31 +14129,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>ApiResponse of PerformanceProfile</returns>
 
-    public ApiResponse<PerformanceProfile> GetGamificationProfilesUsersMeWithHttpInfo(String workday = null)
+    public ApiResponse<PerformanceProfile> GetGamificationProfilesUsersMeWithHttpInfo(string workday = null)
     {
 
         var localVarPath = "/api/v2/gamification/profiles/users/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14180,7 +14180,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14198,7 +14198,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14226,7 +14226,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of PerformanceProfile</returns>
 
-    public async Task<PerformanceProfile> GetGamificationProfilesUsersMeAsync(String workday = null)
+    public async Task<PerformanceProfile> GetGamificationProfilesUsersMeAsync(string workday = null)
     {
         ApiResponse<PerformanceProfile> localVarResponse = await GetGamificationProfilesUsersMeAsyncWithHttpInfo(workday);
         return localVarResponse.Data;
@@ -14241,31 +14241,31 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">Target querying workday. If not provided, then queries the current performance profile. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (optional)</param>
     /// <returns>Task of ApiResponse (PerformanceProfile)</returns>
 
-    public async Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUsersMeAsyncWithHttpInfo(String workday = null)
+    public async Task<ApiResponse<PerformanceProfile>> GetGamificationProfilesUsersMeAsyncWithHttpInfo(string workday = null)
     {
 
         var localVarPath = "/api/v2/gamification/profiles/users/me";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14292,7 +14292,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14310,7 +14310,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14340,7 +14340,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>WorkdayMetricListing</returns>
 
-    public WorkdayMetricListing GetGamificationScorecards(String workday, List<string> expand = null)
+    public WorkdayMetricListing GetGamificationScorecards(string workday, List<string> expand = null)
     {
         ApiResponse<WorkdayMetricListing> localVarResponse = GetGamificationScorecardsWithHttpInfo(workday, expand);
         return localVarResponse.Data;
@@ -14355,7 +14355,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>ApiResponse of WorkdayMetricListing</returns>
 
-    public ApiResponse<WorkdayMetricListing> GetGamificationScorecardsWithHttpInfo(String workday, List<string> expand = null)
+    public ApiResponse<WorkdayMetricListing> GetGamificationScorecardsWithHttpInfo(string workday, List<string> expand = null)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -14364,27 +14364,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14416,7 +14416,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14434,7 +14434,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14463,7 +14463,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of WorkdayMetricListing</returns>
 
-    public async Task<WorkdayMetricListing> GetGamificationScorecardsAsync(String workday, List<string> expand = null)
+    public async Task<WorkdayMetricListing> GetGamificationScorecardsAsync(string workday, List<string> expand = null)
     {
         ApiResponse<WorkdayMetricListing> localVarResponse = await GetGamificationScorecardsAsyncWithHttpInfo(workday, expand);
         return localVarResponse.Data;
@@ -14479,7 +14479,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayMetricListing)</returns>
 
-    public async Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsAsyncWithHttpInfo(String workday, List<string> expand = null)
+    public async Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsAsyncWithHttpInfo(string workday, List<string> expand = null)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -14488,27 +14488,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14540,7 +14540,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14558,7 +14558,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14588,7 +14588,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AttendanceStatusListing</returns>
 
-    public AttendanceStatusListing GetGamificationScorecardsAttendance(String startWorkday, String endWorkday)
+    public AttendanceStatusListing GetGamificationScorecardsAttendance(string startWorkday, string endWorkday)
     {
         ApiResponse<AttendanceStatusListing> localVarResponse = GetGamificationScorecardsAttendanceWithHttpInfo(startWorkday, endWorkday);
         return localVarResponse.Data;
@@ -14603,7 +14603,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AttendanceStatusListing</returns>
 
-    public ApiResponse<AttendanceStatusListing> GetGamificationScorecardsAttendanceWithHttpInfo(String startWorkday, String endWorkday)
+    public ApiResponse<AttendanceStatusListing> GetGamificationScorecardsAttendanceWithHttpInfo(string startWorkday, string endWorkday)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -14617,27 +14617,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/attendance";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14669,7 +14669,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14687,7 +14687,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14716,7 +14716,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AttendanceStatusListing</returns>
 
-    public async Task<AttendanceStatusListing> GetGamificationScorecardsAttendanceAsync(String startWorkday, String endWorkday)
+    public async Task<AttendanceStatusListing> GetGamificationScorecardsAttendanceAsync(string startWorkday, string endWorkday)
     {
         ApiResponse<AttendanceStatusListing> localVarResponse = await GetGamificationScorecardsAttendanceAsyncWithHttpInfo(startWorkday, endWorkday);
         return localVarResponse.Data;
@@ -14732,7 +14732,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AttendanceStatusListing)</returns>
 
-    public async Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsAttendanceAsyncWithHttpInfo(String startWorkday, String endWorkday)
+    public async Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsAttendanceAsyncWithHttpInfo(string startWorkday, string endWorkday)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -14747,27 +14747,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/attendance";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14799,7 +14799,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14817,7 +14817,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14862,27 +14862,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/scorecards/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -14905,7 +14905,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -14923,7 +14923,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -14968,27 +14968,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/scorecards/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15011,7 +15011,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15029,7 +15029,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15058,7 +15058,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AllTimePoints</returns>
 
-    public AllTimePoints GetGamificationScorecardsPointsAlltime(String endWorkday)
+    public AllTimePoints GetGamificationScorecardsPointsAlltime(string endWorkday)
     {
         ApiResponse<AllTimePoints> localVarResponse = GetGamificationScorecardsPointsAlltimeWithHttpInfo(endWorkday);
         return localVarResponse.Data;
@@ -15072,7 +15072,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AllTimePoints</returns>
 
-    public ApiResponse<AllTimePoints> GetGamificationScorecardsPointsAlltimeWithHttpInfo(String endWorkday)
+    public ApiResponse<AllTimePoints> GetGamificationScorecardsPointsAlltimeWithHttpInfo(string endWorkday)
     {
         // verify the required parameter 'endWorkday' is set
         if (endWorkday == null)
@@ -15081,27 +15081,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/alltime";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15128,7 +15128,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15146,7 +15146,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15174,7 +15174,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AllTimePoints</returns>
 
-    public async Task<AllTimePoints> GetGamificationScorecardsPointsAlltimeAsync(String endWorkday)
+    public async Task<AllTimePoints> GetGamificationScorecardsPointsAlltimeAsync(string endWorkday)
     {
         ApiResponse<AllTimePoints> localVarResponse = await GetGamificationScorecardsPointsAlltimeAsyncWithHttpInfo(endWorkday);
         return localVarResponse.Data;
@@ -15189,7 +15189,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AllTimePoints)</returns>
 
-    public async Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsPointsAlltimeAsyncWithHttpInfo(String endWorkday)
+    public async Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsPointsAlltimeAsyncWithHttpInfo(string endWorkday)
     {
         // verify the required parameter 'endWorkday' is set
         if (endWorkday == null)
@@ -15198,27 +15198,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/alltime";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15245,7 +15245,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15263,7 +15263,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15292,7 +15292,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>SingleWorkdayAveragePoints</returns>
 
-    public SingleWorkdayAveragePoints GetGamificationScorecardsPointsAverage(String workday)
+    public SingleWorkdayAveragePoints GetGamificationScorecardsPointsAverage(string workday)
     {
         ApiResponse<SingleWorkdayAveragePoints> localVarResponse = GetGamificationScorecardsPointsAverageWithHttpInfo(workday);
         return localVarResponse.Data;
@@ -15306,7 +15306,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of SingleWorkdayAveragePoints</returns>
 
-    public ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageWithHttpInfo(String workday)
+    public ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageWithHttpInfo(string workday)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -15315,27 +15315,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15362,7 +15362,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15380,7 +15380,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15408,7 +15408,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of SingleWorkdayAveragePoints</returns>
 
-    public async Task<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageAsync(String workday)
+    public async Task<SingleWorkdayAveragePoints> GetGamificationScorecardsPointsAverageAsync(string workday)
     {
         ApiResponse<SingleWorkdayAveragePoints> localVarResponse = await GetGamificationScorecardsPointsAverageAsyncWithHttpInfo(workday);
         return localVarResponse.Data;
@@ -15423,7 +15423,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAveragePoints)</returns>
 
-    public async Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsPointsAverageAsyncWithHttpInfo(String workday)
+    public async Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsPointsAverageAsyncWithHttpInfo(string workday)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -15432,27 +15432,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15479,7 +15479,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15497,7 +15497,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15528,7 +15528,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>WorkdayPointsTrend</returns>
 
-    public WorkdayPointsTrend GetGamificationScorecardsPointsTrends(String startWorkday, String endWorkday, string dayOfWeek = null)
+    public WorkdayPointsTrend GetGamificationScorecardsPointsTrends(string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         ApiResponse<WorkdayPointsTrend> localVarResponse = GetGamificationScorecardsPointsTrendsWithHttpInfo(startWorkday, endWorkday, dayOfWeek);
         return localVarResponse.Data;
@@ -15544,7 +15544,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>ApiResponse of WorkdayPointsTrend</returns>
 
-    public ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsWithHttpInfo(String startWorkday, String endWorkday, string dayOfWeek = null)
+    public ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsWithHttpInfo(string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -15558,27 +15558,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15615,7 +15615,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15633,7 +15633,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15663,7 +15663,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of WorkdayPointsTrend</returns>
 
-    public async Task<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsAsync(String startWorkday, String endWorkday, string dayOfWeek = null)
+    public async Task<WorkdayPointsTrend> GetGamificationScorecardsPointsTrendsAsync(string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         ApiResponse<WorkdayPointsTrend> localVarResponse = await GetGamificationScorecardsPointsTrendsAsyncWithHttpInfo(startWorkday, endWorkday, dayOfWeek);
         return localVarResponse.Data;
@@ -15680,7 +15680,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayPointsTrend)</returns>
 
-    public async Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsPointsTrendsAsyncWithHttpInfo(String startWorkday, String endWorkday, string dayOfWeek = null)
+    public async Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsPointsTrendsAsyncWithHttpInfo(string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -15695,27 +15695,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/points/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15752,7 +15752,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15770,7 +15770,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15805,7 +15805,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricUserValuesTrends(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null)
+    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricUserValuesTrends(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = GetGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -15825,7 +15825,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null)
+    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsWithHttpInfo(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -15854,27 +15854,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -15930,7 +15930,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -15948,7 +15948,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -15982,7 +15982,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsAsync(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null)
+    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUserValuesTrendsAsync(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = await GetGamificationScorecardsProfileMetricUserValuesTrendsAsyncWithHttpInfo(profileId, metricId, userId, startWorkday, endWorkday, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -16003,7 +16003,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUserValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string userId, String startWorkday, String endWorkday, String referenceWorkday = null, string timeZone = null)
+    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUserValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string userId, string startWorkday, string endWorkday, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -16036,27 +16036,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/{userId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16112,7 +16112,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16130,7 +16130,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -16166,7 +16166,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricUsersValuesTrends(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null)
+    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricUsersValuesTrends(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = GetGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -16187,7 +16187,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null)
+    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsWithHttpInfo(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -16216,27 +16216,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16297,7 +16297,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16315,7 +16315,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -16350,7 +16350,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsync(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsync(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = await GetGamificationScorecardsProfileMetricUsersValuesTrendsAsyncWithHttpInfo(profileId, metricId, filterType, startWorkday, endWorkday, filterId, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -16372,7 +16372,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string filterType, String startWorkday, String endWorkday, string filterId = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricUsersValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string filterType, string startWorkday, string endWorkday, string filterId = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -16405,27 +16405,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/users/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16486,7 +16486,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16504,7 +16504,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -16539,7 +16539,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>MetricValueTrendAverage</returns>
 
-    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricValuesTrends(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public MetricValueTrendAverage GetGamificationScorecardsProfileMetricValuesTrends(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = GetGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -16559,7 +16559,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of MetricValueTrendAverage</returns>
 
-    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public ApiResponse<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsWithHttpInfo(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -16583,27 +16583,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16659,7 +16659,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16677,7 +16677,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -16711,7 +16711,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of MetricValueTrendAverage</returns>
 
-    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsAsync(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<MetricValueTrendAverage> GetGamificationScorecardsProfileMetricValuesTrendsAsync(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<MetricValueTrendAverage> localVarResponse = await GetGamificationScorecardsProfileMetricValuesTrendsAsyncWithHttpInfo(profileId, metricId, startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -16732,7 +16732,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (MetricValueTrendAverage)</returns>
 
-    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<ApiResponse<MetricValueTrendAverage>> GetGamificationScorecardsProfileMetricValuesTrendsAsyncWithHttpInfo(string profileId, string metricId, string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'profileId' is set
         if (profileId == null)
@@ -16759,27 +16759,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/profiles/{profileId}/metrics/{metricId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16835,7 +16835,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16853,7 +16853,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -16884,7 +16884,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>WorkdayMetricListing</returns>
 
-    public WorkdayMetricListing GetGamificationScorecardsUser(string userId, String workday, List<string> expand = null)
+    public WorkdayMetricListing GetGamificationScorecardsUser(string userId, string workday, List<string> expand = null)
     {
         ApiResponse<WorkdayMetricListing> localVarResponse = GetGamificationScorecardsUserWithHttpInfo(userId, workday, expand);
         return localVarResponse.Data;
@@ -16900,7 +16900,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>ApiResponse of WorkdayMetricListing</returns>
 
-    public ApiResponse<WorkdayMetricListing> GetGamificationScorecardsUserWithHttpInfo(string userId, String workday, List<string> expand = null)
+    public ApiResponse<WorkdayMetricListing> GetGamificationScorecardsUserWithHttpInfo(string userId, string workday, List<string> expand = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -16914,27 +16914,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -16970,7 +16970,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -16988,7 +16988,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17018,7 +17018,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of WorkdayMetricListing</returns>
 
-    public async Task<WorkdayMetricListing> GetGamificationScorecardsUserAsync(string userId, String workday, List<string> expand = null)
+    public async Task<WorkdayMetricListing> GetGamificationScorecardsUserAsync(string userId, string workday, List<string> expand = null)
     {
         ApiResponse<WorkdayMetricListing> localVarResponse = await GetGamificationScorecardsUserAsyncWithHttpInfo(userId, workday, expand);
         return localVarResponse.Data;
@@ -17035,7 +17035,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="expand">Which fields, if any, to expand. (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayMetricListing)</returns>
 
-    public async Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsUserAsyncWithHttpInfo(string userId, String workday, List<string> expand = null)
+    public async Task<ApiResponse<WorkdayMetricListing>> GetGamificationScorecardsUserAsyncWithHttpInfo(string userId, string workday, List<string> expand = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17050,27 +17050,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17106,7 +17106,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17124,7 +17124,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17155,7 +17155,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AttendanceStatusListing</returns>
 
-    public AttendanceStatusListing GetGamificationScorecardsUserAttendance(string userId, String startWorkday, String endWorkday)
+    public AttendanceStatusListing GetGamificationScorecardsUserAttendance(string userId, string startWorkday, string endWorkday)
     {
         ApiResponse<AttendanceStatusListing> localVarResponse = GetGamificationScorecardsUserAttendanceWithHttpInfo(userId, startWorkday, endWorkday);
         return localVarResponse.Data;
@@ -17171,7 +17171,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AttendanceStatusListing</returns>
 
-    public ApiResponse<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceWithHttpInfo(string userId, String startWorkday, String endWorkday)
+    public ApiResponse<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceWithHttpInfo(string userId, string startWorkday, string endWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17190,27 +17190,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/attendance";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17246,7 +17246,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17264,7 +17264,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17294,7 +17294,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AttendanceStatusListing</returns>
 
-    public async Task<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceAsync(string userId, String startWorkday, String endWorkday)
+    public async Task<AttendanceStatusListing> GetGamificationScorecardsUserAttendanceAsync(string userId, string startWorkday, string endWorkday)
     {
         ApiResponse<AttendanceStatusListing> localVarResponse = await GetGamificationScorecardsUserAttendanceAsyncWithHttpInfo(userId, startWorkday, endWorkday);
         return localVarResponse.Data;
@@ -17311,7 +17311,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AttendanceStatusListing)</returns>
 
-    public async Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsUserAttendanceAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday)
+    public async Task<ApiResponse<AttendanceStatusListing>> GetGamificationScorecardsUserAttendanceAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17332,27 +17332,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/attendance";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17388,7 +17388,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17406,7 +17406,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17458,27 +17458,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17505,7 +17505,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17523,7 +17523,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17575,27 +17575,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/bestpoints";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17622,7 +17622,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17640,7 +17640,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17670,7 +17670,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>AllTimePoints</returns>
 
-    public AllTimePoints GetGamificationScorecardsUserPointsAlltime(string userId, String endWorkday)
+    public AllTimePoints GetGamificationScorecardsUserPointsAlltime(string userId, string endWorkday)
     {
         ApiResponse<AllTimePoints> localVarResponse = GetGamificationScorecardsUserPointsAlltimeWithHttpInfo(userId, endWorkday);
         return localVarResponse.Data;
@@ -17685,7 +17685,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of AllTimePoints</returns>
 
-    public ApiResponse<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeWithHttpInfo(string userId, String endWorkday)
+    public ApiResponse<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeWithHttpInfo(string userId, string endWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17699,27 +17699,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/points/alltime";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17750,7 +17750,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17768,7 +17768,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17797,7 +17797,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of AllTimePoints</returns>
 
-    public async Task<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeAsync(string userId, String endWorkday)
+    public async Task<AllTimePoints> GetGamificationScorecardsUserPointsAlltimeAsync(string userId, string endWorkday)
     {
         ApiResponse<AllTimePoints> localVarResponse = await GetGamificationScorecardsUserPointsAlltimeAsyncWithHttpInfo(userId, endWorkday);
         return localVarResponse.Data;
@@ -17813,7 +17813,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="endWorkday">End workday of querying workdays range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (AllTimePoints)</returns>
 
-    public async Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsUserPointsAlltimeAsyncWithHttpInfo(string userId, String endWorkday)
+    public async Task<ApiResponse<AllTimePoints>> GetGamificationScorecardsUserPointsAlltimeAsyncWithHttpInfo(string userId, string endWorkday)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17828,27 +17828,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/points/alltime";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -17879,7 +17879,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -17897,7 +17897,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -17929,7 +17929,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>WorkdayPointsTrend</returns>
 
-    public WorkdayPointsTrend GetGamificationScorecardsUserPointsTrends(string userId, String startWorkday, String endWorkday, string dayOfWeek = null)
+    public WorkdayPointsTrend GetGamificationScorecardsUserPointsTrends(string userId, string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         ApiResponse<WorkdayPointsTrend> localVarResponse = GetGamificationScorecardsUserPointsTrendsWithHttpInfo(userId, startWorkday, endWorkday, dayOfWeek);
         return localVarResponse.Data;
@@ -17946,7 +17946,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>ApiResponse of WorkdayPointsTrend</returns>
 
-    public ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsWithHttpInfo(string userId, String startWorkday, String endWorkday, string dayOfWeek = null)
+    public ApiResponse<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsWithHttpInfo(string userId, string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -17965,27 +17965,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/points/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18026,7 +18026,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18044,7 +18044,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18075,7 +18075,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of WorkdayPointsTrend</returns>
 
-    public async Task<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsAsync(string userId, String startWorkday, String endWorkday, string dayOfWeek = null)
+    public async Task<WorkdayPointsTrend> GetGamificationScorecardsUserPointsTrendsAsync(string userId, string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         ApiResponse<WorkdayPointsTrend> localVarResponse = await GetGamificationScorecardsUserPointsTrendsAsyncWithHttpInfo(userId, startWorkday, endWorkday, dayOfWeek);
         return localVarResponse.Data;
@@ -18093,7 +18093,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="dayOfWeek">Optional filter to specify which day of weeks to be included in the response (optional)</param>
     /// <returns>Task of ApiResponse (WorkdayPointsTrend)</returns>
 
-    public async Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsUserPointsTrendsAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday, string dayOfWeek = null)
+    public async Task<ApiResponse<WorkdayPointsTrend>> GetGamificationScorecardsUserPointsTrendsAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday, string dayOfWeek = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -18114,27 +18114,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/points/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18175,7 +18175,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18193,7 +18193,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18225,7 +18225,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    public WorkdayValuesTrend GetGamificationScorecardsUserValuesTrends(string userId, String startWorkday, String endWorkday, string timeZone = null)
+    public WorkdayValuesTrend GetGamificationScorecardsUserValuesTrends(string userId, string startWorkday, string endWorkday, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = GetGamificationScorecardsUserValuesTrendsWithHttpInfo(userId, startWorkday, endWorkday, timeZone);
         return localVarResponse.Data;
@@ -18242,7 +18242,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsWithHttpInfo(string userId, String startWorkday, String endWorkday, string timeZone = null)
+    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsWithHttpInfo(string userId, string startWorkday, string endWorkday, string timeZone = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -18261,27 +18261,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18322,7 +18322,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18340,7 +18340,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18371,7 +18371,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    public async Task<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsAsync(string userId, String startWorkday, String endWorkday, string timeZone = null)
+    public async Task<WorkdayValuesTrend> GetGamificationScorecardsUserValuesTrendsAsync(string userId, string startWorkday, string endWorkday, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = await GetGamificationScorecardsUserValuesTrendsAsyncWithHttpInfo(userId, startWorkday, endWorkday, timeZone);
         return localVarResponse.Data;
@@ -18389,7 +18389,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUserValuesTrendsAsyncWithHttpInfo(string userId, String startWorkday, String endWorkday, string timeZone = null)
+    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUserValuesTrendsAsyncWithHttpInfo(string userId, string startWorkday, string endWorkday, string timeZone = null)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -18410,27 +18410,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/{userId}/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18471,7 +18471,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18489,7 +18489,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18520,7 +18520,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>SingleWorkdayAveragePoints</returns>
 
-    public SingleWorkdayAveragePoints GetGamificationScorecardsUsersPointsAverage(string filterType, string filterId, String workday)
+    public SingleWorkdayAveragePoints GetGamificationScorecardsUsersPointsAverage(string filterType, string filterId, string workday)
     {
         ApiResponse<SingleWorkdayAveragePoints> localVarResponse = GetGamificationScorecardsUsersPointsAverageWithHttpInfo(filterType, filterId, workday);
         return localVarResponse.Data;
@@ -18536,7 +18536,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>ApiResponse of SingleWorkdayAveragePoints</returns>
 
-    public ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageWithHttpInfo(string filterType, string filterId, String workday)
+    public ApiResponse<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageWithHttpInfo(string filterType, string filterId, string workday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -18555,27 +18555,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/points/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18612,7 +18612,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18630,7 +18630,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18660,7 +18660,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of SingleWorkdayAveragePoints</returns>
 
-    public async Task<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageAsync(string filterType, string filterId, String workday)
+    public async Task<SingleWorkdayAveragePoints> GetGamificationScorecardsUsersPointsAverageAsync(string filterType, string filterId, string workday)
     {
         ApiResponse<SingleWorkdayAveragePoints> localVarResponse = await GetGamificationScorecardsUsersPointsAverageAsyncWithHttpInfo(filterType, filterId, workday);
         return localVarResponse.Data;
@@ -18677,7 +18677,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="workday">The target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAveragePoints)</returns>
 
-    public async Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsUsersPointsAverageAsyncWithHttpInfo(string filterType, string filterId, String workday)
+    public async Task<ApiResponse<SingleWorkdayAveragePoints>> GetGamificationScorecardsUsersPointsAverageAsyncWithHttpInfo(string filterType, string filterId, string workday)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -18698,27 +18698,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/points/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18755,7 +18755,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18773,7 +18773,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18805,7 +18805,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>SingleWorkdayAverageValues</returns>
 
-    public SingleWorkdayAverageValues GetGamificationScorecardsUsersValuesAverage(string filterType, string filterId, String workday, string timeZone = null)
+    public SingleWorkdayAverageValues GetGamificationScorecardsUsersValuesAverage(string filterType, string filterId, string workday, string timeZone = null)
     {
         ApiResponse<SingleWorkdayAverageValues> localVarResponse = GetGamificationScorecardsUsersValuesAverageWithHttpInfo(filterType, filterId, workday, timeZone);
         return localVarResponse.Data;
@@ -18822,7 +18822,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of SingleWorkdayAverageValues</returns>
 
-    public ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageWithHttpInfo(string filterType, string filterId, String workday, string timeZone = null)
+    public ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageWithHttpInfo(string filterType, string filterId, string workday, string timeZone = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -18841,27 +18841,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/values/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -18903,7 +18903,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -18921,7 +18921,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -18952,7 +18952,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of SingleWorkdayAverageValues</returns>
 
-    public async Task<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageAsync(string filterType, string filterId, String workday, string timeZone = null)
+    public async Task<SingleWorkdayAverageValues> GetGamificationScorecardsUsersValuesAverageAsync(string filterType, string filterId, string workday, string timeZone = null)
     {
         ApiResponse<SingleWorkdayAverageValues> localVarResponse = await GetGamificationScorecardsUsersValuesAverageAsyncWithHttpInfo(filterType, filterId, workday, timeZone);
         return localVarResponse.Data;
@@ -18970,7 +18970,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAverageValues)</returns>
 
-    public async Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsUsersValuesAverageAsyncWithHttpInfo(string filterType, string filterId, String workday, string timeZone = null)
+    public async Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsUsersValuesAverageAsyncWithHttpInfo(string filterType, string filterId, string workday, string timeZone = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -18991,27 +18991,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/values/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19053,7 +19053,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19071,7 +19071,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19104,7 +19104,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    public WorkdayValuesTrend GetGamificationScorecardsUsersValuesTrends(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null)
+    public WorkdayValuesTrend GetGamificationScorecardsUsersValuesTrends(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = GetGamificationScorecardsUsersValuesTrendsWithHttpInfo(filterType, filterId, startWorkday, endWorkday, timeZone);
         return localVarResponse.Data;
@@ -19122,7 +19122,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null)
+    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -19146,27 +19146,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19213,7 +19213,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19231,7 +19231,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19263,7 +19263,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    public async Task<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsAsync(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null)
+    public async Task<WorkdayValuesTrend> GetGamificationScorecardsUsersValuesTrendsAsync(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = await GetGamificationScorecardsUsersValuesTrendsAsyncWithHttpInfo(filterType, filterId, startWorkday, endWorkday, timeZone);
         return localVarResponse.Data;
@@ -19282,7 +19282,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUsersValuesTrendsAsyncWithHttpInfo(string filterType, string filterId, String startWorkday, String endWorkday, string timeZone = null)
+    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsUsersValuesTrendsAsyncWithHttpInfo(string filterType, string filterId, string startWorkday, string endWorkday, string timeZone = null)
     {
         // verify the required parameter 'filterType' is set
         if (filterType == null)
@@ -19309,27 +19309,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/users/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19376,7 +19376,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19394,7 +19394,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19424,7 +19424,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>SingleWorkdayAverageValues</returns>
 
-    public SingleWorkdayAverageValues GetGamificationScorecardsValuesAverage(String workday, string timeZone = null)
+    public SingleWorkdayAverageValues GetGamificationScorecardsValuesAverage(string workday, string timeZone = null)
     {
         ApiResponse<SingleWorkdayAverageValues> localVarResponse = GetGamificationScorecardsValuesAverageWithHttpInfo(workday, timeZone);
         return localVarResponse.Data;
@@ -19439,7 +19439,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of SingleWorkdayAverageValues</returns>
 
-    public ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageWithHttpInfo(String workday, string timeZone = null)
+    public ApiResponse<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageWithHttpInfo(string workday, string timeZone = null)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -19448,27 +19448,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/values/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19500,7 +19500,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19518,7 +19518,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19547,7 +19547,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of SingleWorkdayAverageValues</returns>
 
-    public async Task<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageAsync(String workday, string timeZone = null)
+    public async Task<SingleWorkdayAverageValues> GetGamificationScorecardsValuesAverageAsync(string workday, string timeZone = null)
     {
         ApiResponse<SingleWorkdayAverageValues> localVarResponse = await GetGamificationScorecardsValuesAverageAsyncWithHttpInfo(workday, timeZone);
         return localVarResponse.Data;
@@ -19563,7 +19563,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (SingleWorkdayAverageValues)</returns>
 
-    public async Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsValuesAverageAsyncWithHttpInfo(String workday, string timeZone = null)
+    public async Task<ApiResponse<SingleWorkdayAverageValues>> GetGamificationScorecardsValuesAverageAsyncWithHttpInfo(string workday, string timeZone = null)
     {
         // verify the required parameter 'workday' is set
         if (workday == null)
@@ -19572,27 +19572,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/values/average";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19624,7 +19624,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19642,7 +19642,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19675,7 +19675,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>WorkdayValuesTrend</returns>
 
-    public WorkdayValuesTrend GetGamificationScorecardsValuesTrends(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public WorkdayValuesTrend GetGamificationScorecardsValuesTrends(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = GetGamificationScorecardsValuesTrendsWithHttpInfo(startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -19693,7 +19693,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>ApiResponse of WorkdayValuesTrend</returns>
 
-    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsWithHttpInfo(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public ApiResponse<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsWithHttpInfo(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -19707,27 +19707,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19774,7 +19774,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19792,7 +19792,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19824,7 +19824,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of WorkdayValuesTrend</returns>
 
-    public async Task<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsAsync(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<WorkdayValuesTrend> GetGamificationScorecardsValuesTrendsAsync(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         ApiResponse<WorkdayValuesTrend> localVarResponse = await GetGamificationScorecardsValuesTrendsAsyncWithHttpInfo(startWorkday, endWorkday, filterType, referenceWorkday, timeZone);
         return localVarResponse.Data;
@@ -19843,7 +19843,7 @@ public partial class GamificationApi : IGamificationApi
     /// <param name="timeZone">Timezone for the workday. Defaults to UTC (optional, default to "UTC")</param>
     /// <returns>Task of ApiResponse (WorkdayValuesTrend)</returns>
 
-    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsValuesTrendsAsyncWithHttpInfo(String startWorkday, String endWorkday, string filterType = null, String referenceWorkday = null, string timeZone = null)
+    public async Task<ApiResponse<WorkdayValuesTrend>> GetGamificationScorecardsValuesTrendsAsyncWithHttpInfo(string startWorkday, string endWorkday, string filterType = null, string referenceWorkday = null, string timeZone = null)
     {
         // verify the required parameter 'startWorkday' is set
         if (startWorkday == null)
@@ -19858,27 +19858,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/scorecards/values/trends";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -19925,7 +19925,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -19943,7 +19943,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -19988,27 +19988,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/status";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20031,7 +20031,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20049,7 +20049,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20094,27 +20094,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/status";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20137,7 +20137,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20155,7 +20155,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20207,27 +20207,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/templates/{templateId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20254,7 +20254,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20272,7 +20272,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20324,27 +20324,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/templates/{templateId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20371,7 +20371,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20389,7 +20389,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20434,27 +20434,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/templates";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20477,7 +20477,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20495,7 +20495,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20540,27 +20540,27 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/gamification/templates";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20583,7 +20583,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20601,7 +20601,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20660,28 +20660,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20717,7 +20717,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20735,7 +20735,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20795,28 +20795,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20852,7 +20852,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -20870,7 +20870,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -20929,28 +20929,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -20986,7 +20986,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21004,7 +21004,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21064,28 +21064,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21121,7 +21121,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21139,7 +21139,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21186,28 +21186,28 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/data";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21239,7 +21239,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21257,7 +21257,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21304,28 +21304,28 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/data";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21357,7 +21357,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21375,7 +21375,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21422,28 +21422,28 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21475,7 +21475,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21493,7 +21493,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21540,28 +21540,28 @@ public partial class GamificationApi : IGamificationApi
     {
 
         var localVarPath = "/api/v2/employeeperformance/externalmetrics/definitions";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21593,7 +21593,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21611,7 +21611,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21663,28 +21663,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21716,7 +21716,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21734,7 +21734,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21786,28 +21786,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21839,7 +21839,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21857,7 +21857,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -21909,28 +21909,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/uploads/prizeimages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -21962,7 +21962,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -21980,7 +21980,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22032,28 +22032,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/uploads/prizeimages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22085,7 +22085,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22103,7 +22103,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22155,27 +22155,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/activate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22202,7 +22202,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22220,7 +22220,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22272,27 +22272,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/activate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22319,7 +22319,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22337,7 +22337,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22389,27 +22389,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/deactivate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22436,7 +22436,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22454,7 +22454,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22506,27 +22506,27 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/deactivate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22553,7 +22553,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22571,7 +22571,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22630,28 +22630,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22687,7 +22687,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22705,7 +22705,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22765,28 +22765,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22822,7 +22822,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22840,7 +22840,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -22899,28 +22899,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members/validate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -22956,7 +22956,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -22974,7 +22974,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23034,28 +23034,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/members/validate";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23091,7 +23091,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23109,7 +23109,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23175,28 +23175,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23237,7 +23237,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23255,7 +23255,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23323,28 +23323,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{sourceProfileId}/metrics/{sourceMetricId}/link";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23385,7 +23385,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23403,7 +23403,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23462,28 +23462,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23519,7 +23519,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23537,7 +23537,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23597,28 +23597,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23654,7 +23654,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23672,7 +23672,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23726,28 +23726,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23783,7 +23783,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23801,7 +23801,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23855,28 +23855,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -23912,7 +23912,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -23930,7 +23930,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -23989,28 +23989,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/{userId}/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24046,7 +24046,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24064,7 +24064,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24124,28 +24124,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/{userId}/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24181,7 +24181,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24199,7 +24199,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24251,28 +24251,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/me/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24304,7 +24304,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24322,7 +24322,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24374,28 +24374,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/users/me/query";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24427,7 +24427,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24445,7 +24445,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24504,28 +24504,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24561,7 +24561,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24579,7 +24579,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24639,28 +24639,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/contests/{contestId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24696,7 +24696,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24714,7 +24714,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24768,28 +24768,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24825,7 +24825,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24843,7 +24843,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -24897,28 +24897,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -24954,7 +24954,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -24972,7 +24972,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -25038,28 +25038,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25100,7 +25100,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -25118,7 +25118,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -25186,28 +25186,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/profiles/{profileId}/metrics/{metricId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25248,7 +25248,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -25266,7 +25266,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -25318,28 +25318,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/status";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25371,7 +25371,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -25389,7 +25389,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -25441,28 +25441,28 @@ public partial class GamificationApi : IGamificationApi
         }
 
         var localVarPath = "/api/v2/gamification/status";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -25494,7 +25494,7 @@ public partial class GamificationApi : IGamificationApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -25512,7 +25512,7 @@ public partial class GamificationApi : IGamificationApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)

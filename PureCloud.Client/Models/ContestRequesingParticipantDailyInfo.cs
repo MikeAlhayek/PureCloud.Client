@@ -15,7 +15,7 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
     /// </summary>
     /// <param name="DateWorkday">Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="ContestScore">The Contest score.</param>
-    public ContestRequesingParticipantDailyInfo(String DateWorkday = null, ContestScoreRanked ContestScore = null)
+    public ContestRequesingParticipantDailyInfo(string DateWorkday = null, ContestScoreRanked ContestScore = null)
     {
         this.DateWorkday = DateWorkday;
         this.ContestScore = ContestScore;
@@ -29,7 +29,7 @@ public partial class ContestRequesingParticipantDailyInfo : IEquatable<ContestRe
     /// </summary>
     /// <value>Workday of the contest info. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
-    public String DateWorkday { get; set; }
+    public string DateWorkday { get; set; }
 
 
 

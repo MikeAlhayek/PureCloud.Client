@@ -25,7 +25,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// <param name="Advanced">Advanced configuration described by the schema in the advancedSchemaUri field. (required).</param>
     /// <param name="Notes">Notes about the integration. (required).</param>
     /// <param name="Credentials">Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type (required).</param>
-    public IntegrationConfiguration(string Name = null, int? Version = null, Object Properties = null, Object Advanced = null, string Notes = null, Dictionary<string, CredentialInfo> Credentials = null)
+    public IntegrationConfiguration(string Name = null, int? Version = null, object Properties = null, object Advanced = null, string Notes = null, Dictionary<string, CredentialInfo> Credentials = null)
     {
         this.Name = Name;
         this.Version = Version;
@@ -70,7 +70,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// </summary>
     /// <value>Key-value configuration settings described by the schema in the propertiesSchemaUri field.</value>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Object Properties { get; set; }
+    public object Properties { get; set; }
 
 
 
@@ -79,7 +79,7 @@ public partial class IntegrationConfiguration : IEquatable<IntegrationConfigurat
     /// </summary>
     /// <value>Advanced configuration described by the schema in the advancedSchemaUri field.</value>
     [DataMember(Name = "advanced", EmitDefaultValue = false)]
-    public Object Advanced { get; set; }
+    public object Advanced { get; set; }
 
 
 

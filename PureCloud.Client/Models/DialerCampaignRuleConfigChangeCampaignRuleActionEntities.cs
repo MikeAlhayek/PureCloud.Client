@@ -17,7 +17,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
     /// <param name="Campaigns">A list of campaignIds to act on.</param>
     /// <param name="Sequences">A list of sequenceIds to act on.</param>
-    public DialerCampaignRuleConfigChangeCampaignRuleActionEntities(bool? UseTriggeringEntity = null, Dictionary<string, Object> AdditionalProperties = null, List<DialerCampaignRuleConfigChangeUriReference> Campaigns = null, List<DialerCampaignRuleConfigChangeUriReference> Sequences = null)
+    public DialerCampaignRuleConfigChangeCampaignRuleActionEntities(bool? UseTriggeringEntity = null, Dictionary<string, object> AdditionalProperties = null, List<DialerCampaignRuleConfigChangeUriReference> Campaigns = null, List<DialerCampaignRuleConfigChangeUriReference> Sequences = null)
     {
         this.UseTriggeringEntity = UseTriggeringEntity;
         this.AdditionalProperties = AdditionalProperties;
@@ -41,7 +41,7 @@ public partial class DialerCampaignRuleConfigChangeCampaignRuleActionEntities : 
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

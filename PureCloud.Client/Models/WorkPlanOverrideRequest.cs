@@ -62,7 +62,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// <param name="StartDate">The start date in yyyy-MM-dd format for the updated work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="WeekCount">The week count of the updated work plan, required if action is Add or Update.</param>
     /// <param name="WorkPlanId">The updated work plan id.</param>
-    public WorkPlanOverrideRequest(ActionEnum? Action = null, String StartDate = null, int? WeekCount = null, string WorkPlanId = null)
+    public WorkPlanOverrideRequest(ActionEnum? Action = null, string StartDate = null, int? WeekCount = null, string WorkPlanId = null)
     {
         this.Action = Action;
         this.StartDate = StartDate;
@@ -80,7 +80,7 @@ public partial class WorkPlanOverrideRequest : IEquatable<WorkPlanOverrideReques
     /// </summary>
     /// <value>The start date in yyyy-MM-dd format for the updated work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

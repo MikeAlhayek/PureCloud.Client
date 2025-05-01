@@ -25,7 +25,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The start workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; private set; }
 
 
 
@@ -34,7 +34,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The end workday for the query range for the metric value trend. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; private set; }
 
 
 
@@ -43,7 +43,7 @@ public partial class WorkdayValuesTrend : IEquatable<WorkdayValuesTrend>
     /// </summary>
     /// <value>The reference workday used to determine the metric definition. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateReferenceWorkday", EmitDefaultValue = false)]
-    public String DateReferenceWorkday { get; private set; }
+    public string DateReferenceWorkday { get; private set; }
 
 
 

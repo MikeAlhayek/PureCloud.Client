@@ -17,7 +17,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// <param name="Type">type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;.</param>
     /// <param name="CallableTimeColumn">name of the column indicating the timezone to be considered for determining callable times.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerContactlistConfigChangeContactPhoneNumberColumn(string ColumnName = null, string Type = null, string CallableTimeColumn = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerContactlistConfigChangeContactPhoneNumberColumn(string ColumnName = null, string Type = null, string CallableTimeColumn = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.ColumnName = ColumnName;
         this.Type = Type;
@@ -59,7 +59,7 @@ public partial class DialerContactlistConfigChangeContactPhoneNumberColumn : IEq
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

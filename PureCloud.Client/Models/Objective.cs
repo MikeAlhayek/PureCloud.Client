@@ -163,7 +163,7 @@ public partial class Objective : IEquatable<Objective>
     /// <param name="EvaluationFormContextIds">The ids of associated evaluation form context, for Quality Evaluation Score metrics.</param>
     /// <param name="InitialDirection">The initial direction to filter on.</param>
     /// <param name="DateStart">start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public Objective(string TemplateId = null, List<ObjectiveZone> Zones = null, bool? Enabled = null, List<MediaTypesEnum> MediaTypes = null, List<AddressableEntityRef> Queues = null, List<AddressableEntityRef> Topics = null, TopicIdsFilterTypeEnum? TopicIdsFilterType = null, List<string> EvaluationFormContextIds = null, InitialDirectionEnum? InitialDirection = null, String DateStart = null)
+    public Objective(string TemplateId = null, List<ObjectiveZone> Zones = null, bool? Enabled = null, List<MediaTypesEnum> MediaTypes = null, List<AddressableEntityRef> Queues = null, List<AddressableEntityRef> Topics = null, TopicIdsFilterTypeEnum? TopicIdsFilterType = null, List<string> EvaluationFormContextIds = null, InitialDirectionEnum? InitialDirection = null, string DateStart = null)
     {
         this.TemplateId = TemplateId;
         this.Zones = Zones;
@@ -261,7 +261,7 @@ public partial class Objective : IEquatable<Objective>
     /// </summary>
     /// <value>start date of the objective. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
     /// <summary>

@@ -59,7 +59,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// <param name="Description">Description.</param>
     /// <param name="PresetAttributes">Map of names and values of preset attributes to use in policy evaluation.</param>
     /// <param name="Active">Flag for active enforcement. If this value is false or null, the policy will be saved but will not be checked or enforced on users..</param>
-    public AuthorizationPolicy(string Name = null, Subject Subject = null, EffectEnum? Effect = null, Object Condition = null, string Description = null, Dictionary<string, TypedAttribute> PresetAttributes = null, bool? Active = null)
+    public AuthorizationPolicy(string Name = null, Subject Subject = null, EffectEnum? Effect = null, object Condition = null, string Description = null, Dictionary<string, TypedAttribute> PresetAttributes = null, bool? Active = null)
     {
         this.Name = Name;
         this.Subject = Subject;
@@ -115,7 +115,7 @@ public partial class AuthorizationPolicy : IEquatable<AuthorizationPolicy>
     /// </summary>
     /// <value>The condition tree the policy will evaluate</value>
     [DataMember(Name = "condition", EmitDefaultValue = false)]
-    public Object Condition { get; set; }
+    public object Condition { get; set; }
 
 
 

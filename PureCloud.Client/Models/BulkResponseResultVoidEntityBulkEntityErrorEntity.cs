@@ -17,7 +17,7 @@ public partial class BulkResponseResultVoidEntityBulkEntityErrorEntity : IEquata
     /// <param name="Success">Whether the requested operation completed successfully..</param>
     /// <param name="Entity">The entity which was affected by this Bulk operation. Only returned on success..</param>
     /// <param name="Error">An error describing why this Bulk operation failed. Only returned on failure..</param>
-    public BulkResponseResultVoidEntityBulkEntityErrorEntity(string Id = null, bool? Success = null, Object Entity = null, BulkEntityErrorEntity Error = null)
+    public BulkResponseResultVoidEntityBulkEntityErrorEntity(string Id = null, bool? Success = null, object Entity = null, BulkEntityErrorEntity Error = null)
     {
         this.Id = Id;
         this.Success = Success;
@@ -51,7 +51,7 @@ public partial class BulkResponseResultVoidEntityBulkEntityErrorEntity : IEquata
     /// </summary>
     /// <value>The entity which was affected by this Bulk operation. Only returned on success.</value>
     [DataMember(Name = "entity", EmitDefaultValue = false)]
-    public Object Entity { get; set; }
+    public object Entity { get; set; }
 
 
 

@@ -15,7 +15,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// </summary>
     /// <param name="WeekDate">The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="BusinessUnit">The start week date for this schedule.</param>
-    public BuScheduleReferenceForMuRoute(String WeekDate = null, BusinessUnitReference BusinessUnit = null)
+    public BuScheduleReferenceForMuRoute(string WeekDate = null, BusinessUnitReference BusinessUnit = null)
     {
         this.WeekDate = WeekDate;
         this.BusinessUnit = BusinessUnit;
@@ -38,7 +38,7 @@ public partial class BuScheduleReferenceForMuRoute : IEquatable<BuScheduleRefere
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

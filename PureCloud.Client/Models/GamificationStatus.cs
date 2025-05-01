@@ -17,7 +17,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// <param name="DateStart">Gamification start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="AutomaticUserAssignment">Automatic assignment of users to the default profile.</param>
     /// <param name="DateStartPersonalBest">Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public GamificationStatus(bool? IsActive = null, String DateStart = null, bool? AutomaticUserAssignment = null, String DateStartPersonalBest = null)
+    public GamificationStatus(bool? IsActive = null, string DateStart = null, bool? AutomaticUserAssignment = null, string DateStartPersonalBest = null)
     {
         this.IsActive = IsActive;
         this.DateStart = DateStart;
@@ -42,7 +42,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// </summary>
     /// <value>Gamification start date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -60,7 +60,7 @@ public partial class GamificationStatus : IEquatable<GamificationStatus>
     /// </summary>
     /// <value>Personal best aggregation starting date. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartPersonalBest", EmitDefaultValue = false)]
-    public String DateStartPersonalBest { get; set; }
+    public string DateStartPersonalBest { get; set; }
 
 
     /// <summary>

@@ -18,7 +18,7 @@ public partial class Education : IEquatable<Education>
     /// <param name="Notes">Notes about education has a 2000 character limit.</param>
     /// <param name="DateStart">Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="DateEnd">Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public Education(string School = null, string FieldOfStudy = null, string Notes = null, String DateStart = null, String DateEnd = null)
+    public Education(string School = null, string FieldOfStudy = null, string Notes = null, string DateStart = null, string DateEnd = null)
     {
         this.School = School;
         this.FieldOfStudy = FieldOfStudy;
@@ -60,7 +60,7 @@ public partial class Education : IEquatable<Education>
     /// </summary>
     /// <value>Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -69,7 +69,7 @@ public partial class Education : IEquatable<Education>
     /// </summary>
     /// <value>Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
     /// <summary>

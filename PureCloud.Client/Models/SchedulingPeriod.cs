@@ -21,7 +21,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     /// </summary>
     /// <param name="EarliestStartDate">The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="LatestEndDate">The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public SchedulingPeriod(String EarliestStartDate = null, String LatestEndDate = null)
+    public SchedulingPeriod(string EarliestStartDate = null, string LatestEndDate = null)
     {
         this.EarliestStartDate = EarliestStartDate;
         this.LatestEndDate = LatestEndDate;
@@ -35,7 +35,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     /// </summary>
     /// <value>The earliest date the associated activity plan can begin, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "earliestStartDate", EmitDefaultValue = false)]
-    public String EarliestStartDate { get; set; }
+    public string EarliestStartDate { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class SchedulingPeriod : IEquatable<SchedulingPeriod>
     /// </summary>
     /// <value>The latest date the associated activity plan can end, in YYYY-MM-DD format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "latestEndDate", EmitDefaultValue = false)]
-    public String LatestEndDate { get; set; }
+    public string LatestEndDate { get; set; }
 
 
     /// <summary>

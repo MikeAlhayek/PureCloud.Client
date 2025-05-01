@@ -56,26 +56,26 @@ public static class AuthExtensions
             apiClient.ClientSecret = clientSecret;
         }
 
-        var pathParams = new Dictionary<String, String>();
-        var queryParams = new Dictionary<String, String>();
-        var headerParams = new Dictionary<String, String>(apiClient.Configuration.DefaultHeader);
-        var formParams = new Dictionary<String, String>();
-        var fileParams = new Dictionary<String, FileParameter>();
-        Object postBody = null;
+        var pathParams = new Dictionary<string, string>();
+        var queryParams = new Dictionary<string, string>();
+        var headerParams = new Dictionary<string, string>(apiClient.Configuration.DefaultHeader);
+        var formParams = new Dictionary<string, string>();
+        var fileParams = new Dictionary<string, FileParameter>();
+        object postBody = null;
 
         // to determine the Content-Type header
-        String[] httpContentTypes = new String[]
+        string[] httpContentTypes = new string[]
         {
             "application/x-www-form-urlencoded"
         };
-        String httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
+        string httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
 
         // to determine the Accept header
-        String[] httpHeaderAccepts = new String[]
+        string[] httpHeaderAccepts = new string[]
         {
             "application/json"
         };
-        String httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
+        string httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAccept != null)
         {
             headerParams.Add("Accept", httpHeaderAccept);
@@ -130,7 +130,7 @@ public static class AuthExtensions
             response.Headers
              .GroupBy(header => header?.Name)
              .Select(header => new { Name = header?.FirstOrDefault()?.Name, Value = header.Select(x => x?.Value)?.ToList() })
-                                .ToDictionary(header => header.Name.ToString(), header => String.Join(", ", header?.Value?.ToArray())),
+                                .ToDictionary(header => header.Name.ToString(), header => string.Join(", ", header?.Value?.ToArray())),
             authTokenInfo,
             response.Content,
             response.StatusDescription);
@@ -171,26 +171,26 @@ public static class AuthExtensions
             apiClient.Configuration = new Configuration(apiClient);
         }
 
-        var pathParams = new Dictionary<String, String>();
-        var queryParams = new Dictionary<String, String>();
-        var headerParams = new Dictionary<String, String>(apiClient.Configuration.DefaultHeader);
-        var formParams = new Dictionary<String, String>();
-        var fileParams = new Dictionary<String, FileParameter>();
-        Object postBody = null;
+        var pathParams = new Dictionary<string, string>();
+        var queryParams = new Dictionary<string, string>();
+        var headerParams = new Dictionary<string, string>(apiClient.Configuration.DefaultHeader);
+        var formParams = new Dictionary<string, string>();
+        var fileParams = new Dictionary<string, FileParameter>();
+        object postBody = null;
 
         // to determine the Content-Type header
-        String[] httpContentTypes = new String[]
+        string[] httpContentTypes = new string[]
         {
             "application/x-www-form-urlencoded"
         };
-        String httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
+        string httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
 
         // to determine the Accept header
-        String[] httpHeaderAccepts = new String[]
+        string[] httpHeaderAccepts = new string[]
         {
             "application/json"
         };
-        String httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
+        string httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAccept != null)
         {
             headerParams.Add("Accept", httpHeaderAccept);
@@ -230,7 +230,7 @@ public static class AuthExtensions
             response.Headers
              .GroupBy(header => header?.Name)
              .Select(header => new { Name = header?.FirstOrDefault()?.Name, Value = header.Select(x => x?.Value)?.ToList() })
-                                .ToDictionary(header => header.Name.ToString(), header => String.Join(", ", header?.Value?.ToArray())),
+                                .ToDictionary(header => header.Name.ToString(), header => string.Join(", ", header?.Value?.ToArray())),
             authTokenInfo,
             response.Content,
             response.StatusDescription);
@@ -250,10 +250,10 @@ public static class AuthExtensions
         }
 
         // String that contain both alphabets and numbers
-        String unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
+        string unreservedCharacters = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz-._~";
         // Initializing the empty string
         Random res = new Random();
-        String randomString = "";
+        string randomString = "";
         for (int i = 0; i < length; i++)
         {
             // Selecting an index randomly
@@ -322,26 +322,26 @@ public static class AuthExtensions
             apiClient.Configuration = new Configuration(apiClient);
         }
 
-        var pathParams = new Dictionary<String, String>();
-        var queryParams = new Dictionary<String, String>();
-        var headerParams = new Dictionary<String, String>(apiClient.Configuration.DefaultHeader);
-        var formParams = new Dictionary<String, String>();
-        var fileParams = new Dictionary<String, FileParameter>();
-        Object postBody = null;
+        var pathParams = new Dictionary<string, string>();
+        var queryParams = new Dictionary<string, string>();
+        var headerParams = new Dictionary<string, string>(apiClient.Configuration.DefaultHeader);
+        var formParams = new Dictionary<string, string>();
+        var fileParams = new Dictionary<string, FileParameter>();
+        object postBody = null;
 
         // to determine the Content-Type header
-        String[] httpContentTypes = new String[]
+        string[] httpContentTypes = new string[]
         {
             "application/x-www-form-urlencoded"
         };
-        String httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
+        string httpContentType = apiClient.SelectHeaderContentType(httpContentTypes);
 
         // to determine the Accept header
-        String[] httpHeaderAccepts = new String[]
+        string[] httpHeaderAccepts = new string[]
         {
             "application/json"
         };
-        String httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
+        string httpHeaderAccept = apiClient.SelectHeaderAccept(httpHeaderAccepts);
         if (httpHeaderAccept != null)
         {
             headerParams.Add("Accept", httpHeaderAccept);
@@ -378,17 +378,17 @@ public static class AuthExtensions
             response.Headers
              .GroupBy(header => header?.Name)
              .Select(header => new { Name = header?.FirstOrDefault()?.Name, Value = header.Select(x => x?.Value)?.ToList() })
-                                .ToDictionary(header => header.Name.ToString(), header => String.Join(", ", header?.Value?.ToArray())),
+                                .ToDictionary(header => header.Name.ToString(), header => string.Join(", ", header?.Value?.ToArray())),
             authTokenInfo,
             response.Content,
             response.StatusDescription);
     }
 
-    private static Object CallTokenApi(ApiClient apiClient,
-        String path, RestSharp.Method method, Dictionary<String, String> queryParams, Object postBody,
-        Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-        Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-        String contentType)
+    private static object CallTokenApi(ApiClient apiClient,
+        string path, RestSharp.Method method, Dictionary<string, string> queryParams, object postBody,
+        Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        string contentType)
     {
         var authUri = apiClient.GetConfUri("login", apiClient.ClientOptions.BaseUrl);
         var options = new RestClientOptions(authUri);
@@ -419,7 +419,7 @@ public static class AuthExtensions
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
         apiClient.Configuration.Logger.LogDebug(method.ToString(), url, postBody, statusCode, headerParams);
 
@@ -431,18 +431,18 @@ public static class AuthExtensions
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
         }
 
-        return (Object)response;
+        return (object)response;
     }
 
     private static RestRequest PrepareTokenRequest(
-        String path, RestSharp.Method method, Dictionary<String, String> queryParams, Object postBody,
-        Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-        Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-        String contentType)
+        string path, RestSharp.Method method, Dictionary<string, string> queryParams, object postBody,
+        Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        string contentType)
     {
         var request = new RestRequest(path, method);
 
@@ -478,7 +478,7 @@ public static class AuthExtensions
 
         if (postBody != null) // http body (model or byte[]) parameter
         {
-            if (postBody.GetType() == typeof(String))
+            if (postBody.GetType() == typeof(string))
             {
                 request.AddParameter("application/json", postBody, ParameterType.RequestBody);
             }

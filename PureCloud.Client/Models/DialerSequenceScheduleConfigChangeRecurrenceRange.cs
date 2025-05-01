@@ -54,7 +54,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// <param name="End">the range end date.</param>
     /// <param name="NumberOfOccurrences">the number of occurrences to happen before ending.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerSequenceScheduleConfigChangeRecurrenceRange(TypeEnum? Type = null, string End = null, long? NumberOfOccurrences = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerSequenceScheduleConfigChangeRecurrenceRange(TypeEnum? Type = null, string End = null, long? NumberOfOccurrences = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Type = Type;
         this.End = End;
@@ -89,7 +89,7 @@ public partial class DialerSequenceScheduleConfigChangeRecurrenceRange : IEquata
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

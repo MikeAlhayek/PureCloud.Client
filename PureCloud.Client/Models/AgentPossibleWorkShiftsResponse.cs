@@ -18,7 +18,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// <param name="WeeklyPossibleWorkShifts">Each element is a weekly effective work plan that can be used for multiple weeks.</param>
     /// <param name="SchedulerIntervalLengthMinutes">Number of minutes in each interval in the intervalScheduleProbabilities.</param>
     /// <param name="TimeZone">The time zone of the business unit.</param>
-    public AgentPossibleWorkShiftsResponse(String WeekStartDate = null, List<int?> Pattern = null, List<PossibleWorkShiftsForWeek> WeeklyPossibleWorkShifts = null, int? SchedulerIntervalLengthMinutes = null, string TimeZone = null)
+    public AgentPossibleWorkShiftsResponse(string WeekStartDate = null, List<int?> Pattern = null, List<PossibleWorkShiftsForWeek> WeeklyPossibleWorkShifts = null, int? SchedulerIntervalLengthMinutes = null, string TimeZone = null)
     {
         this.WeekStartDate = WeekStartDate;
         this.Pattern = Pattern;
@@ -35,7 +35,7 @@ public partial class AgentPossibleWorkShiftsResponse : IEquatable<AgentPossibleW
     /// </summary>
     /// <value>Start date of requested effective work plan. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekStartDate", EmitDefaultValue = false)]
-    public String WeekStartDate { get; set; }
+    public string WeekStartDate { get; set; }
 
 
 

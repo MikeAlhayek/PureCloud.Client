@@ -21,7 +21,7 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
     /// </summary>
     /// <param name="WeekStartDate">Start date of requested effective work plan, day of week will be in line with business unit start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="WeekCount">Number of weeks for which to return possible work shifts (required).</param>
-    public AgentPossibleWorkShiftsRequest(String WeekStartDate = null, int? WeekCount = null)
+    public AgentPossibleWorkShiftsRequest(string WeekStartDate = null, int? WeekCount = null)
     {
         this.WeekStartDate = WeekStartDate;
         this.WeekCount = WeekCount;
@@ -35,7 +35,7 @@ public partial class AgentPossibleWorkShiftsRequest : IEquatable<AgentPossibleWo
     /// </summary>
     /// <value>Start date of requested effective work plan, day of week will be in line with business unit start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekStartDate", EmitDefaultValue = false)]
-    public String WeekStartDate { get; set; }
+    public string WeekStartDate { get; set; }
 
 
 

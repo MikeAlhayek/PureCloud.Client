@@ -104,7 +104,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// <param name="InitiatingShiftDate">The start date and time of the initiating shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z (required).</param>
     /// <param name="ReceivingUser">The user on the receiving side of this alternative shift trade.</param>
     /// <param name="ReceivingShiftDate">The start date and time of the receiving alternative shift. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
-    public AlternativeShiftNotification(String WeekDate = null, GranularityEnum? Granularity = null, NewStateEnum? NewState = null, UserReference InitiatingUser = null, DateTime? InitiatingShiftDate = null, UserReference ReceivingUser = null, DateTime? ReceivingShiftDate = null)
+    public AlternativeShiftNotification(string WeekDate = null, GranularityEnum? Granularity = null, NewStateEnum? NewState = null, UserReference InitiatingUser = null, DateTime? InitiatingShiftDate = null, UserReference ReceivingUser = null, DateTime? ReceivingShiftDate = null)
     {
         this.WeekDate = WeekDate;
         this.Granularity = Granularity;
@@ -132,7 +132,7 @@ public partial class AlternativeShiftNotification : IEquatable<AlternativeShiftN
     /// </summary>
     /// <value>The start date of the schedule with which this trade is associated. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

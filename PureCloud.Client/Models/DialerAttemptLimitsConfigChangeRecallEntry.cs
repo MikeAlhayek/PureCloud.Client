@@ -16,7 +16,7 @@ public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<Dia
     /// <param name="NbrAttempts">The number of recall attempts to make.</param>
     /// <param name="MinutesBetweenAttempts">How long to wait between recall attempts.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerAttemptLimitsConfigChangeRecallEntry(long? NbrAttempts = null, long? MinutesBetweenAttempts = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerAttemptLimitsConfigChangeRecallEntry(long? NbrAttempts = null, long? MinutesBetweenAttempts = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.NbrAttempts = NbrAttempts;
         this.MinutesBetweenAttempts = MinutesBetweenAttempts;
@@ -48,7 +48,7 @@ public partial class DialerAttemptLimitsConfigChangeRecallEntry : IEquatable<Dia
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

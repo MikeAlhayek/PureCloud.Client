@@ -17,7 +17,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// <param name="StopTime">The stop time of this time slot.</param>
     /// <param name="Day">The day this time slot applies.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCallabletimesetConfigChangeTimeSlot(string StartTime = null, string StopTime = null, long? Day = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCallabletimesetConfigChangeTimeSlot(string StartTime = null, string StopTime = null, long? Day = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.StartTime = StartTime;
         this.StopTime = StopTime;
@@ -59,7 +59,7 @@ public partial class DialerCallabletimesetConfigChangeTimeSlot : IEquatable<Dial
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

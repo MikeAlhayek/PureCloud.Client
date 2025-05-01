@@ -23,7 +23,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// <param name="Results">Search results (required).</param>
     /// <param name="Aggregations">Aggregations.</param>
     /// <param name="Cursor">The page cursor.</param>
-    public JsonCursorSearchResponse(List<string> Types = null, Object Results = null, Object Aggregations = null, string Cursor = null)
+    public JsonCursorSearchResponse(List<string> Types = null, object Results = null, object Aggregations = null, string Cursor = null)
     {
         this.Types = Types;
         this.Results = Results;
@@ -48,7 +48,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// </summary>
     /// <value>Search results</value>
     [DataMember(Name = "results", EmitDefaultValue = false)]
-    public Object Results { get; set; }
+    public object Results { get; set; }
 
 
 
@@ -56,7 +56,7 @@ public partial class JsonCursorSearchResponse : IEquatable<JsonCursorSearchRespo
     /// Gets or Sets Aggregations
     /// </summary>
     [DataMember(Name = "aggregations", EmitDefaultValue = false)]
-    public Object Aggregations { get; set; }
+    public object Aggregations { get; set; }
 
 
 

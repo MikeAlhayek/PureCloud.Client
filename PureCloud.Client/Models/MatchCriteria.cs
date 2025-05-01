@@ -110,7 +110,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// <param name="Operator">The type of operation to perform for matching check.</param>
     /// <param name="Value">The value to match on. Only one of value and values can be included.</param>
     /// <param name="Values">The list of values to match on. Only one of value and values can be included.</param>
-    public MatchCriteria(string JsonPath = null, OperatorEnum? Operator = null, Object Value = null, List<Object> Values = null)
+    public MatchCriteria(string JsonPath = null, OperatorEnum? Operator = null, object Value = null, List<object> Values = null)
     {
         this.JsonPath = JsonPath;
         this.Operator = Operator;
@@ -137,7 +137,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// </summary>
     /// <value>The value to match on. Only one of value and values can be included</value>
     [DataMember(Name = "value", EmitDefaultValue = false)]
-    public Object Value { get; set; }
+    public object Value { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class MatchCriteria : IEquatable<MatchCriteria>
     /// </summary>
     /// <value>The list of values to match on. Only one of value and values can be included</value>
     [DataMember(Name = "values", EmitDefaultValue = false)]
-    public List<Object> Values { get; set; }
+    public List<object> Values { get; set; }
 
 
     /// <summary>

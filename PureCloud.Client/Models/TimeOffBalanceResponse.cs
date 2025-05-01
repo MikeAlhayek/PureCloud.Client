@@ -24,7 +24,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// <param name="HrisTimeOffTypeSecondaryId">The secondary ID of the time off type configured in HRIS integration.</param>
     /// <param name="StartDate">The Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="BalanceMinutesPerDay">The list of available time off balance values in minutes for each day.</param>
-    public TimeOffBalanceResponse(string ActivityCodeId = null, string HrisTimeOffTypeId = null, string HrisTimeOffTypeSecondaryId = null, String StartDate = null, List<int?> BalanceMinutesPerDay = null)
+    public TimeOffBalanceResponse(string ActivityCodeId = null, string HrisTimeOffTypeId = null, string HrisTimeOffTypeSecondaryId = null, string StartDate = null, List<int?> BalanceMinutesPerDay = null)
     {
         this.ActivityCodeId = ActivityCodeId;
         this.HrisTimeOffTypeId = HrisTimeOffTypeId;
@@ -68,7 +68,7 @@ public partial class TimeOffBalanceResponse : IEquatable<TimeOffBalanceResponse>
     /// </summary>
     /// <value>The Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

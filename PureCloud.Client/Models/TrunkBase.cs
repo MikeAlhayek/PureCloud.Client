@@ -107,7 +107,7 @@ public partial class TrunkBase : IEquatable<TrunkBase>
     /// <param name="Managed">Is this trunk being managed remotely. This property is synchronized with the managed property of the Edge Group to which it is assigned..</param>
     /// <param name="Site">Used to determine the media regions for inbound and outbound calls through a trunk. Also determines the dial plan to use for calls that came in on a trunk and have to be sent out on it as well..</param>
     /// <param name="InboundSite">Allows a customer to set the site to which inbound calls will be routed.</param>
-    public TrunkBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef TrunkMetabase = null, Dictionary<string, Object> Properties = null, TrunkTypeEnum? TrunkType = null, bool? Managed = null, DomainEntityRef Site = null, DomainEntityRef InboundSite = null)
+    public TrunkBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef TrunkMetabase = null, Dictionary<string, object> Properties = null, TrunkTypeEnum? TrunkType = null, bool? Managed = null, DomainEntityRef Site = null, DomainEntityRef InboundSite = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -238,7 +238,7 @@ public partial class TrunkBase : IEquatable<TrunkBase>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

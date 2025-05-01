@@ -100,7 +100,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// <param name="OutputFieldMissingResolution">The result of this predicate if the requested output field is missing from the data action&#39;s result.</param>
     /// <param name="Inverted">If true, inverts the result of evaluating this Predicate. Default is false..</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerRulesetConfigChangeDataActionConditionPredicate(string OutputField = null, OutputOperatorEnum? OutputOperator = null, string ComparisonValue = null, bool? OutputFieldMissingResolution = null, bool? Inverted = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerRulesetConfigChangeDataActionConditionPredicate(string OutputField = null, OutputOperatorEnum? OutputOperator = null, string ComparisonValue = null, bool? OutputFieldMissingResolution = null, bool? Inverted = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.OutputField = OutputField;
         this.OutputOperator = OutputOperator;
@@ -155,7 +155,7 @@ public partial class DialerRulesetConfigChangeDataActionConditionPredicate : IEq
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

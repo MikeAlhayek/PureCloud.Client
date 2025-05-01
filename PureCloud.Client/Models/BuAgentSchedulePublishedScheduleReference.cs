@@ -15,7 +15,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// </summary>
     /// <param name="WeekDate">The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="WeekCount">The number of weeks encompassed by the schedule.</param>
-    public BuAgentSchedulePublishedScheduleReference(String WeekDate = null, int? WeekCount = null)
+    public BuAgentSchedulePublishedScheduleReference(string WeekDate = null, int? WeekCount = null)
     {
         this.WeekDate = WeekDate;
         this.WeekCount = WeekCount;
@@ -38,7 +38,7 @@ public partial class BuAgentSchedulePublishedScheduleReference : IEquatable<BuAg
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

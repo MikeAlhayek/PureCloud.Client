@@ -20,7 +20,7 @@ public partial class OutboundMessagingWhatsappCampaignProgressEventCampaignProgr
     /// <param name="Percentage">numberOfContactsContacted/totalNumberOfContacts*100.</param>
     /// <param name="NumberOfContactsSkipped">A map of skipped reasons and the number of contacts associated with each..</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public OutboundMessagingWhatsappCampaignProgressEventCampaignProgress(OutboundMessagingWhatsappCampaignProgressEventUriReference Campaign = null, double? NumberOfContactsCalled = null, double? NumberOfContactsMessaged = null, double? TotalNumberOfContacts = null, long? Percentage = null, Dictionary<string, long?> NumberOfContactsSkipped = null, Dictionary<string, Object> AdditionalProperties = null)
+    public OutboundMessagingWhatsappCampaignProgressEventCampaignProgress(OutboundMessagingWhatsappCampaignProgressEventUriReference Campaign = null, double? NumberOfContactsCalled = null, double? NumberOfContactsMessaged = null, double? TotalNumberOfContacts = null, long? Percentage = null, Dictionary<string, long?> NumberOfContactsSkipped = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Campaign = Campaign;
         this.NumberOfContactsCalled = NumberOfContactsCalled;
@@ -91,7 +91,7 @@ public partial class OutboundMessagingWhatsappCampaignProgressEventCampaignProgr
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

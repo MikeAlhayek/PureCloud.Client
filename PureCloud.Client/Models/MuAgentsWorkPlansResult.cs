@@ -22,7 +22,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     /// <param name="Entities">Entities.</param>
     /// <param name="ReferenceStartWeekDate">The reference date in yyyy-MM-dd format rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="WorkPlanLookup">Map containing lookup values for agent work plans. The integer keys serves as lookup keys for effective work plan from workPlanLookupKeysPerWeek property (required).</param>
-    public MuAgentsWorkPlansResult(List<AgentWorkPlans> Entities = null, String ReferenceStartWeekDate = null, Dictionary<string, WorkPlanReference> WorkPlanLookup = null)
+    public MuAgentsWorkPlansResult(List<AgentWorkPlans> Entities = null, string ReferenceStartWeekDate = null, Dictionary<string, WorkPlanReference> WorkPlanLookup = null)
     {
         this.Entities = Entities;
         this.ReferenceStartWeekDate = ReferenceStartWeekDate;
@@ -45,7 +45,7 @@ public partial class MuAgentsWorkPlansResult : IEquatable<MuAgentsWorkPlansResul
     /// </summary>
     /// <value>The reference date in yyyy-MM-dd format rolled back to nearest BU start day of week. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "referenceStartWeekDate", EmitDefaultValue = false)]
-    public String ReferenceStartWeekDate { get; set; }
+    public string ReferenceStartWeekDate { get; set; }
 
 
 

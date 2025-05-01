@@ -18,7 +18,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// <param name="QueueId">QueueId.</param>
     /// <param name="Joined">Joined.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public QueueUserEventTopicQueueMember(string Id = null, QueueUserEventTopicUserReference User = null, string QueueId = null, bool? Joined = null, Dictionary<string, Object> AdditionalProperties = null)
+    public QueueUserEventTopicQueueMember(string Id = null, QueueUserEventTopicUserReference User = null, string QueueId = null, bool? Joined = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Id = Id;
         this.User = User;
@@ -66,7 +66,7 @@ public partial class QueueUserEventTopicQueueMember : IEquatable<QueueUserEventT
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

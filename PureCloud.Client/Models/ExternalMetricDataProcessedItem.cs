@@ -61,7 +61,7 @@ public partial class ExternalMetricDataProcessedItem : IEquatable<ExternalMetric
     /// <param name="Type">The type of the metric data. The default value is Total..</param>
     /// <param name="TotalValue">The total value of the metric data..</param>
     /// <param name="TotalCount">The total number of data points..</param>
-    public ExternalMetricDataProcessedItem(string UserId = null, string UserEmail = null, string MetricId = null, String DateOccurred = null, double? Value = null, int? Count = null, TypeEnum? Type = null, double? TotalValue = null, int? TotalCount = null)
+    public ExternalMetricDataProcessedItem(string UserId = null, string UserEmail = null, string MetricId = null, string DateOccurred = null, double? Value = null, int? Count = null, TypeEnum? Type = null, double? TotalValue = null, int? TotalCount = null)
     {
         this.UserId = UserId;
         this.UserEmail = UserEmail;
@@ -109,7 +109,7 @@ public partial class ExternalMetricDataProcessedItem : IEquatable<ExternalMetric
     /// </summary>
     /// <value>The date of the metric data. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateOccurred", EmitDefaultValue = false)]
-    public String DateOccurred { get; set; }
+    public string DateOccurred { get; set; }
 
 
 

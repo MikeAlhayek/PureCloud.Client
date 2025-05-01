@@ -21,7 +21,7 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
     /// </summary>
     /// <param name="Schedule">The existing schedule being used to find alternative shift offers (required).</param>
     /// <param name="QueryWeekDate">The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public AlternativeShiftOffersRequest(AlternativeShiftScheduleLookup Schedule = null, String QueryWeekDate = null)
+    public AlternativeShiftOffersRequest(AlternativeShiftScheduleLookup Schedule = null, string QueryWeekDate = null)
     {
         this.Schedule = Schedule;
         this.QueryWeekDate = QueryWeekDate;
@@ -44,7 +44,7 @@ public partial class AlternativeShiftOffersRequest : IEquatable<AlternativeShift
     /// </summary>
     /// <value>The start date for the week in this schedule in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "queryWeekDate", EmitDefaultValue = false)]
-    public String QueryWeekDate { get; set; }
+    public string QueryWeekDate { get; set; }
 
 
     /// <summary>

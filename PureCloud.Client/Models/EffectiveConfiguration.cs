@@ -24,7 +24,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// <param name="Name">The name of the integration, used to distinguish this integration from others of the same type. (required).</param>
     /// <param name="Notes">Notes about the integration. (required).</param>
     /// <param name="Credentials">Credentials required by the integration. The required keys are indicated in the credentials property of the Integration Type (required).</param>
-    public EffectiveConfiguration(Dictionary<string, Object> Properties = null, Dictionary<string, Object> Advanced = null, string Name = null, string Notes = null, Dictionary<string, CredentialInfo> Credentials = null)
+    public EffectiveConfiguration(Dictionary<string, object> Properties = null, Dictionary<string, object> Advanced = null, string Name = null, string Notes = null, Dictionary<string, CredentialInfo> Credentials = null)
     {
         this.Properties = Properties;
         this.Advanced = Advanced;
@@ -41,7 +41,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// </summary>
     /// <value>Key-value configuration settings described by the schema in the propertiesSchemaUri field.</value>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 
@@ -50,7 +50,7 @@ public partial class EffectiveConfiguration : IEquatable<EffectiveConfiguration>
     /// </summary>
     /// <value>Advanced configuration described by the schema in the advancedSchemaUri field.</value>
     [DataMember(Name = "advanced", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Advanced { get; set; }
+    public Dictionary<string, object> Advanced { get; set; }
 
 
 

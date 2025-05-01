@@ -18,7 +18,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// <param name="Success">Indicated whether or not the operation was successful.</param>
     /// <param name="Result">The result of the operation.</param>
     /// <param name="Error">Error that occurred during the operation.</param>
-    public TestExecutionOperationResult(int? Step = null, string Name = null, bool? Success = null, Object Result = null, ErrorBody Error = null)
+    public TestExecutionOperationResult(int? Step = null, string Name = null, bool? Success = null, object Result = null, ErrorBody Error = null)
     {
         this.Step = Step;
         this.Name = Name;
@@ -62,7 +62,7 @@ public partial class TestExecutionOperationResult : IEquatable<TestExecutionOper
     /// </summary>
     /// <value>The result of the operation</value>
     [DataMember(Name = "result", EmitDefaultValue = false)]
-    public Object Result { get; set; }
+    public object Result { get; set; }
 
 
 

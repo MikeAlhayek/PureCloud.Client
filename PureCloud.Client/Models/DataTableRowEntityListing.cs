@@ -8,7 +8,7 @@ namespace PureCloud.Client.Models;
 /// DataTableRowEntityListing
 /// </summary>
 [DataContract]
-public partial class DataTableRowEntityListing : IEquatable<DataTableRowEntityListing>, IPagedResource<Dictionary<string, Object>>
+public partial class DataTableRowEntityListing : IEquatable<DataTableRowEntityListing>, IPagedResource<Dictionary<string, object>>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="DataTableRowEntityListing" /> class.
@@ -23,7 +23,7 @@ public partial class DataTableRowEntityListing : IEquatable<DataTableRowEntityLi
     /// <param name="NextUri">NextUri.</param>
     /// <param name="PreviousUri">PreviousUri.</param>
     /// <param name="PageCount">PageCount.</param>
-    public DataTableRowEntityListing(List<Dictionary<string, Object>> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
+    public DataTableRowEntityListing(List<Dictionary<string, object>> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -44,7 +44,7 @@ public partial class DataTableRowEntityListing : IEquatable<DataTableRowEntityLi
     /// Gets or Sets Entities
     /// </summary>
     [DataMember(Name = "entities", EmitDefaultValue = false)]
-    public List<Dictionary<string, Object>> Entities { get; set; }
+    public List<Dictionary<string, object>> Entities { get; set; }
 
 
 

@@ -46,7 +46,7 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
     /// </summary>
     /// <param name="CombiningOperation">CombiningOperation.</param>
     /// <param name="Predicates">A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \&quot;/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\&quot; or, to assume the current question group, \&quot;../question/{questionIndex}/answer/{answerIndex}\&quot;. Note: Indexes are zero-based.</param>
-    public VisibilityCondition(CombiningOperationEnum? CombiningOperation = null, List<Object> Predicates = null)
+    public VisibilityCondition(CombiningOperationEnum? CombiningOperation = null, List<object> Predicates = null)
     {
         this.CombiningOperation = CombiningOperation;
         this.Predicates = Predicates;
@@ -62,7 +62,7 @@ public partial class VisibilityCondition : IEquatable<VisibilityCondition>
     /// </summary>
     /// <value>A list of strings, each representing the location in the form of the Answer Option to depend on. In the format of \&quot;/form/questionGroup/{questionGroupIndex}/question/{questionIndex}/answer/{answerIndex}\&quot; or, to assume the current question group, \&quot;../question/{questionIndex}/answer/{answerIndex}\&quot;. Note: Indexes are zero-based</value>
     [DataMember(Name = "predicates", EmitDefaultValue = false)]
-    public List<Object> Predicates { get; set; }
+    public List<object> Predicates { get; set; }
 
 
     /// <summary>

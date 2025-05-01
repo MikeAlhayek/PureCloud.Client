@@ -68,7 +68,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// <param name="GenesysDialogEngine">Raw data response from Genesys&#39; Dialogengine (if called).</param>
     /// <param name="GenesysBotConnector">Raw data response from Genesys&#39; BotConnector (if called).</param>
     /// <param name="NuanceMixDlg">Raw data response from Nuance Mix Dlg (if called).</param>
-    public PostTextResponse(BotStateEnum? BotState = null, List<PostTextMessage> ReplyMessages = null, string IntentName = null, Dictionary<string, string> Slots = null, string BotCorrelationId = null, Dictionary<string, Object> AmazonLex = null, Dictionary<string, Object> GoogleDialogFlow = null, Dictionary<string, Object> GenesysDialogEngine = null, Dictionary<string, Object> GenesysBotConnector = null, Dictionary<string, Object> NuanceMixDlg = null)
+    public PostTextResponse(BotStateEnum? BotState = null, List<PostTextMessage> ReplyMessages = null, string IntentName = null, Dictionary<string, string> Slots = null, string BotCorrelationId = null, Dictionary<string, object> AmazonLex = null, Dictionary<string, object> GoogleDialogFlow = null, Dictionary<string, object> GenesysDialogEngine = null, Dictionary<string, object> GenesysBotConnector = null, Dictionary<string, object> NuanceMixDlg = null)
     {
         this.BotState = BotState;
         this.ReplyMessages = ReplyMessages;
@@ -128,7 +128,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// </summary>
     /// <value>Raw data response from AWS (if called)</value>
     [DataMember(Name = "amazonLex", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AmazonLex { get; set; }
+    public Dictionary<string, object> AmazonLex { get; set; }
 
 
 
@@ -137,7 +137,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// </summary>
     /// <value>Raw data response from Google Dialogflow (if called)</value>
     [DataMember(Name = "googleDialogFlow", EmitDefaultValue = false)]
-    public Dictionary<string, Object> GoogleDialogFlow { get; set; }
+    public Dictionary<string, object> GoogleDialogFlow { get; set; }
 
 
 
@@ -146,7 +146,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// </summary>
     /// <value>Raw data response from Genesys&#39; Dialogengine (if called)</value>
     [DataMember(Name = "genesysDialogEngine", EmitDefaultValue = false)]
-    public Dictionary<string, Object> GenesysDialogEngine { get; set; }
+    public Dictionary<string, object> GenesysDialogEngine { get; set; }
 
 
 
@@ -155,7 +155,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// </summary>
     /// <value>Raw data response from Genesys&#39; BotConnector (if called)</value>
     [DataMember(Name = "genesysBotConnector", EmitDefaultValue = false)]
-    public Dictionary<string, Object> GenesysBotConnector { get; set; }
+    public Dictionary<string, object> GenesysBotConnector { get; set; }
 
 
 
@@ -164,7 +164,7 @@ public partial class PostTextResponse : IEquatable<PostTextResponse>
     /// </summary>
     /// <value>Raw data response from Nuance Mix Dlg (if called)</value>
     [DataMember(Name = "nuanceMixDlg", EmitDefaultValue = false)]
-    public Dictionary<string, Object> NuanceMixDlg { get; set; }
+    public Dictionary<string, object> NuanceMixDlg { get; set; }
 
 
     /// <summary>

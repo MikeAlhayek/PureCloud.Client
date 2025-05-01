@@ -14,7 +14,7 @@ public partial class BuScheduleReference : IEquatable<BuScheduleReference>
     /// Initializes a new instance of the <see cref="BuScheduleReference" /> class.
     /// </summary>
     /// <param name="WeekDate">The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public BuScheduleReference(String WeekDate = null)
+    public BuScheduleReference(string WeekDate = null)
     {
         this.WeekDate = WeekDate;
 
@@ -36,7 +36,7 @@ public partial class BuScheduleReference : IEquatable<BuScheduleReference>
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

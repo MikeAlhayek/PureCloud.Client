@@ -103,7 +103,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// <param name="MediaType">Media type for filtering conversations..</param>
     /// <param name="ParticipantType">Type of the participant, either agent, customer or both..</param>
     /// <param name="QueueIds">List of queue IDs for filtering conversations..</param>
-    public MinerExecuteRequest(String DateStart = null, String DateEnd = null, string UploadKey = null, MediaTypeEnum? MediaType = null, ParticipantTypeEnum? ParticipantType = null, List<string> QueueIds = null)
+    public MinerExecuteRequest(string DateStart = null, string DateEnd = null, string UploadKey = null, MediaTypeEnum? MediaType = null, ParticipantTypeEnum? ParticipantType = null, List<string> QueueIds = null)
     {
         this.DateStart = DateStart;
         this.DateEnd = DateEnd;
@@ -121,7 +121,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// </summary>
     /// <value>Start date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -130,7 +130,7 @@ public partial class MinerExecuteRequest : IEquatable<MinerExecuteRequest>
     /// </summary>
     /// <value>End date for the date range to mine. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
 

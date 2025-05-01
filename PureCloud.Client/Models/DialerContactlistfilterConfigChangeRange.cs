@@ -19,7 +19,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// <param name="MaxInclusive">Whether or not to include the maximum in the range.</param>
     /// <param name="InSet">Elements that apply to the IN operator.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerContactlistfilterConfigChangeRange(string Min = null, string Max = null, bool? MinInclusive = null, bool? MaxInclusive = null, List<string> InSet = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerContactlistfilterConfigChangeRange(string Min = null, string Max = null, bool? MinInclusive = null, bool? MaxInclusive = null, List<string> InSet = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Min = Min;
         this.Max = Max;
@@ -81,7 +81,7 @@ public partial class DialerContactlistfilterConfigChangeRange : IEquatable<Diale
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

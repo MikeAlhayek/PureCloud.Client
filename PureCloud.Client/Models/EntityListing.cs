@@ -14,7 +14,7 @@ public partial class EntityListing : IEquatable<EntityListing>
     /// Initializes a new instance of the <see cref="EntityListing" /> class.
     /// </summary>
     /// <param name="Entities">Entities.</param>
-    public EntityListing(List<Object> Entities = null)
+    public EntityListing(List<object> Entities = null)
     {
         this.Entities = Entities;
 
@@ -26,7 +26,7 @@ public partial class EntityListing : IEquatable<EntityListing>
     /// Gets or Sets Entities
     /// </summary>
     [DataMember(Name = "entities", EmitDefaultValue = false)]
-    public List<Object> Entities { get; set; }
+    public List<object> Entities { get; set; }
 
 
     /// <summary>

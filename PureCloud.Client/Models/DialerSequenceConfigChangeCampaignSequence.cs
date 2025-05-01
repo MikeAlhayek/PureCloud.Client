@@ -61,7 +61,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerSequenceConfigChangeCampaignSequence(List<DialerSequenceConfigChangeUriReference> Campaigns = null, long? CurrentCampaign = null, StatusEnum? Status = null, string StopMessage = null, bool? Repeat = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerSequenceConfigChangeCampaignSequence(List<DialerSequenceConfigChangeUriReference> Campaigns = null, long? CurrentCampaign = null, StatusEnum? Status = null, string StopMessage = null, bool? Repeat = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.Campaigns = Campaigns;
         this.CurrentCampaign = CurrentCampaign;
@@ -121,7 +121,7 @@ public partial class DialerSequenceConfigChangeCampaignSequence : IEquatable<Dia
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

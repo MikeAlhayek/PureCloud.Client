@@ -23,7 +23,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// <param name="DurationMinutes">An estimation of time off request length in minutes (required).</param>
     /// <param name="PayableMinutes">An estimation of payable part of time off request in minutes (required).</param>
     /// <param name="Flexible">Whether there is flexibility for a user to choose different hours than the system estimated (required).</param>
-    public EstimateAvailableFullDayTimeOffResponse(String Date = null, int? DurationMinutes = null, int? PayableMinutes = null, bool? Flexible = null)
+    public EstimateAvailableFullDayTimeOffResponse(string Date = null, int? DurationMinutes = null, int? PayableMinutes = null, bool? Flexible = null)
     {
         this.Date = Date;
         this.DurationMinutes = DurationMinutes;
@@ -39,7 +39,7 @@ public partial class EstimateAvailableFullDayTimeOffResponse : IEquatable<Estima
     /// </summary>
     /// <value>Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "date", EmitDefaultValue = false)]
-    public String Date { get; set; }
+    public string Date { get; set; }
 
 
 

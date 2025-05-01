@@ -86,7 +86,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// <param name="FlowErrorInfo">Additional information if the flow is in error.</param>
     /// <param name="OutputData">List of the flow&#39;s output variables, if any. Output variables are only supplied for Completed flows..</param>
     /// <param name="Conversation">The conversation to which this Flow execution is related.</param>
-    public FlowRuntimeExecution(string Id = null, string Name = null, FlowVersion FlowVersion = null, DateTime? DateLaunched = null, StatusEnum? Status = null, DateTime? DateCompleted = null, string CompletionReason = null, ErrorBody FlowErrorInfo = null, Dictionary<string, Object> OutputData = null, DomainEntityRef Conversation = null)
+    public FlowRuntimeExecution(string Id = null, string Name = null, FlowVersion FlowVersion = null, DateTime? DateLaunched = null, StatusEnum? Status = null, DateTime? DateCompleted = null, string CompletionReason = null, ErrorBody FlowErrorInfo = null, Dictionary<string, object> OutputData = null, DomainEntityRef Conversation = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -173,7 +173,7 @@ public partial class FlowRuntimeExecution : IEquatable<FlowRuntimeExecution>
     /// </summary>
     /// <value>List of the flow&#39;s output variables, if any. Output variables are only supplied for Completed flows.</value>
     [DataMember(Name = "outputData", EmitDefaultValue = false)]
-    public Dictionary<string, Object> OutputData { get; set; }
+    public Dictionary<string, object> OutputData { get; set; }
 
 
 

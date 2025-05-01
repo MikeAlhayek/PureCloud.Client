@@ -15,7 +15,7 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
     /// </summary>
     /// <param name="Value">The value of the field being matched.</param>
     /// <param name="Path">The json path to the json node being matched on. ex: $[&#39;things&#39;][1].</param>
-    public MatchTestResult(Object Value = null, string Path = null)
+    public MatchTestResult(object Value = null, string Path = null)
     {
         this.Value = Value;
         this.Path = Path;
@@ -29,7 +29,7 @@ public partial class MatchTestResult : IEquatable<MatchTestResult>
     /// </summary>
     /// <value>The value of the field being matched</value>
     [DataMember(Name = "value", EmitDefaultValue = false)]
-    public Object Value { get; set; }
+    public object Value { get; set; }
 
 
 

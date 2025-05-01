@@ -60,7 +60,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// <param name="Name">Name.</param>
     /// <param name="ReactionType">ReactionType.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerResponsesetConfigChangeReaction(string Data = null, string Name = null, ReactionTypeEnum? ReactionType = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerResponsesetConfigChangeReaction(string Data = null, string Name = null, ReactionTypeEnum? ReactionType = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Data = Data;
         this.Name = Name;
@@ -93,7 +93,7 @@ public partial class DialerResponsesetConfigChangeReaction : IEquatable<DialerRe
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

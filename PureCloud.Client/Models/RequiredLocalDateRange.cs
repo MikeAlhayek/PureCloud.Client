@@ -21,7 +21,7 @@ public partial class RequiredLocalDateRange : IEquatable<RequiredLocalDateRange>
     /// </summary>
     /// <param name="StartDate">The inclusive start of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="EndDate">The inclusive end of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
-    public RequiredLocalDateRange(String StartDate = null, String EndDate = null)
+    public RequiredLocalDateRange(string StartDate = null, string EndDate = null)
     {
         this.StartDate = StartDate;
         this.EndDate = EndDate;
@@ -35,7 +35,7 @@ public partial class RequiredLocalDateRange : IEquatable<RequiredLocalDateRange>
     /// </summary>
     /// <value>The inclusive start of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class RequiredLocalDateRange : IEquatable<RequiredLocalDateRange>
     /// </summary>
     /// <value>The inclusive end of a date range in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "endDate", EmitDefaultValue = false)]
-    public String EndDate { get; set; }
+    public string EndDate { get; set; }
 
 
     /// <summary>

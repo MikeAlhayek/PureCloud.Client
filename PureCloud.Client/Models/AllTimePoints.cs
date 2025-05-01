@@ -34,7 +34,7 @@ public partial class AllTimePoints : IEquatable<AllTimePoints>
     /// </summary>
     /// <value>Queried end workday for all time points to be collected. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; private set; }
 
 
 

@@ -93,7 +93,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>Start workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; private set; }
 
 
 
@@ -102,7 +102,7 @@ public partial class OverallBestPointsItem : IEquatable<OverallBestPointsItem>
     /// </summary>
     /// <value>End workday of the best points aggregation interval. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; private set; }
 
 
     /// <summary>

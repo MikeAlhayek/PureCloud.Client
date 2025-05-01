@@ -20,7 +20,7 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
     /// Initializes a new instance of the <see cref="TextBotInputOutputData" /> class.
     /// </summary>
     /// <param name="Variables">The input/output variables using the format as appropriate for the variable data type in the flow definition. (required).</param>
-    public TextBotInputOutputData(Dictionary<string, Object> Variables = null)
+    public TextBotInputOutputData(Dictionary<string, object> Variables = null)
     {
         this.Variables = Variables;
 
@@ -33,7 +33,7 @@ public partial class TextBotInputOutputData : IEquatable<TextBotInputOutputData>
     /// </summary>
     /// <value>The input/output variables using the format as appropriate for the variable data type in the flow definition.</value>
     [DataMember(Name = "variables", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Variables { get; set; }
+    public Dictionary<string, object> Variables { get; set; }
 
 
     /// <summary>

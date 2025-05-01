@@ -53,7 +53,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// <param name="Order">The ranked order of the rule; rules are processed from lowest number to highest.</param>
     /// <param name="Category">The category of the rule.</param>
     /// <param name="Actions">The list of rule actions to be taken if the conditions are true.</param>
-    public DialerRulesetConfigChangeRule(List<DialerRulesetConfigChangeCondition> Conditions = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, long? Order = null, CategoryEnum? Category = null, List<DialerRulesetConfigChangeAction> Actions = null)
+    public DialerRulesetConfigChangeRule(List<DialerRulesetConfigChangeCondition> Conditions = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, long? Order = null, CategoryEnum? Category = null, List<DialerRulesetConfigChangeAction> Actions = null)
     {
         this.Conditions = Conditions;
         this.AdditionalProperties = AdditionalProperties;
@@ -80,7 +80,7 @@ public partial class DialerRulesetConfigChangeRule : IEquatable<DialerRulesetCon
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

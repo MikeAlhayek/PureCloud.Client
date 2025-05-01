@@ -171,7 +171,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// <param name="DateScoresModified">The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="Winners">The Contest Winners.</param>
     /// <param name="DisqualifiedAgents">The Contest&#39;s disqualified agents, returned when a contest is complete.</param>
-    public ContestsResponse(WritableDivision Division = null, string Title = null, string Description = null, String DateStart = null, String DateEnd = null, WinningCriteriaEnum? WinningCriteria = null, DateTime? DateAnnounced = null, string AnnouncementTimezone = null, AnonymizationEnum? Anonymization = null, List<ContestMetrics> Metrics = null, List<ContestPrizes> Prizes = null, int? Version = null, UserReference CreatedBy = null, ContestProfile Profile = null, List<UserReference> Participants = null, StatusEnum? Status = null, int? ParticipantCount = null, DateTime? DateFinalized = null, DateTime? DateCancelled = null, DateTime? DateModified = null, DateTime? DateScoresModified = null, List<ContestWinners> Winners = null, List<ContestDisqualifiedAgents> DisqualifiedAgents = null)
+    public ContestsResponse(WritableDivision Division = null, string Title = null, string Description = null, string DateStart = null, string DateEnd = null, WinningCriteriaEnum? WinningCriteria = null, DateTime? DateAnnounced = null, string AnnouncementTimezone = null, AnonymizationEnum? Anonymization = null, List<ContestMetrics> Metrics = null, List<ContestPrizes> Prizes = null, int? Version = null, UserReference CreatedBy = null, ContestProfile Profile = null, List<UserReference> Participants = null, StatusEnum? Status = null, int? ParticipantCount = null, DateTime? DateFinalized = null, DateTime? DateCancelled = null, DateTime? DateModified = null, DateTime? DateScoresModified = null, List<ContestWinners> Winners = null, List<ContestDisqualifiedAgents> DisqualifiedAgents = null)
     {
         this.Division = Division;
         this.Title = Title;
@@ -242,7 +242,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// </summary>
     /// <value>Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -251,7 +251,7 @@ public partial class ContestsResponse : IEquatable<ContestsResponse>
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
 

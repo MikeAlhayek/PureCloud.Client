@@ -264,7 +264,7 @@ public partial class Metrics : IEquatable<Metrics>
     /// </summary>
     /// <value>The unlinked workday for this metric if this metric was ever unlinked. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateUnlinked", EmitDefaultValue = false)]
-    public String DateUnlinked { get; private set; }
+    public string DateUnlinked { get; private set; }
 
 
 

@@ -293,7 +293,7 @@ public partial class QueueConversationVideoEventTopicScreenshare : IEquatable<Qu
     /// <param name="AfterCallWork">A communication&#39;s after-call work data..</param>
     /// <param name="AfterCallWorkRequired">Indicates if after-call is required for a communication. Only used when the ACW Setting is Agent Requested..</param>
     /// <param name="QueueMediaSettings">Represents the queue setting for this media..</param>
-    public QueueConversationVideoEventTopicScreenshare(StateEnum? State = null, InitialStateEnum? InitialState = null, QueueConversationVideoEventTopicAddress Self = null, string Id = null, string Context = null, bool? Sharing = null, string Provider = null, string ScriptId = null, string PeerId = null, Object PeerCount = null, DisconnectTypeEnum? DisconnectType = null, DateTime? ConnectedTime = null, DateTime? DisconnectedTime = null, QueueConversationVideoEventTopicWrapup Wrapup = null, QueueConversationVideoEventTopicAfterCallWork AfterCallWork = null, bool? AfterCallWorkRequired = null, QueueConversationVideoEventTopicQueueMediaSettings QueueMediaSettings = null)
+    public QueueConversationVideoEventTopicScreenshare(StateEnum? State = null, InitialStateEnum? InitialState = null, QueueConversationVideoEventTopicAddress Self = null, string Id = null, string Context = null, bool? Sharing = null, string Provider = null, string ScriptId = null, string PeerId = null, object PeerCount = null, DisconnectTypeEnum? DisconnectType = null, DateTime? ConnectedTime = null, DateTime? DisconnectedTime = null, QueueConversationVideoEventTopicWrapup Wrapup = null, QueueConversationVideoEventTopicAfterCallWork AfterCallWork = null, bool? AfterCallWorkRequired = null, QueueConversationVideoEventTopicQueueMediaSettings QueueMediaSettings = null)
     {
         this.State = State;
         this.InitialState = InitialState;
@@ -389,7 +389,7 @@ public partial class QueueConversationVideoEventTopicScreenshare : IEquatable<Qu
     /// </summary>
     /// <value>The number of peer participants from the perspective of the participant in the conference.</value>
     [DataMember(Name = "peerCount", EmitDefaultValue = false)]
-    public Object PeerCount { get; set; }
+    public object PeerCount { get; set; }
 
 
 

@@ -48,7 +48,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// <param name="Interval">the amount of time in between occurrences.</param>
     /// <param name="DaysOfWeek">the day(s) of the week the occurrence happens.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignScheduleConfigChangeRecurrencePattern(TypeEnum? Type = null, long? Interval = null, List<string> DaysOfWeek = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignScheduleConfigChangeRecurrencePattern(TypeEnum? Type = null, long? Interval = null, List<string> DaysOfWeek = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Type = Type;
         this.Interval = Interval;
@@ -83,7 +83,7 @@ public partial class DialerCampaignScheduleConfigChangeRecurrencePattern : IEqua
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

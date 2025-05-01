@@ -16,7 +16,7 @@ public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapp
     /// <param name="ContactColumnName">The name of a contact column whose data will be passed to the data action.</param>
     /// <param name="DataActionField">The name of an output field from the data action that the contact column data will be passed to.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(string ContactColumnName = null, string DataActionField = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerRulesetConfigChangeContactColumnToDataActionFieldMapping(string ContactColumnName = null, string DataActionField = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.ContactColumnName = ContactColumnName;
         this.DataActionField = DataActionField;
@@ -48,7 +48,7 @@ public partial class DialerRulesetConfigChangeContactColumnToDataActionFieldMapp
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

@@ -58,7 +58,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerAttemptLimitsConfigChangeAttemptLimits(long? MaxAttemptsPerContact = null, long? MaxAttemptsPerNumber = null, string TimeZoneId = null, ResetPeriodEnum? ResetPeriod = null, Dictionary<string, DialerAttemptLimitsConfigChangeRecallEntry> RecallEntries = null, bool? BreadthFirstRecalls = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerAttemptLimitsConfigChangeAttemptLimits(long? MaxAttemptsPerContact = null, long? MaxAttemptsPerNumber = null, string TimeZoneId = null, ResetPeriodEnum? ResetPeriod = null, Dictionary<string, DialerAttemptLimitsConfigChangeRecallEntry> RecallEntries = null, bool? BreadthFirstRecalls = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.MaxAttemptsPerContact = MaxAttemptsPerContact;
         this.MaxAttemptsPerNumber = MaxAttemptsPerNumber;
@@ -126,7 +126,7 @@ public partial class DialerAttemptLimitsConfigChangeAttemptLimits : IEquatable<D
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

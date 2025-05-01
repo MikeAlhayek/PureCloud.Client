@@ -16,7 +16,7 @@ public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistD
     /// <param name="Uri">Uri.</param>
     /// <param name="ExportTimestamp">ExportTimestamp.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public ContactlistDownloadReadyExportUri(string Uri = null, string ExportTimestamp = null, Dictionary<string, Object> AdditionalProperties = null)
+    public ContactlistDownloadReadyExportUri(string Uri = null, string ExportTimestamp = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Uri = Uri;
         this.ExportTimestamp = ExportTimestamp;
@@ -46,7 +46,7 @@ public partial class ContactlistDownloadReadyExportUri : IEquatable<ContactlistD
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

@@ -15,7 +15,7 @@ public partial class BulkResult : IEquatable<BulkResult>
     /// </summary>
     /// <param name="Error">Error details if the operation failed..</param>
     /// <param name="Entity">The result of the operation if it succeeded..</param>
-    public BulkResult(BulkError Error = null, Object Entity = null)
+    public BulkResult(BulkError Error = null, object Entity = null)
     {
         this.Error = Error;
         this.Entity = Entity;
@@ -38,7 +38,7 @@ public partial class BulkResult : IEquatable<BulkResult>
     /// </summary>
     /// <value>The result of the operation if it succeeded.</value>
     [DataMember(Name = "entity", EmitDefaultValue = false)]
-    public Object Entity { get; set; }
+    public object Entity { get; set; }
 
 
     /// <summary>

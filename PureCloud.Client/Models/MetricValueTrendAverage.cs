@@ -25,7 +25,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// </summary>
     /// <value>The targeted start workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; private set; }
+    public string DateStartWorkday { get; private set; }
 
 
 
@@ -34,7 +34,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// </summary>
     /// <value>The targeted end workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; private set; }
+    public string DateEndWorkday { get; private set; }
 
 
 
@@ -43,7 +43,7 @@ public partial class MetricValueTrendAverage : IEquatable<MetricValueTrendAverag
     /// </summary>
     /// <value>The targeted reference workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateReferenceWorkday", EmitDefaultValue = false)]
-    public String DateReferenceWorkday { get; private set; }
+    public string DateReferenceWorkday { get; private set; }
 
 
 

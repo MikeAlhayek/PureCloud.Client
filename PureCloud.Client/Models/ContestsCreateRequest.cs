@@ -104,7 +104,7 @@ public partial class ContestsCreateRequest : IEquatable<ContestsCreateRequest>
     /// <param name="Prizes">The Contest Prizes (required).</param>
     /// <param name="ProfileId">The Contest profile (required).</param>
     /// <param name="ParticipantIds">The Contest&#39;s participants (required).</param>
-    public ContestsCreateRequest(WritableDivision Division = null, string Title = null, string Description = null, String DateStart = null, String DateEnd = null, WinningCriteriaEnum? WinningCriteria = null, DateTime? DateAnnounced = null, string AnnouncementTimezone = null, AnonymizationEnum? Anonymization = null, List<ContestMetrics> Metrics = null, List<ContestPrizes> Prizes = null, string ProfileId = null, List<string> ParticipantIds = null)
+    public ContestsCreateRequest(WritableDivision Division = null, string Title = null, string Description = null, string DateStart = null, string DateEnd = null, WinningCriteriaEnum? WinningCriteria = null, DateTime? DateAnnounced = null, string AnnouncementTimezone = null, AnonymizationEnum? Anonymization = null, List<ContestMetrics> Metrics = null, List<ContestPrizes> Prizes = null, string ProfileId = null, List<string> ParticipantIds = null)
     {
         this.Division = Division;
         this.Title = Title;
@@ -165,7 +165,7 @@ public partial class ContestsCreateRequest : IEquatable<ContestsCreateRequest>
     /// </summary>
     /// <value>Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -174,7 +174,7 @@ public partial class ContestsCreateRequest : IEquatable<ContestsCreateRequest>
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
 

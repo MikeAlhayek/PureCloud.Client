@@ -65,7 +65,7 @@ public partial class AuthorizationSettings : IEquatable<AuthorizationSettings>
     /// </summary>
     /// <value>The date of the most recent org activity used for analysis. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateLastActive", EmitDefaultValue = false)]
-    public String DateLastActive { get; private set; }
+    public string DateLastActive { get; private set; }
 
 
 

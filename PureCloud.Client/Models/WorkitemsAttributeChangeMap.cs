@@ -15,7 +15,7 @@ public partial class WorkitemsAttributeChangeMap : IEquatable<WorkitemsAttribute
     /// </summary>
     /// <param name="NewValue">New property value.</param>
     /// <param name="OldValue">Old property value.</param>
-    public WorkitemsAttributeChangeMap(Dictionary<string, Object> NewValue = null, Dictionary<string, Object> OldValue = null)
+    public WorkitemsAttributeChangeMap(Dictionary<string, object> NewValue = null, Dictionary<string, object> OldValue = null)
     {
         this.NewValue = NewValue;
         this.OldValue = OldValue;
@@ -29,7 +29,7 @@ public partial class WorkitemsAttributeChangeMap : IEquatable<WorkitemsAttribute
     /// </summary>
     /// <value>New property value</value>
     [DataMember(Name = "newValue", EmitDefaultValue = false)]
-    public Dictionary<string, Object> NewValue { get; set; }
+    public Dictionary<string, object> NewValue { get; set; }
 
 
 
@@ -38,7 +38,7 @@ public partial class WorkitemsAttributeChangeMap : IEquatable<WorkitemsAttribute
     /// </summary>
     /// <value>Old property value</value>
     [DataMember(Name = "oldValue", EmitDefaultValue = false)]
-    public Dictionary<string, Object> OldValue { get; set; }
+    public Dictionary<string, object> OldValue { get; set; }
 
 
     /// <summary>

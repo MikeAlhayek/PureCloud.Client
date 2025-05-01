@@ -16,7 +16,7 @@ public partial class DnclistDownloadReadyExportUri : IEquatable<DnclistDownloadR
     /// <param name="Uri">Uri.</param>
     /// <param name="ExportTimestamp">ExportTimestamp.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DnclistDownloadReadyExportUri(string Uri = null, string ExportTimestamp = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DnclistDownloadReadyExportUri(string Uri = null, string ExportTimestamp = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Uri = Uri;
         this.ExportTimestamp = ExportTimestamp;
@@ -46,7 +46,7 @@ public partial class DnclistDownloadReadyExportUri : IEquatable<DnclistDownloadR
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

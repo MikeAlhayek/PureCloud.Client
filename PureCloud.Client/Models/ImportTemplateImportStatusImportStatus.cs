@@ -54,7 +54,7 @@ public partial class ImportTemplateImportStatusImportStatus : IEquatable<ImportT
     /// <param name="TargetContactListIds">The ids for target contact lists.</param>
     /// <param name="ListNamePrefix">The prefix used for target contact list names.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public ImportTemplateImportStatusImportStatus(ImportStateEnum? ImportState = null, long? TotalRecords = null, long? CompletedRecords = null, long? PercentageComplete = null, string FailureReason = null, List<string> TargetContactListIds = null, string ListNamePrefix = null, Dictionary<string, Object> AdditionalProperties = null)
+    public ImportTemplateImportStatusImportStatus(ImportStateEnum? ImportState = null, long? TotalRecords = null, long? CompletedRecords = null, long? PercentageComplete = null, string FailureReason = null, List<string> TargetContactListIds = null, string ListNamePrefix = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.ImportState = ImportState;
         this.TotalRecords = TotalRecords;
@@ -129,7 +129,7 @@ public partial class ImportTemplateImportStatusImportStatus : IEquatable<ImportT
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

@@ -15,5 +15,5 @@ public interface IApiAccessor
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    String GetBasePath();
+    string GetBasePath();
 }

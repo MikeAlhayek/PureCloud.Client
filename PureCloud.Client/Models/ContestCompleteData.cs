@@ -57,7 +57,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// <param name="Metrics">Metrics of the contest.</param>
     /// <param name="Prizes">Prizes of the contest.</param>
     /// <param name="Winners">Winners of the contest.</param>
-    public ContestCompleteData(String DateEnd = null, AnonymizationEnum? Anonymization = null, List<ContestDataMetrics> Metrics = null, List<ContestDataPrizes> Prizes = null, List<ContestDataWinners> Winners = null)
+    public ContestCompleteData(string DateEnd = null, AnonymizationEnum? Anonymization = null, List<ContestDataMetrics> Metrics = null, List<ContestDataPrizes> Prizes = null, List<ContestDataWinners> Winners = null)
     {
         this.DateEnd = DateEnd;
         this.Anonymization = Anonymization;
@@ -74,7 +74,7 @@ public partial class ContestCompleteData : IEquatable<ContestCompleteData>
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
 

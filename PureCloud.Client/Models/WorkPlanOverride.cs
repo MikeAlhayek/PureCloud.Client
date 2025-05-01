@@ -22,7 +22,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     /// <param name="StartDate">The start date in yyyy-MM-dd format of the work plan override. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="WeekCount">Number of weeks for the work plan override (required).</param>
     /// <param name="WorkPlan">The work plan reference associated with this override (required).</param>
-    public WorkPlanOverride(String StartDate = null, int? WeekCount = null, WorkPlanReference WorkPlan = null)
+    public WorkPlanOverride(string StartDate = null, int? WeekCount = null, WorkPlanReference WorkPlan = null)
     {
         this.StartDate = StartDate;
         this.WeekCount = WeekCount;
@@ -37,7 +37,7 @@ public partial class WorkPlanOverride : IEquatable<WorkPlanOverride>
     /// </summary>
     /// <value>The start date in yyyy-MM-dd format of the work plan override. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

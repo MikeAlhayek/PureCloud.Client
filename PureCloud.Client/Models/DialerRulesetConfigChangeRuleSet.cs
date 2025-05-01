@@ -22,7 +22,7 @@ public partial class DialerRulesetConfigChangeRuleSet : IEquatable<DialerRuleset
     /// <param name="DateCreated">Creation time of the entity.</param>
     /// <param name="DateModified">Last modified time of the entity.</param>
     /// <param name="Version">Required for updates, must match the version number of the most recent update.</param>
-    public DialerRulesetConfigChangeRuleSet(DialerRulesetConfigChangeUriReference ContactList = null, DialerRulesetConfigChangeUriReference Queue = null, List<DialerRulesetConfigChangeRule> Rules = null, Dictionary<string, Object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
+    public DialerRulesetConfigChangeRuleSet(DialerRulesetConfigChangeUriReference ContactList = null, DialerRulesetConfigChangeUriReference Queue = null, List<DialerRulesetConfigChangeRule> Rules = null, Dictionary<string, object> AdditionalProperties = null, string Id = null, string Name = null, DateTime? DateCreated = null, DateTime? DateModified = null, long? Version = null)
     {
         this.ContactList = ContactList;
         this.Queue = Queue;
@@ -67,7 +67,7 @@ public partial class DialerRulesetConfigChangeRuleSet : IEquatable<DialerRuleset
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
 

@@ -89,7 +89,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// <param name="DateScoresModified">The datetime the contest scores were last updated. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="Metrics">The Contest&#39;s Metrics (required).</param>
     /// <param name="RequestingParticipantContestInfo">The Most Recent Contest Info for the requesting participant.</param>
-    public ContestsEssentials(string Title = null, StatusEnum? Status = null, String DateStart = null, String DateEnd = null, ContestProfile Profile = null, int? ParticipantCount = null, DateTime? DateAnnounced = null, DateTime? DateFinalized = null, DateTime? DateCancelled = null, DateTime? DateModified = null, DateTime? DateScoresModified = null, List<ContestMetrics> Metrics = null, ContestRequesingParticipantDailyInfo RequestingParticipantContestInfo = null)
+    public ContestsEssentials(string Title = null, StatusEnum? Status = null, string DateStart = null, string DateEnd = null, ContestProfile Profile = null, int? ParticipantCount = null, DateTime? DateAnnounced = null, DateTime? DateFinalized = null, DateTime? DateCancelled = null, DateTime? DateModified = null, DateTime? DateScoresModified = null, List<ContestMetrics> Metrics = null, ContestRequesingParticipantDailyInfo RequestingParticipantContestInfo = null)
     {
         this.Title = Title;
         this.Status = Status;
@@ -134,7 +134,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// </summary>
     /// <value>Start date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStart", EmitDefaultValue = false)]
-    public String DateStart { get; set; }
+    public string DateStart { get; set; }
 
 
 
@@ -143,7 +143,7 @@ public partial class ContestsEssentials : IEquatable<ContestsEssentials>
     /// </summary>
     /// <value>End date of the contest. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEnd", EmitDefaultValue = false)]
-    public String DateEnd { get; set; }
+    public string DateEnd { get; set; }
 
 
 

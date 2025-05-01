@@ -46,7 +46,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// <param name="AvailableMinutesPerInterval">The list of available time off values in minutes per granularity interval.</param>
     /// <param name="WaitlistedRequestsPerInterval">The current number of waitlisted time off requests for every interval per granularity.</param>
     /// <param name="WaitlistEnabled">Whether the time off request can be waitlisted.</param>
-    public AvailableTimeOffRange(TimeOffLimitReference TimeOffLimit = null, String StartDate = null, GranularityEnum? Granularity = null, List<int?> AvailableMinutesPerInterval = null, List<int?> WaitlistedRequestsPerInterval = null, bool? WaitlistEnabled = null)
+    public AvailableTimeOffRange(TimeOffLimitReference TimeOffLimit = null, string StartDate = null, GranularityEnum? Granularity = null, List<int?> AvailableMinutesPerInterval = null, List<int?> WaitlistedRequestsPerInterval = null, bool? WaitlistEnabled = null)
     {
         this.TimeOffLimit = TimeOffLimit;
         this.StartDate = StartDate;
@@ -73,7 +73,7 @@ public partial class AvailableTimeOffRange : IEquatable<AvailableTimeOffRange>
     /// </summary>
     /// <value>Start date of the requested date range. The end date is determined by the size of interval list. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

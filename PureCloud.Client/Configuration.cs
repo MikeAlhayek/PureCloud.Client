@@ -28,12 +28,12 @@ public class Configuration
     /// <param name="autoReloadConfig">AutoReloadConfig</param>
     /// <param name="useDefaultApiClient">Use Default ApiClient</param>
     public Configuration(ApiClient apiClient = null,
-                         Dictionary<String, String> defaultHeader = null,
+                         Dictionary<string, string> defaultHeader = null,
                          string username = null,
                          string password = null,
                          string accessToken = null,
-                         Dictionary<String, String> apiKey = null,
-                         Dictionary<String, String> apiKeyPrefix = null,
+                         Dictionary<string, string> apiKey = null,
+                         Dictionary<string, string> apiKeyPrefix = null,
                          string tempFolderPath = null,
                          string dateTimeFormat = null,
                          int timeout = 100000,
@@ -162,12 +162,12 @@ public class Configuration
         }
     }
 
-    private Dictionary<String, String> _defaultHeaderMap = new Dictionary<String, String>();
+    private Dictionary<string, string> _defaultHeaderMap = new Dictionary<string, string>();
 
     /// <summary>
     /// Gets or sets the default header.
     /// </summary>
-    public Dictionary<String, String> DefaultHeader
+    public Dictionary<string, string> DefaultHeader
     {
         get { return _defaultHeaderMap; }
 
@@ -192,19 +192,19 @@ public class Configuration
     /// Gets or sets the HTTP user agent.
     /// </summary>
     /// <value>Http user agent.</value>
-    public String UserAgent { get; set; }
+    public string UserAgent { get; set; }
 
     /// <summary>
     /// Gets or sets the username (HTTP basic authentication).
     /// </summary>
     /// <value>The username.</value>
-    public String Username { get; set; }
+    public string Username { get; set; }
 
     /// <summary>
     /// Gets or sets the password (HTTP basic authentication).
     /// </summary>
     /// <value>The password.</value>
-    public String Password { get; set; }
+    public string Password { get; set; }
 
     /// <summary>
     /// Gets or sets the AuthTokenInfo for OAuth2 authentication.
@@ -216,7 +216,7 @@ public class Configuration
     /// Gets or sets the access token for OAuth2 authentication.
     /// </summary>
     /// <value>The access token.</value>
-    public String AccessToken
+    public string AccessToken
     {
         get
         {
@@ -245,13 +245,13 @@ public class Configuration
     /// Gets or sets the API key based on the authentication name.
     /// </summary>
     /// <value>The API key.</value>
-    public Dictionary<String, String> ApiKey = new Dictionary<String, String>();
+    public Dictionary<string, string> ApiKey = new Dictionary<string, string>();
 
     /// <summary>
     /// Gets or sets the prefix (e.g. Token) of the API key based on the authentication name.
     /// </summary>
     /// <value>The prefix of the API key.</value>
-    public Dictionary<String, String> ApiKeyPrefix = new Dictionary<String, String>();
+    public Dictionary<string, string> ApiKeyPrefix = new Dictionary<string, string>();
 
     /// <summary>
     /// Get the API key with prefix.
@@ -279,13 +279,13 @@ public class Configuration
     /// Gets or sets the temporary folder path to store the files downloaded from the server.
     /// </summary>
     /// <value>Folder path.</value>
-    public String TempFolderPath
+    public string TempFolderPath
     {
         get { return _tempFolderPath; }
 
         set
         {
-            if (String.IsNullOrEmpty(value))
+            if (string.IsNullOrEmpty(value))
             {
                 _tempFolderPath = value;
                 return;
@@ -321,7 +321,7 @@ public class Configuration
     /// No validation is done to ensure that the string you're providing is valid
     /// </summary>
     /// <value>The DateTimeFormat string</value>
-    public String DateTimeFormat
+    public string DateTimeFormat
     {
         get
         {

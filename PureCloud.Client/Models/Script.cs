@@ -26,7 +26,7 @@ public partial class Script : IEquatable<Script>
     /// <param name="Variables">Variables.</param>
     /// <param name="CustomActions">CustomActions.</param>
     /// <param name="Pages">Pages.</param>
-    public Script(string Name = null, Division Division = null, string VersionId = null, DateTime? CreatedDate = null, DateTime? ModifiedDate = null, DateTime? PublishedDate = null, DateTime? VersionDate = null, string StartPageId = null, string StartPageName = null, Object Features = null, Object Variables = null, Object CustomActions = null, List<Page> Pages = null)
+    public Script(string Name = null, Division Division = null, string VersionId = null, DateTime? CreatedDate = null, DateTime? ModifiedDate = null, DateTime? PublishedDate = null, DateTime? VersionDate = null, string StartPageId = null, string StartPageName = null, object Features = null, object Variables = null, object CustomActions = null, List<Page> Pages = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -136,7 +136,7 @@ public partial class Script : IEquatable<Script>
     /// Gets or Sets Features
     /// </summary>
     [DataMember(Name = "features", EmitDefaultValue = false)]
-    public Object Features { get; set; }
+    public object Features { get; set; }
 
 
 
@@ -144,7 +144,7 @@ public partial class Script : IEquatable<Script>
     /// Gets or Sets Variables
     /// </summary>
     [DataMember(Name = "variables", EmitDefaultValue = false)]
-    public Object Variables { get; set; }
+    public object Variables { get; set; }
 
 
 
@@ -152,7 +152,7 @@ public partial class Script : IEquatable<Script>
     /// Gets or Sets CustomActions
     /// </summary>
     [DataMember(Name = "customActions", EmitDefaultValue = false)]
-    public Object CustomActions { get; set; }
+    public object CustomActions { get; set; }
 
 
 

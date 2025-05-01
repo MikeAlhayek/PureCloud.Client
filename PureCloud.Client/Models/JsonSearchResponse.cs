@@ -26,7 +26,7 @@ public partial class JsonSearchResponse : IEquatable<JsonSearchResponse>
     /// <param name="Types">Resource types the search was performed against (required).</param>
     /// <param name="Results">Search results (required).</param>
     /// <param name="Aggregations">Aggregations.</param>
-    public JsonSearchResponse(long? Total = null, int? PageCount = null, int? PageSize = null, int? PageNumber = null, List<string> Types = null, Object Results = null, Object Aggregations = null)
+    public JsonSearchResponse(long? Total = null, int? PageCount = null, int? PageSize = null, int? PageNumber = null, List<string> Types = null, object Results = null, object Aggregations = null)
     {
         this.Total = Total;
         this.PageCount = PageCount;
@@ -90,7 +90,7 @@ public partial class JsonSearchResponse : IEquatable<JsonSearchResponse>
     /// </summary>
     /// <value>Search results</value>
     [DataMember(Name = "results", EmitDefaultValue = false)]
-    public Object Results { get; set; }
+    public object Results { get; set; }
 
 
 
@@ -98,7 +98,7 @@ public partial class JsonSearchResponse : IEquatable<JsonSearchResponse>
     /// Gets or Sets Aggregations
     /// </summary>
     [DataMember(Name = "aggregations", EmitDefaultValue = false)]
-    public Object Aggregations { get; set; }
+    public object Aggregations { get; set; }
 
 
     /// <summary>

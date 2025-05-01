@@ -71,7 +71,7 @@ public partial class Line : IEquatable<Line>
     /// <param name="SecondaryEdge">The secondary edge associated to the line. (Deprecated).</param>
     /// <param name="LoggedInUser">LoggedInUser.</param>
     /// <param name="DefaultForUser">DefaultForUser.</param>
-    public Line(string Name = null, Division Division = null, string Description = null, int? Version = null, Dictionary<string, Object> Properties = null, DomainEntityRef EdgeGroup = null, DomainEntityRef Template = null, DomainEntityRef Site = null, DomainEntityRef LineBaseSettings = null, Edge PrimaryEdge = null, Edge SecondaryEdge = null, DomainEntityRef LoggedInUser = null, DomainEntityRef DefaultForUser = null)
+    public Line(string Name = null, Division Division = null, string Description = null, int? Version = null, Dictionary<string, object> Properties = null, DomainEntityRef EdgeGroup = null, DomainEntityRef Template = null, DomainEntityRef Site = null, DomainEntityRef LineBaseSettings = null, Edge PrimaryEdge = null, Edge SecondaryEdge = null, DomainEntityRef LoggedInUser = null, DomainEntityRef DefaultForUser = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -196,7 +196,7 @@ public partial class Line : IEquatable<Line>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

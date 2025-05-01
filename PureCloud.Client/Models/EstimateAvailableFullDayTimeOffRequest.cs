@@ -21,7 +21,7 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
     /// </summary>
     /// <param name="Date">Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="RequestedDurationMinutes">A requested length of time off request in minutes. If the value is null, then the system will use activity code length setting.</param>
-    public EstimateAvailableFullDayTimeOffRequest(String Date = null, int? RequestedDurationMinutes = null)
+    public EstimateAvailableFullDayTimeOffRequest(string Date = null, int? RequestedDurationMinutes = null)
     {
         this.Date = Date;
         this.RequestedDurationMinutes = RequestedDurationMinutes;
@@ -35,7 +35,7 @@ public partial class EstimateAvailableFullDayTimeOffRequest : IEquatable<Estimat
     /// </summary>
     /// <value>Date in yyyy-MM-dd format for full day request. Should be interpreted in the business unit&#39;s configured time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "date", EmitDefaultValue = false)]
-    public String Date { get; set; }
+    public string Date { get; set; }
 
 
 

@@ -21,7 +21,7 @@ public partial class DialerSequenceScheduleConfigChangeScheduleRecurrence : IEqu
     /// <param name="Pattern">Pattern.</param>
     /// <param name="Alterations">modifications to the original recurrence schedule.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerSequenceScheduleConfigChangeScheduleRecurrence(string Id = null, string Start = null, string End = null, string TimeZone = null, DialerSequenceScheduleConfigChangeRecurrenceRange Range = null, DialerSequenceScheduleConfigChangeRecurrencePattern Pattern = null, List<DialerSequenceScheduleConfigChangeAlteration> Alterations = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerSequenceScheduleConfigChangeScheduleRecurrence(string Id = null, string Start = null, string End = null, string TimeZone = null, DialerSequenceScheduleConfigChangeRecurrenceRange Range = null, DialerSequenceScheduleConfigChangeRecurrencePattern Pattern = null, List<DialerSequenceScheduleConfigChangeAlteration> Alterations = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Id = Id;
         this.Start = Start;
@@ -101,7 +101,7 @@ public partial class DialerSequenceScheduleConfigChangeScheduleRecurrence : IEqu
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

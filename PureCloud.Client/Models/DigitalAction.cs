@@ -20,7 +20,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// <param name="MarkContactAddressUncontactableActionSettings">The settings for an &#39;mark contact address uncontactable&#39; action..</param>
     /// <param name="SetContentTemplateActionSettings">The settings for a &#39;Set content template&#39; action..</param>
     /// <param name="SetSmsPhoneNumberActionSettings">The settings for a &#39;set sms phone number&#39; action..</param>
-    public DigitalAction(UpdateContactColumnActionSettings UpdateContactColumnActionSettings = null, Object DoNotSendActionSettings = null, AppendToDncActionSettings AppendToDncActionSettings = null, MarkContactUncontactableActionSettings MarkContactUncontactableActionSettings = null, Object MarkContactAddressUncontactableActionSettings = null, SetContentTemplateActionSettings SetContentTemplateActionSettings = null, SetSmsPhoneNumberActionSettings SetSmsPhoneNumberActionSettings = null)
+    public DigitalAction(UpdateContactColumnActionSettings UpdateContactColumnActionSettings = null, object DoNotSendActionSettings = null, AppendToDncActionSettings AppendToDncActionSettings = null, MarkContactUncontactableActionSettings MarkContactUncontactableActionSettings = null, object MarkContactAddressUncontactableActionSettings = null, SetContentTemplateActionSettings SetContentTemplateActionSettings = null, SetSmsPhoneNumberActionSettings SetSmsPhoneNumberActionSettings = null)
     {
         this.UpdateContactColumnActionSettings = UpdateContactColumnActionSettings;
         this.DoNotSendActionSettings = DoNotSendActionSettings;
@@ -48,7 +48,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// </summary>
     /// <value>The settings for a &#39;do not send&#39; action.</value>
     [DataMember(Name = "doNotSendActionSettings", EmitDefaultValue = false)]
-    public Object DoNotSendActionSettings { get; set; }
+    public object DoNotSendActionSettings { get; set; }
 
 
 
@@ -75,7 +75,7 @@ public partial class DigitalAction : IEquatable<DigitalAction>
     /// </summary>
     /// <value>The settings for an &#39;mark contact address uncontactable&#39; action.</value>
     [DataMember(Name = "markContactAddressUncontactableActionSettings", EmitDefaultValue = false)]
-    public Object MarkContactAddressUncontactableActionSettings { get; set; }
+    public object MarkContactAddressUncontactableActionSettings { get; set; }
 
 
 

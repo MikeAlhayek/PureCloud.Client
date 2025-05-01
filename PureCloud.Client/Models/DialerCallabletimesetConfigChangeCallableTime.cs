@@ -16,7 +16,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     /// <param name="TimeSlots">The time slots.</param>
     /// <param name="TimeZoneId">The ISO ID for the timezone.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCallabletimesetConfigChangeCallableTime(List<DialerCallabletimesetConfigChangeTimeSlot> TimeSlots = null, string TimeZoneId = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCallabletimesetConfigChangeCallableTime(List<DialerCallabletimesetConfigChangeTimeSlot> TimeSlots = null, string TimeZoneId = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.TimeSlots = TimeSlots;
         this.TimeZoneId = TimeZoneId;
@@ -48,7 +48,7 @@ public partial class DialerCallabletimesetConfigChangeCallableTime : IEquatable<
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

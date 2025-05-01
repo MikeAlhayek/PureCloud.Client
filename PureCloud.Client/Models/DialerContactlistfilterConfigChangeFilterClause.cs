@@ -49,7 +49,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     /// <param name="FilterType">Contact list filter type.</param>
     /// <param name="Predicates">The list of predicates in that clause.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerContactlistfilterConfigChangeFilterClause(FilterTypeEnum? FilterType = null, List<DialerContactlistfilterConfigChangeFilterPredicate> Predicates = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerContactlistfilterConfigChangeFilterClause(FilterTypeEnum? FilterType = null, List<DialerContactlistfilterConfigChangeFilterPredicate> Predicates = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.FilterType = FilterType;
         this.Predicates = Predicates;
@@ -74,7 +74,7 @@ public partial class DialerContactlistfilterConfigChangeFilterClause : IEquatabl
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

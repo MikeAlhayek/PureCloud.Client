@@ -27,7 +27,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// <param name="OfferWeekDate">The first date of the week for the schedule we are querying in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="Shifts">The shifts the agent is scheduled for at the time the offer is created (required).</param>
     /// <param name="AlternativeDays">The offered alternative shift days in this week at the time the offer is created (required).</param>
-    public AlternativeShiftOffersViewResponseTemplate(string JobId = null, string BusinessUnitId = null, string AgentId = null, string ManagementUnitId = null, AlternativeShiftScheduleLookup Schedule = null, String OfferWeekDate = null, List<AlternativeShiftAgentScheduledShift> Shifts = null, List<AlternativeShiftAgentScheduledShift> AlternativeDays = null)
+    public AlternativeShiftOffersViewResponseTemplate(string JobId = null, string BusinessUnitId = null, string AgentId = null, string ManagementUnitId = null, AlternativeShiftScheduleLookup Schedule = null, string OfferWeekDate = null, List<AlternativeShiftAgentScheduledShift> Shifts = null, List<AlternativeShiftAgentScheduledShift> AlternativeDays = null)
     {
         this.JobId = JobId;
         this.BusinessUnitId = BusinessUnitId;
@@ -92,7 +92,7 @@ public partial class AlternativeShiftOffersViewResponseTemplate : IEquatable<Alt
     /// </summary>
     /// <value>The first date of the week for the schedule we are querying in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "offerWeekDate", EmitDefaultValue = false)]
-    public String OfferWeekDate { get; set; }
+    public string OfferWeekDate { get; set; }
 
 
 

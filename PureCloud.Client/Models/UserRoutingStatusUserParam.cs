@@ -16,7 +16,7 @@ public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUs
     /// <param name="Key">Key.</param>
     /// <param name="Value">Value.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public UserRoutingStatusUserParam(string Key = null, string Value = null, Dictionary<string, Object> AdditionalProperties = null)
+    public UserRoutingStatusUserParam(string Key = null, string Value = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Key = Key;
         this.Value = Value;
@@ -46,7 +46,7 @@ public partial class UserRoutingStatusUserParam : IEquatable<UserRoutingStatusUs
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

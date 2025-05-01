@@ -632,7 +632,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// <param name="MessageParams">MessageParams.</param>
     /// <param name="DocumentationUri">DocumentationUri.</param>
     /// <param name="ResourceURIs">ResourceURIs.</param>
-    public EventMessage(CodeEnum? Code = null, string Message = null, string MessageWithParams = null, Dictionary<string, Object> MessageParams = null, string DocumentationUri = null, List<string> ResourceURIs = null)
+    public EventMessage(CodeEnum? Code = null, string Message = null, string MessageWithParams = null, Dictionary<string, object> MessageParams = null, string DocumentationUri = null, List<string> ResourceURIs = null)
     {
         this.Code = Code;
         this.Message = Message;
@@ -667,7 +667,7 @@ public partial class EventMessage : IEquatable<EventMessage>
     /// Gets or Sets MessageParams
     /// </summary>
     [DataMember(Name = "messageParams", EmitDefaultValue = false)]
-    public Dictionary<string, Object> MessageParams { get; set; }
+    public Dictionary<string, object> MessageParams { get; set; }
 
 
 

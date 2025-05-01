@@ -300,7 +300,7 @@ public partial class Flow : IEquatable<Flow>
     /// <param name="CurrentOperation">CurrentOperation.</param>
     /// <param name="WorktypeId">WorktypeId.</param>
     /// <param name="VirtualAgentEnabled">VirtualAgentEnabled.</param>
-    public Flow(string Id = null, string Name = null, WritableDivision Division = null, string Description = null, TypeEnum? Type = null, User LockedUser = null, DomainEntityRef LockedClient = null, bool? Active = null, bool? System = null, bool? Deleted = null, FlowVersion PublishedVersion = null, FlowVersion SavedVersion = null, Object InputSchema = null, Object OutputSchema = null, FlowVersion CheckedInVersion = null, FlowVersion DebugVersion = null, User PublishedBy = null, Operation CurrentOperation = null, string WorktypeId = null, bool? VirtualAgentEnabled = null)
+    public Flow(string Id = null, string Name = null, WritableDivision Division = null, string Description = null, TypeEnum? Type = null, User LockedUser = null, DomainEntityRef LockedClient = null, bool? Active = null, bool? System = null, bool? Deleted = null, FlowVersion PublishedVersion = null, FlowVersion SavedVersion = null, object InputSchema = null, object OutputSchema = null, FlowVersion CheckedInVersion = null, FlowVersion DebugVersion = null, User PublishedBy = null, Operation CurrentOperation = null, string WorktypeId = null, bool? VirtualAgentEnabled = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -427,7 +427,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>json schema describing the inputs for the flow</value>
     [DataMember(Name = "inputSchema", EmitDefaultValue = false)]
-    public Object InputSchema { get; set; }
+    public object InputSchema { get; set; }
 
 
 
@@ -436,7 +436,7 @@ public partial class Flow : IEquatable<Flow>
     /// </summary>
     /// <value>json schema describing the outputs for the flow</value>
     [DataMember(Name = "outputSchema", EmitDefaultValue = false)]
-    public Object OutputSchema { get; set; }
+    public object OutputSchema { get; set; }
 
 
 

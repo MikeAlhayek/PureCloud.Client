@@ -84,7 +84,7 @@ public partial class FunctionRuntime : IEquatable<FunctionRuntime>
     /// </summary>
     /// <value>Optional end of life date. Present if the status is Deprecated. Date represents when support for runtime can no longer be guaranteed. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndOfLife", EmitDefaultValue = false)]
-    public String DateEndOfLife { get; private set; }
+    public string DateEndOfLife { get; private set; }
 
 
     /// <summary>

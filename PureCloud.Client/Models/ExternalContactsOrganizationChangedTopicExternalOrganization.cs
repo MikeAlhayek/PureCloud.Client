@@ -32,7 +32,7 @@ public partial class ExternalContactsOrganizationChangedTopicExternalOrganizatio
     /// <param name="CustomFields">CustomFields.</param>
     /// <param name="CreateDate">CreateDate.</param>
     /// <param name="ModifyDate">ModifyDate.</param>
-    public ExternalContactsOrganizationChangedTopicExternalOrganization(string Id = null, ExternalContactsOrganizationChangedTopicDivision Division = null, string Name = null, string CompanyType = null, string Industry = null, string PrimaryContactId = null, ExternalContactsOrganizationChangedTopicContactAddress Address = null, ExternalContactsOrganizationChangedTopicPhoneNumber PhoneNumber = null, ExternalContactsOrganizationChangedTopicPhoneNumber FaxNumber = null, long? EmployeeCount = null, long? Revenue = null, List<string> Tags = null, List<string> Websites = null, List<ExternalContactsOrganizationChangedTopicTicker> Tickers = null, ExternalContactsOrganizationChangedTopicTwitterId TwitterId = null, string ExternalSystemUrl = null, Dictionary<string, Object> CustomFields = null, DateTime? CreateDate = null, DateTime? ModifyDate = null)
+    public ExternalContactsOrganizationChangedTopicExternalOrganization(string Id = null, ExternalContactsOrganizationChangedTopicDivision Division = null, string Name = null, string CompanyType = null, string Industry = null, string PrimaryContactId = null, ExternalContactsOrganizationChangedTopicContactAddress Address = null, ExternalContactsOrganizationChangedTopicPhoneNumber PhoneNumber = null, ExternalContactsOrganizationChangedTopicPhoneNumber FaxNumber = null, long? EmployeeCount = null, long? Revenue = null, List<string> Tags = null, List<string> Websites = null, List<ExternalContactsOrganizationChangedTopicTicker> Tickers = null, ExternalContactsOrganizationChangedTopicTwitterId TwitterId = null, string ExternalSystemUrl = null, Dictionary<string, object> CustomFields = null, DateTime? CreateDate = null, DateTime? ModifyDate = null)
     {
         this.Id = Id;
         this.Division = Division;
@@ -190,7 +190,7 @@ public partial class ExternalContactsOrganizationChangedTopicExternalOrganizatio
     /// Gets or Sets CustomFields
     /// </summary>
     [DataMember(Name = "customFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> CustomFields { get; set; }
+    public Dictionary<string, object> CustomFields { get; set; }
 
 
 

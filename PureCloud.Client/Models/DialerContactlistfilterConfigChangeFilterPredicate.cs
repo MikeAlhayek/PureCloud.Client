@@ -146,7 +146,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// <param name="Range">Range.</param>
     /// <param name="Inverted">Whether or not to invert to result of evaluating the predicate.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerContactlistfilterConfigChangeFilterPredicate(string Column = null, ColumnTypeEnum? ColumnType = null, OperatorEnum? Operator = null, string Value = null, DialerContactlistfilterConfigChangeRange Range = null, bool? Inverted = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerContactlistfilterConfigChangeFilterPredicate(string Column = null, ColumnTypeEnum? ColumnType = null, OperatorEnum? Operator = null, string Value = null, DialerContactlistfilterConfigChangeRange Range = null, bool? Inverted = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Column = Column;
         this.ColumnType = ColumnType;
@@ -203,7 +203,7 @@ public partial class DialerContactlistfilterConfigChangeFilterPredicate : IEquat
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

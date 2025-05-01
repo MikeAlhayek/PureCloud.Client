@@ -17,7 +17,7 @@ public partial class TrendData : IEquatable<TrendData>
     /// <param name="DateEndWorkday">End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="PercentOfGoal">Percent of goal.</param>
     /// <param name="AverageValue">Average metric value.</param>
-    public TrendData(String DateStartWorkday = null, String DateEndWorkday = null, double? PercentOfGoal = null, double? AverageValue = null)
+    public TrendData(string DateStartWorkday = null, string DateEndWorkday = null, double? PercentOfGoal = null, double? AverageValue = null)
     {
         this.DateStartWorkday = DateStartWorkday;
         this.DateEndWorkday = DateEndWorkday;
@@ -33,7 +33,7 @@ public partial class TrendData : IEquatable<TrendData>
     /// </summary>
     /// <value>Start workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateStartWorkday", EmitDefaultValue = false)]
-    public String DateStartWorkday { get; set; }
+    public string DateStartWorkday { get; set; }
 
 
 
@@ -42,7 +42,7 @@ public partial class TrendData : IEquatable<TrendData>
     /// </summary>
     /// <value>End workday used as the date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateEndWorkday", EmitDefaultValue = false)]
-    public String DateEndWorkday { get; set; }
+    public string DateEndWorkday { get; set; }
 
 
 

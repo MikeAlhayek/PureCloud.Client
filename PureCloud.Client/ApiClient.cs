@@ -81,7 +81,7 @@ public class ApiClient
         // Use TLS 1.2
         ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-        if (String.IsNullOrEmpty(basePath))
+        if (string.IsNullOrEmpty(basePath))
         {
             throw new ArgumentException("basePath cannot be empty");
         }
@@ -151,11 +151,11 @@ public class ApiClient
     ///<Summary>
     /// Gets the Login or the API Uri based on Configuration and Gateway COnfiguration
     ///</Summary>
-    public Uri GetConfUri(String pathType, Uri baseUri)
+    public Uri GetConfUri(string pathType, Uri baseUri)
     {
         if (pathType.Equals("login"))
         {
-            if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host))
+            if (this.GatewayConfig == null || string.IsNullOrEmpty(this.GatewayConfig.Host))
             {
                 var regex = new Regex(@"://(api)\.");
                 var authUrl = regex.Replace(baseUri.ToString(), "://login.");
@@ -163,13 +163,13 @@ public class ApiClient
             }
             else
             {
-                String confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
+                string confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
                 if (this.GatewayConfig.Port > 0)
                 {
                     confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
                 }
 
-                if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsLogin))
+                if (!string.IsNullOrEmpty(this.GatewayConfig.PathParamsLogin))
                 {
                     if (this.GatewayConfig.PathParamsLogin.StartsWith("/"))
                     {
@@ -185,19 +185,19 @@ public class ApiClient
         }
         else
         {
-            if (this.GatewayConfig == null || String.IsNullOrEmpty(this.GatewayConfig.Host))
+            if (this.GatewayConfig == null || string.IsNullOrEmpty(this.GatewayConfig.Host))
             {
                 return baseUri;
             }
             else
             {
-                String confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
+                string confUrl = this.GatewayConfig.Protocol + "://" + this.GatewayConfig.Host;
                 if (this.GatewayConfig.Port > 0)
                 {
                     confUrl = confUrl + ":" + this.GatewayConfig.Port.ToString();
                 }
 
-                if (!String.IsNullOrEmpty(this.GatewayConfig.PathParamsApi))
+                if (!string.IsNullOrEmpty(this.GatewayConfig.PathParamsApi))
                 {
                     if (this.GatewayConfig.PathParamsApi.StartsWith("/"))
                     {
@@ -216,13 +216,13 @@ public class ApiClient
     ///<Summary>
     /// Set Gateway Configuration and credentials
     ///</Summary>
-    public void SetGateway(String host,
-        String protocol,
+    public void SetGateway(string host,
+        string protocol,
         int port,
-        String pathParamsLogin,
-        String pathParamsApi,
-        String username,
-        String password)
+        string pathParamsLogin,
+        string pathParamsApi,
+        string username,
+        string password)
     {
         this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi, username, password);
     }
@@ -230,11 +230,11 @@ public class ApiClient
     ///<Summary>
     /// Set Gateway Configuration
     ///</Summary>
-    public void SetGateway(String host,
-        String protocol,
+    public void SetGateway(string host,
+        string protocol,
         int port,
-        String pathParamsLogin,
-        String pathParamsApi)
+        string pathParamsLogin,
+        string pathParamsApi)
     {
         this.GatewayConfig = new GatewayConfiguration(host, protocol, port, pathParamsLogin, pathParamsApi);
     }
@@ -256,10 +256,10 @@ public class ApiClient
 
     // Creates and sets up a RestRequest prior to a call.
     private RestRequest PrepareRequest(
-        String path, RestSharp.Method method, List<Tuple<String, String>> queryParams, Object postBody,
-        Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-        Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-        String contentType)
+        string path, RestSharp.Method method, List<Tuple<string, string>> queryParams, object postBody,
+        Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        string contentType)
     {
         var request = new RestRequest(path, method);
 
@@ -295,7 +295,7 @@ public class ApiClient
 
         if (postBody != null) // http body (model or byte[]) parameter
         {
-            if (postBody.GetType() == typeof(String))
+            if (postBody.GetType() == typeof(string))
             {
                 request.AddParameter("application/json", postBody, ParameterType.RequestBody);
             }
@@ -352,11 +352,11 @@ public class ApiClient
     /// <param name="pathParams">Path parameters.</param>
     /// <param name="contentType">Content Type of the request</param>
     /// <returns>Object</returns>
-    public Object CallApi(
-        String path, RestSharp.Method method, List<Tuple<String, String>> queryParams, Object postBody,
-        Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-        Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-        String contentType)
+    public object CallApi(
+        string path, RestSharp.Method method, List<Tuple<string, string>> queryParams, object postBody,
+        Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        string contentType)
     {
         var request = PrepareRequest(
             path, method, queryParams, postBody, headerParams, formParams, fileParams,
@@ -409,7 +409,7 @@ public class ApiClient
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
 
         } while (retry.ShouldRetry(response));
@@ -433,11 +433,11 @@ public class ApiClient
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
         }
 
-        return (Object)response;
+        return (object)response;
     }
     /// <summary>
     /// Makes the asynchronous HTTP request.
@@ -452,11 +452,11 @@ public class ApiClient
     /// <param name="pathParams">Path parameters.</param>
     /// <param name="contentType">Content type.</param>
     /// <returns>The Task instance.</returns>
-    public async Task<Object> CallApiAsync(
-        String path, RestSharp.Method method, List<Tuple<String, String>> queryParams, Object postBody,
-        Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
-        Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
-        String contentType)
+    public async Task<object> CallApiAsync(
+        string path, RestSharp.Method method, List<Tuple<string, string>> queryParams, object postBody,
+        Dictionary<string, string> headerParams, Dictionary<string, string> formParams,
+        Dictionary<string, FileParameter> fileParams, Dictionary<string, string> pathParams,
+        string contentType)
     {
         var request = PrepareRequest(
             path, method, queryParams, postBody, headerParams, formParams, fileParams,
@@ -505,7 +505,7 @@ public class ApiClient
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>());
         } while (retry.ShouldRetry(response));
 
@@ -520,7 +520,7 @@ public class ApiClient
             }
         }
 
-        return (Object)response;
+        return (object)response;
     }
 
     /// <summary>
@@ -605,9 +605,9 @@ public class ApiClient
     /// </summary>
     /// <returns>Return changed from RestClient to Void . Since no purpose to expose underlying RestClient to Consumer and 
     ///  design changed to One Restclient per API</returns>
-    public void setBasePath(String basePath)
+    public void setBasePath(string basePath)
     {
-        if (String.IsNullOrEmpty(basePath))
+        if (string.IsNullOrEmpty(basePath))
         {
             throw new ArgumentException("basePath cannot be empty");
         }
@@ -644,7 +644,7 @@ public class ApiClient
         {
             if (headers != null)
             {
-                var filePath = String.IsNullOrEmpty(Configuration.TempFolderPath)
+                var filePath = string.IsNullOrEmpty(Configuration.TempFolderPath)
                     ? Path.GetTempPath()
                     : Configuration.TempFolderPath;
                 var regex = new Regex(@"Content-Disposition=.*filename=['""]?([^'""\s]+)['""]?$");
@@ -668,7 +668,7 @@ public class ApiClient
             return DateTime.Parse(response.Content, null, System.Globalization.DateTimeStyles.RoundtripKind);
         }
 
-        if (type == typeof(String) || type.Name.StartsWith("System.Nullable")) // return primitive type
+        if (type == typeof(string) || type.Name.StartsWith("System.Nullable")) // return primitive type
         {
             return ConvertType(response.Content, type);
         }
@@ -689,7 +689,7 @@ public class ApiClient
     /// </summary>
     /// <param name="obj">Object.</param>
     /// <returns>JSON string.</returns>
-    public String Serialize(object obj)
+    public string Serialize(object obj)
     {
         try
         {
@@ -717,7 +717,7 @@ public class ApiClient
     /// </summary>
     /// <param name="contentTypes">The Content-Type array to select from.</param>
     /// <returns>The Content-Type header to use.</returns>
-    public String SelectHeaderContentType(String[] contentTypes)
+    public string SelectHeaderContentType(string[] contentTypes)
     {
         if (contentTypes.Length == 0)
         {
@@ -739,7 +739,7 @@ public class ApiClient
     /// </summary>
     /// <param name="accepts">The accepts array to select from.</param>
     /// <returns>The Accept header to use.</returns>
-    public String SelectHeaderAccept(String[] accepts)
+    public string SelectHeaderAccept(string[] accepts)
     {
         if (accepts.Length == 0)
         {
@@ -751,7 +751,7 @@ public class ApiClient
             return "application/json";
         }
 
-        return String.Join(",", accepts);
+        return string.Join(",", accepts);
     }
 
     /// <summary>
@@ -945,25 +945,25 @@ public class ApiClient
     {
 
         // Gateway Host
-        private String host = null;
+        private string host = null;
 
         // Gateway Protocol
-        private String protocol = "https";
+        private string protocol = "https";
 
         // Gateway Port
         private int port = -1;
 
         // Gateway Path Param for Login
-        private String pathParamsLogin = "";
+        private string pathParamsLogin = "";
 
         // Gateway Path Param for API
-        private String pathParamsApi = "";
+        private string pathParamsApi = "";
 
         // Gateway Username (future)
-        private String username = null;
+        private string username = null;
 
         // Gateway Password (future)
-        private String password = null;
+        private string password = null;
 
         ///<Summary>
         /// GatewayConfiguration default constructor
@@ -979,13 +979,13 @@ public class ApiClient
         ///<Summary>
         /// GatewayConfiguration constructor with configuration and credentials
         ///</Summary>
-        public GatewayConfiguration(String host,
-            String protocol,
+        public GatewayConfiguration(string host,
+            string protocol,
             int port,
-            String pathParamsLogin,
-            String pathParamsApi,
-            String username,
-            String password)
+            string pathParamsLogin,
+            string pathParamsApi,
+            string username,
+            string password)
         {
             this.Host = host;
             this.Protocol = protocol;
@@ -999,11 +999,11 @@ public class ApiClient
         ///<Summary>
         /// GatewayConfiguration constructor with configuration
         ///</Summary>
-        public GatewayConfiguration(String host,
-            String protocol,
+        public GatewayConfiguration(string host,
+            string protocol,
             int port,
-            String pathParamsLogin,
-            String pathParamsApi)
+            string pathParamsLogin,
+            string pathParamsApi)
         {
             this.Host = host;
             this.Protocol = protocol;
@@ -1015,7 +1015,7 @@ public class ApiClient
         ///<Summary>
         /// Gateway Host
         ///</Summary>
-        public String Host
+        public string Host
         {
             get
             {
@@ -1023,7 +1023,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.host = value;
                 }
@@ -1033,7 +1033,7 @@ public class ApiClient
         ///<Summary>
         /// Gateway Protocol
         ///</Summary>
-        public String Protocol
+        public string Protocol
         {
             get
             {
@@ -1041,7 +1041,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.protocol = value;
                 }
@@ -1077,7 +1077,7 @@ public class ApiClient
         ///<Summary>
         /// Gateway Path Params for Login
         ///</Summary>
-        public String PathParamsLogin
+        public string PathParamsLogin
         {
             get
             {
@@ -1085,7 +1085,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.pathParamsLogin = value;
                     if (this.pathParamsLogin.EndsWith("/"))
@@ -1103,7 +1103,7 @@ public class ApiClient
         ///<Summary>
         /// Gateway Path Params for Api
         ///</Summary>
-        public String PathParamsApi
+        public string PathParamsApi
         {
             get
             {
@@ -1111,7 +1111,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.pathParamsApi = value;
                     if (this.pathParamsApi.EndsWith("/"))
@@ -1129,7 +1129,7 @@ public class ApiClient
         ///<Summary>
         /// Username
         ///</Summary>
-        public String Username
+        public string Username
         {
             get
             {
@@ -1137,7 +1137,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.username = value;
                 }
@@ -1147,7 +1147,7 @@ public class ApiClient
         ///<Summary>
         /// Password
         ///</Summary>
-        public String Password
+        public string Password
         {
             get
             {
@@ -1155,7 +1155,7 @@ public class ApiClient
             }
             set
             {
-                if (!String.IsNullOrEmpty(value))
+                if (!string.IsNullOrEmpty(value))
                 {
                     this.password = value;
                 }
@@ -1252,7 +1252,7 @@ public class ApiClient
  })
  .FirstOrDefault(header => header.Name.ToString().Equals("Retry-After"));
 
-                if (retryAfterHeader != null && Int32.TryParse(retryAfterHeader.Value.ToString(), out int retryAfterSec))
+                if (retryAfterHeader != null && int.TryParse(retryAfterHeader.Value.ToString(), out int retryAfterSec))
                 {
                     retryAfterMs = retryAfterSec * 1000;
                 }

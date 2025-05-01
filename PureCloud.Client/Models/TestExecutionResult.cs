@@ -17,7 +17,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// <param name="Error">The final error encountered during the test that resulted in test failure.</param>
     /// <param name="FinalResult">The final result of the test. This is the response that would be returned during normal action execution.</param>
     /// <param name="Success">Indicates whether or not the test was a success.</param>
-    public TestExecutionResult(List<TestExecutionOperationResult> Operations = null, ErrorBody Error = null, Object FinalResult = null, bool? Success = null)
+    public TestExecutionResult(List<TestExecutionOperationResult> Operations = null, ErrorBody Error = null, object FinalResult = null, bool? Success = null)
     {
         this.Operations = Operations;
         this.Error = Error;
@@ -51,7 +51,7 @@ public partial class TestExecutionResult : IEquatable<TestExecutionResult>
     /// </summary>
     /// <value>The final result of the test. This is the response that would be returned during normal action execution</value>
     [DataMember(Name = "finalResult", EmitDefaultValue = false)]
-    public Object FinalResult { get; set; }
+    public object FinalResult { get; set; }
 
 
 

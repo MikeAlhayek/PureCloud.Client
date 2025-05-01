@@ -18,7 +18,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// <param name="UpdateOption">Indicator of the type of update action (applicable only to certain types of actions).</param>
     /// <param name="Properties">Map of key-value pairs pertinent to the action (different actions require different properties).</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerRulesetConfigChangeAction(string Type = null, string ActionTypeName = null, string UpdateOption = null, Dictionary<string, string> Properties = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerRulesetConfigChangeAction(string Type = null, string ActionTypeName = null, string UpdateOption = null, Dictionary<string, string> Properties = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Type = Type;
         this.ActionTypeName = ActionTypeName;
@@ -70,7 +70,7 @@ public partial class DialerRulesetConfigChangeAction : IEquatable<DialerRulesetC
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

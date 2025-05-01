@@ -16,7 +16,7 @@ public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCa
     /// <param name="ColumnName">The name of the phone column.</param>
     /// <param name="Type">The type of the phone column, for example, &#39;cell&#39; or &#39;home&#39;.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignConfigChangePhoneColumn(string ColumnName = null, string Type = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignConfigChangePhoneColumn(string ColumnName = null, string Type = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.ColumnName = ColumnName;
         this.Type = Type;
@@ -48,7 +48,7 @@ public partial class DialerCampaignConfigChangePhoneColumn : IEquatable<DialerCa
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>

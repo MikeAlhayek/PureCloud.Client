@@ -20,7 +20,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// <param name="CorrelationId">CorrelationId.</param>
     /// <param name="UserParams">UserParams.</param>
     /// <param name="InsertDate">Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
-    public PolicyErrorMessage(int? StatusCode = null, Object UserMessage = null, string UserParamsMessage = null, string ErrorCode = null, string CorrelationId = null, List<UserParam> UserParams = null, DateTime? InsertDate = null)
+    public PolicyErrorMessage(int? StatusCode = null, object UserMessage = null, string UserParamsMessage = null, string ErrorCode = null, string CorrelationId = null, List<UserParam> UserParams = null, DateTime? InsertDate = null)
     {
         this.StatusCode = StatusCode;
         this.UserMessage = UserMessage;
@@ -46,7 +46,7 @@ public partial class PolicyErrorMessage : IEquatable<PolicyErrorMessage>
     /// Gets or Sets UserMessage
     /// </summary>
     [DataMember(Name = "userMessage", EmitDefaultValue = false)]
-    public Object UserMessage { get; set; }
+    public object UserMessage { get; set; }
 
 
 

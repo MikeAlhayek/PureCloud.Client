@@ -68,7 +68,7 @@ public partial class Endpoint : IEquatable<Endpoint>
     /// <param name="Enabled">Enabled.</param>
     /// <param name="Site">Site.</param>
     /// <param name="Dids">Dids.</param>
-    public Endpoint(string Name = null, Division Division = null, string Description = null, int? Version = null, int? Count = null, Dictionary<string, Object> Properties = null, DomainEntityRef Schema = null, bool? Enabled = null, DomainEntityRef Site = null, List<string> Dids = null)
+    public Endpoint(string Name = null, Division Division = null, string Description = null, int? Version = null, int? Count = null, Dictionary<string, object> Properties = null, DomainEntityRef Schema = null, bool? Enabled = null, DomainEntityRef Site = null, List<string> Dids = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -198,7 +198,7 @@ public partial class Endpoint : IEquatable<Endpoint>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

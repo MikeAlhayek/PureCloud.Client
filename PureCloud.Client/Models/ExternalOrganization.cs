@@ -39,7 +39,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// <param name="Trustor">Trustor.</param>
     /// <param name="Schema">The schema defining custom fields for this contact.</param>
     /// <param name="CustomFields">Custom fields defined in the schema referenced by schemaId and schemaVersion..</param>
-    public ExternalOrganization(string Id = null, string Name = null, WritableStarrableDivision Division = null, string CompanyType = null, string Industry = null, ContactAddress Address = null, PhoneNumber PhoneNumber = null, PhoneNumber FaxNumber = null, long? EmployeeCount = null, long? Revenue = null, List<string> Tags = null, List<string> Websites = null, List<Ticker> Tickers = null, TwitterId TwitterId = null, string ExternalSystemUrl = null, DateTime? ModifyDate = null, DateTime? CreateDate = null, Trustor Trustor = null, DataSchema Schema = null, Dictionary<string, Object> CustomFields = null)
+    public ExternalOrganization(string Id = null, string Name = null, WritableStarrableDivision Division = null, string CompanyType = null, string Industry = null, ContactAddress Address = null, PhoneNumber PhoneNumber = null, PhoneNumber FaxNumber = null, long? EmployeeCount = null, long? Revenue = null, List<string> Tags = null, List<string> Websites = null, List<Ticker> Tickers = null, TwitterId TwitterId = null, string ExternalSystemUrl = null, DateTime? ModifyDate = null, DateTime? CreateDate = null, Trustor Trustor = null, DataSchema Schema = null, Dictionary<string, object> CustomFields = null)
     {
         this.Id = Id;
         this.Name = Name;
@@ -230,7 +230,7 @@ public partial class ExternalOrganization : IEquatable<ExternalOrganization>
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by schemaId and schemaVersion.</value>
     [DataMember(Name = "customFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> CustomFields { get; set; }
+    public Dictionary<string, object> CustomFields { get; set; }
 
 
 

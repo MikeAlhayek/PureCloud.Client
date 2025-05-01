@@ -21,7 +21,7 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
     /// </summary>
     /// <param name="StartDate">Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="LimitMinutesPerDay">The list of time-off limit values in minutes per day. If &#39;null&#39; is specified, then the day-specific value is cleared. Such a day will have a value of 0 (required).</param>
-    public BuTimeOffLimitRange(String StartDate = null, List<int?> LimitMinutesPerDay = null)
+    public BuTimeOffLimitRange(string StartDate = null, List<int?> LimitMinutesPerDay = null)
     {
         this.StartDate = StartDate;
         this.LimitMinutesPerDay = LimitMinutesPerDay;
@@ -35,7 +35,7 @@ public partial class BuTimeOffLimitRange : IEquatable<BuTimeOffLimitRange>
     /// </summary>
     /// <value>Start date of the range. The end date is determined by the size of &#39;limitMinutesPerDay&#39;. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startDate", EmitDefaultValue = false)]
-    public String StartDate { get; set; }
+    public string StartDate { get; set; }
 
 
 

@@ -98,7 +98,7 @@ public partial class AvailableTopic : IEquatable<AvailableTopic>
     /// <param name="Transports">Transports that support events for the topic.</param>
     /// <param name="PublicApiTemplateUriPaths">PublicApiTemplateUriPaths.</param>
     /// <param name="TopicParameters">Parameters in the topic name that can be substituted, in the order they appear in the topic name.</param>
-    public AvailableTopic(string Description = null, string Id = null, List<PermissionDetails> PermissionDetails = null, List<string> RequiresPermissions = null, bool? RequiresDivisionPermissions = null, bool? RequiresAnyValidator = null, bool? Enforced = null, VisibilityEnum? Visibility = null, Dictionary<string, Object> Schema = null, bool? RequiresCurrentUser = null, bool? RequiresCurrentUserOrPermission = null, List<TransportsEnum> Transports = null, List<string> PublicApiTemplateUriPaths = null, List<string> TopicParameters = null)
+    public AvailableTopic(string Description = null, string Id = null, List<PermissionDetails> PermissionDetails = null, List<string> RequiresPermissions = null, bool? RequiresDivisionPermissions = null, bool? RequiresAnyValidator = null, bool? Enforced = null, VisibilityEnum? Visibility = null, Dictionary<string, object> Schema = null, bool? RequiresCurrentUser = null, bool? RequiresCurrentUserOrPermission = null, List<TransportsEnum> Transports = null, List<string> PublicApiTemplateUriPaths = null, List<string> TopicParameters = null)
     {
         this.Description = Description;
         this.Id = Id;
@@ -186,7 +186,7 @@ public partial class AvailableTopic : IEquatable<AvailableTopic>
     /// Gets or Sets Schema
     /// </summary>
     [DataMember(Name = "schema", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Schema { get; set; }
+    public Dictionary<string, object> Schema { get; set; }
 
 
 

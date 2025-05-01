@@ -34,7 +34,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="languageId">Language ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
     [Obsolete]
-    ApiResponse<Object> DeleteLanguageWithHttpInfo(string languageId);
+    ApiResponse<object> DeleteLanguageWithHttpInfo(string languageId);
 
     /// <summary>
     /// Get Language (Deprecated)
@@ -122,7 +122,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    Dictionary<string, Object> GetLanguagesTranslationsBuiltin(string language);
+    Dictionary<string, object> GetLanguagesTranslationsBuiltin(string language);
 
     /// <summary>
     /// Get the builtin translation for a language
@@ -134,7 +134,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsBuiltinWithHttpInfo(string language);
+    ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsBuiltinWithHttpInfo(string language);
 
     /// <summary>
     /// Get effective translation for an organization by language
@@ -146,7 +146,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    Dictionary<string, Object> GetLanguagesTranslationsOrganization(string language);
+    Dictionary<string, object> GetLanguagesTranslationsOrganization(string language);
 
     /// <summary>
     /// Get effective translation for an organization by language
@@ -158,7 +158,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsOrganizationWithHttpInfo(string language);
+    ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsOrganizationWithHttpInfo(string language);
 
     /// <summary>
     /// Get effective language translation for a user
@@ -170,7 +170,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="userId">The user id</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    Dictionary<string, Object> GetLanguagesTranslationsUser(string userId);
+    Dictionary<string, object> GetLanguagesTranslationsUser(string userId);
 
     /// <summary>
     /// Get effective language translation for a user
@@ -182,7 +182,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="userId">The user id</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsUserWithHttpInfo(string userId);
+    ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsUserWithHttpInfo(string userId);
 
     /// <summary>
     /// Create Language (Deprecated)
@@ -234,7 +234,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="languageId">Language ID</param>
     /// <returns>Task of ApiResponse</returns>
     [Obsolete]
-    Task<ApiResponse<Object>> DeleteLanguageAsyncWithHttpInfo(string languageId);
+    Task<ApiResponse<object>> DeleteLanguageAsyncWithHttpInfo(string languageId);
 
     /// <summary>
     /// Get Language (Deprecated)
@@ -322,7 +322,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    Task<Dictionary<string, Object>> GetLanguagesTranslationsBuiltinAsync(string language);
+    Task<Dictionary<string, object>> GetLanguagesTranslationsBuiltinAsync(string language);
 
     /// <summary>
     /// Get the builtin translation for a language
@@ -334,7 +334,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(string language);
+    Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(string language);
 
     /// <summary>
     /// Get effective translation for an organization by language
@@ -346,7 +346,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    Task<Dictionary<string, Object>> GetLanguagesTranslationsOrganizationAsync(string language);
+    Task<Dictionary<string, object>> GetLanguagesTranslationsOrganizationAsync(string language);
 
     /// <summary>
     /// Get effective translation for an organization by language
@@ -358,7 +358,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(string language);
+    Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(string language);
 
     /// <summary>
     /// Get effective language translation for a user
@@ -370,7 +370,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="userId">The user id</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    Task<Dictionary<string, Object>> GetLanguagesTranslationsUserAsync(string userId);
+    Task<Dictionary<string, object>> GetLanguagesTranslationsUserAsync(string userId);
 
     /// <summary>
     /// Get effective language translation for a user
@@ -382,7 +382,7 @@ public interface ILanguagesApi : IApiAccessor
     /// <param name="userId">The user id</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsUserAsyncWithHttpInfo(string userId);
+    Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsUserAsyncWithHttpInfo(string userId);
 
     /// <summary>
     /// Create Language (Deprecated)
@@ -421,7 +421,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// Initializes a new instance of the <see cref="LanguagesApi"/> class.
     /// </summary>
     /// <returns></returns>
-    public LanguagesApi(String basePath)
+    public LanguagesApi(string basePath)
     {
         this.Configuration = new Configuration(new ApiClient(basePath));
 
@@ -460,7 +460,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// Gets the base path of the API client.
     /// </summary>
     /// <value>The base path</value>
-    public String GetBasePath()
+    public string GetBasePath()
     {
         return this.Configuration.ApiClient.ClientOptions.BaseUrl.ToString();
     }
@@ -470,7 +470,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// </summary>
     /// <value>The base path</value>
     [Obsolete("SetBasePath is deprecated, please do 'this.Configuration.ApiClient = new ApiClient(\"http://new-path\")' instead.")]
-    public void SetBasePath(String basePath)
+    public void SetBasePath(string basePath)
     {
         // do nothing
     }
@@ -486,7 +486,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// </summary>
     /// <returns>Dictionary of HTTP header</returns>
     [Obsolete("DefaultHeader is deprecated, please use this.Configuration.DefaultHeader instead.")]
-    public Dictionary<String, String> DefaultHeader()
+    public Dictionary<string, string> DefaultHeader()
     {
         return this.Configuration.DefaultHeader;
     }
@@ -525,7 +525,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="languageId">Language ID</param>
     /// <returns>ApiResponse of Object(void)</returns>
     [Obsolete]
-    public ApiResponse<Object> DeleteLanguageWithHttpInfo(string languageId)
+    public ApiResponse<object> DeleteLanguageWithHttpInfo(string languageId)
     {
         // verify the required parameter 'languageId' is set
         if (languageId == null)
@@ -534,27 +534,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/{languageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -581,7 +581,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -599,7 +599,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -611,7 +611,7 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -641,7 +641,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="languageId">Language ID</param>
     /// <returns>Task of ApiResponse</returns>
     [Obsolete]
-    public async Task<ApiResponse<Object>> DeleteLanguageAsyncWithHttpInfo(string languageId)
+    public async Task<ApiResponse<object>> DeleteLanguageAsyncWithHttpInfo(string languageId)
     {
         // verify the required parameter 'languageId' is set
         if (languageId == null)
@@ -650,27 +650,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/{languageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -697,7 +697,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -715,7 +715,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -727,7 +727,7 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling DeleteLanguage: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Object>(localVarStatusCode,
+        return new ApiResponse<object>(localVarStatusCode,
             localVarHeaders,
             null,
             localVarResponse.Content,
@@ -767,27 +767,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/{languageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -814,7 +814,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -832,7 +832,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -884,27 +884,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/{languageId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -931,7 +931,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -949,7 +949,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1002,27 +1002,27 @@ public partial class LanguagesApi : ILanguagesApi
     {
 
         var localVarPath = "/api/v2/languages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1064,7 +1064,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1082,7 +1082,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1135,27 +1135,27 @@ public partial class LanguagesApi : ILanguagesApi
     {
 
         var localVarPath = "/api/v2/languages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1197,7 +1197,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1215,7 +1215,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1260,27 +1260,27 @@ public partial class LanguagesApi : ILanguagesApi
     {
 
         var localVarPath = "/api/v2/languages/translations";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1303,7 +1303,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1321,7 +1321,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1366,27 +1366,27 @@ public partial class LanguagesApi : ILanguagesApi
     {
 
         var localVarPath = "/api/v2/languages/translations";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1409,7 +1409,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1427,7 +1427,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1456,9 +1456,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    public Dictionary<string, Object> GetLanguagesTranslationsBuiltin(string language)
+    public Dictionary<string, object> GetLanguagesTranslationsBuiltin(string language)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = GetLanguagesTranslationsBuiltinWithHttpInfo(language);
+        ApiResponse<Dictionary<string, object>> localVarResponse = GetLanguagesTranslationsBuiltinWithHttpInfo(language);
         return localVarResponse.Data;
     }
 
@@ -1470,7 +1470,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    public ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsBuiltinWithHttpInfo(string language)
+    public ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsBuiltinWithHttpInfo(string language)
     {
         // verify the required parameter 'language' is set
         if (language == null)
@@ -1479,27 +1479,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/builtin";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1526,7 +1526,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1544,7 +1544,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1556,9 +1556,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsBuiltin: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1572,9 +1572,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    public async Task<Dictionary<string, Object>> GetLanguagesTranslationsBuiltinAsync(string language)
+    public async Task<Dictionary<string, object>> GetLanguagesTranslationsBuiltinAsync(string language)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = await GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(language);
+        ApiResponse<Dictionary<string, object>> localVarResponse = await GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(language);
         return localVarResponse.Data;
 
     }
@@ -1587,7 +1587,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the builtin translation to retrieve</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    public async Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(string language)
+    public async Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsBuiltinAsyncWithHttpInfo(string language)
     {
         // verify the required parameter 'language' is set
         if (language == null)
@@ -1596,27 +1596,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/builtin";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1643,7 +1643,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1661,7 +1661,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1673,9 +1673,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsBuiltin: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1690,9 +1690,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    public Dictionary<string, Object> GetLanguagesTranslationsOrganization(string language)
+    public Dictionary<string, object> GetLanguagesTranslationsOrganization(string language)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = GetLanguagesTranslationsOrganizationWithHttpInfo(language);
+        ApiResponse<Dictionary<string, object>> localVarResponse = GetLanguagesTranslationsOrganizationWithHttpInfo(language);
         return localVarResponse.Data;
     }
 
@@ -1704,7 +1704,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    public ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsOrganizationWithHttpInfo(string language)
+    public ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsOrganizationWithHttpInfo(string language)
     {
         // verify the required parameter 'language' is set
         if (language == null)
@@ -1713,27 +1713,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/organization";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1760,7 +1760,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1778,7 +1778,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1790,9 +1790,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsOrganization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1806,9 +1806,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    public async Task<Dictionary<string, Object>> GetLanguagesTranslationsOrganizationAsync(string language)
+    public async Task<Dictionary<string, object>> GetLanguagesTranslationsOrganizationAsync(string language)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = await GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(language);
+        ApiResponse<Dictionary<string, object>> localVarResponse = await GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(language);
         return localVarResponse.Data;
 
     }
@@ -1821,7 +1821,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="language">The language of the translation to retrieve for the organization</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    public async Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(string language)
+    public async Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsOrganizationAsyncWithHttpInfo(string language)
     {
         // verify the required parameter 'language' is set
         if (language == null)
@@ -1830,27 +1830,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/organization";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1877,7 +1877,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -1895,7 +1895,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -1907,9 +1907,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsOrganization: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -1924,9 +1924,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="userId">The user id</param>
     /// <returns>Dictionary&lt;string, Object&gt;</returns>
 
-    public Dictionary<string, Object> GetLanguagesTranslationsUser(string userId)
+    public Dictionary<string, object> GetLanguagesTranslationsUser(string userId)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = GetLanguagesTranslationsUserWithHttpInfo(userId);
+        ApiResponse<Dictionary<string, object>> localVarResponse = GetLanguagesTranslationsUserWithHttpInfo(userId);
         return localVarResponse.Data;
     }
 
@@ -1938,7 +1938,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="userId">The user id</param>
     /// <returns>ApiResponse of Dictionary&lt;string, Object&gt;</returns>
 
-    public ApiResponse<Dictionary<string, Object>> GetLanguagesTranslationsUserWithHttpInfo(string userId)
+    public ApiResponse<Dictionary<string, object>> GetLanguagesTranslationsUserWithHttpInfo(string userId)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -1947,27 +1947,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -1994,7 +1994,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2012,7 +2012,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2024,9 +2024,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2040,9 +2040,9 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="userId">The user id</param>
     /// <returns>Task of Dictionary&lt;string, Object&gt;</returns>
 
-    public async Task<Dictionary<string, Object>> GetLanguagesTranslationsUserAsync(string userId)
+    public async Task<Dictionary<string, object>> GetLanguagesTranslationsUserAsync(string userId)
     {
-        ApiResponse<Dictionary<string, Object>> localVarResponse = await GetLanguagesTranslationsUserAsyncWithHttpInfo(userId);
+        ApiResponse<Dictionary<string, object>> localVarResponse = await GetLanguagesTranslationsUserAsyncWithHttpInfo(userId);
         return localVarResponse.Data;
 
     }
@@ -2055,7 +2055,7 @@ public partial class LanguagesApi : ILanguagesApi
     /// <param name="userId">The user id</param>
     /// <returns>Task of ApiResponse (Dictionary&lt;string, Object&gt;)</returns>
 
-    public async Task<ApiResponse<Dictionary<string, Object>>> GetLanguagesTranslationsUserAsyncWithHttpInfo(string userId)
+    public async Task<ApiResponse<Dictionary<string, object>>> GetLanguagesTranslationsUserAsyncWithHttpInfo(string userId)
     {
         // verify the required parameter 'userId' is set
         if (userId == null)
@@ -2064,27 +2064,27 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages/translations/users/{userId}";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2111,7 +2111,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2129,7 +2129,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2141,9 +2141,9 @@ public partial class LanguagesApi : ILanguagesApi
             throw new ApiException(localVarStatusCode, "Error calling GetLanguagesTranslationsUser: " + localVarResponse.ErrorMessage, localVarResponse.ErrorMessage);
         }
 
-        return new ApiResponse<Dictionary<string, Object>>(localVarStatusCode,
+        return new ApiResponse<Dictionary<string, object>>(localVarStatusCode,
             localVarHeaders,
-            (Dictionary<string, Object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, Object>)),
+            (Dictionary<string, object>)this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(Dictionary<string, object>)),
             localVarResponse.Content,
             localVarResponse.StatusDescription);
     }
@@ -2181,28 +2181,28 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2234,7 +2234,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2252,7 +2252,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)
@@ -2304,28 +2304,28 @@ public partial class LanguagesApi : ILanguagesApi
         }
 
         var localVarPath = "/api/v2/languages";
-        var localVarPathParams = new Dictionary<String, String>();
-        var localVarQueryParams = new List<Tuple<String, String>>();
-        var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-        var localVarFormParams = new Dictionary<String, String>();
-        var localVarFileParams = new Dictionary<String, FileParameter>();
-        Object localVarPostBody = null;
+        var localVarPathParams = new Dictionary<string, string>();
+        var localVarQueryParams = new List<Tuple<string, string>>();
+        var localVarHeaderParams = new Dictionary<string, string>(Configuration.DefaultHeader);
+        var localVarFormParams = new Dictionary<string, string>();
+        var localVarFileParams = new Dictionary<string, FileParameter>();
+        object localVarPostBody = null;
 
         // to determine the Content-Type header
-        String[] localVarHttpContentTypes = new String[] {
+        string[] localVarHttpContentTypes = new string[] {
             "application/json"
 
         };
-        String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+        string localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
         // to determine the Accept header
-        String[] localVarHttpHeaderAccepts = new String[] {
+        string[] localVarHttpHeaderAccepts = new string[] {
 
             "application/json"
 
 
         };
-        String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+        string localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
         if (localVarHttpHeaderAccept != null)
         {
             localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
@@ -2357,7 +2357,7 @@ public partial class LanguagesApi : ILanguagesApi
 
         // authentication (PureCloudEnvironment OAuth) required
         // oauth required
-        if (!String.IsNullOrEmpty(Configuration.AccessToken))
+        if (!string.IsNullOrEmpty(Configuration.AccessToken))
         {
             localVarHeaderParams["Authorization"] = "Bearer " + this.Configuration.AccessToken;
         }
@@ -2375,7 +2375,7 @@ public partial class LanguagesApi : ILanguagesApi
                                                          {
                                                              Name = header?.FirstOrDefault()?.Name,
                                                              Value = header.Select(x => x?.Value)?.ToList()
-                                                         }).ToDictionary(header => header?.Name?.ToString(), header => String.Join(", ", header?.Value?.ToArray()))
+                                                         }).ToDictionary(header => header?.Name?.ToString(), header => string.Join(", ", header?.Value?.ToArray()))
                                                     ?? new Dictionary<string, string>();
 
         if (localVarStatusCode >= 400)

@@ -169,7 +169,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// <param name="UtilizationLabelId">The ID of the utilization label of the Workitem. Must be a valid UUID..</param>
     /// <param name="PreferredAgentIds">The preferred agent IDs of the Workitem. Must be valid UUIDs..</param>
     /// <param name="ScriptId">The ID of the Workitems script. Must be a valid UUID..</param>
-    public WorkitemUpdate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, DateTime? DateClosed = null, AssignmentStateEnum? AssignmentState = null, AssignmentOperationEnum? AssignmentOperation = null, Dictionary<string, Object> CustomFields = null, string QueueId = null, string AssigneeId = null, List<WorkitemScoredAgentRequest> ScoredAgents = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string LanguageId = null, string UtilizationLabelId = null, List<string> PreferredAgentIds = null, string ScriptId = null)
+    public WorkitemUpdate(string Name = null, int? Priority = null, DateTime? DateDue = null, DateTime? DateExpires = null, int? DurationSeconds = null, int? Ttl = null, string StatusId = null, string WorkbinId = null, bool? AutoStatusTransition = null, string Description = null, DateTime? DateClosed = null, AssignmentStateEnum? AssignmentState = null, AssignmentOperationEnum? AssignmentOperation = null, Dictionary<string, object> CustomFields = null, string QueueId = null, string AssigneeId = null, List<WorkitemScoredAgentRequest> ScoredAgents = null, string ExternalContactId = null, string ExternalTag = null, List<string> SkillIds = null, string LanguageId = null, string UtilizationLabelId = null, List<string> PreferredAgentIds = null, string ScriptId = null)
     {
         this.Name = Name;
         this.Priority = Priority;
@@ -308,7 +308,7 @@ public partial class WorkitemUpdate : IEquatable<WorkitemUpdate>
     /// </summary>
     /// <value>Custom fields defined in the schema referenced by the worktype of the workitem. If set to {}, the existing keys and values will be removed.</value>
     [DataMember(Name = "customFields", EmitDefaultValue = false)]
-    public Dictionary<string, Object> CustomFields { get; set; }
+    public Dictionary<string, object> CustomFields { get; set; }
 
 
 

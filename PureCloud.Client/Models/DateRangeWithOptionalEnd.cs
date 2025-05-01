@@ -21,7 +21,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     /// </summary>
     /// <param name="StartBusinessUnitDate">The start date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd (required).</param>
     /// <param name="EndBusinessUnitDate">The end date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Null denotes open ended date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
-    public DateRangeWithOptionalEnd(String StartBusinessUnitDate = null, String EndBusinessUnitDate = null)
+    public DateRangeWithOptionalEnd(string StartBusinessUnitDate = null, string EndBusinessUnitDate = null)
     {
         this.StartBusinessUnitDate = StartBusinessUnitDate;
         this.EndBusinessUnitDate = EndBusinessUnitDate;
@@ -35,7 +35,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     /// </summary>
     /// <value>The start date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "startBusinessUnitDate", EmitDefaultValue = false)]
-    public String StartBusinessUnitDate { get; set; }
+    public string StartBusinessUnitDate { get; set; }
 
 
 
@@ -44,7 +44,7 @@ public partial class DateRangeWithOptionalEnd : IEquatable<DateRangeWithOptional
     /// </summary>
     /// <value>The end date for work plan rotation or an agent, interpreted in the business unit&#39;s time zone. Null denotes open ended date range. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "endBusinessUnitDate", EmitDefaultValue = false)]
-    public String EndBusinessUnitDate { get; set; }
+    public string EndBusinessUnitDate { get; set; }
 
 
     /// <summary>

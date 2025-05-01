@@ -15,7 +15,7 @@ public partial class WeekShiftTradeMatchesSummaryResponse : IEquatable<WeekShift
     /// </summary>
     /// <param name="WeekDate">The schedule week date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd.</param>
     /// <param name="Count">The number of trades in the &#39;Matched&#39; state with the initiating shift in the given week.</param>
-    public WeekShiftTradeMatchesSummaryResponse(String WeekDate = null, int? Count = null)
+    public WeekShiftTradeMatchesSummaryResponse(string WeekDate = null, int? Count = null)
     {
         this.WeekDate = WeekDate;
         this.Count = Count;
@@ -29,7 +29,7 @@ public partial class WeekShiftTradeMatchesSummaryResponse : IEquatable<WeekShift
     /// </summary>
     /// <value>The schedule week date in yyyy-MM-dd format. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

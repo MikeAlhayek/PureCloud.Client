@@ -64,7 +64,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// <param name="Description">The description of this forecast.</param>
     /// <param name="Metadata">Metadata for this forecast.</param>
     /// <param name="CanUseForScheduling">Whether this forecast can be used for scheduling.</param>
-    public BuShortTermForecastListItem(String WeekDate = null, int? WeekCount = null, CreationMethodEnum? CreationMethod = null, string Description = null, WfmVersionedEntityMetadata Metadata = null, bool? CanUseForScheduling = null)
+    public BuShortTermForecastListItem(string WeekDate = null, int? WeekCount = null, CreationMethodEnum? CreationMethod = null, string Description = null, WfmVersionedEntityMetadata Metadata = null, bool? CanUseForScheduling = null)
     {
         this.WeekDate = WeekDate;
         this.WeekCount = WeekCount;
@@ -91,7 +91,7 @@ public partial class BuShortTermForecastListItem : IEquatable<BuShortTermForecas
     /// </summary>
     /// <value>The start week date of this forecast in yyyy-MM-dd.  Must fall on the start day of week for the associated business unit. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

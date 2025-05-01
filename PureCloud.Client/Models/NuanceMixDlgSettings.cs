@@ -15,7 +15,7 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
     /// </summary>
     /// <param name="ChannelId">The Nuance channel ID to use when launching the Nuance bot, which must one of the code names of the bot&#39;s registered input channels..</param>
     /// <param name="InputParameters">Name/value pairs of input variables to be sent to the Nuance bot. The values must be in the appropriate format for the variable&#39;s type (see https://docs.mix.nuance.com/dialog-grpc/v1/#simple-variable-types for help).</param>
-    public NuanceMixDlgSettings(string ChannelId = null, Dictionary<string, Object> InputParameters = null)
+    public NuanceMixDlgSettings(string ChannelId = null, Dictionary<string, object> InputParameters = null)
     {
         this.ChannelId = ChannelId;
         this.InputParameters = InputParameters;
@@ -38,7 +38,7 @@ public partial class NuanceMixDlgSettings : IEquatable<NuanceMixDlgSettings>
     /// </summary>
     /// <value>Name/value pairs of input variables to be sent to the Nuance bot. The values must be in the appropriate format for the variable&#39;s type (see https://docs.mix.nuance.com/dialog-grpc/v1/#simple-variable-types for help)</value>
     [DataMember(Name = "inputParameters", EmitDefaultValue = false)]
-    public Dictionary<string, Object> InputParameters { get; set; }
+    public Dictionary<string, object> InputParameters { get; set; }
 
 
     /// <summary>

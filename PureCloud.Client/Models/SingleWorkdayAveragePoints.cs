@@ -25,7 +25,7 @@ public partial class SingleWorkdayAveragePoints : IEquatable<SingleWorkdayAverag
     /// </summary>
     /// <value>Queried target workday. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "dateWorkday", EmitDefaultValue = false)]
-    public String DateWorkday { get; private set; }
+    public string DateWorkday { get; private set; }
 
 
 

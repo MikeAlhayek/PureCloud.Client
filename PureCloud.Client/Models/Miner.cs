@@ -427,7 +427,7 @@ public partial class Miner : IEquatable<Miner>
     /// </summary>
     /// <value>Date from which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "conversationsDateRangeStart", EmitDefaultValue = false)]
-    public String ConversationsDateRangeStart { get; private set; }
+    public string ConversationsDateRangeStart { get; private set; }
 
 
 
@@ -436,7 +436,7 @@ public partial class Miner : IEquatable<Miner>
     /// </summary>
     /// <value>Date till which the conversations need to be taken for mining. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "conversationsDateRangeEnd", EmitDefaultValue = false)]
-    public String ConversationsDateRangeEnd { get; private set; }
+    public string ConversationsDateRangeEnd { get; private set; }
 
 
 

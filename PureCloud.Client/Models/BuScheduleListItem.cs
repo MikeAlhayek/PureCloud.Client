@@ -20,7 +20,7 @@ public partial class BuScheduleListItem : IEquatable<BuScheduleListItem>
     /// <param name="ShortTermForecast">The forecast used for this schedule, if applicable.</param>
     /// <param name="GenerationResults">Generation result summary for this schedule, if applicable.</param>
     /// <param name="Metadata">Version metadata for this schedule.</param>
-    public BuScheduleListItem(String WeekDate = null, int? WeekCount = null, string Description = null, bool? Published = null, BuShortTermForecastReference ShortTermForecast = null, ScheduleGenerationResultSummary GenerationResults = null, WfmVersionedEntityMetadata Metadata = null)
+    public BuScheduleListItem(string WeekDate = null, int? WeekCount = null, string Description = null, bool? Published = null, BuShortTermForecastReference ShortTermForecast = null, ScheduleGenerationResultSummary GenerationResults = null, WfmVersionedEntityMetadata Metadata = null)
     {
         this.WeekDate = WeekDate;
         this.WeekCount = WeekCount;
@@ -48,7 +48,7 @@ public partial class BuScheduleListItem : IEquatable<BuScheduleListItem>
     /// </summary>
     /// <value>The start week date for this schedule. Dates are represented as an ISO-8601 string. For example: yyyy-MM-dd</value>
     [DataMember(Name = "weekDate", EmitDefaultValue = false)]
-    public String WeekDate { get; set; }
+    public string WeekDate { get; set; }
 
 
 

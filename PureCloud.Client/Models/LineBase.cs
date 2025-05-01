@@ -64,7 +64,7 @@ public partial class LineBase : IEquatable<LineBase>
     /// <param name="Version">The current version of the resource..</param>
     /// <param name="LineMetaBase">LineMetaBase.</param>
     /// <param name="Properties">Properties.</param>
-    public LineBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef LineMetaBase = null, Dictionary<string, Object> Properties = null)
+    public LineBase(string Name = null, Division Division = null, string Description = null, int? Version = null, DomainEntityRef LineMetaBase = null, Dictionary<string, object> Properties = null)
     {
         this.Name = Name;
         this.Division = Division;
@@ -190,7 +190,7 @@ public partial class LineBase : IEquatable<LineBase>
     /// Gets or Sets Properties
     /// </summary>
     [DataMember(Name = "properties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> Properties { get; set; }
+    public Dictionary<string, object> Properties { get; set; }
 
 
 

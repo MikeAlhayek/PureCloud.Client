@@ -48,7 +48,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// <param name="Start">the end date of an alteration range as an ISO-8601 string.</param>
     /// <param name="End">the end date of an alteration range as an ISO-8601 string.</param>
     /// <param name="AdditionalProperties">AdditionalProperties.</param>
-    public DialerCampaignScheduleConfigChangeAlteration(TypeEnum? Type = null, string Start = null, string End = null, Dictionary<string, Object> AdditionalProperties = null)
+    public DialerCampaignScheduleConfigChangeAlteration(TypeEnum? Type = null, string Start = null, string End = null, Dictionary<string, object> AdditionalProperties = null)
     {
         this.Type = Type;
         this.Start = Start;
@@ -83,7 +83,7 @@ public partial class DialerCampaignScheduleConfigChangeAlteration : IEquatable<D
     /// Gets or Sets AdditionalProperties
     /// </summary>
     [DataMember(Name = "additionalProperties", EmitDefaultValue = false)]
-    public Dictionary<string, Object> AdditionalProperties { get; set; }
+    public Dictionary<string, object> AdditionalProperties { get; set; }
 
 
     /// <summary>
