@@ -1,4 +1,4 @@
-namespace PureCloudPlatform.Client.V2.Extensions.Notifications;
+namespace PureCloud.Client.Extensions.Notifications;
 
 ///<Summary>
 /// InvalidNotificationTypeException Exception

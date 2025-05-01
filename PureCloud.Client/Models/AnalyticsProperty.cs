@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// AnalyticsProperty
@@ -70,7 +70,7 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
     /// <summary>
     /// Initializes a new instance of the <see cref="AnalyticsProperty" /> class.
     /// </summary>
-    /// <param name="Property">User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property..</param>
+    /// <param name="Property">User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloudEnvironment or by API users directly.  This is the name of the user-defined property..</param>
     /// <param name="PropertyType">Indicates what the data type is (e.g. integer vs string) and therefore how to evaluate what would constitute a match.</param>
     /// <param name="Value">What property value to match against.</param>
     public AnalyticsProperty(string Property = null, PropertyTypeEnum? PropertyType = null, string Value = null)
@@ -84,9 +84,9 @@ public partial class AnalyticsProperty : IEquatable<AnalyticsProperty>
 
 
     /// <summary>
-    /// User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.
+    /// User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloudEnvironment or by API users directly.  This is the name of the user-defined property.
     /// </summary>
-    /// <value>User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloud or by API users directly.  This is the name of the user-defined property.</value>
+    /// <value>User-defined rather than intrinsic system-observed values. These are tagged onto segments by other components within PureCloudEnvironment or by API users directly.  This is the name of the user-defined property.</value>
     [DataMember(Name = "property", EmitDefaultValue = false)]
     public string Property { get; set; }
 

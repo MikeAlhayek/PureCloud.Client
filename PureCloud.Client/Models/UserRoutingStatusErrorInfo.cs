@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Error information that the Public API will receive in a response body. This allows backend services to pass an error message to consumers of the Public API.

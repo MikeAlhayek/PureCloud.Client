@@ -1,8 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// DocumentAttribute
@@ -15,22 +14,18 @@ public partial class DocumentAttribute : IEquatable<DocumentAttribute>
     /// </summary>
     /// <param name="Attribute">Attribute.</param>
     /// <param name="Values">Values.</param>
-    public DocumentAttribute(PureCloudPlatform.Client.V2.Model.Attribute Attribute = null, List<string> Values = null)
+    public DocumentAttribute(Models.Attribute Attribute = null, List<string> Values = null)
     {
         this.Attribute = Attribute;
         this.Values = Values;
 
     }
 
-
-
     /// <summary>
     /// Gets or Sets Attribute
     /// </summary>
     [DataMember(Name = "attribute", EmitDefaultValue = false)]
-    public PureCloudPlatform.Client.V2.Model.Attribute Attribute { get; set; }
-
-
+    public Models.Attribute Attribute { get; set; }
 
     /// <summary>
     /// Gets or Sets Values

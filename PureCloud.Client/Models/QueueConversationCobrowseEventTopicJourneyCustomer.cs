@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// A subset of the Journey System&#39;s customer data at a point-in-time (for external linkage and internal usage/context)
@@ -13,7 +13,7 @@ public partial class QueueConversationCobrowseEventTopicJourneyCustomer : IEquat
     /// <summary>
     /// Initializes a new instance of the <see cref="QueueConversationCobrowseEventTopicJourneyCustomer" /> class.
     /// </summary>
-    /// <param name="Id">An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable..</param>
+    /// <param name="Id">An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloudEnvironment conversation, this may or may not be mutable..</param>
     /// <param name="IdType">The type of the customerId within the Journey System (e.g. cookie)..</param>
     public QueueConversationCobrowseEventTopicJourneyCustomer(string Id = null, string IdType = null)
     {
@@ -25,9 +25,9 @@ public partial class QueueConversationCobrowseEventTopicJourneyCustomer : IEquat
 
 
     /// <summary>
-    /// An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.
+    /// An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloudEnvironment conversation, this may or may not be mutable.
     /// </summary>
-    /// <value>An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloud conversation, this may or may not be mutable.</value>
+    /// <value>An ID of a customer within the Journey System at a point-in-time.  Note that a customer entity can have multiple customerIds based on the stitching process.  Depending on the context within the PureCloudEnvironment conversation, this may or may not be mutable.</value>
     [DataMember(Name = "id", EmitDefaultValue = false)]
     public string Id { get; set; }
 

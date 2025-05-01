@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// EmailSetup
@@ -13,7 +13,7 @@ public partial class EmailSetup : IEquatable<EmailSetup>
     /// <summary>
     /// Initializes a new instance of the <see cref="EmailSetup" /> class.
     /// </summary>
-    /// <param name="RootDomain">The root PureCloud domain that all sub-domains are created from..</param>
+    /// <param name="RootDomain">The root PureCloudEnvironment domain that all sub-domains are created from..</param>
     public EmailSetup(string RootDomain = null)
     {
         this.RootDomain = RootDomain;
@@ -23,9 +23,9 @@ public partial class EmailSetup : IEquatable<EmailSetup>
 
 
     /// <summary>
-    /// The root PureCloud domain that all sub-domains are created from.
+    /// The root PureCloudEnvironment domain that all sub-domains are created from.
     /// </summary>
-    /// <value>The root PureCloud domain that all sub-domains are created from.</value>
+    /// <value>The root PureCloudEnvironment domain that all sub-domains are created from.</value>
     [DataMember(Name = "rootDomain", EmitDefaultValue = false)]
     public string RootDomain { get; set; }
 

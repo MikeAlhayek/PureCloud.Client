@@ -1,4 +1,4 @@
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 ///<Summary>
 /// Interface for Paged Resource

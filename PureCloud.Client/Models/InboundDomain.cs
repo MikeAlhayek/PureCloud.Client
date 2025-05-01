@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// InboundDomain
@@ -55,7 +55,7 @@ public partial class InboundDomain : IEquatable<InboundDomain>
     /// <param name="Id">Unique Id of the domain such as: example.com.</param>
     /// <param name="Name">Name.</param>
     /// <param name="MxRecordStatus">Mx Record Status.</param>
-    /// <param name="SubDomain">Indicates if this a PureCloud sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email..</param>
+    /// <param name="SubDomain">Indicates if this a PureCloudEnvironment sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email..</param>
     /// <param name="MailFromSettings">The DNS settings if the inbound domain is using a custom Mail From. These settings can only be used on InboundDomains where subDomain is false..</param>
     /// <param name="CustomSMTPServer">The custom SMTP server integration to use when sending outbound emails from this domain..</param>
     public InboundDomain(string Id = null, string Name = null, MxRecordStatusEnum? MxRecordStatus = null, bool? SubDomain = null, MailFromResult MailFromSettings = null, DomainEntityRef CustomSMTPServer = null)
@@ -91,9 +91,9 @@ public partial class InboundDomain : IEquatable<InboundDomain>
 
 
     /// <summary>
-    /// Indicates if this a PureCloud sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.
+    /// Indicates if this a PureCloudEnvironment sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.
     /// </summary>
-    /// <value>Indicates if this a PureCloud sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.</value>
+    /// <value>Indicates if this a PureCloudEnvironment sub-domain.  If true, then the appropriate DNS records are created for sending/receiving email.</value>
     [DataMember(Name = "subDomain", EmitDefaultValue = false)]
     public bool? SubDomain { get; set; }
 

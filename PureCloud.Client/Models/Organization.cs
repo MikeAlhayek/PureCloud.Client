@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Organization
@@ -65,7 +65,7 @@ public partial class Organization : IEquatable<Organization>
         Genesyscloud,
 
         /// <summary>
-        /// Enum Purecloud for "PureCloud"
+        /// Enum PureCloudEnvironment for "PureCloud"
         /// </summary>
         [EnumMember(Value = "PureCloud")]
         Purecloud,

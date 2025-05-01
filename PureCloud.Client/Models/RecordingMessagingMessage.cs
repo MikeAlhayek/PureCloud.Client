@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// RecordingMessagingMessage
@@ -120,7 +120,7 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
     /// </summary>
     /// <param name="From">The message sender session id..</param>
     /// <param name="FromUser">The user who sent this message..</param>
-    /// <param name="FromExternalContact">The PureCloud external contact sender details..</param>
+    /// <param name="FromExternalContact">The PureCloudEnvironment external contact sender details..</param>
     /// <param name="To">The message recipient..</param>
     /// <param name="Timestamp">The time when the message was sent. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="Id">A globally unique identifier for this communication..</param>
@@ -184,9 +184,9 @@ public partial class RecordingMessagingMessage : IEquatable<RecordingMessagingMe
 
 
     /// <summary>
-    /// The PureCloud external contact sender details.
+    /// The PureCloudEnvironment external contact sender details.
     /// </summary>
-    /// <value>The PureCloud external contact sender details.</value>
+    /// <value>The PureCloudEnvironment external contact sender details.</value>
     [DataMember(Name = "fromExternalContact", EmitDefaultValue = false)]
     public ExternalContact FromExternalContact { get; set; }
 

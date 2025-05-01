@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Extensions.Notifications;
+namespace PureCloud.Client.Extensions.Notifications;
 
 ///<Summary>
 /// Notification (i.e. topic) Data received on the Notification Channel (WebSocket)

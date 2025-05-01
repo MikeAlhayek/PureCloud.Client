@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// UserMe
@@ -432,9 +432,9 @@ public partial class UserMe : IEquatable<UserMe>
 
 
     /// <summary>
-    /// The PureCloud system date time.
+    /// The PureCloudEnvironment system date time.
     /// </summary>
-    /// <value>The PureCloud system date time.</value>
+    /// <value>The PureCloudEnvironment system date time.</value>
     [DataMember(Name = "date", EmitDefaultValue = false)]
     public ServerDate Date { get; private set; }
 

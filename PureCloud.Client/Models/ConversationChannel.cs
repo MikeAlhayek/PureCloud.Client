@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ConversationChannel
@@ -207,7 +207,7 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
     /// </summary>
     /// <param name="Type">The type or category of this channel. (required).</param>
     /// <param name="MessageType">Message type for messaging conversations..</param>
-    /// <param name="Platform">The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email)..</param>
+    /// <param name="Platform">The source provider for the conversation (e.g. Edge, PureCloudEnvironment Messaging, PureCloudEnvironment Email)..</param>
     public ConversationChannel(TypeEnum? Type = null, MessageTypeEnum? MessageType = null, string Platform = null)
     {
         this.Type = Type;
@@ -223,9 +223,9 @@ public partial class ConversationChannel : IEquatable<ConversationChannel>
 
 
     /// <summary>
-    /// The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).
+    /// The source provider for the conversation (e.g. Edge, PureCloudEnvironment Messaging, PureCloudEnvironment Email).
     /// </summary>
-    /// <value>The source provider for the conversation (e.g. Edge, PureCloud Messaging, PureCloud Email).</value>
+    /// <value>The source provider for the conversation (e.g. Edge, PureCloudEnvironment Messaging, PureCloudEnvironment Email).</value>
     [DataMember(Name = "platform", EmitDefaultValue = false)]
     public string Platform { get; set; }
 

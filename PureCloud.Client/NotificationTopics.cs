@@ -1,6 +1,6 @@
-using PureCloudPlatform.Client.V2.Model;
+using PureCloud.Client.Models;
 
-namespace PureCloudPlatform.Client.V2.Client;
+namespace PureCloud.Client;
 
 /// <Summary>
 /// Notification Topics

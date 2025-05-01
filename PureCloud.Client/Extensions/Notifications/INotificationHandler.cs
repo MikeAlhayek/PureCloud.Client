@@ -1,7 +1,7 @@
-namespace PureCloudPlatform.Client.V2.Extensions.Notifications;
+namespace PureCloud.Client.Extensions.Notifications;
 
 /// <summary>
-/// A helper class for handling PureCloud notifications
+/// A helper class for handling PureCloudEnvironment notifications
 /// </summary>
 public interface INotificationHandler : IAsyncDisposable
 {

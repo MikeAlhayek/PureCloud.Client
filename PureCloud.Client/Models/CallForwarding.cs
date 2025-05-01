@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallForwarding
@@ -26,7 +26,7 @@ public partial class CallForwarding : IEquatable<CallForwarding>
         OutdatedSdkVersion,
 
         /// <summary>
-        /// Enum Purecloud for "PURECLOUD"
+        /// Enum PureCloudEnvironment for "PURECLOUD"
         /// </summary>
         [EnumMember(Value = "PURECLOUD")]
         Purecloud,

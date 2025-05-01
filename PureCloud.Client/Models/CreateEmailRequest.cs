@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CreateEmailRequest
@@ -11,9 +11,9 @@ namespace PureCloudPlatform.Client.V2.Model;
 public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
 {
     /// <summary>
-    /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
+    /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.
     /// </summary>
-    /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.</value>
+    /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.</value>
     [JsonConverter(typeof(JsonStringEnumConverter))]
     public enum DirectionEnum
     {
@@ -38,9 +38,9 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
         Inbound
     }
     /// <summary>
-    /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.
+    /// Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.
     /// </summary>
-    /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based.</value>
+    /// <value>Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based.</value>
     [DataMember(Name = "direction", EmitDefaultValue = false)]
     public DirectionEnum? Direction { get; set; }
 
@@ -54,7 +54,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// </summary>
     /// <param name="QueueId">The ID of the queue to use for routing the email conversation. This field is mutually exclusive with flowId.</param>
     /// <param name="FlowId">The ID of the flow to use for routing email conversation. This field is mutually exclusive with queueId.</param>
-    /// <param name="Provider">The name of the provider that is sourcing the emails. The Provider \&quot;PureCloud Email\&quot; is reserved for native emails. (required).</param>
+    /// <param name="Provider">The name of the provider that is sourcing the emails. The Provider \&quot;PureCloudEnvironment Email\&quot; is reserved for native emails. (required).</param>
     /// <param name="SkillIds">The list of skill ID&#39;s to use for routing..</param>
     /// <param name="LanguageId">The ID of the language to use for routing..</param>
     /// <param name="Priority">The priority to assign to the conversation for routing..</param>
@@ -64,7 +64,7 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
     /// <param name="FromAddress">The email address of the sender of the email..</param>
     /// <param name="FromName">The name of the sender of the email..</param>
     /// <param name="Subject">The subject of the email.</param>
-    /// <param name="Direction">Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloud based..</param>
+    /// <param name="Direction">Specify OUTBOUND to send an email on behalf of a queue, or INBOUND to create an external conversation. An external conversation is one where the provider is not PureCloudEnvironment based..</param>
     /// <param name="HtmlBody">An HTML body content of the email..</param>
     /// <param name="TextBody">A text body content of the email..</param>
     /// <param name="ExternalContactId">The external contact with which the email should be associated. This field is only valid for OUTBOUND email..</param>
@@ -112,9 +112,9 @@ public partial class CreateEmailRequest : IEquatable<CreateEmailRequest>
 
 
     /// <summary>
-    /// The name of the provider that is sourcing the emails. The Provider \&quot;PureCloud Email\&quot; is reserved for native emails.
+    /// The name of the provider that is sourcing the emails. The Provider \&quot;PureCloudEnvironment Email\&quot; is reserved for native emails.
     /// </summary>
-    /// <value>The name of the provider that is sourcing the emails. The Provider \&quot;PureCloud Email\&quot; is reserved for native emails.</value>
+    /// <value>The name of the provider that is sourcing the emails. The Provider \&quot;PureCloudEnvironment Email\&quot; is reserved for native emails.</value>
     [DataMember(Name = "provider", EmitDefaultValue = false)]
     public string Provider { get; set; }
 

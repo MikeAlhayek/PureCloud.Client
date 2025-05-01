@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallHistoryParticipant
@@ -199,12 +199,12 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
     /// <param name="Direction">The participant&#39;s direction.  Values can be: &#39;inbound&#39; or &#39;outbound&#39;.</param>
     /// <param name="Ani">The call ANI..</param>
     /// <param name="Dnis">The call DNIS..</param>
-    /// <param name="User">The PureCloud user for this participant..</param>
-    /// <param name="Queue">The PureCloud queue for this participant..</param>
+    /// <param name="User">The PureCloudEnvironment user for this participant..</param>
+    /// <param name="Queue">The PureCloudEnvironment queue for this participant..</param>
     /// <param name="Group">The group involved in the group ring call..</param>
     /// <param name="DisconnectType">The reason the participant was disconnected from the conversation..</param>
-    /// <param name="ExternalContact">The PureCloud external contact.</param>
-    /// <param name="ExternalOrganization">The PureCloud external organization.</param>
+    /// <param name="ExternalContact">The PureCloudEnvironment external contact.</param>
+    /// <param name="ExternalOrganization">The PureCloudEnvironment external organization.</param>
     /// <param name="DidInteract">Indicates whether the contact ever connected.</param>
     /// <param name="SipResponseCodes">Indicates SIP Response codes associated with the participant.</param>
     /// <param name="FlaggedReason">The reason specifying why participant flagged the conversation..</param>
@@ -310,18 +310,18 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
 
 
     /// <summary>
-    /// The PureCloud user for this participant.
+    /// The PureCloudEnvironment user for this participant.
     /// </summary>
-    /// <value>The PureCloud user for this participant.</value>
+    /// <value>The PureCloudEnvironment user for this participant.</value>
     [DataMember(Name = "user", EmitDefaultValue = false)]
     public User User { get; set; }
 
 
 
     /// <summary>
-    /// The PureCloud queue for this participant.
+    /// The PureCloudEnvironment queue for this participant.
     /// </summary>
-    /// <value>The PureCloud queue for this participant.</value>
+    /// <value>The PureCloudEnvironment queue for this participant.</value>
     [DataMember(Name = "queue", EmitDefaultValue = false)]
     public Queue Queue { get; set; }
 
@@ -339,18 +339,18 @@ public partial class CallHistoryParticipant : IEquatable<CallHistoryParticipant>
 
 
     /// <summary>
-    /// The PureCloud external contact
+    /// The PureCloudEnvironment external contact
     /// </summary>
-    /// <value>The PureCloud external contact</value>
+    /// <value>The PureCloudEnvironment external contact</value>
     [DataMember(Name = "externalContact", EmitDefaultValue = false)]
     public ExternalContact ExternalContact { get; set; }
 
 
 
     /// <summary>
-    /// The PureCloud external organization
+    /// The PureCloudEnvironment external organization
     /// </summary>
-    /// <value>The PureCloud external organization</value>
+    /// <value>The PureCloudEnvironment external organization</value>
     [DataMember(Name = "externalOrganization", EmitDefaultValue = false)]
     public ExternalOrganization ExternalOrganization { get; set; }
 

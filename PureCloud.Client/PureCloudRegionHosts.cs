@@ -1,9 +1,7 @@
 using System.ComponentModel;
 using System.Reflection;
 
-namespace PureCloudPlatform.Client.V2.Client;
-
-
+namespace PureCloud.Client;
 
 ///<Summary>
 /// Enumeration of Genesys Cloud regions with their Platform API hosts

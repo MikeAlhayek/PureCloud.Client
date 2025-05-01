@@ -2,13 +2,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActionEntityListing
 /// </summary>
 [DataContract]
-public partial class ActionEntityListing : IEquatable<ActionEntityListing>, IPagedResource<PureCloudPlatform.Client.V2.Model.Action>
+public partial class ActionEntityListing : IEquatable<ActionEntityListing>, IPagedResource<Models.Action>
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="ActionEntityListing" /> class.
@@ -23,7 +23,7 @@ public partial class ActionEntityListing : IEquatable<ActionEntityListing>, IPag
     /// <param name="NextUri">NextUri.</param>
     /// <param name="PreviousUri">PreviousUri.</param>
     /// <param name="PageCount">PageCount.</param>
-    public ActionEntityListing(List<PureCloudPlatform.Client.V2.Model.Action> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
+    public ActionEntityListing(List<Models.Action> Entities = null, int? PageSize = null, int? PageNumber = null, long? Total = null, string FirstUri = null, string LastUri = null, string SelfUri = null, string NextUri = null, string PreviousUri = null, int? PageCount = null)
     {
         this.Entities = Entities;
         this.PageSize = PageSize;
@@ -44,7 +44,7 @@ public partial class ActionEntityListing : IEquatable<ActionEntityListing>, IPag
     /// Gets or Sets Entities
     /// </summary>
     [DataMember(Name = "entities", EmitDefaultValue = false)]
-    public List<PureCloudPlatform.Client.V2.Model.Action> Entities { get; set; }
+    public List<Models.Action> Entities { get; set; }
 
 
 

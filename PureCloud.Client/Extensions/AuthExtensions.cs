@@ -1,10 +1,10 @@
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Logging;
-using PureCloudPlatform.Client.V2.Client;
+using PureCloud.Client;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Extensions;
+namespace PureCloud.Client.Extensions;
 
 /// <summary>
 /// Extensions for Authorization processing

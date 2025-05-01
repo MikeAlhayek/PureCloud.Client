@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// State information for an import job of rows to a datatable
@@ -98,7 +98,7 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
     /// Initializes a new instance of the <see cref="DataTableImportJob" /> class.
     /// </summary>
     /// <param name="Name">Name.</param>
-    /// <param name="Owner">The PureCloud user who started the import job.</param>
+    /// <param name="Owner">The PureCloudEnvironment user who started the import job.</param>
     /// <param name="Status">The status of the import job (required).</param>
     /// <param name="DateCreated">The timestamp of when the import began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="DateCompleted">The timestamp of when the import stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
@@ -144,9 +144,9 @@ public partial class DataTableImportJob : IEquatable<DataTableImportJob>
 
 
     /// <summary>
-    /// The PureCloud user who started the import job
+    /// The PureCloudEnvironment user who started the import job
     /// </summary>
-    /// <value>The PureCloud user who started the import job</value>
+    /// <value>The PureCloudEnvironment user who started the import job</value>
     [DataMember(Name = "owner", EmitDefaultValue = false)]
     public AddressableEntityRef Owner { get; set; }
 

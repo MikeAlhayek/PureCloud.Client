@@ -1,12 +1,12 @@
 using System.Net.WebSockets;
 using System.Text;
-using PureCloudPlatform.Client.V2.Api;
-using PureCloudPlatform.Client.V2.Model;
+using PureCloud.Client.Apis;
+using PureCloud.Client.Models;
 
-namespace PureCloudPlatform.Client.V2.Extensions.Notifications;
+namespace PureCloud.Client.Extensions.Notifications;
 
 /// <summary>
-/// A helper class for handling PureCloud notifications
+/// A helper class for handling PureCloudEnvironment notifications
 /// </summary>
 public class NotificationHandler : INotificationHandler
 {

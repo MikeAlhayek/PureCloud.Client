@@ -2,20 +2,20 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
-/// IdentityProvider
+/// IdentityProvider 
 /// </summary>
 [DataContract]
-public partial class IdentityProvider : IEquatable<IdentityProvider>
+public partial class IdentityProvider  : IEquatable<IdentityProvider >
 {
     /// <summary>
-    /// Initializes a new instance of the <see cref="IdentityProvider" /> class.
+    /// Initializes a new instance of the <see cref="IdentityProvider " /> class.
     /// </summary>
     /// <param name="Name">Name.</param>
     /// <param name="Disabled">Disabled.</param>
-    public IdentityProvider(string Name = null, bool? Disabled = null)
+    public IdentityProvider (string Name = null, bool? Disabled = null)
     {
         this.Name = Name;
         this.Disabled = Disabled;
@@ -64,7 +64,7 @@ public partial class IdentityProvider : IEquatable<IdentityProvider>
     public override string ToString()
     {
         var sb = new StringBuilder();
-        sb.Append("class IdentityProvider {\n");
+        sb.Append("class IdentityProvider  {\n");
 
         sb.Append("  Id: ").Append(Id).Append("\n");
         sb.Append("  Name: ").Append(Name).Append("\n");
@@ -83,15 +83,15 @@ public partial class IdentityProvider : IEquatable<IdentityProvider>
     public override bool Equals(object obj)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
-        return this.Equals(obj as IdentityProvider);
+        return this.Equals(obj as IdentityProvider );
     }
 
     /// <summary>
-    /// Returns true if IdentityProvider instances are equal
+    /// Returns true if IdentityProvider  instances are equal
     /// </summary>
-    /// <param name="other">Instance of IdentityProvider to be compared</param>
+    /// <param name="other">Instance of IdentityProvider  to be compared</param>
     /// <returns>Boolean</returns>
-    public bool Equals(IdentityProvider other)
+    public bool Equals(IdentityProvider  other)
     {
         // credit: http://stackoverflow.com/a/10454552/677735
         if (other == null)

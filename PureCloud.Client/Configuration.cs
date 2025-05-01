@@ -1,7 +1,7 @@
 using Microsoft.Extensions.Logging;
-using PureCloudPlatform.Client.V2.Extensions;
+using PureCloud.Client.Extensions;
 
-namespace PureCloudPlatform.Client.V2.Client;
+namespace PureCloud.Client;
 
 /// <summary>
 /// Represents a set of configuration settings
@@ -39,7 +39,7 @@ public class Configuration
                          int timeout = 100000,
                          bool shouldRefreshAccessToken = true,
                          int refreshTokenWaitTime = 10,
-                         string userAgent = "PureCloud SDK/dotnet",
+                         string userAgent = "PureCloudEnvironment SDK/dotnet",
                          string configFilePath = null,
                          bool autoReloadConfig = true,
                          bool useDefaultApiClient = true

@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// CallMediaParticipant
@@ -337,9 +337,9 @@ public partial class CallMediaParticipant : IEquatable<CallMediaParticipant>
     /// <param name="WrapupRequired">Value is true when the participant requires wrap-up..</param>
     /// <param name="WrapupPrompt">The wrap-up prompt indicating the type of wrap-up to be performed..</param>
     /// <param name="MediaRoles">List of roles this participant&#39;s media has had on the conversation, ie monitor, coach, etc.</param>
-    /// <param name="User">The PureCloud user for this participant..</param>
-    /// <param name="Queue">The PureCloud queue for this participant..</param>
-    /// <param name="Team">The PureCloud team for this participant..</param>
+    /// <param name="User">The PureCloudEnvironment user for this participant..</param>
+    /// <param name="Queue">The PureCloudEnvironment queue for this participant..</param>
+    /// <param name="Team">The PureCloudEnvironment team for this participant..</param>
     /// <param name="Attributes">A list of ad-hoc attributes for the participant..</param>
     /// <param name="ErrorInfo">If the conversation ends in error, contains additional error details..</param>
     /// <param name="Script">The Engage script that should be used by this participant..</param>
@@ -552,27 +552,27 @@ public partial class CallMediaParticipant : IEquatable<CallMediaParticipant>
 
 
     /// <summary>
-    /// The PureCloud user for this participant.
+    /// The PureCloudEnvironment user for this participant.
     /// </summary>
-    /// <value>The PureCloud user for this participant.</value>
+    /// <value>The PureCloudEnvironment user for this participant.</value>
     [DataMember(Name = "user", EmitDefaultValue = false)]
     public DomainEntityRef User { get; set; }
 
 
 
     /// <summary>
-    /// The PureCloud queue for this participant.
+    /// The PureCloudEnvironment queue for this participant.
     /// </summary>
-    /// <value>The PureCloud queue for this participant.</value>
+    /// <value>The PureCloudEnvironment queue for this participant.</value>
     [DataMember(Name = "queue", EmitDefaultValue = false)]
     public DomainEntityRef Queue { get; set; }
 
 
 
     /// <summary>
-    /// The PureCloud team for this participant.
+    /// The PureCloudEnvironment team for this participant.
     /// </summary>
-    /// <value>The PureCloud team for this participant.</value>
+    /// <value>The PureCloudEnvironment team for this participant.</value>
     [DataMember(Name = "team", EmitDefaultValue = false)]
     public DomainEntityRef Team { get; set; }
 

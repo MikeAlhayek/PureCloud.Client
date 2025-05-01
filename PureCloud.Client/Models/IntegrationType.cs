@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// Descriptor for a type of Integration.
@@ -57,9 +57,9 @@ public partial class IntegrationType : IEquatable<IntegrationType>
 
 
     /// <summary>
-    /// PureCloud provider of the integration type.
+    /// PureCloudEnvironment provider of the integration type.
     /// </summary>
-    /// <value>PureCloud provider of the integration type.</value>
+    /// <value>PureCloudEnvironment provider of the integration type.</value>
     [DataMember(Name = "provider", EmitDefaultValue = false)]
     public string Provider { get; private set; }
 

@@ -1,8 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
-using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// OrganizationFeatures
@@ -26,10 +25,10 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
     /// <param name="ContactCenter">ContactCenter.</param>
     /// <param name="UnifiedCommunications">UnifiedCommunications.</param>
     /// <param name="Custserv">Custserv.</param>
-    public OrganizationFeatures(bool? RealtimeCIC = null, bool? Purecloud = null, bool? Hipaa = null, bool? UcEnabled = null, bool? Pci = null, bool? PurecloudVoice = null, bool? XmppFederation = null, bool? Chat = null, bool? InformalPhotos = null, bool? Directory = null, bool? ContactCenter = null, bool? UnifiedCommunications = null, bool? Custserv = null)
+    public OrganizationFeatures(bool? RealtimeCIC = null, bool? PureCloudEnvironment = null, bool? Hipaa = null, bool? UcEnabled = null, bool? Pci = null, bool? PurecloudVoice = null, bool? XmppFederation = null, bool? Chat = null, bool? InformalPhotos = null, bool? Directory = null, bool? ContactCenter = null, bool? UnifiedCommunications = null, bool? Custserv = null)
     {
         this.RealtimeCIC = RealtimeCIC;
-        this.Purecloud = Purecloud;
+        this.PureCloudEnvironment = PureCloudEnvironment;
         this.Hipaa = Hipaa;
         this.UcEnabled = UcEnabled;
         this.Pci = Pci;
@@ -58,7 +57,7 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
     /// Gets or Sets Purecloud
     /// </summary>
     [DataMember(Name = "purecloud", EmitDefaultValue = false)]
-    public bool? Purecloud { get; set; }
+    public bool? PureCloudEnvironment { get; set; }
 
 
 
@@ -159,7 +158,7 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
         sb.Append("class OrganizationFeatures {\n");
 
         sb.Append("  RealtimeCIC: ").Append(RealtimeCIC).Append("\n");
-        sb.Append("  Purecloud: ").Append(Purecloud).Append("\n");
+        sb.Append("  Purecloud: ").Append(PureCloudEnvironment).Append("\n");
         sb.Append("  Hipaa: ").Append(Hipaa).Append("\n");
         sb.Append("  UcEnabled: ").Append(UcEnabled).Append("\n");
         sb.Append("  Pci: ").Append(Pci).Append("\n");
@@ -207,9 +206,9 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
                 this.RealtimeCIC.Equals(other.RealtimeCIC)
             ) &&
             (
-                this.Purecloud == other.Purecloud ||
-                this.Purecloud != null &&
-                this.Purecloud.Equals(other.Purecloud)
+                this.PureCloudEnvironment == other.PureCloudEnvironment ||
+                this.PureCloudEnvironment != null &&
+                this.PureCloudEnvironment.Equals(other.PureCloudEnvironment)
             ) &&
             (
                 this.Hipaa == other.Hipaa ||
@@ -284,9 +283,9 @@ public partial class OrganizationFeatures : IEquatable<OrganizationFeatures>
                 hash = hash * 59 + this.RealtimeCIC.GetHashCode();
             }
 
-            if (this.Purecloud != null)
+            if (this.PureCloudEnvironment != null)
             {
-                hash = hash * 59 + this.Purecloud.GetHashCode();
+                hash = hash * 59 + this.PureCloudEnvironment.GetHashCode();
             }
 
             if (this.Hipaa != null)

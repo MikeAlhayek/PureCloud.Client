@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace PureCloudPlatform.Client.V2.Extensions;
+namespace PureCloud.Client.Extensions;
 
 /// <summary>
 /// Contains information about the access token from the authorization code OAuth flow

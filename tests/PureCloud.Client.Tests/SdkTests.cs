@@ -1,7 +1,7 @@
 using System.Net;
 using NUnit.Framework.Interfaces;
 using PureCloud.Clients;
-using PureCloudPlatform.Client.V2.Api;
+using PureCloud.Client.Apis;
 
 namespace PureCloud.Client.Tests;
 
@@ -219,7 +219,7 @@ public class SdkTests
     [Test, Order(7)]
     public void DeleteUserWithProxy()
     {
-        PureCloudPlatform.Client.V2.Client.Configuration.Default.ApiClient.ClientOptions.Proxy = new WebProxy("http://localhost:4001", true);
+        Configuration.Default.ApiClient.ClientOptions.Proxy = new WebProxy("http://localhost:4001", true);
 
         usersApi.DeleteUser(userId);
     }

@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// PureCloud
@@ -63,7 +63,7 @@ public partial class PureCloudEnvironment : IEquatable<PureCloudEnvironment>
     public override string ToString()
     {
         var sb = new StringBuilder();
-        sb.Append("class PureCloud {\n");
+        sb.Append("class PureCloudEnvironment {\n");
 
         sb.Append("  Id: ").Append(Id).Append("\n");
         sb.Append("  Name: ").Append(Name).Append("\n");
@@ -86,9 +86,9 @@ public partial class PureCloudEnvironment : IEquatable<PureCloudEnvironment>
     }
 
     /// <summary>
-    /// Returns true if PureCloud instances are equal
+    /// Returns true if PureCloudEnvironment instances are equal
     /// </summary>
-    /// <param name="other">Instance of PureCloud to be compared</param>
+    /// <param name="other">Instance of PureCloudEnvironment to be compared</param>
     /// <returns>Boolean</returns>
     public bool Equals(PureCloudEnvironment other)
     {

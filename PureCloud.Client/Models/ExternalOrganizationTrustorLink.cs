@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ExternalOrganizationTrustorLink
@@ -14,8 +14,8 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
     /// Initializes a new instance of the <see cref="ExternalOrganizationTrustorLink" /> class.
     /// </summary>
     /// <param name="Division">The division to which this entity belongs..</param>
-    /// <param name="ExternalOrganizationId">The id of a PureCloud External Organization entity in the External Contacts system that will be used to represent the trustor org.</param>
-    /// <param name="TrustorOrgId">The id of a PureCloud organization that has granted trust to this PureCloud organization.</param>
+    /// <param name="ExternalOrganizationId">The id of a PureCloudEnvironment External Organization entity in the External Contacts system that will be used to represent the trustor org.</param>
+    /// <param name="TrustorOrgId">The id of a PureCloudEnvironment organization that has granted trust to this PureCloudEnvironment organization.</param>
     /// <param name="DateCreated">Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     public ExternalOrganizationTrustorLink(WritableStarrableDivision Division = null, string ExternalOrganizationId = null, string TrustorOrgId = null, DateTime? DateCreated = null)
     {
@@ -47,18 +47,18 @@ public partial class ExternalOrganizationTrustorLink : IEquatable<ExternalOrgani
 
 
     /// <summary>
-    /// The id of a PureCloud External Organization entity in the External Contacts system that will be used to represent the trustor org
+    /// The id of a PureCloudEnvironment External Organization entity in the External Contacts system that will be used to represent the trustor org
     /// </summary>
-    /// <value>The id of a PureCloud External Organization entity in the External Contacts system that will be used to represent the trustor org</value>
+    /// <value>The id of a PureCloudEnvironment External Organization entity in the External Contacts system that will be used to represent the trustor org</value>
     [DataMember(Name = "externalOrganizationId", EmitDefaultValue = false)]
     public string ExternalOrganizationId { get; set; }
 
 
 
     /// <summary>
-    /// The id of a PureCloud organization that has granted trust to this PureCloud organization
+    /// The id of a PureCloudEnvironment organization that has granted trust to this PureCloudEnvironment organization
     /// </summary>
-    /// <value>The id of a PureCloud organization that has granted trust to this PureCloud organization</value>
+    /// <value>The id of a PureCloudEnvironment organization that has granted trust to this PureCloudEnvironment organization</value>
     [DataMember(Name = "trustorOrgId", EmitDefaultValue = false)]
     public string TrustorOrgId { get; set; }
 

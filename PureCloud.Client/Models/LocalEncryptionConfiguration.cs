@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// LocalEncryptionConfiguration
@@ -20,7 +20,7 @@ public partial class LocalEncryptionConfiguration : IEquatable<LocalEncryptionCo
     /// Initializes a new instance of the <see cref="LocalEncryptionConfiguration" /> class.
     /// </summary>
     /// <param name="Name">Name.</param>
-    /// <param name="Url">The url for decryption. This must specify the path to where Purecloud can requests decryption (required).</param>
+    /// <param name="Url">The url for decryption. This must specify the path to where PureCloudEnvironment can requests decryption (required).</param>
     /// <param name="ApiId">The api id for Hawk Authentication. (required).</param>
     /// <param name="ApiKey">The api shared symmetric key used for hawk authentication (required).</param>
     public LocalEncryptionConfiguration(string Name = null, string Url = null, string ApiId = null, string ApiKey = null)
@@ -52,9 +52,9 @@ public partial class LocalEncryptionConfiguration : IEquatable<LocalEncryptionCo
 
 
     /// <summary>
-    /// The url for decryption. This must specify the path to where Purecloud can requests decryption
+    /// The url for decryption. This must specify the path to where PureCloudEnvironment can requests decryption
     /// </summary>
-    /// <value>The url for decryption. This must specify the path to where Purecloud can requests decryption</value>
+    /// <value>The url for decryption. This must specify the path to where PureCloudEnvironment can requests decryption</value>
     [DataMember(Name = "url", EmitDefaultValue = false)]
     public string Url { get; set; }
 

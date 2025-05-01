@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// State information for an export job of rows from a datatable
@@ -59,7 +59,7 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
     /// Initializes a new instance of the <see cref="DataTableExportJob" /> class.
     /// </summary>
     /// <param name="Name">Name.</param>
-    /// <param name="Owner">The PureCloud user who started the export job.</param>
+    /// <param name="Owner">The PureCloudEnvironment user who started the export job.</param>
     /// <param name="Status">The status of the export job (required).</param>
     /// <param name="DateCreated">The timestamp of when the export began. Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
     /// <param name="DateCompleted">The timestamp of when the export stopped (either successfully or unsuccessfully). Date time is represented as an ISO-8601 string. For example: yyyy-MM-ddTHH:mm:ss[.mmm]Z.</param>
@@ -99,9 +99,9 @@ public partial class DataTableExportJob : IEquatable<DataTableExportJob>
 
 
     /// <summary>
-    /// The PureCloud user who started the export job
+    /// The PureCloudEnvironment user who started the export job
     /// </summary>
-    /// <value>The PureCloud user who started the export job</value>
+    /// <value>The PureCloudEnvironment user who started the export job</value>
     [DataMember(Name = "owner", EmitDefaultValue = false)]
     public AddressableEntityRef Owner { get; set; }
 

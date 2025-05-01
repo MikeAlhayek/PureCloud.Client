@@ -1,7 +1,7 @@
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// ActionMapActionTemplate

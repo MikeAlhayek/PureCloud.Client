@@ -2,7 +2,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Text.Json.Serialization;
 
-namespace PureCloudPlatform.Client.V2.Model;
+namespace PureCloud.Client.Models;
 
 /// <summary>
 /// SmsPhoneNumber
@@ -242,11 +242,11 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// <param name="SupportsVoice">Set to true if this phone number has the capability to support voice.</param>
     /// <param name="Integration">The Genesys Cloud integration this phone number belongs to..</param>
     /// <param name="Compliance">Compliance configuration for short codes, including help, stop and opt in..</param>
-    public SmsPhoneNumber(string Name = null, string PhoneNumber = null, bool? ProvisionedThroughPureCloud = null, PhoneNumberStatusEnum? PhoneNumberStatus = null, string CountryCode = null, DateTime? DateCreated = null, DateTime? DateModified = null, User CreatedBy = null, User ModifiedBy = null, int? Version = null, DateTime? PurchaseDate = null, DateTime? CancellationDate = null, DateTime? RenewalDate = null, AutoRenewableEnum? AutoRenewable = null, SmsAddress AddressId = null, ShortCodeBillingTypeEnum? ShortCodeBillingType = null, SmsProvisioningStatus ProvisioningStatus = null, string Country = null, bool? SupportsSms = null, bool? SupportsMms = null, bool? SupportsVoice = null, DomainEntityRef Integration = null, Compliance Compliance = null)
+    public SmsPhoneNumber(string Name = null, string PhoneNumber = null, bool? ProvisionedThroughPureCloudEnvironment = null, PhoneNumberStatusEnum? PhoneNumberStatus = null, string CountryCode = null, DateTime? DateCreated = null, DateTime? DateModified = null, User CreatedBy = null, User ModifiedBy = null, int? Version = null, DateTime? PurchaseDate = null, DateTime? CancellationDate = null, DateTime? RenewalDate = null, AutoRenewableEnum? AutoRenewable = null, SmsAddress AddressId = null, ShortCodeBillingTypeEnum? ShortCodeBillingType = null, SmsProvisioningStatus ProvisioningStatus = null, string Country = null, bool? SupportsSms = null, bool? SupportsMms = null, bool? SupportsVoice = null, DomainEntityRef Integration = null, Compliance Compliance = null)
     {
         this.Name = Name;
         this.PhoneNumber = PhoneNumber;
-        this.ProvisionedThroughPureCloud = ProvisionedThroughPureCloud;
+        this.ProvisionedThroughPureCloudEnvironment = ProvisionedThroughPureCloudEnvironment;
         this.PhoneNumberStatus = PhoneNumberStatus;
         this.CountryCode = CountryCode;
         this.DateCreated = DateCreated;
@@ -305,7 +305,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
     /// </summary>
     /// <value>Is set to false, if the phone number is provisioned through a SMS provider, outside of PureCloud</value>
     [DataMember(Name = "provisionedThroughPureCloud", EmitDefaultValue = false)]
-    public bool? ProvisionedThroughPureCloud { get; set; }
+    public bool? ProvisionedThroughPureCloudEnvironment { get; set; }
 
 
 
@@ -498,7 +498,7 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
         sb.Append("  Name: ").Append(Name).Append("\n");
         sb.Append("  PhoneNumber: ").Append(PhoneNumber).Append("\n");
         sb.Append("  PhoneNumberType: ").Append(PhoneNumberType).Append("\n");
-        sb.Append("  ProvisionedThroughPureCloud: ").Append(ProvisionedThroughPureCloud).Append("\n");
+        sb.Append("  ProvisionedThroughPureCloud: ").Append(ProvisionedThroughPureCloudEnvironment).Append("\n");
         sb.Append("  PhoneNumberStatus: ").Append(PhoneNumberStatus).Append("\n");
         sb.Append("  Capabilities: ").Append(Capabilities).Append("\n");
         sb.Append("  CountryCode: ").Append(CountryCode).Append("\n");
@@ -572,9 +572,9 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
                 this.PhoneNumberType.Equals(other.PhoneNumberType)
             ) &&
             (
-                this.ProvisionedThroughPureCloud == other.ProvisionedThroughPureCloud ||
-                this.ProvisionedThroughPureCloud != null &&
-                this.ProvisionedThroughPureCloud.Equals(other.ProvisionedThroughPureCloud)
+                this.ProvisionedThroughPureCloudEnvironment == other.ProvisionedThroughPureCloudEnvironment ||
+                this.ProvisionedThroughPureCloudEnvironment != null &&
+                this.ProvisionedThroughPureCloudEnvironment.Equals(other.ProvisionedThroughPureCloudEnvironment)
             ) &&
             (
                 this.PhoneNumberStatus == other.PhoneNumberStatus ||
@@ -719,9 +719,9 @@ public partial class SmsPhoneNumber : IEquatable<SmsPhoneNumber>
                 hash = hash * 59 + this.PhoneNumberType.GetHashCode();
             }
 
-            if (this.ProvisionedThroughPureCloud != null)
+            if (this.ProvisionedThroughPureCloudEnvironment != null)
             {
-                hash = hash * 59 + this.ProvisionedThroughPureCloud.GetHashCode();
+                hash = hash * 59 + this.ProvisionedThroughPureCloudEnvironment.GetHashCode();
             }
 
             if (this.PhoneNumberStatus != null)

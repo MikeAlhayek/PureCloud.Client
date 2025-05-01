@@ -1,4 +1,4 @@
-namespace PureCloudPlatform.Client.V2.Client;
+namespace PureCloud.Client;
 
 /// <summary>
 /// Represents configuration aspects required to interact with the API endpoints.

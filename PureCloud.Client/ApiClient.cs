@@ -8,10 +8,10 @@ using System.Text.RegularExpressions;
 using Microsoft.Extensions.Logging;
 using RestSharp;
 
-namespace PureCloudPlatform.Client.V2.Client;
+namespace PureCloud.Client;
 
 /// <summary>
-/// API client is mainly responible for making the HTTP call to the API backend.
+/// API client is mainly responsible for making the HTTP call to the API backend.
 /// </summary>
 public class ApiClient
 {
@@ -452,7 +452,7 @@ public class ApiClient
     /// <param name="pathParams">Path parameters.</param>
     /// <param name="contentType">Content type.</param>
     /// <returns>The Task instance.</returns>
-    public async System.Threading.Tasks.Task<Object> CallApiAsync(
+    public async Task<Object> CallApiAsync(
         String path, RestSharp.Method method, List<Tuple<String, String>> queryParams, Object postBody,
         Dictionary<String, String> headerParams, Dictionary<String, String> formParams,
         Dictionary<String, FileParameter> fileParams, Dictionary<String, String> pathParams,
